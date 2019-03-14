@@ -6,17 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace tests
+namespace KhivaCsharp.library.Tests
 {
-    [TestClass]
+    [TestClass()]
     public class LibraryTests
     {
         [TestMethod]
-        public void MyTest()
-        {
-            Assert.AreEqual("test", "test");
-        }
-        /*[TestMethod]
         public void VersionTest()
         {
             Assert.AreEqual("v0.2.1", Library.Version());
@@ -26,6 +21,6 @@ namespace tests
         public void GetBackendTest()
         {
             Assert.AreEqual(Library.Backend.KHIVA_BACKEND_OPENCL, Library.GetBackend());
-        }*/
+        }
     }
 }

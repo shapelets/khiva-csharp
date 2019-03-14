@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 /**
  * Class to change internal properties of the Khiva library.
  */
-namespace KhivaCsharp
+namespace khiva
 {
     namespace library
     {
@@ -52,11 +52,11 @@ namespace KhivaCsharp
                 KHIVA_BACKEND_OPENCL = 4
             }
 
-            private int ordinal;
+            private static int ordinal;
 
-            public void SetBackend(int ordinal)
+            public static void SetBackend(int new_ordinal)
             {
-                this.ordinal = ordinal;
+                ordinal = new_ordinal;
             }
 
             /**
@@ -65,7 +65,7 @@ namespace KhivaCsharp
             * @return The ordinal of the Khiva Backend.
             */
 
-            public int GetKhivaOrdinal()
+            public static int GetKhivaOrdinal()
             {
                 return ordinal;
             }
@@ -94,39 +94,134 @@ namespace KhivaCsharp
             }
 
             [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void backend_info(IntPtr backendInfo);
+            private extern static void backend_info(ref StringBuilder backendInfo);
 
             [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void set_backend(int backend);
+            private extern static void set_backend(ref int backend);
 
             [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void set_device(int device);
+            private extern static void set_device(ref int device);
 
             [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static int get_backends();
+            private extern static void get_backends(ref int backend);
 
             [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static int get_device_id();
+            private extern static void get_device_id(ref int device_id);
 
             [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static int get_backend();
+            private extern static void get_backend(ref int backend);
 
             [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static int get_device_count();
+            private extern static void get_device_count(ref int device_count);
 
             [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void version(out IntPtr version);
+            static extern void version(ref StringBuilder version);
 
-            public static String Version()
+            /**
+             * Prints information from the current backend.
+             */
+            public static void PrintBackendInfo()
             {
-                IntPtr version_name = new IntPtr(40);
-                version(out version_name);
-                return version_name.ToString();
+                StringBuilder str = new StringBuilder(268);
+                backend_info(ref str);
+                Console.WriteLine(str.ToString());
             }
 
-            public static int GetBackend()
+            /**
+             * Gets information from the current backend.
+             *
+             * @return String with information from the active backend.
+             */
+            public static String GetBackendInfo()
             {
-                return get_backend();
+
+                StringBuilder str = new StringBuilder(268);
+                backend_info(ref str);
+                return str.ToString();
+            }
+
+            /**
+             * Sets the Khiva backend.
+             *
+             * @param khivaBE selected backend.
+             */
+            public static void SetKhivaBackend(Backend khivaBE)
+            {
+                int backend = (int)khivaBE;
+                set_backend(ref backend);
+            }
+
+
+
+            /**
+             * Sets the Khiva device.
+             *
+             * @param device Device selected.
+             */
+
+            public static void SetKhivaDevice(int device)
+            {
+                set_device(ref device);
+            }
+
+            /**
+             * Gets the available backends.
+             *
+             * @return The available backends.
+             */
+            public static int GetKhivaBackends()
+            {
+                int backends = 0;
+                get_backends(ref backends);
+                return backends;
+            }
+
+            /**
+             * Get the device id.
+             *
+             * @return The device id.
+             */
+            public static int GetKhivaDeviceID()
+            {
+                int device_id = 0;
+                get_device_id(ref device_id);
+                return device_id;
+            }
+
+            /**
+             * Gets the active backend.
+             *
+             * @return The active backend.
+             */
+            public static Backend GetKhivaBackend()
+            {
+                int backend = 0;
+                get_backend(ref backend);
+                return GetBackendFromOrdinal(backend);
+            }
+
+            /**
+             * Gets the devices count.
+             *
+             * @return The devices count.
+             */
+            public static int GetKhivaDeviceCount()
+            {
+                int device_count = 0;
+                get_device_count(ref device_count);
+                return device_count;
+            }
+
+            /**
+            * Gets the vesion of the library.
+            *
+            * @return A string with the khiva version.
+            */
+            public static String GetKhivaVersion()
+            {
+                StringBuilder version_name = new StringBuilder(40);
+                version(ref version_name);
+                return version_name.ToString();
             }
         }
     }

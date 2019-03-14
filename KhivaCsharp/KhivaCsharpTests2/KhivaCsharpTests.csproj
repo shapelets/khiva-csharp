@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{217BE3C6-E140-46FC-B093-9D30655B0F20}</ProjectGuid>
+    <ProjectGuid>{75CCEC3D-3B6C-4F59-BF4A-0054D82EEBF0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>KhivaCsharpTests</RootNamespace>
-    <AssemblyName>KhivaCsharpTests</AssemblyName>
+    <RootNamespace>KhivaCsharpTests2</RootNamespace>
+    <AssemblyName>KhivaCsharpTests2</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
