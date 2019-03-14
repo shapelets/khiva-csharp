@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Numerics;
 
 namespace khiva
 {
@@ -139,31 +140,7 @@ namespace khiva
                 this.reference = createArrayFromFloat(arr, dims);
             }
 
-            public Array(FloatComplex[] arr, long[] dims)
-            {
-                long[] adims = Array.dim4(dims);
-
-                int totalSize = 1;
-
-                for (int i = 0; i < adims.Length; i++)
-                {
-                    totalSize = (int)(totalSize * adims[i]);
-                }
-
-                if (arr == null)
-                {
-                    throw new Exception("Null elems object provided");
-                }
-
-                if (arr.Length > totalSize || arr.Length < totalSize)
-                {
-                    throw new Exception("Mismatching dims and array size");
-                }
-
-                this.reference = createArrayFromFloat(arr, dims);
-            }
-
-            public Array(DoubleComplex[] arr, long[] dims)
+            public Array(Complex[] arr, long[] dims)
             {
                 long[] adims = Array.dim4(dims);
 
