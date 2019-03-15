@@ -1,5 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using KhivaCsharp.library;
+﻿using khiva.library;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +10,11 @@ using System.Text.RegularExpressions;
 
 namespace khiva.library.Tests
 {
-    [TestClass()]
+    [TestFixture]
     public class LibraryTests
     {
 
-        [TestMethod]
+        [Test]
         public void PrintBackendInfoTest()
         {
             Console.WriteLine("test");
@@ -22,17 +22,18 @@ namespace khiva.library.Tests
             using (StringWriter writer = new StringWriter())
             {
                 Console.SetOut(writer);
-                library.Library.PrintBackendInfo();
+                Library.PrintBackendInfo();
                 string info = writer.ToString();
                 info_splitted = info.Split(' ');
             }
             StreamWriter standardOutput = new StreamWriter(Console.OpenStandardOutput());
             standardOutput.AutoFlush = true;
             Console.SetOut(standardOutput);
-            Assert.AreEqual("ArrayFire", info_splitted[0]);
+            Console.WriteLine("INFO: " + info_splitted[0]);
+            Assert.AreEqual("ArrayFir", info_splitted[0]);
         }
 
-        [TestMethod]
+        [Test]
         public void GetBackendInfoTest()
         {
             String backend_info = Library.GetBackendInfo();
@@ -40,7 +41,7 @@ namespace khiva.library.Tests
             Assert.AreEqual("ArrayFire", info_split[0]);
         }
 
-        [TestMethod]
+        [Test]
         public void SetKhivaBackendTest()
         {
             int backends = Library.GetKhivaBackends();
@@ -48,7 +49,7 @@ namespace khiva.library.Tests
             int opencl = backends & (int)Library.Backend.KHIVA_BACKEND_OPENCL;
             int cpu = backends & (int)Library.Backend.KHIVA_BACKEND_CPU;
 
-            if(cuda != 0)
+            if (cuda != 0)
             {
                 Library.SetKhivaBackend(Library.Backend.KHIVA_BACKEND_CUDA);
                 Assert.AreEqual(Library.Backend.KHIVA_BACKEND_CUDA, Library.GetKhivaBackend());
@@ -69,7 +70,7 @@ namespace khiva.library.Tests
 
 
 
-        [TestMethod]
+        [Test]
         public void GetDeviceIDTest()
         {
             int backends = Library.GetKhivaBackends();
@@ -108,7 +109,7 @@ namespace khiva.library.Tests
             };
         }
 
-        [TestMethod]
+        [Test]
         public void GetKhivaVersionTest()
         {
             Assert.AreEqual(GetKhivaVersionFromFile(), Library.GetKhivaVersion());
@@ -142,7 +143,7 @@ namespace khiva.library.Tests
 
             MatchCollection matches = Regex.Matches(data, "([0-9]+\\.[0-9]+\\.[0-9]+)");
 
-            if(matches.Count != 0)
+            if (matches.Count != 0)
             {
                 version = matches[0].Groups[1].Value;
             }
