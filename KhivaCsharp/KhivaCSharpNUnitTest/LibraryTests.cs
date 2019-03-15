@@ -29,7 +29,6 @@ namespace khiva.library.Tests
             StreamWriter standardOutput = new StreamWriter(Console.OpenStandardOutput());
             standardOutput.AutoFlush = true;
             Console.SetOut(standardOutput);
-            Console.WriteLine("INFO: " + info_splitted[0]);
             Assert.AreEqual("ArrayFire", info_splitted[0]);
         }
 
