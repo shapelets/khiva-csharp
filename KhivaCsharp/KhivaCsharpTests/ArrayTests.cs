@@ -41,15 +41,16 @@ namespace khiva.array.Tests
         }
 
         [TestMethod()]
-        public void TestDoubleOkDims()
+        public unsafe void TestDoubleOkDims()
         {
             double[] tss = { 1, 2 };
             long[] dims = { 1, 2 };
             try
             {
                 Array arr = new Array(tss, dims);
-                arr.GetData();
-                Assert.IsNotNull(arr);
+                void* data = arr.GetData();
+                IntPtr dataPtr = new IntPtr(data); // Search how to get double from IntPtr
+                Assert.AreEqual(tss, dataPtr);
             }
             catch (Exception e)
             {
