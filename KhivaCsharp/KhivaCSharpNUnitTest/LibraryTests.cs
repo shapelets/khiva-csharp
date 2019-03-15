@@ -1,5 +1,10 @@
+<<<<<<< HEAD:KhivaCsharp/KhivaCSharpNUnitTest/LibraryTests.cs
 ﻿using khiva.library;
 using NUnit.Framework;
+=======
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using khiva.library;
+>>>>>>> 3ce78c74b0a5e753fdf4e6d184365d3a939937ee:KhivaCsharp/KhivaCsharpTests2/LibraryTests.cs
 using System;
 using System.Collections.Generic;
 using System.Linq;
