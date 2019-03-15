@@ -6,8 +6,8 @@
     <ProjectGuid>{75CCEC3D-3B6C-4F59-BF4A-0054D82EEBF0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>KhivaCsharpTests2</RootNamespace>
-    <AssemblyName>KhivaCsharpTests2</AssemblyName>
+    <RootNamespace>KhivaCsharpTests</RootNamespace>
+    <AssemblyName>KhivaCsharpTests</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -60,6 +60,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="ArrayTests.cs" />
     <Compile Include="LibraryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

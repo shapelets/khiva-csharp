@@ -14,16 +14,16 @@ namespace khiva
     {
         public class Library
         {
-            #if (__unix__)
-                                            const String khivaPath = "/usr/local/lib/libkhiva_c.so";
-            #elif (__APPLE__)
-                                             const String khivaPath = "/usr/local/lib/libkhiva_c.dylib";
-            #else
-                        const String khivaPath = "C:\\Program Files\\Khiva\\v0\\lib\\khiva_c.dll";
-            #endif
+#if (__unix__)
+                        public const String khivaPath = "/usr/local/lib/libkhiva_c.so";
+#elif (__APPLE__)
+                        public const String khivaPath = "/usr/local/lib/libkhiva_c.dylib";
+#else
+            public const String khivaPath = "C:\\Program Files\\Khiva\\v0\\lib\\khiva_c.dll";
+#endif
             public Library()
             {
-               
+
             }
 
 

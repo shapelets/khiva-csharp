@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using KhivaCsharp.library;
+using khiva.library;
 using System;
 using System.Collections.Generic;
 using System.Linq;
