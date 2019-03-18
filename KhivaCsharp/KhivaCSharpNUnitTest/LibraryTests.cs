@@ -17,7 +17,6 @@ namespace khiva.library.Tests
         [Test]
         public void PrintBackendInfoTest()
         {
-            Console.WriteLine("test");
             string[] info_splitted;
             using (StringWriter writer = new StringWriter())
             {
