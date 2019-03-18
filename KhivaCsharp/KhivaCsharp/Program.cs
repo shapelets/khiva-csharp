@@ -16,7 +16,7 @@ namespace khiva
             string[] info_splitted;
             using(StringWriter writer = new StringWriter()){
                 Console.SetOut(writer);
-                library.Library.PrintBackendInfo();
+                khiva.library.Library.PrintBackendInfo();
                 string info = writer.ToString();
                 info_splitted = info.Split(' ');
             }
@@ -25,10 +25,10 @@ namespace khiva
             Console.SetOut(standardOutput);
             Console.WriteLine(info_splitted[0]);
 
-            Console.WriteLine(library.Library.GetKhivaBackends() & (int)library.Library.Backend.KHIVA_BACKEND_OPENCL);
+            Console.WriteLine(khiva.library.Library.GetKhivaBackends() & (int)khiva.library.Library.Backend.KHIVA_BACKEND_OPENCL);
 
-            Console.WriteLine("Backend: " + library.Library.GetKhivaBackend());
-            Console.WriteLine(library.Library.GetKhivaVersion());
+            Console.WriteLine("Backend: " + khiva.library.Library.GetKhivaBackend());
+            Console.WriteLine(khiva.library.Library.GetKhivaVersion());
 
             String version = "";
             String filePath;

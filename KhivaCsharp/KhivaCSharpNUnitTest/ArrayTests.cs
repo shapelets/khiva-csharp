@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
 using khiva.array;
 using System;
 using System.Collections.Generic;
@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace khiva.array.Tests
 {
-    [TestClass()]
+    [TestFixture]
     public class ArrayTests
     {
-        [TestMethod()]
+        [Test]
         public void TestDoubleNull()
         {
             double[] tss = null;
@@ -25,7 +25,7 @@ namespace khiva.array.Tests
             }
         }
 
-        [TestMethod()]
+        [Test]
         public void TestDoubleMismatchingDims()
         {
             double[] tss = {1, 2};
@@ -40,7 +40,7 @@ namespace khiva.array.Tests
             }
         }
 
-        [TestMethod()]
+        [Test]
         public unsafe void TestDoubleOkDims()
         {
             double[] tss = { 1, 2 };
