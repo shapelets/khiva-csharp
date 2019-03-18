@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Runtime.InteropServices;
+using System.Numerics;
 
 namespace khiva
 {
@@ -12,6 +14,11 @@ namespace khiva
     {
         static void Main(String[] args)
         {
+            uint[] tss = { 1, 2 };
+            long[] dims = { 1, 2 };
+            array.Array arr = new array.Array(tss, dims);
+            array.Array arrSum = arr + arr;
+            arrSum.Display();
             Console.WriteLine("test");
             string[] info_splitted;
             using(StringWriter writer = new StringWriter()){

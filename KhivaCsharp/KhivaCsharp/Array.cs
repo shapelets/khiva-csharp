@@ -100,7 +100,7 @@ namespace khiva
                         throw new Exception("Mismatching dims and array size");
                     }
 
-                    create_array(ref ptrArr, ref ndims, dims, ref reference, ref type);
+                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                 }
                 finally
                 {
@@ -138,7 +138,7 @@ namespace khiva
                         throw new Exception("Mismatching dims and array size");
                     }
 
-                    create_array(ref ptrArr, ref ndims, dims, ref reference, ref type);
+                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                 }
                 finally
                 {
@@ -176,7 +176,7 @@ namespace khiva
                         throw new Exception("Mismatching dims and array size");
                     }
 
-                    create_array(ref ptrArr, ref ndims, dims, ref reference, ref type);
+                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                 }
                 finally
                 {
@@ -214,7 +214,7 @@ namespace khiva
                         throw new Exception("Mismatching dims and array size");
                     }
 
-                    create_array(ref ptrArr, ref ndims, dims, ref reference, ref type);
+                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                 }
                 finally
                 {
@@ -225,11 +225,16 @@ namespace khiva
             public Array(Complex[] arr, long[] dims, bool doublePrecision)
             {
                 int type;
-                double[] complexArrDouble = new double[arr.Length * 2];
-                float[] complexArrFloat = new float[arr.Length * 2];
+                if (arr == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
+                double[] complexArrDouble = null;
+                float[] complexArrFloat = null;
 
                 if (doublePrecision)
                 {
+                    complexArrDouble = new double[arr.Length * 2];
                     type = (int)Dtype.c64;
                     for (int i = 0; i < arr.Length; i++)
                     {
@@ -239,6 +244,7 @@ namespace khiva
                 }
                 else
                 {
+                    complexArrFloat = new float[arr.Length * 2];
                     type = (int)Dtype.c32;
                     for (int i = 0; i < arr.Length; i++)
                     {
@@ -271,17 +277,12 @@ namespace khiva
                         totalSize = (int)(totalSize * adims[i]);
                     }
 
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
                     if (arr.Length > totalSize || arr.Length < totalSize)
                     {
                         throw new Exception("Mismatching dims and array size");
                     }
 
-                    create_array(ref ptrArr, ref ndims, dims, ref reference, ref type);
+                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                 }
                 finally
                 {
@@ -326,7 +327,7 @@ namespace khiva
                         throw new Exception("Mismatching dims and array size");
                     }
 
-                    create_array(ref ptrArr, ref ndims, dims, ref reference, ref type);
+                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                 }
                 finally
                 {
@@ -364,7 +365,7 @@ namespace khiva
                         throw new Exception("Mismatching dims and array size");
                     }
 
-                    create_array(ref ptrArr, ref ndims, dims, ref reference, ref type);
+                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                 }
                 finally
                 {
@@ -402,7 +403,7 @@ namespace khiva
                         throw new Exception("Mismatching dims and array size");
                     }
 
-                    create_array(ref ptrArr, ref ndims, dims, ref reference, ref type);
+                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                 }
                 finally
                 {
@@ -440,7 +441,7 @@ namespace khiva
                         throw new Exception("Mismatching dims and array size");
                     }
 
-                    create_array(ref ptrArr, ref ndims, dims, ref reference, ref type);
+                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                 }
                 finally
                 {
@@ -478,7 +479,7 @@ namespace khiva
                         throw new Exception("Mismatching dims and array size");
                     }
 
-                    create_array(ref ptrArr, ref ndims, dims, ref reference, ref type);
+                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                 }
                 finally
                 {
@@ -516,7 +517,7 @@ namespace khiva
                         throw new Exception("Mismatching dims and array size");
                     }
 
-                    create_array(ref ptrArr, ref ndims, dims, ref reference, ref type);
+                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                 }
                 finally
                 {
@@ -544,7 +545,7 @@ namespace khiva
              * @param type Data type.
              */
             [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void create_array(ref IntPtr arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+            private extern static void create_array(IntPtr arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
 
             /**
              * @brief Retrieves the data from the device to the host.
@@ -553,7 +554,7 @@ namespace khiva
              * @param data Pointer to previously allocated memory in the host.
              */
             [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void get_data(ref IntPtr array, ref IntPtr data);
+            private extern static void get_data(ref IntPtr array, IntPtr data);
 
             /**
              * @brief Gets the Array dimensions.
@@ -562,7 +563,7 @@ namespace khiva
              * @param dims The dimensions.
              */
             [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void get_dims(ref IntPtr array, ref long[] dims);
+            private extern static void get_dims(ref IntPtr array, ref long dims);
 
 
             /**
@@ -861,9 +862,9 @@ namespace khiva
             [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
             private extern static void khiva_as(ref IntPtr array, ref int type, ref IntPtr result);
 
-            public IntPtr GetReference()
+            public ref IntPtr GetReference()
             {
-                return reference;
+                return ref reference;
             }
 
             private static long[] Dim4(long[] dims)
@@ -893,17 +894,141 @@ namespace khiva
              * @param <Any> The data type to be returned.
              * @return The data to an array of its type.
              */
-            public unsafe void* GetData()
+            public T[] GetData<T>()
             {
-                IntPtr data = new IntPtr();
-                get_data(ref reference, ref data);
-                return data.ToPointer();
+                if (CheckType(typeof(T)))
+                {
+                    long[] dims = GetDims();
+                    if (typeof(T) == typeof(Complex))
+                    {
+                        int dimsMultiplied = 2;
+
+                        for (int i = 0; i < 4; i++)
+                        {
+                            dimsMultiplied *= (int)dims[i];
+                        }
+
+                        if(GetArrayType() == Dtype.c32)
+                        {
+                            float[] data = new float[dimsMultiplied];
+                            T[] complexData = new T[dimsMultiplied / 2];
+                            GCHandle gchArr;
+                            try
+                            {
+                                gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
+                                IntPtr dataPtr = gchArr.AddrOfPinnedObject();
+                                get_data(ref reference, dataPtr);
+                                for (int i = 0; i < dimsMultiplied / 2; i++)
+                                {
+                                    complexData[i] = (T)Convert.ChangeType(new Complex(data[i], data[i + dimsMultiplied / 2]), typeof(T));
+                                }
+                            }
+                            finally
+                            {
+                                GCHandle.Alloc(data, GCHandleType.Weak);
+                            }
+                            return complexData;
+                        }
+                        else
+                        {
+                            double[] data = new double[dimsMultiplied];
+                            T[] complexData = new T[dimsMultiplied / 2];
+                            GCHandle gchArr;
+                            try
+                            {
+                                gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
+                                IntPtr dataPtr = gchArr.AddrOfPinnedObject();
+                                get_data(ref reference, dataPtr);
+                                for (int i = 0; i < dimsMultiplied / 2; i++)
+                                {
+                                    complexData[i] = (T)Convert.ChangeType(new Complex(data[i], data[i + dimsMultiplied / 2]), typeof(T));
+                                }
+                            }
+                            finally
+                            {
+                                GCHandle.Alloc(data, GCHandleType.Weak);
+                            }
+                            return complexData;
+                        }
+
+                        
+                    }
+                    else
+                    {
+                        int dimsMultiplied = 1;
+
+                        for (int i = 0; i < 4; i++)
+                        {
+                            dimsMultiplied *= (int)dims[i];
+                        }
+
+                        T[] data = new T[dimsMultiplied];
+                        GCHandle gchArr;
+                        try
+                        {
+                            gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
+                            IntPtr dataPtr = gchArr.AddrOfPinnedObject();
+                            get_data(ref reference, dataPtr);
+                        }
+                        finally
+                        {
+                            GCHandle.Alloc(data, GCHandleType.Weak);
+                        }
+                        return data;
+                    }
+                    
+                }
+                else
+                {
+                    throw new Exception("Type does not match");
+                }
+            }
+
+            private bool CheckType(Type type)
+            {
+                switch (GetArrayType()){
+                    case Dtype.b8:
+                        return type == typeof(bool);
+                    case Dtype.c32:
+                        return type == typeof(Complex);
+                    case Dtype.c64:
+                        return type == typeof(Complex);
+                    case Dtype.f32:
+                        return type == typeof(float);
+                    case Dtype.f64:
+                        return type == typeof(double);
+                    case Dtype.s16:
+                        return type == typeof(short);
+                    case Dtype.s32:
+                        return type == typeof(int);
+                    case Dtype.s64:
+                        return type == typeof(long);
+                    case Dtype.u16:
+                        return type == typeof(ushort);
+                    case Dtype.u32:
+                        return type == typeof(uint);
+                    case Dtype.u64:
+                        return type == typeof(ulong);
+                    case Dtype.u8:
+                        return type == typeof(byte);
+                    default:
+                        return false;
+                }
             }
 
             public long[] GetDims()
             {
+                GCHandle gchArr;
                 long[] dims = new long[4];
-                get_dims(ref reference, ref dims);
+                try
+                {
+                    gchArr = GCHandle.Alloc(dims, GCHandleType.Pinned);
+                    get_dims(ref reference, ref dims[0]);
+                }
+                finally
+                {
+                    GCHandle.Alloc(dims, GCHandleType.Weak);
+                }
                 return dims;
             }
 
@@ -917,42 +1042,110 @@ namespace khiva
                 delete_array(ref reference);
             }
 
-            public int GetArrayType()
+            public Dtype GetArrayType()
             {
                 int type = 0;
                 get_type(ref reference, ref type);
-                return type;
+                Enum.TryParse<Dtype>(type.ToString(), out Dtype dtype);
+                return dtype;
             }
 
-            public Array KhivaAdd(Array rhs)
+            public static Array operator +(Array lhs, Array rhs)
             {
                 IntPtr result = new IntPtr();
-                IntPtr rhsReference = rhs.GetReference();
-                khiva_add(ref reference, ref rhsReference, ref result);
+                khiva_add(ref lhs.reference, ref rhs.reference, ref result);
+                return new Array(result);
+            }
+
+            public static Array operator *(Array lhs, Array rhs)
+            {
+                IntPtr result = new IntPtr();
+                khiva_mul(ref lhs.reference, ref rhs.reference, ref result);
                 return (new Array(result));
             }
 
-            public Array KhivaMul(Array rhs)
+            public static Array operator -(Array lhs, Array rhs)
             {
                 IntPtr result = new IntPtr();
-                IntPtr rhsReference = rhs.GetReference();
-                khiva_mul(ref reference, ref rhsReference, ref result);
+                khiva_sub(ref lhs.reference, ref rhs.reference, ref result);
                 return (new Array(result));
             }
 
-            public Array KhivaSub(Array rhs)
+            public static Array operator /(Array lhs, Array rhs)
             {
                 IntPtr result = new IntPtr();
-                IntPtr rhsReference = rhs.GetReference();
-                khiva_sub(ref reference, ref rhsReference, ref result);
+                khiva_div(ref lhs.reference, ref rhs.reference, ref result);
                 return (new Array(result));
             }
 
-            public Array KhivaDiv(Array rhs)
+            public static Array operator %(Array lhs, Array rhs)
             {
                 IntPtr result = new IntPtr();
-                IntPtr rhsReference = rhs.GetReference();
-                khiva_sub(ref reference, ref rhsReference, ref result);
+                khiva_mod(ref lhs.reference, ref rhs.reference, ref result);
+                return (new Array(result));
+            }
+
+            public Array Pow(Array rhs)
+            {
+                IntPtr result = new IntPtr();
+                khiva_pow(ref reference, ref rhs.reference, ref result);
+                return (new Array(result));
+            }
+
+            public static Array operator &(Array lhs, Array rhs)
+            {
+                IntPtr result = new IntPtr();
+                khiva_bitand(ref lhs.reference, ref rhs.reference, ref result);
+                return (new Array(result));
+            }
+
+            public static Array operator |(Array lhs, Array rhs)
+            {
+                IntPtr result = new IntPtr();
+                khiva_bitor(ref lhs.reference, ref rhs.reference, ref result);
+                return (new Array(result));
+            }
+
+            public static Array operator ^(Array lhs, Array rhs)
+            {
+                IntPtr result = new IntPtr();
+                khiva_bitxor(ref lhs.reference, ref rhs.reference, ref result);
+                return (new Array(result));
+            }
+
+            public static Array operator <<(Array lhs, int shift)
+            {
+                IntPtr result = new IntPtr();
+                khiva_bitshiftl(ref lhs.reference, ref shift, ref result);
+                return (new Array(result));
+            }
+
+            public static Array operator >>(Array lhs, int shift)
+            {
+                IntPtr result = new IntPtr();
+                khiva_bitshiftr(ref lhs.reference, ref shift, ref result);
+                return (new Array(result));
+            }
+
+            public static Array operator -(Array rhs)
+            {
+                IntPtr result = new IntPtr();
+                long[] dims = rhs.GetDims();
+                int dimMult = 1;
+                for (int i = 0; i < 4; i++)
+                {
+                    dimMult += (int)dims[i];
+                }
+                int[] tss = new int[dimMult]; // Pensar cómo arreglar esto
+                Array zeros = new Array(tss, dims);
+                khiva_sub(ref zeros.reference, ref rhs.reference, ref result);
+                return (new Array(result));
+            }
+
+            public static Array operator !(Array lhs)
+            {
+                IntPtr result = new IntPtr();
+                khiva_not(ref lhs.reference, ref result);
                 return (new Array(result));
             }
 
