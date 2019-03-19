@@ -14,11 +14,12 @@ namespace khiva
     {
         static void Main(String[] args)
         {
-            uint[] tss = { 1, 2 };
-            long[] dims = { 1, 2 };
-            array.Array arr = new array.Array(tss, dims);
-            array.Array arrSum = arr + arr;
-            arrSum.Display();
+
+            Complex[,] tss = { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(1, 2), new Complex(3, 4) } };
+            array.Array arr = new array.Array(tss, true);
+            //array.Array arrTrans = arr.Transpose(true);
+            arr.Display();
+            //arrTrans.Display();
             Console.WriteLine("test");
             string[] info_splitted;
             using(StringWriter writer = new StringWriter()){
