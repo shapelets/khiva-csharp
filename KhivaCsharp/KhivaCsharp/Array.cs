@@ -16,7 +16,6 @@ namespace khiva
         public class Array
         {
             private IntPtr reference;
-            private const String khivaPath = library.Library.khivaPath;
 
             public enum Dtype
             {
@@ -69,7 +68,7 @@ namespace khiva
                  */
                 u16
             }
-
+/*
             public Array(double[] arr)
             {
                 int type = (int)Dtype.f64;
@@ -94,10 +93,14 @@ namespace khiva
                     GCHandle.Alloc(arr, GCHandleType.Weak);
                 }
             }
-
+            */
             public Array(float[] arr)
             {
                 int type = (int)Dtype.f32;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.Length, 1, 1, 1 };
+                Interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+                /*int type = (int)Dtype.f32;
 
                 GCHandle gchArr = default(GCHandle);
 
@@ -118,12 +121,16 @@ namespace khiva
                 finally
                 {
                     GCHandle.Alloc(arr, GCHandleType.Weak);
-                }
+                }*/
             }
 
             public Array(int[] arr)
             {
                 int type = (int)Dtype.s32;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.Length, 1, 1, 1 };
+                Interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+                /*int type = (int)Dtype.s32;
 
                 GCHandle gchArr = default(GCHandle);
 
@@ -144,9 +151,9 @@ namespace khiva
                 finally
                 {
                     GCHandle.Alloc(arr, GCHandleType.Weak);
-                }
+                }*/
             }
-
+            /*
             public Array(uint[] arr)
             {
                 int type = (int)Dtype.u32;
@@ -189,8 +196,8 @@ namespace khiva
                     type = (int)Dtype.c64;
                     for (int i = 0; i < arr.Length; i++)
                     {
-                        complexArrDouble[i] = arr[i].Real;
-                        complexArrDouble[i + 1] = arr[i].Imaginary;
+                        complexArrDouble[2*i] = arr[i].Real;
+                        complexArrDouble[2*i + 1] = arr[i].Imaginary;
                     }
                 }
                 else
@@ -199,8 +206,8 @@ namespace khiva
                     type = (int)Dtype.c32;
                     for (int i = 0; i < arr.Length; i++)
                     {
-                        complexArrFloat[i] = (float)arr[i].Real;
-                        complexArrFloat[i + 1] = (float)arr[i].Imaginary;
+                        complexArrFloat[2*i] = (float)arr[i].Real;
+                        complexArrFloat[2*i + 1] = (float)arr[i].Imaginary;
                     }
                 }
 
@@ -408,7 +415,7 @@ namespace khiva
                         throw new Exception("Null elems object provided");
                     }
                     uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(0), arr.GetLength(1), 1, 1 };
+                    long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
                     create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                 }
                 finally
@@ -434,19 +441,22 @@ namespace khiva
                     }
 
                     uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(0), arr.GetLength(1), 1, 1 };
+                    long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
                     create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                 }
                 finally
                 {
                     GCHandle.Alloc(arr, GCHandleType.Weak);
                 }
-            }
+            }*/
 
             public Array(int[,] arr)
             {
                 int type = (int)Dtype.s32;
-
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
+                Interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+                /*
                 GCHandle gchArr = default(GCHandle);
 
                 try
@@ -460,14 +470,15 @@ namespace khiva
                     }
 
                     uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(0), arr.GetLength(1), 1, 1 };
+                    long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
                     create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                 }
                 finally
                 {
                     GCHandle.Alloc(arr, GCHandleType.Weak);
-                }
+                }*/
             }
+            /*
 
             public Array(uint[,] arr)
             {
@@ -486,7 +497,7 @@ namespace khiva
                     }
 
                     uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(0), arr.GetLength(1), 1, 1 };
+                    long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
                     create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                 }
                 finally
@@ -507,14 +518,15 @@ namespace khiva
 
                 if (doublePrecision)
                 {
-                    complexArrDouble = new double[arr.Length * 2];
+                    complexArrDouble = new double[arr.Length*2];
                     type = (int)Dtype.c64;
+                    
                     for (int i = 0; i < arr.GetLength(0); i++)
                     {
                         for (int j = 0; j < arr.GetLength(1); j++)
                         {
-                            complexArrDouble[i * arr.GetLength(0) + j] = arr[i, j].Real;
-                            complexArrDouble[i * arr.GetLength(0) + j + 1] = arr[i, j].Imaginary;
+                            complexArrDouble[2 * i * arr.GetLength(1) + 2 * j] = arr[i, j].Real;
+                            complexArrDouble[2 * i * arr.GetLength(1) + 2 * j + 1] = arr[i, j].Imaginary;
                         }
                     }
                 }
@@ -525,8 +537,8 @@ namespace khiva
                     for (int i = 0; i < arr.GetLength(0); i++)
                     {
                         for (int j = 0; j < arr.GetLength(1); j++) {
-                            complexArrFloat[i * arr.GetLength(0) + j] = (float)arr[i, j].Real;
-                            complexArrFloat[i * arr.GetLength(0) + j + 1] = (float)arr[i, j].Imaginary;
+                            complexArrFloat[2 * i * arr.GetLength(1) + 2*j] = (float)arr[i, j].Real;
+                            complexArrFloat[2 * i * arr.GetLength(1) + 2*j + 1] = (float)arr[i, j].Imaginary;
                         }
                     }
                 }
@@ -547,7 +559,7 @@ namespace khiva
                     IntPtr ptrArr = gchArr.AddrOfPinnedObject();
 
                     uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(0), arr.GetLength(1), 1, 1 };
+                    long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
                     create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                 }
                 finally
@@ -580,7 +592,7 @@ namespace khiva
                     }
 
                     uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(0), arr.GetLength(1), 1, 1 };
+                    long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
                     create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                 }
                 finally
@@ -606,7 +618,7 @@ namespace khiva
                     }
 
                     uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(0), arr.GetLength(1), 1, 1 };
+                    long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
                     create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                 }
                 finally
@@ -632,7 +644,7 @@ namespace khiva
                     }
 
                     uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(0), arr.GetLength(1), 1, 1 };
+                    long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
                     create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                 }
                 finally
@@ -658,7 +670,7 @@ namespace khiva
                     }
 
                     uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(0), arr.GetLength(1), 1, 1 };
+                    long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
                     create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                 }
                 finally
@@ -684,7 +696,7 @@ namespace khiva
                     }
 
                     uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(0), arr.GetLength(1), 1, 1 };
+                    long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
                     create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                 }
                 finally
@@ -710,7 +722,7 @@ namespace khiva
                     }
 
                     uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(0), arr.GetLength(1), 1, 1 };
+                    long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
                     create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                 }
                 finally
@@ -735,7 +747,7 @@ namespace khiva
                         throw new Exception("Null elems object provided");
                     }
                     uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(0), arr.GetLength(1), arr.GetLength(2), 1 };
+                    long[] dims = {  arr.GetLength(1), arr.GetLength(2), arr.GetLength(0), 1 };
                     create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                 }
                 finally
@@ -761,7 +773,7 @@ namespace khiva
                     }
 
                     uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(0), arr.GetLength(1), arr.GetLength(2), 1 };
+                    long[] dims = {  arr.GetLength(1), arr.GetLength(2), arr.GetLength(0), 1 };
                     create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                 }
                 finally
@@ -769,9 +781,14 @@ namespace khiva
                     GCHandle.Alloc(arr, GCHandleType.Weak);
                 }
             }
-
+            */
             public Array(int[,,] arr)
             {
+                int type = (int)Dtype.s32;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
+                Interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+                /*
                 int type = (int)Dtype.s32;
 
                 GCHandle gchArr = default(GCHandle);
@@ -787,15 +804,15 @@ namespace khiva
                     }
 
                     uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(0), arr.GetLength(1), arr.GetLength(2), 1 };
+                    long[] dims = {  arr.GetLength(1), arr.GetLength(2), arr.GetLength(0), 1 };
                     create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                 }
                 finally
                 {
                     GCHandle.Alloc(arr, GCHandleType.Weak);
-                }
+                }*/
             }
-
+            /*
             public Array(uint[,,] arr)
             {
                 int type = (int)Dtype.u32;
@@ -813,7 +830,7 @@ namespace khiva
                     }
 
                     uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(0), arr.GetLength(1), arr.GetLength(2), 1 };
+                    long[] dims = {  arr.GetLength(1), arr.GetLength(2), arr.GetLength(0), 1 };
                     create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                 }
                 finally
@@ -842,8 +859,19 @@ namespace khiva
                         {
                             for (int k = 0; k < arr.GetLength(2); k++)
                             {
-                                complexArrDouble[i * arr.GetLength(0) + j * arr.GetLength(1) + k] = arr[i, j, k].Real;
-                                complexArrDouble[i * arr.GetLength(0) + j * arr.GetLength(1) + k + 1] = arr[i, j, k].Imaginary;
+                                complexArrDouble[2*i * (arr.GetLength(1) + arr.GetLength(2)) + 2*j * arr.GetLength(2) + 2*k] = arr[i, j, k].Real;
+                                complexArrDouble[2*i * (arr.GetLength(1) + arr.GetLength(2)) + 2*j * arr.GetLength(2) + 2*k + 1] = arr[i, j, k].Imaginary;  
+                            }
+                        }
+                    }
+                    for (int i = 0; i < arr.GetLength(0); i++)
+                    {
+                        for (int j = 0; j < arr.GetLength(1); j++)
+                        {
+                            for (int k = 0; k < arr.GetLength(2); k++)
+                            {
+                                Console.WriteLine("(" + (complexArrDouble[2 * i * (arr.GetLength(1) + arr.GetLength(2)) + 2 * j * arr.GetLength(2) + 2 * k]) + "," +
+                                (complexArrDouble[2 * i * (arr.GetLength(1) + arr.GetLength(2)) + 2 * j * arr.GetLength(2) + 2 * k + 1]) + ")");
                             }
                         }
                     }
@@ -858,8 +886,8 @@ namespace khiva
                         {
                             for (int k = 0; k < arr.GetLength(2); k++)
                             {
-                                complexArrFloat[i * arr.GetLength(0) + j * arr.GetLength(1) + k] = (float)arr[i, j, k].Real;
-                                complexArrFloat[i * arr.GetLength(0) + j * arr.GetLength(1) + k + 1] = (float)arr[i, j, k].Imaginary;
+                                complexArrFloat[2 * i * (arr.GetLength(1) + arr.GetLength(2)) + 2 * j * arr.GetLength(2) + 2 * k] = (float)arr[i, j, k].Real;
+                                complexArrFloat[2 * i * (arr.GetLength(1) + arr.GetLength(2)) + 2 * j * arr.GetLength(2) + 2 * k + 1] = (float)arr[i, j, k].Imaginary;
                             }
                         }
                     }
@@ -881,7 +909,7 @@ namespace khiva
                     IntPtr ptrArr = gchArr.AddrOfPinnedObject();
 
                     uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(0), arr.GetLength(1), arr.GetLength(2), 1 };
+                    long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
                     create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                 }
                 finally
@@ -914,7 +942,7 @@ namespace khiva
                     }
 
                     uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(0), arr.GetLength(1), arr.GetLength(2), 1 };
+                    long[] dims = {  arr.GetLength(1), arr.GetLength(2), arr.GetLength(0), 1 };
                     create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                 }
                 finally
@@ -940,7 +968,7 @@ namespace khiva
                     }
 
                     uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(0), arr.GetLength(1), arr.GetLength(2), 1 };
+                    long[] dims = {  arr.GetLength(1), arr.GetLength(2), arr.GetLength(0), 1 };
                     create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                 }
                 finally
@@ -966,7 +994,7 @@ namespace khiva
                     }
 
                     uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(0), arr.GetLength(1), arr.GetLength(2), 1 };
+                    long[] dims = {  arr.GetLength(1), arr.GetLength(2), arr.GetLength(0), 1 };
                     create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                 }
                 finally
@@ -992,7 +1020,7 @@ namespace khiva
                     }
 
                     uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(0), arr.GetLength(1), arr.GetLength(2), 1 };
+                    long[] dims = {  arr.GetLength(1), arr.GetLength(2), arr.GetLength(0), 1 };
                     create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                 }
                 finally
@@ -1018,7 +1046,7 @@ namespace khiva
                     }
 
                     uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(0), arr.GetLength(1), arr.GetLength(2), 1 };
+                    long[] dims = {  arr.GetLength(1), arr.GetLength(2), arr.GetLength(0), 1 };
                     create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                 }
                 finally
@@ -1044,7 +1072,7 @@ namespace khiva
                     }
 
                     uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(0), arr.GetLength(1), arr.GetLength(2), 1 };
+                    long[] dims = {  arr.GetLength(1), arr.GetLength(2), arr.GetLength(0), 1 };
                     create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                 }
                 finally
@@ -1103,33 +1131,38 @@ namespace khiva
                     GCHandle.Alloc(arr, GCHandleType.Weak);
                 }
             }
-
+            */
             public Array(int[,,,] arr)
             {
                 int type = (int)Dtype.s32;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
+                Interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+                /*
+                    int type = (int)Dtype.s32;
 
-                GCHandle gchArr = default(GCHandle);
+                    GCHandle gchArr = default(GCHandle);
 
-                try
-                {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
+                    try
                     {
-                        throw new Exception("Null elems object provided");
+                        gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
+                        IntPtr ptrArr = gchArr.AddrOfPinnedObject();
+
+                        if (arr == null)
+                        {
+                            throw new Exception("Null elems object provided");
+                        }
+
+                        uint ndims = (uint)arr.Rank;
+                        long[] dims = { arr.GetLength(0), arr.GetLength(1), arr.GetLength(2), arr.GetLength(3) };
+                        create_array(ptrArr, ref ndims, dims, ref reference, ref type);
                     }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(0), arr.GetLength(1), arr.GetLength(2), arr.GetLength(3) };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
-                }
+                    finally
+                    {
+                        GCHandle.Alloc(arr, GCHandleType.Weak);
+                    }*/
             }
-
+            /*
             public Array(uint[,,,] arr)
             {
                 int type = (int)Dtype.u32;
@@ -1178,8 +1211,8 @@ namespace khiva
                             {
                                 for (int z = 0; z < arr.GetLength(3); z++)
                                 {
-                                    complexArrDouble[i * arr.GetLength(0) + j * arr.GetLength(1) + k * arr.GetLength(2) + z] = arr[i, j, k, z].Real;
-                                    complexArrDouble[i * arr.GetLength(0) + j * arr.GetLength(1) + k * arr.GetLength(2) + z + 1] = arr[i, j, k, z].Imaginary;
+                                    complexArrDouble[2*i * arr.GetLength(0) + 2*j * arr.GetLength(1) + 2*k * arr.GetLength(2) + 2*z] = arr[i, j, k, z].Real;
+                                    complexArrDouble[2*i * arr.GetLength(0) + 2*j * arr.GetLength(1) + 2*k * arr.GetLength(2) + 2*z + 1] = arr[i, j, k, z].Imaginary;
                                 }
                             }
                         }
@@ -1197,8 +1230,8 @@ namespace khiva
                             {
                                 for (int z = 0; z < arr.GetLength(3); z++)
                                 {
-                                    complexArrFloat[i * arr.GetLength(0) + j * arr.GetLength(1) + k * arr.GetLength(2) + z] = (float)arr[i, j, k, z].Real;
-                                    complexArrFloat[i * arr.GetLength(0) + j * arr.GetLength(1) + k * arr.GetLength(2) + z + 1] = (float)arr[i, j, k, z].Imaginary;
+                                    complexArrFloat[2*(i * arr.GetLength(0) + j * arr.GetLength(1) + k * arr.GetLength(2) + z)] = (float)arr[i, j, k, z].Real;
+                                    complexArrFloat[2*(i * arr.GetLength(0) + j * arr.GetLength(1) + k * arr.GetLength(2) + z + 1)] = (float)arr[i, j, k, z].Imaginary;
                                 }
                             }
                         }
@@ -1391,7 +1424,7 @@ namespace khiva
                 {
                     GCHandle.Alloc(arr, GCHandleType.Weak);
                 }
-            }
+            }*/
 
             public Array(IntPtr reference)
             {
@@ -1402,333 +1435,6 @@ namespace khiva
             {
                 this.reference = other.GetReference();
             }
-
-            /**
-             * @brief Creates an Array object.
-             *
-             * @param data Data used in order to create the array.
-             * @param ndims Number of dimensions of the data.
-             * @param dims Cardinality of dimensions of the data.
-             * @param result Array created.
-             * @param type Data type.
-             */
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void create_array(IntPtr arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
-
-            /**
-             * @brief Retrieves the data from the device to the host.
-             *
-             * @param array The Array that contains the data to be retrieved.
-             * @param data Pointer to previously allocated memory in the host.
-             */
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void get_data(ref IntPtr array, IntPtr data);
-
-            /**
-             * @brief Gets the Array dimensions.
-             *
-             * @param array Array from which to get the dimensions.
-             * @param dims The dimensions.
-             */
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void get_dims(ref IntPtr array, ref long dims);
-
-
-            /**
-             * @brief Displays an Array.
-             *
-             * @param array The array to display.
-             */
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void display(ref IntPtr array);
-
-            /**
-             * @brief Decreases the references count of the given array.
-             *
-             * @param array The Array to release.
-             */
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void delete_array(ref IntPtr array);
-
-            /**
-             * @brief Gets the type of the array.
-             *
-             * @param array The array to obtain the type information from.
-             * @param type Value of the Dtype enumeration.
-             */
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void get_type(ref IntPtr array, ref int t);
-
-            /**
-             * @brief Adds two arrays.
-             *
-             * @param lhs Left-hand side KHIVA array for the operation.
-             * @param rhs Right-hand side KHIVA array for the operation.
-             * @param result KHIVA Array with the result of this operation.
-             */
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void khiva_add(ref IntPtr lhs, ref IntPtr rhs, ref IntPtr result);
-
-
-
-            /**
-             * @brief Multiplies two arrays.
-             *
-             * @param lhs Left-hand side KHIVA array for the operation.
-             * @param rhs Right-hand side KHIVA array for the operation.
-             * @param result KHIVA Array with the result of this operation.
-             */
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void khiva_mul(ref IntPtr lhs, ref IntPtr rhs, ref IntPtr result);
-
-            /**
-             * @brief Subtracts two arrays.
-             *
-             * @param lhs Left-hand side KHIVA array for the operation.
-             * @param rhs Right-hand side KHIVA array for the operation.
-             * @param result KHIVA Array with the result of this operation.
-             */
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void khiva_sub(ref IntPtr lhs, ref IntPtr rhs, ref IntPtr result);
-
-            /**
-             * @brief Divides lhs by rhs (element-wise).
-             *
-             * @param lhs Left-hand side KHIVA array for the operation.
-             * @param rhs Right-hand side KHIVA array for the operation.
-             * @param result KHIVA Array with the result of this operation.
-             */
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void khiva_div(ref IntPtr lhs, ref IntPtr rhs, ref IntPtr result);
-
-            /**
-             * @brief Performs the modulo operation of lhs by rhs.
-             *
-             * @param lhs Left-hand side KHIVA array for the operation.
-             * @param rhs Right-hand side KHIVA array for the operation.
-             * @param result KHIVA Array with the result of this operation.
-             */
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void khiva_mod(ref IntPtr lhs, ref IntPtr rhs, ref IntPtr result);
-
-            /**
-             * @brief Powers lhs with rhs.
-             *
-             * @param lhs Left-hand side KHIVA array for the operation. Base.
-             * @param rhs Right-hand side KHIVA array for the operation. Exponent.
-             * @param result KHIVA Array with the result of this operation.
-             */
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void khiva_pow(ref IntPtr lhs, ref IntPtr rhs, ref IntPtr result);
-
-            /**
-             * @brief Compares (element-wise) if lhs is lower than rhs.
-             *
-             * @param lhs Left-hand side KHIVA array for the operation.
-             * @param rhs Right-hand side KHIVA array for the operation.
-             * @param result KHIVA Array with the result of this operation.
-             */
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void khiva_lt(ref IntPtr lhs, ref IntPtr rhs, ref IntPtr result);
-
-            /**
-             * @brief Compares (element-wise) if lhs is greater than rhs.
-             *
-             * @param lhs Left-hand side KHIVA array for the operation.
-             * @param rhs Right-hand side KHIVA array for the operation.
-             * @param result KHIVA Array with the result of this operation.
-             */
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void khiva_gt(ref IntPtr lhs, ref IntPtr rhs, ref IntPtr result);
-
-            /**
-             * @brief Compares (element-wise) if lhs is lower or equal than rhs.
-             *
-             * @param lhs Left-hand side KHIVA array for the operation.
-             * @param rhs Right-hand side KHIVA array for the operation.
-             * @param result KHIVA Array with the result of this operation.
-             */
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void khiva_le(ref IntPtr lhs, ref IntPtr rhs, ref IntPtr result);
-
-            /**
-             * @brief Compares (element-wise) if lhs is greater or equal than rhs.
-             *
-             * @param lhs Left-hand side KHIVA array for the operation.
-             * @param rhs Right-hand side KHIVA array for the operation.
-             * @param result KHIVA Array with the result of this operation.
-             */
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void khiva_ge(ref IntPtr lhs, ref IntPtr rhs, ref IntPtr result);
-
-            /**
-             * @brief Compares (element-wise) if rhs is equal to rhs.
-             *
-             * @param lhs Left-hand side KHIVA array for the operation.
-             * @param rhs Right-hand side KHIVA array for the operation.
-             * @param result KHIVA Array with the result of this operation.
-             */
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void khiva_eq(ref IntPtr lhs, ref IntPtr rhs, ref IntPtr result);
-
-            /**
-             * @brief Compares (element-wise) if lhs is not equal to rhs.
-             *
-             * @param lhs Left-hand side KHIVA array for the operation.
-             * @param rhs Right-hand side KHIVA array for the operation.
-             * @param result KHIVA Array with the result of this operation.
-             */
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void khiva_ne(ref IntPtr lhs, ref IntPtr rhs, ref IntPtr result);
-
-            /**
-             * @brief Performs an AND operation (element-wise) with lhs and rhs.
-             *
-             * @param lhs Left-hand side KHIVA array for the operation.
-             * @param rhs Right-hand side KHIVA array for the operation.
-             * @param result KHIVA Array with the result of this operation.
-             */
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void khiva_bitand(ref IntPtr lhs, ref IntPtr rhs, ref IntPtr result);
-
-            /**
-             * @brief Performs an OR operation (element-wise) with lhs and rhs.
-             *
-             * @param lhs Left-hand side KHIVA array for the operation.
-             * @param rhs Right-hand side KHIVA array for the operation.
-             * @param result KHIVA Array with the result of this operation.
-             */
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void khiva_bitor(ref IntPtr lhs, ref IntPtr rhs, ref IntPtr result);
-
-            /**
-             * @brief Performs an eXclusive-OR operation (element-wise) with lhs and rhs.
-             *
-             * @param lhs Left-hand side KHIVA array for the operation.
-             * @param rhs Right-hand side KHIVA array for the operation.
-             * @param result KHIVA Array with the result of this operation.
-             */
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void khiva_bitxor(ref IntPtr lhs, ref IntPtr rhs, ref IntPtr result);
-
-            /**
-             * @brief Performs a left bit shift operation (element-wise) to array as many times as specified in the parameter n.
-             *
-             * @param array KHIVA Array to shift.
-             * @param n Number of bits to be shifted.
-             * @param result KHIVA Array with the result of this operation.
-             */
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void khiva_bitshiftl(ref IntPtr array, ref int n, ref IntPtr result);
-
-            /**
-             * @brief Performs a right bit shift operation (element-wise) to array as many times as specified in the parameter n.
-             *
-             * @param array KHIVA Array to shift.
-             * @param n Number of bits to be shifted.
-             * @param result KHIVA Array with the result of this operation.
-             */
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void khiva_bitshiftr(ref IntPtr array, ref int n, ref IntPtr result);
-
-            /**
-             * @brief Logical NOT operation to array.
-             *
-             * @param array KHIVA Array to negate.
-             * @param result KHIVA Array with the result of this operation.
-             */
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void khiva_not(ref IntPtr array, ref IntPtr result);
-
-            /**
-             * @brief Transposes array.
-             *
-             * @param array KHIVA Array to transpose.
-             * @param conjugate If true a conjugate transposition is performed.
-             * @param result KHIVA Array with the result of this operation.
-             */
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void khiva_transpose(ref IntPtr array, ref bool conjugate, ref IntPtr result);
-
-            /**
-             * @brief Retrieves a given column of array.
-             *
-             * @param array KHIVA Array.
-             * @param index The column to be retrieved.
-             * @param result KHIVA Array with the result of this operation.
-             */
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void khiva_col(ref IntPtr array, ref int index, ref IntPtr result);
-
-            /**
-             * @brief Retrieves a subset of columns of array, starting at first and finishing at last, both inclusive.
-             *
-             * @param array KHIVA Array.
-             * @param first Start of the subset of columns to be retrieved.
-             * @param last End of the subset of columns to be retrieved.
-             * @param result KHIVA Array with the result of this operation.
-             */
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void khiva_cols(ref IntPtr array, ref int first, ref int last, ref IntPtr result);
-
-            /**
-             * @brief Retrieves a given row of array.
-             *
-             * @param array KHIVA Array.
-             * @param index The row to be retrieved.
-             * @param result KHIVA Array with the result of this operation.
-             */
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void khiva_row(ref IntPtr array, ref int index, ref IntPtr result);
-
-            /**
-             * @brief Retrieves a subset of rows of array, starting at first and finishing at last, both inclusive.
-             *
-             * @param array KHIVA Array.
-             * @param first Start of the subset of rows to be retrieved.
-             * @param last End of the subset of rows to be retrieved.
-             * @param result KHIVA Array with the result of this operation.
-             */
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void khiva_rows(ref IntPtr array, ref int first, ref int last, ref IntPtr result);
-
-            /**
-             * @brief Creates a KHIVA array from an ArrayFire array.
-             *
-             * @param arrayfire ArrayFire array reference.
-             * @param result KHIVA Array.
-             */
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void from_arrayfire(ref IntPtr arrayfire, ref IntPtr result);
-
-            /**
-             * @brief Performs a matrix multiplication of lhs and rhs.
-             *
-             * @param lhs Left-hand side KHIVA array for the operation.
-             * @param rhs Right-hand side KHIVA array for the operation.
-             * @param result KHIVA Array with the result of this operation.
-             */
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void khiva_matmul(ref IntPtr lhs, ref IntPtr rhs, ref IntPtr result);
-
-            /**
-             * @brief Performs a deep copy of array.
-             *
-             * @param array KHIVA Array.
-             * @param result KHIVA Array which contains a copy of array.
-             */
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void copy(ref IntPtr array, ref IntPtr result);
-
-            /**
-             * @brief Changes the type of array.
-             *
-             * @param array KHIVA Array.
-             * @param type Target type of the output array.
-             * @param result KHIVA Array with the result of this operation.
-             */
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void khiva_as(ref IntPtr array, ref int type, ref IntPtr result);
 
             public ref IntPtr GetReference()
             {
@@ -1762,6 +1468,7 @@ namespace khiva
              * @param <Any> The data type to be returned.
              * @return The data to an array of its type.
              */
+             /*
             public T[] GetData1D<T>()
             {
                 if (CheckType(typeof(T)))
@@ -1789,7 +1496,7 @@ namespace khiva
                                 get_data(ref reference, dataPtr);
                                 for (int i = 0; i < complexData.GetLength(0); i++)
                                 {
-                                    complexData[i] = (T)Convert.ChangeType(new Complex(data[i], data[i + complexData.Length]), typeof(T));
+                                    complexData[i] = (T)Convert.ChangeType(new Complex(data[2*i], data[2*i + 1]), typeof(T));
                                 }
                             }
                             finally
@@ -1810,7 +1517,7 @@ namespace khiva
                                 get_data(ref reference, dataPtr);
                                 for (int i = 0; i < complexData.GetLength(0); i++)
                                 {
-                                    complexData[i] = (T)Convert.ChangeType(new Complex(data[i], data[i + complexData.Length]), typeof(T));
+                                    complexData[i] = (T)Convert.ChangeType(new Complex(data[2*i], data[2*i + 1]), typeof(T));
                                 }
                             }
                             finally
@@ -1883,7 +1590,7 @@ namespace khiva
                                 {
                                     for (int j = 0; j < complexData.GetLength(1); j++)
                                     {
-                                        complexData[i, j] = (T)Convert.ChangeType(new Complex(data[i * dims[0] + j], data[i * dims[0] + j + complexData.Length]), typeof(T));
+                                        complexData[i, j] = (T)Convert.ChangeType(new Complex(data[2*i * dims[0] + 2*j], data[2*i * dims[0] + 2*j]), typeof(T));
                                     }
                                 }
                             }
@@ -1907,7 +1614,7 @@ namespace khiva
                                 {
                                     for (int j = 0; j < complexData.GetLength(1); j++)
                                     {
-                                        complexData[i, j] = (T)Convert.ChangeType(new Complex(data[i * dims[0] + j], data[i * dims[0] + j + complexData.Length]), typeof(T));
+                                        complexData[i, j] = (T)Convert.ChangeType(new Complex(data[2*i * dims[0] + 2*j], data[2*i * dims[0] + 2*j + 1]), typeof(T));
                                     }
                                 }
                             }
@@ -1980,7 +1687,7 @@ namespace khiva
                                     {
                                         for (int k = 0; k < complexData.GetLength(2); k++)
                                         {
-                                            complexData[i, j, k] = (T)Convert.ChangeType(new Complex(data[i * dims[0] + j * dims[1] + k], data[i * dims[0] + j * dims[1] + k + complexData.Length]), typeof(T));
+                                            complexData[i, j, k] = (T)Convert.ChangeType(new Complex(data[2*i * dims[0] + 2*j * dims[1] + 2*k], data[2*i * dims[0] + 2*j * dims[1] + 2*k + 1]), typeof(T));
                                         }
                                     }
                                 }
@@ -2007,7 +1714,7 @@ namespace khiva
                                     {
                                         for (int k = 0; k < complexData.GetLength(2); k++)
                                         {
-                                            complexData[i, j, k] = (T)Convert.ChangeType(new Complex(data[i * dims[0] + j * dims[1] + k], data[i * dims[0] + j * dims[1] + k + complexData.Length]), typeof(T));
+                                            complexData[i, j, k] = (T)Convert.ChangeType(new Complex(data[2 * i * dims[0] + 2 * j * dims[1] + 2 * k], data[2 * i * dims[0] + 2 * j * dims[1] + 2 * k + 1]), typeof(T));
                                         }
                                     }
                                 }
@@ -2051,9 +1758,28 @@ namespace khiva
                     throw new Exception("Type does not match");
                 }
             }
-
+            */
             public T[,,,] GetData4D<T>()
             {
+                long[] dims = GetDims();
+                int[,,,] data = new int[dims[0],dims[1],dims[2],dims[3]];
+                Interop.DLLArray.get_data(ref reference, data);
+                T[,,,] dataT = new T[dims[0], dims[1], dims[2], dims[3]];
+                for ( int i = 0; i< dims[0]; i++)
+                {
+                    for ( int j = 0; j<dims[1]; j++)
+                    {
+                        for(int k = 0; k<dims[2]; k++)
+                        {
+                            for(int z = 0; z<dims[3]; z++)
+                            {
+                                dataT[i,j,k,z] = (T)Convert.ChangeType(data[i,j,k,z], typeof(T));
+                            }
+                        }
+                    }
+                }
+                return dataT;
+                /*
                 if (CheckType(typeof(T)))
                 {
                     long[] dims = GetDims();
@@ -2084,7 +1810,7 @@ namespace khiva
                                         {
                                             for (int z = 0; z < complexData.GetLength(3); z++)
                                             {
-                                                complexData[i, j, k, z] = (T)Convert.ChangeType(new Complex(data[i * dims[0] + j * dims[1] + k * dims[2] + z], data[i * dims[0] + j * dims[1] + k * dims[2] + z + complexData.Length]), typeof(T));
+                                                complexData[i, j, k, z] = (T)Convert.ChangeType(new Complex(data[2*i * dims[0] + 2*j * dims[1] + 2*k * dims[2] + 2*z], data[2*i * dims[0] + 2*j * dims[1] + 2*k * dims[2] + 2*z + 1]), typeof(T));
                                             }
                                         }
                                     }
@@ -2114,7 +1840,7 @@ namespace khiva
                                         {
                                             for (int z = 0; z < complexData.GetLength(3); z++)
                                             {
-                                                complexData[i, j, k, z] = (T)Convert.ChangeType(new Complex(data[i * dims[0] + j * dims[1] + k * dims[2] + z], data[i * dims[0] + j * dims[1] + k * dims[2] + z + complexData.Length]), typeof(T));
+                                                complexData[i, j, k, z] = (T)Convert.ChangeType(new Complex(data[2 * i * dims[0] + 2 * j * dims[1] + 2 * k * dims[2] + 2 * z], data[2 * i * dims[0] + 2 * j * dims[1] + 2 * k * dims[2] + 2 * z + 1]), typeof(T));
                                             }
                                         }
                                     }
@@ -2158,7 +1884,7 @@ namespace khiva
                 else
                 {
                     throw new Exception("Type does not match");
-                }
+                }*/
             }
             
             private bool CheckType(Type type)
@@ -2213,7 +1939,7 @@ namespace khiva
                 try
                 {
                     gchArr = GCHandle.Alloc(dims, GCHandleType.Pinned);
-                    get_dims(ref reference, ref dims[0]);
+                    Interop.DLLArray.get_dims(ref reference, ref dims[0]);
                 }
                 finally
                 {
@@ -2224,18 +1950,18 @@ namespace khiva
 
             public void Display()
             {
-                display(ref reference);
+                Interop.DLLArray.display(ref reference);
             }
 
             public void DeleteArray()
             {
-                delete_array(ref reference);
+                Interop.DLLArray.delete_array(ref reference);
             }
 
             public Dtype GetArrayType()
             {
                 int type = 0;
-                get_type(ref reference, ref type);
+                Interop.DLLArray.get_type(ref reference, ref type);
                 Enum.TryParse<Dtype>(type.ToString(), out Dtype dtype);
                 return dtype;
             }
@@ -2243,81 +1969,81 @@ namespace khiva
             public static Array operator +(Array lhs, Array rhs)
             {
                 IntPtr result = new IntPtr();
-                khiva_add(ref lhs.reference, ref rhs.reference, ref result);
+                Interop.DLLArray.khiva_add(ref lhs.reference, ref rhs.reference, ref result);
                 return new Array(result);
             }
 
             public static Array operator *(Array lhs, Array rhs)
             {
                 IntPtr result = new IntPtr();
-                khiva_mul(ref lhs.reference, ref rhs.reference, ref result);
+                Interop.DLLArray.khiva_mul(ref lhs.reference, ref rhs.reference, ref result);
                 return (new Array(result));
             }
 
             public static Array operator -(Array lhs, Array rhs)
             {
                 IntPtr result = new IntPtr();
-                khiva_sub(ref lhs.reference, ref rhs.reference, ref result);
+                Interop.DLLArray.khiva_sub(ref lhs.reference, ref rhs.reference, ref result);
                 return (new Array(result));
             }
 
             public static Array operator /(Array lhs, Array rhs)
             {
                 IntPtr result = new IntPtr();
-                khiva_div(ref lhs.reference, ref rhs.reference, ref result);
+                Interop.DLLArray.khiva_div(ref lhs.reference, ref rhs.reference, ref result);
                 return (new Array(result));
             }
 
             public static Array operator %(Array lhs, Array rhs)
             {
                 IntPtr result = new IntPtr();
-                khiva_mod(ref lhs.reference, ref rhs.reference, ref result);
+                Interop.DLLArray.khiva_mod(ref lhs.reference, ref rhs.reference, ref result);
                 return (new Array(result));
             }
 
             public Array Pow(Array rhs)
             {
                 IntPtr result = new IntPtr();
-                khiva_pow(ref reference, ref rhs.reference, ref result);
+                Interop.DLLArray.khiva_pow(ref reference, ref rhs.reference, ref result);
                 return (new Array(result));
             }
 
             public static Array operator &(Array lhs, Array rhs)
             {
                 IntPtr result = new IntPtr();
-                khiva_bitand(ref lhs.reference, ref rhs.reference, ref result);
+                Interop.DLLArray.khiva_bitand(ref lhs.reference, ref rhs.reference, ref result);
                 return (new Array(result));
             }
 
             public static Array operator |(Array lhs, Array rhs)
             {
                 IntPtr result = new IntPtr();
-                khiva_bitor(ref lhs.reference, ref rhs.reference, ref result);
+                Interop.DLLArray.khiva_bitor(ref lhs.reference, ref rhs.reference, ref result);
                 return (new Array(result));
             }
 
             public static Array operator ^(Array lhs, Array rhs)
             {
                 IntPtr result = new IntPtr();
-                khiva_bitxor(ref lhs.reference, ref rhs.reference, ref result);
+                Interop.DLLArray.khiva_bitxor(ref lhs.reference, ref rhs.reference, ref result);
                 return (new Array(result));
             }
 
             public static Array operator <<(Array lhs, int shift)
             {
                 IntPtr result = new IntPtr();
-                khiva_bitshiftl(ref lhs.reference, ref shift, ref result);
+                Interop.DLLArray.khiva_bitshiftl(ref lhs.reference, ref shift, ref result);
                 return (new Array(result));
             }
 
             public static Array operator >>(Array lhs, int shift)
             {
                 IntPtr result = new IntPtr();
-                khiva_bitshiftr(ref lhs.reference, ref shift, ref result);
+                Interop.DLLArray.khiva_bitshiftr(ref lhs.reference, ref shift, ref result);
                 return (new Array(result));
             }
 
-            public static Array operator -(Array rhs)
+           /* public static Array operator -(Array rhs)
             {
                 IntPtr result = new IntPtr();
                 Array zeros;
@@ -2341,75 +2067,75 @@ namespace khiva
                 }
                 khiva_sub(ref zeros.reference, ref rhs.reference, ref result);
                 return (new Array(result));
-            }
+            }*/
 
             public static Array operator !(Array lhs)
             {
                 IntPtr result = new IntPtr();
-                khiva_not(ref lhs.reference, ref result);
+                Interop.DLLArray.khiva_not(ref lhs.reference, ref result);
                 return (new Array(result));
             }
 
             public static Array operator <(Array rhs, Array lhs)
             {
                 IntPtr result = new IntPtr();
-                khiva_lt(ref rhs.reference, ref lhs.reference, ref result);
+                Interop.DLLArray.khiva_lt(ref rhs.reference, ref lhs.reference, ref result);
                 return (new Array(result));
             }
 
             public static Array operator >(Array rhs, Array lhs)
             {
                 IntPtr result = new IntPtr();
-                khiva_gt(ref rhs.reference, ref lhs.reference, ref result);
+                Interop.DLLArray.khiva_gt(ref rhs.reference, ref lhs.reference, ref result);
                 return (new Array(result));
             }
 
             public static Array operator <=(Array rhs, Array lhs)
             {
                 IntPtr result = new IntPtr();
-                khiva_le(ref rhs.reference, ref lhs.reference, ref result);
+                Interop.DLLArray.khiva_le(ref rhs.reference, ref lhs.reference, ref result);
                 return (new Array(result));
             }
 
             public static Array operator >=(Array rhs, Array lhs)
             {
                 IntPtr result = new IntPtr();
-                khiva_ge(ref rhs.reference, ref lhs.reference, ref result);
+                Interop.DLLArray.khiva_ge(ref rhs.reference, ref lhs.reference, ref result);
                 return (new Array(result));
             }
 
             public static Array operator ==(Array rhs, Array lhs)
             {
                 IntPtr result = new IntPtr();
-                khiva_eq(ref rhs.reference, ref lhs.reference, ref result);
+                Interop.DLLArray.khiva_eq(ref rhs.reference, ref lhs.reference, ref result);
                 return (new Array(result));
             }
 
             public static Array operator !=(Array rhs, Array lhs)
             {
                 IntPtr result = new IntPtr();
-                khiva_ne(ref rhs.reference, ref lhs.reference, ref result);
+                Interop.DLLArray.khiva_ne(ref rhs.reference, ref lhs.reference, ref result);
                 return (new Array(result));
             }
 
             public Array Transpose(bool conjugate = false)
             {
                 IntPtr result = new IntPtr();
-                khiva_transpose(ref reference, ref conjugate, ref result);
+                Interop.DLLArray.khiva_transpose(ref reference, ref conjugate, ref result);
                 return (new Array(result));
             }
 
             public Array Col(int index)
             {
                 IntPtr result = new IntPtr();
-                khiva_col(ref reference, ref index, ref result);
+                Interop.DLLArray.khiva_col(ref reference, ref index, ref result);
                 return (new Array(result));
             }
 
             public Array Cols(int first, int last)
             {
                 IntPtr result = new IntPtr();
-                khiva_cols(ref reference, ref first, ref last, ref result);
+                Interop.DLLArray.khiva_cols(ref reference, ref first, ref last, ref result);
                 return (new Array(result));
             }
         }

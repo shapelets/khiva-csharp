@@ -14,11 +14,7 @@ namespace khiva
     {
         public class Library
         {
-#if (_WINDOWS)
-            public const String khivaPath = "C:\\Program Files\\Khiva\\v0\\lib\\khiva_c.dll";
-#else
-            public const String khivaPath = "libkhiva_c";
-#endif
+
             public Library()
             {
                 
@@ -89,37 +85,13 @@ namespace khiva
                 }
             }
 
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void backend_info(ref StringBuilder backendInfo);
-
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void set_backend(ref int backend);
-
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void set_device(ref int device);
-
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void get_backends(ref int backend);
-
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void get_device_id(ref int device_id);
-
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void get_backend(ref int backend);
-
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            private extern static void get_device_count(ref int device_count);
-
-            [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-            static extern void version(ref StringBuilder version);
-
             /**
              * Prints information from the current backend.
              */
             public static void PrintBackendInfo()
             {
                 StringBuilder str = new StringBuilder(268);
-                backend_info(ref str);
+                Interop.DLLLibrary.backend_info(ref str);
                 Console.WriteLine(str.ToString());
             }
 
@@ -132,7 +104,7 @@ namespace khiva
             {
 
                 StringBuilder str = new StringBuilder(268);
-                backend_info(ref str);
+                Interop.DLLLibrary.backend_info(ref str);
                 return str.ToString();
             }
 
@@ -144,7 +116,7 @@ namespace khiva
             public static void SetKhivaBackend(Backend khivaBE)
             {
                 int backend = (int)khivaBE;
-                set_backend(ref backend);
+                Interop.DLLLibrary.set_backend(ref backend);
             }
 
 
@@ -157,7 +129,7 @@ namespace khiva
 
             public static void SetKhivaDevice(int device)
             {
-                set_device(ref device);
+                Interop.DLLLibrary.set_device(ref device);
             }
 
             /**
@@ -168,7 +140,7 @@ namespace khiva
             public static int GetKhivaBackends()
             {
                 int backends = 0;
-                get_backends(ref backends);
+                Interop.DLLLibrary.get_backends(ref backends);
                 return backends;
             }
 
@@ -180,7 +152,7 @@ namespace khiva
             public static int GetKhivaDeviceID()
             {
                 int device_id = 0;
-                get_device_id(ref device_id);
+                Interop.DLLLibrary.get_device_id(ref device_id);
                 return device_id;
             }
 
@@ -192,7 +164,7 @@ namespace khiva
             public static Backend GetKhivaBackend()
             {
                 int backend = 0;
-                get_backend(ref backend);
+                Interop.DLLLibrary.get_backend(ref backend);
                 return GetBackendFromOrdinal(backend);
             }
 
@@ -204,7 +176,7 @@ namespace khiva
             public static int GetKhivaDeviceCount()
             {
                 int device_count = 0;
-                get_device_count(ref device_count);
+                Interop.DLLLibrary.get_device_count(ref device_count);
                 return device_count;
             }
 
@@ -216,7 +188,7 @@ namespace khiva
             public static String GetKhivaVersion()
             {
                 StringBuilder version_name = new StringBuilder(40);
-                version(ref version_name);
+                Interop.DLLLibrary.version(ref version_name);
                 return version_name.ToString();
             }
         }
