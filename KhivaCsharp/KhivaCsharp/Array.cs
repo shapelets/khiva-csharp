@@ -99,7 +99,7 @@ namespace khiva
                 int type = (int)Dtype.f32;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.Length, 1, 1, 1 };
-                Interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
                 /*int type = (int)Dtype.f32;
 
                 GCHandle gchArr = default(GCHandle);
@@ -129,7 +129,7 @@ namespace khiva
                 int type = (int)Dtype.s32;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.Length, 1, 1, 1 };
-                Interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
                 /*int type = (int)Dtype.s32;
 
                 GCHandle gchArr = default(GCHandle);
@@ -455,7 +455,7 @@ namespace khiva
                 int type = (int)Dtype.s32;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
-                Interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
                 /*
                 GCHandle gchArr = default(GCHandle);
 
@@ -787,7 +787,7 @@ namespace khiva
                 int type = (int)Dtype.s32;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
-                Interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
                 /*
                 int type = (int)Dtype.s32;
 
@@ -1137,7 +1137,7 @@ namespace khiva
                 int type = (int)Dtype.s32;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
-                Interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
                 /*
                     int type = (int)Dtype.s32;
 
@@ -1763,7 +1763,7 @@ namespace khiva
             {
                 long[] dims = GetDims();
                 int[,,,] data = new int[dims[0],dims[1],dims[2],dims[3]];
-                Interop.DLLArray.get_data(ref reference, data);
+                interop.DLLArray.get_data(ref reference, data);
                 T[,,,] dataT = new T[dims[0], dims[1], dims[2], dims[3]];
                 for ( int i = 0; i< dims[0]; i++)
                 {
@@ -1939,7 +1939,7 @@ namespace khiva
                 try
                 {
                     gchArr = GCHandle.Alloc(dims, GCHandleType.Pinned);
-                    Interop.DLLArray.get_dims(ref reference, ref dims[0]);
+                    interop.DLLArray.get_dims(ref reference, ref dims[0]);
                 }
                 finally
                 {
@@ -1950,18 +1950,18 @@ namespace khiva
 
             public void Display()
             {
-                Interop.DLLArray.display(ref reference);
+                interop.DLLArray.display(ref reference);
             }
 
             public void DeleteArray()
             {
-                Interop.DLLArray.delete_array(ref reference);
+                interop.DLLArray.delete_array(ref reference);
             }
 
             public Dtype GetArrayType()
             {
                 int type = 0;
-                Interop.DLLArray.get_type(ref reference, ref type);
+                interop.DLLArray.get_type(ref reference, ref type);
                 Enum.TryParse<Dtype>(type.ToString(), out Dtype dtype);
                 return dtype;
             }
@@ -1969,77 +1969,77 @@ namespace khiva
             public static Array operator +(Array lhs, Array rhs)
             {
                 IntPtr result = new IntPtr();
-                Interop.DLLArray.khiva_add(ref lhs.reference, ref rhs.reference, ref result);
+                interop.DLLArray.khiva_add(ref lhs.reference, ref rhs.reference, ref result);
                 return new Array(result);
             }
 
             public static Array operator *(Array lhs, Array rhs)
             {
                 IntPtr result = new IntPtr();
-                Interop.DLLArray.khiva_mul(ref lhs.reference, ref rhs.reference, ref result);
+                interop.DLLArray.khiva_mul(ref lhs.reference, ref rhs.reference, ref result);
                 return (new Array(result));
             }
 
             public static Array operator -(Array lhs, Array rhs)
             {
                 IntPtr result = new IntPtr();
-                Interop.DLLArray.khiva_sub(ref lhs.reference, ref rhs.reference, ref result);
+                interop.DLLArray.khiva_sub(ref lhs.reference, ref rhs.reference, ref result);
                 return (new Array(result));
             }
 
             public static Array operator /(Array lhs, Array rhs)
             {
                 IntPtr result = new IntPtr();
-                Interop.DLLArray.khiva_div(ref lhs.reference, ref rhs.reference, ref result);
+                interop.DLLArray.khiva_div(ref lhs.reference, ref rhs.reference, ref result);
                 return (new Array(result));
             }
 
             public static Array operator %(Array lhs, Array rhs)
             {
                 IntPtr result = new IntPtr();
-                Interop.DLLArray.khiva_mod(ref lhs.reference, ref rhs.reference, ref result);
+                interop.DLLArray.khiva_mod(ref lhs.reference, ref rhs.reference, ref result);
                 return (new Array(result));
             }
 
             public Array Pow(Array rhs)
             {
                 IntPtr result = new IntPtr();
-                Interop.DLLArray.khiva_pow(ref reference, ref rhs.reference, ref result);
+                interop.DLLArray.khiva_pow(ref reference, ref rhs.reference, ref result);
                 return (new Array(result));
             }
 
             public static Array operator &(Array lhs, Array rhs)
             {
                 IntPtr result = new IntPtr();
-                Interop.DLLArray.khiva_bitand(ref lhs.reference, ref rhs.reference, ref result);
+                interop.DLLArray.khiva_bitand(ref lhs.reference, ref rhs.reference, ref result);
                 return (new Array(result));
             }
 
             public static Array operator |(Array lhs, Array rhs)
             {
                 IntPtr result = new IntPtr();
-                Interop.DLLArray.khiva_bitor(ref lhs.reference, ref rhs.reference, ref result);
+                interop.DLLArray.khiva_bitor(ref lhs.reference, ref rhs.reference, ref result);
                 return (new Array(result));
             }
 
             public static Array operator ^(Array lhs, Array rhs)
             {
                 IntPtr result = new IntPtr();
-                Interop.DLLArray.khiva_bitxor(ref lhs.reference, ref rhs.reference, ref result);
+                interop.DLLArray.khiva_bitxor(ref lhs.reference, ref rhs.reference, ref result);
                 return (new Array(result));
             }
 
             public static Array operator <<(Array lhs, int shift)
             {
                 IntPtr result = new IntPtr();
-                Interop.DLLArray.khiva_bitshiftl(ref lhs.reference, ref shift, ref result);
+                interop.DLLArray.khiva_bitshiftl(ref lhs.reference, ref shift, ref result);
                 return (new Array(result));
             }
 
             public static Array operator >>(Array lhs, int shift)
             {
                 IntPtr result = new IntPtr();
-                Interop.DLLArray.khiva_bitshiftr(ref lhs.reference, ref shift, ref result);
+                interop.DLLArray.khiva_bitshiftr(ref lhs.reference, ref shift, ref result);
                 return (new Array(result));
             }
 
@@ -2072,70 +2072,70 @@ namespace khiva
             public static Array operator !(Array lhs)
             {
                 IntPtr result = new IntPtr();
-                Interop.DLLArray.khiva_not(ref lhs.reference, ref result);
+                interop.DLLArray.khiva_not(ref lhs.reference, ref result);
                 return (new Array(result));
             }
 
             public static Array operator <(Array rhs, Array lhs)
             {
                 IntPtr result = new IntPtr();
-                Interop.DLLArray.khiva_lt(ref rhs.reference, ref lhs.reference, ref result);
+                interop.DLLArray.khiva_lt(ref rhs.reference, ref lhs.reference, ref result);
                 return (new Array(result));
             }
 
             public static Array operator >(Array rhs, Array lhs)
             {
                 IntPtr result = new IntPtr();
-                Interop.DLLArray.khiva_gt(ref rhs.reference, ref lhs.reference, ref result);
+                interop.DLLArray.khiva_gt(ref rhs.reference, ref lhs.reference, ref result);
                 return (new Array(result));
             }
 
             public static Array operator <=(Array rhs, Array lhs)
             {
                 IntPtr result = new IntPtr();
-                Interop.DLLArray.khiva_le(ref rhs.reference, ref lhs.reference, ref result);
+                interop.DLLArray.khiva_le(ref rhs.reference, ref lhs.reference, ref result);
                 return (new Array(result));
             }
 
             public static Array operator >=(Array rhs, Array lhs)
             {
                 IntPtr result = new IntPtr();
-                Interop.DLLArray.khiva_ge(ref rhs.reference, ref lhs.reference, ref result);
+                interop.DLLArray.khiva_ge(ref rhs.reference, ref lhs.reference, ref result);
                 return (new Array(result));
             }
 
             public static Array operator ==(Array rhs, Array lhs)
             {
                 IntPtr result = new IntPtr();
-                Interop.DLLArray.khiva_eq(ref rhs.reference, ref lhs.reference, ref result);
+                interop.DLLArray.khiva_eq(ref rhs.reference, ref lhs.reference, ref result);
                 return (new Array(result));
             }
 
             public static Array operator !=(Array rhs, Array lhs)
             {
                 IntPtr result = new IntPtr();
-                Interop.DLLArray.khiva_ne(ref rhs.reference, ref lhs.reference, ref result);
+                interop.DLLArray.khiva_ne(ref rhs.reference, ref lhs.reference, ref result);
                 return (new Array(result));
             }
 
             public Array Transpose(bool conjugate = false)
             {
                 IntPtr result = new IntPtr();
-                Interop.DLLArray.khiva_transpose(ref reference, ref conjugate, ref result);
+                interop.DLLArray.khiva_transpose(ref reference, ref conjugate, ref result);
                 return (new Array(result));
             }
 
             public Array Col(int index)
             {
                 IntPtr result = new IntPtr();
-                Interop.DLLArray.khiva_col(ref reference, ref index, ref result);
+                interop.DLLArray.khiva_col(ref reference, ref index, ref result);
                 return (new Array(result));
             }
 
             public Array Cols(int first, int last)
             {
                 IntPtr result = new IntPtr();
-                Interop.DLLArray.khiva_cols(ref reference, ref first, ref last, ref result);
+                interop.DLLArray.khiva_cols(ref reference, ref first, ref last, ref result);
                 return (new Array(result));
             }
         }

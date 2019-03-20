@@ -64,7 +64,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Array.cs" />
-    <Compile Include="Interop\Class1.cs" />
+    <Compile Include="Internal.cs" />
+    <Compile Include="Interop\DLLArray.cs" />
     <Compile Include="Interop\DLLLibrary.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Library.cs" />

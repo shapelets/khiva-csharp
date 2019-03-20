@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace khiva.Interop
+namespace khiva.interop
 {
     public static class DLLLibrary
     {

@@ -13,7 +13,7 @@ namespace khiva
 
             static Internal()
             {
-                GetDataFn[0].Add(typeof(int), (ptr, data) => Interop.DLLArray.get_data(ref ptr, (int[,,,])data));
+                GetDataFn[0].Add(typeof(int), (ptr, data) => interop.DLLArray.get_data(ref ptr, (int[,,,])data));
             }
 
         }

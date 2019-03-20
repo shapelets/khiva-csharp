@@ -91,7 +91,7 @@ namespace khiva
             public static void PrintBackendInfo()
             {
                 StringBuilder str = new StringBuilder(268);
-                Interop.DLLLibrary.backend_info(ref str);
+                interop.DLLLibrary.backend_info(ref str);
                 Console.WriteLine(str.ToString());
             }
 
@@ -104,7 +104,7 @@ namespace khiva
             {
 
                 StringBuilder str = new StringBuilder(268);
-                Interop.DLLLibrary.backend_info(ref str);
+                interop.DLLLibrary.backend_info(ref str);
                 return str.ToString();
             }
 
@@ -116,7 +116,7 @@ namespace khiva
             public static void SetKhivaBackend(Backend khivaBE)
             {
                 int backend = (int)khivaBE;
-                Interop.DLLLibrary.set_backend(ref backend);
+                interop.DLLLibrary.set_backend(ref backend);
             }
 
 
@@ -129,7 +129,7 @@ namespace khiva
 
             public static void SetKhivaDevice(int device)
             {
-                Interop.DLLLibrary.set_device(ref device);
+                interop.DLLLibrary.set_device(ref device);
             }
 
             /**
@@ -140,7 +140,7 @@ namespace khiva
             public static int GetKhivaBackends()
             {
                 int backends = 0;
-                Interop.DLLLibrary.get_backends(ref backends);
+                interop.DLLLibrary.get_backends(ref backends);
                 return backends;
             }
 
@@ -152,7 +152,7 @@ namespace khiva
             public static int GetKhivaDeviceID()
             {
                 int device_id = 0;
-                Interop.DLLLibrary.get_device_id(ref device_id);
+                interop.DLLLibrary.get_device_id(ref device_id);
                 return device_id;
             }
 
@@ -164,7 +164,7 @@ namespace khiva
             public static Backend GetKhivaBackend()
             {
                 int backend = 0;
-                Interop.DLLLibrary.get_backend(ref backend);
+                interop.DLLLibrary.get_backend(ref backend);
                 return GetBackendFromOrdinal(backend);
             }
 
@@ -176,7 +176,7 @@ namespace khiva
             public static int GetKhivaDeviceCount()
             {
                 int device_count = 0;
-                Interop.DLLLibrary.get_device_count(ref device_count);
+                interop.DLLLibrary.get_device_count(ref device_count);
                 return device_count;
             }
 
@@ -188,7 +188,7 @@ namespace khiva
             public static String GetKhivaVersion()
             {
                 StringBuilder version_name = new StringBuilder(40);
-                Interop.DLLLibrary.version(ref version_name);
+                interop.DLLLibrary.version(ref version_name);
                 return version_name.ToString();
             }
         }
