@@ -1281,7 +1281,7 @@ namespace khiva.array.Tests
             int[] tss = { 1, 2, 3, 4 };
             Array arr = new Array(tss);
             Array arrNeg = -arr;
-            Assert.AreEqual(new int[] { -1, -2, -3, -4}, arrNeg.GetData1D<int>());
+            Assert.AreEqual(new int[] { -1, -2, -3, -4 }, arrNeg.GetData1D<int>());
         }
 
         [Test]
@@ -1379,9 +1379,35 @@ namespace khiva.array.Tests
         {
             int[,] tss = { { 1, 2 }, { 3, 4 }, { 5, 6 } };
             Array arr = new Array(tss);
-            Array arrTrans = arr.Col(1);
-            Assert.AreEqual(new int[] {  }, arrTrans.GetData2D<int>());
+            Array arrCol = arr.Col(0);
+            Assert.AreEqual(new int[,] { { 1 }, { 2 } }, arrCol.GetData2D<int>());
         }
 
+        [Test]
+        public void TestCols()
+        {
+            int[,] tss = { { 1, 2 }, { 3, 4 }, { 5, 6 } };
+            Array arr = new Array(tss);
+            Array arrCol = arr.Cols(0,1);
+            Assert.AreEqual(new int[,] { { 1 , 2 }, { 3, 4 } }, arrCol.GetData2D<int>());
+        }
+
+        [Test]
+        public void TestRow()
+        {
+            int[,] tss = { { 1, 2 }, { 3, 4 }, { 5, 6 } };
+            Array arr = new Array(tss);
+            Array arrRow = arr.Row(0);
+            Assert.AreEqual(new int[,] { { 1 , 3 , 5 } }, arrRow.GetData2D<int>());
+        }
+
+        [Test]
+        public void TestRows()
+        {
+            int[,] tss = { { 1, 2 }, { 3, 4 }, { 5, 6 } };
+            Array arr = new Array(tss);
+            Array arrRows = arr.Rows(0, 1);
+            Assert.AreEqual(new int[,] { { 1, 3, 5 }, { 2, 4, 6 } }, arrRows.GetData2D<int>());
+        }
     }
 }

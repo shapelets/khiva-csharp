@@ -14,11 +14,27 @@ namespace khiva
     {
         static void Main(String[] args)
         {
-            int[,,,] tss = { { { { 1, 2 }, { 3, 4 } }, { { 5, 6 }, { 7, 8 } } }, { { { 1, 2 }, { 3, 4 } }, { { 5, 6 }, { 7, 8 } } } };
-            /* Complex[,,] tss = { { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(5, 6), new Complex(7, 8) } }, { { new Complex(9, 10), new Complex(11, 12) }, { new Complex(13, 14), new Complex(15, 16) } } };
-             array.Array arr = new array.Array(tss, true);*/
-            array.Array arr = new array.Array(tss);
+            //int[,,,] tss = { { { { 1, 2 }, { 3, 4 } }, { { 5, 6 }, { 7, 8 } } }, { { { 9, 10 }, { 11, 12 } }, { { 13, 14 }, { 15, 16 } } } };
+            Complex[,,] tss = { { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(5, 6), new Complex(7, 8) } }, { { new Complex(9, 10), new Complex(11, 12) }, { new Complex(13, 14), new Complex(15, 16) } } };
+            array.Array arr = new array.Array(tss, true);
+            Complex[,,] dataArr = arr.GetData3D<Complex>();
+            for(int i = 0; i < dataArr.GetLength(0); i++)
+            {
+                for (int j = 0; j < dataArr.GetLength(1); j++)
+                {
+                    for (int k = 0; k < dataArr.GetLength(2); k++)
+                    {
+                        Console.WriteLine(dataArr[i, j, k]);
+                    }
+                }
+            }
+            //array.Array arr = new array.Array(tss);
             arr.Display();
+            /*bool[,,] tss = { { { true, true }, { false, true } }, { { false, true }, { true, true } } };
+            array.Array arr = new array.Array(tss);*/
+            /*arr.Display();
+            bool[,,] dataArr = arr.GetData3D<bool>();
+            long[] dims = arr.GetDims();*/
             Console.WriteLine("test");
             string[] info_splitted;
             using(StringWriter writer = new StringWriter()){

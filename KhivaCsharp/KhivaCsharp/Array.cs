@@ -96,1335 +96,703 @@ namespace khiva
             */
             public Array(float[] arr)
             {
-                int type = (int)Dtype.f32;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.Length, 1, 1, 1 };
-                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
-                /*int type = (int)Dtype.f32;
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.Length, 1, 1, 1 };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
-                }*/
-            }
-
-            public Array(int[] arr)
-            {
-                int type = (int)Dtype.s32;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.Length, 1, 1, 1 };
-                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
-                /*int type = (int)Dtype.s32;
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.Length, 1, 1, 1 };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
-                }*/
-            }
-            /*
-            public Array(uint[] arr)
-            {
-                int type = (int)Dtype.u32;
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.Length, 1, 1, 1 };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
-                }
-            }
-
-            public Array(Complex[] arr, bool doublePrecision)
-            {
-                int type;
                 if (arr == null)
                 {
                     throw new Exception("Null elems object provided");
                 }
-                double[] complexArrDouble = null;
-                float[] complexArrFloat = null;
-
-                if (doublePrecision)
-                {
-                    complexArrDouble = new double[arr.Length * 2];
-                    type = (int)Dtype.c64;
-                    for (int i = 0; i < arr.Length; i++)
-                    {
-                        complexArrDouble[2*i] = arr[i].Real;
-                        complexArrDouble[2*i + 1] = arr[i].Imaginary;
-                    }
-                }
-                else
-                {
-                    complexArrFloat = new float[arr.Length * 2];
-                    type = (int)Dtype.c32;
-                    for (int i = 0; i < arr.Length; i++)
-                    {
-                        complexArrFloat[2*i] = (float)arr[i].Real;
-                        complexArrFloat[2*i + 1] = (float)arr[i].Imaginary;
-                    }
-                }
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    if (doublePrecision)
-                    {
-                        gchArr = GCHandle.Alloc(complexArrDouble, GCHandleType.Pinned);
-                    }
-                    else
-                    {
-                        gchArr = GCHandle.Alloc(complexArrFloat, GCHandleType.Pinned);
-                    }
-
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.Length, 1, 1, 1 };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    if (doublePrecision)
-                    {
-                        GCHandle.Alloc(complexArrDouble, GCHandleType.Weak);
-                    }
-                    else
-                    {
-                        GCHandle.Alloc(complexArrFloat, GCHandleType.Weak);
-                    }
-                }
-            }
-
-            public Array(Boolean[] arr)
-            {
-                int type = (int)Dtype.b8;
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.Length, 1, 1, 1 };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
-                }
-            }
-
-            public Array(short[] arr)
-            {
-                int type = (int)Dtype.s16;
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.Length, 1, 1, 1 };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
-                }
-            }
-
-            public Array(ushort[] arr)
-            {
-                int type = (int)Dtype.u16;
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.Length, 1, 1, 1 };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
-                }
-            }
-
-            public Array(byte[] arr)
-            {
-                int type = (int)Dtype.u8;
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.Length, 1, 1, 1 };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
-                }
-            }
-
-            public Array(long[] arr)
-            {
-                int type = (int)Dtype.s64;
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.Length, 1, 1, 1 };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
-                }
-            }
-
-            public Array(ulong[] arr)
-            {
-                int type = (int)Dtype.u64;
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.Length, 1, 1, 1 };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
-                }
-            }
-
-            public Array(double[,] arr)
-            {
-                int type = (int)Dtype.f64;
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
-                }
+                int type = (int)Dtype.f32;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.Length, 1, 1, 1 };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
             }
 
             public Array(float[,] arr)
             {
+                if (arr == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
                 int type = (int)Dtype.f32;
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
-                }
-            }*/
-
-            public Array(int[,] arr)
-            {
-                int type = (int)Dtype.s32;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
                 interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
-                /*
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
-                }*/
             }
-            /*
 
-            public Array(uint[,] arr)
+            public Array(float[,,] arr)
             {
-                int type = (int)Dtype.u32;
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
+                if (arr == null)
                 {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
+                    throw new Exception("Null elems object provided");
                 }
-                finally
+                int type = (int)Dtype.f32;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+            }
+
+            public Array(float[,,,] arr)
+            {
+                if (arr == null)
                 {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
+                    throw new Exception("Null elems object provided");
+                }
+                int type = (int)Dtype.f32;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+            }
+
+            public Array(double[] arr)
+            {
+                if (arr == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
+                int type = (int)Dtype.f64;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.Length, 1, 1, 1 };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+            }
+
+            public Array(double[,] arr)
+            {
+                if (arr == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
+                int type = (int)Dtype.f64;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+            }
+
+            public Array(double[,,] arr)
+            {
+                if (arr == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
+                int type = (int)Dtype.f64;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+            }
+
+            public Array(double[,,,] arr)
+            {
+                if (arr == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
+                int type = (int)Dtype.f64;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+            }
+
+            public Array(Complex[] arr, bool doublePrecision)
+            {
+                if (arr == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
+                int type;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.Length, 1, 1, 1 };
+                double[] complexArrDouble = null;
+                float[] complexArrFloat = null;
+                if (!doublePrecision)
+                {
+                    type = (int)Dtype.c32;
+                    complexArrFloat = new float[arr.Length * 2];
+                    Flatten1D<float>(ref complexArrFloat, arr);
+                    interop.DLLArray.create_array(complexArrFloat, ref ndims, dims, ref reference, ref type);
+                }
+                else
+                {
+                    type = (int)Dtype.c64;
+                    complexArrDouble = new double[arr.Length * 2];
+                    Flatten1D<double>(ref complexArrDouble, arr);
+                    interop.DLLArray.create_array(complexArrDouble, ref ndims, dims, ref reference, ref type);
+                }
+            }
+
+            private void Flatten1D<T>(ref T[] complexArr, Complex[] arr)
+            {
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    complexArr[2 * i] = (T)Convert.ChangeType(arr[i].Real, typeof(T));
+                    complexArr[2 * i + 1] = (T)Convert.ChangeType(arr[i].Imaginary, typeof(T));
                 }
             }
 
             public Array(Complex[,] arr, bool doublePrecision)
             {
-                int type;
                 if (arr == null)
                 {
                     throw new Exception("Null elems object provided");
                 }
+                int type;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
                 double[] complexArrDouble = null;
                 float[] complexArrFloat = null;
-
-                if (doublePrecision)
+                if (!doublePrecision)
                 {
-                    complexArrDouble = new double[arr.Length*2];
-                    type = (int)Dtype.c64;
-                    
-                    for (int i = 0; i < arr.GetLength(0); i++)
-                    {
-                        for (int j = 0; j < arr.GetLength(1); j++)
-                        {
-                            complexArrDouble[2 * i * arr.GetLength(1) + 2 * j] = arr[i, j].Real;
-                            complexArrDouble[2 * i * arr.GetLength(1) + 2 * j + 1] = arr[i, j].Imaginary;
-                        }
-                    }
+                    type = (int)Dtype.c32;
+                    complexArrFloat = new float[arr.Length * 2];
+                    Flatten2D<float>(ref complexArrFloat, arr);
+                    interop.DLLArray.create_array(complexArrFloat, ref ndims, dims, ref reference, ref type);
                 }
                 else
                 {
-                    complexArrFloat = new float[arr.Length * 2];
-                    type = (int)Dtype.c32;
-                    for (int i = 0; i < arr.GetLength(0); i++)
-                    {
-                        for (int j = 0; j < arr.GetLength(1); j++) {
-                            complexArrFloat[2 * i * arr.GetLength(1) + 2*j] = (float)arr[i, j].Real;
-                            complexArrFloat[2 * i * arr.GetLength(1) + 2*j + 1] = (float)arr[i, j].Imaginary;
-                        }
-                    }
-                }
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    if (doublePrecision)
-                    {
-                        gchArr = GCHandle.Alloc(complexArrDouble, GCHandleType.Pinned);
-                    }
-                    else
-                    {
-                        gchArr = GCHandle.Alloc(complexArrFloat, GCHandleType.Pinned);
-                    }
-
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    if (doublePrecision)
-                    {
-                        GCHandle.Alloc(complexArrDouble, GCHandleType.Weak);
-                    }
-                    else
-                    {
-                        GCHandle.Alloc(complexArrFloat, GCHandleType.Weak);
-                    }
+                    type = (int)Dtype.c64;
+                    complexArrDouble = new double[arr.Length * 2];
+                    Flatten2D<double>(ref complexArrDouble, arr);
+                    interop.DLLArray.create_array(complexArrDouble, ref ndims, dims, ref reference, ref type);
                 }
             }
 
-            public Array(Boolean[,] arr)
+            private void Flatten2D<T>(ref T[] complexArr, Complex[,] arr)
             {
-                int type = (int)Dtype.b8;
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
+                for (int i = 0; i < arr.GetLength(0); i++)
                 {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
+                    for (int j = 0; j < arr.GetLength(1); j++)
                     {
-                        throw new Exception("Null elems object provided");
+                        complexArr[2 * i * arr.GetLength(1) + 2 * j] = (T)Convert.ChangeType(arr[i, j].Real, typeof(T));
+                        complexArr[2 * i * arr.GetLength(1) + 2 * j + 1] = (T)Convert.ChangeType(arr[i, j].Imaginary, typeof(T));
                     }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
-                }
-            }
-
-            public Array(short[,] arr)
-            {
-                int type = (int)Dtype.s16;
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
-                }
-            }
-
-            public Array(ushort[,] arr)
-            {
-                int type = (int)Dtype.u16;
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
-                }
-            }
-
-            public Array(byte[,] arr)
-            {
-                int type = (int)Dtype.u8;
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
-                }
-            }
-
-            public Array(long[,] arr)
-            {
-                int type = (int)Dtype.s64;
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
-                }
-            }
-
-            public Array(ulong[,] arr)
-            {
-                int type = (int)Dtype.u64;
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
-                }
-            }
-
-            public Array(double[,,] arr)
-            {
-                int type = (int)Dtype.f64;
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = {  arr.GetLength(1), arr.GetLength(2), arr.GetLength(0), 1 };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
-                }
-            }
-
-            public Array(float[,,] arr)
-            {
-                int type = (int)Dtype.f32;
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = {  arr.GetLength(1), arr.GetLength(2), arr.GetLength(0), 1 };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
-                }
-            }
-            */
-            public Array(int[,,] arr)
-            {
-                int type = (int)Dtype.s32;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
-                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
-                /*
-                int type = (int)Dtype.s32;
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = {  arr.GetLength(1), arr.GetLength(2), arr.GetLength(0), 1 };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
-                }*/
-            }
-            /*
-            public Array(uint[,,] arr)
-            {
-                int type = (int)Dtype.u32;
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = {  arr.GetLength(1), arr.GetLength(2), arr.GetLength(0), 1 };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
                 }
             }
 
             public Array(Complex[,,] arr, bool doublePrecision)
             {
-                int type;
                 if (arr == null)
                 {
                     throw new Exception("Null elems object provided");
                 }
+                int type;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
                 double[] complexArrDouble = null;
                 float[] complexArrFloat = null;
-
-                if (doublePrecision)
+                if (!doublePrecision)
                 {
-                    complexArrDouble = new double[arr.Length * 2];
-                    type = (int)Dtype.c64;
-                    for (int i = 0; i < arr.GetLength(0); i++)
-                    {
-                        for (int j = 0; j < arr.GetLength(1); j++)
-                        {
-                            for (int k = 0; k < arr.GetLength(2); k++)
-                            {
-                                complexArrDouble[2*i * (arr.GetLength(1) + arr.GetLength(2)) + 2*j * arr.GetLength(2) + 2*k] = arr[i, j, k].Real;
-                                complexArrDouble[2*i * (arr.GetLength(1) + arr.GetLength(2)) + 2*j * arr.GetLength(2) + 2*k + 1] = arr[i, j, k].Imaginary;  
-                            }
-                        }
-                    }
-                    for (int i = 0; i < arr.GetLength(0); i++)
-                    {
-                        for (int j = 0; j < arr.GetLength(1); j++)
-                        {
-                            for (int k = 0; k < arr.GetLength(2); k++)
-                            {
-                                Console.WriteLine("(" + (complexArrDouble[2 * i * (arr.GetLength(1) + arr.GetLength(2)) + 2 * j * arr.GetLength(2) + 2 * k]) + "," +
-                                (complexArrDouble[2 * i * (arr.GetLength(1) + arr.GetLength(2)) + 2 * j * arr.GetLength(2) + 2 * k + 1]) + ")");
-                            }
-                        }
-                    }
+                    type = (int)Dtype.c32;
+                    complexArrFloat = new float[arr.Length * 2];
+                    Flatten3D<float>(ref complexArrFloat, arr);
+                    interop.DLLArray.create_array(complexArrFloat, ref ndims, dims, ref reference, ref type);
                 }
                 else
                 {
-                    complexArrFloat = new float[arr.Length * 2];
-                    type = (int)Dtype.c32;
-                    for (int i = 0; i < arr.GetLength(0); i++)
+                    type = (int)Dtype.c64;
+                    complexArrDouble = new double[arr.Length * 2];
+                    Flatten3D<double>(ref complexArrDouble, arr);
+                    interop.DLLArray.create_array(complexArrDouble, ref ndims, dims, ref reference, ref type);
+                }
+            }
+
+            private void Flatten3D<T>(ref T[] complexArr, Complex[,,] arr)
+            {
+                for (int i = 0; i < arr.GetLength(0); i++)
+                {
+                    for (int j = 0; j < arr.GetLength(1); j++)
                     {
-                        for (int j = 0; j < arr.GetLength(1); j++)
+                        for (int k = 0; k < arr.GetLength(2); k++)
                         {
-                            for (int k = 0; k < arr.GetLength(2); k++)
-                            {
-                                complexArrFloat[2 * i * (arr.GetLength(1) + arr.GetLength(2)) + 2 * j * arr.GetLength(2) + 2 * k] = (float)arr[i, j, k].Real;
-                                complexArrFloat[2 * i * (arr.GetLength(1) + arr.GetLength(2)) + 2 * j * arr.GetLength(2) + 2 * k + 1] = (float)arr[i, j, k].Imaginary;
-                            }
+                            complexArr[2 * i * (arr.GetLength(1) + arr.GetLength(2)) + 2 * j * arr.GetLength(2) + 2 * k] = (T)Convert.ChangeType(arr[i, j, k].Real, typeof(T));
+                            complexArr[2 * i * (arr.GetLength(1) + arr.GetLength(2)) + 2 * j * arr.GetLength(2) + 2 * k + 1] = (T)Convert.ChangeType(arr[i, j, k].Imaginary, typeof(T));
                         }
                     }
-                }
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    if (doublePrecision)
-                    {
-                        gchArr = GCHandle.Alloc(complexArrDouble, GCHandleType.Pinned);
-                    }
-                    else
-                    {
-                        gchArr = GCHandle.Alloc(complexArrFloat, GCHandleType.Pinned);
-                    }
-
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    if (doublePrecision)
-                    {
-                        GCHandle.Alloc(complexArrDouble, GCHandleType.Weak);
-                    }
-                    else
-                    {
-                        GCHandle.Alloc(complexArrFloat, GCHandleType.Weak);
-                    }
-                }
-            }
-
-            public Array(Boolean[,,] arr)
-            {
-                int type = (int)Dtype.b8;
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = {  arr.GetLength(1), arr.GetLength(2), arr.GetLength(0), 1 };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
-                }
-            }
-
-            public Array(short[,,] arr)
-            {
-                int type = (int)Dtype.s16;
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = {  arr.GetLength(1), arr.GetLength(2), arr.GetLength(0), 1 };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
-                }
-            }
-
-            public Array(ushort[,,] arr)
-            {
-                int type = (int)Dtype.u16;
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = {  arr.GetLength(1), arr.GetLength(2), arr.GetLength(0), 1 };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
-                }
-            }
-
-            public Array(byte[,,] arr)
-            {
-                int type = (int)Dtype.u8;
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = {  arr.GetLength(1), arr.GetLength(2), arr.GetLength(0), 1 };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
-                }
-            }
-
-            public Array(long[,,] arr)
-            {
-                int type = (int)Dtype.s64;
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = {  arr.GetLength(1), arr.GetLength(2), arr.GetLength(0), 1 };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
-                }
-            }
-
-            public Array(ulong[,,] arr)
-            {
-                int type = (int)Dtype.u64;
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = {  arr.GetLength(1), arr.GetLength(2), arr.GetLength(0), 1 };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
-                }
-            }
-
-            public Array(double[,,,] arr)
-            {
-                int type = (int)Dtype.f64;
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(0), arr.GetLength(1), arr.GetLength(2), arr.GetLength(3) };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
-                }
-            }
-
-            public Array(float[,,,] arr)
-            {
-                int type = (int)Dtype.f32;
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(0), arr.GetLength(1), arr.GetLength(2), arr.GetLength(3) };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
-                }
-            }
-            */
-            public Array(int[,,,] arr)
-            {
-                int type = (int)Dtype.s32;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
-                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
-                /*
-                    int type = (int)Dtype.s32;
-
-                    GCHandle gchArr = default(GCHandle);
-
-                    try
-                    {
-                        gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                        IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                        if (arr == null)
-                        {
-                            throw new Exception("Null elems object provided");
-                        }
-
-                        uint ndims = (uint)arr.Rank;
-                        long[] dims = { arr.GetLength(0), arr.GetLength(1), arr.GetLength(2), arr.GetLength(3) };
-                        create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                    }
-                    finally
-                    {
-                        GCHandle.Alloc(arr, GCHandleType.Weak);
-                    }*/
-            }
-            /*
-            public Array(uint[,,,] arr)
-            {
-                int type = (int)Dtype.u32;
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(0), arr.GetLength(1), arr.GetLength(2), arr.GetLength(3) };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
                 }
             }
 
             public Array(Complex[,,,] arr, bool doublePrecision)
             {
-                int type;
                 if (arr == null)
                 {
                     throw new Exception("Null elems object provided");
                 }
+                int type;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
                 double[] complexArrDouble = null;
                 float[] complexArrFloat = null;
-
-                if (doublePrecision)
+                if (!doublePrecision)
                 {
-                    complexArrDouble = new double[arr.Length * 2];
-                    type = (int)Dtype.c64;
-                    for (int i = 0; i < arr.GetLength(0); i++)
-                    {
-                        for (int j = 0; j < arr.GetLength(1); j++)
-                        {
-                            for (int k = 0; k < arr.GetLength(2); k++)
-                            {
-                                for (int z = 0; z < arr.GetLength(3); z++)
-                                {
-                                    complexArrDouble[2*i * arr.GetLength(0) + 2*j * arr.GetLength(1) + 2*k * arr.GetLength(2) + 2*z] = arr[i, j, k, z].Real;
-                                    complexArrDouble[2*i * arr.GetLength(0) + 2*j * arr.GetLength(1) + 2*k * arr.GetLength(2) + 2*z + 1] = arr[i, j, k, z].Imaginary;
-                                }
-                            }
-                        }
-                    }
+                    type = (int)Dtype.c32;
+                    complexArrFloat = new float[arr.Length * 2];
+                    Flatten4D<float>(ref complexArrFloat, arr);
+                    interop.DLLArray.create_array(complexArrFloat, ref ndims, dims, ref reference, ref type);
                 }
                 else
                 {
-                    complexArrFloat = new float[arr.Length * 2];
-                    type = (int)Dtype.c32;
-                    for (int i = 0; i < arr.GetLength(0); i++)
+                    type = (int)Dtype.c64;
+                    complexArrDouble = new double[arr.Length * 2];
+                    Flatten4D<double>(ref complexArrDouble, arr);
+                    interop.DLLArray.create_array(complexArrDouble, ref ndims, dims, ref reference, ref type);
+                }
+            }
+
+            private void Flatten4D<T>(ref T[] complexArr, Complex[,,,] arr)
+            {
+                for (int i = 0; i < arr.GetLength(0); i++)
+                {
+                    for (int j = 0; j < arr.GetLength(1); j++)
                     {
-                        for (int j = 0; j < arr.GetLength(1); j++)
+                        for (int k = 0; k < arr.GetLength(2); k++)
                         {
-                            for (int k = 0; k < arr.GetLength(2); k++)
+                            for (int z = 0; z < arr.GetLength(3); z++)
                             {
-                                for (int z = 0; z < arr.GetLength(3); z++)
-                                {
-                                    complexArrFloat[2*(i * arr.GetLength(0) + j * arr.GetLength(1) + k * arr.GetLength(2) + z)] = (float)arr[i, j, k, z].Real;
-                                    complexArrFloat[2*(i * arr.GetLength(0) + j * arr.GetLength(1) + k * arr.GetLength(2) + z + 1)] = (float)arr[i, j, k, z].Imaginary;
-                                }
+                                complexArr[2 * i * (arr.GetLength(1) + arr.GetLength(2) + arr.GetLength(3)) + 2 * j * (arr.GetLength(2) + arr.GetLength(3)) + 2 * k * arr.GetLength(3) + 2 * z] = (T)Convert.ChangeType(arr[i, j, k, z].Real, typeof(T));
+                                complexArr[2 * i * (arr.GetLength(1) + arr.GetLength(2) + arr.GetLength(3)) + 2 * j * (arr.GetLength(2) + arr.GetLength(3)) + 2 * k * arr.GetLength(3) + 2 * z + 1] = (T)Convert.ChangeType(arr[i, j, k, z].Imaginary, typeof(T));
                             }
                         }
                     }
                 }
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
-                {
-                    if (doublePrecision)
-                    {
-                        gchArr = GCHandle.Alloc(complexArrDouble, GCHandleType.Pinned);
-                    }
-                    else
-                    {
-                        gchArr = GCHandle.Alloc(complexArrFloat, GCHandleType.Pinned);
-                    }
-
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(0), arr.GetLength(1), arr.GetLength(2), arr.GetLength(3) };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    if (doublePrecision)
-                    {
-                        GCHandle.Alloc(complexArrDouble, GCHandleType.Weak);
-                    }
-                    else
-                    {
-                        GCHandle.Alloc(complexArrFloat, GCHandleType.Weak);
-                    }
-                }
             }
 
-            public Array(Boolean[,,,] arr)
+            public Array(bool[] arr)
             {
+                if (arr == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
                 int type = (int)Dtype.b8;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.Length, 1, 1, 1 };
+                byte[] byteArr = new byte[arr.GetLength(0)];
+                BoolToByte1D(ref byteArr, arr);
+                interop.DLLArray.create_array(byteArr, ref ndims, dims, ref reference, ref type);
+            }
 
-                GCHandle gchArr = default(GCHandle);
-
-                try
+            private void BoolToByte1D(ref byte[] byteArr, bool[] arr)
+            {
+                for (int i = 0; i<arr.Length; i++)
                 {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(0), arr.GetLength(1), arr.GetLength(2), arr.GetLength(3) };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
-                {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
+                    byteArr[i] = Convert.ToByte(arr[i]);
                 }
             }
 
-            public Array(short[,,,] arr)
+            public Array(bool[,] arr)
             {
-                int type = (int)Dtype.s16;
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
+                if (arr == null)
                 {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(0), arr.GetLength(1), arr.GetLength(2), arr.GetLength(3) };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
+                    throw new Exception("Null elems object provided");
                 }
-                finally
+                int type = (int)Dtype.b8;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
+                byte[,] byteArr = new byte[arr.GetLength(0), arr.GetLength(1)];
+                BoolToByte2D(ref byteArr, arr);
+                interop.DLLArray.create_array(byteArr, ref ndims, dims, ref reference, ref type);
+            }
+
+            private void BoolToByte2D(ref byte[,] byteArr, bool[,] arr)
+            {
+                for (int i = 0; i < arr.GetLength(0); i++)
                 {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
+                    for (int j = 0; j < arr.GetLength(1); j++)
+                    {
+                        byteArr[i, j] = Convert.ToByte(arr[i, j]);
+                    }
                 }
             }
 
-            public Array(ushort[,,,] arr)
+            public Array(bool[,,] arr)
             {
-                int type = (int)Dtype.u16;
-
-                GCHandle gchArr = default(GCHandle);
-
-                try
+                if (arr == null)
                 {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
+                    throw new Exception("Null elems object provided");
+                }
+                int type = (int)Dtype.b8;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
+                byte[,,] byteArr = new byte[arr.GetLength(0), arr.GetLength(1), arr.GetLength(2)];
+                BoolToByte3D(ref byteArr, arr);
+                interop.DLLArray.create_array(byteArr, ref ndims, dims, ref reference, ref type);
+            }
 
-                    if (arr == null)
+            private void BoolToByte3D(ref byte[,,] byteArr, bool[,,] arr)
+            {
+                for (int i = 0; i < arr.GetLength(0); i++)
+                {
+                    for (int j = 0; j < arr.GetLength(1); j++)
                     {
-                        throw new Exception("Null elems object provided");
+                        for (int k = 0; k < arr.GetLength(2); k++)
+                        {
+                            byteArr[i, j, k] = Convert.ToByte(arr[i, j, k]);
+                        }
                     }
+                }
+            }
 
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(0), arr.GetLength(1), arr.GetLength(2), arr.GetLength(3) };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                }
-                finally
+            public Array(bool[,,,] arr)
+            {
+                if (arr == null)
                 {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
+                    throw new Exception("Null elems object provided");
                 }
+                int type = (int)Dtype.b8;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
+                byte[,,,] byteArr = new byte[arr.GetLength(0), arr.GetLength(1), arr.GetLength(2), arr.GetLength(3)];
+                BoolToByte4D(ref byteArr, arr);
+                interop.DLLArray.create_array(byteArr, ref ndims, dims, ref reference, ref type);
+            }
+
+            private void BoolToByte4D(ref byte[,,,] byteArr, bool[,,,] arr)
+            {
+                for (int i = 0; i < arr.GetLength(0); i++)
+                {
+                    for (int j = 0; j < arr.GetLength(1); j++)
+                    {
+                        for (int k = 0; k < arr.GetLength(2); k++)
+                        {
+                            for (int z = 0; z < arr.GetLength(3); z++)
+                            {
+                                byteArr[i, j, k, z] = Convert.ToByte(arr[i, j, k, z]);
+                            }
+                        }
+                    }
+                }
+            }
+
+            public Array(int[] arr)
+            {
+                if (arr == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
+                int type = (int)Dtype.s32;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.Length, 1, 1, 1 };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+            }
+           
+            public Array(int[,] arr)
+            {
+                if (arr == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
+                int type = (int)Dtype.s32;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+            }
+           
+            public Array(int[,,] arr)
+            {
+                if (arr == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
+                int type = (int)Dtype.s32;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+            }
+            
+            public Array(int[,,,] arr)
+            {
+                if (arr == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
+                int type = (int)Dtype.s32;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+            }
+
+            public Array(uint[] arr)
+            {
+                if (arr == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
+                int type = (int)Dtype.u32;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.Length, 1, 1, 1 };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+            }
+
+            public Array(uint[,] arr)
+            {
+                if (arr == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
+                int type = (int)Dtype.u32;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+            }
+
+            public Array(uint[,,] arr)
+            {
+                if (arr == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
+                int type = (int)Dtype.u32;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+            }
+
+            public Array(uint[,,,] arr)
+            {
+                if (arr == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
+                int type = (int)Dtype.u32;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+            }
+
+            public Array(byte[] arr)
+            {
+                if (arr == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
+                int type = (int)Dtype.u8;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.Length, 1, 1, 1 };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+            }
+
+            public Array(byte[,] arr)
+            {
+                if (arr == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
+                int type = (int)Dtype.u8;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+            }
+
+            public Array(byte[,,] arr)
+            {
+                if (arr == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
+                int type = (int)Dtype.u8;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
             }
 
             public Array(byte[,,,] arr)
             {
+                if (arr == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
                 int type = (int)Dtype.u8;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+            }
 
-                GCHandle gchArr = default(GCHandle);
-
-                try
+            public Array(long[] arr)
+            {
+                if (arr == null)
                 {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(0), arr.GetLength(1), arr.GetLength(2), arr.GetLength(3) };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
+                    throw new Exception("Null elems object provided");
                 }
-                finally
+                int type = (int)Dtype.s64;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.Length, 1, 1, 1 };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+            }
+
+            public Array(long[,] arr)
+            {
+                if (arr == null)
                 {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
+                    throw new Exception("Null elems object provided");
                 }
+                int type = (int)Dtype.s64;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+            }
+
+            public Array(long[,,] arr)
+            {
+                if (arr == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
+                int type = (int)Dtype.s64;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
             }
 
             public Array(long[,,,] arr)
             {
+                if (arr == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
                 int type = (int)Dtype.s64;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+            }
 
-                GCHandle gchArr = default(GCHandle);
-
-                try
+            public Array(ulong[] arr)
+            {
+                if (arr == null)
                 {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(0), arr.GetLength(1), arr.GetLength(2), arr.GetLength(3) };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
+                    throw new Exception("Null elems object provided");
                 }
-                finally
+                int type = (int)Dtype.u64;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.Length, 1, 1, 1 };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+            }
+
+            public Array(ulong[,] arr)
+            {
+                if (arr == null)
                 {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
+                    throw new Exception("Null elems object provided");
                 }
+                int type = (int)Dtype.u64;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+            }
+
+            public Array(ulong[,,] arr)
+            {
+                if (arr == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
+                int type = (int)Dtype.u64;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
             }
 
             public Array(ulong[,,,] arr)
             {
+                if (arr == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
                 int type = (int)Dtype.u64;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+            }
 
-                GCHandle gchArr = default(GCHandle);
-
-                try
+            public Array(short[] arr)
+            {
+                if (arr == null)
                 {
-                    gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                    IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                    if (arr == null)
-                    {
-                        throw new Exception("Null elems object provided");
-                    }
-
-                    uint ndims = (uint)arr.Rank;
-                    long[] dims = { arr.GetLength(0), arr.GetLength(1), arr.GetLength(2), arr.GetLength(3) };
-                    create_array(ptrArr, ref ndims, dims, ref reference, ref type);
+                    throw new Exception("Null elems object provided");
                 }
-                finally
+                int type = (int)Dtype.s16;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.Length, 1, 1, 1 };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+            }
+
+            public Array(short[,] arr)
+            {
+                if (arr == null)
                 {
-                    GCHandle.Alloc(arr, GCHandleType.Weak);
+                    throw new Exception("Null elems object provided");
                 }
-            }*/
+                int type = (int)Dtype.s16;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+            }
+
+            public Array(short[,,] arr)
+            {
+                if (arr == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
+                int type = (int)Dtype.s16;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+            }
+
+            public Array(short[,,,] arr)
+            {
+                if (arr == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
+                int type = (int)Dtype.s16;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+            }
+
+            public Array(ushort[] arr)
+            {
+                if (arr == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
+                int type = (int)Dtype.u16;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.Length, 1, 1, 1 };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+            }
+
+            public Array(ushort[,] arr)
+            {
+                if (arr == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
+                int type = (int)Dtype.u16;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+            }
+
+            public Array(ushort[,,] arr)
+            {
+                if (arr == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
+                int type = (int)Dtype.u16;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+            }
+
+            public Array(ushort[,,,] arr)
+            {
+                if (arr == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
+                int type = (int)Dtype.u16;
+                uint ndims = (uint)arr.Rank;
+                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
+                interop.DLLArray.create_array(arr, ref ndims, dims, ref reference, ref type);
+            }
 
             public Array(IntPtr reference)
             {
@@ -1441,452 +809,258 @@ namespace khiva
                 return ref reference;
             }
 
-            private static long[] Dim4(long[] dims)
-            {
-                if (dims == null)
-                {
-                    throw new Exception("Null dimensions object provided");
-                }
-                else if (dims.Length > 4)
-                {
-                    throw new Exception("ArrayFire supports up to 4 dimensions only");
-                }
-
-                long[] adims;
-                adims = new long[] { 1, 1, 1, 1 };
-                for (int i = 0; i < dims.Length; i++)
-                {
-                    adims[i] = dims[i];
-                }
-
-                return adims;
-            }
-
             /**
              * Gets the data stored in the array.
              *
              * @param <Any> The data type to be returned.
              * @return The data to an array of its type.
              */
-             /*
             public T[] GetData1D<T>()
             {
-                if (CheckType(typeof(T)))
+                if (!CheckType(typeof(T)))
                 {
-                    long[] dims = GetDims();
-                    CheckNdims(dims, 1);
-                    if (typeof(T) == typeof(Complex))
+                    throw new Exception("Type does mismatch");
+                }
+                long[] dims = GetDims();
+                CheckNdims(dims, 1);
+                T[] data = new T[dims[0]];
+                if (typeof(T) == typeof(bool))
+                {
+                    byte[] byteData = new byte[dims[0]];
+                    Internal.GetData<byte>(ref reference, byteData);
+                    ByteToGeneric1D<T>(ref data, byteData);
+                }else if (typeof(T) == typeof(Complex))
+                {
+                    if (GetArrayType() == Dtype.c64)
                     {
-                        int dimsMultiplied = 2;
-
-                        for (int i = 0; i < 4; i++)
-                        {
-                            dimsMultiplied *= (int)dims[i];
-                        }
-
-                        if (GetArrayType() == Dtype.c32)
-                        {
-                            float[] data = new float[dimsMultiplied];
-                            T[] complexData = new T[dims[0]];
-                            GCHandle gchArr;
-                            try
-                            {
-                                gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
-                                IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                                get_data(ref reference, dataPtr);
-                                for (int i = 0; i < complexData.GetLength(0); i++)
-                                {
-                                    complexData[i] = (T)Convert.ChangeType(new Complex(data[2*i], data[2*i + 1]), typeof(T));
-                                }
-                            }
-                            finally
-                            {
-                                GCHandle.Alloc(data, GCHandleType.Weak);
-                            }
-                            return complexData;
-                        }
-                        else
-                        {
-                            double[] data = new double[dimsMultiplied];
-                            T[] complexData = new T[dims[0]];
-                            GCHandle gchArr;
-                            try
-                            {
-                                gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
-                                IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                                get_data(ref reference, dataPtr);
-                                for (int i = 0; i < complexData.GetLength(0); i++)
-                                {
-                                    complexData[i] = (T)Convert.ChangeType(new Complex(data[2*i], data[2*i + 1]), typeof(T));
-                                }
-                            }
-                            finally
-                            {
-                                GCHandle.Alloc(data, GCHandleType.Weak);
-                            }
-                            return complexData;
-                        }
-
-
+                        double[] complexData = new double[dims[0] * 2];
+                        Internal.GetData<double>(ref reference, complexData);
+                        ToGenericComplex1D<T, double>(ref data, complexData);
                     }
                     else
                     {
-                        int dimsMultiplied = 1;
-
-                        for (int i = 0; i < 4; i++)
-                        {
-                            dimsMultiplied *= (int)dims[i];
-                        }
-
-                        T[] data = new T[dims[0]];
-
-                        GCHandle gchArr;
-                        try
-                        {
-                            gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
-                            IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                            get_data(ref reference, dataPtr);
-                        }
-                        finally
-                        {
-                            GCHandle.Alloc(data, GCHandleType.Weak);
-                        }
-                        return data;
+                        float[] complexData = new float[dims[0] * 2];
+                        Internal.GetData<float>(ref reference, complexData);
+                        ToGenericComplex1D<T, float>(ref data, complexData);
                     }
-
                 }
                 else
                 {
-                    throw new Exception("Type does not match");
+                    Internal.GetData<T>(ref reference, data);
+                }
+                return data;
+            }
+
+            private void ByteToGeneric1D<T>(ref T[] genericArr, byte[] arr)
+            {
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    genericArr[i] = (T)Convert.ChangeType(arr[i], typeof(T));
                 }
             }
-            
+
+            private void ToGenericComplex1D<T, R>(ref T[] genericArr, R[] arr)
+            {
+                for (int i = 0; i < arr.Length/2; i++)
+                {
+                    genericArr[i] = (T)Convert.ChangeType(new Complex(Convert.ToDouble(arr[2*i]), Convert.ToDouble(arr[2*i+1])), typeof(T));
+                }
+            }
+
             public T[,] GetData2D<T>()
             {
-                if (CheckType(typeof(T)))
+                if (!CheckType(typeof(T)))
                 {
-                    long[] dims = GetDims();
-                    CheckNdims(dims, 2);
-                    if (typeof(T) == typeof(Complex))
+                    throw new Exception("Type does mismatch");
+                }
+                long[] dims = GetDims();
+                CheckNdims(dims, 2);
+                T[,] data = new T[dims[0], dims[1]];
+                if (typeof(T) == typeof(bool))
+                {
+                    byte[,] byteData = new byte[dims[0], dims[1]];
+                    Internal.GetData<byte>(ref reference, byteData);
+                    ByteToGeneric2D<T>(ref data, byteData);
+                }
+                else if (typeof(T) == typeof(Complex))
+                {
+                    if (GetArrayType() == Dtype.c64)
                     {
-                        int dimsMultiplied = 2;
-
-                        for (int i = 0; i < 4; i++)
-                        {
-                            dimsMultiplied *= (int)dims[i];
-                        }
-
-                        if (GetArrayType() == Dtype.c32)
-                        {
-                            float[] data = new float[dimsMultiplied];
-                            T[,] complexData = new T[dims[0], dims[1]];
-                            GCHandle gchArr;
-                            try
-                            {
-                                gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
-                                IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                                get_data(ref reference, dataPtr);
-                                for (int i = 0; i < complexData.GetLength(0); i++)
-                                {
-                                    for (int j = 0; j < complexData.GetLength(1); j++)
-                                    {
-                                        complexData[i, j] = (T)Convert.ChangeType(new Complex(data[2*i * dims[0] + 2*j], data[2*i * dims[0] + 2*j]), typeof(T));
-                                    }
-                                }
-                            }
-                            finally
-                            {
-                                GCHandle.Alloc(data, GCHandleType.Weak);
-                            }
-                            return complexData;
-                        }
-                        else
-                        {
-                            double[] data = new double[dimsMultiplied];
-                            T[,] complexData = new T[dims[0], dims[1]];
-                            GCHandle gchArr;
-                            try
-                            {
-                                gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
-                                IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                                get_data(ref reference, dataPtr);
-                                for (int i = 0; i < complexData.GetLength(0); i++)
-                                {
-                                    for (int j = 0; j < complexData.GetLength(1); j++)
-                                    {
-                                        complexData[i, j] = (T)Convert.ChangeType(new Complex(data[2*i * dims[0] + 2*j], data[2*i * dims[0] + 2*j + 1]), typeof(T));
-                                    }
-                                }
-                            }
-                            finally
-                            {
-                                GCHandle.Alloc(data, GCHandleType.Weak);
-                            }
-                            return complexData;
-                        }
+                        double[] complexData = new double[dims[0] * dims[1] * 2];
+                        Internal.GetData<double>(ref reference, complexData);
+                        ToGenericComplex2D<T, double>(ref data, complexData);
                     }
                     else
                     {
-                        int dimsMultiplied = 1;
-
-                        for (int i = 0; i < 4; i++)
-                        {
-                            dimsMultiplied *= (int)dims[i];
-                        }
-
-                        T[,] data = new T[dims[0], dims[1]];
-
-                        GCHandle gchArr;
-                        try
-                        {
-                            gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
-                            IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                            get_data(ref reference, dataPtr);
-                        }
-                        finally
-                        {
-                            GCHandle.Alloc(data, GCHandleType.Weak);
-                        }
-                        return data;
+                        float[] complexData = new float[dims[0] * dims[1] * 2];
+                        Internal.GetData<float>(ref reference, complexData);
+                        ToGenericComplex2D<T, float>(ref data, complexData);
                     }
                 }
                 else
                 {
-                    throw new Exception("Type does not match");
+                    Internal.GetData<T>(ref reference, data);
+                }
+                return data;
+            }
+
+            private void ByteToGeneric2D<T>(ref T[,] genericArr, byte[,] arr)
+            {
+                for (int i = 0; i < arr.GetLength(0); i++)
+                {
+                    for (int j = 0; j < arr.GetLength(1); j++)
+                    {
+                        genericArr[i, j] = (T)Convert.ChangeType(arr[i, j], typeof(T));
+                    }
+                }
+            }
+
+            private void ToGenericComplex2D<T, R>(ref T[,] genericArr, R[] arr)
+            {
+                for (int i = 0; i < genericArr.GetLength(0); i++)
+                {
+                    for (int j = 0; j < genericArr.GetLength(1); j++)
+                    {
+                        genericArr[i, j] = (T)Convert.ChangeType(new Complex(Convert.ToDouble(arr[2 * i * genericArr.GetLength(1) + 2 * j]), Convert.ToDouble(arr[2 * i * genericArr.GetLength(1) + 2 * j + 1])), typeof(T));
+                    }
                 }
             }
 
             public T[,,] GetData3D<T>()
             {
-                if (CheckType(typeof(T)))
+                if (!CheckType(typeof(T)))
                 {
-                    long[] dims = GetDims();
-                    CheckNdims(dims, 3);
-                    if (typeof(T) == typeof(Complex))
+                    throw new Exception("Type does mismatch");
+                }
+                long[] dims = GetDims();
+                CheckNdims(dims, 3);
+                T[,,] data = new T[dims[0], dims[1], dims[2]];
+                if (typeof(T) == typeof(bool))
+                {
+                    byte[,,] byteData = new byte[dims[0], dims[1], dims[2]];
+                    Internal.GetData<byte>(ref reference, byteData);
+                    ByteToGeneric3D<T>(ref data, byteData);
+                }
+                else if (typeof(T) == typeof(Complex))
+                {
+                    if (GetArrayType() == Dtype.c64)
                     {
-                        int dimsMultiplied = 2;
-
-                        for (int i = 0; i < 4; i++)
-                        {
-                            dimsMultiplied *= (int)dims[i];
-                        }
-
-                        if (GetArrayType() == Dtype.c32)
-                        {
-                            float[] data = new float[dimsMultiplied];
-                            T[,,] complexData = new T[dims[0], dims[1], dims[2]];
-                            GCHandle gchArr;
-                            try
-                            {
-                                gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
-                                IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                                get_data(ref reference, dataPtr);
-                                for (int i = 0; i < complexData.GetLength(0); i++)
-                                {
-                                    for (int j = 0; j < complexData.GetLength(1); j++)
-                                    {
-                                        for (int k = 0; k < complexData.GetLength(2); k++)
-                                        {
-                                            complexData[i, j, k] = (T)Convert.ChangeType(new Complex(data[2*i * dims[0] + 2*j * dims[1] + 2*k], data[2*i * dims[0] + 2*j * dims[1] + 2*k + 1]), typeof(T));
-                                        }
-                                    }
-                                }
-                            }
-                            finally
-                            {
-                                GCHandle.Alloc(data, GCHandleType.Weak);
-                            }
-                            return complexData;
-                        }
-                        else
-                        {
-                            double[] data = new double[dimsMultiplied];
-                            T[,,] complexData = new T[dims[0], dims[1], dims[2]];
-                            GCHandle gchArr;
-                            try
-                            {
-                                gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
-                                IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                                get_data(ref reference, dataPtr);
-                                for (int i = 0; i < complexData.GetLength(0); i++)
-                                {
-                                    for (int j = 0; j < complexData.GetLength(1); j++)
-                                    {
-                                        for (int k = 0; k < complexData.GetLength(2); k++)
-                                        {
-                                            complexData[i, j, k] = (T)Convert.ChangeType(new Complex(data[2 * i * dims[0] + 2 * j * dims[1] + 2 * k], data[2 * i * dims[0] + 2 * j * dims[1] + 2 * k + 1]), typeof(T));
-                                        }
-                                    }
-                                }
-                            }
-                            finally
-                            {
-                                GCHandle.Alloc(data, GCHandleType.Weak);
-                            }
-                            return complexData;
-                        }
-
-
+                        double[] complexData = new double[dims[0] * dims[1] * dims[2] *2];
+                        Internal.GetData<double>(ref reference, complexData);
+                        ToGenericComplex3D<T, double>(ref data, complexData);
                     }
                     else
                     {
-                        int dimsMultiplied = 1;
-
-                        for (int i = 0; i < 4; i++)
-                        {
-                            dimsMultiplied *= (int)dims[i];
-                        }
-
-                        T[,,] data = new T[dims[0], dims[1], dims[2]];
-
-                        GCHandle gchArr;
-                        try
-                        {
-                            gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
-                            IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                            get_data(ref reference, dataPtr);
-                        }
-                        finally
-                        {
-                            GCHandle.Alloc(data, GCHandleType.Weak);
-                        }
-                        return data;
+                        float[] complexData = new float[dims[0] * dims[1] * dims[2] * 2];
+                        Internal.GetData<float>(ref reference, complexData);
+                        ToGenericComplex3D<T, float>(ref data, complexData);
                     }
                 }
                 else
                 {
-                    throw new Exception("Type does not match");
+                    Internal.GetData<T>(ref reference, data);
+                }
+                return data;
+            }
+
+            private void ByteToGeneric3D<T>(ref T[,,] genericArr, byte[,,] arr)
+            {
+                for (int i = 0; i < arr.GetLength(0); i++)
+                {
+                    for (int j = 0; j < arr.GetLength(1); j++)
+                    {
+                        for (int k = 0; k < arr.GetLength(2); k++)
+                        {
+                            genericArr[i, j, k] = (T)Convert.ChangeType(arr[i, j, k], typeof(T));
+                        }
+                    }
                 }
             }
-            */
+
+            private void ToGenericComplex3D<T, R>(ref T[,,] genericArr, R[] arr)
+            {
+                for (int i = 0; i < genericArr.GetLength(0); i++)
+                {
+                    for (int j = 0; j < genericArr.GetLength(1); j++)
+                    {
+                        for (int k = 0; k < genericArr.GetLength(2); k++)
+                        {
+                            genericArr[i, j, k] = (T)Convert.ChangeType(new Complex(Convert.ToDouble(arr[2 * i * (genericArr.GetLength(1) + genericArr.GetLength(2)) + 2 * j * genericArr.GetLength(2) + 2*k]), Convert.ToDouble(arr[2 * i * (genericArr.GetLength(1) + genericArr.GetLength(2)) + 2 * j * genericArr.GetLength(2) + 2 * k + 1])), typeof(T));
+                        }
+                    }
+                }
+            }
+
             public T[,,,] GetData4D<T>()
             {
-                long[] dims = GetDims();
-                int[,,,] data = new int[dims[0],dims[1],dims[2],dims[3]];
-                interop.DLLArray.get_data(ref reference, data);
-                T[,,,] dataT = new T[dims[0], dims[1], dims[2], dims[3]];
-                for ( int i = 0; i< dims[0]; i++)
+                if (!CheckType(typeof(T)))
                 {
-                    for ( int j = 0; j<dims[1]; j++)
-                    {
-                        for(int k = 0; k<dims[2]; k++)
-                        {
-                            for(int z = 0; z<dims[3]; z++)
-                            {
-                                dataT[i,j,k,z] = (T)Convert.ChangeType(data[i,j,k,z], typeof(T));
-                            }
-                        }
-                    }
+                    throw new Exception("Type does mismatch");
                 }
-                return dataT;
-                /*
-                if (CheckType(typeof(T)))
+                long[] dims = GetDims();
+                T[,,,] data = new T[dims[0], dims[1], dims[2], dims[3]];
+                if (typeof(T) == typeof(bool))
                 {
-                    long[] dims = GetDims();
-                    if (typeof(T) == typeof(Complex))
+                    byte[,,,] byteData = new byte[dims[0], dims[1], dims[2], dims[3]];
+                    Internal.GetData<byte>(ref reference, byteData);
+                    ByteToGeneric4D<T>(ref data, byteData);
+                }
+                else if (typeof(T) == typeof(Complex))
+                {
+                    if (GetArrayType() == Dtype.c64)
                     {
-                        int dimsMultiplied = 2;
-
-                        for (int i = 0; i < 4; i++)
-                        {
-                            dimsMultiplied *= (int)dims[i];
-                        }
-
-                        if(GetArrayType() == Dtype.c32)
-                        {
-                            float[] data = new float[dimsMultiplied];
-                            T[,,,] complexData = new T[dims[0], dims[1], dims[2], dims[3]];
-                            GCHandle gchArr;
-                            try
-                            {
-                                gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
-                                IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                                get_data(ref reference, dataPtr);
-                                for (int i = 0; i < complexData.GetLength(0); i++)
-                                {
-                                    for (int j = 0; j < complexData.GetLength(1); j++)
-                                    {
-                                        for (int k = 0; k < complexData.GetLength(2); k++)
-                                        {
-                                            for (int z = 0; z < complexData.GetLength(3); z++)
-                                            {
-                                                complexData[i, j, k, z] = (T)Convert.ChangeType(new Complex(data[2*i * dims[0] + 2*j * dims[1] + 2*k * dims[2] + 2*z], data[2*i * dims[0] + 2*j * dims[1] + 2*k * dims[2] + 2*z + 1]), typeof(T));
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                            finally
-                            {
-                                GCHandle.Alloc(data, GCHandleType.Weak);
-                            }
-                            return complexData;
-                        }
-                        else
-                        {
-                            double[] data = new double[dimsMultiplied];
-                            T[,,,] complexData = new T[dims[0], dims[1], dims[2], dims[3]];
-                            GCHandle gchArr;
-                            try
-                            {
-                                gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
-                                IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                                get_data(ref reference, dataPtr);
-                                for (int i = 0; i < complexData.GetLength(0); i++)
-                                {
-                                    for (int j = 0; j < complexData.GetLength(1); j++)
-                                    {
-                                        for (int k = 0; k < complexData.GetLength(2); k++)
-                                        {
-                                            for (int z = 0; z < complexData.GetLength(3); z++)
-                                            {
-                                                complexData[i, j, k, z] = (T)Convert.ChangeType(new Complex(data[2 * i * dims[0] + 2 * j * dims[1] + 2 * k * dims[2] + 2 * z], data[2 * i * dims[0] + 2 * j * dims[1] + 2 * k * dims[2] + 2 * z + 1]), typeof(T));
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                            finally
-                            {
-                                GCHandle.Alloc(data, GCHandleType.Weak);
-                            }
-                            return complexData;
-                        }
-
-                        
+                        double[] complexData = new double[dims[0] * dims[1] * dims[2] * dims[3] * 2];
+                        Internal.GetData<double>(ref reference, complexData);
+                        ToGenericComplex4D<T, double>(ref data, complexData);
                     }
                     else
                     {
-                        int dimsMultiplied = 1;
-
-                        for (int i = 0; i < 4; i++)
-                        {
-                            dimsMultiplied *= (int)dims[i];
-                        }
-
-                        T[,,,] data = new T[dims[0], dims[1], dims[2], dims[3]];
-
-                        GCHandle gchArr;
-                        try
-                        {
-                            gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
-                            IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                            get_data(ref reference, dataPtr);
-                        }
-                        finally
-                        {
-                            GCHandle.Alloc(data, GCHandleType.Weak);
-                        }
-                        return data;
+                        float[] complexData = new float[dims[0] * dims[1] * dims[2] * dims[3] * 2];
+                        Internal.GetData<float>(ref reference, complexData);
+                        ToGenericComplex4D<T, float>(ref data, complexData);
                     }
-                    
                 }
                 else
                 {
-                    throw new Exception("Type does not match");
-                }*/
+                    Internal.GetData<T>(ref reference, data);
+                }
+                return data;
             }
-            
+
+            private void ByteToGeneric4D<T>(ref T[,,,] genericArr, byte[,,,] arr)
+            {
+                for (int i = 0; i < arr.GetLength(0); i++)
+                {
+                    for (int j = 0; j < arr.GetLength(1); j++)
+                    {
+                        for (int k = 0; k < arr.GetLength(2); k++)
+                        {
+                            for (int z = 0; z < arr.GetLength(3); z++)
+                            {
+                               genericArr[i, j, k, z] = (T)Convert.ChangeType(arr[i, j, k, z], typeof(T));
+                            }
+                        }
+                    }
+                }
+            }
+
+            private void ToGenericComplex4D<T, R>(ref T[,,,] genericArr, R[] arr)
+            {
+                for (int i = 0; i < genericArr.GetLength(0); i++)
+                {
+                    for (int j = 0; j < genericArr.GetLength(1); j++)
+                    {
+                        for (int k = 0; k < genericArr.GetLength(2); k++)
+                        {
+                            for (int z = 0; z < genericArr.GetLength(3); z++)
+                            {
+                                genericArr[i, j, k, z] = (T)Convert.ChangeType(new Complex(Convert.ToDouble(arr[2 * i * (genericArr.GetLength(1) + genericArr.GetLength(2) + genericArr.GetLength(3)) + 2 * j * (genericArr.GetLength(2) + genericArr.GetLength(3)) + 2 * k * genericArr.GetLength(3) + 2 * z]), Convert.ToDouble(arr[2 * i * (genericArr.GetLength(1) + genericArr.GetLength(2) + genericArr.GetLength(3)) + 2 * j * (genericArr.GetLength(2) + genericArr.GetLength(3)) + 2 * k * genericArr.GetLength(3) + 2*z + 1])), typeof(T));
+                            }
+                        }
+                    }
+                }
+            }
+
             private bool CheckType(Type type)
             {
                 switch (GetArrayType()){
@@ -1939,7 +1113,7 @@ namespace khiva
                 try
                 {
                     gchArr = GCHandle.Alloc(dims, GCHandleType.Pinned);
-                    interop.DLLArray.get_dims(ref reference, ref dims[0]);
+                    interop.DLLArray.get_dims(ref reference, dims);
                 }
                 finally
                 {
@@ -2043,31 +1217,102 @@ namespace khiva
                 return (new Array(result));
             }
 
-           /* public static Array operator -(Array rhs)
+            public static Array operator -(Array rhs)
             {
                 IntPtr result = new IntPtr();
                 Array zeros;
                 long[] dims = rhs.GetDims();
+                uint maxDim = GetMaxDim(dims);
                 if (rhs.GetArrayType() == Dtype.c32 | rhs.GetArrayType() == Dtype.c64)
                 {
-                    Complex[,,,] tss = new Complex[dims[0], dims[1], dims[2], dims[3]];
-                    if (rhs.GetArrayType() == Dtype.c32)
+                    if(maxDim == 1)
                     {
-                        zeros = new Array(tss, false);
+                        Complex[] tss = new Complex[dims[0]];
+                        if (rhs.GetArrayType() == Dtype.c32)
+                        {
+                            zeros = new Array(tss, false);
+                        }
+                        else
+                        {
+                            zeros = new Array(tss, true);
+                        }
+                    }
+                    else if(maxDim == 2)
+                    {
+                        Complex[,] tss = new Complex[dims[0], dims[1]];
+                        if (rhs.GetArrayType() == Dtype.c32)
+                        {
+                            zeros = new Array(tss, false);
+                        }
+                        else
+                        {
+                            zeros = new Array(tss, true);
+                        }
+                    }
+                    else if(maxDim == 3)
+                    {
+                        Complex[,,] tss = new Complex[dims[0], dims[1], dims[2]];
+                        if (rhs.GetArrayType() == Dtype.c32)
+                        {
+                            zeros = new Array(tss, false);
+                        }
+                        else
+                        {
+                            zeros = new Array(tss, true);
+                        }
                     }
                     else
                     {
-                        zeros = new Array(tss, true);
+                        Complex[,,,] tss = new Complex[dims[0], dims[1], dims[2], dims[3]];
+                        if (rhs.GetArrayType() == Dtype.c32)
+                        {
+                            zeros = new Array(tss, false);
+                        }
+                        else
+                        {
+                            zeros = new Array(tss, true);
+                        }
                     }
                 }
                 else
                 {
-                    int[,,,] tss = new int[dims[0], dims[1], dims[2], dims[3]];
-                    zeros = new Array(tss);
+                    if(maxDim == 1)
+                    {
+                        int[] tss = new int[dims[0]];
+                        zeros = new Array(tss);
+                    }else if(maxDim == 2)
+                    {
+                        int[,] tss = new int[dims[0], dims[1]];
+                        zeros = new Array(tss);
+                    }
+                    else if(maxDim == 3)
+                    {
+                        int[,,] tss = new int[dims[0], dims[1], dims[2]];
+                        zeros = new Array(tss);
+                    }
+                    else
+                    {
+                        int[,,,] tss = new int[dims[0], dims[1], dims[2], dims[3]];
+                        zeros = new Array(tss);
+                    } 
                 }
-                khiva_sub(ref zeros.reference, ref rhs.reference, ref result);
+                interop.DLLArray.khiva_sub(ref zeros.reference, ref rhs.reference, ref result);
                 return (new Array(result));
-            }*/
+            }
+
+            private static uint GetMaxDim(long[] dims)
+            {
+                uint i = 3;
+                while (i > 0)
+                {
+                    if (dims[i] > 1)
+                    {
+                        return (i+1);
+                    }
+                    i--;
+                }
+                return (i+1);
+            }
 
             public static Array operator !(Array lhs)
             {
@@ -2138,6 +1383,21 @@ namespace khiva
                 interop.DLLArray.khiva_cols(ref reference, ref first, ref last, ref result);
                 return (new Array(result));
             }
+
+            public Array Row(int index)
+            {
+                IntPtr result = new IntPtr();
+                interop.DLLArray.khiva_row(ref reference, ref index, ref result);
+                return (new Array(result));
+            }
+
+            public Array Rows(int first, int last)
+            {
+                IntPtr result = new IntPtr();
+                interop.DLLArray.khiva_rows(ref reference, ref first, ref last, ref result);
+                return (new Array(result));
+            }
+
         }
     }
 }
