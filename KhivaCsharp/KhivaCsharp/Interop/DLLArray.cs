@@ -186,6 +186,8 @@ namespace khiva.interop
         public extern static void get_data(ref IntPtr array, ushort[,,] data);
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void get_data(ref IntPtr array, ushort[,,,] data);
+        [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
+        public extern static void get_data(ref IntPtr array, IntPtr data);
 
         /**
             * @brief Gets the Array dimensions.

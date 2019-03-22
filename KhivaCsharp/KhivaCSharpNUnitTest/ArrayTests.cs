@@ -904,10 +904,10 @@ namespace khiva.array.Tests
         [Test]
         public void TestIntD2OkDims()
         {
-            int[,] tss = { { 1, 2 }, { 3, 4 } };
+            int[,] tss = { { 1, 2 }, { 3, 4 }, { 5, 6 } };
             Array arr = new Array(tss);
             int[,] data = arr.GetData2D<int>();
-            Assert.AreEqual(tss, data);
+            Assert.AreEqual(new int[,] { {1, 3, 5 }, { 2, 4, 6 } }, data);
         }
 
         [Test]
@@ -1408,6 +1408,35 @@ namespace khiva.array.Tests
             Array arr = new Array(tss);
             Array arrRows = arr.Rows(0, 1);
             Assert.AreEqual(new int[,] { { 1, 3, 5 }, { 2, 4, 6 } }, arrRows.GetData2D<int>());
+        }
+
+        [Test]
+        public void TestMatmul()
+        {
+            float[,] tss = { { 1, 2 }, { 3, 4 }, { 5, 6 } };
+            float[,] tss2 = { { 1, 1, 1 }, { 1, 1, 1 } };
+            Array arr = new Array(tss);
+            Array arr2 = new Array(tss2);
+            Array arrMatul = arr.Matmul(arr2);
+            Assert.AreEqual(new float[,] { { 9, 12 }, { 9, 12 } }, arrMatul.GetData2D<float>());
+        }
+
+        [Test]
+        public void TestCopy()
+        {
+            int[,] tss = { { 1, 2 }, { 3, 4 }, { 5, 6 } };
+            Array arr = new Array(tss);
+            Array arrCopy = arr.Copy();
+            Assert.AreNotSame(arr, arrCopy, "They are not copies");
+        }
+
+        [Test]
+        public void TestAs()
+        {
+            int[,] tss = { { 1, 2 }, { 3, 4 }, { 5, 6 } };
+            Array arr = new Array(tss);
+            Array arrAs = arr.As((int)Array.Dtype.f64);
+            Assert.AreEqual(Array.Dtype.f64, arrAs.GetArrayType());
         }
     }
 }
