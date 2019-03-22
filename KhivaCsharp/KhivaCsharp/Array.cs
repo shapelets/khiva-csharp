@@ -824,32 +824,47 @@ namespace khiva
                 long[] dims = GetDims();
                 CheckNdims(dims, 1);
                 T[] data = new T[dims[0]];
-                if (typeof(T) == typeof(bool))
+                GCHandle gchArr = new GCHandle();
+                try
                 {
-                    byte[] byteData = new byte[dims[0]];
-                    Internal.GetData<byte>(ref reference, byteData);
-                    ByteToGeneric1D<T>(ref data, byteData);
-                } else if (typeof(T) == typeof(Complex))
-                {
-                    if (GetArrayType() == Dtype.c64)
+                    if (typeof(T) == typeof(bool))
                     {
-                        double[] complexData = new double[dims[0] * 2];
-                        Internal.GetData<double>(ref reference, complexData);
-                        ToGenericComplex1D<T, double>(ref data, complexData);
+                        byte[] byteData = new byte[dims[0]];
+                        gchArr = GCHandle.Alloc(byteData, GCHandleType.Pinned);
+                        IntPtr dataPtr = gchArr.AddrOfPinnedObject();
+                        interop.DLLArray.get_data(ref reference, dataPtr);
+                        ByteToGeneric1D<T>(ref data, byteData);
+                    }
+                    else if (typeof(T) == typeof(Complex))
+                    {
+                        if (GetArrayType() == Dtype.c64)
+                        {
+                            double[] complexData = new double[dims[0] * 2];
+                            gchArr = GCHandle.Alloc(complexData, GCHandleType.Pinned);
+                            IntPtr dataPtr = gchArr.AddrOfPinnedObject();
+                            interop.DLLArray.get_data(ref reference, dataPtr);
+                            ToGenericComplex1D<T, double>(ref data, complexData);
+                        }
+                        else
+                        {
+                            float[] complexData = new float[dims[0] * 2];
+                            gchArr = GCHandle.Alloc(complexData, GCHandleType.Pinned);
+                            IntPtr dataPtr = gchArr.AddrOfPinnedObject();
+                            interop.DLLArray.get_data(ref reference, dataPtr);
+                            ToGenericComplex1D<T, float>(ref data, complexData);
+                        }
                     }
                     else
                     {
-                        float[] complexData = new float[dims[0] * 2];
-                        Internal.GetData<float>(ref reference, complexData);
-                        ToGenericComplex1D<T, float>(ref data, complexData);
+                        gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
+                        IntPtr dataPtr = gchArr.AddrOfPinnedObject();
+                        interop.DLLArray.get_data(ref reference, dataPtr);
+                        GCHandle.Alloc(data, GCHandleType.Weak);
                     }
                 }
-                else
+                finally
                 {
-                    GCHandle gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
-                    IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                    interop.DLLArray.get_data(ref reference, dataPtr);
-                    GCHandle.Alloc(data, GCHandleType.Weak);
+                    GCHandle.Alloc(gchArr.Target, GCHandleType.Weak);
                 }
                 return data;
             }
@@ -878,7 +893,7 @@ namespace khiva
                 }
                 long[] dims = GetDims();
                 CheckNdims(dims, 2);
-                T[,] data = new T[dims[0], dims[1]];
+                T[,] data = new T[dims[1], dims[0]];
                 GCHandle gchArr = new GCHandle();
                 try
                 {
@@ -954,31 +969,47 @@ namespace khiva
                 }
                 long[] dims = GetDims();
                 CheckNdims(dims, 3);
-                T[,,] data = new T[dims[0], dims[1], dims[2]];
-                if (typeof(T) == typeof(bool))
+                T[,,] data = new T[dims[1], dims[0], dims[2]];
+                GCHandle gchArr = new GCHandle();
+                try
                 {
-                    byte[,,] byteData = new byte[dims[0], dims[1], dims[2]];
-                    Internal.GetData<byte>(ref reference, byteData);
-                    ByteToGeneric3D<T>(ref data, byteData);
-                }
-                else if (typeof(T) == typeof(Complex))
-                {
-                    if (GetArrayType() == Dtype.c64)
+                    if (typeof(T) == typeof(bool))
                     {
-                        double[] complexData = new double[dims[0] * dims[1] * dims[2] * 2];
-                        Internal.GetData<double>(ref reference, complexData);
-                        ToGenericComplex3D<T, double>(ref data, complexData);
+                        byte[,,] byteData = new byte[dims[0], dims[1], dims[2]];
+                        gchArr = GCHandle.Alloc(byteData, GCHandleType.Pinned);
+                        IntPtr dataPtr = gchArr.AddrOfPinnedObject();
+                        interop.DLLArray.get_data(ref reference, dataPtr);
+                        ByteToGeneric3D<T>(ref data, byteData);
+                    }
+                    else if (typeof(T) == typeof(Complex))
+                    {
+                        if (GetArrayType() == Dtype.c64)
+                        {
+                            double[] complexData = new double[dims[0] * dims[1] * dims[2] * 2];
+                            gchArr = GCHandle.Alloc(complexData, GCHandleType.Pinned);
+                            IntPtr dataPtr = gchArr.AddrOfPinnedObject();
+                            interop.DLLArray.get_data(ref reference, dataPtr);
+                            ToGenericComplex3D<T, double>(ref data, complexData);
+                        }
+                        else
+                        {
+                            float[] complexData = new float[dims[0] * dims[1] * dims[2] * 2];
+                            gchArr = GCHandle.Alloc(complexData, GCHandleType.Pinned);
+                            IntPtr dataPtr = gchArr.AddrOfPinnedObject();
+                            interop.DLLArray.get_data(ref reference, dataPtr);
+                            ToGenericComplex3D<T, float>(ref data, complexData);
+                        }
                     }
                     else
                     {
-                        float[] complexData = new float[dims[0] * dims[1] * dims[2] * 2];
-                        Internal.GetData<float>(ref reference, complexData);
-                        ToGenericComplex3D<T, float>(ref data, complexData);
+                        gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
+                        IntPtr dataPtr = gchArr.AddrOfPinnedObject();
+                        interop.DLLArray.get_data(ref reference, dataPtr);
                     }
                 }
-                else
+                finally
                 {
-                    Internal.GetData<T>(ref reference, data);
+                    GCHandle.Alloc(gchArr.Target, GCHandleType.Weak);
                 }
                 return data;
             }
@@ -1018,31 +1049,47 @@ namespace khiva
                     throw new Exception("Type does mismatch");
                 }
                 long[] dims = GetDims();
-                T[,,,] data = new T[dims[0], dims[1], dims[2], dims[3]];
-                if (typeof(T) == typeof(bool))
+                T[,,,] data = new T[dims[1], dims[0], dims[2], dims[3]];
+                GCHandle gchArr = new GCHandle();
+                try
                 {
-                    byte[,,,] byteData = new byte[dims[0], dims[1], dims[2], dims[3]];
-                    Internal.GetData<byte>(ref reference, byteData);
-                    ByteToGeneric4D<T>(ref data, byteData);
-                }
-                else if (typeof(T) == typeof(Complex))
-                {
-                    if (GetArrayType() == Dtype.c64)
+                    if (typeof(T) == typeof(bool))
                     {
-                        double[] complexData = new double[dims[0] * dims[1] * dims[2] * dims[3] * 2];
-                        Internal.GetData<double>(ref reference, complexData);
-                        ToGenericComplex4D<T, double>(ref data, complexData);
+                        byte[,,,] byteData = new byte[dims[0], dims[1], dims[2], dims[3]];
+                        gchArr = GCHandle.Alloc(byteData, GCHandleType.Pinned);
+                        IntPtr dataPtr = gchArr.AddrOfPinnedObject();
+                        interop.DLLArray.get_data(ref reference, dataPtr);
+                        ByteToGeneric4D<T>(ref data, byteData);
+                    }
+                    else if (typeof(T) == typeof(Complex))
+                    {
+                        if (GetArrayType() == Dtype.c64)
+                        {
+                            double[] complexData = new double[dims[0] * dims[1] * dims[2] * dims[3] * 2];
+                            gchArr = GCHandle.Alloc(complexData, GCHandleType.Pinned);
+                            IntPtr dataPtr = gchArr.AddrOfPinnedObject();
+                            interop.DLLArray.get_data(ref reference, dataPtr);
+                            ToGenericComplex4D<T, double>(ref data, complexData);
+                        }
+                        else
+                        {
+                            float[] complexData = new float[dims[0] * dims[1] * dims[2] * dims[3] * 2];
+                            gchArr = GCHandle.Alloc(complexData, GCHandleType.Pinned);
+                            IntPtr dataPtr = gchArr.AddrOfPinnedObject();
+                            interop.DLLArray.get_data(ref reference, dataPtr);
+                            ToGenericComplex4D<T, float>(ref data, complexData);
+                        }
                     }
                     else
                     {
-                        float[] complexData = new float[dims[0] * dims[1] * dims[2] * dims[3] * 2];
-                        Internal.GetData<float>(ref reference, complexData);
-                        ToGenericComplex4D<T, float>(ref data, complexData);
+                        gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
+                        IntPtr dataPtr = gchArr.AddrOfPinnedObject();
+                        interop.DLLArray.get_data(ref reference, dataPtr);
                     }
                 }
-                else
+                finally
                 {
-                    Internal.GetData<T>(ref reference, data);
+                    GCHandle.Alloc(gchArr.Target, GCHandleType.Weak);
                 }
                 return data;
             }
