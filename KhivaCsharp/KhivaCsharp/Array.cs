@@ -1430,6 +1430,23 @@ namespace khiva
                 return (new Array(result));
             }
 
+            public override bool Equals(object o)
+            {
+                if(o.GetType() == typeof(Array))
+                {
+                    Array arr = (Array)o;
+                    return reference.Equals(arr.reference);
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            public override int GetHashCode()
+            {
+                return reference.GetHashCode();   
+            }
+
             public Array Transpose(bool conjugate = false)
             {
                 IntPtr result = new IntPtr();
