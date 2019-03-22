@@ -64,6 +64,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Array.cs" />
+    <Compile Include="Clustering.cs" />
+    <Compile Include="Interop\DLLClustering.cs" />
     <Compile Include="Interop\DLLArray.cs" />
     <Compile Include="Interop\DLLLibrary.cs" />
     <Compile Include="Program.cs" />
