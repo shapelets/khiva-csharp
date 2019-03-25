@@ -1,4 +1,10 @@
-﻿using System;
+﻿// Copyright (c) 2019 Shapelets.io
+//
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -68,7 +74,12 @@ namespace khiva
                  */
                 u16
             }
-            
+
+            /**
+             * @brief Creates an Array object.
+             *
+             * @param arr Data used in order to create the array.
+             */
             public Array(float[] arr)
             {
                 if (arr == null)
@@ -779,15 +790,15 @@ namespace khiva
                 this.reference = other.GetReference();
             }
 
-            public IntPtr GetReference()
+            public ref IntPtr GetReference()
             {
-                return reference;
+                return ref reference;
             }
 
             /**
              * Gets the data stored in the array.
              *
-             * @param <Any> The data type to be returned.
+             * @param <T> The data type to be returned.
              * @return The data to an array of its type.
              */
             public T[] GetData1D<T>()
@@ -1148,6 +1159,9 @@ namespace khiva
                 }
             }
 
+            /**
+             * @brief Gets the Array dimensions.
+             */
             public long[] GetDims()
             {
                 GCHandle gchArr;
@@ -1164,16 +1178,25 @@ namespace khiva
                 return dims;
             }
 
+            /**
+             * @brief Displays an Array.
+             */
             public void Display()
             {
                 interop.DLLArray.display(ref reference);
             }
 
+            /**
+             * @brief Decreases the references count of the given array.
+             */
             public void DeleteArray()
             {
                 interop.DLLArray.delete_array(ref reference);
             }
 
+                /**
+             * @brief Gets the type of the array.
+             */
             public Dtype GetArrayType()
             {
                 int type = 0;
@@ -1182,6 +1205,13 @@ namespace khiva
                 return dtype;
             }
 
+            /**
+             * @brief Adds two arrays.
+             *
+             * @param lhs Left-hand side KHIVA array for the operation.
+             * @param rhs Right-hand side KHIVA array for the operation.
+             * @return result KHIVA Array with the result of this operation.
+             */
             public static Array operator +(Array lhs, Array rhs)
             {
                 IntPtr result = new IntPtr();
@@ -1189,6 +1219,13 @@ namespace khiva
                 return new Array(result);
             }
 
+            /**
+             * @brief Multiplies two arrays.
+             *
+             * @param lhs Left-hand side KHIVA array for the operation.
+             * @param rhs Right-hand side KHIVA array for the operation.
+             * @return result KHIVA Array with the result of this operation.
+             */
             public static Array operator *(Array lhs, Array rhs)
             {
                 IntPtr result = new IntPtr();
@@ -1196,6 +1233,13 @@ namespace khiva
                 return (new Array(result));
             }
 
+            /**
+             * @brief Subtracts two arrays.
+             *
+             * @param lhs Left-hand side KHIVA array for the operation.
+             * @param rhs Right-hand side KHIVA array for the operation.
+             * @return result KHIVA Array with the result of this operation.
+             */
             public static Array operator -(Array lhs, Array rhs)
             {
                 IntPtr result = new IntPtr();
@@ -1203,6 +1247,13 @@ namespace khiva
                 return (new Array(result));
             }
 
+            /**
+             * @brief Divides lhs by rhs (element-wise).
+             *
+             * @param lhs Left-hand side KHIVA array for the operation.
+             * @param rhs Right-hand side KHIVA array for the operation.
+             * @return result KHIVA Array with the result of this operation.
+             */
             public static Array operator /(Array lhs, Array rhs)
             {
                 IntPtr result = new IntPtr();
@@ -1210,6 +1261,13 @@ namespace khiva
                 return (new Array(result));
             }
 
+            /**
+             * @brief Performs the modulo operation of lhs by rhs.
+             *
+             * @param lhs Left-hand side KHIVA array for the operation.
+             * @param rhs Right-hand side KHIVA array for the operation.
+             * @return result KHIVA Array with the result of this operation.
+             */
             public static Array operator %(Array lhs, Array rhs)
             {
                 IntPtr result = new IntPtr();
@@ -1217,6 +1275,13 @@ namespace khiva
                 return (new Array(result));
             }
 
+            /**
+             * @brief Powers lhs with rhs.
+             *
+             * @param lhs Left-hand side KHIVA array for the operation. Base.
+             * @param rhs Right-hand side KHIVA array for the operation. Exponent.
+             * @return result KHIVA Array with the result of this operation.
+             */
             public Array Pow(Array rhs)
             {
                 IntPtr result = new IntPtr();
@@ -1224,6 +1289,13 @@ namespace khiva
                 return (new Array(result));
             }
 
+            /**
+             * @brief Performs an AND operation (element-wise) with lhs and rhs.
+             *
+             * @param lhs Left-hand side KHIVA array for the operation.
+             * @param rhs Right-hand side KHIVA array for the operation.
+             * @return result KHIVA Array with the result of this operation.
+             */
             public static Array operator &(Array lhs, Array rhs)
             {
                 IntPtr result = new IntPtr();
@@ -1231,6 +1303,13 @@ namespace khiva
                 return (new Array(result));
             }
 
+            /**
+              * @brief Performs an OR operation (element-wise) with lhs and rhs.
+              *
+              * @param lhs Left-hand side KHIVA array for the operation.
+              * @param rhs Right-hand side KHIVA array for the operation.
+              * @return result KHIVA Array with the result of this operation.
+              */
             public static Array operator |(Array lhs, Array rhs)
             {
                 IntPtr result = new IntPtr();
@@ -1238,6 +1317,13 @@ namespace khiva
                 return (new Array(result));
             }
 
+            /**
+             * @brief Performs an eXclusive-OR operation (element-wise) with lhs and rhs.
+             *
+             * @param lhs Left-hand side KHIVA array for the operation.
+             * @param rhs Right-hand side KHIVA array for the operation.
+             * @return result KHIVA Array with the result of this operation.
+             */
             public static Array operator ^(Array lhs, Array rhs)
             {
                 IntPtr result = new IntPtr();
@@ -1245,6 +1331,13 @@ namespace khiva
                 return (new Array(result));
             }
 
+            /**
+             * @brief Performs a left bit shift operation (element-wise) to array as many times as specified in the parameter n.
+             *
+             * @param array KHIVA Array to shift.
+             * @param n Number of bits to be shifted.
+             * @return result KHIVA Array with the result of this operation.
+             */
             public static Array operator <<(Array lhs, int shift)
             {
                 IntPtr result = new IntPtr();
@@ -1252,6 +1345,13 @@ namespace khiva
                 return (new Array(result));
             }
 
+            /**
+             * @brief Performs a right bit shift operation (element-wise) to array as many times as specified in the parameter n.
+             *
+             * @param array KHIVA Array to shift.
+             * @param n Number of bits to be shifted.
+             * @return result KHIVA Array with the result of this operation.
+             */
             public static Array operator >>(Array lhs, int shift)
             {
                 IntPtr result = new IntPtr();
@@ -1259,6 +1359,12 @@ namespace khiva
                 return (new Array(result));
             }
 
+            /**
+             * @brief Unary minus of one array.
+             *
+             * @param rhs Right-hand side KHIVA array for the operation.
+             * @return result KHIVA Array with the result of this operation.
+             */
             public static Array operator -(Array rhs)
             {
                 IntPtr result = new IntPtr();
@@ -1356,6 +1462,12 @@ namespace khiva
                 return (i + 1);
             }
 
+            /**
+             * @brief Logical NOT operation to array.
+             *
+             * @param array KHIVA Array to negate.
+             * @return result KHIVA Array with the result of this operation.
+             */
             public static Array operator !(Array lhs)
             {
                 IntPtr result = new IntPtr();
@@ -1363,6 +1475,13 @@ namespace khiva
                 return (new Array(result));
             }
 
+            /**
+             * @brief Compares (element-wise) if lhs is lower than rhs.
+             *
+             * @param lhs Left-hand side KHIVA array for the operation.
+             * @param rhs Right-hand side KHIVA array for the operation.
+             * @return result KHIVA Array with the result of this operation.
+             */
             public static Array operator <(Array rhs, Array lhs)
             {
                 IntPtr result = new IntPtr();
@@ -1370,6 +1489,13 @@ namespace khiva
                 return (new Array(result));
             }
 
+            /**
+             * @brief Compares (element-wise) if lhs is greater than rhs.
+             *
+             * @param lhs Left-hand side KHIVA array for the operation.
+             * @param rhs Right-hand side KHIVA array for the operation.
+             * @return result KHIVA Array with the result of this operation.
+             */
             public static Array operator >(Array rhs, Array lhs)
             {
                 IntPtr result = new IntPtr();
@@ -1377,6 +1503,13 @@ namespace khiva
                 return (new Array(result));
             }
 
+            /**
+             * @brief Compares (element-wise) if lhs is lower or equal than rhs.
+             *
+             * @param lhs Left-hand side KHIVA array for the operation.
+             * @param rhs Right-hand side KHIVA array for the operation.
+             * @return result KHIVA Array with the result of this operation.
+             */
             public static Array operator <=(Array rhs, Array lhs)
             {
                 IntPtr result = new IntPtr();
@@ -1384,6 +1517,13 @@ namespace khiva
                 return (new Array(result));
             }
 
+            /**
+             * @brief Compares (element-wise) if lhs is greater or equal than rhs.
+             *
+             * @param lhs Left-hand side KHIVA array for the operation.
+             * @param rhs Right-hand side KHIVA array for the operation.
+             * @return result KHIVA Array with the result of this operation.
+             */
             public static Array operator >=(Array rhs, Array lhs)
             {
                 IntPtr result = new IntPtr();
@@ -1391,6 +1531,13 @@ namespace khiva
                 return (new Array(result));
             }
 
+            /**
+             * @brief Compares (element-wise) if rhs is equal to rhs.
+             *
+             * @param lhs Left-hand side KHIVA array for the operation.
+             * @param rhs Right-hand side KHIVA array for the operation.
+             * @return result KHIVA Array with the result of this operation.
+             */
             public static Array operator ==(Array rhs, Array lhs)
             {
                 IntPtr result = new IntPtr();
@@ -1398,6 +1545,13 @@ namespace khiva
                 return (new Array(result));
             }
 
+            /**
+             * @brief Compares (element-wise) if lhs is not equal to rhs.
+             *
+             * @param lhs Left-hand side KHIVA array for the operation.
+             * @param rhs Right-hand side KHIVA array for the operation.
+             * @return result KHIVA Array with the result of this operation.
+             */
             public static Array operator !=(Array rhs, Array lhs)
             {
                 IntPtr result = new IntPtr();
@@ -1422,6 +1576,13 @@ namespace khiva
                 return reference.GetHashCode();   
             }
 
+            /**
+             * @brief Transposes array.
+             *
+             * @param array KHIVA Array to transpose.
+             * @param conjugate If true a conjugate transposition is performed.
+             * @return result KHIVA Array with the result of this operation.
+             */
             public Array Transpose(bool conjugate = false)
             {
                 IntPtr result = new IntPtr();
@@ -1429,6 +1590,13 @@ namespace khiva
                 return (new Array(result));
             }
 
+            /**
+             * @brief Retrieves a given column of array.
+             *
+             * @param array KHIVA Array.
+             * @param index The column to be retrieved.
+             * @return result KHIVA Array with the result of this operation.
+             */
             public Array Col(int index)
             {
                 IntPtr result = new IntPtr();
@@ -1436,6 +1604,14 @@ namespace khiva
                 return (new Array(result));
             }
 
+            /**
+             * @brief Retrieves a subset of columns of array, starting at first and finishing at last, both inclusive.
+             *
+             * @param array KHIVA Array.
+             * @param first Start of the subset of columns to be retrieved.
+             * @param last End of the subset of columns to be retrieved.
+             * @return result KHIVA Array with the result of this operation.
+             */
             public Array Cols(int first, int last)
             {
                 IntPtr result = new IntPtr();
@@ -1443,6 +1619,13 @@ namespace khiva
                 return (new Array(result));
             }
 
+            /**
+             * @brief Retrieves a given row of array.
+             *
+             * @param array KHIVA Array.
+             * @param index The row to be retrieved.
+             * @return result KHIVA Array with the result of this operation.
+             */
             public Array Row(int index)
             {
                 IntPtr result = new IntPtr();
@@ -1450,6 +1633,14 @@ namespace khiva
                 return (new Array(result));
             }
 
+            /**
+             * @brief Retrieves a subset of rows of array, starting at first and finishing at last, both inclusive.
+             *
+             * @param array KHIVA Array.
+             * @param first Start of the subset of rows to be retrieved.
+             * @param last End of the subset of rows to be retrieved.
+             * @return result KHIVA Array with the result of this operation.
+             */
             public Array Rows(int first, int last)
             {
                 IntPtr result = new IntPtr();
@@ -1457,6 +1648,13 @@ namespace khiva
                 return (new Array(result));
             }
 
+            /**
+             * @brief Performs a matrix multiplication of lhs and rhs.
+             *
+             * @param lhs Left-hand side KHIVA array for the operation.
+             * @param rhs Right-hand side KHIVA array for the operation.
+             * @return result KHIVA Array with the result of this operation.
+             */
             public Array Matmul(Array lhs)
             {
                 IntPtr result = new IntPtr();
@@ -1464,6 +1662,12 @@ namespace khiva
                 return (new Array(result));
             }
 
+            /**
+             * @brief Performs a deep copy of array.
+             *
+             * @param array KHIVA Array.
+             * @return result KHIVA Array which contains a copy of array.
+             */
             public Array Copy()
             {
                 IntPtr result = new IntPtr();
@@ -1471,6 +1675,13 @@ namespace khiva
                 return (new Array(result));
             }
 
+            /**
+             * @brief Changes the type of array.
+             *
+             * @param array KHIVA Array.
+             * @param type Target type of the output array.
+             * @return result KHIVA Array with the result of this operation.
+             */
             public Array As(int type)
             {
                 IntPtr result = new IntPtr();

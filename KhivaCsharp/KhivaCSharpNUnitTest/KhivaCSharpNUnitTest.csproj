@@ -52,6 +52,8 @@
   <ItemGroup>
     <Compile Include="DimensionalityTests.cs" />
     <Compile Include="ClusteringTests.cs" />
+    <Compile Include="DistancesTests.cs" />
+    <Compile Include="FeaturesTests.cs" />
     <Compile Include="LibraryTests.cs" />
     <Compile Include="ArrayTests.cs" />
   </ItemGroup>
