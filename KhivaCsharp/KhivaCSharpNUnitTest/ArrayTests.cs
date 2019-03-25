@@ -8,11 +8,17 @@ using System.Threading.Tasks;
 using System.Numerics;
 using System.IO;
 
-namespace khiva.array.Tests
+namespace khiva.array.tests
 {
     [TestFixture]
     public class ArrayTests
     {
+        [SetUp]
+        public void Init()
+        {
+            library.Library.SetKhivaBackend(library.Library.Backend.KHIVA_BACKEND_CPU);
+        }
+
         [Test]
         public void TestGetType()
         {

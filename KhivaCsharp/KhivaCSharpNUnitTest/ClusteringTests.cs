@@ -5,11 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace khiva.clustering.Tests
+namespace khiva.clustering.tests
 {
     [TestFixture]
     public class ClusteringTests
     {
+        [SetUp]
+        public void Init()
+        {
+            library.Library.SetKhivaBackend(library.Library.Backend.KHIVA_BACKEND_CPU);
+        }
+
         [Test]
         public void TestKMeans()
         {
@@ -54,12 +60,12 @@ namespace khiva.clustering.Tests
                                                    { -0.7825, 1.5990,  0.1701,  0.4082,  0.8845, -1.4969, -0.7825 },
                                                    { -0.6278, 1.3812, -2.0090,  0.5022,  0.6278,  0.0000,  0.1256 }
                                                 };
-            int[] expected_l = new int[] { 0, 1, 2, 0, 0 };
+            uint[] expected_l = new uint[] { 0, 1, 2, 0, 0 };
 
             Tuple<array.Array, array.Array> result = clustering.Clustering.KShape(arr, 3);
 
             double[,] centroids = result.Item1.GetData2D<double>();
-            int[] labels = result.Item2.GetData1D<int>();
+            uint[] labels = result.Item2.GetData1D<uint>();
 
             for (int i = 0; i < centroids.GetLength(0); i++)
             {

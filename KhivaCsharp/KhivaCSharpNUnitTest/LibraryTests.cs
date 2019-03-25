@@ -8,11 +8,17 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace khiva.library.Tests
+namespace khiva.library.tests
 {
     [TestFixture]
     public class LibraryTests
     {
+
+        [SetUp]
+        public void Init()
+        {
+            library.Library.SetKhivaBackend(library.Library.Backend.KHIVA_BACKEND_CPU);
+        }
 
         [Test]
         public void PrintBackendInfoTest()

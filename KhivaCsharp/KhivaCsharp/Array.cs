@@ -68,32 +68,7 @@ namespace khiva
                  */
                 u16
             }
-            /*
-                        public Array(double[] arr)
-                        {
-                            int type = (int)Dtype.f64;
-
-                            GCHandle gchArr = default(GCHandle);
-
-                            try
-                            {
-                                gchArr = GCHandle.Alloc(arr, GCHandleType.Pinned);
-                                IntPtr ptrArr = gchArr.AddrOfPinnedObject();
-
-                                if (arr == null)
-                                {
-                                    throw new Exception("Null elems object provided");
-                                }
-                                uint ndims = (uint)arr.Rank;
-                                long[] dims = { arr.Length };
-                                create_array(ptrArr, ref ndims, dims, ref reference, ref type);
-                            }
-                            finally
-                            {
-                                GCHandle.Alloc(arr, GCHandleType.Weak);
-                            }
-                        }
-                        */
+            
             public Array(float[] arr)
             {
                 if (arr == null)

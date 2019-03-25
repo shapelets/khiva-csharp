@@ -116,6 +116,7 @@ namespace khiva
             public static void SetKhivaBackend(Backend khivaBE)
             {
                 int backend = (int)khivaBE;
+                SetBackend(backend);
                 interop.DLLLibrary.set_backend(ref backend);
             }
 

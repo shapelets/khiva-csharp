@@ -8,7 +8,7 @@ namespace khiva
 {
     namespace dimensionality
     {
-        class Dimensionality
+        public class Dimensionality
         {
             public static array.Array PAA(array.Array arr, int bins)
             {
@@ -62,7 +62,7 @@ namespace khiva
             {
                 IntPtr result = new IntPtr();
                 IntPtr reference = points.GetReference();
-                interop.DLLDimensionality.paa(ref reference, ref numPoints, ref result);
+                interop.DLLDimensionality.visvalingam(ref reference, ref numPoints, ref result);
                 return (new array.Array(result));
             }
         }
