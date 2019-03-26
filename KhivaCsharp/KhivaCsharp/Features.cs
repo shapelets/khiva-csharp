@@ -157,10 +157,10 @@ namespace khiva.features
          */
         public static array.Array CrossCovariance(array.Array xss, array.Array yss, bool unbiased)
         {
-            IntPtr result = new IntPtr();
+            IntPtr result;
             IntPtr referenceXss = xss.GetReference();
             IntPtr referenceYss = yss.GetReference();
-            interop.DLLFeatures.cross_covariance(ref referenceXss, ref referenceYss, ref unbiased, ref result);
+            interop.DLLFeatures.cross_covariance(ref referenceXss, ref referenceYss, ref unbiased, out result);
             return (new array.Array(result));
         }
         /*

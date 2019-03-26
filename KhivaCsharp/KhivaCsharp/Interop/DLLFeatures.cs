@@ -122,7 +122,7 @@ namespace khiva.interop
          * @param result The cross-covariance value for the given time series.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void cross_covariance(ref IntPtr xss, ref IntPtr yss, ref bool unbiased, ref IntPtr result);
+        public extern static void cross_covariance([In] ref IntPtr xss,[In] ref IntPtr yss,[In] ref bool unbiased,[Out] out IntPtr result);
 
         /**
          * @brief Calculates the auto-covariance the given time series.

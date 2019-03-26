@@ -24,7 +24,7 @@ namespace khiva.interop
          * @brief Gets information from the active backend.
          */
         [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void backend_info(ref StringBuilder backendInfo);
+        public extern static void backend_info([In, Out] ref StringBuilder backendInfo);
 
         /**
          * @brief Sets the backend.
@@ -32,7 +32,7 @@ namespace khiva.interop
          * @param backend The desired backend.
          */
         [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void set_backend(ref int backend);
+        public extern static void set_backend([In, Out] ref int backend);
 
         /**
          * @brief Gets the active backend.
@@ -40,7 +40,7 @@ namespace khiva.interop
          * @param backend The active backend.
          */
         [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void set_device(ref int device);
+        public extern static void set_device([In, Out] ref int device);
 
         /**
          * @brief Gets the available backends.
@@ -48,7 +48,7 @@ namespace khiva.interop
          * @param backends The available backends.
          */
         [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void get_backends(ref int backend);
+        public extern static void get_backends([Out] out int backend);
 
         /**
          * @brief Sets the device.
@@ -56,7 +56,7 @@ namespace khiva.interop
          * @param device The desired device.
          */
         [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void get_device_id(ref int device_id);
+        public extern static void get_device_id([Out] out int device_id);
 
         /**
          * @brief Gets the active device.
@@ -64,7 +64,7 @@ namespace khiva.interop
          * @param device The active device.
          */
         [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void get_backend(ref int backend);
+        public extern static void get_backend([Out] out int backend);
 
         /**
          * @brief Gets the devices count.
@@ -72,7 +72,7 @@ namespace khiva.interop
          * @param device_count The devices count.
          */
         [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void get_device_count(ref int device_count);
+        public extern static void get_device_count([Out] out int device_count);
 
         /**
          * @brief Returns a string with the current version of the library.
@@ -80,6 +80,6 @@ namespace khiva.interop
          * @param v A previously malloced character array where to copy the version.
          */
         [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void version(ref StringBuilder version);
+        public static extern void version([In, Out] ref StringBuilder version);
     }
 }

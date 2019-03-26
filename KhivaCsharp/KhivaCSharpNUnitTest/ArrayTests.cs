@@ -22,7 +22,7 @@ namespace khiva.array.tests
         [SetUp]
         public void Init()
         {
-            library.Library.SetKhivaBackend(library.Library.Backend.KHIVA_BACKEND_CPU);
+            Khiva.ActualBackend = Khiva.Backend.KHIVA_BACKEND_CPU;
         }
 
         [Test]

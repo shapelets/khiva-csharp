@@ -33,9 +33,9 @@ namespace khiva
              */
             public static array.Array PAA(array.Array arr, int bins)
             {
-                IntPtr result = new IntPtr();
+                IntPtr result;
                 IntPtr reference = arr.GetReference();
-                interop.DLLDimensionality.paa(ref reference, ref bins, ref result);
+                interop.DLLDimensionality.paa(reference, bins, out result);
                 return (new array.Array(result));
             }
 
@@ -51,9 +51,9 @@ namespace khiva
              */
             public static array.Array PIP(array.Array arr, int numberIps)
             {
-                IntPtr result = new IntPtr();
+                IntPtr result;
                 IntPtr reference = arr.GetReference();
-                interop.DLLDimensionality.pip(ref reference, ref numberIps, ref result);
+                interop.DLLDimensionality.pip(reference, numberIps, out result);
                 return (new array.Array(result));
             }
 
@@ -72,7 +72,7 @@ namespace khiva
             {
                 IntPtr result = new IntPtr();
                 IntPtr reference = arr.GetReference();
-                interop.DLLDimensionality.pla_bottom_up(ref reference, ref maxError, ref result);
+                interop.DLLDimensionality.pla_bottom_up(reference, maxError, out result);
                 return (new array.Array(result));
             }
 
@@ -91,7 +91,7 @@ namespace khiva
             {
                 IntPtr result = new IntPtr();
                 IntPtr reference = arr.GetReference();
-                interop.DLLDimensionality.pla_sliding_window(ref reference, ref maxError, ref result);
+                interop.DLLDimensionality.pla_sliding_window(reference, maxError, out result);
                 return (new array.Array(result));
             }
 
@@ -117,7 +117,7 @@ namespace khiva
             {
                 IntPtr result = new IntPtr();
                 IntPtr reference = points.GetReference();
-                interop.DLLDimensionality.ramer_douglas_peucker(ref reference, ref epsilon, ref result);
+                interop.DLLDimensionality.ramer_douglas_peucker(reference, epsilon, out result);
                 return (new array.Array(result));
             }
 
@@ -141,7 +141,7 @@ namespace khiva
             {
                 IntPtr result = new IntPtr();
                 IntPtr reference = arr.GetReference();
-                interop.DLLDimensionality.sax(ref reference, ref alphabetSize, ref result);
+                interop.DLLDimensionality.sax(reference, alphabetSize, out result);
                 return (new array.Array(result));
             }
 
@@ -162,7 +162,7 @@ namespace khiva
             {
                 IntPtr result = new IntPtr();
                 IntPtr reference = points.GetReference();
-                interop.DLLDimensionality.visvalingam(ref reference, ref numPoints, ref result);
+                interop.DLLDimensionality.visvalingam(reference, numPoints, out result);
                 return (new array.Array(result));
             }
         }

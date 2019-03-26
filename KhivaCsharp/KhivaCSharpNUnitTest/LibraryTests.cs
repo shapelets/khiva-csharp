@@ -4,7 +4,6 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-using khiva.library;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -14,7 +13,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace khiva.library.tests
+namespace khiva.tests
 {
     [TestFixture]
     public class LibraryTests
@@ -23,7 +22,7 @@ namespace khiva.library.tests
         [SetUp]
         public void Init()
         {
-            library.Library.SetKhivaBackend(library.Library.Backend.KHIVA_BACKEND_CPU);
+            Khiva.ActualBackend = Khiva.Backend.KHIVA_BACKEND_CPU;
         }
 
         [Test]
@@ -33,12 +32,14 @@ namespace khiva.library.tests
             using (StringWriter writer = new StringWriter())
             {
                 Console.SetOut(writer);
-                Library.PrintBackendInfo();
+                Khiva.PrintBackendInfo();
                 string info = writer.ToString();
                 info_splitted = info.Split(' ');
             }
-            StreamWriter standardOutput = new StreamWriter(Console.OpenStandardOutput());
-            standardOutput.AutoFlush = true;
+            StreamWriter standardOutput = new StreamWriter(Console.OpenStandardOutput())
+            {
+                AutoFlush = true
+            };
             Console.SetOut(standardOutput);
             Assert.AreEqual("ArrayFire", info_splitted[0]);
         }
@@ -46,7 +47,7 @@ namespace khiva.library.tests
         [Test]
         public void GetBackendInfoTest()
         {
-            String backend_info = Library.GetBackendInfo();
+            String backend_info = Khiva.BackendInfo;
             string[] info_split = backend_info.Split(' ');
             Assert.AreEqual("ArrayFire", info_split[0]);
         }
@@ -54,27 +55,27 @@ namespace khiva.library.tests
         [Test]
         public void SetKhivaBackendTest()
         {
-            int backends = Library.GetKhivaBackends();
-            int cuda = backends & (int)Library.Backend.KHIVA_BACKEND_CUDA;
-            int opencl = backends & (int)Library.Backend.KHIVA_BACKEND_OPENCL;
-            int cpu = backends & (int)Library.Backend.KHIVA_BACKEND_CPU;
+            int backends = (int)Khiva.SupportedBackends;
+            int cuda = backends & (int)Khiva.Backend.KHIVA_BACKEND_CUDA;
+            int opencl = backends & (int)Khiva.Backend.KHIVA_BACKEND_OPENCL;
+            int cpu = backends & (int)Khiva.Backend.KHIVA_BACKEND_CPU;
 
             if (cuda != 0)
             {
-                Library.SetKhivaBackend(Library.Backend.KHIVA_BACKEND_CUDA);
-                Assert.AreEqual(Library.Backend.KHIVA_BACKEND_CUDA, Library.GetKhivaBackend());
+                Khiva.ActualBackend = Khiva.Backend.KHIVA_BACKEND_CUDA;
+                Assert.AreEqual(Khiva.Backend.KHIVA_BACKEND_CUDA, Khiva.ActualBackend);
             }
 
             if (opencl != 0)
             {
-                Library.SetKhivaBackend(Library.Backend.KHIVA_BACKEND_OPENCL);
-                Assert.AreEqual(Library.Backend.KHIVA_BACKEND_OPENCL, Library.GetKhivaBackend());
+                Khiva.ActualBackend = Khiva.Backend.KHIVA_BACKEND_OPENCL;
+                Assert.AreEqual(Khiva.Backend.KHIVA_BACKEND_OPENCL, Khiva.ActualBackend);
             }
 
             if (cpu != 0)
             {
-                Library.SetKhivaBackend(Library.Backend.KHIVA_BACKEND_CPU);
-                Assert.AreEqual(Library.Backend.KHIVA_BACKEND_CPU, Library.GetKhivaBackend());
+                Khiva.ActualBackend = Khiva.Backend.KHIVA_BACKEND_CPU;
+                Assert.AreEqual(Khiva.Backend.KHIVA_BACKEND_CPU, Khiva.ActualBackend);
             }
         }
 
@@ -83,38 +84,38 @@ namespace khiva.library.tests
         [Test]
         public void GetDeviceIDTest()
         {
-            int backends = Library.GetKhivaBackends();
-            int cuda = backends & (int)Library.Backend.KHIVA_BACKEND_CUDA;
-            int opencl = backends & (int)Library.Backend.KHIVA_BACKEND_OPENCL;
-            int cpu = backends & (int)Library.Backend.KHIVA_BACKEND_CPU;
+            int backends = (int)Khiva.SupportedBackends;
+            int cuda = backends & (int)Khiva.Backend.KHIVA_BACKEND_CUDA;
+            int opencl = backends & (int)Khiva.Backend.KHIVA_BACKEND_OPENCL;
+            int cpu = backends & (int)Khiva.Backend.KHIVA_BACKEND_CPU;
 
             if (cuda != 0)
             {
-                Library.SetKhivaBackend(Library.Backend.KHIVA_BACKEND_CUDA);
-                for (int i = 0; i < Library.GetKhivaDeviceCount(); i++)
+                Khiva.ActualBackend = Khiva.Backend.KHIVA_BACKEND_CUDA;
+                for (int i = 0; i < Khiva.DeviceCount; i++)
                 {
-                    Library.SetKhivaDevice(i);
-                    Assert.AreEqual(i, Library.GetKhivaDeviceID());
+                    Khiva.Device = i;
+                    Assert.AreEqual(i, Khiva.Device);
                 }
             }
 
             if (opencl != 0)
             {
-                Library.SetKhivaBackend(Library.Backend.KHIVA_BACKEND_OPENCL);
-                for (int i = 0; i < Library.GetKhivaDeviceCount(); i++)
+                Khiva.ActualBackend = Khiva.Backend.KHIVA_BACKEND_OPENCL;
+                for (int i = 0; i < Khiva.DeviceCount; i++)
                 {
-                    Library.SetKhivaDevice(i);
-                    Assert.AreEqual(i, Library.GetKhivaDeviceID());
+                    Khiva.Device = i;
+                    Assert.AreEqual(i, Khiva.Device);
                 }
             }
 
             if (cpu != 0)
             {
-                Library.SetKhivaBackend(Library.Backend.KHIVA_BACKEND_CPU);
-                for (int i = 0; i < Library.GetKhivaDeviceCount(); i++)
+                Khiva.ActualBackend = Khiva.Backend.KHIVA_BACKEND_CPU;
+                for (int i = 0; i < Khiva.DeviceCount; i++)
                 {
-                    Library.SetKhivaDevice(i);
-                    Assert.AreEqual(i, Library.GetKhivaDeviceID());
+                    Khiva.Device = i;
+                    Assert.AreEqual(i, Khiva.Device);
                 }
             };
         }
@@ -122,7 +123,7 @@ namespace khiva.library.tests
         [Test]
         public void GetKhivaVersionTest()
         {
-            Assert.AreEqual(GetKhivaVersionFromFile(), Library.GetKhivaVersion());
+            Assert.AreEqual(GetKhivaVersionFromFile(), Khiva.Version);
         }
 
         private String GetKhivaVersionFromFile()

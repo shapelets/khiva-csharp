@@ -31,7 +31,7 @@ namespace khiva.interop
          * @param result An array of points with the reduced dimensionality.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void paa(ref IntPtr a, ref int bins, ref IntPtr result);
+        public extern static void paa([In] IntPtr a, [In] int bins, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the number of Perceptually Important Points (PIP) in the time series.
@@ -44,7 +44,7 @@ namespace khiva.interop
          * @param result Array with the most Perceptually Important number_ips.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void pip(ref IntPtr a, ref int number_ips, ref IntPtr result);
+        public extern static void pip([In] IntPtr a, [In] int number_ips, [Out] out IntPtr result);
 
         /**
          * @brief Applies the Piecewise Linear Approximation (PLA BottomUP) to the time series.
@@ -58,7 +58,7 @@ namespace khiva.interop
          * @param result The reduced number of points.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void pla_bottom_up(ref IntPtr ts, ref float max_error, ref IntPtr result);
+        public extern static void pla_bottom_up([In] IntPtr ts, [In] float max_error, [Out] out IntPtr result);
 
         /**
          * @brief Applies the Piecewise Linear Approximation (PLA Sliding Window) to the time series.
@@ -72,7 +72,7 @@ namespace khiva.interop
          * @param result The reduced number of points.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void pla_sliding_window(ref IntPtr ts, ref float max_error, ref IntPtr result);
+        public extern static void pla_sliding_window([In] IntPtr ts, [In] float max_error, [Out] out IntPtr result);
 
         /**
          * @brief The Ramer–Douglas–Peucker algorithm (RDP) is an algorithm for reducing the number of points in a curve
@@ -93,7 +93,7 @@ namespace khiva.interop
          * column 1).
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void ramer_douglas_peucker(ref IntPtr points, ref double epsilon, ref IntPtr res_points);
+        public extern static void ramer_douglas_peucker([In] IntPtr points, [In] double epsilon, [Out] out IntPtr res_points);
 
         /**
          * @brief Symbolic Aggregate approXimation (SAX). It transforms a numeric time series into a time series of symbols with
@@ -112,7 +112,7 @@ namespace khiva.interop
          * @param result An array of symbols.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void sax(ref IntPtr a, ref int alphabet_size, ref IntPtr result);
+        public extern static void sax([In] IntPtr a, [In] int alphabet_size, [Out] out IntPtr result);
 
         /**
          * @brief Reduces a set of points by applying the Visvalingam method (minimum triangle area) until the number
@@ -128,6 +128,6 @@ namespace khiva.interop
          * column 1).
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void visvalingam(ref IntPtr points, ref int num_points, ref IntPtr res_points);
+        public extern static void visvalingam([In] IntPtr points, [In] int num_points, [Out] out IntPtr res_points);
     }
 }

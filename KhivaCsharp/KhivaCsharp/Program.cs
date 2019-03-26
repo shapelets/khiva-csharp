@@ -20,11 +20,28 @@ namespace khiva
     {
         static void Main(String[] args)
         {
-            float[] tss = new float[] { 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5 };
+            Complex[] data = { new Complex(1,2), new Complex(3,4)};
+            array.MyArray2 arr = array.MyArray2.Create<Complex>(data);
+            Console.ReadKey();
+            /*float[] tss = new float[] { 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5 };
             array.Array arr = new array.Array(tss);
             array.Array aggregatedLinearTrendResult = features.Features.AggregatedLinearTrend(arr, 3, 0).Item1;
             float[] result = aggregatedLinearTrendResult.GetData1D<float>();
-            Console.WriteLine(result.Length);
+            Console.WriteLine(result.Length);*/
+            /*
+            float[,] tss = new float[,] { { 0, 1, 2, 3 }, { 10, 11, 12, 13 } };
+            float[,] tss2 = new float[,] { { 4, 6, 8, 10, 12 }, { 14, 16, 18, 20, 22 } };
+            array.Array xss = new array.Array(tss);
+            array.Array yss = new array.Array(tss2);
+            array.Array approximateEntropyResult = features.Features.CrossCovariance(xss, yss, false);
+            approximateEntropyResult.Display();
+            float[,,] dataArr = approximateEntropyResult.GetData3D<float>();
+            float[] flattenResult = new float[dataArr.Length];
+            Flatten3D<float>(ref flattenResult, dataArr);
+            for (int  i = 0; i < flattenResult.Length; i++)
+            {
+                Console.WriteLine(flattenResult[i]);
+            }*/
             //int[,,,] tss = { { { { 1, 2 }, { 3, 4 } }, { { 5, 6 }, { 7, 8 } } }, { { { 9, 10 }, { 11, 12 } }, { { 13, 14 }, { 15, 16 } } } };
             /*
             Complex[,,] tss = { { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(5, 6), new Complex(7, 8) } }, { { new Complex(9, 10), new Complex(11, 12) }, { new Complex(13, 14), new Complex(15, 16) } } };
@@ -55,11 +72,12 @@ namespace khiva
             /*arr.Display();
             bool[,,] dataArr = arr.GetData3D<bool>();
             long[] dims = arr.GetDims();*/
+            /*
             Console.WriteLine("test");
             string[] info_splitted;
             using(StringWriter writer = new StringWriter()){
                 Console.SetOut(writer);
-                khiva.library.Library.PrintBackendInfo();
+                khiva.Khiva.PrintBackendInfo();
                 string info = writer.ToString();
                 info_splitted = info.Split(' ');
             }
@@ -68,10 +86,10 @@ namespace khiva
             Console.SetOut(standardOutput);
             Console.WriteLine(info_splitted[0]);
 
-            Console.WriteLine(khiva.library.Library.GetKhivaBackends() & (int)khiva.library.Library.Backend.KHIVA_BACKEND_OPENCL);
+            Console.WriteLine((int)khiva.Khiva.SupportedBackends & (int)khiva.Khiva.Backend.KHIVA_BACKEND_OPENCL);
 
-            Console.WriteLine("Backend: " + khiva.library.Library.GetKhivaBackend());
-            Console.WriteLine(khiva.library.Library.GetKhivaVersion());
+            Console.WriteLine("Backend: " + khiva.Khiva.ActualBackend);
+            Console.WriteLine(khiva.Khiva.Version);
 
             String version = "";
             String filePath;
@@ -111,6 +129,23 @@ namespace khiva
             Console.WriteLine(version);
 
             Console.ReadKey();
+        }
+
+        private static void Flatten3D<T>(ref T[] flattenArr, T[,,] arr)
+        {
+            Console.WriteLine("Flatten");
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    for (int k = 0; k < arr.GetLength(2); k++)
+                    {
+                        Console.WriteLine("(" + i + "," + j + "," + k + ")");
+                        Console.WriteLine("Position: " + (i * (arr.GetLength(1) * arr.GetLength(2)) + j * arr.GetLength(2) + k));
+                        flattenArr[i * (arr.GetLength(1) * arr.GetLength(2)) + j * arr.GetLength(2) + k] = arr[i, j, k];
+                    }
+                }
+            }*/
         }
     }
 }

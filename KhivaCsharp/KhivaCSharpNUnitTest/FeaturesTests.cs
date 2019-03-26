@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+/*
 namespace khiva.features.tests
 {
     [TestFixture]
@@ -21,7 +21,7 @@ namespace khiva.features.tests
         [SetUp]
         public void Init()
         {
-            library.Library.SetKhivaBackend(library.Library.Backend.KHIVA_BACKEND_CPU);
+            Khiva.ActualBackend = Khiva.Backend.KHIVA_BACKEND_CPU;
         }
 
         [Test]
@@ -116,7 +116,7 @@ namespace khiva.features.tests
                 {
                     for (int k = 0; k < arr.GetLength(2); k++)
                     {
-                        flattenArr[i * (arr.GetLength(1) + arr.GetLength(2)) + j * arr.GetLength(2) + k] = arr[i, j, k];
+                        flattenArr[i * (arr.GetLength(1) * arr.GetLength(2)) + j * arr.GetLength(2) + k] = arr[i, j, k];
                     }
                 }
             }
@@ -125,3 +125,4 @@ namespace khiva.features.tests
 
     }
 }
+*/

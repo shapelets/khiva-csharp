@@ -26,85 +26,85 @@ namespace khiva.interop
             * @param type Data type.
             */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] float[] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] float[] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] float[,] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] float[,] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] float[,,] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] float[,,] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] float[,,,] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] float[,,,] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
 
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] double[] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] double[] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] double[,] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] double[,] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] double[,,] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] double[,,] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] double[,,,] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] double[,,,] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
 
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] int[] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] int[] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] int[,] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] int[,] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] int[,,] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] int[,,] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] int[,,,] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] int[,,,] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
 
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] uint[] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] uint[] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] uint[,] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] uint[,] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] uint[,,] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] uint[,,] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] uint[,,,] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] uint[,,,] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
 
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] byte[] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] byte[] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] byte[,] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] byte[,] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] byte[,,] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] byte[,,] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] byte[,,,] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] byte[,,,] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
 
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] long[] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] long[] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] long[,] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] long[,] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] long[,,] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] long[,,] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] long[,,,] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] long[,,,] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
 
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] ulong[] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] ulong[] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] ulong[,] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] ulong[,] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] ulong[,,] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] ulong[,,] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] ulong[,,,] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] ulong[,,,] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
 
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] short[] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] short[] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] short[,] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] short[,] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] short[,,] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] short[,,] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] short[,,,] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] short[,,,] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
 
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] ushort[] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] ushort[] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] ushort[,] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] ushort[,] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] ushort[,,] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] ushort[,,] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void create_array([In] ushort[,,,] arr, ref uint ndims, long[] dims, ref IntPtr result, ref int type);
+        public extern static void create_array([In] ushort[,,,] arr, [In] uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] int type);
 
     /**
         * @brief Retrieves the data from the device to the host.
@@ -113,7 +113,7 @@ namespace khiva.interop
         * @param data Pointer to previously allocated memory in the host.
         */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void get_data(ref IntPtr array, IntPtr data);
+        public extern static void get_data([In] IntPtr array,[In,Out] IntPtr data);
 
         /**
             * @brief Gets the Array dimensions.
@@ -122,7 +122,7 @@ namespace khiva.interop
             * @param dims The dimensions.
             */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void get_dims(ref IntPtr array, long[] dims);
+        public extern static void get_dims([In] IntPtr array,[Out] long[] dims);
 
 
         /**
@@ -131,7 +131,7 @@ namespace khiva.interop
             * @param array The array to display.
             */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void display(ref IntPtr array);
+        public extern static void display([In] IntPtr array);
 
         /**
             * @brief Decreases the references count of the given array.
@@ -139,7 +139,7 @@ namespace khiva.interop
             * @param array The Array to release.
             */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void delete_array(ref IntPtr array);
+        public extern static void delete_array([In, Out] ref IntPtr array);
 
         /**
             * @brief Gets the type of the array.
@@ -148,7 +148,7 @@ namespace khiva.interop
             * @param type Value of the Dtype enumeration.
             */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void get_type(ref IntPtr array, ref int t);
+        public extern static void get_type([In] IntPtr array, [Out] out int t);
 
         /**
             * @brief Adds two arrays.
@@ -158,7 +158,7 @@ namespace khiva.interop
             * @param result KHIVA Array with the result of this operation.
             */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void khiva_add(ref IntPtr lhs, ref IntPtr rhs, ref IntPtr result);
+        public extern static void khiva_add([In] IntPtr lhs, [In] IntPtr rhs, [Out] out IntPtr result);
 
 
 
@@ -170,7 +170,7 @@ namespace khiva.interop
             * @param result KHIVA Array with the result of this operation.
             */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void khiva_mul(ref IntPtr lhs, ref IntPtr rhs, ref IntPtr result);
+        public extern static void khiva_mul([In] IntPtr lhs, [In] IntPtr rhs, [Out] out IntPtr result);
 
         /**
             * @brief Subtracts two arrays.
@@ -180,7 +180,7 @@ namespace khiva.interop
             * @param result KHIVA Array with the result of this operation.
             */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void khiva_sub(ref IntPtr lhs, ref IntPtr rhs, ref IntPtr result);
+        public extern static void khiva_sub([In] IntPtr lhs, [In] IntPtr rhs, [Out] out IntPtr result);
 
         /**
             * @brief Divides lhs by rhs (element-wise).
@@ -190,7 +190,7 @@ namespace khiva.interop
             * @param result KHIVA Array with the result of this operation.
             */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void khiva_div(ref IntPtr lhs, ref IntPtr rhs, ref IntPtr result);
+        public extern static void khiva_div([In] IntPtr lhs, [In] IntPtr rhs, [Out] out IntPtr result);
 
         /**
             * @brief Performs the modulo operation of lhs by rhs.
@@ -200,7 +200,7 @@ namespace khiva.interop
             * @param result KHIVA Array with the result of this operation.
             */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void khiva_mod(ref IntPtr lhs, ref IntPtr rhs, ref IntPtr result);
+        public extern static void khiva_mod([In] IntPtr lhs, [In] IntPtr rhs, [Out] out IntPtr result);
 
         /**
             * @brief Powers lhs with rhs.
@@ -210,7 +210,7 @@ namespace khiva.interop
             * @param result KHIVA Array with the result of this operation.
             */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void khiva_pow(ref IntPtr lhs, ref IntPtr rhs, ref IntPtr result);
+        public extern static void khiva_pow([In] IntPtr lhs, [In] IntPtr rhs, [Out] out IntPtr result);
 
         /**
             * @brief Compares (element-wise) if lhs is lower than rhs.
@@ -220,7 +220,7 @@ namespace khiva.interop
             * @param result KHIVA Array with the result of this operation.
             */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void khiva_lt(ref IntPtr lhs, ref IntPtr rhs, ref IntPtr result);
+        public extern static void khiva_lt([In] IntPtr lhs, [In] IntPtr rhs, [Out] out IntPtr result);
 
         /**
             * @brief Compares (element-wise) if lhs is greater than rhs.
@@ -230,7 +230,7 @@ namespace khiva.interop
             * @param result KHIVA Array with the result of this operation.
             */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void khiva_gt(ref IntPtr lhs, ref IntPtr rhs, ref IntPtr result);
+        public extern static void khiva_gt([In] IntPtr lhs, [In] IntPtr rhs, [Out] out IntPtr result);
 
         /**
             * @brief Compares (element-wise) if lhs is lower or equal than rhs.
@@ -240,7 +240,7 @@ namespace khiva.interop
             * @param result KHIVA Array with the result of this operation.
             */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void khiva_le(ref IntPtr lhs, ref IntPtr rhs, ref IntPtr result);
+        public extern static void khiva_le([In] IntPtr lhs, [In] IntPtr rhs, [Out] out IntPtr result);
 
         /**
             * @brief Compares (element-wise) if lhs is greater or equal than rhs.
@@ -250,7 +250,7 @@ namespace khiva.interop
             * @param result KHIVA Array with the result of this operation.
             */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void khiva_ge(ref IntPtr lhs, ref IntPtr rhs, ref IntPtr result);
+        public extern static void khiva_ge([In] IntPtr lhs, [In] IntPtr rhs, [Out] out IntPtr result);
 
         /**
             * @brief Compares (element-wise) if rhs is equal to rhs.
@@ -260,7 +260,7 @@ namespace khiva.interop
             * @param result KHIVA Array with the result of this operation.
             */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void khiva_eq(ref IntPtr lhs, ref IntPtr rhs, ref IntPtr result);
+        public extern static void khiva_eq([In] IntPtr lhs, [In] IntPtr rhs, [Out] out IntPtr result);
 
         /**
             * @brief Compares (element-wise) if lhs is not equal to rhs.
@@ -270,7 +270,7 @@ namespace khiva.interop
             * @param result KHIVA Array with the result of this operation.
             */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void khiva_ne(ref IntPtr lhs, ref IntPtr rhs, ref IntPtr result);
+        public extern static void khiva_ne([In] IntPtr lhs, [In] IntPtr rhs, [Out] out IntPtr result);
 
         /**
             * @brief Performs an AND operation (element-wise) with lhs and rhs.
@@ -280,7 +280,7 @@ namespace khiva.interop
             * @param result KHIVA Array with the result of this operation.
             */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void khiva_bitand(ref IntPtr lhs, ref IntPtr rhs, ref IntPtr result);
+        public extern static void khiva_bitand([In] IntPtr lhs, [In] IntPtr rhs, [Out] out IntPtr result);
 
         /**
             * @brief Performs an OR operation (element-wise) with lhs and rhs.
@@ -290,7 +290,7 @@ namespace khiva.interop
             * @param result KHIVA Array with the result of this operation.
             */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void khiva_bitor(ref IntPtr lhs, ref IntPtr rhs, ref IntPtr result);
+        public extern static void khiva_bitor([In] IntPtr lhs, [In] IntPtr rhs, [Out] out IntPtr result);
 
         /**
             * @brief Performs an eXclusive-OR operation (element-wise) with lhs and rhs.
@@ -300,7 +300,7 @@ namespace khiva.interop
             * @param result KHIVA Array with the result of this operation.
             */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void khiva_bitxor(ref IntPtr lhs, ref IntPtr rhs, ref IntPtr result);
+        public extern static void khiva_bitxor([In] IntPtr lhs, [In] IntPtr rhs, [Out] out IntPtr result);
 
         /**
             * @brief Performs a left bit shift operation (element-wise) to array as many times as specified in the parameter n.
@@ -310,7 +310,7 @@ namespace khiva.interop
             * @param result KHIVA Array with the result of this operation.
             */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void khiva_bitshiftl(ref IntPtr array, ref int n, ref IntPtr result);
+        public extern static void khiva_bitshiftl([In] IntPtr array, [In] int n, [Out] out IntPtr result);
 
         /**
             * @brief Performs a right bit shift operation (element-wise) to array as many times as specified in the parameter n.
@@ -320,7 +320,7 @@ namespace khiva.interop
             * @param result KHIVA Array with the result of this operation.
             */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void khiva_bitshiftr(ref IntPtr array, ref int n, ref IntPtr result);
+        public extern static void khiva_bitshiftr([In] IntPtr array, [In] int n, [Out] out IntPtr result);
 
         /**
             * @brief Logical NOT operation to array.
@@ -329,7 +329,7 @@ namespace khiva.interop
             * @param result KHIVA Array with the result of this operation.
             */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void khiva_not(ref IntPtr array, ref IntPtr result);
+        public extern static void khiva_not([In] IntPtr array, [Out] out IntPtr result);
 
         /**
             * @brief Transposes array.
@@ -339,7 +339,7 @@ namespace khiva.interop
             * @param result KHIVA Array with the result of this operation.
             */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void khiva_transpose(ref IntPtr array, ref bool conjugate, ref IntPtr result);
+        public extern static void khiva_transpose([In] IntPtr array, [In] bool conjugate, [Out] out IntPtr result);
 
         /**
             * @brief Retrieves a given column of array.
@@ -349,7 +349,7 @@ namespace khiva.interop
             * @param result KHIVA Array with the result of this operation.
             */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void khiva_col(ref IntPtr array, ref int index, ref IntPtr result);
+        public extern static void khiva_col([In] IntPtr array, [In] int index, [Out] out IntPtr result);
 
         /**
             * @brief Retrieves a subset of columns of array, starting at first and finishing at last, both inclusive.
@@ -360,7 +360,7 @@ namespace khiva.interop
             * @param result KHIVA Array with the result of this operation.
             */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void khiva_cols(ref IntPtr array, ref int first, ref int last, ref IntPtr result);
+        public extern static void khiva_cols([In] IntPtr array, [In] int first, [In] int last, [Out] out IntPtr result);
 
         /**
             * @brief Retrieves a given row of array.
@@ -370,7 +370,7 @@ namespace khiva.interop
             * @param result KHIVA Array with the result of this operation.
             */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void khiva_row(ref IntPtr array, ref int index, ref IntPtr result);
+        public extern static void khiva_row([In] IntPtr array, [In] int index, [Out] out IntPtr result);
 
         /**
             * @brief Retrieves a subset of rows of array, starting at first and finishing at last, both inclusive.
@@ -381,7 +381,7 @@ namespace khiva.interop
             * @param result KHIVA Array with the result of this operation.
             */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void khiva_rows(ref IntPtr array, ref int first, ref int last, ref IntPtr result);
+        public extern static void khiva_rows([In] IntPtr array, [In] int first, [In] int last, [Out] out IntPtr result);
 
         /**
             * @brief Creates a KHIVA array from an ArrayFire array.
@@ -390,7 +390,7 @@ namespace khiva.interop
             * @param result KHIVA Array.
             */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void from_arrayfire(ref IntPtr arrayfire, ref IntPtr result);
+        public extern static void from_arrayfire([In] IntPtr arrayfire, [Out] out IntPtr result);
 
         /**
             * @brief Performs a matrix multiplication of lhs and rhs.
@@ -400,7 +400,7 @@ namespace khiva.interop
             * @param result KHIVA Array with the result of this operation.
             */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void khiva_matmul(ref IntPtr lhs, ref IntPtr rhs, ref IntPtr result);
+        public extern static void khiva_matmul([In] IntPtr lhs, [In] IntPtr rhs, [Out] out IntPtr result);
 
         /**
             * @brief Performs a deep copy of array.
@@ -409,7 +409,7 @@ namespace khiva.interop
             * @param result KHIVA Array which contains a copy of array.
             */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void copy(ref IntPtr array, ref IntPtr result);
+        public extern static void copy([In] IntPtr array, [Out] out IntPtr result);
 
         /**
             * @brief Changes the type of array.
@@ -419,7 +419,7 @@ namespace khiva.interop
             * @param result KHIVA Array with the result of this operation.
             */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void khiva_as(ref IntPtr array, ref int type, ref IntPtr result);
+        public extern static void khiva_as([In] IntPtr array, [In] int type, [Out] out IntPtr result);
 
     }
 }
