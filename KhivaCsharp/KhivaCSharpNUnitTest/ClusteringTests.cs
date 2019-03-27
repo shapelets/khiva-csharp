@@ -49,6 +49,7 @@ namespace khiva.clustering.tests
                                 data[0, i] + data[1, i] + data[2, i],
                                 1e-3);
             }
+            arr.Dispose(); result.Item1.Dispose(); result.Item2.Dispose();
         }
 
         [Test]
@@ -86,7 +87,7 @@ namespace khiva.clustering.tests
             {
                 Assert.AreEqual(expected_l[i], labels[i], 1e-3);
             }
-
+            arr.Dispose(); result.Item1.Dispose(); result.Item2.Dispose();
         }
     }
 }

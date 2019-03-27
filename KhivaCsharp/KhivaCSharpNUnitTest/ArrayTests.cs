@@ -809,387 +809,472 @@ namespace khiva.array.tests
         public void TestShortD1OkDims()
         {
             short[] tss = { 1, 2 };
-            Array arr = new Array(tss);
-            short[] data = arr.GetData1D<short>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                short[] data = arr.GetData1D<short>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestUshortD1OkDims()
         {
             ushort[] tss = { 1, 2 };
-            Array arr = new Array(tss);
-            ushort[] data = arr.GetData1D<ushort>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                ushort[] data = arr.GetData1D<ushort>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestByteD1OkDims()
         {
             byte[] tss = { 1, 2 };
-            Array arr = new Array(tss);
-            byte[] data = arr.GetData1D<byte>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                byte[] data = arr.GetData1D<byte>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestLongD1OkDims()
         {
             long[] tss = { 1, 2 };
-            Array arr = new Array(tss);
-            long[] data = arr.GetData1D<long>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                long[] data = arr.GetData1D<long>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestUlongD1OkDims()
         {
             ulong[] tss = { 1, 2 };
-            Array arr = new Array(tss);
-            ulong[] data = arr.GetData1D<ulong>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                ulong[] data = arr.GetData1D<ulong>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestIntD1OkDims()
         {
             int[] tss = { 1, 2 };
-            Array arr = new Array(tss);
-            int[] data = arr.GetData1D<int>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                int[] data = arr.GetData1D<int>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestUintD1OkDims()
         {
             uint[] tss = { 1, 2 };
-            Array arr = new Array(tss);
-            uint[] data = arr.GetData1D<uint>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                uint[] data = arr.GetData1D<uint>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestDoubleD2OkDims()
         {
             double[,] tss = { { 1, 2 }, { 3, 4} };
-            Array arr = new Array(tss);
-            double[,] data = arr.GetData2D<double>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                double[,] data = arr.GetData2D<double>();
+                Assert.AreEqual(tss, data);
+            }
         }
         
         [Test]
         public void TestFloatD2OkDims()
         {
             float[,] tss = { { 1, 2 }, { 3, 4 } };
-            Array arr = new Array(tss);
-            float[,] data = arr.GetData2D<float>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                float[,] data = arr.GetData2D<float>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestComplexDoubleD2OkDims()
         {
             Complex[,] tss = { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(1, 2), new Complex(3, 4) } };
-            Array arr = new Array(tss, true);
-            Complex[,] data = arr.GetData2D<Complex>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss, true))
+            {
+                Complex[,] data = arr.GetData2D<Complex>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestComplexFloatD2OkDims()
         {
             Complex[,] tss = { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(1, 2), new Complex(3, 4) } };
-            Array arr = new Array(tss, false);
-            Complex[,] data = arr.GetData2D<Complex>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss, false)) {
+                Complex[,] data = arr.GetData2D<Complex>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestBooleanD2OkDims()
         {
             bool[,] tss = { { true, false }, { false, false } };
-            Array arr = new Array(tss);
-            bool[,] data = arr.GetData2D<bool>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                bool[,] data = arr.GetData2D<bool>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestShortD2OkDims()
         {
             short[,] tss = { { 1, 2 }, { 3, 4 } };
-            Array arr = new Array(tss);
-            short[,] data = arr.GetData2D<short>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                short[,] data = arr.GetData2D<short>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestUshortD2OkDims()
         {
             ushort[,] tss = { { 1, 2 }, { 3, 4 } };
-            Array arr = new Array(tss);
-            ushort[,] data = arr.GetData2D<ushort>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                ushort[,] data = arr.GetData2D<ushort>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestByteD2OkDims()
         {
             byte[,] tss = { { 1, 2 }, { 3, 4 } };
-            Array arr = new Array(tss);
-            byte[,] data = arr.GetData2D<byte>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                byte[,] data = arr.GetData2D<byte>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestLongD2OkDims()
         {
             long[,] tss = { { 1, 2 }, { 3, 4 } };
-            Array arr = new Array(tss);
-            long[,] data = arr.GetData2D<long>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                long[,] data = arr.GetData2D<long>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestUlongD2OkDims()
         {
             ulong[,] tss = { { 1, 2 }, { 3, 4 } };
-            Array arr = new Array(tss);
-            ulong[,] data = arr.GetData2D<ulong>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                ulong[,] data = arr.GetData2D<ulong>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestIntD2OkDims()
         {
             int[,] tss = { { 1, 2 }, { 3, 4 } };
-            Array arr = new Array(tss);
-            int[,] data = arr.GetData2D<int>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                int[,] data = arr.GetData2D<int>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestUintD2OkDims()
         {
             uint[,] tss = { { 1, 2 }, { 3, 4 } };
-            Array arr = new Array(tss);
-            uint[,] data = arr.GetData2D<uint>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                uint[,] data = arr.GetData2D<uint>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestDoubleD3OkDims()
         {
             double[,,] tss = { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } };
-            Array arr = new Array(tss);
-            double[,,] data = arr.GetData3D<double>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                double[,,] data = arr.GetData3D<double>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestFloatD3OkDims()
         {
             float[,,] tss = { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } };
-            Array arr = new Array(tss);
-            float[,,] data = arr.GetData3D<float>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                float[,,] data = arr.GetData3D<float>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestComplexDoubleD3OkDims()
         {
             Complex[,,] tss = { { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(1, 2), new Complex(3, 4) } }, { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(1, 2), new Complex(3, 4) } } };
-            Array arr = new Array(tss, true);
-            Complex[,,] data = arr.GetData3D<Complex>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss, true))
+            {
+                Complex[,,] data = arr.GetData3D<Complex>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestComplexFloatD3OkDims()
         {
             Complex[,,] tss = { { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(1, 2), new Complex(3, 4) } }, { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(1, 2), new Complex(3, 4) } } };
-            Array arr = new Array(tss, false);
-            Complex[,,] data = arr.GetData3D<Complex>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss, false))
+            {
+                Complex[,,] data = arr.GetData3D<Complex>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestBooleanD3OkDims()
         {
             bool[,,] tss = { { { true, false }, { false, false } }, { { true, false }, { false, false } } };
-            Array arr = new Array(tss);
-            bool[,,] data = arr.GetData3D<bool>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                bool[,,] data = arr.GetData3D<bool>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestShortD3OkDims()
         {
             short[,,] tss = { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } };
-            Array arr = new Array(tss);
-            short[,,] data = arr.GetData3D<short>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                short[,,] data = arr.GetData3D<short>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestUshortD3OkDims()
         {
             ushort[,,] tss = { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } };
-            Array arr = new Array(tss);
-            ushort[,,] data = arr.GetData3D<ushort>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                ushort[,,] data = arr.GetData3D<ushort>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestByteD3OkDims()
         {
             byte[,,] tss = { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } };
-            Array arr = new Array(tss);
-            byte[,,] data = arr.GetData3D<byte>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                byte[,,] data = arr.GetData3D<byte>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestLongD3OkDims()
         {
             long[,,] tss = { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } };
-            Array arr = new Array(tss);
-            long[,,] data = arr.GetData3D<long>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                long[,,] data = arr.GetData3D<long>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestUlongD3OkDims()
         {
             ulong[,,] tss = { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } };
-            Array arr = new Array(tss);
-            ulong[,,] data = arr.GetData3D<ulong>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                ulong[,,] data = arr.GetData3D<ulong>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestIntD3OkDims()
         {
             int[,,] tss = { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } };
-            Array arr = new Array(tss);
-            int[,,] data = arr.GetData3D<int>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                int[,,] data = arr.GetData3D<int>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestUintD3OkDims()
         {
             uint[,,] tss = { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } };
-            Array arr = new Array(tss);
-            uint[,,] data = arr.GetData3D<uint>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                uint[,,] data = arr.GetData3D<uint>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestDoubleD4OkDims()
         {
             double[,,,] tss = { { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } }, { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } } };
-            Array arr = new Array(tss);
-            double[,,,] data = arr.GetData4D<double>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                double[,,,] data = arr.GetData4D<double>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestFloatD4OkDims()
         {
             float[,,,] tss = { { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } }, { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } } };
-            Array arr = new Array(tss);
-            float[,,,] data = arr.GetData4D<float>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                float[,,,] data = arr.GetData4D<float>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestComplexDoubleD4OkDims()
         {
             Complex[,,,] tss = { { { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(1, 2), new Complex(3, 4) } }, { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(1, 2), new Complex(3, 4) } } }, { { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(1, 2), new Complex(3, 4) } }, { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(1, 2), new Complex(3, 4) } } } };
-            Array arr = new Array(tss, true);
-            Complex[,,,] data = arr.GetData4D<Complex>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss, true))
+            {
+                Complex[,,,] data = arr.GetData4D<Complex>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestComplexFloatD4OkDims()
         {
             Complex[,,,] tss = { { { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(1, 2), new Complex(3, 4) } }, { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(1, 2), new Complex(3, 4) } } }, { { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(1, 2), new Complex(3, 4) } }, { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(1, 2), new Complex(3, 4) } } } };
-            Array arr = new Array(tss, false);
-            Complex[,,,] data = arr.GetData4D<Complex>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss, false))
+            {
+                Complex[,,,] data = arr.GetData4D<Complex>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestBooleanD4OkDims()
         {
             bool[,,,] tss = { { { { true, false }, { false, false } }, { { true, false }, { false, false } } }, { { { true, false }, { false, false } }, { { true, false }, { false, false } } } };
-            Array arr = new Array(tss);
-            bool[,,,] data = arr.GetData4D<bool>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                bool[,,,] data = arr.GetData4D<bool>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestShortD4OkDims()
         {
             short[,,,] tss = { { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } }, { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } } };
-            Array arr = new Array(tss);
-            short[,,,] data = arr.GetData4D<short>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                short[,,,] data = arr.GetData4D<short>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestUshortD4OkDims()
         {
             ushort[,,,] tss = { { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } }, { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } } };
-            Array arr = new Array(tss);
-            ushort[,,,] data = arr.GetData4D<ushort>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                ushort[,,,] data = arr.GetData4D<ushort>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestByteD4OkDims()
         {
             byte[,,,] tss = { { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } }, { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } } };
-            Array arr = new Array(tss);
-            byte[,,,] data = arr.GetData4D<byte>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                byte[,,,] data = arr.GetData4D<byte>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestLongD4OkDims()
         {
             long[,,,] tss = { { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } }, { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } } };
-            Array arr = new Array(tss);
-            long[,,,] data = arr.GetData4D<long>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                long[,,,] data = arr.GetData4D<long>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestUlongD4OkDims()
         {
             ulong[,,,] tss = { { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } }, { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } } };
-            Array arr = new Array(tss);
-            ulong[,,,] data = arr.GetData4D<ulong>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                ulong[,,,] data = arr.GetData4D<ulong>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestIntD4OkDims()
         {
             int[,,,] tss = { { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } }, { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } } };
-            Array arr = new Array(tss);
-            int[,,,] data = arr.GetData4D<int>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                int[,,,] data = arr.GetData4D<int>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestUintD4OkDims()
         {
             uint[,,,] tss = { { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } }, { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } } };
-            Array arr = new Array(tss);
-            uint[,,,] data = arr.GetData4D<uint>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                uint[,,,] data = arr.GetData4D<uint>();
+                Assert.AreEqual(tss, data);
+            }
         }
         
 
@@ -1198,19 +1283,19 @@ namespace khiva.array.tests
         {
             uint[] tss = { 1, 2, 3, 4 };
             uint[] tss2 = { 1, 2, 3, 4 };
-            Array arr = new Array(tss);
-            Array arr2 = new Array(tss2);
-            arr += arr2;
-            Assert.AreEqual(new uint[]{2, 4, 6, 8}, arr.GetData1D<uint>());
+            using (Array arr = new Array(tss), arr2 = new Array(tss2), arr3 = arr + arr2){
+                Assert.AreEqual(new uint[] { 2, 4, 6, 8 }, arr3.GetData1D<uint>());
+            }        
         }
 
         [Test]
         public void TestPlusSelfOperator()
         {
             uint[] tss = { 1, 2, 3, 4, 5};
-            Array arr = new Array(tss);
-            arr += arr;
-            Assert.AreEqual(new uint[] {2, 4, 6, 8, 10}, arr.GetData1D<uint>());
+            using (Array arr = new Array(tss), arr2 = arr + arr)
+            {
+                Assert.AreEqual(new uint[] { 2, 4, 6, 8, 10 }, arr2.GetData1D<uint>());
+            }           
         }
 
         [Test]
@@ -1218,10 +1303,9 @@ namespace khiva.array.tests
         {
             double[] tss = { 1, 2, 3, 4 };
             double[] tss2 = { 1, 2, 3, 4 };
-            Array arr = new Array(tss);
-            Array arr2 = new Array(tss2);
-            arr -= arr2;
-            Assert.AreEqual(new double[] {0, 0, 0, 0}, arr.GetData1D<double>());
+            using(Array arr = new Array(tss), arr2 = new Array(tss2), arr3 = arr - arr2){
+                Assert.AreEqual(new double[] {0, 0, 0, 0}, arr3.GetData1D<double>());
+            }
         }
 
         [Test]
@@ -1229,34 +1313,23 @@ namespace khiva.array.tests
         {
             float[] tss = { 1, 2, 3, 4 };
             float[] tss2 = { 1, 2, 3, 4 };
-            Array arr = new Array(tss);
-            Array arr2 = new Array(tss2);
-            arr *= arr2;
-            Assert.AreEqual(new float[] {1, 4, 9, 16}, arr.GetData1D<float>());
+            using (Array arr = new Array(tss), arr2 = new Array(tss2), arr3 = arr * arr2)
+            {
+                Assert.AreEqual(new float[] { 1, 4, 9, 16 }, arr3.GetData1D<float>());
+            }
         }
 
         
 
         [Test]
-        public void TestTrueDivOperator()
+        public void TestDivOperator()
         {
             float[] tss = { 1, 2, 3, 4 };
             float[] tss2 = { 1, 2, 3, 4 };
-            Array arr = new Array(tss);
-            Array arr2 = new Array(tss2);
-            arr /= arr2;
-            Assert.AreEqual(new float[] {1, 1, 1, 1}, arr.GetData1D<float>());
-        }
-
-        [Test]
-        public void TestDivOperator()
-        {
-            short[] tss = { 1, 2, 3, 4 };
-            short[] tss2 = { 1, 2, 3, 4 };
-            Array arr = new Array(tss);
-            Array arr2 = new Array(tss2);
-            Array arrDiv = arr / arr2;
-            Assert.AreEqual(new short[] { 1, 1, 1, 1 }, arrDiv.GetData1D<short>());
+            using (Array arr = new Array(tss), arr2 = new Array(tss2), arr3 = arr / arr2)
+            {
+                Assert.AreEqual(new float[] { 1, 1, 1, 1 }, arr3.GetData1D<float>());
+            }
         }
 
         [Test]
@@ -1264,10 +1337,10 @@ namespace khiva.array.tests
         {
             long[] tss = { 1, 2, 3, 4 };
             long[] tss2 = { 1, 2, 3, 4 };
-            Array arr = new Array(tss);
-            Array arr2 = new Array(tss2);
-            arr %= arr2;
-            Assert.AreEqual(new long[] { 0, 0, 0, 0 }, arr.GetData1D<long>());
+            using (Array arr = new Array(tss), arr2 = new Array(tss2), arr3 = arr % arr2)
+            {
+                Assert.AreEqual(new long[] { 0, 0, 0, 0 }, arr3.GetData1D<long>());
+            }
         }
 
         [Test]
@@ -1275,10 +1348,10 @@ namespace khiva.array.tests
         {
             long[] tss = { 1, 2, 3, 4 };
             long[] tss2 = { 2, 2, 2, 2 };
-            Array arr = new Array(tss);
-            Array arr2 = new Array(tss2);
-            Array arrPow = arr.Pow(arr2);
-            Assert.AreEqual(new long[] { 1, 4, 9, 16 }, arrPow.GetData1D<long>());
+            using (Array arr = new Array(tss), arr2 = new Array(tss2), arrPow = arr.Pow(arr2))
+            {
+                Assert.AreEqual(new long[] { 1, 4, 9, 16 }, arrPow.GetData1D<long>());
+            }
         }
 
         [Test]
@@ -1286,10 +1359,10 @@ namespace khiva.array.tests
         {
             byte[] tss = { 1, 1, 1, 1 };
             byte[] tss2 = { 1, 0, 1, 0 };
-            Array arr = new Array(tss);
-            Array arr2 = new Array(tss2);
-            arr &= arr2;
-            Assert.AreEqual(new byte[] { 1, 0, 1, 0 }, arr.GetData1D<byte>());
+            using (Array arr = new Array(tss), arr2 = new Array(tss2), arr3 = arr & arr2)
+            {
+                Assert.AreEqual(new byte[] { 1, 0, 1, 0 }, arr3.GetData1D<byte>());
+            }
         }
 
         [Test]
@@ -1297,10 +1370,10 @@ namespace khiva.array.tests
         {
             byte[] tss = { 1, 1, 1, 1 };
             byte[] tss2 = { 1, 0, 1, 0 };
-            Array arr = new Array(tss);
-            Array arr2 = new Array(tss2);
-            arr |= arr2;
-            Assert.AreEqual(new byte[] { 1, 1, 1, 1 }, arr.GetData1D<byte>());
+            using (Array arr = new Array(tss), arr2 = new Array(tss2), arr3 = arr | arr2)
+            {
+                Assert.AreEqual(new byte[] { 1, 1, 1, 1 }, arr3.GetData1D<byte>());
+            }
         }
 
         [Test]
@@ -1308,46 +1381,48 @@ namespace khiva.array.tests
         {
             bool[] tss = { true, true, true, true };
             bool[] tss2 = { true, false, true, false };
-            Array arr = new Array(tss);
-            Array arr2 = new Array(tss2);
-            arr ^= arr2;
-            Assert.AreEqual(new bool[] { false, true, false, true }, arr.GetData1D<bool>());
+            using (Array arr = new Array(tss), arr2 = new Array(tss2), arr3 = arr ^ arr2)
+            {
+                Assert.AreEqual(new bool[] { false, true, false, true }, arr3.GetData1D<bool>());
+            }
         }
 
         [Test]
         public void TestBitShiftRightOperator()
         {
             int[] tss = { 2, 4, 6, 8 };
-            Array arr = new Array(tss);
-            arr >>= 1;
-            Assert.AreEqual(new int[] { 1, 2, 3, 4 }, arr.GetData1D<int>());
+            using (Array arr = new Array(tss), arr2 = arr >> 1)
+            {
+                Assert.AreEqual(new int[] { 1, 2, 3, 4 }, arr2.GetData1D<int>());
+            }
         }
 
         [Test]
         public void TestBitShiftLeftOperator()
         {
             int[] tss = { 2, 4, 6, 8 };
-            Array arr = new Array(tss);
-            arr <<= 1;
-            Assert.AreEqual(new int[] { 4, 8, 12, 16 }, arr.GetData1D<int>());
+            using (Array arr = new Array(tss), arr2 = arr << 1)
+            {
+                Assert.AreEqual(new int[] { 4, 8, 12, 16 }, arr2.GetData1D<int>());
+            }
         }
 
         [Test]
         public void TestNegOperator()
         {
             int[] tss = { 1, 2, 3, 4 };
-            Array arr = new Array(tss);
-            Array arrNeg = -arr;
-            Assert.AreEqual(new int[] { -1, -2, -3, -4 }, arrNeg.GetData1D<int>());
+            using (Array arr = new Array(tss), arrNeg = -arr)
+            {
+                Assert.AreEqual(new int[] { -1, -2, -3, -4 }, arrNeg.GetData1D<int>());
+            }
         }
 
         [Test]
         public void TestNotOperator()
         {
             bool[] tss = { true, true, true, false };
-            Array arr = new Array(tss);
-            Array arrNot = !arr;
-            Assert.AreEqual(new bool[] { false, false, false, true }, arrNot.GetData1D<bool>());
+            using (Array arr = new Array(tss), arrNot = !arr)
+                Assert.AreEqual(new bool[] { false, false, false, true }, arrNot.GetData1D<bool>());
         }
 
         [Test]
@@ -1355,10 +1430,8 @@ namespace khiva.array.tests
         {
             long[] tss = { 1, 2, 3, 4 };
             long[] tss2 = { 2, 2, 2, 2 };
-            Array arr = new Array(tss);
-            Array arr2 = new Array(tss2);
-            Array arrLt = arr < arr2;
-            Assert.AreEqual(new bool[] { true, false, false, false }, arrLt.GetData1D<bool>());
+            using (Array arr = new Array(tss), arr2 = new Array(tss2), arrLt = arr < arr2)
+                Assert.AreEqual(new bool[] { true, false, false, false }, arrLt.GetData1D<bool>());
         }
 
         [Test]
@@ -1366,10 +1439,8 @@ namespace khiva.array.tests
         {
             long[] tss = { 1, 2, 3, 4 };
             long[] tss2 = { 2, 2, 2, 2 };
-            Array arr = new Array(tss);
-            Array arr2 = new Array(tss2);
-            Array arrGt = arr > arr2;
-            Assert.AreEqual(new bool[] { false, false, true, true }, arrGt.GetData1D<bool>());
+            using (Array arr = new Array(tss), arr2 = new Array(tss2), arrGt = arr > arr2)
+                Assert.AreEqual(new bool[] { false, false, true, true }, arrGt.GetData1D<bool>());
         }
 
         [Test]
@@ -1377,94 +1448,80 @@ namespace khiva.array.tests
         {
             long[] tss = { 1, 2, 3, 4 };
             long[] tss2 = { 2, 2, 2, 2 };
-            Array arr = new Array(tss);
-            Array arr2 = new Array(tss2);
-            Array arrLe = arr <= arr2;
-            Assert.AreEqual(new bool[] { true, true, false, false }, arrLe.GetData1D<bool>());
+            using (Array arr = new Array(tss), arr2 = new Array(tss2), arrLe = arr <= arr2)
+                Assert.AreEqual(new bool[] { true, true, false, false }, arrLe.GetData1D<bool>());
         }
         [Test]
         public void TestGeOperator()
         {
             long[] tss = { 1, 2, 3, 4 };
             long[] tss2 = { 2, 2, 2, 2 };
-            Array arr = new Array(tss);
-            Array arr2 = new Array(tss2);
-            Array arrGe = arr >= arr2;
-            Assert.AreEqual(new bool[] { false, true, true, true }, arrGe.GetData1D<bool>());
+            using (Array arr = new Array(tss), arr2 = new Array(tss2), arrGe = arr >= arr2)
+                Assert.AreEqual(new bool[] { false, true, true, true }, arrGe.GetData1D<bool>());
         }
         [Test]
         public void TestEqOperator()
         {
             long[] tss = { 1, 2, 3, 4 };
             long[] tss2 = { 2, 2, 2, 2 };
-            Array arr = new Array(tss);
-            Array arr2 = new Array(tss2);
-            Array arrEq = arr == arr2;
-            Assert.AreEqual(new bool[] { false, true, false, false }, arrEq.GetData1D<bool>());
+            using (Array arr = new Array(tss), arr2 = new Array(tss2), arrEq = arr == arr2)
+                Assert.AreEqual(new bool[] { false, true, false, false }, arrEq.GetData1D<bool>());
         }
         [Test]
         public void TestNeOperator()
         {
             long[] tss = { 1, 2, 3, 4 };
             long[] tss2 = { 2, 2, 2, 2 };
-            Array arr = new Array(tss);
-            Array arr2 = new Array(tss2);
-            Array arrNe = arr != arr2;
-            Assert.AreEqual(new bool[] { true, false, true, true }, arrNe.GetData1D<bool>());
+            using (Array arr = new Array(tss), arr2 = new Array(tss2), arrNe = arr != arr2)
+                Assert.AreEqual(new bool[] { true, false, true, true }, arrNe.GetData1D<bool>());
         }
 
         [Test]
         public void TestTransposeNotConjugate()
         {
             int[,] tss = { { 1, 2 }, { 3, 4 } };
-            Array arr = new Array(tss);
-            Array arrTrans = arr.Transpose();
-            Assert.AreEqual(new int[,] { { 1, 3 }, { 2, 4 } }, arrTrans.GetData2D<int>());
+            using (Array arr = new Array(tss), arrTrans = arr.Transpose())
+                Assert.AreEqual(new int[,] { { 1, 3 }, { 2, 4 } }, arrTrans.GetData2D<int>());
         }
 
         [Test]
         public void TestTransposeConjugate()
         {
             Complex[,] tss = { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(1, 2), new Complex(3, 4) } };
-            Array arr = new Array(tss, false);
-            Array arrTrans = arr.Transpose(true);
-            Assert.AreEqual(new Complex[,] { { new Complex(1, -2), new Complex(1, -2) }, { new Complex(3, -4), new Complex(3, -4) } }, arrTrans.GetData2D<Complex>());
+            using (Array arr = new Array(tss, false), arrTrans = arr.Transpose(true))
+                Assert.AreEqual(new Complex[,] { { new Complex(1, -2), new Complex(1, -2) }, { new Complex(3, -4), new Complex(3, -4) } }, arrTrans.GetData2D<Complex>());
         }
 
         [Test]
         public void TestCol()
         {
             int[,] tss = { { 1, 2 }, { 3, 4 }, { 5, 6 } };
-            Array arr = new Array(tss);
-            Array arrCol = arr.Col(0);
-            Assert.AreEqual(new int[,] { { 1, 2 } }, arrCol.GetData2D<int>());
+            using (Array arr = new Array(tss), arrCol = arr.Col(0))
+                Assert.AreEqual(new int[,] { { 1, 2 } }, arrCol.GetData2D<int>());
         }
 
         [Test]
         public void TestCols()
         {
             int[,] tss = { { 1, 2 }, { 3, 4 }, { 5, 6 } };
-            Array arr = new Array(tss);
-            Array arrCol = arr.Cols(0,1);
-            Assert.AreEqual(new int[,] { { 1 , 2 }, { 3, 4 } }, arrCol.GetData2D<int>());
+            using (Array arr = new Array(tss), arrCol = arr.Cols(0, 1))
+                Assert.AreEqual(new int[,] { { 1, 2 }, { 3, 4 } }, arrCol.GetData2D<int>());
         }
 
         [Test]
         public void TestRow()
         {
             int[,] tss = { { 1, 2 }, { 3, 4 }, { 5, 6 } };
-            Array arr = new Array(tss);
-            Array arrRow = arr.Row(0);
-            Assert.AreEqual(new int[,] { { 1 }, { 3 } , { 5 } }, arrRow.GetData2D<int>());
+            using (Array arr = new Array(tss), arrRow = arr.Row(0))
+                Assert.AreEqual(new int[,] { { 1 }, { 3 }, { 5 } }, arrRow.GetData2D<int>());
         }
 
         [Test]
         public void TestRows()
         {
             int[,] tss = { { 1, 2 }, { 3, 4 }, { 5, 6 } };
-            Array arr = new Array(tss);
-            Array arrRows = arr.Rows(0, 1);
-            Assert.AreEqual(new int[,] { { 1, 2 }, { 3, 4 }, { 5, 6 } }, arrRows.GetData2D<int>());
+            using (Array arr = new Array(tss), arrRows = arr.Rows(0, 1))
+                Assert.AreEqual(new int[,] { { 1, 2 }, { 3, 4 }, { 5, 6 } }, arrRows.GetData2D<int>());
         }
 
         [Test]
@@ -1472,28 +1529,24 @@ namespace khiva.array.tests
         {
             float[,] tss = { { 1, 2 }, { 3, 4 }, { 5, 6 } };
             float[,] tss2 = { { 1, 1, 1 }, { 1, 1, 1 } };
-            Array arr = new Array(tss);
-            Array arr2 = new Array(tss2);
-            Array arrMatul = arr.Matmul(arr2);
-            Assert.AreEqual(new float[,] { { 9, 12 }, { 9, 12 } }, arrMatul.GetData2D<float>());
+            using (Array arr = new Array(tss), arr2 = new Array(tss2), arrMatul = arr.Matmul(arr2))
+                Assert.AreEqual(new float[,] { { 9, 12 }, { 9, 12 } }, arrMatul.GetData2D<float>());
         }
 
         [Test]
         public void TestCopy()
         {
             int[,] tss = { { 1, 2 }, { 3, 4 }, { 5, 6 } };
-            Array arr = new Array(tss);
-            Array arrCopy = arr.Copy();
-            Assert.AreNotSame(arr, arrCopy, "They are not copies");
+            using (Array arr = new Array(tss), arrCopy = arr.Copy())
+                Assert.AreNotSame(arr, arrCopy, "They are not copies");
         }
 
         [Test]
         public void TestAs()
         {
             int[,] tss = { { 1, 2 }, { 3, 4 }, { 5, 6 } };
-            Array arr = new Array(tss);
-            Array arrAs = arr.As((int)Array.Dtype.f64);
-            Assert.AreEqual(Array.Dtype.f64, arrAs.ArrayType);
+            using (Array arr = new Array(tss), arrAs = arr.As((int)Array.Dtype.f64))
+                Assert.AreEqual(Array.Dtype.f64, arrAs.ArrayType);
         }
     }
 }
