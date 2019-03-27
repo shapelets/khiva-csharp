@@ -22,6 +22,11 @@ namespace khiva
         {
             Complex[] data = { new Complex(1,2), new Complex(3,4)};
             array.MyArray2 arr = array.MyArray2.Create<Complex>(data);
+            Complex[] dataArr = arr.GetData1D<Complex>();
+            for (int i = 0; i<dataArr.Length; i++)
+            {
+                Console.WriteLine(dataArr[i]);
+            }
             Console.ReadKey();
             /*float[] tss = new float[] { 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5 };
             array.Array arr = new array.Array(tss);

@@ -31,6 +31,59 @@ namespace khiva
         {
 
             private IntPtr reference;
+
+            public enum Dtype
+            {
+                /**
+                 * Floating point of single precision. khiva.dtype.
+                 */
+                f32,
+                /**
+                 * Complex floating point of single precision. khiva.dtype.
+                 */
+                c32,
+                /**
+                 * Floating point of double precision. khiva.dtype.
+                 */
+                f64,
+                /**
+                 * Complex floating point of double precision. khiva.dtype.
+                 */
+                c64,
+                /**
+                 * Boolean. khiva.dtype.
+                 */
+                b8,
+                /**
+                 * 32 bits Int. khiva.dtype.
+                 */
+                s32,
+                /**
+                 * 32 bits Unsigned Int. khiva.dtype.
+                 */
+                u32,
+                /**
+                 * 8 bits Unsigned Int. khiva.dtype.
+                 */
+                u8,
+                /**
+                 * 64 bits Integer. khiva.dtype.
+                 */
+                s64,
+                /**
+                 * 64 bits Unsigned Int. khiva.dtype.
+                 */
+                u64,
+                /**
+                 * 16 bits Int. khiva.dtype.
+                 */
+                s16,
+                /**
+                 * 16 bits Unsigned Int. khiva.dtype.
+                 */
+                u16
+            }
+
             protected MyArray2()
             {
 
@@ -39,10 +92,157 @@ namespace khiva
 
 
             //toDevice() <-- ArrayOpaco  --> toMemory
-            
 
+            public unsafe static MyArray2 Create<T>(T[] values, bool doublePrecision = false) where T:unmanaged
+            {
+                fixed(T* data = values)
+                    return Create<T>(1, new long[] { values.Length, 1, 1, 1 }, doublePrecision, data);
+            }
 
-            public unsafe static MyArray2 Create<T>(T[] values) where T: unmanaged {
+            public unsafe static MyArray2 Create<T>(T[,] values, bool doublePrecision = false) where T : unmanaged
+            {
+                fixed (T* data = values)
+                    return Create<T>(2, new long[] { values.GetLength(1), values.GetLength(0), 1, 1 }, doublePrecision, data);
+            }
+
+            public unsafe static MyArray2 Create<T>(T[,,] values, bool doublePrecision = false) where T : unmanaged
+            {
+                fixed (T* data = values)
+                    return Create<T>(3, new long[] { values.GetLength(1), values.GetLength(0), values.GetLength(2), 1 }, doublePrecision, data);
+            }
+
+            public unsafe static MyArray2 Create<T>(T[,,,] values, bool doublePrecision = false) where T : unmanaged
+            {
+                fixed (T* data = values)
+                    return Create<T>(4, new long[] { values.GetLength(1), values.GetLength(0), values.GetLength(2), values.GetLength(3) }, doublePrecision, data);
+            }
+
+            public unsafe static MyArray2 Create<T>(uint ndims, long[] dims, bool doublePrecision, T* values) where T : unmanaged
+            {
+                MyArray2 arr = new MyArray2();
+                IntPtr data;
+                long totalLength = (long)(dims[0] * dims[1] * dims[2] * dims[3]);
+                unsafe
+                {
+                    data = Marshal.AllocHGlobal((int)(sizeof(T) * totalLength));
+                }
+                try
+                {
+                    for (int i = 0; i < totalLength; i++)
+                    {
+                        Marshal.StructureToPtr<T>(values[i], data + i * sizeof(T), true);
+                    }
+                    var type = (int)GetDtypeFromT<T>(doublePrecision);
+                    interop.DLLArray.create_array(ref data, ref ndims, ref dims, ref arr.reference, ref type);
+                }
+                finally
+                {
+                    Marshal.FreeHGlobal(data);
+                }                
+                return arr;
+            }
+
+            public T[] GetData1D<T>()
+            {
+                T[] data = new T[10];
+                try
+                {
+                    GCHandle gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
+                    IntPtr dataPtr = gchArr.AddrOfPinnedObject();
+                    interop.DLLArray.get_data(ref reference,out dataPtr);
+                }
+                finally
+                {
+                    GCHandle.Alloc(data, GCHandleType.Weak);
+                }
+                return data;
+            }
+
+            private static Dtype GetDtypeFromT<T>(bool doublePrecision = false)
+            {
+                var type = typeof(T);
+                if (type == typeof(double))
+                {
+                    return Dtype.f64;
+                }
+                else if (type == typeof(float))
+                {
+                    return Dtype.f32;
+                }
+                else if (type == typeof(int))
+                {
+                    return Dtype.s32;
+                }
+                else if (type == typeof(uint))
+                {
+                    return Dtype.u16;
+                }
+                else if (type == typeof(bool))
+                {
+                    return Dtype.b8;
+                }
+                else if (type == typeof(long))
+                {
+                    return Dtype.s64;
+                }
+                else if (type == typeof(ulong))
+                {
+                    return Dtype.u64;
+                }
+                else if (type == typeof(short))
+                {
+                    return Dtype.s16;
+                }
+                else if (type == typeof(ushort))
+                {
+                    return Dtype.u16;
+                }
+                else if (type == typeof(byte))
+                {
+                    return Dtype.u8;
+                }
+                else if (type == typeof(Complex))
+                {
+                    if (doublePrecision)
+                    {
+                        return Dtype.c64;
+                    }
+                    else
+                    {
+                        return Dtype.c32;
+                    }
+                }
+                else
+                {
+                    throw new Exception("Type not supported");
+                }
+            }
+
+            public Dtype Type
+            {
+                get
+                {
+                    interop.DLLArray.get_type(reference, out int type);
+                    return (Dtype)type;
+                }
+            }
+/*
+            public T[] GetData<T>(MyArray2 arr) where T : unmanaged
+            {
+                T[] data = new T[dims[0]];
+                for (int i = 0; i < arr.dims[0]; i++)
+                {
+                    unsafe
+                    {
+                        data[i] = (T)Marshal.PtrToStructure(arr.reference + sizeof(T), typeof(T));
+                    }
+                }
+                return data;
+            }
+
+*/
+/*
+            public static MyArray2 Create<T>(T[] values) where T: unmanaged {
                 // No funciona
                 /*
                  * MyArray2 arr = new MyArray2();
@@ -61,24 +261,36 @@ namespace khiva
                 return arr;
                 */
                 // FUNCIONAAAAA
-                MyArray2 arr = new MyArray2();
-                arr.reference = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(T)));
+                /*
+                MyArray2 arr = new MyArray2
+                {
+                    reference = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(T)))
+                };
                 try
                 {
-                    Marshal.StructureToPtr(values[0], arr.reference, true);
-                    Marshal.StructureToPtr(values[1], arr.reference + sizeof(T), true);
+                    for (int i = 0; i < values.Length; i++)
+                    {
+                        unsafe
+                        {
+                            Marshal.StructureToPtr<T>(values[i], arr.reference + i * sizeof(T), true); 
+                        }
+                    }
+                    
                 }
                 finally
                 {
                     Marshal.FreeHGlobal(arr.reference);
                 }
                 T anotherValue;
-                anotherValue = (T)Convert.ChangeType(Marshal.PtrToStructure(arr.reference + sizeof(T), typeof(T)), typeof(T));
+                unsafe
+                {
+                    anotherValue = (T)Marshal.PtrToStructure(arr.reference + sizeof(T), typeof(T));
+                }
 
                 Console.WriteLine("Another value is: " + anotherValue);
                 return arr;
             }
-
+*/
             public IntPtr Reference
             {
                 get
@@ -86,7 +298,20 @@ namespace khiva
                     return reference;
                 }
             }
-
+            /*
+            public T[] GetData1D<T>(MyArray2 arr) where T:unmanaged{
+                T[] data = new T[dims[0]];
+                for (int i = 0; i < arr.dims[0]; i++)
+                {
+                    unsafe
+                    {
+                        data[i] = (T)Marshal.PtrToStructure(arr.reference + sizeof(T), typeof(T));
+                    }
+                }
+                return data;
+            }
+            */
+            /*
             public static MyArray2 Create<T>(T[,] values) where T : struct
             {
                 return new MyArray2();
@@ -96,6 +321,7 @@ namespace khiva
             {
                 return new MyArray2();
             }
+            */
         }
         
 
@@ -878,14 +1104,14 @@ namespace khiva
             {
                 return reference;
             }
-
+            
             /**
              * Gets the data stored in the array.
              *
              * @param <T> The data type to be returned.
              * @return The data to an array of its type.
              */
-            public T[] GetData1D<T>()
+           /* public T[] GetData1D<T>()
             {
                 if (!CheckType(typeof(T)))
                 {
@@ -1196,7 +1422,7 @@ namespace khiva
                         }
                     }
                 }
-            }
+            }*/
 
             private bool CheckType(Type type)
             {
