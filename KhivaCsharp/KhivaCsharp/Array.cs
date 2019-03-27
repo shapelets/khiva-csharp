@@ -130,10 +130,10 @@ namespace khiva
                 {
                     for (int i = 0; i < totalLength; i++)
                     {
-                        Marshal.StructureToPtr<T>(values[i], data + i * sizeof(T), true);
+                        Marshal.StructureToPtr<T>(values[i], data, true);
                     }
                     var type = (int)GetDtypeFromT<T>(doublePrecision);
-                    interop.DLLArray.create_array(ref data, ref ndims, ref dims, ref arr.reference, ref type);
+                    interop.DLLArray.create_array(data, ref ndims, dims, out arr.reference, ref type);
                 }
                 finally
                 {
@@ -149,7 +149,7 @@ namespace khiva
                 {
                     GCHandle gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
                     IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                    interop.DLLArray.get_data(ref reference,out dataPtr);
+                    interop.DLLArray.get_data(ref reference, dataPtr);
                 }
                 finally
                 {
