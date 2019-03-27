@@ -26,9 +26,8 @@ namespace khiva.features
          */
         public static array.Array AbsEnergy(array.Array array)
         {
-            IntPtr result = new IntPtr();
-            IntPtr reference = array.GetReference();
-            interop.DLLFeatures.abs_energy(ref reference, ref result);
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.abs_energy(ref reference, out IntPtr result);
             return (new array.Array(result));
         }
 
@@ -43,9 +42,9 @@ namespace khiva.features
          */
         public static array.Array AbsoluteSumOfChanges(array.Array array)
         {
-            IntPtr result = new IntPtr();
-            IntPtr reference = array.GetReference();
-            interop.DLLFeatures.absolute_sum_of_changes( ref reference, ref result);
+
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.absolute_sum_of_changes( ref reference, out IntPtr result);
             return (new array.Array(result));
         }
 
@@ -71,9 +70,8 @@ namespace khiva.features
          */
         public static array.Array AggregatedAutocorrelation(array.Array array, int aggregationFunction)
         {
-            IntPtr result = new IntPtr();
-            IntPtr reference = array.GetReference();
-            interop.DLLFeatures.aggregated_autocorrelation(ref reference, ref aggregationFunction, ref result);
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.aggregated_autocorrelation(ref reference, ref aggregationFunction, out IntPtr result);
             return (new array.Array(result));
         }
 
@@ -102,16 +100,11 @@ namespace khiva.features
          */
         public static Tuple<array.Array, array.Array, array.Array, array.Array, array.Array> AggregatedLinearTrend(array.Array array, long chunkSize, int aggregationFunction)
         {
-            IntPtr slope = new IntPtr();
-            IntPtr intercept = new IntPtr();
-            IntPtr rvalue = new IntPtr();
-            IntPtr pvalue = new IntPtr();
-            IntPtr stderrest = new IntPtr();
-            IntPtr reference = array.GetReference();
+            IntPtr reference = array.Reference;
             interop.DLLFeatures.aggregated_linear_trend(ref reference,
                                                         ref chunkSize,
                                                         ref aggregationFunction,
-                                                        ref slope, ref intercept, ref rvalue, ref pvalue, ref stderrest);
+                                                        out IntPtr slope, out IntPtr intercept, out IntPtr rvalue, out IntPtr pvalue, out IntPtr stderrest);
             return (new Tuple<array.Array, array.Array, array.Array, array.Array, array.Array>(new array.Array(slope),
                                                                                                new array.Array(intercept),
                                                                                                new array.Array(rvalue),
@@ -136,9 +129,8 @@ namespace khiva.features
          */
         public static array.Array ApproximateEntropy(array.Array array, int m, float r)
         {
-            IntPtr result = new IntPtr();
-            IntPtr reference = array.GetReference();
-            interop.DLLFeatures.approximate_entropy(ref reference, ref m, ref r,  ref result);
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.approximate_entropy(ref reference, ref m, ref r,  out IntPtr result);
             return (new array.Array(result));
         }
 
@@ -157,10 +149,9 @@ namespace khiva.features
          */
         public static array.Array CrossCovariance(array.Array xss, array.Array yss, bool unbiased)
         {
-            IntPtr result;
-            IntPtr referenceXss = xss.GetReference();
-            IntPtr referenceYss = yss.GetReference();
-            interop.DLLFeatures.cross_covariance(ref referenceXss, ref referenceYss, ref unbiased, out result);
+            IntPtr referenceXss = xss.Reference;
+            IntPtr referenceYss = yss.Reference;
+            interop.DLLFeatures.cross_covariance(ref referenceXss, ref referenceYss, ref unbiased, out IntPtr result);
             return (new array.Array(result));
         }
         /*

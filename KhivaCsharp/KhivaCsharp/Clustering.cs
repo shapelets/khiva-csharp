@@ -37,10 +37,8 @@ namespace khiva
              */
             public static Tuple<array.Array, array.Array> KMeans(array.Array arr, int k, float tolerance = 1e-10F, int max_iterations = 100)
             {
-                IntPtr centroids;
-                IntPtr labels;
-                IntPtr reference = arr.GetReference();
-                interop.DLLClustering.k_means(reference, k, out centroids, out labels, tolerance, max_iterations);
+                IntPtr reference = arr.Reference;
+                interop.DLLClustering.k_means(ref reference,ref k, out IntPtr centroids, out IntPtr labels,ref tolerance, ref max_iterations);
                 return (new Tuple<array.Array, array.Array>(new array.Array(centroids), new array.Array(labels)));
             }
 
@@ -60,10 +58,8 @@ namespace khiva
              */
             public static Tuple<array.Array, array.Array> KShape(array.Array arr, int k, float tolerance = 1e-10F, int max_iterations = 100)
             {
-                IntPtr centroids;
-                IntPtr labels;
-                IntPtr reference = arr.GetReference();
-                interop.DLLClustering.k_shape(reference, k, out centroids, out labels, tolerance, max_iterations);
+                IntPtr reference = arr.Reference;
+                interop.DLLClustering.k_shape(ref reference,ref k, out IntPtr centroids, out IntPtr labels,ref tolerance, ref max_iterations);
                 return (new Tuple<array.Array, array.Array>(new array.Array(centroids), new array.Array(labels)));
             }
         }

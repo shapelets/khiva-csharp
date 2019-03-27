@@ -30,16 +30,16 @@ namespace khiva.array.tests
         {
             double[] tss = { 1, 2 };
             long[] dims = { 1, 2, 1, 1 };
-            Array arr = new Array(tss);
-            Assert.AreEqual(Array.Dtype.f64, arr.GetArrayType()); 
+            using(Array arr = new Array(tss))
+                Assert.AreEqual(Array.Dtype.f64, arr.ArrayType); 
         }
 
         [Test]
         public void TestGetDims()
         {
             double[] tss = { 1, 2 };
-            Array arr = new Array(tss);
-            Assert.AreEqual(new long[]{2,1,1,1}, arr.GetDims());
+            using (Array arr = new Array(tss))
+                Assert.AreEqual(new long[] { 2, 1, 1, 1 }, arr.Dims);
         }
 
         [Test]
@@ -48,8 +48,9 @@ namespace khiva.array.tests
             double[] tss = null;
             try
             {
-                new Array(tss);
-            }catch (Exception e)
+                using (new Array(tss)) { }
+            }
+            catch (Exception e)
             {
                 Assert.AreEqual("Null elems object provided", e.Message);
             }
@@ -61,7 +62,7 @@ namespace khiva.array.tests
             float[] tss = null;
             try
             {
-                new Array(tss);
+                using (new Array(tss)) { }
             }
             catch (Exception e)
             {
@@ -75,7 +76,7 @@ namespace khiva.array.tests
             Complex[] tss = null;
             try
             {
-                new Array(tss, true);
+                using (new Array(tss, true)) { }
             }
             catch (Exception e)
             {
@@ -89,7 +90,7 @@ namespace khiva.array.tests
             Complex[] tss = null;
             try
             {
-                new Array(tss, false);
+                using (new Array(tss, false)) { }
             }
             catch (Exception e)
             {
@@ -103,7 +104,7 @@ namespace khiva.array.tests
             bool[] tss = null;
             try
             {
-                new Array(tss);
+                using (new Array(tss)) { }
             }
             catch (Exception e)
             {
@@ -117,7 +118,7 @@ namespace khiva.array.tests
             short[] tss = null;
             try
             {
-                new Array(tss);
+                using (new Array(tss)) { }
             }
             catch (Exception e)
             {
@@ -131,7 +132,7 @@ namespace khiva.array.tests
             ushort[] tss = null;
             try
             {
-                new Array(tss);
+                using (new Array(tss)) { }
             }
             catch (Exception e)
             {
@@ -145,7 +146,7 @@ namespace khiva.array.tests
             byte[] tss = null;
             try
             {
-                new Array(tss);
+                using (new Array(tss)) { }
             }
             catch (Exception e)
             {
@@ -159,7 +160,7 @@ namespace khiva.array.tests
             long[] tss = null;
             try
             {
-                new Array(tss);
+                using (new Array(tss)) { }
             }
             catch (Exception e)
             {
@@ -173,7 +174,7 @@ namespace khiva.array.tests
             ulong[] tss = null;
             try
             {
-                new Array(tss);
+                using (new Array(tss)) { }
             }
             catch (Exception e)
             {
@@ -187,7 +188,7 @@ namespace khiva.array.tests
             int[] tss = null;
             try
             {
-                new Array(tss);
+                using (new Array(tss)) { }
             }
             catch (Exception e)
             {
@@ -201,7 +202,7 @@ namespace khiva.array.tests
             uint[] tss = null;
             try
             {
-                new Array(tss);
+                using (new Array(tss)) { }
             }
             catch (Exception e)
             {
@@ -213,551 +214,595 @@ namespace khiva.array.tests
         public void TestDoubleD1MismatchDims()
         {
             double[,] tss = { { 1, 2 }, { 3, 4 } };
-            Array arr = new Array(tss);
-            try
-            {
-                double[] data = arr.GetData1D<double>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
-            }
+            using (Array arr = new Array(tss))
+                try
+                {
+                    double[] data = arr.GetData1D<double>();
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
+                }
         }
 
         [Test]
         public void TestFloatD1MismatchDims()
         {
             float[,] tss = { { 1, 2 }, { 3, 4 } };
-            Array arr = new Array(tss);
-            try { 
+            using (Array arr = new Array(tss))
+                try
+                { 
                 float[] data = arr.GetData1D<float>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
-            }
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
+                }
         }
 
         [Test]
         public void TestComplexDoubleD1MismatchDims()
         {
             Complex[,] tss = { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(1, 2), new Complex(3, 4) } };
-            Array arr = new Array(tss, true);
-            try { 
-                Complex[] data = arr.GetData1D<Complex>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
-            }
+            using (Array arr = new Array(tss, true))
+                try
+                {
+                    Complex[] data = arr.GetData1D<Complex>();
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
+                }
         }
 
         [Test]
         public void TestComplexFloatD1MismatchDims()
         {
             Complex[,] tss = { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(1, 2), new Complex(3, 4) } };
-            Array arr = new Array(tss, false);
-            try { 
-                Complex[] data = arr.GetData1D<Complex>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
-            }
+            using (Array arr = new Array(tss, false))
+                try
+                {
+                    Complex[] data = arr.GetData1D<Complex>();
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
+                }
 }
 
         [Test]
         public void TestBooleanD1MismatchDims()
         {
             bool[,] tss = { { true, false }, { false, false } };
-            Array arr = new Array(tss);
-            try { 
-                bool[] data = arr.GetData1D<bool>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
-            }
+            using (Array arr = new Array(tss))
+                try
+                {
+                    bool[] data = arr.GetData1D<bool>();
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
+                }
         }
 
         [Test]
         public void TestShortD1MismatchDims()
         {
             short[,] tss = { { 1, 2 }, { 3, 4 } };
-            Array arr = new Array(tss);
-            try
-            {
-                short[] data = arr.GetData1D<short>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
-            }
+            using (Array arr = new Array(tss))
+                try
+                {
+                    short[] data = arr.GetData1D<short>();
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
+                }
         }
 
         [Test]
         public void TestUshortD1MismatchDims()
         {
             ushort[,] tss = { { 1, 2 }, { 3, 4 } };
-            Array arr = new Array(tss);
-            try { 
-                ushort[] data = arr.GetData1D<ushort>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
-            }
+            using (Array arr = new Array(tss))
+                try
+                {
+                    ushort[] data = arr.GetData1D<ushort>();
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
+                }
         }
 
         [Test]
         public void TestByteD1MismatchDims()
         {
             byte[,] tss = { { 1, 2 }, { 3, 4 } };
-            Array arr = new Array(tss);
-            try { 
-                byte[] data = arr.GetData1D<byte>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
-            }
+            using (Array arr = new Array(tss))
+                try
+                {
+                    byte[] data = arr.GetData1D<byte>();
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
+                }
         }
 
         [Test]
         public void TestLongD1MismatchDims()
         {
             long[,] tss = { { 1, 2 }, { 3, 4 } };
-            Array arr = new Array(tss);
-            try { 
+            using (Array arr = new Array(tss))
+                try
+                { 
                 long[] data = arr.GetData1D<long>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
-            }
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
+                }
         }
 
         [Test]
         public void TestUlongD1MismatchDims()
         {
             ulong[,] tss = { { 1, 2 }, { 3, 4 } };
-            Array arr = new Array(tss);
-            try { 
+            using (Array arr = new Array(tss))
+                try
+                { 
                 ulong[] data = arr.GetData1D<ulong>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
-            }
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
+                }
         }
 
         [Test]
         public void TestIntD1MismatchDims()
         {
             int[,] tss = { { 1, 2 }, { 3, 4 } };
-            Array arr = new Array(tss);
-            try { 
+            using (Array arr = new Array(tss))
+                try
+                { 
                 int[] data = arr.GetData1D<int>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
-            }
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
+                }
         }
 
         [Test]
         public void TestUintD1MismatchDims()
         {
             uint[,] tss = { { 1, 2 }, { 3, 4 } };
-            Array arr = new Array(tss);
-            try { 
+            using (Array arr = new Array(tss))
+                try
+                { 
                 uint[] data = arr.GetData1D<uint>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
-            }
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
+                }
         }
 
         [Test]
         public void TestDoubleD2MismatchDims()
         {
             double[,,] tss = { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } };
-            Array arr = new Array(tss);
-            try { 
+            using (Array arr = new Array(tss))
+                try
+                { 
                 double[,] data = arr.GetData2D<double>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
-            }
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
+                }
         }
 
         [Test]
         public void TestFloatD2MismatchDims()
         {
             float[,,] tss = { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } };
-            Array arr = new Array(tss);
-            try { 
+            using (Array arr = new Array(tss))
+                try
+                { 
                 float[,] data = arr.GetData2D<float>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
-            }
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
+                }
         }
 
         [Test]
         public void TestComplexDoubleD2MismatchDims()
         {
             Complex[,,] tss = { { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(1, 2), new Complex(3, 4) } }, { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(1, 2), new Complex(3, 4) } } };
-            Array arr = new Array(tss, true);
-            try { 
+            using (Array arr = new Array(tss, true))
+                try
+                { 
                 Complex[,] data = arr.GetData2D<Complex>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
-            }
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
+                }
         }
 
         [Test]
         public void TestComplexFloatD2MismatchDims()
         {
             Complex[,,] tss = { { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(1, 2), new Complex(3, 4) } }, { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(1, 2), new Complex(3, 4) } } };
-            Array arr = new Array(tss, false);
-            try { 
+            using (Array arr = new Array(tss, false))
+                try
+                { 
                 Complex[,] data = arr.GetData2D<Complex>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
-            }
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
+                }
         }
 
         [Test]
         public void TestBooleanD2MismatchDims()
         {
             bool[,,] tss = { { { true, false }, { false, false } }, { { true, false }, { false, false } } };
-            Array arr = new Array(tss);
-            try { 
+            using (Array arr = new Array(tss))
+                try
+                { 
                 bool[,] data = arr.GetData2D<bool>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
-            }
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
+                }
         }
 
         [Test]
         public void TestShortD2MismatchDims()
         {
             short[,,] tss = { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } };
-            Array arr = new Array(tss);
-            try { 
+            using (Array arr = new Array(tss))
+                try
+                { 
                 short[,] data = arr.GetData2D<short>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
-            }
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
+                }
         }
 
         [Test]
         public void TestUshortD2MismatchDims()
         {
             ushort[,,] tss = { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } };
-            Array arr = new Array(tss);
-            try { 
+            using (Array arr = new Array(tss))
+                try
+                { 
                 ushort[,] data = arr.GetData2D<ushort>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
-            }
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
+                }
         }
 
         [Test]
         public void TestByteD2MismatchDims()
         {
             byte[,,] tss = { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } };
-            Array arr = new Array(tss);
-            try { 
+            using (Array arr = new Array(tss))
+                try
+                { 
                 byte[,] data = arr.GetData2D<byte>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
-            }
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
+                }
         }
 
         [Test]
         public void TestLongD2MismatchDims()
         {
             long[,,] tss = { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } };
-            Array arr = new Array(tss);
-            try { 
+            using (Array arr = new Array(tss))
+                try
+                { 
                 long[,] data = arr.GetData2D<long>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
-            }
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
+                }
         }
 
         [Test]
         public void TestUlongD2MismatchDims()
         {
             ulong[,,] tss = { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } };
-            Array arr = new Array(tss);
-            try { 
+            using (Array arr = new Array(tss))
+                try
+                { 
                 ulong[,] data = arr.GetData2D<ulong>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
-            }
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
+                }
         }
 
         [Test]
         public void TestIntD2MismatchDims()
         {
             int[,,] tss = { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } };
-            Array arr = new Array(tss);
-            try { 
+            using (Array arr = new Array(tss))
+                try
+                { 
                 int[,] data = arr.GetData2D<int>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
-            }
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
+                }
         }
 
         [Test]
         public void TestUintD2MismatchDims()
         {
             uint[,,] tss = { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } };
-            Array arr = new Array(tss);
-            try { 
-                uint[,] data = arr.GetData2D<uint>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
-            }
+            using (Array arr = new Array(tss))
+                try
+                { 
+                    uint[,] data = arr.GetData2D<uint>();
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
+                }
         }
 
         [Test]
         public void TestDoubleD3MismatchDims()
         {
             double[,,,] tss = { { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } }, { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } } };
-            Array arr = new Array(tss);
-            try { 
+            using (Array arr = new Array(tss))
+                try
+                { 
                 double[,,] data = arr.GetData3D<double>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
-            }
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
+                }
         }
 
         [Test]
         public void TestFloatD3MismatchDims()
         {
             float[,,,] tss = { { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } }, { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } } };
-            Array arr = new Array(tss);
-            try { 
+            using (Array arr = new Array(tss))
+                try
+                { 
                 float[,,] data = arr.GetData3D<float>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
-            }
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
+                }
         }
 
         [Test]
         public void TestComplexDoubleD3MismatchDims()
         {
             Complex[,,,] tss = { { { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(1, 2), new Complex(3, 4) } }, { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(1, 2), new Complex(3, 4) } } }, { { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(1, 2), new Complex(3, 4) } }, { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(1, 2), new Complex(3, 4) } } } };
-            Array arr = new Array(tss, true);
-            try { 
+            using (Array arr = new Array(tss, true))
+                try
+                { 
                 Complex[,,] data = arr.GetData3D<Complex>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
-            }
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
+                }
         }
 
         [Test]
         public void TestComplexFloatD3MismatchDims()
         {
             Complex[,,,] tss = { { { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(1, 2), new Complex(3, 4) } }, { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(1, 2), new Complex(3, 4) } } }, { { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(1, 2), new Complex(3, 4) } }, { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(1, 2), new Complex(3, 4) } } } };
-            Array arr = new Array(tss, false);
-            try { 
+            using (Array arr = new Array(tss, false))
+                try
+                { 
                 Complex[,,] data = arr.GetData3D<Complex>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
-            }
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
+                }
         }
 
         [Test]
         public void TestBooleanD3MismatchDims()
         {
             bool[,,,] tss = { { { { true, false }, { false, false } }, { { true, false }, { false, false } } }, { { { true, false }, { false, false } }, { { true, false }, { false, false } } } };
-            Array arr = new Array(tss);
-            try { 
+            using (Array arr = new Array(tss))
+                try
+                { 
                 bool[,,] data = arr.GetData3D<bool>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
-            }
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
+                }
         }
 
         [Test]
         public void TestShortD3MismatchDims()
         {
             short[,,,] tss = { { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } }, { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } } };
-            Array arr = new Array(tss);
-            try { 
+            using (Array arr = new Array(tss))
+                try
+                { 
                 short[,,] data = arr.GetData3D<short>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
-            }
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
+                }
         }
 
         [Test]
         public void TestUshortD3MismatchDims()
         {
             ushort[,,,] tss = { { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } }, { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } } };
-            Array arr = new Array(tss);
-            try { 
+            using (Array arr = new Array(tss))
+                try
+                { 
                 ushort[,,] data = arr.GetData3D<ushort>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
-            }
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
+                }
         }
 
         [Test]
         public void TestByteD3MismatchDims()
         {
             byte[,,,] tss = { { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } }, { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } } };
-            Array arr = new Array(tss);
-            try { 
+            using (Array arr = new Array(tss))
+                try
+                { 
                 byte[,,] data = arr.GetData3D<byte>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
-            }
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
+                }
         }
 
         [Test]
         public void TestLongD3MismatchDims()
         {
             long[,,,] tss = { { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } }, { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } } };
-            Array arr = new Array(tss);
-            try { 
+            using (Array arr = new Array(tss))
+                try
+                { 
                 long[,,] data = arr.GetData3D<long>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
-            }
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
+                }
         }
 
         [Test]
         public void TestUlongD3MismatchDims()
         {
             ulong[,,,] tss = { { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } }, { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } } };
-            Array arr = new Array(tss);
-            try { 
+            using (Array arr = new Array(tss))
+                try
+                { 
                 ulong[,,] data = arr.GetData3D<ulong>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
-            }
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
+                }
         }
 
         [Test]
         public void TestIntD3MismatchDims()
         {
             int[,,,] tss = { { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } }, { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } } };
-            Array arr = new Array(tss);
-            try { 
+            using (Array arr = new Array(tss))
+                try
+                { 
                 int[,,] data = arr.GetData3D<int>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
-            }
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
+                }
         }
 
         [Test]
         public void TestUintD3MismatchDims()
         {
             uint[,,,] tss = { { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } }, { { { 1, 2 }, { 3, 4 } }, { { 1, 2 }, { 3, 4 } } } };
-            Array arr = new Array(tss);
-            try { 
+            using (Array arr = new Array(tss))
+                try
+                { 
                 uint[,,] data = arr.GetData3D<uint>();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
-            }
+                }
+                catch (Exception e)
+                {
+                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
+                }
         }
 
         [Test]
         public void TestDoubleD1OkDims()
         {
             double[] tss = { 1, 2 };
-            Array arr = new Array(tss);
-            double[] data = arr.GetData1D<double>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                double[] data = arr.GetData1D<double>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestFloatD1OkDims()
         {
             float[] tss = { 1, 2 };
-            Array arr = new Array(tss);
-            float[] data = arr.GetData1D<float>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                float[] data = arr.GetData1D<float>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestComplexDoubleD1OkDims()
         {
             Complex[] tss = { 1, 2 };
-            Array arr = new Array(tss, true);
-            Complex[] data = arr.GetData1D<Complex>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss, true))
+            {
+                Complex[] data = arr.GetData1D<Complex>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestComplexFloatD1OkDims()
         {
             Complex[] tss = { 1, 2 };
-            Array arr = new Array(tss, false);
-            Complex[] data = arr.GetData1D<Complex>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss, false))
+            {
+                Complex[] data = arr.GetData1D<Complex>();
+                Assert.AreEqual(tss, data);
+            }
         }
 
         [Test]
         public void TestBooleanD1OkDims()
         {
             bool[] tss = { true, false };
-            Array arr = new Array(tss);
-            bool[] data = arr.GetData1D<bool>();
-            Assert.AreEqual(tss, data);
+            using (Array arr = new Array(tss))
+            {
+                bool[] data = arr.GetData1D<bool>();
+                Assert.AreEqual(tss, data);
+            }    
         }
 
         [Test]
@@ -1448,7 +1493,7 @@ namespace khiva.array.tests
             int[,] tss = { { 1, 2 }, { 3, 4 }, { 5, 6 } };
             Array arr = new Array(tss);
             Array arrAs = arr.As((int)Array.Dtype.f64);
-            Assert.AreEqual(Array.Dtype.f64, arrAs.GetArrayType());
+            Assert.AreEqual(Array.Dtype.f64, arrAs.ArrayType);
         }
     }
 }

@@ -30,7 +30,7 @@ namespace khiva.interop
          * @param max_iterations The maximum number of iterations allowed.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void k_means([In] IntPtr tss, [In] int k, [Out] out IntPtr centroids, [Out] out IntPtr labels, [In] float tolerance, [In] int max_iterations);
+        public extern static void k_means([In] ref IntPtr tss, [In] ref int k, [Out] out IntPtr centroids, [Out] out IntPtr labels, [In] ref float tolerance, [In] ref int max_iterations);
 
         /**
          * @brief Calculates the K-Shape algorithm.
@@ -47,6 +47,6 @@ namespace khiva.interop
          * @param max_iterations The maximum number of iterations allowed.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void k_shape([In] IntPtr tss, [In] int k, [Out] out IntPtr centroids, [Out] out IntPtr labels, [In] float tolerance, [In] int max_iterations);
+        public extern static void k_shape([In] ref IntPtr tss, [In] ref int k, [Out] out IntPtr centroids, [Out] out IntPtr labels, [In] ref float tolerance, [In] ref int max_iterations);
     }
 }

@@ -20,9 +20,6 @@ namespace khiva
     {
         static void Main(String[] args)
         {
-            Complex[] data = { new Complex(1,2), new Complex(3,4)};
-            array.MyArray2 arr = array.MyArray2.Create<Complex>(data);
-            Console.ReadKey();
             /*float[] tss = new float[] { 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5 };
             array.Array arr = new array.Array(tss);
             array.Array aggregatedLinearTrendResult = features.Features.AggregatedLinearTrend(arr, 3, 0).Item1;

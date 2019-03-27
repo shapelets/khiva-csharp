@@ -25,7 +25,7 @@ namespace khiva.interop
          * contains the sum of the squares values in the time series.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void abs_energy(ref IntPtr array, ref IntPtr result);
+        public extern static void abs_energy([In] ref IntPtr array,[Out] out IntPtr result);
 
         /**
          * @brief Calculates the sum over the absolute value of consecutive changes in the time series.
@@ -37,7 +37,7 @@ namespace khiva.interop
          * contains absolute value of consecutive changes in the time series.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void absolute_sum_of_changes(ref IntPtr array, ref IntPtr result);
+        public extern static void absolute_sum_of_changes([In] ref IntPtr array, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the value of an aggregation function f_agg (e.g. var or mean) of the autocorrelation
@@ -60,7 +60,7 @@ namespace khiva.interop
          * @param result An array whose values contains the aggregated correaltion for each time series.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void aggregated_autocorrelation(ref IntPtr array, ref int aggregation_function, ref IntPtr result);
+        public extern static void aggregated_autocorrelation([In] ref IntPtr array,[In] ref int aggregation_function,[Out] out IntPtr result);
 
         /**
          * @brief Calculates a linear least-squares regression for values of the time series that were aggregated
@@ -86,9 +86,9 @@ namespace khiva.interop
          * @param stderrest Standard error of the estimated gradient.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void aggregated_linear_trend(ref IntPtr array, ref long chunkSize, ref int aggregation_function,
-                                      ref IntPtr slope, ref IntPtr intercept, ref IntPtr rvalue,
-                                      ref IntPtr pvalue, ref IntPtr stderrest);
+        public extern static void aggregated_linear_trend([In] ref IntPtr array, [In] ref long chunkSize, [In] ref int aggregation_function,
+                                      [Out] out IntPtr slope, [Out] out IntPtr intercept, [Out] out IntPtr rvalue,
+                                      [Out] out IntPtr pvalue, [Out] out IntPtr stderrest);
 
         /**
          * @brief Calculates a vectorized Approximate entropy algorithm.
@@ -106,7 +106,7 @@ namespace khiva.interop
          * @param result The vectorized approximate entropy for all the input time series in array.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void approximate_entropy(ref IntPtr array, ref int m, ref float r, ref IntPtr result);
+        public extern static void approximate_entropy([In] ref IntPtr array, [In] ref int m, [In] ref float r, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the cross-covariance of the given time series.
@@ -135,7 +135,7 @@ namespace khiva.interop
          * @param result The auto-covariance value for the given time series.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void auto_covariance(ref IntPtr array, ref bool unbiased, ref IntPtr result);
+        public extern static void auto_covariance([In] ref IntPtr array, [In] ref bool unbiased, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the cross-correlation of the given time series.
@@ -151,7 +151,7 @@ namespace khiva.interop
          * @param result The cross-correlation value for the given time series.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void cross_correlation(ref IntPtr xss, ref IntPtr yss, ref bool unbiased, ref IntPtr result);
+        public extern static void cross_correlation([In] ref IntPtr xss, [In] ref IntPtr yss, [In] ref bool unbiased, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the autocorrelation of the specified lag for the given time.

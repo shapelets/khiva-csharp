@@ -20,90 +20,11 @@ namespace khiva
 {
     namespace array
     {
-        
-        public class MyArray<T> where T: struct
-        {
-
-        }
-        
-
-        public class MyArray2
-        {
-
-            private IntPtr reference;
-            protected MyArray2()
-            {
-
-            }
-
-
-
-            //toDevice() <-- ArrayOpaco  --> toMemory
-            
-
-
-            public unsafe static MyArray2 Create<T>(T[] values) where T: unmanaged {
-                // No funciona
-                /*
-                 * MyArray2 arr = new MyArray2();
-                var size = Marshal.SizeOf(typeof(T));
-                arr.reference = Marshal.AllocHGlobal(size);
-                return arr;
-                */
-                /*
-                 * MyArray2 arr = new MyArray2();
-                unsafe
-                {
-                    var size = sizeof(T);
-                    T* data = null;
-                    arr.reference = new IntPtr(data);
-                }
-                return arr;
-                */
-                // FUNCIONAAAAA
-                MyArray2 arr = new MyArray2();
-                arr.reference = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(T)));
-                try
-                {
-                    Marshal.StructureToPtr(values[0], arr.reference, true);
-                    Marshal.StructureToPtr(values[1], arr.reference + sizeof(T), true);
-                }
-                finally
-                {
-                    Marshal.FreeHGlobal(arr.reference);
-                }
-                T anotherValue;
-                anotherValue = (T)Convert.ChangeType(Marshal.PtrToStructure(arr.reference + sizeof(T), typeof(T)), typeof(T));
-
-                Console.WriteLine("Another value is: " + anotherValue);
-                return arr;
-            }
-
-            public IntPtr Reference
-            {
-                get
-                {
-                    return reference;
-                }
-            }
-
-            public static MyArray2 Create<T>(T[,] values) where T : struct
-            {
-                return new MyArray2();
-            }
-
-            public static MyArray2 Create<T>(int dim1, int dim2, Func<int, int, T> valuesFn) where T : struct
-            {
-                return new MyArray2();
-            }
-        }
-        
-
 
         /**
          * Khiva Array Class.
          */
-        public class Array
+        public class Array : IDisposable
         {
             private IntPtr reference;
 
@@ -159,6 +80,23 @@ namespace khiva
                 u16
             }
 
+            public void Dispose()
+            {
+                CleanUp();
+                GC.SuppressFinalize(this);
+            }
+
+            private void CleanUp()
+            {
+                Marshal.FreeHGlobal(reference);
+                reference = IntPtr.Zero;
+            }
+
+            ~Array()
+            {
+                CleanUp();
+            }
+
             /**
              * @brief Creates an Array object.
              *
@@ -173,7 +111,7 @@ namespace khiva
                 int type = (int)Dtype.f32;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.Length, 1, 1, 1 };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(float[,] arr)
@@ -185,7 +123,7 @@ namespace khiva
                 int type = (int)Dtype.f32;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(float[,,] arr)
@@ -197,7 +135,7 @@ namespace khiva
                 int type = (int)Dtype.f32;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(float[,,,] arr)
@@ -209,7 +147,7 @@ namespace khiva
                 int type = (int)Dtype.f32;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(double[] arr)
@@ -221,7 +159,7 @@ namespace khiva
                 int type = (int)Dtype.f64;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.Length, 1, 1, 1 };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(double[,] arr)
@@ -233,7 +171,7 @@ namespace khiva
                 int type = (int)Dtype.f64;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(double[,,] arr)
@@ -245,7 +183,7 @@ namespace khiva
                 int type = (int)Dtype.f64;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(double[,,,] arr)
@@ -257,7 +195,7 @@ namespace khiva
                 int type = (int)Dtype.f64;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(Complex[] arr, bool doublePrecision)
@@ -276,14 +214,14 @@ namespace khiva
                     type = (int)Dtype.c32;
                     complexArrFloat = new float[arr.Length * 2];
                     Flatten1D<float>(complexArrFloat, arr);
-                    interop.DLLArray.create_array(complexArrFloat, ndims, dims, out reference, type);
+                    interop.DLLArray.create_array(complexArrFloat, ref ndims, dims, out reference, ref type);
                 }
                 else
                 {
                     type = (int)Dtype.c64;
                     complexArrDouble = new double[arr.Length * 2];
                     Flatten1D<double>(complexArrDouble, arr);
-                    interop.DLLArray.create_array(complexArrDouble, ndims, dims, out reference, type);
+                    interop.DLLArray.create_array(complexArrDouble, ref ndims, dims, out reference, ref type);
                 }
             }
 
@@ -312,14 +250,14 @@ namespace khiva
                     type = (int)Dtype.c32;
                     complexArrFloat = new float[arr.Length * 2];
                     Flatten2D<float>(complexArrFloat, arr);
-                    interop.DLLArray.create_array(complexArrFloat, ndims, dims, out reference, type);
+                    interop.DLLArray.create_array(complexArrFloat, ref ndims, dims, out reference, ref type);
                 }
                 else
                 {
                     type = (int)Dtype.c64;
                     complexArrDouble = new double[arr.Length * 2];
                     Flatten2D<double>(complexArrDouble, arr);
-                    interop.DLLArray.create_array(complexArrDouble, ndims, dims, out reference, type);
+                    interop.DLLArray.create_array(complexArrDouble, ref ndims, dims, out reference, ref type);
                 }
             }
 
@@ -351,14 +289,14 @@ namespace khiva
                     type = (int)Dtype.c32;
                     complexArrFloat = new float[arr.Length * 2];
                     Flatten3D<float>(complexArrFloat, arr);
-                    interop.DLLArray.create_array(complexArrFloat, ndims, dims, out reference, type);
+                    interop.DLLArray.create_array(complexArrFloat, ref ndims, dims, out reference, ref type);
                 }
                 else
                 {
                     type = (int)Dtype.c64;
                     complexArrDouble = new double[arr.Length * 2];
                     Flatten3D<double>(complexArrDouble, arr);
-                    interop.DLLArray.create_array(complexArrDouble, ndims, dims, out reference, type);
+                    interop.DLLArray.create_array(complexArrDouble, ref ndims, dims, out reference, ref type);
                 }
             }
 
@@ -393,14 +331,14 @@ namespace khiva
                     type = (int)Dtype.c32;
                     complexArrFloat = new float[arr.Length * 2];
                     Flatten4D<float>(complexArrFloat, arr);
-                    interop.DLLArray.create_array(complexArrFloat, ndims, dims, out reference, type);
+                    interop.DLLArray.create_array(complexArrFloat, ref ndims, dims, out reference, ref type);
                 }
                 else
                 {
                     type = (int)Dtype.c64;
                     complexArrDouble = new double[arr.Length * 2];
                     Flatten4D<double>(complexArrDouble, arr);
-                    interop.DLLArray.create_array(complexArrDouble, ndims, dims, out reference, type);
+                    interop.DLLArray.create_array(complexArrDouble, ref ndims, dims, out reference, ref type);
                 }
             }
 
@@ -433,7 +371,7 @@ namespace khiva
                 long[] dims = { arr.Length, 1, 1, 1 };
                 byte[] byteArr = new byte[arr.GetLength(0)];
                 BoolToByte1D(byteArr, arr);
-                interop.DLLArray.create_array(byteArr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(byteArr, ref ndims, dims, out reference, ref type);
             }
 
             private void BoolToByte1D(byte[] byteArr, bool[] arr)
@@ -455,7 +393,7 @@ namespace khiva
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
                 byte[,] byteArr = new byte[arr.GetLength(0), arr.GetLength(1)];
                 BoolToByte2D(byteArr, arr);
-                interop.DLLArray.create_array(byteArr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(byteArr, ref ndims, dims, out reference, ref type);
             }
 
             private void BoolToByte2D(byte[,] byteArr, bool[,] arr)
@@ -480,7 +418,7 @@ namespace khiva
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
                 byte[,,] byteArr = new byte[arr.GetLength(0), arr.GetLength(1), arr.GetLength(2)];
                 BoolToByte3D(byteArr, arr);
-                interop.DLLArray.create_array(byteArr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(byteArr, ref ndims, dims, out reference, ref type);
             }
 
             private void BoolToByte3D(byte[,,] byteArr, bool[,,] arr)
@@ -508,7 +446,7 @@ namespace khiva
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
                 byte[,,,] byteArr = new byte[arr.GetLength(0), arr.GetLength(1), arr.GetLength(2), arr.GetLength(3)];
                 BoolToByte4D(byteArr, arr);
-                interop.DLLArray.create_array(byteArr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(byteArr, ref ndims, dims, out reference, ref type);
             }
 
             private void BoolToByte4D(byte[,,,] byteArr, bool[,,,] arr)
@@ -537,7 +475,7 @@ namespace khiva
                 int type = (int)Dtype.s32;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.Length, 1, 1, 1 };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(int[,] arr)
@@ -549,7 +487,7 @@ namespace khiva
                 int type = (int)Dtype.s32;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(int[,,] arr)
@@ -561,7 +499,7 @@ namespace khiva
                 int type = (int)Dtype.s32;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(int[,,,] arr)
@@ -573,7 +511,7 @@ namespace khiva
                 int type = (int)Dtype.s32;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(uint[] arr)
@@ -585,7 +523,7 @@ namespace khiva
                 int type = (int)Dtype.u32;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.Length, 1, 1, 1 };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(uint[,] arr)
@@ -597,7 +535,7 @@ namespace khiva
                 int type = (int)Dtype.u32;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(uint[,,] arr)
@@ -609,7 +547,7 @@ namespace khiva
                 int type = (int)Dtype.u32;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(uint[,,,] arr)
@@ -621,7 +559,7 @@ namespace khiva
                 int type = (int)Dtype.u32;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(byte[] arr)
@@ -633,7 +571,7 @@ namespace khiva
                 int type = (int)Dtype.u8;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.Length, 1, 1, 1 };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(byte[,] arr)
@@ -645,7 +583,7 @@ namespace khiva
                 int type = (int)Dtype.u8;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(byte[,,] arr)
@@ -657,7 +595,7 @@ namespace khiva
                 int type = (int)Dtype.u8;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(byte[,,,] arr)
@@ -669,7 +607,7 @@ namespace khiva
                 int type = (int)Dtype.u8;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(long[] arr)
@@ -681,7 +619,7 @@ namespace khiva
                 int type = (int)Dtype.s64;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.Length, 1, 1, 1 };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(long[,] arr)
@@ -693,7 +631,7 @@ namespace khiva
                 int type = (int)Dtype.s64;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(long[,,] arr)
@@ -705,7 +643,7 @@ namespace khiva
                 int type = (int)Dtype.s64;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(long[,,,] arr)
@@ -717,7 +655,7 @@ namespace khiva
                 int type = (int)Dtype.s64;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(ulong[] arr)
@@ -729,7 +667,7 @@ namespace khiva
                 int type = (int)Dtype.u64;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.Length, 1, 1, 1 };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(ulong[,] arr)
@@ -741,7 +679,7 @@ namespace khiva
                 int type = (int)Dtype.u64;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(ulong[,,] arr)
@@ -753,7 +691,7 @@ namespace khiva
                 int type = (int)Dtype.u64;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(ulong[,,,] arr)
@@ -765,7 +703,7 @@ namespace khiva
                 int type = (int)Dtype.u64;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(short[] arr)
@@ -777,7 +715,7 @@ namespace khiva
                 int type = (int)Dtype.s16;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.Length, 1, 1, 1 };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(short[,] arr)
@@ -789,7 +727,7 @@ namespace khiva
                 int type = (int)Dtype.s16;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(short[,,] arr)
@@ -801,7 +739,7 @@ namespace khiva
                 int type = (int)Dtype.s16;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(short[,,,] arr)
@@ -813,7 +751,7 @@ namespace khiva
                 int type = (int)Dtype.s16;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(ushort[] arr)
@@ -825,7 +763,7 @@ namespace khiva
                 int type = (int)Dtype.u16;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.Length, 1, 1, 1 };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(ushort[,] arr)
@@ -837,7 +775,7 @@ namespace khiva
                 int type = (int)Dtype.u16;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(ushort[,,] arr)
@@ -849,7 +787,7 @@ namespace khiva
                 int type = (int)Dtype.u16;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(ushort[,,,] arr)
@@ -861,7 +799,7 @@ namespace khiva
                 int type = (int)Dtype.u16;
                 uint ndims = (uint)arr.Rank;
                 long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
-                interop.DLLArray.create_array(arr, ndims, dims, out reference, type);
+                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
             public Array(IntPtr reference)
@@ -871,12 +809,15 @@ namespace khiva
 
             public Array(Array other)
             {
-                this.reference = other.GetReference();
+                this.reference = other.Reference;
             }
 
-            public IntPtr GetReference()
+            public IntPtr Reference
             {
-                return reference;
+                get
+                {
+                    return reference;
+                }
             }
 
             /**
@@ -891,7 +832,7 @@ namespace khiva
                 {
                     throw new Exception("Type does mismatch");
                 }
-                long[] dims = GetDims();
+                long[] dims = Dims;
                 CheckNdims(dims, 1);
                 T[] data = new T[dims[0]];
                 GCHandle gchArr = new GCHandle();
@@ -902,17 +843,17 @@ namespace khiva
                         byte[] byteData = new byte[dims[0]];
                         gchArr = GCHandle.Alloc(byteData, GCHandleType.Pinned);
                         IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                        interop.DLLArray.get_data(reference, dataPtr);
+                        interop.DLLArray.get_data(ref reference, dataPtr);
                         ByteToGeneric1D<T>(data, byteData);
                     }
                     else if (typeof(T) == typeof(Complex))
                     {
-                        if (GetArrayType() == Dtype.c64)
+                        if (ArrayType == Dtype.c64)
                         {
                             double[] complexData = new double[dims[0] * 2];
                             gchArr = GCHandle.Alloc(complexData, GCHandleType.Pinned);
                             IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                            interop.DLLArray.get_data(reference, dataPtr);
+                            interop.DLLArray.get_data(ref reference, dataPtr);
                             ToGenericComplex1D<T, double>(data, complexData);
                         }
                         else
@@ -920,7 +861,7 @@ namespace khiva
                             float[] complexData = new float[dims[0] * 2];
                             gchArr = GCHandle.Alloc(complexData, GCHandleType.Pinned);
                             IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                            interop.DLLArray.get_data(reference, dataPtr);
+                            interop.DLLArray.get_data(ref reference, dataPtr);
                             ToGenericComplex1D<T, float>(data, complexData);
                         }
                     }
@@ -928,7 +869,7 @@ namespace khiva
                     {
                         gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
                         IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                        interop.DLLArray.get_data(reference, dataPtr);
+                        interop.DLLArray.get_data(ref reference, dataPtr);
                         GCHandle.Alloc(data, GCHandleType.Weak);
                     }
                 }
@@ -961,7 +902,7 @@ namespace khiva
                 {
                     throw new Exception("Type does mismatch");
                 }
-                long[] dims = GetDims();
+                long[] dims = Dims;
                 CheckNdims(dims, 2);
                 T[,] data = new T[dims[1], dims[0]];
                 GCHandle gchArr = new GCHandle();
@@ -972,17 +913,17 @@ namespace khiva
                         byte[,] byteData = new byte[dims[0], dims[1]];
                         gchArr = GCHandle.Alloc(byteData, GCHandleType.Pinned);
                         IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                        interop.DLLArray.get_data(reference, dataPtr);
+                        interop.DLLArray.get_data(ref reference, dataPtr);
                         ByteToGeneric2D<T>(data, byteData);
                     }
                     else if (typeof(T) == typeof(Complex))
                     {
-                        if (GetArrayType() == Dtype.c64)
+                        if (ArrayType == Dtype.c64)
                         {
                             double[] complexData = new double[dims[0] * dims[1] * 2];
                             gchArr = GCHandle.Alloc(complexData, GCHandleType.Pinned);
                             IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                            interop.DLLArray.get_data(reference, dataPtr);
+                            interop.DLLArray.get_data(ref reference, dataPtr);
                             ToGenericComplex2D<T, double>(data, complexData);
                         }
                         else
@@ -990,7 +931,7 @@ namespace khiva
                             float[] complexData = new float[dims[0] * dims[1] * 2];
                             gchArr = GCHandle.Alloc(complexData, GCHandleType.Pinned);
                             IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                            interop.DLLArray.get_data(reference, dataPtr);
+                            interop.DLLArray.get_data(ref reference, dataPtr);
                             ToGenericComplex2D<T, float>(data, complexData);
                         }
                     }
@@ -998,7 +939,7 @@ namespace khiva
                     {
                         gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
                         IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                        interop.DLLArray.get_data(reference, dataPtr);
+                        interop.DLLArray.get_data(ref reference, dataPtr);
                     }
                 }
                 finally
@@ -1037,7 +978,7 @@ namespace khiva
                 {
                     throw new Exception("Type does mismatch");
                 }
-                long[] dims = GetDims();
+                long[] dims = Dims;
                 CheckNdims(dims, 3);
                 T[,,] data = new T[dims[1], dims[0], dims[2]];
                 GCHandle gchArr = new GCHandle();
@@ -1048,17 +989,17 @@ namespace khiva
                         byte[,,] byteData = new byte[dims[0], dims[1], dims[2]];
                         gchArr = GCHandle.Alloc(byteData, GCHandleType.Pinned);
                         IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                        interop.DLLArray.get_data(reference, dataPtr);
+                        interop.DLLArray.get_data(ref reference, dataPtr);
                         ByteToGeneric3D<T>(data, byteData);
                     }
                     else if (typeof(T) == typeof(Complex))
                     {
-                        if (GetArrayType() == Dtype.c64)
+                        if (ArrayType == Dtype.c64)
                         {
                             double[] complexData = new double[dims[0] * dims[1] * dims[2] * 2];
                             gchArr = GCHandle.Alloc(complexData, GCHandleType.Pinned);
                             IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                            interop.DLLArray.get_data(reference, dataPtr);
+                            interop.DLLArray.get_data(ref reference, dataPtr);
                             ToGenericComplex3D<T, double>(data, complexData);
                         }
                         else
@@ -1066,7 +1007,7 @@ namespace khiva
                             float[] complexData = new float[dims[0] * dims[1] * dims[2] * 2];
                             gchArr = GCHandle.Alloc(complexData, GCHandleType.Pinned);
                             IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                            interop.DLLArray.get_data(reference, dataPtr);
+                            interop.DLLArray.get_data(ref reference, dataPtr);
                             ToGenericComplex3D<T, float>(data, complexData);
                         }
                     }
@@ -1074,7 +1015,7 @@ namespace khiva
                     {
                         gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
                         IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                        interop.DLLArray.get_data(reference, dataPtr);
+                        interop.DLLArray.get_data(ref reference, dataPtr);
                     }
                 }
                 finally
@@ -1118,7 +1059,7 @@ namespace khiva
                 {
                     throw new Exception("Type does mismatch");
                 }
-                long[] dims = GetDims();
+                long[] dims = Dims;
                 T[,,,] data = new T[dims[1], dims[0], dims[2], dims[3]];
                 GCHandle gchArr = new GCHandle();
                 try
@@ -1128,17 +1069,17 @@ namespace khiva
                         byte[,,,] byteData = new byte[dims[0], dims[1], dims[2], dims[3]];
                         gchArr = GCHandle.Alloc(byteData, GCHandleType.Pinned);
                         IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                        interop.DLLArray.get_data(reference, dataPtr);
+                        interop.DLLArray.get_data(ref reference, dataPtr);
                         ByteToGeneric4D<T>(data, byteData);
                     }
                     else if (typeof(T) == typeof(Complex))
                     {
-                        if (GetArrayType() == Dtype.c64)
+                        if (ArrayType == Dtype.c64)
                         {
                             double[] complexData = new double[dims[0] * dims[1] * dims[2] * dims[3] * 2];
                             gchArr = GCHandle.Alloc(complexData, GCHandleType.Pinned);
                             IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                            interop.DLLArray.get_data(reference, dataPtr);
+                            interop.DLLArray.get_data(ref reference, dataPtr);
                             ToGenericComplex4D<T, double>(data, complexData);
                         }
                         else
@@ -1146,7 +1087,7 @@ namespace khiva
                             float[] complexData = new float[dims[0] * dims[1] * dims[2] * dims[3] * 2];
                             gchArr = GCHandle.Alloc(complexData, GCHandleType.Pinned);
                             IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                            interop.DLLArray.get_data(reference, dataPtr);
+                            interop.DLLArray.get_data(ref reference, dataPtr);
                             ToGenericComplex4D<T, float>(data, complexData);
                         }
                     }
@@ -1154,7 +1095,7 @@ namespace khiva
                     {
                         gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
                         IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                        interop.DLLArray.get_data(reference, dataPtr);
+                        interop.DLLArray.get_data(ref reference, dataPtr);
                     }
                 }
                 finally
@@ -1200,7 +1141,7 @@ namespace khiva
 
             private bool CheckType(Type type)
             {
-                switch (GetArrayType()) {
+                switch (ArrayType) {
                     case Dtype.b8:
                         return type == typeof(bool);
                     case Dtype.c32:
@@ -1246,20 +1187,14 @@ namespace khiva
             /**
              * @brief Gets the Array dimensions.
              */
-            public long[] GetDims()
+            public long[] Dims
             {
-                GCHandle gchArr;
-                long[] dims = new long[4];
-                try
+                get
                 {
-                    gchArr = GCHandle.Alloc(dims, GCHandleType.Pinned);
-                    interop.DLLArray.get_dims(reference, dims);
-                }
-                finally
-                {
-                    GCHandle.Alloc(dims, GCHandleType.Weak);
-                }
-                return dims;
+                    long[] dims = new long[4];
+                    interop.DLLArray.get_dims(ref reference, dims);
+                    return dims;
+                }   
             }
 
             /**
@@ -1281,11 +1216,13 @@ namespace khiva
                 /**
              * @brief Gets the type of the array.
              */
-            public Dtype GetArrayType()
+            public Dtype ArrayType
             {
-                interop.DLLArray.get_type(reference, out int type);
-                Enum.TryParse<Dtype>(type.ToString(), out Dtype dtype);
-                return dtype;
+                get
+                {
+                    interop.DLLArray.get_type(ref reference, out int type);
+                    return (Dtype)type;
+                }   
             }
 
             /**
@@ -1297,8 +1234,7 @@ namespace khiva
              */
             public static Array operator +(Array lhs, Array rhs)
             {
-                IntPtr result = new IntPtr();
-                interop.DLLArray.khiva_add(lhs.reference, rhs.reference, out result);
+                interop.DLLArray.khiva_add(ref lhs.reference, ref rhs.reference, out IntPtr result);
                 return new Array(result);
             }
 
@@ -1311,8 +1247,7 @@ namespace khiva
              */
             public static Array operator *(Array lhs, Array rhs)
             {
-                IntPtr result;
-                interop.DLLArray.khiva_mul(lhs.reference, rhs.reference, out result);
+                interop.DLLArray.khiva_mul(ref lhs.reference, ref rhs.reference, out IntPtr result);
                 return (new Array(result));
             }
 
@@ -1325,8 +1260,7 @@ namespace khiva
              */
             public static Array operator -(Array lhs, Array rhs)
             {
-                IntPtr result;
-                interop.DLLArray.khiva_sub(lhs.reference, rhs.reference, out result);
+                interop.DLLArray.khiva_sub(ref lhs.reference, ref rhs.reference, out IntPtr result);
                 return (new Array(result));
             }
 
@@ -1339,8 +1273,7 @@ namespace khiva
              */
             public static Array operator /(Array lhs, Array rhs)
             {
-                IntPtr result;
-                interop.DLLArray.khiva_div(lhs.reference, rhs.reference, out result);
+                interop.DLLArray.khiva_div(ref lhs.reference, ref rhs.reference, out IntPtr result);
                 return (new Array(result));
             }
 
@@ -1353,8 +1286,7 @@ namespace khiva
              */
             public static Array operator %(Array lhs, Array rhs)
             {
-                IntPtr result;
-                interop.DLLArray.khiva_mod(lhs.reference, rhs.reference, out result);
+                interop.DLLArray.khiva_mod(ref lhs.reference, ref rhs.reference, out IntPtr result);
                 return (new Array(result));
             }
 
@@ -1367,8 +1299,7 @@ namespace khiva
              */
             public Array Pow(Array rhs)
             {
-                IntPtr result;
-                interop.DLLArray.khiva_pow(reference, rhs.reference, out result);
+                interop.DLLArray.khiva_pow(ref reference, ref rhs.reference, out IntPtr result);
                 return (new Array(result));
             }
 
@@ -1381,8 +1312,7 @@ namespace khiva
              */
             public static Array operator &(Array lhs, Array rhs)
             {
-                IntPtr result;
-                interop.DLLArray.khiva_bitand(lhs.reference, rhs.reference, out result);
+                interop.DLLArray.khiva_bitand(ref lhs.reference, ref rhs.reference, out IntPtr result);
                 return (new Array(result));
             }
 
@@ -1395,8 +1325,7 @@ namespace khiva
               */
             public static Array operator |(Array lhs, Array rhs)
             {
-                IntPtr result;
-                interop.DLLArray.khiva_bitor(lhs.reference, rhs.reference, out result);
+                interop.DLLArray.khiva_bitor(ref lhs.reference, ref rhs.reference, out IntPtr result);
                 return (new Array(result));
             }
 
@@ -1409,8 +1338,7 @@ namespace khiva
              */
             public static Array operator ^(Array lhs, Array rhs)
             {
-                IntPtr result;
-                interop.DLLArray.khiva_bitxor(lhs.reference, rhs.reference, out result);
+                interop.DLLArray.khiva_bitxor(ref lhs.reference, ref rhs.reference, out IntPtr result);
                 return (new Array(result));
             }
 
@@ -1423,8 +1351,7 @@ namespace khiva
              */
             public static Array operator <<(Array lhs, int shift)
             {
-                IntPtr result;
-                interop.DLLArray.khiva_bitshiftl(lhs.reference, shift, out result);
+                interop.DLLArray.khiva_bitshiftl(ref lhs.reference, ref shift, out IntPtr result);
                 return (new Array(result));
             }
 
@@ -1437,8 +1364,7 @@ namespace khiva
              */
             public static Array operator >>(Array lhs, int shift)
             {
-                IntPtr result;
-                interop.DLLArray.khiva_bitshiftr(lhs.reference, shift, out result);
+                interop.DLLArray.khiva_bitshiftr(ref lhs.reference, ref shift, out IntPtr result);
                 return (new Array(result));
             }
 
@@ -1450,16 +1376,15 @@ namespace khiva
              */
             public static Array operator -(Array rhs)
             {
-                IntPtr result;
                 Array zeros;
-                long[] dims = rhs.GetDims();
+                long[] dims = rhs.Dims;
                 uint maxDim = GetMaxDim(dims);
-                if (rhs.GetArrayType() == Dtype.c32 | rhs.GetArrayType() == Dtype.c64)
+                if (rhs.ArrayType == Dtype.c32 | rhs.ArrayType == Dtype.c64)
                 {
                     if (maxDim == 1)
                     {
                         Complex[] tss = new Complex[dims[0]];
-                        if (rhs.GetArrayType() == Dtype.c32)
+                        if (rhs.ArrayType == Dtype.c32)
                         {
                             zeros = new Array(tss, false);
                         }
@@ -1471,7 +1396,7 @@ namespace khiva
                     else if (maxDim == 2)
                     {
                         Complex[,] tss = new Complex[dims[0], dims[1]];
-                        if (rhs.GetArrayType() == Dtype.c32)
+                        if (rhs.ArrayType == Dtype.c32)
                         {
                             zeros = new Array(tss, false);
                         }
@@ -1483,7 +1408,7 @@ namespace khiva
                     else if (maxDim == 3)
                     {
                         Complex[,,] tss = new Complex[dims[0], dims[1], dims[2]];
-                        if (rhs.GetArrayType() == Dtype.c32)
+                        if (rhs.ArrayType == Dtype.c32)
                         {
                             zeros = new Array(tss, false);
                         }
@@ -1495,7 +1420,7 @@ namespace khiva
                     else
                     {
                         Complex[,,,] tss = new Complex[dims[0], dims[1], dims[2], dims[3]];
-                        if (rhs.GetArrayType() == Dtype.c32)
+                        if (rhs.ArrayType == Dtype.c32)
                         {
                             zeros = new Array(tss, false);
                         }
@@ -1527,7 +1452,7 @@ namespace khiva
                         zeros = new Array(tss);
                     }
                 }
-                interop.DLLArray.khiva_sub(zeros.reference, rhs.reference, out result);
+                interop.DLLArray.khiva_sub(ref zeros.reference, ref rhs.reference, out IntPtr result);
                 return (new Array(result));
             }
 
@@ -1553,8 +1478,7 @@ namespace khiva
              */
             public static Array operator !(Array lhs)
             {
-                IntPtr result;
-                interop.DLLArray.khiva_not(lhs.reference, out result);
+                interop.DLLArray.khiva_not(ref lhs.reference, out IntPtr result);
                 return (new Array(result));
             }
 
@@ -1565,10 +1489,9 @@ namespace khiva
              * @param rhs Right-hand side KHIVA array for the operation.
              * @return result KHIVA Array with the result of this operation.
              */
-            public static Array operator <(Array rhs, Array lhs)
+            public static Array operator <(Array lhs, Array rhs)
             {
-                IntPtr result;
-                interop.DLLArray.khiva_lt(rhs.reference, lhs.reference, out result);
+                interop.DLLArray.khiva_lt(ref lhs.reference, ref rhs.reference, out IntPtr result);
                 return (new Array(result));
             }
 
@@ -1579,10 +1502,9 @@ namespace khiva
              * @param rhs Right-hand side KHIVA array for the operation.
              * @return result KHIVA Array with the result of this operation.
              */
-            public static Array operator >(Array rhs, Array lhs)
+            public static Array operator >(Array lhs, Array rhs)
             {
-                IntPtr result;
-                interop.DLLArray.khiva_gt(rhs.reference, lhs.reference, out result);
+                interop.DLLArray.khiva_gt(ref lhs.reference, ref rhs.reference, out IntPtr result);
                 return (new Array(result));
             }
 
@@ -1593,10 +1515,9 @@ namespace khiva
              * @param rhs Right-hand side KHIVA array for the operation.
              * @return result KHIVA Array with the result of this operation.
              */
-            public static Array operator <=(Array rhs, Array lhs)
+            public static Array operator <=(Array lhs, Array rhs)
             {
-                IntPtr result;
-                interop.DLLArray.khiva_le(rhs.reference, lhs.reference, out result);
+                interop.DLLArray.khiva_le(ref lhs.reference, ref rhs.reference, out IntPtr result);
                 return (new Array(result));
             }
 
@@ -1607,10 +1528,9 @@ namespace khiva
              * @param rhs Right-hand side KHIVA array for the operation.
              * @return result KHIVA Array with the result of this operation.
              */
-            public static Array operator >=(Array rhs, Array lhs)
+            public static Array operator >=(Array lhs, Array rhs)
             {
-                IntPtr result;
-                interop.DLLArray.khiva_ge(rhs.reference, lhs.reference, out result);
+                interop.DLLArray.khiva_ge(ref lhs.reference, ref rhs.reference, out IntPtr result);
                 return (new Array(result));
             }
 
@@ -1621,10 +1541,9 @@ namespace khiva
              * @param rhs Right-hand side KHIVA array for the operation.
              * @return result KHIVA Array with the result of this operation.
              */
-            public static Array operator ==(Array rhs, Array lhs)
+            public static Array operator ==(Array lhs, Array rhs)
             {
-                IntPtr result;
-                interop.DLLArray.khiva_eq(rhs.reference, lhs.reference, out result);
+                interop.DLLArray.khiva_eq(ref lhs.reference, ref rhs.reference, out IntPtr result);
                 return (new Array(result));
             }
 
@@ -1635,10 +1554,9 @@ namespace khiva
              * @param rhs Right-hand side KHIVA array for the operation.
              * @return result KHIVA Array with the result of this operation.
              */
-            public static Array operator !=(Array rhs, Array lhs)
+            public static Array operator !=(Array lhs, Array rhs)
             {
-                IntPtr result;
-                interop.DLLArray.khiva_ne(rhs.reference, lhs.reference, out result);
+                interop.DLLArray.khiva_ne(ref lhs.reference, ref rhs.reference, out IntPtr result);
                 return (new Array(result));
             }
 
@@ -1668,8 +1586,7 @@ namespace khiva
              */
             public Array Transpose(bool conjugate = false)
             {
-                IntPtr result;
-                interop.DLLArray.khiva_transpose(reference, conjugate, out result);
+                interop.DLLArray.khiva_transpose(ref reference, ref conjugate, out IntPtr result);
                 return (new Array(result));
             }
 
@@ -1682,8 +1599,7 @@ namespace khiva
              */
             public Array Col(int index)
             {
-                IntPtr result;
-                interop.DLLArray.khiva_col(reference, index, out result);
+                interop.DLLArray.khiva_col(ref reference, ref index, out IntPtr result);
                 return (new Array(result));
             }
 
@@ -1697,8 +1613,7 @@ namespace khiva
              */
             public Array Cols(int first, int last)
             {
-                IntPtr result;
-                interop.DLLArray.khiva_cols(reference, first, last, out result);
+                interop.DLLArray.khiva_cols(ref reference, ref first, ref last, out IntPtr result);
                 return (new Array(result));
             }
 
@@ -1711,8 +1626,7 @@ namespace khiva
              */
             public Array Row(int index)
             {
-                IntPtr result;
-                interop.DLLArray.khiva_row(reference, index, out result);
+                interop.DLLArray.khiva_row(ref reference, ref index, out IntPtr result);
                 return (new Array(result));
             }
 
@@ -1726,8 +1640,7 @@ namespace khiva
              */
             public Array Rows(int first, int last)
             {
-                IntPtr result;
-                interop.DLLArray.khiva_rows(reference, first, last, out result);
+                interop.DLLArray.khiva_rows(ref reference, ref first, ref last, out IntPtr result);
                 return (new Array(result));
             }
 
@@ -1740,8 +1653,7 @@ namespace khiva
              */
             public Array Matmul(Array lhs)
             {
-                IntPtr result;
-                interop.DLLArray.khiva_matmul(reference, lhs.reference, out result);
+                interop.DLLArray.khiva_matmul(ref reference, ref lhs.reference, out IntPtr result);
                 return (new Array(result));
             }
 
@@ -1753,8 +1665,7 @@ namespace khiva
              */
             public Array Copy()
             {
-                IntPtr result;
-                interop.DLLArray.copy(reference, out result);
+                interop.DLLArray.copy(ref reference, out IntPtr result);
                 return (new Array(result));
             }
 
@@ -1767,8 +1678,7 @@ namespace khiva
              */
             public Array As(int type)
             {
-                IntPtr result;
-                interop.DLLArray.khiva_as(reference, type, out result);
+                interop.DLLArray.khiva_as(ref reference, ref type, out IntPtr result);
                 return (new Array(result));
             }
 
