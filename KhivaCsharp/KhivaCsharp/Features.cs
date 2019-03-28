@@ -756,15 +756,72 @@ namespace khiva.features
             interop.DLLFeatures.mean_second_derivative_central(ref reference, out IntPtr result);
             return (new array.Array(result));
         }
+
+        /**
+         * @brief Calculates the median value for each time series within array.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @return result The median value of each time series within array.
+         */
+        public static array.Array Median(array.Array array)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.median(ref reference, out IntPtr result);
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Calculates the minimum value for each time series within array.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @return result The minimum value of each time series within array.
+         */
+        public static array.Array Minimum(array.Array array)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.minimum(ref reference, out IntPtr result);
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Calculates the number of m-crossings. A m-crossing is defined as two sequential values where the first
+         * value is lower than m and the next is greater, or viceversa. If you set m to zero, you will get the number of
+         * zero crossings.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @param m The m value.
+         * @return result The number of m-crossings of each time series within array.
+         */
+        public static array.Array NumberCrossingM(array.Array array, int m)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.number_crossing_m(ref reference, ref m, out IntPtr result);
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief This feature calculator searches for different peaks. To do so, the time series is smoothed by a ricker
+         * wavelet and for widths ranging from 1 to max_w. This feature calculator returns the number of peaks that occur at
+         * enough width scales and with sufficiently high Signal-to-Noise-Ratio (SNR).
+         *
+         * @param array Expects an input array whose dimension zero is the length of the time series (all the same)
+         * and dimension one indicates the number of time series.
+         * @param max_w The maximum width to consider.
+         * @return result The number of peaks for each time series.
+         */
+        public static array.Array NumberCwtPeaks(array.Array array, int max_w)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.number_cwt_peaks(ref reference, ref max_w, out IntPtr result);
+            return (new array.Array(result));
+        }
         /*
-       public static array.Array median(array.Array array){}
-        
-       public static array.Array minimum(array.Array array){}
-        
-       public static array.Array number_crossing_m(array.Array array, int m){}
-        
-       public static array.Array number_cwt_peaks(array.Array array, int max_w){}
-        
        public static array.Array number_peaks(array.Array array, int n){}
         
        public static array.Array partial_autocorrelation(array.Array array, IntPtr lags){}
