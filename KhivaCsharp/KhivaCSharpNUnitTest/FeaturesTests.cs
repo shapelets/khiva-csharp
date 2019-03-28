@@ -254,6 +254,86 @@ namespace khiva.features.tests
             }
         }
 
+        [Test]
+        public void TestCwtCoefficients()
+        {
+            double[,] tss = { { 0.1, 0.2, 0.3 }, { 0.1, 0.2, 0.3 } };
+            int[] width = { 1, 2, 3 };
+            using (array.Array arr = new array.Array(tss), widthArr = new array.Array(width),
+                    cwtCoeffResult = Features.CwtCoefficients(arr, widthArr, 2, 2))
+            {
+                float[,] result = cwtCoeffResult.GetData2D<float>();
+                Assert.AreEqual(0.26517161726951599, result[0, 0], DELTA);
+                Assert.AreEqual(0.26517161726951599, result[1, 0], DELTA);
+            }
+            
+        }
 
+        [Test]
+        public void TestEnergyRatioByChunks()
+        {
+            float[,] tss = { { 0, 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10, 11 } };
+            using (array.Array arr = new array.Array(tss),
+                    energyRatioByChunks0 = Features.EnergyRatioByChunks(arr, 2, 0),
+                    energyRatioByChunks1 = Features.EnergyRatioByChunks(arr, 2, 1))
+            {
+                float[,] result0 = energyRatioByChunks0.GetData2D<float>();
+                float[,] result1 = energyRatioByChunks1.GetData2D<float>();
+                Assert.AreEqual(0.090909091, result0[0, 0], DELTA);
+                Assert.AreEqual(0.330376940, result0[1, 0], DELTA);
+                Assert.AreEqual(0.909090909, result1[0, 0], DELTA);
+                Assert.AreEqual(0.669623060, result1[1, 0], DELTA);
+            }
+        }
+
+        [Test]
+        public void TestFftAggregated()
+        {
+            float[,] tss = { { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 },
+                             { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 } };
+            using (array.Array arr = new array.Array(tss), fftAggregatedResult = Features.FftAggregated(arr))
+            {
+                float[,] result = fftAggregatedResult.GetData2D<float>();
+                Assert.AreEqual(1.135143, result[0, 0], 1e-4);
+                Assert.AreEqual(2.368324, result[0, 1], 1e-4);
+                Assert.AreEqual(1.248777, result[0, 2], 1e-4);
+                Assert.AreEqual(3.642666, result[0, 3], 1e-4);
+                Assert.AreEqual(1.135143, result[1, 0], 1e-4);
+                Assert.AreEqual(2.368324, result[1, 1], 1e-4);
+                Assert.AreEqual(1.248777, result[1, 2], 1e-4);
+                Assert.AreEqual(3.642666, result[1, 3], 1e-4);
+            }
+        }
+
+        [Test]
+        public void TestFftCoefficient()
+        {
+            double[,] tss = { { 0, 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10, 11 } };
+            using (array.Array arr = new array.Array(tss))
+            {
+                var (realArr, imagArr, absoluteArr, angleArr) = Features.FftCoefficient(arr, 0);
+                using (realArr)
+                using (imagArr)
+                using (absoluteArr)
+                using (angleArr)
+                {
+                    double[,] real = realArr.GetData2D<double>();
+                    double[,] imag = imagArr.GetData2D<double>();
+                    double[,] absolute = absoluteArr.GetData2D<double>();
+                    double[,] angle = angleArr.GetData2D<double>();
+                    Assert.AreEqual(15, real[0, 0], DELTA);
+                    Assert.AreEqual(51, real[1, 0], DELTA);
+
+                    Assert.AreEqual(0, imag[0, 0], DELTA);
+                    Assert.AreEqual(0, imag[1, 0], DELTA);
+
+                    Assert.AreEqual(15, absolute[0, 0], DELTA);
+                    Assert.AreEqual(51, absolute[1, 0], DELTA);
+
+                    Assert.AreEqual(0, angle[0, 0], DELTA);
+                    Assert.AreEqual(0, angle[1, 0], DELTA);
+                }
+            }
+        }
     }
 }

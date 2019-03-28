@@ -231,6 +231,7 @@ namespace khiva.interop
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void count_below_mean([In] ref IntPtr array, [Out] out IntPtr result);
+
         /**
          * @brief Calculates a Continuous wavelet transform for the Ricker wavelet, also known as
          * the "Mexican hat wavelet" which is defined by:
@@ -298,8 +299,8 @@ namespace khiva.interop
          * @param angle The angle of the coefficient.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void fft_coefficient([In] ref IntPtr array, [In] ref long coefficient, [In] ref IntPtr real, [In] ref IntPtr imag,
-                              ref IntPtr absolute, [In] ref IntPtr angle);
+        public extern static void fft_coefficient([In] ref IntPtr array, [In] ref long coefficient, [Out] out IntPtr real, [Out] out IntPtr imag,
+                              [Out] out IntPtr absolute, [Out] out IntPtr angle);
 
         /**
          * @brief Calculates the first relative location of the maximal value for each time series.

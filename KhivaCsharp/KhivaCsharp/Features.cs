@@ -297,16 +297,98 @@ namespace khiva.features
             interop.DLLFeatures.count_below_mean(ref reference, out IntPtr result);
             return (new array.Array(result));
         }
+
+        /**
+         * @brief Calculates a Continuous wavelet transform for the Ricker wavelet, also known as
+         * the "Mexican hat wavelet" which is defined by:
+         *
+         *  .. math::
+         *      \frac{2}{\sqrt{3a} \pi^{
+         *  \frac{1} { 4 }}} (1 - \frac{x^2}{a^2}) exp(-\frac{x^2}{2a^2})
+         *
+         *  where :math:`a` is the width parameter of the wavelet function.
+         *
+         * This feature calculator takes three different parameter: widths, coeff and w. The feature calculator takes all
+         * the different widths arrays and then calculates the cwt one time for each different width array. Then the values
+         * for the different coefficient for coeff and width w are returned. (For each dic in param one feature is
+         * returned).
+         *
+         * @param array Expects an input array whose dimension zero is the length of the time series (all the same)
+         * and dimension one indicates the number of time series.
+         * @param width Array that contains all different widths.
+         * @param coeff Coefficient of interest.
+         * @param w Width of interest.
+         * @return result Result of calculated coefficients.
+         */
+        public static array.Array CwtCoefficients(array.Array array, array.Array width, int coeff, int w)
+        {
+            IntPtr reference = array.Reference;
+            IntPtr widthReference = width.Reference;
+            interop.DLLFeatures.cwt_coefficients(ref reference, ref widthReference, ref coeff, ref w, out IntPtr result);
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Calculates the sum of squares of chunk i out of N chunks expressed as a ratio.
+         * with the sum of squares over the whole series. segmentFocus should be lower
+         * than the number of segments
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @param num_segments The number of segments to divide the series into.
+         * @param segment_focus The segment number (starting at zero) to return a feature on.
+         * @return result The energy ratio by chunk of the time series.
+         */
+        public static array.Array EnergyRatioByChunks(array.Array array, long num_segments, long segment_focus)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.energy_ratio_by_chunks(ref reference, ref num_segments, ref segment_focus, out IntPtr result);
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Calculates the spectral centroid(mean), variance, skew, and kurtosis of the absolute fourier transform
+         * spectrum.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @return result The spectral centroid (mean), variance, skew, and kurtosis of the absolute fourier transform
+         * spectrum.
+         */
+        public static array.Array FftAggregated(array.Array array)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.fft_aggregated(ref reference, out IntPtr result);
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Calculates the fourier coefficients of the one-dimensional discrete
+         * Fourier Transform for real input by fast fourier transformation algorithm.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @param coefficient The coefficient to extract from the FFT.
+         * @return real The real part of the coefficient.
+         * @return imag The imaginary part of the cofficient.
+         * @return absolute The absolute value of the coefficient.
+         * @return angle The angle of the coefficient.
+         */
+        public static (array.Array, array.Array, array.Array, array.Array) FftCoefficient(array.Array array, long coefficient)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.fft_coefficient(ref reference, ref coefficient,
+                                                out IntPtr real, out IntPtr imag, out IntPtr absolute, out IntPtr angle);
+            var tuple = (realArr: new array.Array(real),
+                        imagArr: new array.Array(imag),
+                        absoluteArr: new array.Array(absolute),
+                        angleArr: new array.Array(angle));
+            return tuple;
+        }
         /*
-       public static array.Array cwt_coefficients(array.Array array, IntPtr width, int coeff, int w){}
-        
-       public static array.Array energy_ratio_by_chunks(array.Array array, long num_segments, long segment_focus){}
-        
-       public static array.Array fft_aggregated(array.Array array){}
-        
-       public static array.Array fft_coefficient(array.Array array, long coefficient, IntPtr real, IntPtr imag,
-                              IntPtr absolute, IntPtr angle){}
-        
        public static array.Array first_location_of_maximum(array.Array array){}
         
        public static array.Array first_location_of_minimum(array.Array array){}
