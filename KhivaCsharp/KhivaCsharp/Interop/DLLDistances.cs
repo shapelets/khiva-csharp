@@ -25,7 +25,7 @@ namespace khiva.interop
          * distance between time series 0 and time series 1.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void dtw([In] IntPtr tss, [Out] out IntPtr result);
+        public extern static void dtw([In] ref IntPtr tss, [Out] out IntPtr result);
         
         /**
          * @brief Calculates euclidean distances between time series.
@@ -38,7 +38,7 @@ namespace khiva.interop
          * between time series 0 and time series 1.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void euclidean([In] IntPtr tss, [Out] out IntPtr result);
+        public extern static void euclidean([In] ref IntPtr tss, [Out] out IntPtr result);
 
         /**
          * @brief Calculates Hamming distances between time series.
@@ -50,7 +50,7 @@ namespace khiva.interop
          * between time series 0 and time series 1.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void hamming([In] IntPtr tss, [Out] out IntPtr result);
+        public extern static void hamming([In] ref IntPtr tss, [Out] out IntPtr result);
 
         /**
          * @brief Calculates Manhattan distances between time series.
@@ -63,7 +63,7 @@ namespace khiva.interop
          * between time series 0 and time series 1.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void manhattan([In] IntPtr tss, [Out] out IntPtr result);
+        public extern static void manhattan([In] ref IntPtr tss, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the Shape-Based distance (SBD). It computes the normalized cross-correlation and it returns 1.0
@@ -77,7 +77,7 @@ namespace khiva.interop
          * and time series 1.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void sbd([In] IntPtr tss, [Out] out IntPtr result);
+        public extern static void sbd([In] ref IntPtr tss, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the Shape-Based distance (SBD). It computes the normalized cross-correlation and it returns 1.0
@@ -91,6 +91,6 @@ namespace khiva.interop
          * and time series 1.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void squared_euclidean([In] IntPtr tss, [Out] out IntPtr result);
+        public extern static void squared_euclidean([In] ref IntPtr tss, [Out] out IntPtr result);
     }
 }
