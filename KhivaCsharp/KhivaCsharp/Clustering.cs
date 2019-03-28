@@ -35,11 +35,12 @@ namespace khiva
              * @param tolerance      The error tolerance to stop the computation of the centroids.
              * @param max_iterations The maximum number of iterations allowed.
              */
-            public static Tuple<array.Array, array.Array> KMeans(array.Array arr, int k, float tolerance = 1e-10F, int max_iterations = 100)
+            public static (array.Array, array.Array) KMeans(array.Array arr, int k, float tolerance = 1e-10F, int max_iterations = 100)
             {
                 IntPtr reference = arr.Reference;
                 interop.DLLClustering.k_means(ref reference, ref k, out IntPtr centroids, out IntPtr labels, ref tolerance, ref max_iterations);
-                return (new Tuple<array.Array, array.Array>(new array.Array(centroids), new array.Array(labels)));
+                var tuple = (centroidsArr: new array.Array(centroids), labelsArr: new array.Array(labels));
+                return tuple;
             }
 
             /**
@@ -56,11 +57,12 @@ namespace khiva
              * @param tolerance      The error tolerance to stop the computation of the centroids.
              * @param max_iterations The maximum number of iterations allowed.
              */
-            public static Tuple<array.Array, array.Array> KShape(array.Array arr, int k, float tolerance = 1e-10F, int max_iterations = 100)
+            public static (array.Array, array.Array) KShape(array.Array arr, int k, float tolerance = 1e-10F, int max_iterations = 100)
             {
                 IntPtr reference = arr.Reference;
                 interop.DLLClustering.k_shape(ref reference, ref k, out IntPtr centroids, out IntPtr labels, ref tolerance, ref max_iterations);
-                return (new Tuple<array.Array, array.Array>(new array.Array(centroids), new array.Array(labels)));
+                var tuple = (centroidsArr: new array.Array(centroids), labelsArr: new array.Array(labels));
+                return tuple;
             }
         }
     }

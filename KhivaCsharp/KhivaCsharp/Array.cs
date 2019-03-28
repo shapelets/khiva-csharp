@@ -90,6 +90,7 @@ namespace khiva
             {
                 Marshal.FreeHGlobal(reference);
                 reference = IntPtr.Zero;
+                DeleteArray();
             }
 
             ~Array()
