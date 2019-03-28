@@ -911,7 +911,7 @@ namespace khiva
                 {
                     if (typeof(T) == typeof(bool))
                     {
-                        byte[,] byteData = new byte[dims[0], dims[1]];
+                        byte[,] byteData = new byte[dims[1], dims[0]];
                         gchArr = GCHandle.Alloc(byteData, GCHandleType.Pinned);
                         IntPtr dataPtr = gchArr.AddrOfPinnedObject();
                         interop.DLLArray.get_data(ref reference, dataPtr);
@@ -987,7 +987,7 @@ namespace khiva
                 {
                     if (typeof(T) == typeof(bool))
                     {
-                        byte[,,] byteData = new byte[dims[0], dims[1], dims[2]];
+                        byte[,,] byteData = new byte[dims[1], dims[0], dims[2]];
                         gchArr = GCHandle.Alloc(byteData, GCHandleType.Pinned);
                         IntPtr dataPtr = gchArr.AddrOfPinnedObject();
                         interop.DLLArray.get_data(ref reference, dataPtr);
@@ -1067,7 +1067,7 @@ namespace khiva
                 {
                     if (typeof(T) == typeof(bool))
                     {
-                        byte[,,,] byteData = new byte[dims[0], dims[1], dims[2], dims[3]];
+                        byte[,,,] byteData = new byte[dims[1], dims[0], dims[2], dims[3]];
                         gchArr = GCHandle.Alloc(byteData, GCHandleType.Pinned);
                         IntPtr dataPtr = gchArr.AddrOfPinnedObject();
                         interop.DLLArray.get_data(ref reference, dataPtr);

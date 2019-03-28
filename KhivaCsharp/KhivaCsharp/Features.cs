@@ -388,23 +388,143 @@ namespace khiva.features
                         angleArr: new array.Array(angle));
             return tuple;
         }
+
+        /**
+         * @brief Calculates the first relative location of the maximal value for each time series.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @return result The first relative location of the maximum value to the length of the time series,
+         *  for each time series.
+         */
+        public static array.Array FirstLocationOfMaximum(array.Array array)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.first_location_of_maximum(ref reference, out IntPtr result);
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Calculates the first location of the minimal value of each time series. The position
+         * is calculated relatively to the length of the series.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @return result The first relative location of the minimal value of each series.
+         */
+        public static array.Array FirstLocationOfMinimum(array.Array array)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.first_location_of_minimum(ref reference, out IntPtr result);
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Coefficients of polynomial \f$h(x)\f$, which has been fitted to the deterministic
+         * dynamics of Langevin model:
+         * \f[
+         *    \dot(x)(t) = h(x(t)) + R \mathcal(N)(0,1)
+         * \f]
+         * as described by [1]. For short time series this method is highly dependent on the parameters.
+         *
+         * [1] Friedrich et al. (2000): Physics Letters A 271, p. 217-222
+         * Extracting model equations from experimental data.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the time series (all the same)
+         * and dimension one indicates the number of time series.
+         * @param m Order of polynom to fit for estimating fixed points of dynamics.
+         * @param r Number of quantils to use for averaging.
+         * @return result The coefficients for each time series.
+         */
+        public static array.Array FriedrichCoefficients(array.Array array, int m, float r)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.friedrich_coefficients(ref reference, ref m, ref r, out IntPtr result);
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Calculates if the input time series contain duplicated elements.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @param result Array containing True if the time series contains duplicated elements
+         * and false otherwise.
+         */
+        public static array.Array HasDuplicates(array.Array array)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.has_duplicates(ref reference, out IntPtr result);
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Calculates if the maximum within input time series is duplicated.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @return result Array containing True if the maximum value of the time series is duplicated
+         * and false otherwise.
+         */
+        public static array.Array HasDuplicateMax(array.Array array)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.has_duplicate_max(ref reference, out IntPtr result);
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Calculates if the minimum of the input time series is duplicated.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @return result Array containing True if the minimum of the time series is duplicated
+         * and false otherwise.
+         */
+        public static array.Array HasDuplicateMin(array.Array array)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.has_duplicate_min(ref reference, out IntPtr result);
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Calculates the index of the max quantile.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @param q The quantile.
+         * @return result The index of the max quantile q.
+         */
+        public static array.Array IndexMassQuantile(array.Array array, float q)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.index_mass_quantile(ref reference, ref q, out IntPtr result);
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Returns the kurtosis of array (calculated with the adjusted Fisher-Pearson
+         * standardized moment coefficient G2).
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @return result The kurtosis of each array.
+         */
+        public static array.Array Kurtosis(array.Array array)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.kurtosis(ref reference, out IntPtr result);
+            return (new array.Array(result));
+        }
         /*
-       public static array.Array first_location_of_maximum(array.Array array){}
-        
-       public static array.Array first_location_of_minimum(array.Array array){}
-        
-       public static array.Array friedrich_coefficients(array.Array array, int m, float r){}
-        
-       public static array.Array has_duplicates(array.Array array){}
-        
-       public static array.Array has_duplicate_max(array.Array array){}
-        
-       public static array.Array has_duplicate_min(array.Array array){}
-        
-       public static array.Array index_mass_quantile(array.Array array, float q){}
-        
-       public static array.Array kurtosis(array.Array array){}
-        
        public static array.Array large_standard_deviation(array.Array array, float r){}
         
        public static array.Array last_location_of_maximum(array.Array array){}

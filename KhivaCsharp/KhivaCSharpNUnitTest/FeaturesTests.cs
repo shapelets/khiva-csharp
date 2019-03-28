@@ -27,10 +27,10 @@ namespace khiva.features.tests
         [Test]
         public void TestAbsEnergy()
         {
-            int[] tss = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-            using (array.Array arr = new array.Array(tss), absEnergyResult = Features.AbsEnergy(arr))
+            int[] tss = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            using (array.Array arr = new array.Array(tss), absEnergy = Features.AbsEnergy(arr))
             {
-                int[] result = absEnergyResult.GetData1D<int>();
+                int[] result = absEnergy.GetData1D<int>();
                 Assert.AreEqual(385, result[0], DELTA);
             }
         }
@@ -39,9 +39,9 @@ namespace khiva.features.tests
         public void TestAbsoluteSumOfChanges()
         {
             int[,] tss = new int[,] { { 0, 1, 2, 3 }, { 4, 6, 8, 10 }, { 11, 14, 17, 20 } };
-            using (array.Array arr = new array.Array(tss), absoluteSumOfChangesResult = Features.AbsoluteSumOfChanges(arr))
+            using (array.Array arr = new array.Array(tss), absoluteSumOfChanges = Features.AbsoluteSumOfChanges(arr))
             {
-                float[,] result = absoluteSumOfChangesResult.GetData2D<float>();
+                float[,] result = absoluteSumOfChanges.GetData2D<float>();
                 Assert.AreEqual(3, result[0, 0]);
                 Assert.AreEqual(6, result[1, 0]);
                 Assert.AreEqual(9, result[2, 0]);
@@ -52,9 +52,9 @@ namespace khiva.features.tests
         public void TestAggregatedAutocorrelation()
         {
             float[,] tss = new float[,] { { 1, 2, 3, 4, 5, 6 }, { 7, 8, 9, 10, 11, 12 } };
-            using (array.Array arr = new array.Array(tss), aggregatedAutocorrelationResult = Features.AggregatedAutocorrelation(arr, 0))
+            using (array.Array arr = new array.Array(tss), aggregatedAutocorrelation = Features.AggregatedAutocorrelation(arr, 0))
             {
-                float[,] result = aggregatedAutocorrelationResult.GetData2D<float>();
+                float[,] result = aggregatedAutocorrelation.GetData2D<float>();
                 Assert.AreEqual(-0.6571428571428571F, result[0, 0], DELTA);
                 Assert.AreEqual(-0.6571428571428571F, result[1, 0], DELTA);
             }
@@ -64,13 +64,15 @@ namespace khiva.features.tests
         public void TestAggregatedLinearTrendMean()
         {
             float[] tss = new float[] { 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5 };
-            using (array.Array arr = new array.Array(tss)) {
+            using (array.Array arr = new array.Array(tss))
+            {
                 var (slopeArr, interceptArr, rvalueArr, pValueArr, stderrestArr) = Features.AggregatedLinearTrend(arr, 3, 0);
                 using (slopeArr)
                 using (interceptArr)
                 using (rvalueArr)
                 using (pValueArr)
-                using (stderrestArr) {
+                using (stderrestArr)
+                {
                     float[] slope = slopeArr.GetData1D<float>();
                     float[] intercept = interceptArr.GetData1D<float>();
                     float[] rvalue = rvalueArr.GetData1D<float>();
@@ -89,9 +91,9 @@ namespace khiva.features.tests
         public void TestApproximateEntropy()
         {
             float[,] tss = new float[,] { { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, { 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 } };
-            using (array.Array arr = new array.Array(tss), approximateEntropyResult = Features.ApproximateEntropy(arr, 4, 0.5F))
+            using (array.Array arr = new array.Array(tss), approximateEntropy = Features.ApproximateEntropy(arr, 4, 0.5F))
             {
-                float[] result = approximateEntropyResult.GetData1D<float>();
+                float[] result = approximateEntropy.GetData1D<float>();
                 Assert.AreEqual(0.13484281753639338, result[0], DELTA);
                 Assert.AreEqual(0.13484281753639338, result[1], DELTA);
             }
@@ -103,18 +105,18 @@ namespace khiva.features.tests
             float[,] tss = new float[,] { { 0, 1, 2, 3 }, { 10, 11, 12, 13 } };
             float[,] tss2 = new float[,] { { 4, 6, 8, 10, 12 }, { 14, 16, 18, 20, 22 } };
             using (array.Array xss = new array.Array(tss), yss = new array.Array(tss2),
-                approximateEntropyResult = Features.CrossCovariance(xss, yss, false))
+                approximateEntropy = Features.CrossCovariance(xss, yss, false))
             {
-                float[,,] result = approximateEntropyResult.GetData3D<float>();
-                float[] flattenResult = new float[result.Length];
-                Flatten3D<float>(ref flattenResult, result);
+                float[,,] result = approximateEntropy.GetData3D<float>();
+                float[] flatten = new float[result.Length];
+                Flatten3D<float>(ref flatten, result);
                 for (int i = 0; i < 4; i++)
                 {
-                    Assert.AreEqual(2.5, flattenResult[(i * 5)], DELTA);
-                    Assert.AreEqual(2.5, flattenResult[(i * 5) + 1], DELTA);
-                    Assert.AreEqual(0.25, flattenResult[(i * 5) + 2], DELTA);
-                    Assert.AreEqual(-1.25, flattenResult[(i * 5) + 3], DELTA);
-                    Assert.AreEqual(-1.5, flattenResult[(i * 5) + 4], DELTA);
+                    Assert.AreEqual(2.5, flatten[(i * 5)], DELTA);
+                    Assert.AreEqual(2.5, flatten[(i * 5) + 1], DELTA);
+                    Assert.AreEqual(0.25, flatten[(i * 5) + 2], DELTA);
+                    Assert.AreEqual(-1.25, flatten[(i * 5) + 3], DELTA);
+                    Assert.AreEqual(-1.5, flatten[(i * 5) + 4], DELTA);
                 }
             }
         }
@@ -137,9 +139,9 @@ namespace khiva.features.tests
         public void TestAutoCovariance()
         {
             float[,] tss = { { 0, 1, 2, 3 }, { 10, 11, 12, 13 } };
-            using(array.Array arr = new array.Array(tss), autoCovarianceResult = Features.AutoCovariance(arr))
+            using (array.Array arr = new array.Array(tss), autoCovariance = Features.AutoCovariance(arr))
             {
-                float[,] result = autoCovarianceResult.GetData2D<float>();
+                float[,] result = autoCovariance.GetData2D<float>();
                 Assert.AreEqual(1.25, result[0, 0], DELTA);
                 Assert.AreEqual(0.3125, result[0, 1], DELTA);
                 Assert.AreEqual(-0.375, result[0, 2], DELTA);
@@ -157,9 +159,9 @@ namespace khiva.features.tests
             double[] tss = { 1, 2, 3, 4 };
             double[] tss2 = { 4, 6, 8, 10, 12 };
             using (array.Array xss = new array.Array(tss), yss = new array.Array(tss2),
-                crossCorrelationResult = Features.CrossCorrelation(xss, yss, false))
+                crossCorrelation = Features.CrossCorrelation(xss, yss, false))
             {
-                double[] result = crossCorrelationResult.GetData1D<double>();
+                double[] result = crossCorrelation.GetData1D<double>();
                 Assert.AreEqual(0.790569415, result[0], DELTA);
                 Assert.AreEqual(0.790569415, result[1], DELTA);
                 Assert.AreEqual(0.0790569415, result[2], DELTA);
@@ -172,9 +174,9 @@ namespace khiva.features.tests
         public void TestAutoCorrelation()
         {
             float[,] tss = { { 0, 1, 2, 3 }, { 10, 11, 12, 13 } };
-            using (array.Array arr = new array.Array(tss), autoCorrelationResult = Features.AutoCorrelation(arr, 4, false))
+            using (array.Array arr = new array.Array(tss), autoCorrelation = Features.AutoCorrelation(arr, 4, false))
             {
-                float[,] result = autoCorrelationResult.GetData2D<float>();
+                float[,] result = autoCorrelation.GetData2D<float>();
                 Assert.AreEqual(1, result[0, 0], DELTA);
                 Assert.AreEqual(0.25, result[0, 1], DELTA);
                 Assert.AreEqual(-0.3, result[0, 2], DELTA);
@@ -194,9 +196,9 @@ namespace khiva.features.tests
                               { 1, 1, 3, 10, 5, 6, 1, 8, 9, 10, 11, 1, 13, 14, 10, 16,
                                 17, 10, 19, 20 }
                             };
-            using(array.Array arr = new array.Array(tss), binnedEntropyResult = Features.BinnedEntropy(arr, 5))
+            using (array.Array arr = new array.Array(tss), binnedEntropy = Features.BinnedEntropy(arr, 5))
             {
-                double[,] result = binnedEntropyResult.GetData2D<double>();
+                double[,] result = binnedEntropy.GetData2D<double>();
                 Assert.AreEqual(1.6094379124341005, result[0, 0], DELTA);
                 Assert.AreEqual(1.5614694247763998, result[1, 0], DELTA);
             }
@@ -206,9 +208,9 @@ namespace khiva.features.tests
         public void TestC3()
         {
             float[,] tss = { { 0, 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10, 11 } };
-            using(array.Array arr = new array.Array(tss), c3Result = Features.C3(arr, 2))
+            using (array.Array arr = new array.Array(tss), c3 = Features.C3(arr, 2))
             {
-                float[,] result = c3Result.GetData2D<float>();
+                float[,] result = c3.GetData2D<float>();
                 Assert.AreEqual(7.5, result[0, 0]);
                 Assert.AreEqual(586.5, result[1, 0]);
             }
@@ -219,7 +221,7 @@ namespace khiva.features.tests
         public void TestCidCe()
         {
             double[,] tss = { { 0, 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10, 11 } };
-            using(array.Array arr = new array.Array(tss), cidCeFalse = Features.CidCe(arr, false), cidCeTrue = Features.CidCe(arr, true))
+            using (array.Array arr = new array.Array(tss), cidCeFalse = Features.CidCe(arr, false), cidCeTrue = Features.CidCe(arr, true))
             {
                 double[,] resultFalse = cidCeFalse.GetData2D<double>();
                 double[,] resultTrue = cidCeTrue.GetData2D<double>();
@@ -234,9 +236,9 @@ namespace khiva.features.tests
         public void TestCountAboveMean()
         {
             float[,] tss = { { 0, 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10, 11 } };
-            using (array.Array arr = new array.Array(tss), countAboveMeanResult = Features.CountAboveMean(arr))
+            using (array.Array arr = new array.Array(tss), countAboveMean = Features.CountAboveMean(arr))
             {
-                uint[,] result = countAboveMeanResult.GetData2D<uint>();
+                uint[,] result = countAboveMean.GetData2D<uint>();
                 Assert.AreEqual(3, result[0, 0], DELTA);
                 Assert.AreEqual(3, result[1, 0], DELTA);
             }
@@ -246,9 +248,9 @@ namespace khiva.features.tests
         public void TestCountBellowMean()
         {
             float[,] tss = { { 0, 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10, 11 } };
-            using (array.Array arr = new array.Array(tss), countBellowMeanResult = Features.CountBelowMean(arr))
+            using (array.Array arr = new array.Array(tss), countBellowMean = Features.CountBelowMean(arr))
             {
-                uint[,] result = countBellowMeanResult.GetData2D<uint>();
+                uint[,] result = countBellowMean.GetData2D<uint>();
                 Assert.AreEqual(3, result[0, 0], DELTA);
                 Assert.AreEqual(3, result[1, 0], DELTA);
             }
@@ -260,13 +262,13 @@ namespace khiva.features.tests
             double[,] tss = { { 0.1, 0.2, 0.3 }, { 0.1, 0.2, 0.3 } };
             int[] width = { 1, 2, 3 };
             using (array.Array arr = new array.Array(tss), widthArr = new array.Array(width),
-                    cwtCoeffResult = Features.CwtCoefficients(arr, widthArr, 2, 2))
+                    cwtCoeff = Features.CwtCoefficients(arr, widthArr, 2, 2))
             {
-                float[,] result = cwtCoeffResult.GetData2D<float>();
+                float[,] result = cwtCoeff.GetData2D<float>();
                 Assert.AreEqual(0.26517161726951599, result[0, 0], DELTA);
                 Assert.AreEqual(0.26517161726951599, result[1, 0], DELTA);
             }
-            
+
         }
 
         [Test]
@@ -291,9 +293,9 @@ namespace khiva.features.tests
         {
             float[,] tss = { { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 },
                              { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 } };
-            using (array.Array arr = new array.Array(tss), fftAggregatedResult = Features.FftAggregated(arr))
+            using (array.Array arr = new array.Array(tss), fftAggregated = Features.FftAggregated(arr))
             {
-                float[,] result = fftAggregatedResult.GetData2D<float>();
+                float[,] result = fftAggregated.GetData2D<float>();
                 Assert.AreEqual(1.135143, result[0, 0], 1e-4);
                 Assert.AreEqual(2.368324, result[0, 1], 1e-4);
                 Assert.AreEqual(1.248777, result[0, 2], 1e-4);
@@ -333,6 +335,119 @@ namespace khiva.features.tests
                     Assert.AreEqual(0, angle[0, 0], DELTA);
                     Assert.AreEqual(0, angle[1, 0], DELTA);
                 }
+            }
+        }
+
+        [Test]
+        public void TestFirstLocationOfMaximum()
+        {
+            float[,] tss = { { 5, 4, 3, 5, 0, 1, 5, 3, 2, 1 },
+                             { 2, 4, 3, 5, 2, 5, 4, 3, 5, 2 } };
+            using (array.Array arr = new array.Array(tss), firstLocationOfMax = Features.FirstLocationOfMaximum(arr))
+            {
+                float[,] result = firstLocationOfMax.GetData2D<float>();
+                Assert.AreEqual(0, result[0, 0], DELTA);
+                Assert.AreEqual(0.3, result[1, 0], DELTA);
+            }
+        }
+
+        [Test]
+        public void TestFirstLocationOfMinimum()
+        {
+            float[,] tss = { { 5, 4, 3, 0, 0, 1 },
+                             { 5, 4, 3, 0, 2, 1 } };
+            using (array.Array arr = new array.Array(tss), firstLocationOfMin = Features.FirstLocationOfMinimum(arr))
+            {
+                float[,] result = firstLocationOfMin.GetData2D<float>();
+                Assert.AreEqual(0.5, result[0, 0], DELTA);
+                Assert.AreEqual(0.5, result[1, 0], DELTA);
+            }
+        }
+
+        [Test]
+        public void TestFriedrichCoefficients()
+        {
+            double[,] tss = { { 0, 1, 2, 3, 4, 5 },
+                             { 0, 1, 2, 3, 4, 5 } };
+            using (array.Array arr = new array.Array(tss), fiedrichCoeff = Features.FriedrichCoefficients(arr, 4, 2))
+            {
+                double[,] result = fiedrichCoeff.GetData2D<double>();
+                double[,] expected = { { -0.0009912563255056738, -0.0027067768387496471, -0.00015192681166809052,
+                                            0.10512571036815643, 0.89872437715530396 },
+                                       { -0.0009912563255056738, -0.0027067768387496471, -0.00015192681166809052,
+                                            0.10512571036815643, 0.89872437715530396 }};
+                for (int i = 0; i < result.GetLength(0); i++)
+                {
+                    for (int j = 0; j < result.GetLength(1); j++)
+                    {
+                        Assert.AreEqual(expected[i, j], result[i, j], DELTA);
+                    }
+                }
+            }
+        }
+
+        [Test]
+        public void TestHasDuplicates()
+        {
+            int[,] tss = { { 5, 4, 3, 0, 0, 1 },
+                             { 5, 4, 3, 0, 2, 1 } };
+            using (array.Array arr = new array.Array(tss), hasDuplicates = Features.HasDuplicates(arr))
+            {
+                bool[,] result = hasDuplicates.GetData2D<bool>();
+                Assert.AreEqual(true, result[0, 0]);
+                Assert.AreEqual(false, result[1, 0]);
+            }
+        }
+
+        [Test]
+        public void TestHasDuplicateMax()
+        {
+            int[,] tss = { { 5, 4, 3, 0, 5, 1 },
+                             { 5, 4, 3, 0, 2, 1 } };
+            using (array.Array arr = new array.Array(tss), hasDuplicateMax = Features.HasDuplicateMax(arr))
+            {
+                bool[,] result = hasDuplicateMax.GetData2D<bool>();
+                Assert.AreEqual(true, result[0, 0]);
+                Assert.AreEqual(false, result[1, 0]);
+            }
+        }
+
+        [Test]
+        public void TestHasDuplicateMin()
+        {
+            int[,] tss = { { 5, 4, 3, 0, 0, 1 },
+                             { 5, 4, 3, 0, 2, 1 } };
+            using (array.Array arr = new array.Array(tss), hasDuplicateMin = Features.HasDuplicateMin(arr))
+            {
+                bool[,] result = hasDuplicateMin.GetData2D<bool>();
+                Assert.AreEqual(true, result[0, 0]);
+                Assert.AreEqual(false, result[1, 0]);
+            }
+        }
+
+        [Test]
+        public void TestIndexMassQuantile()
+        {
+            float[,] tss = { { 5, 4, 3, 0, 0, 1 },
+                             { 5, 4, 0, 0, 2, 1 } };
+            using (array.Array arr = new array.Array(tss), indexMassQuantile = Features.IndexMassQuantile(arr, 0.5F))
+            {
+                float[,] result = indexMassQuantile.GetData2D<float>();
+                Assert.AreEqual(0.333333333, result[0, 0], DELTA);
+                Assert.AreEqual(0.333333333, result[1, 0], DELTA);
+            }
+        }
+
+        [Test]
+        public void TestKurtosis()
+        {
+            float[,] tss = { { 0, 1, 2, 3, 4, 5 },
+                             { 2, 2, 2, 20, 30, 25 } };
+            using (array.Array arr = new array.Array(tss), kurtosis = Features.Kurtosis(arr))
+            {
+                float[,] result = kurtosis.GetData2D<float>();
+                Assert.AreEqual(-1.2, result[0, 0], DELTA);
+                Assert.AreEqual(-2.66226722, result[1, 0], DELTA);
             }
         }
     }
