@@ -227,15 +227,77 @@ namespace khiva.features
             interop.DLLFeatures.binned_entropy(ref reference, ref max_bins, out IntPtr result);
             return (new array.Array(result));
         }
-      /*  
-       public static array.Array c3(array.Array array, long lag){}
-        
-       public static array.Array cid_ce(array.Array array, bool zNormalize){}
-        
-       public static array.Array count_above_mean(array.Array array){}
-        
-       public static array.Array count_below_mean(array.Array array){}
-        
+
+        /**
+         * @brief Calculates the Schreiber, T. and Schmitz, A. (1997) measure of non-linearity
+         * for the given time series.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @param lag The lag
+         * @return result The non-linearity value for the given time series.
+         */
+        public static array.Array C3(array.Array array, long lag)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.c3(ref reference, ref lag, out IntPtr result);
+            return (new array.Array(result));
+
+        }
+
+        /**
+         * @brief Calculates an estimate for the time series complexity defined by
+         * Batista, Gustavo EAPA, et al (2014). (A more complex time series has more peaks,
+         * valleys, etc.).
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @param zNormalize Controls whether the time series should be z-normalized or not.
+         * @return result The complexity value for the given time series.
+         */
+        public static array.Array CidCe(array.Array array, bool zNormalize)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.cid_ce(ref reference, ref zNormalize, out IntPtr result);
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Calculates the number of values in the time series that are higher than
+         * the mean.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @return result The number of values in the time series that are higher
+         * than the mean.
+         */
+        public static array.Array CountAboveMean(array.Array array)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.count_above_mean(ref reference, out IntPtr result);
+            return (new array.Array(result));
+        }
+
+        /**
+        * @brief Calculates the number of values in the time series that are lower than
+        * the mean.
+        *
+        * @param array Expects an input array whose dimension zero is the length of the
+        * time series (all the same) and dimension one indicates the number of time
+        * series.
+        * @return result The number of values in the time series that are lower
+        * than the mean.
+        */
+        public static array.Array CountBelowMean(array.Array array)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.count_below_mean(ref reference, out IntPtr result);
+            return (new array.Array(result));
+        }
+        /*
        public static array.Array cwt_coefficients(array.Array array, IntPtr width, int coeff, int w){}
         
        public static array.Array energy_ratio_by_chunks(array.Array array, long num_segments, long segment_focus){}

@@ -202,6 +202,58 @@ namespace khiva.features.tests
             }
         }
 
+        [Test]
+        public void TestC3()
+        {
+            float[,] tss = { { 0, 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10, 11 } };
+            using(array.Array arr = new array.Array(tss), c3Result = Features.C3(arr, 2))
+            {
+                float[,] result = c3Result.GetData2D<float>();
+                Assert.AreEqual(7.5, result[0, 0]);
+                Assert.AreEqual(586.5, result[1, 0]);
+            }
+
+        }
+
+        [Test]
+        public void TestCidCe()
+        {
+            double[,] tss = { { 0, 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10, 11 } };
+            using(array.Array arr = new array.Array(tss), cidCeFalse = Features.CidCe(arr, false), cidCeTrue = Features.CidCe(arr, true))
+            {
+                double[,] resultFalse = cidCeFalse.GetData2D<double>();
+                double[,] resultTrue = cidCeTrue.GetData2D<double>();
+                Assert.AreEqual(2.23606797749979, resultFalse[0, 0], DELTA);
+                Assert.AreEqual(2.23606797749979, resultFalse[1, 0], DELTA);
+                Assert.AreEqual(1.30930734141595, resultTrue[0, 0], DELTA);
+                Assert.AreEqual(1.30930734141595, resultTrue[1, 0], DELTA);
+            }
+        }
+
+        [Test]
+        public void TestCountAboveMean()
+        {
+            float[,] tss = { { 0, 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10, 11 } };
+            using (array.Array arr = new array.Array(tss), countAboveMeanResult = Features.CountAboveMean(arr))
+            {
+                uint[,] result = countAboveMeanResult.GetData2D<uint>();
+                Assert.AreEqual(3, result[0, 0], DELTA);
+                Assert.AreEqual(3, result[1, 0], DELTA);
+            }
+        }
+
+        [Test]
+        public void TestCountBellowMean()
+        {
+            float[,] tss = { { 0, 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10, 11 } };
+            using (array.Array arr = new array.Array(tss), countBellowMeanResult = Features.CountAboveMean(arr))
+            {
+                uint[,] result = countBellowMeanResult.GetData2D<uint>();
+                Assert.AreEqual(3, result[0, 0], DELTA);
+                Assert.AreEqual(3, result[1, 0], DELTA);
+            }
+        }
+
 
     }
 }

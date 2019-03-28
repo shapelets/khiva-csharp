@@ -190,7 +190,7 @@ namespace khiva.interop
          * @param result The non-linearity value for the given time series.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void c3(ref IntPtr array, ref long lag, ref IntPtr result);
+        public extern static void c3([In] ref IntPtr array, [In] ref long lag, [Out] out IntPtr result);
 
         /**
          * @brief Calculates an estimate for the time series complexity defined by
@@ -204,7 +204,7 @@ namespace khiva.interop
          * @param result The complexity value for the given time series.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void cid_ce(ref IntPtr array, ref bool zNormalize, ref IntPtr result);
+        public extern static void cid_ce([In] ref IntPtr array, [In] ref bool zNormalize, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the number of values in the time series that are higher than
@@ -217,7 +217,7 @@ namespace khiva.interop
          * than the mean.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void count_above_mean(ref IntPtr array, ref IntPtr result);
+        public extern static void count_above_mean([In] ref IntPtr array, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the number of values in the time series that are lower than
@@ -230,7 +230,7 @@ namespace khiva.interop
          * than the mean.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void count_below_mean(ref IntPtr array, ref IntPtr result);
+        public extern static void count_below_mean([In] ref IntPtr array, [Out] out IntPtr result);
         /**
          * @brief Calculates a Continuous wavelet transform for the Ricker wavelet, also known as
          * the "Mexican hat wavelet" which is defined by:
@@ -254,7 +254,7 @@ namespace khiva.interop
          * @param result Result of calculated coefficients.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void cwt_coefficients(ref IntPtr array, ref IntPtr width, ref int coeff, ref int w, ref IntPtr result);
+        public extern static void cwt_coefficients([In] ref IntPtr array, [In] ref IntPtr width, [In] ref int coeff, [In] ref int w, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the sum of squares of chunk i out of N chunks expressed as a ratio.
@@ -269,7 +269,7 @@ namespace khiva.interop
          * @param result The energy ratio by chunk of the time series.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void energy_ratio_by_chunks(ref IntPtr array, ref long num_segments, ref long segment_focus, ref IntPtr result);
+        public extern static void energy_ratio_by_chunks([In] ref IntPtr array, [In] ref long num_segments, [In] ref long segment_focus, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the spectral centroid(mean), variance, skew, and kurtosis of the absolute fourier transform
@@ -282,7 +282,7 @@ namespace khiva.interop
          * spectrum.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void fft_aggregated(ref IntPtr array, ref IntPtr result);
+        public extern static void fft_aggregated([In] ref IntPtr array, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the fourier coefficients of the one-dimensional discrete
@@ -298,8 +298,8 @@ namespace khiva.interop
          * @param angle The angle of the coefficient.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void fft_coefficient(ref IntPtr array, ref long coefficient, ref IntPtr real, ref IntPtr imag,
-                              ref IntPtr absolute, ref IntPtr angle);
+        public extern static void fft_coefficient([In] ref IntPtr array, [In] ref long coefficient, [In] ref IntPtr real, [In] ref IntPtr imag,
+                              ref IntPtr absolute, [In] ref IntPtr angle);
 
         /**
          * @brief Calculates the first relative location of the maximal value for each time series.
@@ -311,7 +311,7 @@ namespace khiva.interop
          *  for each time series.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void first_location_of_maximum(ref IntPtr array, ref IntPtr result);
+        public extern static void first_location_of_maximum([In] ref IntPtr array, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the first location of the minimal value of each time series. The position
@@ -323,7 +323,7 @@ namespace khiva.interop
          * @param result The first relative location of the minimal value of each series.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void first_location_of_minimum(ref IntPtr array, ref IntPtr result);
+        public extern static void first_location_of_minimum([In] ref IntPtr array, [Out] out IntPtr result);
 
         /**
          * @brief Coefficients of polynomial \f$h(x)\f$, which has been fitted to the deterministic
@@ -343,7 +343,7 @@ namespace khiva.interop
          * @param result The coefficients for each time series.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void friedrich_coefficients(ref IntPtr array, ref int m, ref float r, ref IntPtr result);
+        public extern static void friedrich_coefficients([In] ref IntPtr array, [In] ref int m, [In] ref float r, [Out] out IntPtr result);
 
         /**
          * @brief Calculates if the input time series contain duplicated elements.
@@ -355,7 +355,7 @@ namespace khiva.interop
          * and false otherwise.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void has_duplicates(ref IntPtr array, ref IntPtr result);
+        public extern static void has_duplicates([In] ref IntPtr array, [Out] out IntPtr result);
 
         /**
          * @brief Calculates if the maximum within input time series is duplicated.
@@ -367,7 +367,7 @@ namespace khiva.interop
          * and false otherwise.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void has_duplicate_max(ref IntPtr array, ref IntPtr result);
+        public extern static void has_duplicate_max([In] ref IntPtr array, [Out] out IntPtr result);
 
         /**
          * @brief Calculates if the minimum of the input time series is duplicated.
@@ -379,7 +379,7 @@ namespace khiva.interop
          * and false otherwise.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void has_duplicate_min(ref IntPtr array, ref IntPtr result);
+        public extern static void has_duplicate_min([In] ref IntPtr array, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the index of the max quantile.
@@ -391,7 +391,7 @@ namespace khiva.interop
          * @param result The index of the max quantile q.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void index_mass_quantile(ref IntPtr array, ref float q, ref IntPtr result);
+        public extern static void index_mass_quantile([In] ref IntPtr array, [In] ref float q, [Out] out IntPtr result);
 
         /**
          * @brief Returns the kurtosis of array (calculated with the adjusted Fisher-Pearson
@@ -403,7 +403,7 @@ namespace khiva.interop
          * @param result The kurtosis of each array.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void kurtosis(ref IntPtr array, ref IntPtr result);
+        public extern static void kurtosis([In] ref IntPtr array, [Out] out IntPtr result);
 
         /**
          * @brief Checks if the time series within array have a large standard deviation.
@@ -415,7 +415,7 @@ namespace khiva.interop
          * @param result  Array containing True for those time series in array that have a large standard deviation.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void large_standard_deviation(ref IntPtr array, ref float r, ref IntPtr result);
+        public extern static void large_standard_deviation([In] ref IntPtr array, [In] ref float r, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the last location of the maximum value of each time series. The position
@@ -427,7 +427,7 @@ namespace khiva.interop
          * @param result The last relative location of the maximum value of each series.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void last_location_of_maximum(ref IntPtr array, ref IntPtr result);
+        public extern static void last_location_of_maximum([In] ref IntPtr array, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the last location of the minimum value of each time series. The position
@@ -439,7 +439,7 @@ namespace khiva.interop
          * @param result The last relative location of the minimum value of each series.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void last_location_of_minimum(ref IntPtr array, ref IntPtr result);
+        public extern static void last_location_of_minimum([In] ref IntPtr array, [Out] out IntPtr result);
 
         /**
          * @brief Returns the length of the input time series.
@@ -450,7 +450,7 @@ namespace khiva.interop
          * @param result The length of the time series.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void length(ref IntPtr array, ref IntPtr result);
+        public extern static void length([In] ref IntPtr array, [Out] out IntPtr result);
         
         /**
          * @brief Calculate a linear least-squares regression for the values of the time series versus the sequence from 0 to
@@ -466,8 +466,8 @@ namespace khiva.interop
          * @param stdrr The stderr values for all time series.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void linear_trend(ref IntPtr array, ref IntPtr pvalue, ref IntPtr rvalue, ref IntPtr intercept,
-                           ref IntPtr slope, ref IntPtr stdrr);
+        public extern static void linear_trend([In] ref IntPtr array, [In] ref IntPtr pvalue, [In] ref IntPtr rvalue, [In] ref IntPtr intercept,
+                           ref IntPtr slope, [In] ref IntPtr stdrr);
 
         /**
          * @brief Calculates all Local Maximals fot the time series in array.
@@ -477,7 +477,7 @@ namespace khiva.interop
          * @param result The calculated local maximals for each time series in array.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void local_maximals(ref IntPtr array, ref IntPtr result);
+        public extern static void local_maximals([In] ref IntPtr array, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the length of the longest consecutive subsequence in array that is bigger than the mean of array.
@@ -489,7 +489,7 @@ namespace khiva.interop
          * mean.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void longest_strike_above_mean(ref IntPtr array, ref IntPtr result);
+        public extern static void longest_strike_above_mean([In] ref IntPtr array, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the length of the longest consecutive subsequence in array that is below the mean of array.
@@ -500,7 +500,7 @@ namespace khiva.interop
          * @param result The length of the longest consecutive subsequence in the input time series that is below the mean.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void longest_strike_below_mean(ref IntPtr array, ref IntPtr result);
+        public extern static void longest_strike_below_mean([In] ref IntPtr array, [Out] out IntPtr result);
 
         /**
          * @brief Largest fixed point of dynamics \f$\max_x {h(x)=0}\f$ estimated from polynomial
@@ -519,7 +519,7 @@ namespace khiva.interop
          * @param result Largest fixed point of deterministic dynamics.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void max_langevin_fixed_point(ref IntPtr array, ref int m, ref float r, ref IntPtr result);
+        public extern static void max_langevin_fixed_point([In] ref IntPtr array, [In] ref int m, [In] ref float r, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the maximum value for each time series within array.
@@ -530,7 +530,7 @@ namespace khiva.interop
          * @param result The maximum value of each time series within array.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void maximum(ref IntPtr array, ref IntPtr result);
+        public extern static void maximum([In] ref IntPtr array, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the mean value for each time series within array.
@@ -541,7 +541,7 @@ namespace khiva.interop
          * @param result The mean value of each time series within array.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void mean(ref IntPtr array, ref IntPtr result);
+        public extern static void mean([In] ref IntPtr array, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the mean over the absolute differences between subsequent time series values in array.
@@ -552,7 +552,7 @@ namespace khiva.interop
          * @param result The maximum value of each time series within array.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void mean_absolute_change(ref IntPtr array, ref IntPtr result);
+        public extern static void mean_absolute_change([In] ref IntPtr array, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the mean over the differences between subsequent time series values in array.
@@ -563,7 +563,7 @@ namespace khiva.interop
          * @param result The mean over the differences between subsequent time series values.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void mean_change(ref IntPtr array, ref IntPtr result);
+        public extern static void mean_change([In] ref IntPtr array, [Out] out IntPtr result);
 
         /**
          * @brief Calculates mean value of a central approximation of the second derivative for each time series in array.
@@ -574,7 +574,7 @@ namespace khiva.interop
          * @param result The mean value of a central approximation of the second derivative for each time series.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void mean_second_derivative_central(ref IntPtr array, ref IntPtr result);
+        public extern static void mean_second_derivative_central([In] ref IntPtr array, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the median value for each time series within array.
@@ -585,7 +585,7 @@ namespace khiva.interop
          * @param result The median value of each time series within array.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void median(ref IntPtr array, ref IntPtr result);
+        public extern static void median([In] ref IntPtr array, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the minimum value for each time series within array.
@@ -596,7 +596,7 @@ namespace khiva.interop
          * @param result The minimum value of each time series within array.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void minimum(ref IntPtr array, ref IntPtr result);
+        public extern static void minimum([In] ref IntPtr array, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the number of m-crossings. A m-crossing is defined as two sequential values where the first
@@ -610,7 +610,7 @@ namespace khiva.interop
          * @param result The number of m-crossings of each time series within array.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void number_crossing_m(ref IntPtr array, ref int m, ref IntPtr result);
+        public extern static void number_crossing_m([In] ref IntPtr array, [In] ref int m, [Out] out IntPtr result);
         
         /**
          * @brief This feature calculator searches for different peaks. To do so, the time series is smoothed by a ricker
@@ -623,7 +623,7 @@ namespace khiva.interop
          * @param result The number of peaks for each time series.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void number_cwt_peaks(ref IntPtr array, ref int max_w, ref IntPtr result);
+        public extern static void number_cwt_peaks([In] ref IntPtr array, [In] ref int max_w, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the number of peaks of at least support \f$n\f$ in the time series \f$array\f$. A peak of support
@@ -637,7 +637,7 @@ namespace khiva.interop
          * @param result The number of peaks of at least support \f$n\f$.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void number_peaks(ref IntPtr array, ref int n, ref IntPtr result);
+        public extern static void number_peaks([In] ref IntPtr array, [In] ref int n, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the value of the partial autocorrelation function at the given lag. The lag \f$k\f$ partial
@@ -666,7 +666,7 @@ namespace khiva.interop
          * @param result Returns partial autocorrelation for each time series for the given lag.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void partial_autocorrelation(ref IntPtr array, ref IntPtr lags, ref IntPtr result);
+        public extern static void partial_autocorrelation([In] ref IntPtr array, [In] ref IntPtr lags, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the percentage of unique values, that are present in the time series more than once.
@@ -683,7 +683,7 @@ namespace khiva.interop
          * @param result Returns the percentage of unique values, that are present in the time series more than once.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void percentage_of_reoccurring_datapoints_to_all_datapoints(ref IntPtr array, ref bool is_sorted,
+        public extern static void percentage_of_reoccurring_datapoints_to_all_datapoints([In] ref IntPtr array, [In] ref bool is_sorted,
                                                                      ref IntPtr result);
 
         /**
@@ -700,7 +700,7 @@ namespace khiva.interop
          * @param result Returns the percentage of unique values, that are present in the time series more than once.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void percentage_of_reoccurring_values_to_all_values(ref IntPtr array, ref bool is_sorted, ref IntPtr result);
+        public extern static void percentage_of_reoccurring_values_to_all_values([In] ref IntPtr array, [In] ref bool is_sorted, [Out] out IntPtr result);
 
         /**
          * @brief Returns values at the given quantile.
@@ -713,7 +713,7 @@ namespace khiva.interop
          * @param result Values at the given quantile.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void quantile(ref IntPtr array, ref IntPtr q, ref float precision, ref IntPtr result);
+        public extern static void quantile([In] ref IntPtr array, [In] ref IntPtr q, [In] ref float precision, [Out] out IntPtr result);
 
         /**
          * @brief Counts observed values within the interval [min, max).
@@ -726,7 +726,7 @@ namespace khiva.interop
          * @param result Values at the given range.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void range_count(ref IntPtr array, ref float min, ref float max, ref IntPtr result);
+        public extern static void range_count([In] ref IntPtr array, [In] ref float min, [In] ref float max, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the ratio of values that are more than \f$r*std(x)\f$ (so \f$r\f$ sigma) away from the mean of
@@ -740,7 +740,7 @@ namespace khiva.interop
          * \f$x\f$.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void ratio_beyond_r_sigma(ref IntPtr array, ref float r, ref IntPtr result);
+        public extern static void ratio_beyond_r_sigma([In] ref IntPtr array, [In] ref float r, [Out] out IntPtr result);
 
         /**
          * @brief Calculates a factor which is 1 if all values in the time series occur only once, and below one if this is
@@ -755,7 +755,7 @@ namespace khiva.interop
          * @param result The ratio of unique values with respect to the total number of values.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void ratio_value_number_to_time_series_length(ref IntPtr array, ref IntPtr result);
+        public extern static void ratio_value_number_to_time_series_length([In] ref IntPtr array, [Out] out IntPtr result);
 
         /**
          * @brief Calculates a vectorized sample entropy algorithm.
@@ -773,7 +773,7 @@ namespace khiva.interop
          * contains the vectorized sample entropy for all the input time series in array.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void sample_entropy(ref IntPtr array, ref IntPtr result);
+        public extern static void sample_entropy([In] ref IntPtr array, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the sample skewness of array (calculated with the adjusted Fisher-Pearson standardized
@@ -785,7 +785,7 @@ namespace khiva.interop
          * @param result Array containing the skewness of each time series in array.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void skewness(ref IntPtr array, ref IntPtr result);
+        public extern static void skewness([In] ref IntPtr array, [Out] out IntPtr result);
 
         /**
          * @brief Estimates the cross power spectral density of the time series array at different frequencies. To do so, the
@@ -806,7 +806,7 @@ namespace khiva.interop
          * array.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void spkt_welch_density(ref IntPtr array, ref int coeff, ref IntPtr result);
+        public extern static void spkt_welch_density([In] ref IntPtr array, [In] ref int coeff, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the standard deviation of each time series within array.
@@ -817,7 +817,7 @@ namespace khiva.interop
          * @param result The standard deviation of each time series within array.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void standard_deviation(ref IntPtr array, ref IntPtr result);
+        public extern static void standard_deviation([In] ref IntPtr array, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the sum of all data points, that are present in the time series more than once.
@@ -829,7 +829,7 @@ namespace khiva.interop
          * @param result Returns the sum of all data points, that are present in the time series more than once.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void sum_of_reoccurring_datapoints(ref IntPtr array, ref bool is_sorted, ref IntPtr result);
+        public extern static void sum_of_reoccurring_datapoints([In] ref IntPtr array, [In] ref bool is_sorted, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the sum of all values, that are present in the time series more than once.
@@ -840,7 +840,7 @@ namespace khiva.interop
          * @param result Returns the sum of all values, that are present in the time series more than once.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void sum_of_reoccurring_values(ref IntPtr array, ref bool is_sorted, ref IntPtr result);
+        public extern static void sum_of_reoccurring_values([In] ref IntPtr array, [In] ref bool is_sorted, [Out] out IntPtr result);
 
          /**
          * @brief Calculates the sum over the time series array.
@@ -850,7 +850,7 @@ namespace khiva.interop
          * @param result An array containing the sum of values in each time series.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void sum_values(ref IntPtr array, ref IntPtr result);
+        public extern static void sum_values([In] ref IntPtr array, [Out] out IntPtr result);
 
         /**
          * @brief Calculates if the distribution of array *looks symmetric*. This is the case if
@@ -865,7 +865,7 @@ namespace khiva.interop
          * @param result An array denoting if the input time series look symmetric.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void symmetry_looking(ref IntPtr array, ref float r, ref IntPtr result);
+        public extern static void symmetry_looking([In] ref IntPtr array, [In] ref float r, [Out] out IntPtr result);
 
         /**
          * @brief This function calculates the value of:
@@ -888,7 +888,7 @@ namespace khiva.interop
          * @param result An array containing the time reversal asymetry statistic value in each time series.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void time_reversal_asymmetry_statistic(ref IntPtr array, ref int lag, ref IntPtr result);
+        public extern static void time_reversal_asymmetry_statistic([In] ref IntPtr array, [In] ref int lag, [Out] out IntPtr result);
 
         /**
          * @brief Counts occurrences of value in the time series array.
@@ -900,7 +900,7 @@ namespace khiva.interop
          * @param result An array containing the count of the given value in each time series.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void value_count(ref IntPtr array, ref float v, ref IntPtr result);
+        public extern static void value_count([In] ref IntPtr array, [In] ref float v, [Out] out IntPtr result);
 
         /**
          * @brief Computes the variance for the time series array.
@@ -910,7 +910,7 @@ namespace khiva.interop
          * @param result An array containing the variance in each time series.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void variance(ref IntPtr array, ref IntPtr result);
+        public extern static void variance([In] ref IntPtr array, [Out] out IntPtr result);
 
         /**
          * @brief Calculates if the variance of array is greater than the standard deviation. In other words, if the variance of
@@ -921,7 +921,7 @@ namespace khiva.interop
          * @param result An array denoting if the variance of array is greater than the standard deviation.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void variance_larger_than_standard_deviation(ref IntPtr array, ref IntPtr result);
+        public extern static void variance_larger_than_standard_deviation([In] ref IntPtr array, [Out] out IntPtr result);
 
     }
 }
