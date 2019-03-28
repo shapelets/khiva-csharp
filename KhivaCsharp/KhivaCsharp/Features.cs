@@ -156,132 +156,188 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-       public static array.Array AutoCovariance(IntPtr array, bool unbiased, IntPtr result)
+        /**
+         * @brief Calculates the auto-covariance the given time series.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @param unbiased Determines whether it divides by n - lag (if true) or
+         * n (if false).
+         * @return result The auto-covariance value for the given time series.
+         */
+        public static array.Array AutoCovariance(array.Array array, bool unbiased = false)
         {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.auto_covariance(ref reference, ref unbiased, out IntPtr result);
+            return (new array.Array(result));
         }
-        
-       public static array.Array CrossCorrelation(IntPtr xss, IntPtr yss, bool unbiased, IntPtr result)
+
+        /**
+         * @brief Calculates the cross-correlation of the given time series.
+         *
+         * @param xss Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @param yss Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @param unbiased Determines whether it divides by n - lag (if true) or
+         * n (if false).
+         * @return result The cross-correlation value for the given time series.
+         */
+        public static array.Array CrossCorrelation(array.Array xss, array.Array yss, bool unbiased)
         {
+            IntPtr referenceXss = xss.Reference;
+            IntPtr referenceYss = yss.Reference;
+            interop.DLLFeatures.cross_correlation(ref referenceXss, ref referenceYss, ref unbiased, out IntPtr result);
+            return (new array.Array(result));
         }
-        
-       public static array.Array AutoCorrelation(IntPtr array, long max_lag, bool unbiased, IntPtr result)
+
+        /**
+         * @brief Calculates the autocorrelation of the specified lag for the given time.
+         * series.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @param max_lag The maximum lag to compute.
+         * @param unbiased Determines whether it divides by n - lag (if true) or n ( if false)
+         * @return result The autocorrelation value for the given time series.
+         */
+        public static array.Array AutoCorrelation(array.Array array, long max_lag, bool unbiased)
         {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.auto_correlation(ref reference, ref max_lag, ref unbiased, out IntPtr result);
+            return (new array.Array(result));
         }
-        
-       public static array.Array BinnedEntropy(IntPtr array, int max_bins, IntPtr result)
+
+        /**
+         * @brief Calculates the binned entropy for the given time series and number of bins.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @param max_bins The number of bins.
+         * @return result The binned entropy value for the given time series.
+         */
+        public static array.Array BinnedEntropy(array.Array array, int max_bins)
         {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.binned_entropy(ref reference, ref max_bins, out IntPtr result);
+            return (new array.Array(result));
         }
       /*  
-       public static array.Array c3(IntPtr array, long lag, IntPtr result){}
+       public static array.Array c3(array.Array array, long lag){}
         
-       public static array.Array cid_ce(IntPtr array, bool zNormalize, IntPtr result){}
+       public static array.Array cid_ce(array.Array array, bool zNormalize){}
         
-       public static array.Array count_above_mean(IntPtr array, IntPtr result){}
+       public static array.Array count_above_mean(array.Array array){}
         
-       public static array.Array count_below_mean(IntPtr array, IntPtr result){}
+       public static array.Array count_below_mean(array.Array array){}
         
-       public static array.Array cwt_coefficients(IntPtr array, IntPtr width, int coeff, int w, IntPtr result){}
+       public static array.Array cwt_coefficients(array.Array array, IntPtr width, int coeff, int w){}
         
-       public static array.Array energy_ratio_by_chunks(IntPtr array, long num_segments, long segment_focus, IntPtr result){}
+       public static array.Array energy_ratio_by_chunks(array.Array array, long num_segments, long segment_focus){}
         
-       public static array.Array fft_aggregated(IntPtr array, IntPtr result){}
+       public static array.Array fft_aggregated(array.Array array){}
         
-       public static array.Array fft_coefficient(IntPtr array, long coefficient, IntPtr real, IntPtr imag,
+       public static array.Array fft_coefficient(array.Array array, long coefficient, IntPtr real, IntPtr imag,
                               IntPtr absolute, IntPtr angle){}
         
-       public static array.Array first_location_of_maximum(IntPtr array, IntPtr result){}
+       public static array.Array first_location_of_maximum(array.Array array){}
         
-       public static array.Array first_location_of_minimum(IntPtr array, IntPtr result){}
+       public static array.Array first_location_of_minimum(array.Array array){}
         
-       public static array.Array friedrich_coefficients(IntPtr array, int m, float r, IntPtr result){}
+       public static array.Array friedrich_coefficients(array.Array array, int m, float r){}
         
-       public static array.Array has_duplicates(IntPtr array, IntPtr result){}
+       public static array.Array has_duplicates(array.Array array){}
         
-       public static array.Array has_duplicate_max(IntPtr array, IntPtr result){}
+       public static array.Array has_duplicate_max(array.Array array){}
         
-       public static array.Array has_duplicate_min(IntPtr array, IntPtr result){}
+       public static array.Array has_duplicate_min(array.Array array){}
         
-       public static array.Array index_mass_quantile(IntPtr array, float q, IntPtr result){}
+       public static array.Array index_mass_quantile(array.Array array, float q){}
         
-       public static array.Array kurtosis(IntPtr array, IntPtr result){}
+       public static array.Array kurtosis(array.Array array){}
         
-       public static array.Array large_standard_deviation(IntPtr array, float r, IntPtr result){}
+       public static array.Array large_standard_deviation(array.Array array, float r){}
         
-       public static array.Array last_location_of_maximum(IntPtr array, IntPtr result){}
+       public static array.Array last_location_of_maximum(array.Array array){}
         
-       public static array.Array last_location_of_minimum(IntPtr array, IntPtr result){}
+       public static array.Array last_location_of_minimum(array.Array array){}
         
-       public static array.Array length(IntPtr array, IntPtr result){}
+       public static array.Array length(array.Array array){}
         
-       public static array.Array linear_trend(IntPtr array, IntPtr pvalue, IntPtr rvalue, IntPtr intercept,
+       public static array.Array linear_trend(array.Array array, IntPtr pvalue, IntPtr rvalue, IntPtr intercept,
                            IntPtr slope, IntPtr stdrr){}
         
-       public static array.Array local_maximals(IntPtr array, IntPtr result){}
+       public static array.Array local_maximals(array.Array array){}
         
-       public static array.Array longest_strike_above_mean(IntPtr array, IntPtr result){}
+       public static array.Array longest_strike_above_mean(array.Array array){}
         
-       public static array.Array longest_strike_below_mean(IntPtr array, IntPtr result){}
+       public static array.Array longest_strike_below_mean(array.Array array){}
         
-       public static array.Array max_langevin_fixed_point(IntPtr array, int m, float r, IntPtr result){}
+       public static array.Array max_langevin_fixed_point(array.Array array, int m, float r){}
         
-       public static array.Array maximum(IntPtr array, IntPtr result){}
+       public static array.Array maximum(array.Array array){}
         
-       public static array.Array mean(IntPtr array, IntPtr result){}
+       public static array.Array mean(array.Array array){}
         
-       public static array.Array mean_absolute_change(IntPtr array, IntPtr result){}
+       public static array.Array mean_absolute_change(array.Array array){}
         
-       public static array.Array mean_change(IntPtr array, IntPtr result){}
+       public static array.Array mean_change(array.Array array){}
         
-       public static array.Array mean_second_derivative_central(IntPtr array, IntPtr result){}
+       public static array.Array mean_second_derivative_central(array.Array array){}
         
-       public static array.Array median(IntPtr array, IntPtr result){}
+       public static array.Array median(array.Array array){}
         
-       public static array.Array minimum(IntPtr array, IntPtr result){}
+       public static array.Array minimum(array.Array array){}
         
-       public static array.Array number_crossing_m(IntPtr array, int m, IntPtr result){}
+       public static array.Array number_crossing_m(array.Array array, int m){}
         
-       public static array.Array number_cwt_peaks(IntPtr array, int max_w, IntPtr result){}
+       public static array.Array number_cwt_peaks(array.Array array, int max_w){}
         
-       public static array.Array number_peaks(IntPtr array, int n, IntPtr result){}
+       public static array.Array number_peaks(array.Array array, int n){}
         
-       public static array.Array partial_autocorrelation(IntPtr array, IntPtr lags, IntPtr result){}
+       public static array.Array partial_autocorrelation(array.Array array, IntPtr lags){}
         
-       public static array.Array percentage_of_reoccurring_datapoints_to_all_datapoints(IntPtr array, bool is_sorted,
+       public static array.Array percentage_of_reoccurring_datapoints_to_all_datapoints(array.Array array, bool is_sorted,
                                                                      IntPtr result){}
         
-       public static array.Array percentage_of_reoccurring_values_to_all_values(IntPtr array, bool is_sorted, IntPtr result){}
+       public static array.Array percentage_of_reoccurring_values_to_all_values(array.Array array, bool is_sorted){}
         
-       public static array.Array quantile(IntPtr array, IntPtr q, float precision, IntPtr result){}
+       public static array.Array quantile(array.Array array, IntPtr q, float precision){}
         
-       public static array.Array range_count(IntPtr array, float min, float max, IntPtr result){}
+       public static array.Array range_count(array.Array array, float min, float max){}
         
-       public static array.Array ratio_beyond_r_sigma(IntPtr array, float r, IntPtr result){}
+       public static array.Array ratio_beyond_r_sigma(array.Array array, float r){}
         
-       public static array.Array ratio_value_number_to_time_series_length(IntPtr array, IntPtr result){}
+       public static array.Array ratio_value_number_to_time_series_length(array.Array array){}
         
-       public static array.Array sample_entropy(IntPtr array, IntPtr result){}
+       public static array.Array sample_entropy(array.Array array){}
         
-       public static array.Array skewness(IntPtr array, IntPtr result){}
+       public static array.Array skewness(array.Array array){}
         
-       public static array.Array spkt_welch_density(IntPtr array, int coeff, IntPtr result){}
+       public static array.Array spkt_welch_density(array.Array array, int coeff){}
         
-       public static array.Array standard_deviation(IntPtr array, IntPtr result){}
+       public static array.Array standard_deviation(array.Array array){}
         
-       public static array.Array sum_of_reoccurring_datapoints(IntPtr array, bool is_sorted, IntPtr result){}
+       public static array.Array sum_of_reoccurring_datapoints(array.Array array, bool is_sorted){}
         
-       public static array.Array sum_of_reoccurring_values(IntPtr array, bool is_sorted, IntPtr result){}
+       public static array.Array sum_of_reoccurring_values(array.Array array, bool is_sorted){}
         
-       public static array.Array sum_values(IntPtr array, IntPtr result){}
+       public static array.Array sum_values(array.Array array){}
         
-       public static array.Array symmetry_looking(IntPtr array, float r, IntPtr result){}
+       public static array.Array symmetry_looking(array.Array array, float r){}
         
-       public static array.Array time_reversal_asymmetry_statistic(IntPtr array, int lag, IntPtr result){}
+       public static array.Array time_reversal_asymmetry_statistic(array.Array array, int lag){}
         
-       public static array.Array value_count(IntPtr array, float v, IntPtr result){}
+       public static array.Array value_count(array.Array array, float v){}
         
-       public static array.Array variance(IntPtr array, IntPtr result){}
+       public static array.Array variance(array.Array array){}
         
-       public static array.Array variance_larger_than_standard_deviation(IntPtr array, IntPtr result){}
+       public static array.Array variance_larger_than_standard_deviation(array.Array array){}
        */
     }
 }

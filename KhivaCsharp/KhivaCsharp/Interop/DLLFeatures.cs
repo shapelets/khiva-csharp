@@ -165,7 +165,7 @@ namespace khiva.interop
          * @param result The autocorrelation value for the given time series.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void auto_correlation(ref IntPtr array, ref long max_lag, ref bool unbiased, ref IntPtr result);
+        public extern static void auto_correlation([In] ref IntPtr array, [In] ref long max_lag, [In] ref bool unbiased, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the binned entropy for the given time series and number of bins.
@@ -177,7 +177,7 @@ namespace khiva.interop
          * @param result The binned entropy value for the given time series.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void binned_entropy(ref IntPtr array, ref int max_bins, ref IntPtr result);
+        public extern static void binned_entropy([In] ref IntPtr array, [In] ref int max_bins, [Out] out IntPtr result);
 
         /**
          * @brief Calculates the Schreiber, T. and Schmitz, A. (1997) measure of non-linearity
