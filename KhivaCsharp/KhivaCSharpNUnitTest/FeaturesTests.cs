@@ -246,7 +246,7 @@ namespace khiva.features.tests
         public void TestCountBellowMean()
         {
             float[,] tss = { { 0, 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10, 11 } };
-            using (array.Array arr = new array.Array(tss), countBellowMeanResult = Features.CountAboveMean(arr))
+            using (array.Array arr = new array.Array(tss), countBellowMeanResult = Features.CountBelowMean(arr))
             {
                 uint[,] result = countBellowMeanResult.GetData2D<uint>();
                 Assert.AreEqual(3, result[0, 0], DELTA);
