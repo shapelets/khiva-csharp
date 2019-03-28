@@ -524,28 +524,179 @@ namespace khiva.features
             interop.DLLFeatures.kurtosis(ref reference, out IntPtr result);
             return (new array.Array(result));
         }
+
+        /**
+         * @brief Checks if the time series within array have a large standard deviation.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @param r The threshold.
+         * @return result  Array containing True for those time series in array that have a large standard deviation.
+         */
+        public static array.Array LargeStandardDeviation(array.Array array, float r)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.large_standard_deviation(ref reference, ref r, out IntPtr result);
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Calculates the last location of the maximum value of each time series. The position
+         * is calculated relatively to the length of the series.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @return result The last relative location of the maximum value of each series.
+         */
+        public static array.Array LastLocationOfMaximum(array.Array array)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.last_location_of_maximum(ref reference, out IntPtr result);
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Calculates the last location of the minimum value of each time series. The position
+         * is calculated relatively to the length of the series.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @return result The last relative location of the minimum value of each series.
+         */
+        public static array.Array LastLocationOfMinimum(array.Array array)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.last_location_of_minimum(ref reference, out IntPtr result);
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Returns the length of the input time series.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @return result The length of the time series.
+         */
+        public static array.Array Length(array.Array array)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.length(ref reference, out IntPtr result);
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Calculate a linear least-squares regression for the values of the time series versus the sequence from 0 to
+         * length of the time series minus one.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @return pvalue The pvalues for all time series.
+         * @return rvalue The rvalues for all time series.
+         * @return intercept The intercept values for all time series.
+         * @return slope The slope for all time series.
+         * @return stdrr The stderr values for all time series.
+         */
+        public static (array.Array, array.Array, array.Array, array.Array, array.Array) LinearTrend(array.Array array)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.linear_trend(ref reference,
+                                        out IntPtr pvalue, out IntPtr rvalue, out IntPtr intercept, out IntPtr slope, out IntPtr stdrr);
+            var tuple = (pvalueArr: new array.Array(pvalue),
+                        rvalueArr: new array.Array(rvalue),
+                        interceptArr: new array.Array(intercept),
+                        slopeArr: new array.Array(slope),
+                        stdrrArr: new array.Array(stdrr));
+            return tuple;
+        }
+
+        /**
+         * @brief Calculates all Local Maximals fot the time series in array.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the time series (all the same)
+         * and dimension one indicates the number of time series.
+         * @return result The calculated local maximals for each time series in array.
+         */
+        public static array.Array LocalMaximals(array.Array array)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.local_maximals(ref reference, out IntPtr result);
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Calculates the length of the longest consecutive subsequence in array that is bigger than the mean of array.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @return result The length of the longest consecutive subsequence in the input time series that is bigger than the
+         * mean.
+         */
+        public static array.Array LongestStrikeAboveMean(array.Array array)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.longest_strike_above_mean(ref reference, out IntPtr result);
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Calculates the length of the longest consecutive subsequence in array that is below the mean of array.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @return result The length of the longest consecutive subsequence in the input time series that is below the mean.
+         */
+        public static array.Array LongestStrikeBelowMean(array.Array array)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.longest_strike_below_mean(ref reference, out IntPtr result);
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Largest fixed point of dynamics \f$\max_x {h(x)=0}\f$ estimated from polynomial
+         * \f$h(x)\f$, which has been fitted to the deterministic dynamics of Langevin model
+         * \f[
+         *    \dot(x)(t) = h(x(t)) + R \mathcal(N)(0,1)
+         * \f]
+         * as described by
+         * Friedrich et al. (2000): Physics Letters A 271, p. 217-222 *Extracting model equations from experimental data.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @param m Order of polynom to fit for estimating fixed points of dynamics.
+         * @param r Number of quantiles to use for averaging.
+         * @return result Largest fixed point of deterministic dynamics.
+         */
+        public static array.Array MaxLangevinFixedPoint(array.Array array, int m, float r)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.max_langevin_fixed_point(ref reference, ref m, ref r, out IntPtr result);
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Calculates the maximum value for each time series within array.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @param result The maximum value of each time series within array.
+         */
+        public static array.Array Maximum(array.Array array)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.maximum(ref reference, out IntPtr result);
+            return (new array.Array(result));
+        }
         /*
-       public static array.Array large_standard_deviation(array.Array array, float r){}
-        
-       public static array.Array last_location_of_maximum(array.Array array){}
-        
-       public static array.Array last_location_of_minimum(array.Array array){}
-        
-       public static array.Array length(array.Array array){}
-        
-       public static array.Array linear_trend(array.Array array, IntPtr pvalue, IntPtr rvalue, IntPtr intercept,
-                           IntPtr slope, IntPtr stdrr){}
-        
-       public static array.Array local_maximals(array.Array array){}
-        
-       public static array.Array longest_strike_above_mean(array.Array array){}
-        
-       public static array.Array longest_strike_below_mean(array.Array array){}
-        
-       public static array.Array max_langevin_fixed_point(array.Array array, int m, float r){}
-        
-       public static array.Array maximum(array.Array array){}
-        
        public static array.Array mean(array.Array array){}
         
        public static array.Array mean_absolute_change(array.Array array){}

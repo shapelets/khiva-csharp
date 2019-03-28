@@ -467,8 +467,8 @@ namespace khiva.interop
          * @param stdrr The stderr values for all time series.
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void linear_trend([In] ref IntPtr array, [In] ref IntPtr pvalue, [In] ref IntPtr rvalue, [In] ref IntPtr intercept,
-                           ref IntPtr slope, [In] ref IntPtr stdrr);
+        public extern static void linear_trend([In] ref IntPtr array, [Out] out IntPtr pvalue, [Out] out IntPtr rvalue, [Out] out IntPtr intercept,
+                           [Out] out IntPtr slope, [Out] out IntPtr stdrr);
 
         /**
          * @brief Calculates all Local Maximals fot the time series in array.

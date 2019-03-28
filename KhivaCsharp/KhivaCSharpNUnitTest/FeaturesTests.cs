@@ -450,5 +450,163 @@ namespace khiva.features.tests
                 Assert.AreEqual(-2.66226722, result[1, 0], DELTA);
             }
         }
+
+        [Test]
+        public void TestLargeStandardDeviation()
+        {
+            int[,] tss = { { -1, -1, -1, 1, 1, 1 },
+                           { 4, 6, 8, 4, 5, 4 } };
+            using (array.Array arr = new array.Array(tss), largeStandardDeviation = Features.LargeStandardDeviation(arr, 0.4F))
+            {
+                bool[,] result = largeStandardDeviation.GetData2D<bool>();
+                Assert.AreEqual(true, result[0, 0]);
+                Assert.AreEqual(false, result[1, 0]);
+            }
+        }
+
+        [Test]
+        public void TestLastLocationOfMaximum()
+        {
+            double[,] tss = { { 0, 4, 3, 5, 5, 1 },
+                           { 0, 4, 3, 2, 5, 1 } };
+            using (array.Array arr = new array.Array(tss), lastLocationOfMaximum = Features.LastLocationOfMaximum(arr))
+            {
+                double[,] result = lastLocationOfMaximum.GetData2D<double>();
+                Assert.AreEqual(0.8333333333333334, result[0, 0], DELTA);
+                Assert.AreEqual(0.8333333333333334, result[1, 0], DELTA);
+            }
+        }
+
+        [Test]
+        public void TestLastLocationOfMinimum()
+        {
+            double[,] tss = { { 0, 4, 3, 5, 5, 1, 0, 4 },
+                           { 3, 2, 5, 1, 4, 5, 1, 2 } };
+            using (array.Array arr = new array.Array(tss), lastLocationOfMinimum = Features.LastLocationOfMinimum(arr))
+            {
+                double[,] result = lastLocationOfMinimum.GetData2D<double>();
+                Assert.AreEqual(0.875, result[0, 0], DELTA);
+                Assert.AreEqual(0.875, result[1, 0], DELTA);
+            }
+        }
+
+        [Test]
+        public void TestLength()
+        {
+            long[,] tss = { { 0, 4, 3, 5, 5, 1 },
+                           { 0, 4, 3, 2, 5, 1 } };
+            using (array.Array arr = new array.Array(tss), length = Features.Length(arr))
+            {
+                int[,] result = length.GetData2D<int>();
+                Assert.AreEqual(6, result[0, 0]);
+                Assert.AreEqual(6, result[0, 1]);
+            }
+        }
+
+        [Test]
+        public void TestLinearTrend()
+        {
+            double[,] tss = { { 0, 4, 3, 5, 5, 1 },
+                              { 2, 4, 1, 2, 5, 3 } };
+            using(array.Array arr = new array.Array(tss))
+            {
+                var (pvalueArr, rvalueArr, interceptArr, slopeArr, stderrArr) = Features.LinearTrend(arr);
+                using (pvalueArr)
+                using (rvalueArr)
+                using (interceptArr)
+                using (slopeArr)
+                using (stderrArr)
+                {
+                    double[,] pvalue = pvalueArr.GetData2D<double>();
+                    double[,] rvalue = rvalueArr.GetData2D<double>();
+                    double[,] intercept = interceptArr.GetData2D<double>();
+                    double[,] slope = slopeArr.GetData2D<double>();
+                    double[,] stdErr = stderrArr.GetData2D<double>();
+
+                    Assert.AreEqual(0.6260380997892747, pvalue[0, 0], DELTA);
+                    Assert.AreEqual(0.5272201945463578, pvalue[1, 0], DELTA);
+
+                    Assert.AreEqual(0.2548235957188128, rvalue[0, 0], DELTA);
+                    Assert.AreEqual(0.3268228676411533, rvalue[1, 0], DELTA);
+
+                    Assert.AreEqual(2.2857142857142856, intercept[0, 0], DELTA);
+                    Assert.AreEqual(2.1904761904761907, intercept[1, 0], DELTA);
+
+                    Assert.AreEqual(0.2857142857142857, slope[0, 0], DELTA);
+                    Assert.AreEqual(0.2571428571428572, slope[1, 0], DELTA);
+
+                    Assert.AreEqual(0.5421047417431507, stdErr[0, 0], DELTA);
+                    Assert.AreEqual(0.37179469135129783, stdErr[1, 0], DELTA);
+                }
+            }
+        }
+
+        [Test]
+        public void TestLocalMaximals()
+        {
+            float[,] tss = { { 1, 2, 3, 1, 5, 3 }, { 1, 2, 3, 4, 5, 3 } };
+            using(array.Array arr = new array.Array(tss), localMaximals = Features.LocalMaximals(arr))
+            {
+                int[,] result = localMaximals.GetData2D<int>();
+                int[,] expected = { { 0, 0, 1, 0, 1, 0 }, { 0, 0, 1, 0, 1, 0 } };
+                Assert.AreEqual(expected, result);
+            }
+        }
+
+        [Test]
+        public void TestLongestStrikeAboveMean()
+        {
+            double[,] tss = { { 20, 20, 20, 1, 1, 1, 20, 20, 20, 20, 1, 1, 1, 1,
+                             1, 1, 1, 1, 20, 20 },
+                           {20, 20, 20, 1, 1, 1, 20, 20, 20, 1, 1, 1, 1, 1, 1,
+                            1, 1, 1, 20, 20 } };
+            using(array.Array arr = new array.Array(tss), longestStrikeAboveMean = Features.LongestStrikeAboveMean(arr))
+            {
+                double[,] result = longestStrikeAboveMean.GetData2D<double>();
+                Assert.AreEqual(4, result[0, 0]);
+                Assert.AreEqual(3, result[1, 0]);
+            }
+        }
+
+        [Test]
+        public void TestLongestStrikeBelowMean()
+        {
+            float[,] tss = { { 20, 20, 20, 1, 1, 1, 20, 20, 20, 20, 1, 1, 1, 1,
+                             1, 1, 1, 1, 20, 20 },
+                           {20, 20, 20, 1, 1, 1, 20, 20, 20, 1, 1, 1, 1, 1, 1,
+                            1, 1, 1, 20, 20 } };
+            using (array.Array arr = new array.Array(tss), longestStrikeBelowMean = Features.LongestStrikeBelowMean(arr))
+            {
+                float[,] result = longestStrikeBelowMean.GetData2D<float>();
+                Assert.AreEqual(8, result[0, 0]);
+                Assert.AreEqual(9, result[1, 0]);
+            }
+        }
+
+        [Test]
+        public void TestMaxLangevinFixedPoint()
+        {
+            float[,] tss = { { 0, 1, 2, 3, 4, 5 },
+                             { 0, 1, 2, 3, 4, 5 } };
+            using (array.Array arr = new array.Array(tss), maxLangevinFixedPoint = Features.MaxLangevinFixedPoint(arr, 7, 2))
+            {
+                float[,] result = maxLangevinFixedPoint.GetData2D<float>();
+                Assert.AreEqual(4.562970585, result[0, 0], 1e-4);
+                Assert.AreEqual(4.562970585, result[1, 0], 1e-4);
+            }
+        }
+
+        [Test]
+        public void TestMaximum()
+        {
+            long[,] tss = { { 20, 20, 20, 18, 25, 19, 20, 20, 20, 20, 40, 30, 1, 50, 1, 1, 5, 1, 20, 20 },
+                           { 20, 20, 20, 2, 19, 1, 20, 20, 20, 1, 15, 1, 30, 1, 1, 18, 4, 1, 20, 20 } };
+            using (array.Array arr = new array.Array(tss), maximum = Features.Maximum(arr))
+            {
+                long[,] result = maximum.GetData2D<long>();
+                Assert.AreEqual(50, result[0, 0]);
+                Assert.AreEqual(30, result[1, 0]);
+            }
+        }
     }
 }
