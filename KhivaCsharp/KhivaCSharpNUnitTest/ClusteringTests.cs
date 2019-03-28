@@ -40,17 +40,15 @@ namespace khiva.clustering.tests
             using (array.Array arr = new array.Array(tss)) {
                 var (centroidsArr, labelsArr) = clustering.Clustering.KMeans(arr, 3);
                 using (centroidsArr)
+                using (labelsArr)
                 {
-                    using (labelsArr)
-                    {
-                        double[,] data = centroidsArr.GetData2D<double>();
+                    double[,] data = centroidsArr.GetData2D<double>();
 
-                        for (int i = 0; i < 4; i++)
-                        {
-                            Assert.AreEqual(expected[0, i] + expected[1, i] + expected[2, i],
-                                            data[0, i] + data[1, i] + data[2, i],
-                                            1e-3);
-                        }
+                    for (int i = 0; i < 4; i++)
+                    {
+                        Assert.AreEqual(expected[0, i] + expected[1, i] + expected[2, i],
+                                        data[0, i] + data[1, i] + data[2, i],
+                                        1e-3);
                     }
                 }
             }
@@ -74,27 +72,26 @@ namespace khiva.clustering.tests
             using (array.Array arr = new array.Array(tss))
             {
                 var (centroidsArr, labelsArr) = clustering.Clustering.KShape(arr, 3);
-                using (centroidsArr){
-                    using (labelsArr)
+                using (centroidsArr)
+                using (labelsArr)
+                {
+                    double[,] centroids = centroidsArr.GetData2D<double>();
+                    uint[] labels = labelsArr.GetData1D<uint>();
+
+                    for (int i = 0; i < centroids.GetLength(0); i++)
                     {
-                        double[,] centroids = centroidsArr.GetData2D<double>();
-                        uint[] labels = labelsArr.GetData1D<uint>();
-
-                        for (int i = 0; i < centroids.GetLength(0); i++)
+                        for (int j = 0; j < centroids.GetLength(1); j++)
                         {
-                            for (int j = 0; j < centroids.GetLength(1); j++)
-                            {
-                                Assert.AreEqual(expected_c[i, j], centroids[i, j], 1e-3);
+                            Assert.AreEqual(expected_c[i, j], centroids[i, j], 1e-3);
 
-                            }
                         }
+                    }
 
-                        for (int i = 0; i < labels.Length; i++)
-                        {
-                            Assert.AreEqual(expected_l[i], labels[i], 1e-3);
-                        }
-                    }  
-                } 
+                    for (int i = 0; i < labels.Length; i++)
+                    {
+                        Assert.AreEqual(expected_l[i], labels[i], 1e-3);
+                    }
+                }  
             }
         }
     }

@@ -21,7 +21,7 @@ namespace khiva.features
          * @param array Expects an input array whose dimension zero is the length of the time
          * series (all the same) and dimension one indicates the number of
          * time series.
-         * @param result An array with the same dimensions as array, whose values (time series in dimension 0)
+         * @return result An array with the same dimensions as array, whose values (time series in dimension 0)
          * contains the sum of the squares values in the time series.
          */
         public static array.Array AbsEnergy(array.Array array)
@@ -37,7 +37,7 @@ namespace khiva.features
          * @param array Expects an input array whose dimension zero is the length of the time
          * series (all the same) and dimension one indicates the number of
          * time series.
-         * @param result An array with the same dimensions as array, whose values (time series in dimension 0)
+         * @return result An array with the same dimensions as array, whose values (time series in dimension 0)
          * contains absolute value of consecutive changes in the time series.
          */
         public static array.Array AbsoluteSumOfChanges(array.Array array)
@@ -66,7 +66,7 @@ namespace khiva.features
          *              5 : var,
          *              default : mean
          *          }
-         * @param result An array whose values contains the aggregated correaltion for each time series.
+         * @return result An array whose values contains the aggregated correaltion for each time series.
          */
         public static array.Array AggregatedAutocorrelation(array.Array array, int aggregationFunction)
         {
@@ -91,25 +91,26 @@ namespace khiva.features
          *              4 : stdev,
          *              default : mean
          *          }
-         * @param slope Slope of the regression line.
-         * @param intercept Intercept of the regression line.
-         * @param rvalue Correlation coefficient.
-         * @param pvalue Two-sided p-value for a hypothesis test whose null hypothesis is that the slope is zero,
+         * @return slope Slope of the regression line.
+         * @return intercept Intercept of the regression line.
+         * @return rvalue Correlation coefficient.
+         * @return pvalue Two-sided p-value for a hypothesis test whose null hypothesis is that the slope is zero,
          * using Wald Test with t-distribution of the test statistic.
-         * @param stderrest Standard error of the estimated gradient.
+         * @return stderrest Standard error of the estimated gradient.
          */
-        public static Tuple<array.Array, array.Array, array.Array, array.Array, array.Array> AggregatedLinearTrend(array.Array array, long chunkSize, int aggregationFunction)
+        public static (array.Array, array.Array, array.Array, array.Array, array.Array) AggregatedLinearTrend(array.Array array, long chunkSize, int aggregationFunction)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.aggregated_linear_trend(ref reference,
                                                         ref chunkSize,
                                                         ref aggregationFunction,
                                                         out IntPtr slope, out IntPtr intercept, out IntPtr rvalue, out IntPtr pvalue, out IntPtr stderrest);
-            return (new Tuple<array.Array, array.Array, array.Array, array.Array, array.Array>(new array.Array(slope),
-                                                                                               new array.Array(intercept),
-                                                                                               new array.Array(rvalue),
-                                                                                               new array.Array(pvalue),
-                                                                                               new array.Array(stderrest)));
+            var tuple = (slopeArr: new array.Array(slope),
+                    interceptArr: new array.Array(intercept),
+                    rvalueArr: new array.Array(rvalue),
+                    pvalueArr: new array.Array(pvalue),
+                    stderrestArr: new array.Array(stderrest));
+            return tuple;
         }
 
         /**
@@ -125,7 +126,7 @@ namespace khiva.features
          * time series.
          * @param m Length of compared run of data.
          * @param r Filtering level, must be positive.
-         * @param result The vectorized approximate entropy for all the input time series in array.
+         * @return result The vectorized approximate entropy for all the input time series in array.
          */
         public static array.Array ApproximateEntropy(array.Array array, int m, float r)
         {
@@ -145,7 +146,7 @@ namespace khiva.features
          * series.
          * @param unbiased Determines whether it divides by n - lag (if true) or
          * n (if false).
-         * @param result The cross-covariance value for the given time series.
+         * @return result The cross-covariance value for the given time series.
          */
         public static array.Array CrossCovariance(array.Array xss, array.Array yss, bool unbiased)
         {
@@ -154,15 +155,23 @@ namespace khiva.features
             interop.DLLFeatures.cross_covariance(ref referenceXss, ref referenceYss, ref unbiased, out IntPtr result);
             return (new array.Array(result));
         }
-        /*
-       public static array.Array auto_covariance(IntPtr array, bool unbiased, IntPtr result){}
+
+       public static array.Array AutoCovariance(IntPtr array, bool unbiased, IntPtr result)
+        {
+        }
         
-       public static array.Array cross_correlation(IntPtr xss, IntPtr yss, bool unbiased, IntPtr result){}
+       public static array.Array CrossCorrelation(IntPtr xss, IntPtr yss, bool unbiased, IntPtr result)
+        {
+        }
         
-       public static array.Array auto_correlation(IntPtr array, long max_lag, bool unbiased, IntPtr result){}
+       public static array.Array AutoCorrelation(IntPtr array, long max_lag, bool unbiased, IntPtr result)
+        {
+        }
         
-       public static array.Array binned_entropy(IntPtr array, int max_bins, IntPtr result){}
-        
+       public static array.Array BinnedEntropy(IntPtr array, int max_bins, IntPtr result)
+        {
+        }
+      /*  
        public static array.Array c3(IntPtr array, long lag, IntPtr result){}
         
        public static array.Array cid_ce(IntPtr array, bool zNormalize, IntPtr result){}
