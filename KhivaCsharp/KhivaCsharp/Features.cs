@@ -451,7 +451,7 @@ namespace khiva.features
          * @param array Expects an input array whose dimension zero is the length of the
          * time series (all the same) and dimension one indicates the number of time
          * series.
-         * @param result Array containing True if the time series contains duplicated elements
+         * @return result Array containing True if the time series contains duplicated elements
          * and false otherwise.
          */
         public static array.Array HasDuplicates(array.Array array)
@@ -688,7 +688,7 @@ namespace khiva.features
          * @param array Expects an input array whose dimension zero is the length of the
          * time series (all the same) and dimension one indicates the number of time
          * series.
-         * @param result The maximum value of each time series within array.
+         * @return result The maximum value of each time series within array.
          */
         public static array.Array Maximum(array.Array array)
         {
@@ -696,15 +696,67 @@ namespace khiva.features
             interop.DLLFeatures.maximum(ref reference, out IntPtr result);
             return (new array.Array(result));
         }
+
+        /**
+         * @brief Calculates the mean value for each time series within array.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @return result The mean value of each time series within array.
+         */
+        public static array.Array Mean(array.Array array)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.mean(ref reference, out IntPtr result);
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Calculates the mean over the absolute differences between subsequent time series values in array.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @return result The maximum value of each time series within array.
+         */
+        public static array.Array MeanAbsoluteChange(array.Array array)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.mean_absolute_change(ref reference, out IntPtr result);
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Calculates the mean over the differences between subsequent time series values in array.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @return result The mean over the differences between subsequent time series values.
+         */
+        public static array.Array MeanChange(array.Array array)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.mean_change(ref reference, out IntPtr result);
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Calculates mean value of a central approximation of the second derivative for each time series in array.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @return result The mean value of a central approximation of the second derivative for each time series.
+         */
+        public static array.Array MeanSecondDerivativeCentral(array.Array array)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.mean_second_derivative_central(ref reference, out IntPtr result);
+            return (new array.Array(result));
+        }
         /*
-       public static array.Array mean(array.Array array){}
-        
-       public static array.Array mean_absolute_change(array.Array array){}
-        
-       public static array.Array mean_change(array.Array array){}
-        
-       public static array.Array mean_second_derivative_central(array.Array array){}
-        
        public static array.Array median(array.Array array){}
         
        public static array.Array minimum(array.Array array){}

@@ -608,5 +608,59 @@ namespace khiva.features.tests
                 Assert.AreEqual(30, result[1, 0]);
             }
         }
+
+        [Test]
+        public void TestMean()
+        {
+            float[,] tss = { { 20, 20, 20, 18, 25, 19, 20, 20, 20, 20, 40, 30, 1, 50, 1, 1, 5, 1, 20, 20 },
+                             { 20, 20, 20, 2, 19, 1, 20, 20, 20, 1, 15, 1, 30, 1, 1, 18, 4, 1, 20, 20 } };
+            using(array.Array arr = new array.Array(tss), mean = Features.Mean(arr))
+            {
+                float[,] result = mean.GetData2D<float>();
+                Assert.AreEqual(18.55, result[0, 0], 1e-4);
+                Assert.AreEqual(12.7, result[1, 0], 1e-4);
+            }
+        }
+
+        [Test]
+        public void TestMeanAbsoluteChange()
+        {
+            float[,] tss = { { 0, 1, 2, 3, 4, 5 },
+                             { 8, 10, 12, 14, 16, 18 } };
+            using (array.Array arr = new array.Array(tss), meanAbsoluteChange = Features.MeanAbsoluteChange(arr))
+            {
+                float[,] result = meanAbsoluteChange.GetData2D<float>();
+                var r = 5.0 / 6.0;
+                Assert.AreEqual(r, result[0, 0], DELTA);
+                Assert.AreEqual(r * 2, result[1, 0], DELTA);
+            }
+        }
+
+        [Test]
+        public void TestMeanChange()
+        {
+            float[,] tss = { { 0, 1, 2, 3, 4, 5 },
+                             { 8, 10, 12, 14, 16, 18 } };
+            using (array.Array arr = new array.Array(tss), meanChange = Features.MeanChange(arr))
+            {
+                float[,] result = meanChange.GetData2D<float>();
+                var r = 5.0 / 6.0;
+                Assert.AreEqual(r, result[0, 0], 1e-4);
+                Assert.AreEqual(r * 2, result[1, 0], 1e-4);
+            }
+        }
+
+        [Test]
+        public void TestMeanSecondDerivativeCentral()
+        {
+            double[,] tss = { { 1, 3, 7, 4, 8 },
+                             { 2, 5, 1, 7, 4 } };
+            using (array.Array arr = new array.Array(tss), meanSecondDerivativeCentral = Features.MeanSecondDerivativeCentral(arr))
+            {
+                double[,] result = meanSecondDerivativeCentral.GetData2D<double>();
+                Assert.AreEqual(1.0/5.0, result[0, 0], DELTA);
+                Assert.AreEqual(-3.0/5.0, result[1, 0], DELTA);
+            }
+        }
     }
 }
