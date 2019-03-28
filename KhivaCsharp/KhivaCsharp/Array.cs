@@ -95,25 +95,25 @@ namespace khiva
 
             public unsafe static MyArray2 Create<T>(T[] values, bool doublePrecision = false) where T:unmanaged
             {
-                fixed(T* data = values)
+                fixed(T* data = &values[0])
                     return Create<T>(1, new long[] { values.Length, 1, 1, 1 }, doublePrecision, data);
             }
 
             public unsafe static MyArray2 Create<T>(T[,] values, bool doublePrecision = false) where T : unmanaged
             {
-                fixed (T* data = values)
+                fixed (T* data = &values[0,0])
                     return Create<T>(2, new long[] { values.GetLength(1), values.GetLength(0), 1, 1 }, doublePrecision, data);
             }
 
             public unsafe static MyArray2 Create<T>(T[,,] values, bool doublePrecision = false) where T : unmanaged
             {
-                fixed (T* data = values)
+                fixed (T* data = &values[0,0,0])
                     return Create<T>(3, new long[] { values.GetLength(1), values.GetLength(0), values.GetLength(2), 1 }, doublePrecision, data);
             }
 
             public unsafe static MyArray2 Create<T>(T[,,,] values, bool doublePrecision = false) where T : unmanaged
             {
-                fixed (T* data = values)
+                fixed (T* data = &values[0,0,0,0])
                     return Create<T>(4, new long[] { values.GetLength(1), values.GetLength(0), values.GetLength(2), values.GetLength(3) }, doublePrecision, data);
             }
 
@@ -130,7 +130,9 @@ namespace khiva
                 {
                     for (int i = 0; i < totalLength; i++)
                     {
-                        Marshal.StructureToPtr<T>(values[i], data, true);
+                        Marshal.StructureToPtr<T>(*values, data, true);
+                        data += sizeof(T);
+                        values++;
                     }
                     var type = (int)GetDtypeFromT<T>(doublePrecision);
                     interop.DLLArray.create_array(data, ref ndims, dims, out arr.reference, ref type);
