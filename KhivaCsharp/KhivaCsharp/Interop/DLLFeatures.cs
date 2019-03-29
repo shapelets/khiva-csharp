@@ -685,7 +685,7 @@ namespace khiva.interop
          */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void percentage_of_reoccurring_datapoints_to_all_datapoints([In] ref IntPtr array, [In] ref bool is_sorted,
-                                                                     ref IntPtr result);
+                                                                     [Out] out IntPtr result);
 
         /**
          * @brief Calculates the percentage of unique values, that are present in the time series more than once.

@@ -544,11 +544,11 @@ namespace khiva.features.tests
         [Test]
         public void TestLocalMaximals()
         {
-            float[,] tss = { { 1, 2, 3, 1, 5, 3 }, { 1, 2, 3, 4, 5, 3 } };
+            float[,] tss = { { 0.0F, 4.0F, 3.0F, 5.0F, 4.0F, 1.0F, 0.0F, 4.0F }, { 0.0F, 4.0F, 3.0F, 5.0F, 4.0F, 1.0F, 0.0F, 4.0F } };
             using(array.Array arr = new array.Array(tss), localMaximals = Features.LocalMaximals(arr))
             {
                 int[,] result = localMaximals.GetData2D<int>();
-                int[,] expected = { { 0, 0, 1, 0, 1, 0 }, { 0, 0, 1, 0, 1, 0 } };
+                float[,] expected = { { 0.0F, 1.0F, 0.0F, 1.0F, 0.0F, 0.0F, 0.0F, 1.0F }, { 0.0F, 1.0F, 0.0F, 1.0F, 0.0F, 0.0F, 0.0F, 1.0F } };
                 Assert.AreEqual(expected, result);
             }
         }
@@ -662,5 +662,116 @@ namespace khiva.features.tests
                 Assert.AreEqual(-3.0/5.0, result[1, 0], DELTA);
             }
         }
+
+        [Test]
+        public void TestMedian()
+        {
+            float[,] tss = { { 20, 20, 20, 18, 25, 19, 20, 20, 20, 20, 40, 30, 1, 50, 1, 1, 5, 1, 20, 20 },
+                             { 20, 20, 20, 2, 19, 1, 20, 20, 20, 1, 15, 1, 30, 1, 1, 18, 4, 1, 20, 20 } };
+            using(array.Array arr = new array.Array(tss), median = Features.Median(arr))
+            {
+                float[,] result = median.GetData2D<float>();
+                Assert.AreEqual(20, result[0, 0], DELTA);
+                Assert.AreEqual(18.5, result[1, 0], DELTA);
+            }
+        }
+
+        [Test]
+        public void TestMinimum()
+        {
+            int[,] tss = { { 20, 20, 20, 18, 25, 19, 20, 20, 20, 20, 40, 30, 1, 50, 13, 15, 5, 16, 20, 20 },
+                             { 20, 20, 20, 2, 19, 4, 20, 20, 20, 4, 15, 6, 30, 7, 9, 18, 4, 10, 20, 20 } };
+            using (array.Array arr = new array.Array(tss), minimum = Features.Minimum(arr))
+            {
+                int[,] result = minimum.GetData2D<int>();
+                Assert.AreEqual(1, result[0, 0], DELTA);
+                Assert.AreEqual(2, result[1, 0], DELTA);
+            }
+        }
+
+        [Test]
+        public void TestNumberCrossingM()
+        {
+            long[,] tss = { { 1, 2, 1, 1, -3, -4, 7, 8, 9, 10, -2, 1, -3, 5, 6, 7, -10 },
+                            { 1, 2, 1, 1, -3, -4, 7, 8, 9, 10, -2, 1, -3, 5, 6, 7, -10 } };
+            using(array.Array arr = new array.Array(tss), numberCrossingM = Features.NumberCrossingM(arr, 0))
+            {
+                long[,] result = numberCrossingM.GetData2D<long>();
+                Assert.AreEqual(7, result[0, 0], DELTA);
+                Assert.AreEqual(7, result[1, 0], DELTA);
+            }
+        }
+
+        [Test]
+        public void TestNumberCwtPeaks()
+        {
+            double[,] tss = { { 1, 1, 1, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1 },
+                              { 1, 1, 1, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1 } };
+            using (array.Array arr = new array.Array(tss), numberCwtPeaks = Features.NumberCwtPeaks(arr, 2))
+            {
+                double[,] result = numberCwtPeaks.GetData2D<double>();
+                Assert.AreEqual(2, result[0, 0]);
+                Assert.AreEqual(2, result[1, 0]);
+            }
+        }
+
+        [Test]
+        public void TestNumberPeaks()
+        {
+            float[,] tss = { { 3, 0, 0, 4, 0, 0, 13 },
+                           { 3, 0, 0, 4, 0, 0, 13 } };
+            using(array.Array arr = new array.Array(tss), numberPeaks = Features.NumberPeaks(arr, 2))
+            {
+                float[,] result = numberPeaks.GetData2D<float>();
+                Assert.AreEqual(1, result[0, 0], 1e-4);
+                Assert.AreEqual(1, result[1, 0], 1e-4);
+            }
+        }
+
+        /*[Test]
+        public void TestPartialAutocorrelation()
+        {
+            float numel = 3000;
+            float step = 1 / (numel - 1);
+            float[,] tss = new float[2, (int)numel];
+            for (int i = 0; i < 2; i++)
+            {
+                for (int j = 0; j < (int)numel; j++)
+                {
+                    tss[i, j] = (float)j * step;
+                }
+            }
+            int[] lags = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            using (array.Array arr = new array.Array(tss), lagsArr = new array.Array(lags),
+                    partialAutocorrelation = Features.PartialAutocorrelation(arr, lagsArr))
+            {
+                float[,] expected = { { 1.0F, 0.9993331432342529F, -0.0006701064994559F, -0.0006701068487018F, -0.0008041285327636F,
+                              -0.0005360860959627F, -0.0007371186511591F, -0.0004690756904893F, -0.0008041299879551F,
+                              -0.0007371196406893F },
+                              { 1.0F, 0.9993331432342529F, -0.0006701064994559F, -0.0006701068487018F, -0.0008041285327636F,
+                              -0.0005360860959627F, -0.0007371186511591F, -0.0004690756904893F, -0.0008041299879551F,
+                              -0.0007371196406893F } };
+                float[,] result = partialAutocorrelation.GetData2D<float>();
+                for (int i = 0; i<result.GetLength(0); i++)
+                {
+                    for (int j = 0; j<result.GetLength(1); j++)
+                    {
+                        Assert.AreEqual(expected[i, j], result[i, j], DELTA);
+                    }
+                }
+            }
+        }*/
+
+       /* [Test]
+        public void TestPercentageOfReoccurringDatapointsToAllDatapoints()
+        {
+
+        }
+
+        [Test]
+        public void TestPercentageOfReoccurringValuesToAllValues()
+        {
+
+        }*/
     }
 }

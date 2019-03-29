@@ -821,16 +821,100 @@ namespace khiva.features
             interop.DLLFeatures.number_cwt_peaks(ref reference, ref max_w, out IntPtr result);
             return (new array.Array(result));
         }
+
+        /**
+        * @brief Calculates the number of peaks of at least support \f$n\f$ in the time series \f$array\f$. A peak of support
+        * \f$n\f$ is defined as a subsequence of \f$array\f$ where a value occurs, which is bigger than its \f$n\f$ neighbours
+        * to the left and to the right.
+        *
+        * @param array Expects an input array whose dimension zero is the length of the
+        * time series (all the same) and dimension one indicates the number of time
+        * series.
+        * @param n The support of the peak.
+        * @return result The number of peaks of at least support \f$n\f$.
+        */
+        public static array.Array NumberPeaks(array.Array array, int n)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.number_peaks(ref reference, ref n, out IntPtr result);
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Calculates the value of the partial autocorrelation function at the given lag. The lag \f$k\f$ partial
+         * autocorrelation of a time series \f$\lbrace x_t, t = 1 \ldots T \rbrace\f$ equals the partial correlation of
+         * \f$x_t\f$ and \f$x_{t-k}\f$, adjusted for the intermediate variables \f$\lbrace x_{t-1}, \ldots, x_{t-k+1}
+         * \rbrace\f$ ([1]). Following [2], it can be defined as:
+         *
+         * \f[
+         *      \alpha_k = \frac{ Cov(x_t, x_{t-k} | x_{t-1}, \ldots, x_{t-k+1})}
+         *      {\sqrt{ Var(x_t | x_{t-1}, \ldots, x_{t-k+1}) Var(x_{t-k} | x_{t-1}, \ldots, x_{t-k+1} )}}
+         * \f]
+         * with (a) \f$x_t = f(x_{t-1}, \ldots, x_{t-k+1})\f$ and (b) \f$ x_{t-k} = f(x_{t-1}, \ldots, x_{t-k+1})\f$
+         * being AR(k-1) models that can be fitted by OLS. Be aware that in (a), the regression is done on past values to
+         * predict \f$ x_t \f$ whereas in (b), future values are used to calculate the past value \f$x_{t-k}\f$.
+         * It is said in [1] that "for an AR(p), the partial autocorrelations \f$ \alpha_k \f$ will be nonzero for \f$ k<=p \f$
+         * and zero for \f$ k>p \f$."
+         * With this property, it is used to determine the lag of an AR-Process.
+         *
+         * [1] Box, G. E., Jenkins, G. M., Reinsel, G. C., & Ljung, G. M. (2015).
+         * Time series analysis: forecasting and control. John Wiley & Sons.
+         * [2] https://onlinecourses.science.psu.edu/stat510/node/62
+         *
+         * @param array Expects an input array whose dimension zero is the length of the time series (all the same) and
+         * dimension one indicates the number of time series.
+         * @param lags Indicates the lags to be calculated.
+         * @return result Returns partial autocorrelation for each time series for the given lag.
+         */
+        public static array.Array PartialAutocorrelation(array.Array array, array.Array lags)
+        {
+            IntPtr reference = array.Reference;
+            IntPtr lagsReference = lags.Reference;
+            interop.DLLFeatures.partial_autocorrelation(ref reference, ref lagsReference, out IntPtr result);
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Calculates the percentage of unique values, that are present in the time series more than once.
+         * \f[
+         *      len(different values occurring more than once) / len(different values)
+         * \f]
+         * This means the percentage is normalized to the number of unique values, in contrast to the
+         * percentageOfReoccurringValuesToAllValues.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @param is_sorted Indicates if the input time series is sorted or not. Defaults to false.
+         * @return result Returns the percentage of unique values, that are present in the time series more than once.
+         */
+        public static array.Array PercentageOfReoccurringDatapointsToAllDatapoints(array.Array array, bool is_sorted)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.percentage_of_reoccurring_datapoints_to_all_datapoints(ref reference, ref is_sorted, out IntPtr result);
+            return (new array.Array(result));
+        }
+
+        /**
+        * @brief Calculates the percentage of unique values, that are present in the time series more than once.
+        * \f[
+        *      \frac{\textit{number of data points occurring more than once}}{\textit{number of all data points})}
+        * \f]
+        * This means the percentage is normalized to the number of unique values, in contrast to the
+        * percentageOfReoccurringDatapointsToAllDatapoints.
+        *
+        * @param array Expects an input array whose dimension zero is the length of the time series (all the same)
+        * and dimension one indicates the number of time series.
+        * @param is_sorted Indicates if the input time series is sorted or not. Defaults to false.
+        * @return result Returns the percentage of unique values, that are present in the time series more than once.
+        */
+        public static array.Array PercentageOfReoccurringValuesToAllValues(array.Array array, bool is_sorted)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.percentage_of_reoccurring_values_to_all_values(ref reference, ref is_sorted, out IntPtr result);
+            return (new array.Array(result));
+        }
         /*
-       public static array.Array number_peaks(array.Array array, int n){}
-        
-       public static array.Array partial_autocorrelation(array.Array array, IntPtr lags){}
-        
-       public static array.Array percentage_of_reoccurring_datapoints_to_all_datapoints(array.Array array, bool is_sorted,
-                                                                     IntPtr result){}
-        
-       public static array.Array percentage_of_reoccurring_values_to_all_values(array.Array array, bool is_sorted){}
-        
        public static array.Array quantile(array.Array array, IntPtr q, float precision){}
         
        public static array.Array range_count(array.Array array, float min, float max){}
