@@ -28,6 +28,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.abs_energy(ref reference, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -45,6 +46,7 @@ namespace khiva.features
 
             IntPtr reference = array.Reference;
             interop.DLLFeatures.absolute_sum_of_changes( ref reference, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -72,6 +74,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.aggregated_autocorrelation(ref reference, ref aggregationFunction, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -105,6 +108,7 @@ namespace khiva.features
                                                         ref chunkSize,
                                                         ref aggregationFunction,
                                                         out IntPtr slope, out IntPtr intercept, out IntPtr rvalue, out IntPtr pvalue, out IntPtr stderrest);
+            array.Reference = reference;
             var tuple = (slopeArr: new array.Array(slope),
                     interceptArr: new array.Array(intercept),
                     rvalueArr: new array.Array(rvalue),
@@ -132,6 +136,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.approximate_entropy(ref reference, ref m, ref r,  out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -153,6 +158,8 @@ namespace khiva.features
             IntPtr referenceXss = xss.Reference;
             IntPtr referenceYss = yss.Reference;
             interop.DLLFeatures.cross_covariance(ref referenceXss, ref referenceYss, ref unbiased, out IntPtr result);
+            xss.Reference = referenceXss;
+            yss.Reference = referenceYss;
             return (new array.Array(result));
         }
 
@@ -170,6 +177,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.auto_covariance(ref reference, ref unbiased, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -191,6 +199,8 @@ namespace khiva.features
             IntPtr referenceXss = xss.Reference;
             IntPtr referenceYss = yss.Reference;
             interop.DLLFeatures.cross_correlation(ref referenceXss, ref referenceYss, ref unbiased, out IntPtr result);
+            xss.Reference = referenceXss;
+            yss.Reference = referenceYss;
             return (new array.Array(result));
         }
 
@@ -209,6 +219,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.auto_correlation(ref reference, ref max_lag, ref unbiased, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -225,6 +236,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.binned_entropy(ref reference, ref max_bins, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -242,6 +254,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.c3(ref reference, ref lag, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
 
         }
@@ -261,6 +274,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.cid_ce(ref reference, ref zNormalize, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -278,6 +292,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.count_above_mean(ref reference, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -295,6 +310,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.count_below_mean(ref reference, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -325,6 +341,8 @@ namespace khiva.features
             IntPtr reference = array.Reference;
             IntPtr widthReference = width.Reference;
             interop.DLLFeatures.cwt_coefficients(ref reference, ref widthReference, ref coeff, ref w, out IntPtr result);
+            array.Reference = reference;
+            width.Reference = widthReference;
             return (new array.Array(result));
         }
 
@@ -344,6 +362,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.energy_ratio_by_chunks(ref reference, ref num_segments, ref segment_focus, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -361,6 +380,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.fft_aggregated(ref reference, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -382,6 +402,7 @@ namespace khiva.features
             IntPtr reference = array.Reference;
             interop.DLLFeatures.fft_coefficient(ref reference, ref coefficient,
                                                 out IntPtr real, out IntPtr imag, out IntPtr absolute, out IntPtr angle);
+            array.Reference = reference;
             var tuple = (realArr: new array.Array(real),
                         imagArr: new array.Array(imag),
                         absoluteArr: new array.Array(absolute),
@@ -402,6 +423,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.first_location_of_maximum(ref reference, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -418,6 +440,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.first_location_of_minimum(ref reference, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -442,6 +465,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.friedrich_coefficients(ref reference, ref m, ref r, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -458,6 +482,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.has_duplicates(ref reference, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -474,6 +499,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.has_duplicate_max(ref reference, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -490,6 +516,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.has_duplicate_min(ref reference, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -506,6 +533,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.index_mass_quantile(ref reference, ref q, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -522,6 +550,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.kurtosis(ref reference, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -538,6 +567,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.large_standard_deviation(ref reference, ref r, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -554,6 +584,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.last_location_of_maximum(ref reference, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -570,6 +601,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.last_location_of_minimum(ref reference, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -585,6 +617,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.length(ref reference, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -606,6 +639,7 @@ namespace khiva.features
             IntPtr reference = array.Reference;
             interop.DLLFeatures.linear_trend(ref reference,
                                         out IntPtr pvalue, out IntPtr rvalue, out IntPtr intercept, out IntPtr slope, out IntPtr stdrr);
+            array.Reference = reference;
             var tuple = (pvalueArr: new array.Array(pvalue),
                         rvalueArr: new array.Array(rvalue),
                         interceptArr: new array.Array(intercept),
@@ -625,6 +659,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.local_maximals(ref reference, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -641,6 +676,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.longest_strike_above_mean(ref reference, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -656,6 +692,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.longest_strike_below_mean(ref reference, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -679,6 +716,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.max_langevin_fixed_point(ref reference, ref m, ref r, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -694,6 +732,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.maximum(ref reference, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -709,6 +748,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.mean(ref reference, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -724,6 +764,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.mean_absolute_change(ref reference, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -739,6 +780,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.mean_change(ref reference, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -754,6 +796,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.mean_second_derivative_central(ref reference, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -769,6 +812,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.median(ref reference, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -784,6 +828,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.minimum(ref reference, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -802,6 +847,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.number_crossing_m(ref reference, ref m, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -819,6 +865,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.number_cwt_peaks(ref reference, ref max_w, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -837,6 +884,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.number_peaks(ref reference, ref n, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -871,6 +919,8 @@ namespace khiva.features
             IntPtr reference = array.Reference;
             IntPtr lagsReference = lags.Reference;
             interop.DLLFeatures.partial_autocorrelation(ref reference, ref lagsReference, out IntPtr result);
+            array.Reference = reference;
+            lags.Reference = lagsReference;
             return (new array.Array(result));
         }
 
@@ -892,6 +942,7 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.percentage_of_reoccurring_datapoints_to_all_datapoints(ref reference, ref is_sorted, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
 
@@ -912,40 +963,311 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.percentage_of_reoccurring_values_to_all_values(ref reference, ref is_sorted, out IntPtr result);
+            array.Reference = reference;
             return (new array.Array(result));
         }
-        /*
-       public static array.Array quantile(array.Array array, IntPtr q, float precision){}
-        
-       public static array.Array range_count(array.Array array, float min, float max){}
-        
-       public static array.Array ratio_beyond_r_sigma(array.Array array, float r){}
-        
-       public static array.Array ratio_value_number_to_time_series_length(array.Array array){}
-        
-       public static array.Array sample_entropy(array.Array array){}
-        
-       public static array.Array skewness(array.Array array){}
-        
-       public static array.Array spkt_welch_density(array.Array array, int coeff){}
-        
-       public static array.Array standard_deviation(array.Array array){}
-        
-       public static array.Array sum_of_reoccurring_datapoints(array.Array array, bool is_sorted){}
-        
-       public static array.Array sum_of_reoccurring_values(array.Array array, bool is_sorted){}
-        
-       public static array.Array sum_values(array.Array array){}
-        
-       public static array.Array symmetry_looking(array.Array array, float r){}
-        
-       public static array.Array time_reversal_asymmetry_statistic(array.Array array, int lag){}
-        
-       public static array.Array value_count(array.Array array, float v){}
-        
-       public static array.Array variance(array.Array array){}
-        
-       public static array.Array variance_larger_than_standard_deviation(array.Array array){}
-       */
+
+        /**
+         * @brief Returns values at the given quantile.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @param q Percentile(s) at which to extract score(s). One or many.
+         * @param precision Number of decimals expected.
+         * @return result Values at the given quantile.
+         */
+        public static array.Array Quantile(array.Array array, array.Array q, float precision = 1e8F)
+        {
+            IntPtr reference = array.Reference;
+            IntPtr qReference = q.Reference;
+            interop.DLLFeatures.quantile(ref reference, ref qReference, ref precision, out IntPtr result);
+            array.Reference = reference;
+            q.Reference = qReference;
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Counts observed values within the interval [min, max).
+         *
+         * @param array Expects an input array whose dimension zero is the length of the time
+         * series (all the same) and dimension one indicates the number of
+         * time series.
+         * @param min Value that sets the lower limit.
+         * @param max Value that sets the upper limit.
+         * @return result Values at the given range.
+         */
+        public static array.Array RangeCount(array.Array array, float min, float max)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.range_count(ref reference, ref min, ref max, out IntPtr result);
+            array.Reference = reference;
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Calculates the ratio of values that are more than \f$r*std(x)\f$ (so \f$r\f$ sigma) away from the mean of
+         * \f$x\f$.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @param r Number of times that the values should be away from.
+         * @return result The ratio of values that are more than \f$r*std(x)\f$ (so \f$r\f$ sigma) away from the mean of
+         * \f$x\f$.
+         */
+        public static array.Array RatioBeyondRSigma(array.Array array, float r)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.ratio_beyond_r_sigma(ref reference, ref r, out IntPtr result);
+            array.Reference = reference;
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Calculates a factor which is 1 if all values in the time series occur only once, and below one if this is
+         * not the case. In principle, it just returns:
+         *
+         * \f[
+         *      \frac{\textit{number\_unique\_values}}{\textit{number\_values}}
+         * \f]
+         *
+         * @param array Expects an input array whose dimension zero is the length of the time series (all the same) and
+         * dimension one indicates the number of time series.
+         * @return result The ratio of unique values with respect to the total number of values.
+         */
+        public static array.Array RatioValueNumberToTimeSeriesLength(array.Array array)
+        {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.ratio_value_number_to_time_series_length(ref reference, out IntPtr result);
+            array.Reference = reference;
+            return (new array.Array(result));
+        }
+
+        /**
+        * @brief Calculates a vectorized sample entropy algorithm.
+        * https://en.wikipedia.org/wiki/Sample_entropy
+        * https://www.ncbi.nlm.nih.gov/pubmed/10843903?dopt=Abstract
+        * For short time-series this method is highly dependent on the parameters, but should be stable for N > 2000,
+        * see: Yentes et al. (2012) - The Appropriate Use of Approximate Entropy and Sample Entropy with Short Data Sets
+        * Other shortcomings and alternatives discussed in:
+        * Richman & Moorman (2000) - Physiological time-series analysis using approximate entropy and sample entropy.
+        *
+        * @param array Expects an input array whose dimension zero is the length of the
+        * time series (all the same) and dimension one indicates the number of time
+        * series.
+        * @return result An array with the same dimensions as array, whose values (time series in dimension 0)
+        * contains the vectorized sample entropy for all the input time series in array.
+        */
+        public static array.Array SampleEntropy(array.Array array)
+       {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.sample_entropy(ref reference, out IntPtr result);
+            array.Reference = reference;
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Calculates the sample skewness of array (calculated with the adjusted Fisher-Pearson standardized
+         * moment coefficient G1).
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @return result Array containing the skewness of each time series in array.
+         */
+        public static array.Array Skewness(array.Array array)
+       {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.skewness(ref reference, out IntPtr result);
+            array.Reference = reference;
+            return (new array.Array(result));
+        }
+
+        /**
+        * @brief Estimates the cross power spectral density of the time series array at different frequencies. To do so, the
+        * time series is first shifted from the time domain to the frequency domain.
+        *
+        * Welch's method computes an estimate of the power spectral density by dividing the data into overlapping
+        * segments, computing a modified periodogram for each segment and averaging the periodograms.
+        * [1] P. Welch, "The use of the fast Fourier transform for the estimation of power spectra: A method based on time
+        *  averaging over short, modified periodograms", IEEE Trans. Audio Electroacoust. vol. 15, pp. 70-73, 1967.
+        * [2] M.S. Bartlett, "Periodogram Analysis and Continuous Spectra", Biometrika, vol. 37, pp. 1-16, 1950.
+        * [3] Rabiner, Lawrence R., and B. Gold. "Theory and Application of Digital Signal Processing" Prentice-Hall, pp.
+        * 414-419, 1975.
+        *
+        * @param array Expects an input array whose dimension zero is the length of the time series (all the same) and
+        * dimension one indicates the number of time series.
+        * @param coeff The coefficient to be returned.
+        * @return result Array containing the power spectrum of the different frequencies for each time series in
+        * array.
+        */
+        public static array.Array SpktWelchDensity(array.Array array, int coeff)
+       {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.spkt_welch_density(ref reference, ref coeff, out IntPtr result);
+            array.Reference = reference;
+            return (new array.Array(result));
+        }
+
+        /**
+        * @brief Calculates the standard deviation of each time series within array.
+        *
+        * @param array Expects an input array whose dimension zero is the length of the
+        * time series (all the same) and dimension one indicates the number of time
+        * series.
+        * @return result The standard deviation of each time series within array.
+        */
+        public static array.Array StandardDeviation(array.Array array)
+       {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.standard_deviation(ref reference, out IntPtr result);
+            array.Reference = reference;
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Calculates the sum of all data points, that are present in the time series more than once.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @param is_sorted Indicates if the input time series is sorted or not. Defaults to false.
+         * @return result Returns the sum of all data points, that are present in the time series more than once.
+         */
+        public static array.Array SumOfReoccurringDatapoints(array.Array array, bool is_sorted = false)
+       {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.sum_of_reoccurring_datapoints(ref reference, ref is_sorted, out IntPtr result);
+            array.Reference = reference;
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Calculates the sum of all values, that are present in the time series more than once.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the time series (all the same)
+         * and dimension one indicates the number of time series.
+         * @param is_sorted Indicates if the input time series is sorted or not. Defaults to false.
+         * @return result Returns the sum of all values, that are present in the time series more than once.
+         */
+        public static array.Array SumOfReoccurringValues(array.Array array, bool is_sorted = false)
+       {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.sum_of_reoccurring_values(ref reference, ref is_sorted, out IntPtr result);
+            array.Reference = reference;
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Calculates the sum over the time series array.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the time series (all the same) and
+         * dimension one indicates the number of time series.
+         * @return result An array containing the sum of values in each time series.
+         */
+        public static array.Array SumValues(array.Array array)
+       {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.sum_values(ref reference, out IntPtr result);
+            array.Reference = reference;
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Calculates if the distribution of array *looks symmetric*. This is the case if
+         * \f[
+         *      | mean(array)-median(array)| < r * (max(array)-min(array))
+         * \f]
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @param r The percentage of the range to compare with.
+         * @return result An array denoting if the input time series look symmetric.
+         */
+        public static array.Array SymmetryLooking(array.Array array, float r)
+       {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.symmetry_looking(ref reference, ref r, out IntPtr result);
+            array.Reference = reference;
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief This function calculates the value of:
+         * \f[
+         *      \frac{1}{n-2lag} \sum_{i=0}^{n-2lag} x_{i + 2 \cdot lag}^2 \cdot x_{i + lag} - x_{i + lag} \cdot  x_{i}^2
+         * \f]
+         * which is
+         * \f[
+         *       \mathbb{E}[L^2(X)^2 \cdot L(X) - L(X) \cdot X^2]
+         * \f]
+         * where \f$ \mathbb{E} \f$ is the mean and \f$ L \f$ is the lag operator. It was proposed in [1] as a promising
+         * feature to extract from time series.
+         *
+         * [1] Fulcher, B.D., Jones, N.S. (2014). Highly comparative feature-based time-series classification.
+         * Knowledge and Data Engineering, IEEE Transactions on 26, 3026–3037.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the time series (all the same) and
+         * dimension one indicates the number of time series.
+         * @param lag The lag to be computed.
+         * @return result An array containing the time reversal asymetry statistic value in each time series.
+         */
+        public static array.Array TimeReversalAsymmetryStatistic(array.Array array, int lag)
+       {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.time_reversal_asymmetry_statistic(ref reference, ref lag, out IntPtr result);
+            array.Reference = reference;
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Counts occurrences of value in the time series array.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the
+         * time series (all the same) and dimension one indicates the number of time
+         * series.
+         * @param v The value to be counted.
+         * @return result An array containing the count of the given value in each time series.
+         */
+        public static array.Array ValueCount(array.Array array, float v)
+       {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.value_count(ref reference, ref v, out IntPtr result);
+            array.Reference = reference;
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Computes the variance for the time series array.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the time series (all the same) and
+         * dimension one indicates the number of time series.
+         * @return result An array containing the variance in each time series.
+         */
+        public static array.Array Variance(array.Array array)
+       {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.variance(ref reference, out IntPtr result);
+            array.Reference = reference;
+            return (new array.Array(result));
+        }
+
+        /**
+         * @brief Calculates if the variance of array is greater than the standard deviation. In other words, if the variance of
+         * array is larger than 1.
+         *
+         * @param array Expects an input array whose dimension zero is the length of the time series (all the same) and
+         * dimension one indicates the number of time series.
+         * @return result An array denoting if the variance of array is greater than the standard deviation.
+         */
+        public static array.Array VarianceLargerThanStandardDeviation(array.Array array)
+       {
+            IntPtr reference = array.Reference;
+            interop.DLLFeatures.variance_larger_than_standard_deviation(ref reference, out IntPtr result);
+            array.Reference = reference;
+            return (new array.Array(result));}
+       
     }
 }

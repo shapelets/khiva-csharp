@@ -39,6 +39,7 @@ namespace khiva
             {
                 IntPtr reference = arr.Reference;
                 interop.DLLClustering.k_means(ref reference, ref k, out IntPtr centroids, out IntPtr labels, ref tolerance, ref max_iterations);
+                arr.Reference = reference;
                 var tuple = (centroidsArr: new array.Array(centroids), labelsArr: new array.Array(labels));
                 return tuple;
             }
@@ -61,6 +62,7 @@ namespace khiva
             {
                 IntPtr reference = arr.Reference;
                 interop.DLLClustering.k_shape(ref reference, ref k, out IntPtr centroids, out IntPtr labels, ref tolerance, ref max_iterations);
+                arr.Reference = reference;
                 var tuple = (centroidsArr: new array.Array(centroids), labelsArr: new array.Array(labels));
                 return tuple;
             }

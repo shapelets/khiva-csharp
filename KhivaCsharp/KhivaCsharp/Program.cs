@@ -20,129 +20,155 @@ namespace khiva
     {
         static void Main(String[] args)
         {
-            /*float[] tss = new float[] { 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5 };
-            array.Array arr = new array.Array(tss);
-            array.Array aggregatedLinearTrendResult = features.Features.AggregatedLinearTrend(arr, 3, 0).Item1;
-            float[] result = aggregatedLinearTrendResult.GetData1D<float>();
-            Console.WriteLine(result.Length);*/
-            /*
-            float[,] tss = new float[,] { { 0, 1, 2, 3 }, { 10, 11, 12, 13 } };
-            float[,] tss2 = new float[,] { { 4, 6, 8, 10, 12 }, { 14, 16, 18, 20, 22 } };
-            array.Array xss = new array.Array(tss);
-            array.Array yss = new array.Array(tss2);
-            array.Array approximateEntropyResult = features.Features.CrossCovariance(xss, yss, false);
-            approximateEntropyResult.Display();
-            float[,,] dataArr = approximateEntropyResult.GetData3D<float>();
-            float[] flattenResult = new float[dataArr.Length];
-            Flatten3D<float>(ref flattenResult, dataArr);
-            for (int  i = 0; i < flattenResult.Length; i++)
+            double[,] tss = new double[,]{{ 0.0, 1.0, 2.0, 3.0 },
+                                        { 6.0, 7.0, 8.0, 9.0 },
+                                        { 2.0, -2.0, 4.0, -4.0 },
+                                        { 8.0, 5.0, 3.0, 1.0 },
+                                        { 15.0, 10.0, 5.0, 0.0 },
+                                        { 7.0, -7.0, 1.0, -1.0 }
+                                        };
+
+            double[,] expected = new double[,] { { 0.0, 0.1667, 0.3333, 0.5 },
+                                               { 1.5, -1.5, 0.8333, -0.8333 },
+                                               { 4.8333, 3.6667, 2.6667, 1.6667 }
+                                            };
+            using (array.Array arr = new array.Array(tss))
             {
-                Console.WriteLine(flattenResult[i]);
-            }*/
-            //int[,,,] tss = { { { { 1, 2 }, { 3, 4 } }, { { 5, 6 }, { 7, 8 } } }, { { { 9, 10 }, { 11, 12 } }, { { 13, 14 }, { 15, 16 } } } };
-            /*
-            Complex[,,] tss = { { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(5, 6), new Complex(7, 8) } }, { { new Complex(9, 10), new Complex(11, 12) }, { new Complex(13, 14), new Complex(15, 16) } } };
-            array.Array arr = new array.Array(tss, true);
-            Complex[,,] dataArr = arr.GetData3D<Complex>();
-            */
-            /*int[] tss = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            array.Array arr = new array.Array(tss);
-            array.Array absEnergyResult = features.Features.AbsEnergy(arr);
-            int[] result = absEnergyResult.GetData1D<int>();
-            Console.WriteLine(result.Length);*/
-            //int[,] tss = { { 1, 2 }, { 3, 4 }, { 5, 6 } };
-            //int[] tss = { 1, 2  };
-            //array.Array arr = new array.Array(tss);
-            //array.Array arrRows = arr.Rows(0, 1);
-            //array.Array arr = new array.Array(tss);
-            /*int[,] dataArr = arrRows.GetData2D<int>();
-            for (int i = 0; i < dataArr.GetLength(0); i++) {
-                for (int j = 0; j < dataArr.GetLength(1); j++)
+                var (centroidsArr, labelsArr) = clustering.Clustering.KMeans(arr, 3);
+                using (centroidsArr)
                 {
-                    Console.Write(dataArr[i,j]);
-                }
-                Console.WriteLine();
-            }
-            arrRows.Display();*/
-            /*bool[,,] tss = { { { true, true }, { false, true } }, { { false, true }, { true, true } } };
-            array.Array arr = new array.Array(tss);*/
-            /*arr.Display();
-            bool[,,] dataArr = arr.GetData3D<bool>();
-            long[] dims = arr.GetDims();*/
-            /*
-            Console.WriteLine("test");
-            string[] info_splitted;
-            using(StringWriter writer = new StringWriter()){
-                Console.SetOut(writer);
-                khiva.Khiva.PrintBackendInfo();
-                string info = writer.ToString();
-                info_splitted = info.Split(' ');
-            }
-            StreamWriter standardOutput = new StreamWriter(Console.OpenStandardOutput());
-            standardOutput.AutoFlush = true;
-            Console.SetOut(standardOutput);
-            Console.WriteLine(info_splitted[0]);
-
-            Console.WriteLine((int)khiva.Khiva.SupportedBackends & (int)khiva.Khiva.Backend.KHIVA_BACKEND_OPENCL);
-
-            Console.WriteLine("Backend: " + khiva.Khiva.ActualBackend);
-            Console.WriteLine(khiva.Khiva.Version);
-
-            String version = "";
-            String filePath;
-            String Os = System.Environment.OSVersion.Platform.ToString().ToLower();
-
-            if (Os.Contains("win"))
-            {
-                filePath = "C:\\Program Files\\Khiva\\v0\\include\\khiva\\version.h";
-            }
-            else
-            {
-                filePath = "/usr/local/include/khiva/version.h";
-            }
-
-            String data = "";
-
-            try
-            {
-                data = File.ReadAllText(filePath);
-            }
-            catch (IOException e)
-            {
-                Console.WriteLine(e.ToString());
-            }
-
-            MatchCollection matches = Regex.Matches(data, "([0-9]+\\.[0-9]+\\.[0-9]+)");
-
-            if (matches.Count != 0)
-            {
-                version = matches[0].Groups[1].Value;
-            }
-            Console.WriteLine("Filepath:");
-            Console.WriteLine(filePath);
-            Console.WriteLine("Data:");
-            Console.WriteLine(data);
-            Console.WriteLine("Version:");
-            Console.WriteLine(version);
-
-            Console.ReadKey();
-        }
-
-        private static void Flatten3D<T>(ref T[] flattenArr, T[,,] arr)
-        {
-            Console.WriteLine("Flatten");
-            for (int i = 0; i < arr.GetLength(0); i++)
-            {
-                for (int j = 0; j < arr.GetLength(1); j++)
-                {
-                    for (int k = 0; k < arr.GetLength(2); k++)
+                    using (labelsArr)
                     {
-                        Console.WriteLine("(" + i + "," + j + "," + k + ")");
-                        Console.WriteLine("Position: " + (i * (arr.GetLength(1) * arr.GetLength(2)) + j * arr.GetLength(2) + k));
-                        flattenArr[i * (arr.GetLength(1) * arr.GetLength(2)) + j * arr.GetLength(2) + k] = arr[i, j, k];
+                        Console.WriteLine(centroidsArr.Reference);
+                        double[,] data = centroidsArr.GetData2D<double>();
+                        Console.WriteLine(centroidsArr.ArrayType);
                     }
                 }
-            }*/
-        }
+            }
+            Console.ReadKey();
+                /*float[] tss = new float[] { 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5 };
+                array.Array arr = new array.Array(tss);
+                array.Array aggregatedLinearTrendResult = features.Features.AggregatedLinearTrend(arr, 3, 0).Item1;
+                float[] result = aggregatedLinearTrendResult.GetData1D<float>();
+                Console.WriteLine(result.Length);*/
+                /*
+                float[,] tss = new float[,] { { 0, 1, 2, 3 }, { 10, 11, 12, 13 } };
+                float[,] tss2 = new float[,] { { 4, 6, 8, 10, 12 }, { 14, 16, 18, 20, 22 } };
+                array.Array xss = new array.Array(tss);
+                array.Array yss = new array.Array(tss2);
+                array.Array approximateEntropyResult = features.Features.CrossCovariance(xss, yss, false);
+                approximateEntropyResult.Display();
+                float[,,] dataArr = approximateEntropyResult.GetData3D<float>();
+                float[] flattenResult = new float[dataArr.Length];
+                Flatten3D<float>(ref flattenResult, dataArr);
+                for (int  i = 0; i < flattenResult.Length; i++)
+                {
+                    Console.WriteLine(flattenResult[i]);
+                }*/
+                //int[,,,] tss = { { { { 1, 2 }, { 3, 4 } }, { { 5, 6 }, { 7, 8 } } }, { { { 9, 10 }, { 11, 12 } }, { { 13, 14 }, { 15, 16 } } } };
+                /*
+                Complex[,,] tss = { { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(5, 6), new Complex(7, 8) } }, { { new Complex(9, 10), new Complex(11, 12) }, { new Complex(13, 14), new Complex(15, 16) } } };
+                array.Array arr = new array.Array(tss, true);
+                Complex[,,] dataArr = arr.GetData3D<Complex>();
+                */
+                /*int[] tss = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+                array.Array arr = new array.Array(tss);
+                array.Array absEnergyResult = features.Features.AbsEnergy(arr);
+                int[] result = absEnergyResult.GetData1D<int>();
+                Console.WriteLine(result.Length);*/
+                //int[,] tss = { { 1, 2 }, { 3, 4 }, { 5, 6 } };
+                //int[] tss = { 1, 2  };
+                //array.Array arr = new array.Array(tss);
+                //array.Array arrRows = arr.Rows(0, 1);
+                //array.Array arr = new array.Array(tss);
+                /*int[,] dataArr = arrRows.GetData2D<int>();
+                for (int i = 0; i < dataArr.GetLength(0); i++) {
+                    for (int j = 0; j < dataArr.GetLength(1); j++)
+                    {
+                        Console.Write(dataArr[i,j]);
+                    }
+                    Console.WriteLine();
+                }
+                arrRows.Display();*/
+                /*bool[,,] tss = { { { true, true }, { false, true } }, { { false, true }, { true, true } } };
+                array.Array arr = new array.Array(tss);*/
+                /*arr.Display();
+                bool[,,] dataArr = arr.GetData3D<bool>();
+                long[] dims = arr.GetDims();*/
+                /*
+                Console.WriteLine("test");
+                string[] info_splitted;
+                using(StringWriter writer = new StringWriter()){
+                    Console.SetOut(writer);
+                    khiva.Khiva.PrintBackendInfo();
+                    string info = writer.ToString();
+                    info_splitted = info.Split(' ');
+                }
+                StreamWriter standardOutput = new StreamWriter(Console.OpenStandardOutput());
+                standardOutput.AutoFlush = true;
+                Console.SetOut(standardOutput);
+                Console.WriteLine(info_splitted[0]);
+
+                Console.WriteLine((int)khiva.Khiva.SupportedBackends & (int)khiva.Khiva.Backend.KHIVA_BACKEND_OPENCL);
+
+                Console.WriteLine("Backend: " + khiva.Khiva.ActualBackend);
+                Console.WriteLine(khiva.Khiva.Version);
+
+                String version = "";
+                String filePath;
+                String Os = System.Environment.OSVersion.Platform.ToString().ToLower();
+
+                if (Os.Contains("win"))
+                {
+                    filePath = "C:\\Program Files\\Khiva\\v0\\include\\khiva\\version.h";
+                }
+                else
+                {
+                    filePath = "/usr/local/include/khiva/version.h";
+                }
+
+                String data = "";
+
+                try
+                {
+                    data = File.ReadAllText(filePath);
+                }
+                catch (IOException e)
+                {
+                    Console.WriteLine(e.ToString());
+                }
+
+                MatchCollection matches = Regex.Matches(data, "([0-9]+\\.[0-9]+\\.[0-9]+)");
+
+                if (matches.Count != 0)
+                {
+                    version = matches[0].Groups[1].Value;
+                }
+                Console.WriteLine("Filepath:");
+                Console.WriteLine(filePath);
+                Console.WriteLine("Data:");
+                Console.WriteLine(data);
+                Console.WriteLine("Version:");
+                Console.WriteLine(version);
+
+                Console.ReadKey();
+            }
+
+            private static void Flatten3D<T>(ref T[] flattenArr, T[,,] arr)
+            {
+                Console.WriteLine("Flatten");
+                for (int i = 0; i < arr.GetLength(0); i++)
+                {
+                    for (int j = 0; j < arr.GetLength(1); j++)
+                    {
+                        for (int k = 0; k < arr.GetLength(2); k++)
+                        {
+                            Console.WriteLine("(" + i + "," + j + "," + k + ")");
+                            Console.WriteLine("Position: " + (i * (arr.GetLength(1) * arr.GetLength(2)) + j * arr.GetLength(2) + k));
+                            flattenArr[i * (arr.GetLength(1) * arr.GetLength(2)) + j * arr.GetLength(2) + k] = arr[i, j, k];
+                        }
+                    }
+                }*/
+            }
     }
 }

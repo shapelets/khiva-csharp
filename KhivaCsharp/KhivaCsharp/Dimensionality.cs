@@ -35,6 +35,7 @@ namespace khiva
             {
                 IntPtr reference = arr.Reference;
                 interop.DLLDimensionality.paa(ref reference, ref bins, out IntPtr result);
+                arr.Reference = reference;
                 return (new array.Array(result));
             }
 
@@ -52,6 +53,7 @@ namespace khiva
             {
                 IntPtr reference = arr.Reference;
                 interop.DLLDimensionality.pip(ref reference, ref numberIps, out IntPtr result);
+                arr.Reference = reference;
                 return (new array.Array(result));
             }
 
@@ -70,6 +72,7 @@ namespace khiva
             {
                 IntPtr reference = arr.Reference;
                 interop.DLLDimensionality.pla_bottom_up(ref reference, ref maxError, out IntPtr result);
+                arr.Reference = reference;
                 return (new array.Array(result));
             }
 
@@ -88,6 +91,7 @@ namespace khiva
             {
                 IntPtr reference = arr.Reference;
                 interop.DLLDimensionality.pla_sliding_window(ref reference, ref maxError, out IntPtr result);
+                arr.Reference = reference;
                 return (new array.Array(result));
             }
 
@@ -113,6 +117,7 @@ namespace khiva
             {
                 IntPtr reference = points.Reference;
                 interop.DLLDimensionality.ramer_douglas_peucker(ref reference, ref epsilon, out IntPtr result);
+                points.Reference = reference;
                 return (new array.Array(result));
             }
 
@@ -136,6 +141,7 @@ namespace khiva
             {
                 IntPtr reference = arr.Reference;
                 interop.DLLDimensionality.sax(ref reference, ref alphabetSize, out IntPtr result);
+                arr.Reference = reference;
                 return (new array.Array(result));
             }
 
@@ -156,6 +162,7 @@ namespace khiva
             {
                 IntPtr reference = points.Reference;
                 interop.DLLDimensionality.visvalingam(ref reference, ref numPoints, out IntPtr result);
+                points.Reference = reference;
                 return (new array.Array(result));
             }
         }

@@ -88,9 +88,8 @@ namespace khiva
 
             private void CleanUp()
             {
-                Marshal.FreeHGlobal(reference);
-                reference = IntPtr.Zero;
-                DeleteArray();
+                this.DeleteArray();
+                this.Reference = IntPtr.Zero;
             }
 
             ~Array()
@@ -819,6 +818,10 @@ namespace khiva
                 {
                     return reference;
                 }
+                set
+                {
+                    reference = value;
+                }
             }
 
             /**
@@ -845,6 +848,7 @@ namespace khiva
                         gchArr = GCHandle.Alloc(byteData, GCHandleType.Pinned);
                         IntPtr dataPtr = gchArr.AddrOfPinnedObject();
                         interop.DLLArray.get_data(ref reference, dataPtr);
+                        this.Reference = reference;
                         ByteToGeneric1D<T>(data, byteData);
                     }
                     else if (typeof(T) == typeof(Complex))
@@ -855,6 +859,7 @@ namespace khiva
                             gchArr = GCHandle.Alloc(complexData, GCHandleType.Pinned);
                             IntPtr dataPtr = gchArr.AddrOfPinnedObject();
                             interop.DLLArray.get_data(ref reference, dataPtr);
+                            this.Reference = reference;
                             ToGenericComplex1D<T, double>(data, complexData);
                         }
                         else
@@ -863,6 +868,7 @@ namespace khiva
                             gchArr = GCHandle.Alloc(complexData, GCHandleType.Pinned);
                             IntPtr dataPtr = gchArr.AddrOfPinnedObject();
                             interop.DLLArray.get_data(ref reference, dataPtr);
+                            this.Reference = reference;
                             ToGenericComplex1D<T, float>(data, complexData);
                         }
                     }
@@ -871,7 +877,7 @@ namespace khiva
                         gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
                         IntPtr dataPtr = gchArr.AddrOfPinnedObject();
                         interop.DLLArray.get_data(ref reference, dataPtr);
-                        GCHandle.Alloc(data, GCHandleType.Weak);
+                        this.Reference = reference;
                     }
                 }
                 finally
@@ -915,6 +921,7 @@ namespace khiva
                         gchArr = GCHandle.Alloc(byteData, GCHandleType.Pinned);
                         IntPtr dataPtr = gchArr.AddrOfPinnedObject();
                         interop.DLLArray.get_data(ref reference, dataPtr);
+                        this.Reference = reference;
                         ByteToGeneric2D<T>(data, byteData);
                     }
                     else if (typeof(T) == typeof(Complex))
@@ -925,6 +932,7 @@ namespace khiva
                             gchArr = GCHandle.Alloc(complexData, GCHandleType.Pinned);
                             IntPtr dataPtr = gchArr.AddrOfPinnedObject();
                             interop.DLLArray.get_data(ref reference, dataPtr);
+                            this.Reference = reference;
                             ToGenericComplex2D<T, double>(data, complexData);
                         }
                         else
@@ -933,6 +941,7 @@ namespace khiva
                             gchArr = GCHandle.Alloc(complexData, GCHandleType.Pinned);
                             IntPtr dataPtr = gchArr.AddrOfPinnedObject();
                             interop.DLLArray.get_data(ref reference, dataPtr);
+                            this.Reference = reference;
                             ToGenericComplex2D<T, float>(data, complexData);
                         }
                     }
@@ -941,6 +950,7 @@ namespace khiva
                         gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
                         IntPtr dataPtr = gchArr.AddrOfPinnedObject();
                         interop.DLLArray.get_data(ref reference, dataPtr);
+                        this.Reference = reference;
                     }
                 }
                 finally
@@ -991,6 +1001,7 @@ namespace khiva
                         gchArr = GCHandle.Alloc(byteData, GCHandleType.Pinned);
                         IntPtr dataPtr = gchArr.AddrOfPinnedObject();
                         interop.DLLArray.get_data(ref reference, dataPtr);
+                        this.Reference = reference;
                         ByteToGeneric3D<T>(data, byteData);
                     }
                     else if (typeof(T) == typeof(Complex))
@@ -1001,6 +1012,7 @@ namespace khiva
                             gchArr = GCHandle.Alloc(complexData, GCHandleType.Pinned);
                             IntPtr dataPtr = gchArr.AddrOfPinnedObject();
                             interop.DLLArray.get_data(ref reference, dataPtr);
+                            this.Reference = reference;
                             ToGenericComplex3D<T, double>(data, complexData);
                         }
                         else
@@ -1009,6 +1021,7 @@ namespace khiva
                             gchArr = GCHandle.Alloc(complexData, GCHandleType.Pinned);
                             IntPtr dataPtr = gchArr.AddrOfPinnedObject();
                             interop.DLLArray.get_data(ref reference, dataPtr);
+                            this.Reference = reference;
                             ToGenericComplex3D<T, float>(data, complexData);
                         }
                     }
@@ -1017,6 +1030,7 @@ namespace khiva
                         gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
                         IntPtr dataPtr = gchArr.AddrOfPinnedObject();
                         interop.DLLArray.get_data(ref reference, dataPtr);
+                        this.Reference = reference;
                     }
                 }
                 finally
@@ -1071,6 +1085,7 @@ namespace khiva
                         gchArr = GCHandle.Alloc(byteData, GCHandleType.Pinned);
                         IntPtr dataPtr = gchArr.AddrOfPinnedObject();
                         interop.DLLArray.get_data(ref reference, dataPtr);
+                        this.Reference = reference;
                         ByteToGeneric4D<T>(data, byteData);
                     }
                     else if (typeof(T) == typeof(Complex))
@@ -1081,6 +1096,7 @@ namespace khiva
                             gchArr = GCHandle.Alloc(complexData, GCHandleType.Pinned);
                             IntPtr dataPtr = gchArr.AddrOfPinnedObject();
                             interop.DLLArray.get_data(ref reference, dataPtr);
+                            this.Reference = reference;
                             ToGenericComplex4D<T, double>(data, complexData);
                         }
                         else
@@ -1089,6 +1105,7 @@ namespace khiva
                             gchArr = GCHandle.Alloc(complexData, GCHandleType.Pinned);
                             IntPtr dataPtr = gchArr.AddrOfPinnedObject();
                             interop.DLLArray.get_data(ref reference, dataPtr);
+                            this.Reference = reference;
                             ToGenericComplex4D<T, float>(data, complexData);
                         }
                     }
@@ -1097,6 +1114,7 @@ namespace khiva
                         gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
                         IntPtr dataPtr = gchArr.AddrOfPinnedObject();
                         interop.DLLArray.get_data(ref reference, dataPtr);
+                        this.Reference = reference;
                     }
                 }
                 finally
@@ -1194,6 +1212,7 @@ namespace khiva
                 {
                     long[] dims = new long[4];
                     interop.DLLArray.get_dims(ref reference, dims);
+                    this.Reference = reference;
                     return dims;
                 }   
             }
@@ -1204,6 +1223,7 @@ namespace khiva
             public void Display()
             {
                 interop.DLLArray.display(reference);
+                this.Reference = reference;
             }
 
             /**
@@ -1212,16 +1232,18 @@ namespace khiva
             public void DeleteArray()
             {
                 interop.DLLArray.delete_array(ref reference);
+                this.Reference = reference;
             }
 
-                /**
-             * @brief Gets the type of the array.
-             */
+            /**
+         * @brief Gets the type of the array.
+         */
             public Dtype ArrayType
             {
                 get
                 {
                     interop.DLLArray.get_type(ref reference, out int type);
+                    this.Reference = reference;
                     return (Dtype)type;
                 }   
             }
@@ -1236,6 +1258,8 @@ namespace khiva
             public static Array operator +(Array lhs, Array rhs)
             {
                 interop.DLLArray.khiva_add(ref lhs.reference, ref rhs.reference, out IntPtr result);
+                lhs.Reference = lhs.reference;
+                rhs.Reference = rhs.reference;
                 return new Array(result);
             }
 
@@ -1249,6 +1273,8 @@ namespace khiva
             public static Array operator *(Array lhs, Array rhs)
             {
                 interop.DLLArray.khiva_mul(ref lhs.reference, ref rhs.reference, out IntPtr result);
+                lhs.Reference = lhs.reference;
+                rhs.Reference = rhs.reference;
                 return (new Array(result));
             }
 
@@ -1262,6 +1288,8 @@ namespace khiva
             public static Array operator -(Array lhs, Array rhs)
             {
                 interop.DLLArray.khiva_sub(ref lhs.reference, ref rhs.reference, out IntPtr result);
+                lhs.Reference = lhs.reference;
+                rhs.Reference = rhs.reference;
                 return (new Array(result));
             }
 
@@ -1275,6 +1303,8 @@ namespace khiva
             public static Array operator /(Array lhs, Array rhs)
             {
                 interop.DLLArray.khiva_div(ref lhs.reference, ref rhs.reference, out IntPtr result);
+                lhs.Reference = lhs.reference;
+                rhs.Reference = rhs.reference;
                 return (new Array(result));
             }
 
@@ -1288,6 +1318,8 @@ namespace khiva
             public static Array operator %(Array lhs, Array rhs)
             {
                 interop.DLLArray.khiva_mod(ref lhs.reference, ref rhs.reference, out IntPtr result);
+                lhs.Reference = lhs.reference;
+                rhs.Reference = rhs.reference;
                 return (new Array(result));
             }
 
@@ -1301,6 +1333,8 @@ namespace khiva
             public Array Pow(Array rhs)
             {
                 interop.DLLArray.khiva_pow(ref reference, ref rhs.reference, out IntPtr result);
+                this.Reference = reference;
+                rhs.Reference = rhs.reference;
                 return (new Array(result));
             }
 
@@ -1314,6 +1348,8 @@ namespace khiva
             public static Array operator &(Array lhs, Array rhs)
             {
                 interop.DLLArray.khiva_bitand(ref lhs.reference, ref rhs.reference, out IntPtr result);
+                lhs.Reference = lhs.reference;
+                rhs.Reference = rhs.reference;
                 return (new Array(result));
             }
 
@@ -1327,6 +1363,8 @@ namespace khiva
             public static Array operator |(Array lhs, Array rhs)
             {
                 interop.DLLArray.khiva_bitor(ref lhs.reference, ref rhs.reference, out IntPtr result);
+                lhs.Reference = lhs.reference;
+                rhs.Reference = rhs.reference;
                 return (new Array(result));
             }
 
@@ -1340,6 +1378,8 @@ namespace khiva
             public static Array operator ^(Array lhs, Array rhs)
             {
                 interop.DLLArray.khiva_bitxor(ref lhs.reference, ref rhs.reference, out IntPtr result);
+                lhs.Reference = lhs.reference;
+                rhs.Reference = rhs.reference;
                 return (new Array(result));
             }
 
@@ -1353,6 +1393,7 @@ namespace khiva
             public static Array operator <<(Array lhs, int shift)
             {
                 interop.DLLArray.khiva_bitshiftl(ref lhs.reference, ref shift, out IntPtr result);
+                lhs.Reference = lhs.reference;
                 return (new Array(result));
             }
 
@@ -1366,6 +1407,7 @@ namespace khiva
             public static Array operator >>(Array lhs, int shift)
             {
                 interop.DLLArray.khiva_bitshiftr(ref lhs.reference, ref shift, out IntPtr result);
+                lhs.Reference = lhs.reference;
                 return (new Array(result));
             }
 
@@ -1454,6 +1496,8 @@ namespace khiva
                     }
                 }
                 interop.DLLArray.khiva_sub(ref zeros.reference, ref rhs.reference, out IntPtr result);
+                zeros.Reference = zeros.reference;
+                rhs.Reference = rhs.reference;
                 return (new Array(result));
             }
 
@@ -1480,6 +1524,7 @@ namespace khiva
             public static Array operator !(Array lhs)
             {
                 interop.DLLArray.khiva_not(ref lhs.reference, out IntPtr result);
+                lhs.Reference = lhs.reference;
                 return (new Array(result));
             }
 
@@ -1493,6 +1538,8 @@ namespace khiva
             public static Array operator <(Array lhs, Array rhs)
             {
                 interop.DLLArray.khiva_lt(ref lhs.reference, ref rhs.reference, out IntPtr result);
+                lhs.Reference = lhs.reference;
+                rhs.Reference = rhs.reference;
                 return (new Array(result));
             }
 
@@ -1506,6 +1553,8 @@ namespace khiva
             public static Array operator >(Array lhs, Array rhs)
             {
                 interop.DLLArray.khiva_gt(ref lhs.reference, ref rhs.reference, out IntPtr result);
+                lhs.Reference = lhs.reference;
+                rhs.Reference = rhs.reference;
                 return (new Array(result));
             }
 
@@ -1519,6 +1568,8 @@ namespace khiva
             public static Array operator <=(Array lhs, Array rhs)
             {
                 interop.DLLArray.khiva_le(ref lhs.reference, ref rhs.reference, out IntPtr result);
+                lhs.Reference = lhs.reference;
+                rhs.Reference = rhs.reference;
                 return (new Array(result));
             }
 
@@ -1532,6 +1583,8 @@ namespace khiva
             public static Array operator >=(Array lhs, Array rhs)
             {
                 interop.DLLArray.khiva_ge(ref lhs.reference, ref rhs.reference, out IntPtr result);
+                lhs.Reference = lhs.reference;
+                rhs.Reference = rhs.reference;
                 return (new Array(result));
             }
 
@@ -1545,6 +1598,8 @@ namespace khiva
             public static Array operator ==(Array lhs, Array rhs)
             {
                 interop.DLLArray.khiva_eq(ref lhs.reference, ref rhs.reference, out IntPtr result);
+                lhs.Reference = lhs.reference;
+                rhs.Reference = rhs.reference;
                 return (new Array(result));
             }
 
@@ -1558,6 +1613,8 @@ namespace khiva
             public static Array operator !=(Array lhs, Array rhs)
             {
                 interop.DLLArray.khiva_ne(ref lhs.reference, ref rhs.reference, out IntPtr result);
+                lhs.Reference = lhs.reference;
+                rhs.Reference = rhs.reference;
                 return (new Array(result));
             }
 
@@ -1588,6 +1645,7 @@ namespace khiva
             public Array Transpose(bool conjugate = false)
             {
                 interop.DLLArray.khiva_transpose(ref reference, ref conjugate, out IntPtr result);
+                this.Reference = reference;
                 return (new Array(result));
             }
 
@@ -1601,6 +1659,7 @@ namespace khiva
             public Array Col(int index)
             {
                 interop.DLLArray.khiva_col(ref reference, ref index, out IntPtr result);
+                this.Reference = reference;
                 return (new Array(result));
             }
 
@@ -1615,6 +1674,7 @@ namespace khiva
             public Array Cols(int first, int last)
             {
                 interop.DLLArray.khiva_cols(ref reference, ref first, ref last, out IntPtr result);
+                this.Reference = reference;
                 return (new Array(result));
             }
 
@@ -1628,6 +1688,7 @@ namespace khiva
             public Array Row(int index)
             {
                 interop.DLLArray.khiva_row(ref reference, ref index, out IntPtr result);
+                this.Reference = reference;
                 return (new Array(result));
             }
 
@@ -1642,6 +1703,7 @@ namespace khiva
             public Array Rows(int first, int last)
             {
                 interop.DLLArray.khiva_rows(ref reference, ref first, ref last, out IntPtr result);
+                this.Reference = reference;
                 return (new Array(result));
             }
 
@@ -1655,6 +1717,8 @@ namespace khiva
             public Array Matmul(Array lhs)
             {
                 interop.DLLArray.khiva_matmul(ref reference, ref lhs.reference, out IntPtr result);
+                this.Reference = reference;
+                lhs.Reference = lhs.reference;
                 return (new Array(result));
             }
 
@@ -1667,6 +1731,7 @@ namespace khiva
             public Array Copy()
             {
                 interop.DLLArray.copy(ref reference, out IntPtr result);
+                this.Reference = reference;
                 return (new Array(result));
             }
 
@@ -1680,6 +1745,7 @@ namespace khiva
             public Array As(int type)
             {
                 interop.DLLArray.khiva_as(ref reference, ref type, out IntPtr result);
+                this.Reference = reference;
                 return (new Array(result));
             }
 

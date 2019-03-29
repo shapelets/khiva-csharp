@@ -37,18 +37,21 @@ namespace khiva.clustering.tests
                                                { 1.5, -1.5, 0.8333, -0.8333 },
                                                { 4.8333, 3.6667, 2.6667, 1.6667 }
                                             };
-            using (array.Array arr = new array.Array(tss)) {
+            using (array.Array arr = new array.Array(tss))
+            {
                 var (centroidsArr, labelsArr) = clustering.Clustering.KMeans(arr, 3);
                 using (centroidsArr)
-                using (labelsArr)
                 {
-                    double[,] data = centroidsArr.GetData2D<double>();
-
-                    for (int i = 0; i < 4; i++)
+                    using (labelsArr)
                     {
-                        Assert.AreEqual(expected[0, i] + expected[1, i] + expected[2, i],
-                                        data[0, i] + data[1, i] + data[2, i],
-                                        1e-3);
+                        double[,] data = centroidsArr.GetData2D<double>();
+
+                        for (int i = 0; i < 4; i++)
+                        {
+                            Assert.AreEqual(expected[0, i] + expected[1, i] + expected[2, i],
+                                            data[0, i] + data[1, i] + data[2, i],
+                                            1e-3);
+                        }
                     }
                 }
             }

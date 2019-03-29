@@ -728,50 +728,272 @@ namespace khiva.features.tests
             }
         }
 
-        /*[Test]
+        [Test]
         public void TestPartialAutocorrelation()
         {
-            float numel = 3000;
-            float step = 1 / (numel - 1);
-            float[,] tss = new float[2, (int)numel];
+            double numel = 3000.0F;
+            double step = 1 / (numel-1);
+            double[,] tss = new double[2, (int)numel];
             for (int i = 0; i < 2; i++)
             {
                 for (int j = 0; j < (int)numel; j++)
                 {
-                    tss[i, j] = (float)j * step;
+                    tss[i, j] = (double)j * step;
                 }
             }
             int[] lags = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
             using (array.Array arr = new array.Array(tss), lagsArr = new array.Array(lags),
                     partialAutocorrelation = Features.PartialAutocorrelation(arr, lagsArr))
             {
-                float[,] expected = { { 1.0F, 0.9993331432342529F, -0.0006701064994559F, -0.0006701068487018F, -0.0008041285327636F,
+                double[,] expected = { { 1.0F, 0.9993331432342529F, -0.0006701064994559F, -0.0006701068487018F, -0.0008041285327636F,
                               -0.0005360860959627F, -0.0007371186511591F, -0.0004690756904893F, -0.0008041299879551F,
                               -0.0007371196406893F },
                               { 1.0F, 0.9993331432342529F, -0.0006701064994559F, -0.0006701068487018F, -0.0008041285327636F,
                               -0.0005360860959627F, -0.0007371186511591F, -0.0004690756904893F, -0.0008041299879551F,
                               -0.0007371196406893F } };
-                float[,] result = partialAutocorrelation.GetData2D<float>();
+                double[,] result = partialAutocorrelation.GetData2D<double>();
                 for (int i = 0; i<result.GetLength(0); i++)
                 {
                     for (int j = 0; j<result.GetLength(1); j++)
                     {
-                        Assert.AreEqual(expected[i, j], result[i, j], DELTA);
+                        Assert.AreEqual(expected[i, j], result[i, j], 1e-3);
                     }
                 }
             }
-        }*/
+        }
 
-       /* [Test]
+        [Test]
         public void TestPercentageOfReoccurringDatapointsToAllDatapoints()
         {
-
+            float[,] tss = { { 3, 0, 0, 4, 0, 0, 13 }, { 3, 0, 0, 4, 0, 0, 13 } };
+            using(array.Array arr = new array.Array(tss), percentage = Features.PercentageOfReoccurringDatapointsToAllDatapoints(arr, false))
+            {
+                float[,] result = percentage.GetData2D<float>();
+                Assert.AreEqual(0.25, result[0, 0], 1e-4);
+                Assert.AreEqual(0.25, result[1, 0], 1e-4);
+            }
         }
 
         [Test]
         public void TestPercentageOfReoccurringValuesToAllValues()
         {
+            float[,] tss = { { 1, 1, 2, 3, 4, 4, 5, 6 }, { 1, 2, 2, 3, 4, 5, 6, 7 } };
+            using (array.Array arr = new array.Array(tss), percentage = Features.PercentageOfReoccurringValuesToAllValues(arr, false))
+            {
+                float[,] result = percentage.GetData2D<float>();
+                Assert.AreEqual(4.0/8.0, result[0, 0], 1e-4);
+                Assert.AreEqual(2.0/8.0, result[1, 0], 1e-4);
+            }
+        }
 
-        }*/
+        [Test]
+        public void TestQuantile()
+        {
+            float[,] tss = { { 0, 0, 0, 0, 3, 4, 13 }, 
+                             { 0, 0, 0, 0, 3, 4, 13 } };
+            float[] q = { 0.6F };
+            using(array.Array arr = new array.Array(tss), qArr = new array.Array(q), quantile = Features.Quantile(arr, qArr))
+            {
+                float[,] result = quantile.GetData2D<float>();
+                Assert.AreEqual(1.79999999, result[0, 0], 1e-4);
+                Assert.AreEqual(1.79999999, result[1, 0], 1e-4);
+            }
+        }
+
+        [Test]
+        public void TestRangeCount()
+        {
+            int[,] tss = { { 3, 0, 0, 4, 0, 0, 13 },
+                             { 3, 0, 5, 4, 0, 0, 13 } };
+            using (array.Array arr = new array.Array(tss), rangeCount = Features.RangeCount(arr, 2, 12))
+            {
+                int[,] result = rangeCount.GetData2D<int>();
+                Assert.AreEqual(2, result[0, 0]);
+                Assert.AreEqual(3, result[1, 0]);
+            }
+        }
+
+        [Test]
+        public void TestRatioBeyondRSigma()
+        {
+            double[,] tss = { { 3, 0, 0, 4, 0, 0, 13 },
+                             { 3, 0, 0, 4, 0, 0, 13 } };
+            using (array.Array arr = new array.Array(tss), ratioBeyondRSigma = Features.RatioBeyondRSigma(arr, 0.5F))
+            {
+                double[,] result = ratioBeyondRSigma.GetData2D<double>();
+                Assert.AreEqual(0.7142857142857143, result[0, 0], 1e-4);
+                Assert.AreEqual(0.7142857142857143, result[1, 0], 1e-4);
+            }
+        }
+
+        [Test]
+        public void TestRatioValueNumberToTimeSeriesLength()
+        {
+            double[,] tss = { { 3, 0, 0, 4, 0, 0, 13 },
+                             { 3, 5, 0, 4, 6, 0, 13 } };
+            using (array.Array arr = new array.Array(tss), ratio = Features.RatioValueNumberToTimeSeriesLength(arr))
+            {
+                double[,] result = ratio.GetData2D<double>();
+                Assert.AreEqual(4.0/7.0, result[0, 0], 1e-4);
+                Assert.AreEqual(6.0/7.0, result[1, 0], 1e-4);
+            }
+        }
+
+        [Test]
+        public void TestSampleEntropy()
+        {
+            float[,] tss = { { 3, 0, 0, 4, 0, 0, 13 },
+                             { 3, 0, 0, 4, 0, 0, 13 } };
+            using (array.Array arr = new array.Array(tss), sampleEntropy = Features.SampleEntropy(arr))
+            {
+                float[,] result = sampleEntropy.GetData2D<float>();
+                Assert.AreEqual(1.2527629, result[0, 0], 1e-4);
+                Assert.AreEqual(1.2527629, result[0, 1], 1e-4);
+            }
+        }
+
+        [Test]
+        public void TestSkewness()
+        {
+            float[,] tss = { { 3, 0, 0, 4, 0, 0, 13 },
+                             { 3, 0, 0, 4, 0, 0, 13 } };
+            using (array.Array arr = new array.Array(tss), skewness = Features.Skewness(arr))
+            {
+                float[,] result = skewness.GetData2D<float>();
+                Assert.AreEqual(2.038404735373753, result[0, 0], 1e-4);
+                Assert.AreEqual(2.038404735373753, result[1, 0], 1e-4);
+            }
+        }
+
+        [Test]
+        public void TestSpktWelchDensity()
+        {
+            float[,] tss = { { 0, 1, 1, 3, 4, 5, 6, 7, 8, 9 },
+                             { 0, 1, 1, 3, 4, 5, 6, 7, 8, 9 } };
+            using (array.Array arr = new array.Array(tss), spktWelchDensity = Features.SpktWelchDensity(arr, 0))
+            {
+                float[,] result = spktWelchDensity.GetData2D<float>();
+                Assert.AreEqual(1.6666667, result[0, 0], 1e-5);
+                Assert.AreEqual(1.6666667, result[1, 0], 1e-5);
+            }
+        }
+
+        [Test]
+        public void TestStandardDeviation()
+        {
+            double[,] tss = { { 20, 20, 20, 18, 25, 19, 20, 20, 20, 20, 40, 30, 1, 50, 1, 1, 5, 1, 20, 20 },
+                             { 20, 20, 20, 2, 19, 1, 20, 20, 20, 1, 15, 1, 30, 1, 1, 18, 4, 1, 20, 20 } };
+            using (array.Array arr = new array.Array(tss), standardDeviation = Features.StandardDeviation(arr))
+            {
+                double[,] result = standardDeviation.GetData2D<double>();
+                Assert.AreEqual(12.363150892875165, result[0, 0], 1e-4);
+                Assert.AreEqual(9.51367436903324, result[1, 0], 1e-4);
+            }
+        }
+
+        [Test]
+        public void TestSumOfReoccurringDatapoints()
+        {
+            short[,] tss = { { 3, 3, 0, 4, 0, 13, 13 },
+                             { 3, 3, 0, 4, 0, 13, 13 } };
+            using (array.Array arr = new array.Array(tss), sumOfReoccurringDatapoints = Features.SumOfReoccurringDatapoints(arr))
+            {
+                short[,] result = sumOfReoccurringDatapoints.GetData2D<short>();
+                Assert.AreEqual(32, result[0, 0]);
+                Assert.AreEqual(32, result[1, 0]);
+            }
+        }
+
+        [Test]
+        public void TestSumOfReoccurringValues()
+        {
+            short[,] tss = { { 4, 4, 6, 6, 7 },
+                             { 4, 7, 7, 8, 8 } };
+            using (array.Array arr = new array.Array(tss), sumOfReoccurringValues = Features.SumOfReoccurringValues(arr))
+            {
+                short[,] result = sumOfReoccurringValues.GetData2D<short>();
+                Assert.AreEqual(10, result[0, 0]);
+                Assert.AreEqual(15, result[1, 0]);
+            }
+        }
+
+        [Test]
+        public void TestSumValues()
+        {
+            float[,] tss = { { 1, 2, 3, 4.1F },
+                             { -1.2F, -2, -3, -4 } };
+            using (array.Array arr = new array.Array(tss), sumValues = Features.SumValues(arr))
+            {
+                float[,] result = sumValues.GetData2D<float>();
+                Assert.AreEqual(10.1, result[0, 0], DELTA);
+                Assert.AreEqual(-10.2, result[1, 0], DELTA);
+            }
+        }
+
+        [Test]
+        public void TestSymmetryLooking()
+        {
+            float[,] tss = { { 20, 20, 20, 18, 25, 19, 20, 20, 20, 20, 40, 30, 1, 50, 1, 1, 5, 1, 20, 20 },
+                             { 20, 20, 20, 2, 19, 1, 20, 20, 20, 1, 15, 1, 30, 1, 1, 18, 4, 1, 20, 20 } };
+            using (array.Array arr = new array.Array(tss), symmetryLooking = Features.SymmetryLooking(arr, 0.1F))
+            {
+                bool[,] result = symmetryLooking.GetData2D<bool>();
+                Assert.AreEqual(true, result[0, 0]);
+                Assert.AreEqual(false, result[1, 0]);
+            }
+        }
+
+        [Test]
+        public void TestTimeReversalAsymmetryStatistic()
+        {
+            float[,] tss = { { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 },
+                             { 20, 20, 20, 2, 19, 1, 20, 20, 20, 1, 15, 1, 30, 1, 1, 18, 4, 1, 20, 20 } };
+            using (array.Array arr = new array.Array(tss), timeReversalAsymmetryStatistic = Features.TimeReversalAsymmetryStatistic(arr, 2))
+            {
+                float[,] result = timeReversalAsymmetryStatistic.GetData2D<float>();
+                Assert.AreEqual(1052, result[0, 0]);
+                Assert.AreEqual(-150.625, result[1, 0]);
+            }
+
+        }
+
+        [Test]
+        public void TestValueCount()
+        {
+            float[,] tss = { { 20, 20, 20, 18, 25, 19, 20, 20, 20, 20, 40, 30, 1, 50, 1, 1, 5, 1, 20, 20 },
+                             { 20, 20, 20, 2, 19, 1, 20, 20, 20, 1, 15, 1, 30, 1, 1, 18, 4, 1, 20, 20 } };
+            using (array.Array arr = new array.Array(tss), valueCount = Features.ValueCount(arr, 20))
+            {
+                uint[,] result = valueCount.GetData2D<uint>();
+                Assert.AreEqual(9, result[0, 0]);
+                Assert.AreEqual(8, result[1, 0]);
+            }
+        }
+
+        [Test]
+        public void TestVariance()
+        {
+            float[,] tss = { { 1, 1, -1, -1 },
+                             { 1, 2, -2, -1 } };
+            using(array.Array arr = new array.Array(tss), variance = Features.Variance(arr))
+            {
+                float[,] result = variance.GetData2D<float>();
+                Assert.AreEqual(1, result[0, 0]);
+                Assert.AreEqual(2.5, result[1, 0]);
+            }
+        }
+
+        [Test]
+        public void TestVarianceLargerThanStandardDeviation()
+        {
+            float[,] tss = { { 20, 20, 20, 18, 25, 19, 20, 20, 20, 20, 40, 30, 1, 50, 1, 1, 5, 1, 20, 20 },
+                             { 20, 20, 20, 2, 19, 1, 20, 20, 20, 1, 15, 1, 30, 1, 1, 18, 4, 1, 20, 20 } };
+            using (array.Array arr = new array.Array(tss), varianceLargerThanStandardDeviation = Features.VarianceLargerThanStandardDeviation(arr))
+            {
+                bool[,] result = varianceLargerThanStandardDeviation.GetData2D<bool>();
+                Assert.AreEqual(true, result[0, 0]);
+                Assert.AreEqual(true, result[1, 0]);
+            }
+        }
     }
 }

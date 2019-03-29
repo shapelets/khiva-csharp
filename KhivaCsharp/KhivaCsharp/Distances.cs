@@ -29,6 +29,7 @@ namespace khiva
             {
                 IntPtr reference = arr.Reference;
                 interop.DLLDistances.dtw(ref reference, out IntPtr result);
+                arr.Reference = reference;
                 return (new array.Array(result));
             }
 
@@ -46,6 +47,7 @@ namespace khiva
             {
                 IntPtr reference = arr.Reference;
                 interop.DLLDistances.euclidean(ref reference, out IntPtr result);
+                arr.Reference = reference;
                 return (new array.Array(result));
             }
 
@@ -62,6 +64,7 @@ namespace khiva
             {
                 IntPtr reference = arr.Reference;
                 interop.DLLDistances.hamming(ref reference, out IntPtr result);
+                arr.Reference = reference;
                 return (new array.Array(result));
             }
 
@@ -79,6 +82,7 @@ namespace khiva
             {
                 IntPtr reference = arr.Reference;
                 interop.DLLDistances.manhattan(ref reference, out IntPtr result);
+                arr.Reference = reference;
                 return (new array.Array(result));
             }
 
@@ -97,6 +101,7 @@ namespace khiva
             {
                 IntPtr reference = arr.Reference;
                 interop.DLLDistances.sbd(ref reference, out IntPtr result);
+                arr.Reference = reference;
                 return (new array.Array(result));
             }
 
@@ -115,6 +120,7 @@ namespace khiva
             {
                 IntPtr reference = arr.Reference;
                 interop.DLLDistances.squared_euclidean(ref reference, out IntPtr result);
+                arr.Reference = reference;
                 return (new array.Array(result));
             }
 
