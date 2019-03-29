@@ -68,6 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Array.cs" />
+    <Compile Include="Interop\DLLMatrix.cs" />
+    <Compile Include="Linalg.cs" />
     <Compile Include="Dimensionality.cs" />
     <Compile Include="Clustering.cs" />
     <Compile Include="Distances.cs" />
@@ -78,7 +80,9 @@
     <Compile Include="Interop\DLLDistances.cs" />
     <Compile Include="Interop\DLLFeatures.cs" />
     <Compile Include="Interop\DLLLibrary.cs" />
+    <Compile Include="Interop\DLLLinalg.cs" />
     <Compile Include="Khiva.cs" />
+    <Compile Include="Matrix.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

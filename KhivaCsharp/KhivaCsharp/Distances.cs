@@ -14,7 +14,7 @@ namespace khiva
 {
     namespace distances
     {
-        public class Distances
+        public static class Distances
         {
             /**
              * @brief Calculates the Dynamic Time Warping Distance.

@@ -60,6 +60,8 @@
     <Compile Include="FeaturesTests.cs" />
     <Compile Include="LibraryTests.cs" />
     <Compile Include="ArrayTests.cs" />
+    <Compile Include="LinalgTests.cs" />
+    <Compile Include="MatrixTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -14,12 +14,8 @@ namespace khiva
 {
     namespace clustering
     {
-        public class Clustering
+        public static class Clustering
         {
-            public Clustering()
-            {
-
-            }
 
             /**
              * @brief Calculates the k-means algorithm.

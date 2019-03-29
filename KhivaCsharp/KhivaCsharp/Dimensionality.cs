@@ -14,7 +14,7 @@ namespace khiva
 {
     namespace dimensionality
     {
-        public class Dimensionality
+        public static class Dimensionality
         {
             /**
              * @brief Piecewise Aggregate Approximation (PAA) approximates a time series \f$X\f$ of length \f$n\f$ into vector

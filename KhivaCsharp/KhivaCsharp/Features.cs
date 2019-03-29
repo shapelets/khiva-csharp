@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace khiva.features
 {
-    public class Features
+    public static class Features
     {
 
         /**
