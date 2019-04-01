@@ -20,32 +20,26 @@ namespace khiva
     {
         static void Main(String[] args)
         {
-            double[,] tss = new double[,]{{ 0.0, 1.0, 2.0, 3.0 },
-                                        { 6.0, 7.0, 8.0, 9.0 },
-                                        { 2.0, -2.0, 4.0, -4.0 },
-                                        { 8.0, 5.0, 3.0, 1.0 },
-                                        { 15.0, 10.0, 5.0, 0.0 },
-                                        { 7.0, -7.0, 1.0, -1.0 }
-                                        };
-
-            double[,] expected = new double[,] { { 0.0, 0.1667, 0.3333, 0.5 },
-                                               { 1.5, -1.5, 0.8333, -0.8333 },
-                                               { 4.8333, 3.6667, 2.6667, 1.6667 }
-                                            };
-            using (array.Array arr = new array.Array(tss))
+            float[,] tss = { { 10, 10, 10, 10, 10, 10, 9, 10, 10, 10, 10, 10, 11, 10, 9 },
+                            { 10, 10, 10, 10, 10, 10, 9, 10, 10, 10, 10, 10, 11, 10, 9 } };
+            float[,] tss2 = { { 10, 11, 10, 9 }, { 10, 11, 10, 9 } };
+            using (array.Array arr = new array.Array(tss), arr2 = new array.Array(tss2))
             {
-                var (centroidsArr, labelsArr) = clustering.Clustering.KMeans(arr, 3);
-                using (centroidsArr)
+                var (pArr, iArr) = matrix.Matrix.Stomp(arr, arr2, 3);
+                using (pArr)
+                using (iArr)
                 {
-                    using (labelsArr)
+                    var (distancesArr, indicesArr, subsequenceArr) = matrix.Matrix.FindbestNMotifs(pArr, iArr, 3, 1);
+                    using (distancesArr)
+                    using (indicesArr)
+                    using (subsequenceArr)
                     {
-                        Console.WriteLine(centroidsArr.Reference);
-                        double[,] data = centroidsArr.GetData2D<double>();
-                        Console.WriteLine(centroidsArr.ArrayType);
+                        indicesArr.Display();
+                        subsequenceArr.Display();
                     }
                 }
             }
-            Console.ReadKey();
+                        Console.ReadKey();
                 /*float[] tss = new float[] { 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5 };
                 array.Array arr = new array.Array(tss);
                 array.Array aggregatedLinearTrendResult = features.Features.AggregatedLinearTrend(arr, 3, 0).Item1;

@@ -69,6 +69,11 @@
   <ItemGroup>
     <Compile Include="Array.cs" />
     <Compile Include="Interop\DLLMatrix.cs" />
+    <Compile Include="Interop\DLLNormalization.cs" />
+    <Compile Include="Interop\DLLPolynomial.cs" />
+    <Compile Include="Interop\DLLRegression.cs" />
+    <Compile Include="Interop\DLLRegularization.cs" />
+    <Compile Include="Interop\DLLStatistics.cs" />
     <Compile Include="Linalg.cs" />
     <Compile Include="Dimensionality.cs" />
     <Compile Include="Clustering.cs" />
@@ -83,6 +88,7 @@
     <Compile Include="Interop\DLLLinalg.cs" />
     <Compile Include="Khiva.cs" />
     <Compile Include="Matrix.cs" />
+    <Compile Include="Normalization.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

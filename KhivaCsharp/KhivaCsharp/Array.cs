@@ -1222,7 +1222,7 @@ namespace khiva
              */
             public void Display()
             {
-                interop.DLLArray.display(reference);
+                interop.DLLArray.display(ref reference);
                 this.Reference = reference;
             }
 

@@ -131,7 +131,7 @@ namespace khiva.interop
             * @param array The array to display.
             */
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void display([In] IntPtr array);
+        public extern static void display([In] ref IntPtr array);
 
         /**
             * @brief Decreases the references count of the given array.

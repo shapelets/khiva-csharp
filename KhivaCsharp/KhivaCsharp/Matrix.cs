@@ -58,7 +58,7 @@ namespace khiva
              * @param self_join Indicates whether the input profile comes from a self join operation or not. It determines
              * whether the mirror similar region is included in the output or not.
              */
-            public static (array.Array, array.Array, array.Array) FindbestNMotifs(array.Array profile, array.Array index, long m, long n, bool self_join)
+            public static (array.Array, array.Array, array.Array) FindbestNMotifs(array.Array profile, array.Array index, long m, long n, bool self_join=false)
             {
                 IntPtr profileReference = profile.Reference;
                 IntPtr indexReference = index.Reference;
