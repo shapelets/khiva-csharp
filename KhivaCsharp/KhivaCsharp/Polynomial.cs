@@ -46,10 +46,11 @@ namespace khiva
              * @param pp Array of polynomial coefficients.
              * @return result Array containing the roots of the polynomial.
              */
-            public static array.Array Poots(array.Array p)
+            public static array.Array Roots(array.Array p)
             {
                 IntPtr reference = p.Reference;
                 interop.DLLPolynomial.roots(ref reference, out IntPtr result);
+                p.Reference = reference;
                 return (new array.Array(result));
             }
         }

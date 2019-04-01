@@ -20,26 +20,15 @@ namespace khiva
     {
         static void Main(String[] args)
         {
-            float[,] tss = { { 10, 10, 10, 10, 10, 10, 9, 10, 10, 10, 10, 10, 11, 10, 9 },
-                            { 10, 10, 10, 10, 10, 10, 9, 10, 10, 10, 10, 10, 11, 10, 9 } };
-            float[,] tss2 = { { 10, 11, 10, 9 }, { 10, 11, 10, 9 } };
-            using (array.Array arr = new array.Array(tss), arr2 = new array.Array(tss2))
+            double[,] tss = { { 0, 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10, 11 } };
+            using (array.Array arr = new array.Array(tss), quantile = statistics.Statistics.QuantilesCutStatistics(arr, 2))
             {
-                var (pArr, iArr) = matrix.Matrix.Stomp(arr, arr2, 3);
-                using (pArr)
-                using (iArr)
-                {
-                    var (distancesArr, indicesArr, subsequenceArr) = matrix.Matrix.FindbestNMotifs(pArr, iArr, 3, 1);
-                    using (distancesArr)
-                    using (indicesArr)
-                    using (subsequenceArr)
-                    {
-                        indicesArr.Display();
-                        subsequenceArr.Display();
-                    }
-                }
+                double[,,] expected = { { {-0.00000001, 2.5 }, {-0.00000001, 2.5 }, {-0.00000001, 2.5 }, {2.5, 5.0 }, {2.5, 5.0 }, {2.5, 5.0 } },
+                                        { {6.0, 8.5 }, {6.0, 8.5 }, {6.0, 8.5 }, {8.5, 11.0 }, {8.5, 11.0 }, {8.5, 11.0 } }  };
+                double[,,] result = quantile.GetData3D<double>();
+                quantile.Display();
             }
-                        Console.ReadKey();
+                Console.ReadKey();
                 /*float[] tss = new float[] { 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5 };
                 array.Array arr = new array.Array(tss);
                 array.Array aggregatedLinearTrendResult = features.Features.AggregatedLinearTrend(arr, 3, 0).Item1;

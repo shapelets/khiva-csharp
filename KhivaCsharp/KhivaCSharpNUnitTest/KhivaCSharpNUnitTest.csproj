@@ -62,6 +62,11 @@
     <Compile Include="ArrayTests.cs" />
     <Compile Include="LinalgTests.cs" />
     <Compile Include="MatrixTests.cs" />
+    <Compile Include="NormalizationTests.cs" />
+    <Compile Include="PolynomialTests.cs" />
+    <Compile Include="RegressionTests.cs" />
+    <Compile Include="RegularizationTests.cs" />
+    <Compile Include="StatisticsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

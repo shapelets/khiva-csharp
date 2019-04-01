@@ -39,7 +39,7 @@ namespace khiva
              *
              * @return result An array with the values of the group keys aggregated using the aggregation_function.
              */
-            public static array.Array GroupBy(array.Array array, int aggregation_function, int n_columns_key, int n_columns_value)
+            public static array.Array GroupBy(array.Array array, int aggregation_function, int n_columns_key=1, int n_columns_value=1)
             {
                 IntPtr reference = array.Reference;
                 interop.DLLRegularization.group_by(ref reference, ref aggregation_function, ref n_columns_key, ref n_columns_value,

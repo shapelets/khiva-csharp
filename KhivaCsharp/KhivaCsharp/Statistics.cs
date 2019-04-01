@@ -111,7 +111,7 @@ namespace khiva
              * @param precision Number of decimals expected.
              * @return result Values at the given quantile.
              */
-            public static array.Array QuantileStatistics(array.Array tss, array.Array q, float precision)
+            public static array.Array QuantileStatistics(array.Array tss, array.Array q, float precision = 1e-8F)
             {
                 IntPtr reference = tss.Reference;
                 IntPtr qReference = q.Reference;
@@ -131,7 +131,7 @@ namespace khiva
              * @return result Matrix with the categories, one category per row, the start of the category in the first column and
              * the end in the second category.
              */
-            public static array.Array QuantilesCutStatistics(array.Array tss, float quantiles, float precision)
+            public static array.Array QuantilesCutStatistics(array.Array tss, float quantiles, float precision = 1e-8F)
             {
                 IntPtr reference = tss.Reference;
                 interop.DLLStatistics.quantiles_cut_statistics(ref reference, ref quantiles, ref precision, out IntPtr result);

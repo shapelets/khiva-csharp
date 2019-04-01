@@ -60,7 +60,7 @@ namespace khiva
              * @return result Array with the same dimensions as tss, whose values (time series in dimension 0) have been
              * normalized by maximum and minimum values, and scaled as per high and low parameters.
              */
-            public static array.Array MaxMinNorm(array.Array tss, double high, double low, double epsilon)
+            public static array.Array MaxMinNorm(array.Array tss, double high, double low, double epsilon=0.00000001)
             {
                 IntPtr reference = tss.Reference;
                 interop.DLLNormalization.max_min_norm(ref reference, ref high, ref low, ref epsilon, out IntPtr result);
@@ -78,7 +78,7 @@ namespace khiva
              * @param epsilon Safeguard for constant (or near constant) time series as the operation implies a unit scale operation
              * between min and max values in the tss.
              */
-            public static void MaxMinNorm(ref array.Array tss, double high, double low, double epsilon)
+            public static void MaxMinNorm(ref array.Array tss, double high, double low, double epsilon=0.00000001)
             {
                 IntPtr reference = tss.Reference;
                 interop.DLLNormalization.max_min_norm_in_place(ref reference, ref high, ref low, ref epsilon);
