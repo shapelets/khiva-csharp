@@ -279,28 +279,7 @@ namespace khiva.features
             array.Reference = reference;
             return (new array.Array(result));
         }
-        /**
-         * @brief Calculates a Continuous wavelet transform for the Ricker wavelet, also known as
-         * the "Mexican hat wavelet" which is defined by:
-         *
-         *  .. math::
-         *      \frac{2}{\sqrt{3a} \pi^{
-         *  \frac{1} { 4 }}} (1 - \frac{x^2}{a^2}) exp(-\frac{x^2}{2a^2})
-         *
-         *  where :math:`a` is the width parameter of the wavelet function.
-         *
-         * This feature calculator takes three different parameter: widths, coeff and w. The feature calculator takes all
-         * the different widths arrays and then calculates the cwt one time for each different width array. Then the values
-         * for the different coefficient for coeff and width w are returned. (For each dic in param one feature is
-         * returned).
-         *
-         * @param array Expects an input array whose dimension zero is the length of the time series (all the same)
-         * and dimension one indicates the number of time series.
-         * @param width Array that contains all different widths.
-         * @param coeff Coefficient of interest.
-         * @param w Width of interest.
-         * @return result Result of calculated coefficients.
-         */
+
         /// <summary>
         /// Calculates a Continuous wavelet transform for the Ricker wavelet, also known as
         /// the "Mexican hat wavelet" which is defined by:
@@ -316,11 +295,12 @@ namespace khiva.features
         /// for the different coefficient for coeff and width w are returned. (For each dic in param one feature is
         /// returned).
         /// </summary>
-        /// <param name="array"></param>
-        /// <param name="width"></param>
-        /// <param name="coeff"></param>
-        /// <param name="w"></param>
-        /// <returns></returns>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the time series (all the same)
+        /// and dimension one indicates the number of time series.</param>
+        /// <param name="width">Array that contains all different widths.</param>
+        /// <param name="coeff">Coefficient of interest.</param>
+        /// <param name="w">Width of interest.</param>
+        /// <returns>Result of calculated coefficients.</returns>
         public static array.Array CwtCoefficients(array.Array array, array.Array width, int coeff, int w)
         {
             IntPtr reference = array.Reference;
@@ -331,18 +311,15 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates the sum of squares of chunk i out of N chunks expressed as a ratio.
-         * with the sum of squares over the whole series. segmentFocus should be lower
-         * than the number of segments
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @param num_segments The number of segments to divide the series into.
-         * @param segment_focus The segment number (starting at zero) to return a feature on.
-         * @return result The energy ratio by chunk of the time series.
-         */
+        /// <summary>
+        /// Calculates the sum of squares of chunk i out of N chunks expressed as a ratio.
+        /// with the sum of squares over the whole series.segmentFocus should be lower than the number of segments
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <param name="num_segments">The number of segments to divide the series into.</param>
+        /// <param name="segment_focus">The segment number (starting at zero) to return a feature on.</param>
+        /// <returns>The energy ratio by chunk of the time series.</returns>
         public static array.Array EnergyRatioByChunks(array.Array array, long num_segments, long segment_focus)
         {
             IntPtr reference = array.Reference;
@@ -351,16 +328,12 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates the spectral centroid(mean), variance, skew, and kurtosis of the absolute fourier transform
-         * spectrum.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @return result The spectral centroid (mean), variance, skew, and kurtosis of the absolute fourier transform
-         * spectrum.
-         */
+        /// <summary>
+        /// Calculates the spectral centroid(mean), variance, skew, and kurtosis of the absolute fourier transform spectrum.
+        /// </summary>
+        /// <param name="array"> Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <returns>The spectral centroid (mean), variance, skew, and kurtosis of the absolute fourier transform spectrum.</returns>
         public static array.Array FftAggregated(array.Array array)
         {
             IntPtr reference = array.Reference;
@@ -369,19 +342,17 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates the fourier coefficients of the one-dimensional discrete
-         * Fourier Transform for real input by fast fourier transformation algorithm.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @param coefficient The coefficient to extract from the FFT.
-         * @return real The real part of the coefficient.
-         * @return imag The imaginary part of the cofficient.
-         * @return absolute The absolute value of the coefficient.
-         * @return angle The angle of the coefficient.
-         */
+        /// <summary>
+        /// Calculates the fourier coefficients of the one-dimensional discrete Fourier Transform for real input by fast fourier transformation algorithm.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <param name="coefficient">The coefficient to extract from the FFT.</param>
+        /// <returns>tuple with:
+        /// The real part of the coefficient.
+        /// The imaginary part of the cofficient.
+        /// The absolute value of the coefficient.
+        /// The angle of the coefficient.</returns>
         public static (array.Array, array.Array, array.Array, array.Array) FftCoefficient(array.Array array, long coefficient)
         {
             IntPtr reference = array.Reference;
@@ -395,15 +366,12 @@ namespace khiva.features
             return tuple;
         }
 
-        /**
-         * @brief Calculates the first relative location of the maximal value for each time series.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @return result The first relative location of the maximum value to the length of the time series,
-         *  for each time series.
-         */
+        /// <summary>
+        /// Calculates the first relative location of the maximal value for each time series.
+        /// </summary>
+        /// <param name="array">array Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <returns>The first relative location of the maximum value to the length of the time series, for each time series.</returns>
         public static array.Array FirstLocationOfMaximum(array.Array array)
         {
             IntPtr reference = array.Reference;
@@ -411,7 +379,6 @@ namespace khiva.features
             array.Reference = reference;
             return (new array.Array(result));
         }
-
         /**
          * @brief Calculates the first location of the minimal value of each time series. The position
          * is calculated relatively to the length of the series.
@@ -421,6 +388,12 @@ namespace khiva.features
          * series.
          * @return result The first relative location of the minimal value of each series.
          */
+        /// <summary>
+        /// Calculates the first location of the minimal value of each time series. The position is calculated relatively to the length of the series.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <returns></returns>
         public static array.Array FirstLocationOfMinimum(array.Array array)
         {
             IntPtr reference = array.Reference;
