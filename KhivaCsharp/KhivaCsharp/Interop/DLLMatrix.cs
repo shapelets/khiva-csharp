@@ -21,7 +21,7 @@ namespace khiva.interop
          *
          * @param profile The matrix profile containing the minimum distance of each
          * subsequence
-         * @param The matrix profile index containing the index of the most similar
+         * @param index The matrix profile index containing the index of the most similar
          * subsequence
          * @param length_profile Length of the matrix profile
          * @param m Subsequence length value used to calculate the input matrix profile.

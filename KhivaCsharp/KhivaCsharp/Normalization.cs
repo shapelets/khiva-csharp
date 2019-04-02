@@ -130,6 +130,13 @@ namespace khiva
              * @return result Array with the same dimensions as tss where the time series have been
              * adjusted for zero mean and one as standard deviation.
              */
+            /// <summary>
+            /// Calculates a new set of times series with zero mean and standard deviation one.
+            /// </summary>
+            /// <param name="tss">Time series concatenated in a single row.</param>
+            /// <param name="epsilon"> Minimum standard deviation to consider. It acts as a gatekeeper for
+            /// those time series that may be constant or near constant.</param>
+            /// <returns></returns>
             public static array.Array Znorm(array.Array tss, double epsilon)
             {
                 IntPtr reference = tss.Reference;
