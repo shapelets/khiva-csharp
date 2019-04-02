@@ -14,6 +14,9 @@ namespace khiva
 {
     namespace normalization
     {
+        /// <summary>
+        /// Khiva Normalization class containing several normalization methods.
+        /// </summary>
         public static class Normalization
         {
             /**

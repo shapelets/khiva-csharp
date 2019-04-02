@@ -14,23 +14,26 @@ namespace khiva
 {
     namespace regression
     {
+        /// <summary>
+        /// Khiva Regression class containing regression methods.
+        /// </summary>
         public static class Regression
         {
-            /**
-             * @brief Calculates a linear least-squares regression for two sets of measurements. Both arrays should have the same
-             * length.
-             *
-             * @param xss Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
-             * one indicates the number of time series.
-             * @param yss Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
-             * one indicates the number of time series.
-             * @return slope Slope of the regression line.
-             * @return intercept Intercept of the regression line.
-             * @return rvalue Correlation coefficient.
-             * @return pvalue Two-sided p-value for a hypothesis test whose null hypothesis is that the slope is zero, using Wald
-             * Test with t-distribution of the test statistic.
-             * @return stderrest Standard error of the estimated gradient.
-             */
+
+            /// <summary>
+            /// Calculates a linear least-squares regression for two sets of measurements. Both arrays should have the same
+            /// length.
+            /// </summary>
+            /// <param name="xss">Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
+            /// one indicates the number of time series.</param>
+            /// <param name="yss">Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
+            /// one indicates the number of time series.</param>
+            /// <returns>tuple with:
+            /// Slope of the regression line.
+            /// Correlation coefficient.
+            /// Two-sided p-value for a hypothesis test whose null hypothesis is that the slope is zero, using Wald
+            /// Test with t-distribution of the test statistic.
+            /// Standard error of the estimated gradient.</returns>
             public static (array.Array, array.Array, array.Array, array.Array, array.Array) Linear(array.Array xss, array.Array yss)
             {
                 IntPtr xReference = xss.Reference;
