@@ -7,12 +7,6 @@
 version: 1.0.{build}
 configuration: Debug
 
-install:
-  - appveyor DownloadFile https://testspace-client.s3.amazonaws.com/testspace-windows.zip
-  - 7z x -y testspace-windows.zip
-  - testspace config url samples.testspace.com
-  - testspace -v
-
 image: Visual Studio 2017
 
 environment:
@@ -66,4 +60,4 @@ test_script:
    - .\KhivaCSharpNUnitTest\packages\OpenCover.4.6.519\tools\OpenCover.Console -target:".\KhivaCSharpNUnitTest\packages\NUnit.ConsoleRunner.3.4.1\tools\nunit3-console.exe" -targetargs:"KhivaCSharpNUnitTest\bin\x64\Debug\KhivaCSharpNUnitTest.dll" -output:"coverage.xml" -filter:"+[*]* -[*]*Test*" -register:user
 
 after_test:
-   - testspace analysisTest.xml [Tests]TestResult.xml coverage.xml
+   - codecov -f coverage.xml
