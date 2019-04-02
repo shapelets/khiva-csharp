@@ -189,17 +189,14 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates the autocorrelation of the specified lag for the given time.
-         * series.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @param max_lag The maximum lag to compute.
-         * @param unbiased Determines whether it divides by n - lag (if true) or n ( if false)
-         * @return result The autocorrelation value for the given time series.
-         */
+        /// <summary>
+        /// Calculates the autocorrelation of the specified lag for the given time series.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <param name="max_lag">The maximum lag to compute.</param>
+        /// <param name="unbiased">Determines whether it divides by n - lag (if true) or n ( if false)</param>
+        /// <returns>The autocorrelation value for the given time series.</returns>
         public static array.Array AutoCorrelation(array.Array array, long max_lag, bool unbiased)
         {
             IntPtr reference = array.Reference;
@@ -208,15 +205,13 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates the binned entropy for the given time series and number of bins.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @param max_bins The number of bins.
-         * @return result The binned entropy value for the given time series.
-         */
+        /// <summary>
+        /// Calculates the binned entropy for the given time series and number of bins.
+        /// </summary>
+        /// <param name="array"> Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <param name="max_bins">The number of bins.</param>
+        /// <returns>The binned entropy value for the given time series.</returns>
         public static array.Array BinnedEntropy(array.Array array, int max_bins)
         {
             IntPtr reference = array.Reference;
@@ -225,16 +220,13 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates the Schreiber, T. and Schmitz, A. (1997) measure of non-linearity
-         * for the given time series.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @param lag The lag
-         * @return result The non-linearity value for the given time series.
-         */
+        /// <summary>
+        /// Calculates the Schreiber, T. and Schmitz, A. (1997) measure of non-linearity for the given time series.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <param name="lag">The lag</param>
+        /// <returns>The non-linearity value for the given time series.</returns>
         public static array.Array C3(array.Array array, long lag)
         {
             IntPtr reference = array.Reference;
@@ -244,17 +236,14 @@ namespace khiva.features
 
         }
 
-        /**
-         * @brief Calculates an estimate for the time series complexity defined by
-         * Batista, Gustavo EAPA, et al (2014). (A more complex time series has more peaks,
-         * valleys, etc.).
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @param zNormalize Controls whether the time series should be z-normalized or not.
-         * @return result The complexity value for the given time series.
-         */
+        /// <summary>
+        /// Calculates an estimate for the time series complexity defined by
+        /// Batista, Gustavo EAPA, et al(2014). (A more complex time series has more peaks, valleys, etc.).
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <param name="zNormalize">Controls whether the time series should be z-normalized or not.</param>
+        /// <returns>The complexity value for the given time series.</returns>
         public static array.Array CidCe(array.Array array, bool zNormalize)
         {
             IntPtr reference = array.Reference;
@@ -263,16 +252,12 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates the number of values in the time series that are higher than
-         * the mean.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @return result The number of values in the time series that are higher
-         * than the mean.
-         */
+        /// <summary>
+        /// Calculates the number of values in the time series that are higher than the mean.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <returns>The number of values in the time series that are higher than the mean.</returns>
         public static array.Array CountAboveMean(array.Array array)
         {
             IntPtr reference = array.Reference;
@@ -281,16 +266,12 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-        * @brief Calculates the number of values in the time series that are lower than
-        * the mean.
-        *
-        * @param array Expects an input array whose dimension zero is the length of the
-        * time series (all the same) and dimension one indicates the number of time
-        * series.
-        * @return result The number of values in the time series that are lower
-        * than the mean.
-        */
+        /// <summary>
+        /// Calculates the number of values in the time series that are lower than the mean.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <returns>The number of values in the time series that are lower than the mean.</returns>
         public static array.Array CountBelowMean(array.Array array)
         {
             IntPtr reference = array.Reference;
@@ -298,7 +279,6 @@ namespace khiva.features
             array.Reference = reference;
             return (new array.Array(result));
         }
-
         /**
          * @brief Calculates a Continuous wavelet transform for the Ricker wavelet, also known as
          * the "Mexican hat wavelet" which is defined by:
@@ -321,6 +301,26 @@ namespace khiva.features
          * @param w Width of interest.
          * @return result Result of calculated coefficients.
          */
+        /// <summary>
+        /// Calculates a Continuous wavelet transform for the Ricker wavelet, also known as
+        /// the "Mexican hat wavelet" which is defined by:
+        ///
+        ///  .. math::
+        ///      \frac{2}{\sqrt{3a} \pi^{
+        ///  \frac{1} { 4 }}} (1 - \frac{x^2}{a^2}) exp(-\frac{ x ^ 2}{2a^2})
+        ///
+        /// where :math:`a` is the width parameter of the wavelet function.
+        ///
+        /// This feature calculator takes three different parameter: widths, coeff and w.The feature calculator takes all
+        /// the different widths arrays and then calculates the cwt one time for each different width array.Then the values
+        /// for the different coefficient for coeff and width w are returned. (For each dic in param one feature is
+        /// returned).
+        /// </summary>
+        /// <param name="array"></param>
+        /// <param name="width"></param>
+        /// <param name="coeff"></param>
+        /// <param name="w"></param>
+        /// <returns></returns>
         public static array.Array CwtCoefficients(array.Array array, array.Array width, int coeff, int w)
         {
             IntPtr reference = array.Reference;
