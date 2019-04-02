@@ -115,21 +115,19 @@ namespace khiva.features
             return tuple;
         }
 
-        /**
-         * @brief Calculates a vectorized Approximate entropy algorithm.
-         * https://en.wikipedia.org/wiki/Approximate_entropy
-         * For short time-series this method is highly dependent on the parameters, but should be stable for N > 2000,
-         * see: Yentes et al. (2012) - The Appropriate Use of Approximate Entropy and Sample Entropy with Short Data Sets
-         * Other shortcomings and alternatives discussed in:
-         * Richman & Moorman (2000) - Physiological time-series analysis using approximate entropy and sample entropy.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the time
-         * series (all the same) and dimension one indicates the number of
-         * time series.
-         * @param m Length of compared run of data.
-         * @param r Filtering level, must be positive.
-         * @return result The vectorized approximate entropy for all the input time series in array.
-         */
+        /// <summary>
+        /// Calculates a vectorized Approximate entropy algorithm.
+        /// https://en.wikipedia.org/wiki/Approximate_entropy
+        /// For short time-series this method is highly dependent on the parameters, but should be stable for N > 2000,
+        /// see: Yentes et al. (2012) - The Appropriate Use of Approximate Entropy and Sample Entropy with Short Data Sets
+        /// Other shortcomings and alternatives discussed in:
+        /// Richman & Moorman (2000) - Physiological time-series analysis using approximate entropy and sample entropy.
+        /// </summary>
+        /// <param name="array"> Expects an input array whose dimension zero is the length of the time
+        /// series(all the same) and dimension one indicates the number of time series.</param>
+        /// <param name="m">Length of compared run of data.</param>
+        /// <param name="r">Filtering level, must be positive.</param>
+        /// <returns>The vectorized approximate entropy for all the input time series in array.</returns>
         public static array.Array ApproximateEntropy(array.Array array, int m, float r)
         {
             IntPtr reference = array.Reference;
@@ -138,19 +136,15 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates the cross-covariance of the given time series.
-         *
-         * @param xss Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @param yss Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @param unbiased Determines whether it divides by n - lag (if true) or
-         * n (if false).
-         * @return result The cross-covariance value for the given time series.
-         */
+        /// <summary>
+        /// Calculates the cross-covariance of the given time series.
+        /// </summary>
+        /// <param name="xss">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <param name="yss">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <param name="unbiased">Determines whether it divides by n - lag (if true) or n(if false).</param>
+        /// <returns>The cross-covariance value for the given time series.</returns>
         public static array.Array CrossCovariance(array.Array xss, array.Array yss, bool unbiased)
         {
             IntPtr referenceXss = xss.Reference;
@@ -161,16 +155,13 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates the auto-covariance the given time series.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @param unbiased Determines whether it divides by n - lag (if true) or
-         * n (if false).
-         * @return result The auto-covariance value for the given time series.
-         */
+        /// <summary>
+        /// Calculates the auto-covariance the given time series.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <param name="unbiased">Determines whether it divides by n - lag (if true) or n(if false).</param>
+        /// <returns>The auto-covariance value for the given time series.</returns>
         public static array.Array AutoCovariance(array.Array array, bool unbiased = false)
         {
             IntPtr reference = array.Reference;
@@ -179,19 +170,15 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates the cross-correlation of the given time series.
-         *
-         * @param xss Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @param yss Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @param unbiased Determines whether it divides by n - lag (if true) or
-         * n (if false).
-         * @return result The cross-correlation value for the given time series.
-         */
+        /// <summary>
+        /// Calculates the cross-correlation of the given time series.
+        /// </summary>
+        /// <param name="xss">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <param name="yss">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <param name="unbiased"></param>
+        /// <returns>The cross-correlation value for the given time series.</returns>
         public static array.Array CrossCorrelation(array.Array xss, array.Array yss, bool unbiased)
         {
             IntPtr referenceXss = xss.Reference;
