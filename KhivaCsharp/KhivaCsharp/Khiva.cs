@@ -11,127 +11,130 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 
-/**
- * Class to change internal properties of the Khiva library.
- */
 namespace khiva
 {
-        public static class Khiva
+    /// <summary>
+    /// Class to change internal properties of the Khiva library.
+    /// </summary>
+    public static class Khiva
+    {
+
+        /// <summary>
+        /// Khiva Backend.
+        /// </summary>
+        [Flags]
+        public enum Backend
         {
+            /// <summary>
+            /// DEFAULT Backend
+            /// </summary>
+            KHIVA_BACKEND_DEFAULT = 0,
+            /// <summary>
+            /// CPU Backend.
+            /// </summary>
+            KHIVA_BACKEND_CPU = 1,
+            /// <summary>
+            /// CUDA Backend.
+            /// </summary>
+            KHIVA_BACKEND_CUDA = 2,
+            /// <summary>
+            /// OPENCL Backend.
+            /// </summary>
+            KHIVA_BACKEND_OPENCL = 4
+        }
 
-            /**
-             * Khiva Backend.
-             */
-            [Flags]
-            public enum Backend
-            {
-                /**
-                 * DEFAULT Backend
-                 */
-                KHIVA_BACKEND_DEFAULT = 0,
-                /**
-                 * CPU Backend.
-                 */
-                KHIVA_BACKEND_CPU = 1,
-                /**
-                 * CUDA Backend.
-                 */
-                KHIVA_BACKEND_CUDA = 2,
-                /**
-                 * OPENCL Backend.
-                 */
-                KHIVA_BACKEND_OPENCL = 4
+        /// <summary>
+        /// Getters and setters for the Khiva backend
+        /// </summary>
+        public static Backend ActualBackend
+        {
+            get {
+                interop.DLLLibrary.get_backend(out int backend);
+                return (Backend)backend;
             }
-
-            public static Backend ActualBackend
+            set
             {
-                get {
-                    interop.DLLLibrary.get_backend(out int backend);
-                    return (Backend)backend;
-                }
-                set
-                {
-                    int backend = (int)value;
-                    interop.DLLLibrary.set_backend(ref backend);
-                }
+                int backend = (int)value;
+                interop.DLLLibrary.set_backend(ref backend);
             }
+        }
 
-            public static Backend SupportedBackends
+        /// <summary>
+        /// Supported Khiva backends 
+        /// </summary>
+        public static Backend SupportedBackends
+        {
+            get
             {
-                get
-                {
-                    interop.DLLLibrary.get_backends(out int backends);
-                    return (Backend)backends;
-                }
+                interop.DLLLibrary.get_backends(out int backends);
+                return (Backend)backends;
             }
+        }
 
-            /**
-                * Prints information from the current backend.
-                */
-            public static void PrintBackendInfo()
+        /// <summary>
+        /// Prints information from the current backend.
+        /// </summary>
+        public static void PrintBackendInfo()
+        {
+            StringBuilder backendInfo = new StringBuilder(256);
+            interop.DLLLibrary.backend_info(ref backendInfo);
+            Console.WriteLine(backendInfo.ToString());
+        }
+
+        /// <summary>
+        /// Getter for the information from the current backend.
+        /// </summary>
+        public static String BackendInfo
+        {
+            get
             {
                 StringBuilder backendInfo = new StringBuilder(256);
                 interop.DLLLibrary.backend_info(ref backendInfo);
-                Console.WriteLine(backendInfo.ToString());
-            }
-
-            /**
-                * Gets information from the current backend.
-                *
-                * @return String with information from the active backend.
-                */
-            public static String BackendInfo
-            {
-                get
-                {
-                    StringBuilder backendInfo = new StringBuilder(256);
-                    interop.DLLLibrary.backend_info(ref backendInfo);
-                    return backendInfo.ToString();
-                }     
-            }
-
-
-            /**
-                * Sets the Khiva device.
-                *
-                * @param device Device selected.
-                */
-
-            public static int Device
-            {
-                set
-                {
-                    interop.DLLLibrary.set_device(ref value);
-                }
-                get
-                {
-                    interop.DLLLibrary.get_device_id(out int device_id);
-                    return device_id;
-                }
-            }   
-
-            public static int DeviceCount
-            {
-                get
-                {
-                    interop.DLLLibrary.get_device_count(out int device_count);
-                    return device_count;
-                }
-            }
-
-            /**
-            * Gets the vesion of the library.
-            *
-            * @return A string with the khiva version.
-            */
-            public static String Version
-            {
-                get{
-                    StringBuilder versionName = new StringBuilder(256);
-                    interop.DLLLibrary.version(ref versionName);
-                    return versionName.ToString();
-                }   
+                return backendInfo.ToString();
             }
         }
+
+
+        
+        /// <summary>
+        /// Getter and setter for the Khiva device
+        /// </summary>
+        public static int Device
+        {
+            set
+            {
+                interop.DLLLibrary.set_device(ref value);
+            }
+            get
+            {
+                interop.DLLLibrary.get_device_id(out int device_id);
+                return device_id;
+            }
+        }   
+
+        /// <summary>
+        /// Getter for the device count
+        /// </summary>
+        public static int DeviceCount
+        {
+            get
+            {
+                interop.DLLLibrary.get_device_count(out int device_count);
+                return device_count;
+            }
+        }
+
+        /// <summary>
+        /// Getter for the Khiva version
+        /// </summary>
+        public static String Version
+        {
+            get{
+                StringBuilder versionName = new StringBuilder(256);
+                interop.DLLLibrary.version(ref versionName);
+                return versionName.ToString();
+            }   
+        }
+    }
 }
 

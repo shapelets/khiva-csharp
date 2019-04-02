@@ -14,6 +14,9 @@ namespace khiva
 {
     namespace matrix
     {
+        /// <summary>
+        /// Khiva Matrix Profile class containing matrix profile methods.
+        /// </summary>
         public static class Matrix
         {
             /**
@@ -33,6 +36,19 @@ namespace khiva
             * @param self_join Indicates whether the input profile comes from a self join operation or not. It determines
             * whether the mirror similar region is included in the output or not.
             */
+            /// <summary>
+            /// 
+            /// </summary>
+            /// <param name="profile">The matrix profile containing the minimum distance of each subsequence</param>
+            /// <param name="index">The matrix profile index containing the index of the most similar subsequence</param>
+            /// <param name="m">Length of the matrix profile</param>
+            /// <param name="n">Number of discords to extract</param>
+            /// <param name="self_join">Indicates whether the input profile comes from a self join operation or not. It determines
+            /// whether the mirror similar region is included in the output or not.</param>
+            /// <returns>Tuple with:
+            /// The distance of the best N discords
+            /// The indices of the best N discords
+            /// The indices of the query sequences that produced the "N" bigger discords.</returns>
             public static (array.Array, array.Array, array.Array) FindbestNDiscords(array.Array profile, array.Array index, long m, long n, bool self_join = false)
             {
                 IntPtr profileReference = profile.Reference;
@@ -47,23 +63,21 @@ namespace khiva
                              subsequence: new array.Array(subsequence_indices));
                 return tuple;
             }
-
-            /**
-             * @brief Primitive of the findBestNMotifs function.
-             *
-             * @param profile The matrix profile containing the minimum distance of each
-             * subsequence.
-             * @param index The matrix profile index containing where each minimum occurs.
-             * @param length_profile Length of the matrix profile.
-             * @param m Subsequence length value used to calculate the input matrix profile.
-             * @param n Number of motifs to extract.
-             * @return motif_distances The distance of the best N motifs.
-             * @return motif_indices The indices of the best N motifs.
-             * @return subsequence_indices The indices of the query sequences that produced
-             * the minimum reported in the motifs.
-             * @param self_join Indicates whether the input profile comes from a self join operation or not. It determines
-             * whether the mirror similar region is included in the output or not.
-             */
+           
+            /// <summary>
+            /// Primitive of the findBestNMotifs function.
+            /// </summary>
+            /// <param name="profile">The matrix profile containing the minimum distance of each subsequence.</param>
+            /// <param name="index">The matrix profile index containing where each minimum occurs.</param>
+            /// <param name="m">Subsequence length value used to calculate the input matrix profile.</param>
+            /// <param name="n">Number of motifs to extract.</param>
+            /// <param name="self_join">Indicates whether the input profile comes from a self join operation or not. It determines
+            /// whether the mirror similar region is included in the output or not.</param>
+            /// <returns>Tuple with:
+            /// The distance of the best N motifs.
+            /// The indices of the best N motifs.
+            /// The indices of the query sequences that produced
+            /// the minimum reported in the motifs.</returns>
             public static (array.Array, array.Array, array.Array) FindbestNMotifs(array.Array profile, array.Array index, long m, long n, bool self_join=false)
             {
                 IntPtr profileReference = profile.Reference;
@@ -79,20 +93,19 @@ namespace khiva
                 return tuple;
             }
 
-            /**
-             * @brief  Primitive of the STOMP algorithm.
-             *
-             * [1] Yan Zhu, Zachary Zimmerman, Nader Shakibay Senobari, Chin-Chia Michael Yeh, Gareth Funning, Abdullah Mueen,
-             * Philip Brisk and Eamonn Keogh (2016). Matrix Profile II: Exploiting a Novel Algorithm and GPUs to break the one
-             * Hundred Million Barrier for Time Series Motifs and Joins. IEEE ICDM 2016.
-             *
-             * @param tssa Query time series
-             * @param tssb Reference time series
-             * @param m Pointer to a long with the length of the subsequence.
-             * @return p The matrix profile, whichlects the distance to the closer element of the subsequence
-             * from 'tssa' in 'tssb'.
-             * @return i The matrix profile index, which points to where the aforementioned minimum is located.
-             */
+            /// <summary>
+            /// Primitive of the STOMP algorithm.
+            /// 
+            /// [1] Yan Zhu, Zachary Zimmerman, Nader Shakibay Senobari, Chin-Chia Michael Yeh, Gareth Funning, Abdullah Mueen,
+            /// Philip Brisk and Eamonn Keogh (2016). Matrix Profile II: Exploiting a Novel Algorithm and GPUs to break the one
+            /// Hundred Million Barrier for Time Series Motifs and Joins. IEEE ICDM 2016.
+            /// </summary>
+            /// <param name="tssa">Query time series</param>
+            /// <param name="tssb">Reference time series</param>
+            /// <param name="m">Pointer to a long with the length of the subsequence.</param>
+            /// <returns>Tuple with:
+            /// The matrix profile, whichlects the distance to the closer element of the subsequence from 'tssa' in 'tssb'.
+            /// The matrix profile index, which points to where the aforementioned minimum is located.</returns>
             public static (array.Array, array.Array) Stomp(array.Array tssa, array.Array tssb, long m)
             {
                 IntPtr aReference = tssa.Reference;
@@ -106,19 +119,18 @@ namespace khiva
                 return tuple;
             }
 
-            /**
-             * @brief Primitive of the STOMP self join algorithm.
-             *
-             * [1] Yan Zhu, Zachary Zimmerman, Nader Shakibay Senobari, Chin-Chia Michael Yeh, Gareth Funning, Abdullah Mueen,
-             * Philip Brisk and Eamonn Keogh (2016). Matrix Profile II: Exploiting a Novel Algorithm and GPUs to break the one
-             * Hundred Million Barrier for Time Series Motifs and Joins. IEEE ICDM 2016.
-             *
-             * @param tss Query anderence time series
-             * @param m Pointer to a long with the length of the subsequence.
-             * @return p The matrix profile, whichlects the distance to the closer element of the subsequence
-             * from 'tss' in a different location of itself
-             * @return i The matrix profile index, which points to where the aforementioned minimum is located
-             */
+            /// <summary>
+            /// Primitive of the STOMP self join algorithm.
+            /// 
+            /// [1] Yan Zhu, Zachary Zimmerman, Nader Shakibay Senobari, Chin-Chia Michael Yeh, Gareth Funning, Abdullah Mueen,
+            /// Philip Brisk and Eamonn Keogh (2016). Matrix Profile II: Exploiting a Novel Algorithm and GPUs to break the one
+            /// Hundred Million Barrier for Time Series Motifs and Joins. IEEE ICDM 2016.
+            /// </summary>
+            /// <param name="tss">Query anderence time series</param>
+            /// <param name="m">Pointer to a long with the length of the subsequence.</param>
+            /// <returns>Tuple with:
+            /// The matrix profile, whichlects the distance to the closer element of the subsequence from 'tss' in a different location of itself
+            /// The matrix profile index, which points to where the aforementioned minimum is located</returns>
             public static (array.Array, array.Array) StompSelfJoin(array.Array tss, long m)
             {
                 IntPtr reference = tss.Reference;
