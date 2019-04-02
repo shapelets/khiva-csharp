@@ -56,7 +56,7 @@ build_script:
   - msbuild KhivaCsharp/KhivaCsharp/KhivaCsharp.csproj /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll" /p:runCodeAnalysis=true /p:codeanalysislogfile=..\analysis.xml
   - msbuild KhivaCsharp/KhivaCSharpNUnitTest/KhivaCSharpNUnitTest.csproj /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll" /p:runCodeAnalysis=true /p:codeanalysislogfile=..\analysisTest.xml
 test_script:
-   - .\KhivaCsharp\packages\OpenCover.4.6.519\tools\OpenCover.Console -target:".\KhivaCsharp\packages\NUnit.ConsoleRunner.3.4.1\tools\nunit3-console.exe" -targetargs:"KhivaCSharpNUnitTest\bin\x64\Debug\KhivaCSharpNUnitTest.dll" -output:"coverage.xml" -register:user
+   - .\KhivaCsharp\packages\OpenCover.4.6.519\tools\OpenCover.Console -target:".\KhivaCsharp\packages\NUnit.ConsoleRunner.3.9.0\tools\nunit3-console.exe" -targetargs:"KhivaCSharpNUnitTest\bin\x64\Debug\KhivaCSharpNUnitTest.dll" -output:"coverage.xml" -register:user
 
 after_test:
    - codecov -f coverage.xml

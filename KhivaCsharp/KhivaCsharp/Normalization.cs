@@ -19,16 +19,15 @@ namespace khiva
         /// </summary>
         public static class Normalization
         {
-            /**
-             * @brief Normalizes the given time series according to its maximum value and adjusts each value within the range
-             * (-1, 1).
-             *
-             * @param tss Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
-             * one indicates the number of time series.
-             * @return result An array with the same dimensions as tss, whose values (time series in dimension 0) have been
-             * normalized by dividing each number by 10^j, where j is the number of integer digits of the max number in the time
-             * series.
-             */
+
+            /// <summary>
+            /// Normalizes the given time series according to its maximum value and adjusts each value within the range (-1, 1).
+            /// </summary>
+            /// <param name="tss">Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
+            /// one indicates the number of time series.</param>
+            /// <returns>An array with the same dimensions as tss, whose values (time series in dimension 0) have been
+            /// normalized by dividing each number by 10^j, where j is the number of integer digits of the max number in the time
+            /// series.</returns>
             public static array.Array DecimalScalingNorm(array.Array tss)
             {
                 IntPtr reference = tss.Reference;
@@ -37,12 +36,11 @@ namespace khiva
                 return (new array.Array(result));
             }
 
-            /**
-             * @brief Same as decimal_scaling_norm, but it performs the operation in place, without allocating further memory.
-             *
-             * @param tss Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
-             * one indicates the number of time series.
-             */
+            /// <summary>
+            /// Same as decimal_scaling_norm, but it performs the operation in place, without allocating further memory.
+            /// </summary>
+            /// <param name="tss">Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
+            /// one indicates the number of time series.</param>
             public static void DecimalScalingNorm(ref array.Array tss)
             {
                 IntPtr reference = tss.Reference;
@@ -50,19 +48,17 @@ namespace khiva
                 tss.Reference = reference;
             }
 
-            /**
-             * @brief Normalizes the given time series according to its minimum and maximum value and adjusts each value within the
-             * range [low, high].
-             *
-             * @param tss Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
-             * one indicates the number of time series.
-             * @param high Maximum final value (Defaults to 1.0).
-             * @param low  Minimum final value (Defaults to 0.0).
-             * @param epsilon Safeguard for constant (or near constant) time series as the operation implies a unit scale operation
-             * between min and max values in the tss.
-             * @return result Array with the same dimensions as tss, whose values (time series in dimension 0) have been
-             * normalized by maximum and minimum values, and scaled as per high and low parameters.
-             */
+            /// <summary>
+            /// Normalizes the given time series according to its minimum and maximum value and adjusts each value within the range[low, high].
+            /// </summary>
+            /// <param name="tss">Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
+            /// one indicates the number of time series.</param>
+            /// <param name="high">Maximum final value (Defaults to 1.0).</param>
+            /// <param name="low">Minimum final value (Defaults to 0.0).</param>
+            /// <param name="epsilon">Safeguard for constant (or near constant) time series as the operation implies a unit scale operation
+            /// between min and max values in the tss.</param>
+            /// <returns>Array with the same dimensions as tss, whose values (time series in dimension 0) have been
+            /// normalized by maximum and minimum values, and scaled as per high and low parameters.</returns>
             public static array.Array MaxMinNorm(array.Array tss, double high, double low, double epsilon=0.00000001)
             {
                 IntPtr reference = tss.Reference;
@@ -71,16 +67,15 @@ namespace khiva
                 return (new array.Array(result));
             }
 
-            /**
-             * @brief Same as max_min_norm, but it performs the operation in place, without allocating further memory.
-             *
-             * @param tss Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
-             * one indicates the number of time series.
-             * @param high Maximum final value (Defaults to 1.0).
-             * @param low  Minimum final value (Defaults to 0.0).
-             * @param epsilon Safeguard for constant (or near constant) time series as the operation implies a unit scale operation
-             * between min and max values in the tss.
-             */
+            /// <summary>
+            /// Same as max_min_norm, but it performs the operation in place, without allocating further memory.
+            /// </summary>
+            /// <param name="tss">Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
+            /// one indicates the number of time series.</param>
+            /// <param name="high">Maximum final value (Defaults to 1.0).</param>
+            /// <param name="low">Minimum final value (Defaults to 0.0).</param>
+            /// <param name="epsilon">Safeguard for constant (or near constant) time series as the operation implies a unit scale operation
+            /// between min and max values in the tss.</param>
             public static void MaxMinNorm(ref array.Array tss, double high, double low, double epsilon=0.00000001)
             {
                 IntPtr reference = tss.Reference;
@@ -88,20 +83,18 @@ namespace khiva
                 tss.Reference = reference;
             }
 
-            /**
-             * @brief Normalizes the given time series according to its maximum-minimum value and its mean. It follows the following
-             * formulae:
-             * \f[
-             * \acute{x} = \frac{x - mean(x)}{max(x) - min(x)}.
-             * \f]
-             *
-             * @param tss Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
-             * one indicates the number of time series.
-             *
-             * @return result An array with the same dimensions as tss, whose values (time series in dimension 0) have been
-             * normalized by substracting the mean from each number and dividing each number by \f$ max(x) - min(x)\f$, in the
-             * time series.
-             */
+            /// <summary>
+            /// Normalizes the given time series according to its maximum-minimum value and its mean. It follows the following
+            /// formulae:
+            /// \f[
+            /// \acute{x} = \frac{x - mean(x)}{max(x) - min(x)}.
+            /// \f]
+            /// </summary>
+            /// <param name="tss">Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
+            /// one indicates the number of time series.</param>
+            /// <returns>An array with the same dimensions as tss, whose values (time series in dimension 0) have been
+            /// normalized by substracting the mean from each number and dividing each number by \f$ max(x) - min(x)\f$, in the
+            /// time series.</returns>
             public static array.Array MeanNorm(array.Array tss)
             {
                 IntPtr reference = tss.Reference;
@@ -110,16 +103,15 @@ namespace khiva
                 return (new array.Array(result));
             }
 
-            /**
-             * @brief Normalizes the given time series according to its maximum-minimum value and its mean. It follows the following
-             * formulae:
-             * \f[
-             * \acute{x} = \frac{x - mean(x)}{max(x) - min(x)}.
-             * \f]
-             *
-             * @param tss Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
-             * one indicates the number of time series.
-             */
+            /// <summary>
+            /// Normalizes the given time series according to its maximum-minimum value and its mean. It follows the following
+            /// formulae:
+            /// \f[
+            /// \acute{x} = \frac{x - mean(x)}{max(x) - min(x)}.
+            /// \f]
+            /// </summary>
+            /// <param name="tss">Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
+            /// one indicates the number of time series.</param>
             public static void MeanNorm(ref array.Array tss)
             {
                 IntPtr reference = tss.Reference;
