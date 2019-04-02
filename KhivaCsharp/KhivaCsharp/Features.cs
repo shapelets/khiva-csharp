@@ -12,18 +12,20 @@ using System.Threading.Tasks;
 
 namespace khiva.features
 {
+    /// <summary>
+    /// Khiva Features class containing a number of features that can be extracted from time series. All the methods
+    /// operate with instances of the ARRAY class as input and output.
+    /// </summary>
     public static class Features
     {
 
-        /**
-         * @brief Calculates the sum over the square values of the timeseries
-         *
-         * @param array Expects an input array whose dimension zero is the length of the time
-         * series (all the same) and dimension one indicates the number of
-         * time series.
-         * @return result An array with the same dimensions as array, whose values (time series in dimension 0)
-         * contains the sum of the squares values in the time series.
-         */
+        /// <summary>
+        /// Calculates the sum over the square values of the timeseries
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the time
+        /// series(all the same) and dimension one indicates the number of time series.</param>
+        /// <returns>An array with the same dimensions as array, whose values (time series in dimension 0) 
+        /// contains the sum of the squares values in the time series.</returns>
         public static array.Array AbsEnergy(array.Array array)
         {
             IntPtr reference = array.Reference;
@@ -32,15 +34,13 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates the sum over the absolute value of consecutive changes in the time series.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the time
-         * series (all the same) and dimension one indicates the number of
-         * time series.
-         * @return result An array with the same dimensions as array, whose values (time series in dimension 0)
-         * contains absolute value of consecutive changes in the time series.
-         */
+        /// <summary>
+        /// Calculates the sum over the absolute value of consecutive changes in the time series.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the time
+        /// series(all the same) and dimension one indicates the number of time series.</param>
+        /// <returns>An array with the same dimensions as array, whose values (time series in dimension 0)
+        /// contains absolute value of consecutive changes in the time series.</returns>
         public static array.Array AbsoluteSumOfChanges(array.Array array)
         {
 
@@ -50,26 +50,24 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates the value of an aggregation function f_agg (e.g. var or mean) of the autocorrelation
-         * (Compare to http://en.wikipedia.org/wiki/Autocorrelation#Estimation), taken over different all possible
-         * lags (1 to length of x).
-         *
-         * @param array Expects an input array whose dimension zero is the length of the time
-         * series (all the same) and dimension one indicates the number of time series.
-         * @param aggregation_function Function to be used in the aggregation. It receives an integer which indicates the
-         * function to be applied:
-         *          {
-         *              0 : mean,
-         *              1 : median
-         *              2 : min,
-         *              3 : max,
-         *              4 : stdev,
-         *              5 : var,
-         *              default : mean
-         *          }
-         * @return result An array whose values contains the aggregated correaltion for each time series.
-         */
+        /// <summary>
+        /// Calculates the value of an aggregation function f_agg (e.g. var or mean) of the autocorrelation
+        /// (Compare to http://en.wikipedia.org/wiki/Autocorrelation#Estimation), taken over different all possible
+        /// lags(1 to length of x).</summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the time
+        /// series(all the same) and dimension one indicates the number of time series.</param>
+        /// <param name="aggregationFunction">Function to be used in the aggregation.It receives an integer which indicates the
+        /// function to be applied:
+        ///          {
+        ///             0 : mean,
+        ///             1 : median
+        ///             2 : min,
+        ///             3 : max,
+        ///             4 : stdev,
+        ///             5 : var,
+        ///             default : mean
+        ///          }</param>
+        /// <returns>An array whose values contains the aggregated correaltion for each time series.</returns>
         public static array.Array AggregatedAutocorrelation(array.Array array, int aggregationFunction)
         {
             IntPtr reference = array.Reference;

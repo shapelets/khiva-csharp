@@ -120,16 +120,15 @@ namespace khiva
                 return (new array.Array(result));
             }
 
-            /**
-             * @brief Discretizes the time series into equal-sized buckets based on sample quantiles.
-             *
-             * @param tss Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
-             * one indicates the number of time series. NOTE: the time series should be sorted.
-             * @param quantiles Number of quantiles to extract. From 0 to 1, step 1/quantiles.
-             * @param precision Number of decimals expected.
-             * @return result Matrix with the categories, one category per row, the start of the category in the first column and
-             * the end in the second category.
-             */
+            /// <summary>
+            /// Discretizes the time series into equal-sized buckets based on sample quantiles.
+            /// </summary>
+            /// <param name="tss">Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
+            /// one indicates the number of time series.NOTE: the time series should be sorted.</param>
+            /// <param name="quantiles">Number of quantiles to extract. From 0 to 1, step 1/quantiles.</param>
+            /// <param name="precision">Number of decimals expected.</param>
+            /// <returns>Matrix with the categories, one category per row, the start of the category in the first column and
+            /// the end in the second category.</returns>
             public static array.Array QuantilesCutStatistics(array.Array tss, float quantiles, float precision = 1e-8F)
             {
                 IntPtr reference = tss.Reference;
@@ -137,14 +136,13 @@ namespace khiva
                 tss.Reference = reference;
                 return (new array.Array(result));
             }
-
-            /**
-             * @brief Estimates standard deviation based on a sample. The standard deviation is calculated using the "n-1" method.
-             *
-             * @param tss Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
-             * one indicates the number of time series.
-             * @return result The sample standard deviation.
-             */
+            
+            /// <summary>
+            /// Estimates standard deviation based on a sample. The standard deviation is calculated using the "n-1" method.
+            /// </summary>
+            /// <param name="tss">Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
+            /// one indicates the number of time series.</param>
+            /// <returns>The sample standard deviation.</returns>
             public static array.Array SampleStdevStatistics(array.Array tss)
             {
                 IntPtr reference = tss.Reference;
@@ -153,14 +151,12 @@ namespace khiva
                 return (new array.Array(result));
             }
 
-            /**
-             * @brief Calculates the sample skewness of tss (calculated with the adjusted Fisher-Pearson standardized moment
-             * coefficient G1).
-             *
-             * @param tss Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
-             * one indicates the number of time series.
-             * @return result Array containing the skewness of each time series in tss.
-             */
+            /// <summary>
+            /// Calculates the sample skewness of tss (calculated with the adjusted Fisher-Pearson standardized moment coefficient G1).
+            /// </summary>
+            /// <param name="tss">Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
+            /// one indicates the number of time series.</param>
+            /// <returns>Array containing the skewness of each time series in tss.</returns>
             public static array.Array SkewnessStatistics(array.Array tss)
             {
                 IntPtr reference = tss.Reference;

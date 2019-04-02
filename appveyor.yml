@@ -54,6 +54,9 @@ build:
   project: KhivaCsharp\KhivaCsharp.sln
   verbosity: minimal
 
+build_script:
+  - nuget restore KhivaCsharp/KhivaCsharp.sln
+
 test_script:
    - .\KhivaCsharp\packages\OpenCover.4.6.519\tools\OpenCover.Console -target:".\KhivaCsharp\packages\NUnit.ConsoleRunner.3.9.0\tools\nunit3-console.exe" -targetargs:"KhivaCSharpNUnitTest\bin\x64\Debug\KhivaCSharpNUnitTest.dll" -output:"coverage.xml" -register:user
 
