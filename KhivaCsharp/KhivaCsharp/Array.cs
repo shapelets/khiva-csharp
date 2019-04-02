@@ -21,87 +21,92 @@ namespace khiva
     namespace array
     {
 
-        /**
-         * Khiva Array Class.
-         */
+        /// <summary>
+        /// Khiva Array Class.
+        /// </summary>
         public class Array : IDisposable
         {
             private IntPtr reference;
 
             public enum Dtype
             {
-                /**
-                 * Floating point of single precision. khiva.dtype.
-                 */
+                /// <summary>
+                /// Floating point of single precision. khiva.dtype.
+                /// </summary>
                 f32,
-                /**
-                 * Complex floating point of single precision. khiva.dtype.
-                 */
+                /// <summary>
+                /// Complex floating point of single precision. khiva.dtype.
+                /// </summary>
                 c32,
-                /**
-                 * Floating point of double precision. khiva.dtype.
-                 */
+                /// <summary>
+                /// Floating point of double precision. khiva.dtype.
+                /// </summary>
                 f64,
-                /**
-                 * Complex floating point of double precision. khiva.dtype.
-                 */
+                /// <summary>
+                /// Complex floating point of double precision. khiva.dtype.
+                /// </summary>
                 c64,
-                /**
-                 * Boolean. khiva.dtype.
-                 */
+                /// <summary>
+                /// Boolean. khiva.dtype.
+                /// </summary>
                 b8,
-                /**
-                 * 32 bits Int. khiva.dtype.
-                 */
+                /// <summary>
+                /// 32 bits Int. khiva.dtype.
+                /// </summary>
                 s32,
-                /**
-                 * 32 bits Unsigned Int. khiva.dtype.
-                 */
+                /// <summary>
+                /// 32 bits Unsigned Int. khiva.dtype.
+                /// </summary>
                 u32,
-                /**
-                 * 8 bits Unsigned Int. khiva.dtype.
-                 */
+                /// <summary>
+                /// 8 bits Unsigned Int. khiva.dtype.
+                /// </summary>
                 u8,
-                /**
-                 * 64 bits Integer. khiva.dtype.
-                 */
+                /// <summary>
+                /// 64 bits Integer. khiva.dtype.
+                /// </summary>
                 s64,
-                /**
-                 * 64 bits Unsigned Int. khiva.dtype.
-                 */
+                /// <summary>
+                /// 64 bits Unsigned Int. khiva.dtype.
+                /// </summary>
                 u64,
-                /**
-                 * 16 bits Int. khiva.dtype.
-                 */
+                /// <summary>
+                /// 16 bits Int. khiva.dtype.
+                /// </summary>
                 s16,
-                /**
-                 * 16 bits Unsigned Int. khiva.dtype.
-                 */
+                /// <summary>
+                /// 16 bits Unsigned Int. khiva.dtype.
+                /// </summary>
                 u16
             }
-
+            /// <summary>
+            /// Dispose the Array
+            /// </summary>
             public void Dispose()
             {
                 CleanUp();
                 GC.SuppressFinalize(this);
             }
-
+            /// <summary>
+            /// Clean up the array
+            /// </summary>
             private void CleanUp()
             {
                 this.DeleteArray();
                 this.Reference = IntPtr.Zero;
             }
-
+            /// <summary>
+            /// Destroy Array
+            /// </summary>
             ~Array()
             {
                 CleanUp();
             }
 
-            /**
-             * @brief Creates an Array object.
-             *
-             * @param arr Data used in order to create the array.
-             */
+            /// <summary>
+            /// Creates an Array object of 1 dimension of type float
+            /// </summary>
+            /// <param name="arr">Data used in order to create the array.</param>
             public Array(float[] arr)
             {
                 if (arr == null)
@@ -114,6 +119,10 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
+            /// <summary>
+            /// Creates an Array object of 2 dimensions of type float
+            /// </summary>
+            /// <param name="arr">Data used in order to create the array.</param>
             public Array(float[,] arr)
             {
                 if (arr == null)
@@ -126,6 +135,10 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
+            /// <summary>
+            /// Creates an Array object of 3 dimensions of type float
+            /// </summary>
+            /// <param name="arr">Data used in order to create the array.</param>
             public Array(float[,,] arr)
             {
                 if (arr == null)
@@ -138,6 +151,10 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
+            /// <summary>
+            /// Creates an Array object of 4 dimensions of type float
+            /// </summary>
+            /// <param name="arr">Data used in order to create the array.</param>
             public Array(float[,,,] arr)
             {
                 if (arr == null)
@@ -150,6 +167,10 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
+            /// <summary>
+            /// Creates an Array object of 1 dimension of type double
+            /// </summary>
+            /// <param name="arr">Data used in order to create the array.</param>
             public Array(double[] arr)
             {
                 if (arr == null)
@@ -162,6 +183,10 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
+            /// <summary>
+            /// Creates an Array object of 2 dimensions of type double
+            /// </summary>
+            /// <param name="arr">Data used in order to create the array.</param>
             public Array(double[,] arr)
             {
                 if (arr == null)
@@ -174,6 +199,10 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
+            /// <summary>
+            /// Creates an Array object of 3 dimensions of type double
+            /// </summary>
+            /// <param name="arr">Data used in order to create the array.</param>
             public Array(double[,,] arr)
             {
                 if (arr == null)
@@ -186,6 +215,10 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
+            /// <summary>
+            /// Creates an Array object of 4 dimensions of type double
+            /// </summary>
+            /// <param name="arr">Data used in order to create the array.</param>
             public Array(double[,,,] arr)
             {
                 if (arr == null)
@@ -824,12 +857,11 @@ namespace khiva
                 }
             }
 
-            /**
-             * Gets the data stored in the array.
-             *
-             * @param <T> The data type to be returned.
-             * @return The data to an array of its type.
-             */
+            /// <summary>
+            /// Gets the data stored in a 1D array.
+            /// </summary>
+            /// <typeparam name="T">The data type to be returned.</typeparam>
+            /// <returns>The data to an array of its type.</returns>
             public T[] GetData1D<T>()
             {
                 if (!CheckType(typeof(T)))
@@ -903,6 +935,11 @@ namespace khiva
                 }
             }
 
+            /// <summary>
+            /// Gets the data stored in a 2D array.
+            /// </summary>
+            /// <typeparam name="T">The data type to be returned.</typeparam>
+            /// <returns>The data to an array of its type.</returns>
             public T[,] GetData2D<T>()
             {
                 if (!CheckType(typeof(T)))
@@ -983,6 +1020,11 @@ namespace khiva
                 }
             }
 
+            /// <summary>
+            /// Gets the data stored in a 3D array.
+            /// </summary>
+            /// <typeparam name="T">The data type to be returned.</typeparam>
+            /// <returns>The data to an array of its type.</returns>
             public T[,,] GetData3D<T>()
             {
                 if (!CheckType(typeof(T)))
@@ -1068,6 +1110,11 @@ namespace khiva
                 }
             }
 
+            /// <summary>
+            /// Gets the data stored in a 4D array.
+            /// </summary>
+            /// <typeparam name="T">The data type to be returned.</typeparam>
+            /// <returns>The data to an array of its type.</returns>
             public T[,,,] GetData4D<T>()
             {
                 if (!CheckType(typeof(T)))
@@ -1203,9 +1250,9 @@ namespace khiva
                 }
             }
 
-            /**
-             * @brief Gets the Array dimensions.
-             */
+            /// <summary>
+            /// Gets the Array dimensions.
+            /// </summary>
             public long[] Dims
             {
                 get
@@ -1217,27 +1264,27 @@ namespace khiva
                 }   
             }
 
-            /**
-             * @brief Displays an Array.
-             */
+            /// <summary>
+            /// Displays an Array.
+            /// </summary>
             public void Display()
             {
                 interop.DLLArray.display(ref reference);
                 this.Reference = reference;
             }
 
-            /**
-             * @brief Decreases the references count of the given array.
-             */
+            /// <summary>
+            /// Decreases the references count of the given array.
+            /// </summary>
             public void DeleteArray()
             {
                 interop.DLLArray.delete_array(ref reference);
                 this.Reference = reference;
             }
 
-            /**
-         * @brief Gets the type of the array.
-         */
+            /// <summary>
+            /// Gets the type of the array.
+            /// </summary>
             public Dtype ArrayType
             {
                 get
@@ -1245,16 +1292,15 @@ namespace khiva
                     interop.DLLArray.get_type(ref reference, out int type);
                     this.Reference = reference;
                     return (Dtype)type;
-                }   
+                }
             }
 
-            /**
-             * @brief Adds two arrays.
-             *
-             * @param lhs Left-hand side KHIVA array for the operation.
-             * @param rhs Right-hand side KHIVA array for the operation.
-             * @return result KHIVA Array with the result of this operation.
-             */
+            /// <summary>
+            /// Adds two arrays.
+            /// </summary>
+            /// <param name="lhs">Left-hand side KHIVA array for the operation.</param>
+            /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
+            /// <returns>KHIVA Array with the result of this operation.</returns>
             public static Array operator +(Array lhs, Array rhs)
             {
                 interop.DLLArray.khiva_add(ref lhs.reference, ref rhs.reference, out IntPtr result);
@@ -1263,13 +1309,12 @@ namespace khiva
                 return new Array(result);
             }
 
-            /**
-             * @brief Multiplies two arrays.
-             *
-             * @param lhs Left-hand side KHIVA array for the operation.
-             * @param rhs Right-hand side KHIVA array for the operation.
-             * @return result KHIVA Array with the result of this operation.
-             */
+            /// <summary>
+            /// Multiplies two arrays.
+            /// </summary>
+            /// <param name="lhs">Left-hand side KHIVA array for the operation.</param>
+            /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
+            /// <returns>KHIVA Array with the result of this operation.</returns>
             public static Array operator *(Array lhs, Array rhs)
             {
                 interop.DLLArray.khiva_mul(ref lhs.reference, ref rhs.reference, out IntPtr result);
@@ -1278,13 +1323,12 @@ namespace khiva
                 return (new Array(result));
             }
 
-            /**
-             * @brief Subtracts two arrays.
-             *
-             * @param lhs Left-hand side KHIVA array for the operation.
-             * @param rhs Right-hand side KHIVA array for the operation.
-             * @return result KHIVA Array with the result of this operation.
-             */
+            /// <summary>
+            /// Substracts two arrays.
+            /// </summary>
+            /// <param name="lhs">Left-hand side KHIVA array for the operation.</param>
+            /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
+            /// <returns>KHIVA Array with the result of this operation.</returns>
             public static Array operator -(Array lhs, Array rhs)
             {
                 interop.DLLArray.khiva_sub(ref lhs.reference, ref rhs.reference, out IntPtr result);
@@ -1293,13 +1337,12 @@ namespace khiva
                 return (new Array(result));
             }
 
-            /**
-             * @brief Divides lhs by rhs (element-wise).
-             *
-             * @param lhs Left-hand side KHIVA array for the operation.
-             * @param rhs Right-hand side KHIVA array for the operation.
-             * @return result KHIVA Array with the result of this operation.
-             */
+            /// <summary>
+            /// Divides two arrays.
+            /// </summary>
+            /// <param name="lhs">Left-hand side KHIVA array for the operation.</param>
+            /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
+            /// <returns>KHIVA Array with the result of this operation.</returns>
             public static Array operator /(Array lhs, Array rhs)
             {
                 interop.DLLArray.khiva_div(ref lhs.reference, ref rhs.reference, out IntPtr result);
@@ -1308,13 +1351,12 @@ namespace khiva
                 return (new Array(result));
             }
 
-            /**
-             * @brief Performs the modulo operation of lhs by rhs.
-             *
-             * @param lhs Left-hand side KHIVA array for the operation.
-             * @param rhs Right-hand side KHIVA array for the operation.
-             * @return result KHIVA Array with the result of this operation.
-             */
+            /// <summary>
+            /// Performs the modulo operation of lhs by rhs.
+            /// </summary>
+            /// <param name="lhs">Left-hand side KHIVA array for the operation.</param>
+            /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
+            /// <returns>KHIVA Array with the result of this operation.</returns>
             public static Array operator %(Array lhs, Array rhs)
             {
                 interop.DLLArray.khiva_mod(ref lhs.reference, ref rhs.reference, out IntPtr result);
@@ -1323,28 +1365,26 @@ namespace khiva
                 return (new Array(result));
             }
 
-            /**
-             * @brief Powers lhs with rhs.
-             *
-             * @param lhs Left-hand side KHIVA array for the operation. Base.
-             * @param rhs Right-hand side KHIVA array for the operation. Exponent.
-             * @return result KHIVA Array with the result of this operation.
-             */
-            public Array Pow(Array rhs)
+            /// <summary>
+            /// Powers lhs with rhs.
+            /// </summary>
+            /// <param name="lhs">Left-hand side KHIVA array for the operation.</param>
+            /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
+            /// <returns>KHIVA Array with the result of this operation.</returns>
+            public static Array Pow(Array lhs, Array rhs)
             {
-                interop.DLLArray.khiva_pow(ref reference, ref rhs.reference, out IntPtr result);
-                this.Reference = reference;
+                interop.DLLArray.khiva_pow(ref lhs.reference, ref rhs.reference, out IntPtr result);
+                lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
                 return (new Array(result));
             }
 
-            /**
-             * @brief Performs an AND operation (element-wise) with lhs and rhs.
-             *
-             * @param lhs Left-hand side KHIVA array for the operation.
-             * @param rhs Right-hand side KHIVA array for the operation.
-             * @return result KHIVA Array with the result of this operation.
-             */
+            /// <summary>
+            /// Performs an AND operation (element-wise) with lhs and rhs.
+            /// </summary>
+            /// <param name="lhs">Left-hand side KHIVA array for the operation.</param>
+            /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
+            /// <returns>KHIVA Array with the result of this operation.</returns>
             public static Array operator &(Array lhs, Array rhs)
             {
                 interop.DLLArray.khiva_bitand(ref lhs.reference, ref rhs.reference, out IntPtr result);
@@ -1353,13 +1393,12 @@ namespace khiva
                 return (new Array(result));
             }
 
-            /**
-              * @brief Performs an OR operation (element-wise) with lhs and rhs.
-              *
-              * @param lhs Left-hand side KHIVA array for the operation.
-              * @param rhs Right-hand side KHIVA array for the operation.
-              * @return result KHIVA Array with the result of this operation.
-              */
+            /// <summary>
+            /// Performs an OR operation (element-wise) with lhs and rhs.
+            /// </summary>
+            /// <param name="lhs">Left-hand side KHIVA array for the operation.</param>
+            /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
+            /// <returns>KHIVA Array with the result of this operation.</returns>
             public static Array operator |(Array lhs, Array rhs)
             {
                 interop.DLLArray.khiva_bitor(ref lhs.reference, ref rhs.reference, out IntPtr result);
@@ -1368,13 +1407,12 @@ namespace khiva
                 return (new Array(result));
             }
 
-            /**
-             * @brief Performs an eXclusive-OR operation (element-wise) with lhs and rhs.
-             *
-             * @param lhs Left-hand side KHIVA array for the operation.
-             * @param rhs Right-hand side KHIVA array for the operation.
-             * @return result KHIVA Array with the result of this operation.
-             */
+            /// <summary>
+            /// Performs an eXclusive-OR operation (element-wise) with lhs and rhs.
+            /// </summary>
+            /// <param name="lhs">Left-hand side KHIVA array for the operation.</param>
+            /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
+            /// <returns>KHIVA Array with the result of this operation.</returns>
             public static Array operator ^(Array lhs, Array rhs)
             {
                 interop.DLLArray.khiva_bitxor(ref lhs.reference, ref rhs.reference, out IntPtr result);
@@ -1383,13 +1421,12 @@ namespace khiva
                 return (new Array(result));
             }
 
-            /**
-             * @brief Performs a left bit shift operation (element-wise) to array as many times as specified in the parameter n.
-             *
-             * @param array KHIVA Array to shift.
-             * @param n Number of bits to be shifted.
-             * @return result KHIVA Array with the result of this operation.
-             */
+            /// <summary>
+            /// Performs a left bit shift operation (element-wise) to array as many times as specified in the parameter n.
+            /// </summary>
+            /// <param name="lhs">array KHIVA Array to shift.</param>
+            /// <param name="shift">Number of bits to be shifted.</param>
+            /// <returns>KHIVA Array with the result of this operation.</returns>
             public static Array operator <<(Array lhs, int shift)
             {
                 interop.DLLArray.khiva_bitshiftl(ref lhs.reference, ref shift, out IntPtr result);
@@ -1397,13 +1434,12 @@ namespace khiva
                 return (new Array(result));
             }
 
-            /**
-             * @brief Performs a right bit shift operation (element-wise) to array as many times as specified in the parameter n.
-             *
-             * @param array KHIVA Array to shift.
-             * @param n Number of bits to be shifted.
-             * @return result KHIVA Array with the result of this operation.
-             */
+            /// <summary>
+            /// Performs a right bit shift operation (element-wise) to array as many times as specified in the parameter n.
+            /// </summary>
+            /// <param name="lhs">array KHIVA Array to shift.</param>
+            /// <param name="shift">Number of bits to be shifted.</param>
+            /// <returns>KHIVA Array with the result of this operation.</returns>
             public static Array operator >>(Array lhs, int shift)
             {
                 interop.DLLArray.khiva_bitshiftr(ref lhs.reference, ref shift, out IntPtr result);
@@ -1411,12 +1447,11 @@ namespace khiva
                 return (new Array(result));
             }
 
-            /**
-             * @brief Unary minus of one array.
-             *
-             * @param rhs Right-hand side KHIVA array for the operation.
-             * @return result KHIVA Array with the result of this operation.
-             */
+            /// <summary>
+            /// Unary minus of one array.
+            /// </summary>
+            /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
+            /// <returns>KHIVA Array with the result of this operation.</returns>
             public static Array operator -(Array rhs)
             {
                 Array zeros;
@@ -1515,12 +1550,11 @@ namespace khiva
                 return (i + 1);
             }
 
-            /**
-             * @brief Logical NOT operation to array.
-             *
-             * @param array KHIVA Array to negate.
-             * @return result KHIVA Array with the result of this operation.
-             */
+            /// <summary>
+            /// Logical NOT operation to array.
+            /// </summary>
+            /// <param name="lhs">KHIVA Array to negate.</param>
+            /// <returns>KHIVA Array with the result of this operation.</returns>
             public static Array operator !(Array lhs)
             {
                 interop.DLLArray.khiva_not(ref lhs.reference, out IntPtr result);
@@ -1528,13 +1562,12 @@ namespace khiva
                 return (new Array(result));
             }
 
-            /**
-             * @brief Compares (element-wise) if lhs is lower than rhs.
-             *
-             * @param lhs Left-hand side KHIVA array for the operation.
-             * @param rhs Right-hand side KHIVA array for the operation.
-             * @return result KHIVA Array with the result of this operation.
-             */
+            /// <summary>
+            /// Compares (element-wise) if lhs is lower than rhs.
+            /// </summary>
+            /// <param name="lhs">Left-hand side KHIVA array for the operation.</param>
+            /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
+            /// <returns>KHIVA Array with the result of this operation.</returns>
             public static Array operator <(Array lhs, Array rhs)
             {
                 interop.DLLArray.khiva_lt(ref lhs.reference, ref rhs.reference, out IntPtr result);
@@ -1543,13 +1576,12 @@ namespace khiva
                 return (new Array(result));
             }
 
-            /**
-             * @brief Compares (element-wise) if lhs is greater than rhs.
-             *
-             * @param lhs Left-hand side KHIVA array for the operation.
-             * @param rhs Right-hand side KHIVA array for the operation.
-             * @return result KHIVA Array with the result of this operation.
-             */
+            /// <summary>
+            /// Compares (element-wise) if lhs is greater than rhs.
+            /// </summary>
+            /// <param name="lhs">Left-hand side KHIVA array for the operation.</param>
+            /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
+            /// <returns>KHIVA Array with the result of this operation.</returns>
             public static Array operator >(Array lhs, Array rhs)
             {
                 interop.DLLArray.khiva_gt(ref lhs.reference, ref rhs.reference, out IntPtr result);
@@ -1558,13 +1590,12 @@ namespace khiva
                 return (new Array(result));
             }
 
-            /**
-             * @brief Compares (element-wise) if lhs is lower or equal than rhs.
-             *
-             * @param lhs Left-hand side KHIVA array for the operation.
-             * @param rhs Right-hand side KHIVA array for the operation.
-             * @return result KHIVA Array with the result of this operation.
-             */
+            /// <summary>
+            /// Compares (element-wise) if lhs is lower or equal than rhs.
+            /// </summary>
+            /// <param name="lhs">Left-hand side KHIVA array for the operation.</param>
+            /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
+            /// <returns>KHIVA Array with the result of this operation.</returns>
             public static Array operator <=(Array lhs, Array rhs)
             {
                 interop.DLLArray.khiva_le(ref lhs.reference, ref rhs.reference, out IntPtr result);
@@ -1573,13 +1604,12 @@ namespace khiva
                 return (new Array(result));
             }
 
-            /**
-             * @brief Compares (element-wise) if lhs is greater or equal than rhs.
-             *
-             * @param lhs Left-hand side KHIVA array for the operation.
-             * @param rhs Right-hand side KHIVA array for the operation.
-             * @return result KHIVA Array with the result of this operation.
-             */
+            /// <summary>
+            /// Compares (element-wise) if lhs is greater or equal than rhs.
+            /// </summary>
+            /// <param name="lhs">Left-hand side KHIVA array for the operation.</param>
+            /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
+            /// <returns>KHIVA Array with the result of this operation.</returns>
             public static Array operator >=(Array lhs, Array rhs)
             {
                 interop.DLLArray.khiva_ge(ref lhs.reference, ref rhs.reference, out IntPtr result);
@@ -1588,13 +1618,12 @@ namespace khiva
                 return (new Array(result));
             }
 
-            /**
-             * @brief Compares (element-wise) if rhs is equal to rhs.
-             *
-             * @param lhs Left-hand side KHIVA array for the operation.
-             * @param rhs Right-hand side KHIVA array for the operation.
-             * @return result KHIVA Array with the result of this operation.
-             */
+            /// <summary>
+            /// Compares (element-wise) if rhs is equal to rhs.
+            /// </summary>
+            /// <param name="lhs">Left-hand side KHIVA array for the operation.</param>
+            /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
+            /// <returns>KHIVA Array with the result of this operation.</returns>
             public static Array operator ==(Array lhs, Array rhs)
             {
                 interop.DLLArray.khiva_eq(ref lhs.reference, ref rhs.reference, out IntPtr result);
@@ -1603,13 +1632,12 @@ namespace khiva
                 return (new Array(result));
             }
 
-            /**
-             * @brief Compares (element-wise) if lhs is not equal to rhs.
-             *
-             * @param lhs Left-hand side KHIVA array for the operation.
-             * @param rhs Right-hand side KHIVA array for the operation.
-             * @return result KHIVA Array with the result of this operation.
-             */
+            /// <summary>
+            /// Compares (element-wise) if lhs is not equal to rhs.
+            /// </summary>
+            /// <param name="lhs">Left-hand side KHIVA array for the operation.</param>
+            /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
+            /// <returns>KHIVA Array with the result of this operation.</returns>
             public static Array operator !=(Array lhs, Array rhs)
             {
                 interop.DLLArray.khiva_ne(ref lhs.reference, ref rhs.reference, out IntPtr result);
@@ -1618,6 +1646,11 @@ namespace khiva
                 return (new Array(result));
             }
 
+            /// <summary>
+            /// Equals object method
+            /// </summary>
+            /// <param name="o">Object to compare</param>
+            /// <returns></returns>
             public override bool Equals(object o)
             {
                 if(o.GetType() == typeof(Array))
@@ -1630,18 +1663,21 @@ namespace khiva
                     return false;
                 }
             }
+
+            /// <summary>
+            /// GetHashCode object method
+            /// </summary>
+            /// <returns>Hashcode of the Array</returns>
             public override int GetHashCode()
             {
                 return reference.GetHashCode();   
             }
 
-            /**
-             * @brief Transposes array.
-             *
-             * @param array KHIVA Array to transpose.
-             * @param conjugate If true a conjugate transposition is performed.
-             * @return result KHIVA Array with the result of this operation.
-             */
+            /// <summary>
+            /// Transposes array.
+            /// </summary>
+            /// <param name="conjugate">If true a conjugate transposition is performed.</param>
+            /// <returns>KHIVA Array with the result of this operation.</returns>
             public Array Transpose(bool conjugate = false)
             {
                 interop.DLLArray.khiva_transpose(ref reference, ref conjugate, out IntPtr result);
@@ -1649,13 +1685,11 @@ namespace khiva
                 return (new Array(result));
             }
 
-            /**
-             * @brief Retrieves a given column of array.
-             *
-             * @param array KHIVA Array.
-             * @param index The column to be retrieved.
-             * @return result KHIVA Array with the result of this operation.
-             */
+            /// <summary>
+            /// Retrieves a given column of array.
+            /// </summary>
+            /// <param name="index">The column to be retrieved.</param>
+            /// <returns>KHIVA Array with the result of this operation.</returns>
             public Array Col(int index)
             {
                 interop.DLLArray.khiva_col(ref reference, ref index, out IntPtr result);
@@ -1663,14 +1697,12 @@ namespace khiva
                 return (new Array(result));
             }
 
-            /**
-             * @brief Retrieves a subset of columns of array, starting at first and finishing at last, both inclusive.
-             *
-             * @param array KHIVA Array.
-             * @param first Start of the subset of columns to be retrieved.
-             * @param last End of the subset of columns to be retrieved.
-             * @return result KHIVA Array with the result of this operation.
-             */
+            /// <summary>
+            /// Retrieves a subset of columns of array, starting at first and finishing at last, both inclusive.
+            /// </summary>
+            /// <param name="first">Start of the subset of columns to be retrieved.</param>
+            /// <param name="last">End of the subset of columns to be retrieved.</param>
+            /// <returns>KHIVA Array with the result of this operation.</returns>
             public Array Cols(int first, int last)
             {
                 interop.DLLArray.khiva_cols(ref reference, ref first, ref last, out IntPtr result);
@@ -1678,13 +1710,11 @@ namespace khiva
                 return (new Array(result));
             }
 
-            /**
-             * @brief Retrieves a given row of array.
-             *
-             * @param array KHIVA Array.
-             * @param index The row to be retrieved.
-             * @return result KHIVA Array with the result of this operation.
-             */
+            /// <summary>
+            /// Retrieves a given row of array.
+            /// </summary>
+            /// <param name="index">The row to be retrieved.</param>
+            /// <returns> KHIVA Array with the result of this operation.</returns>
             public Array Row(int index)
             {
                 interop.DLLArray.khiva_row(ref reference, ref index, out IntPtr result);
@@ -1692,14 +1722,12 @@ namespace khiva
                 return (new Array(result));
             }
 
-            /**
-             * @brief Retrieves a subset of rows of array, starting at first and finishing at last, both inclusive.
-             *
-             * @param array KHIVA Array.
-             * @param first Start of the subset of rows to be retrieved.
-             * @param last End of the subset of rows to be retrieved.
-             * @return result KHIVA Array with the result of this operation.
-             */
+            /// <summary>
+            /// Retrieves a subset of rows of array, starting at first and finishing at last, both inclusive.
+            /// </summary>
+            /// <param name="first">Start of the subset of rows to be retrieved.</param>
+            /// <param name="last">End of the subset of rows to be retrieved.</param>
+            /// <returns>KHIVA Array with the result of this operation.</returns>
             public Array Rows(int first, int last)
             {
                 interop.DLLArray.khiva_rows(ref reference, ref first, ref last, out IntPtr result);
@@ -1707,27 +1735,23 @@ namespace khiva
                 return (new Array(result));
             }
 
-            /**
-             * @brief Performs a matrix multiplication of lhs and rhs.
-             *
-             * @param lhs Left-hand side KHIVA array for the operation.
-             * @param rhs Right-hand side KHIVA array for the operation.
-             * @return result KHIVA Array with the result of this operation.
-             */
-            public Array Matmul(Array lhs)
+            /// <summary>
+            /// Performs a matrix multiplication of lhs and rhs.
+            /// </summary>
+            /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
+            /// <returns>KHIVA Array with the result of this operation.</returns>
+            public Array Matmul(Array rhs)
             {
-                interop.DLLArray.khiva_matmul(ref reference, ref lhs.reference, out IntPtr result);
+                interop.DLLArray.khiva_matmul(ref reference, ref rhs.reference, out IntPtr result);
                 this.Reference = reference;
-                lhs.Reference = lhs.reference;
+                rhs.Reference = rhs.reference;
                 return (new Array(result));
             }
 
-            /**
-             * @brief Performs a deep copy of array.
-             *
-             * @param array KHIVA Array.
-             * @return result KHIVA Array which contains a copy of array.
-             */
+            /// <summary>
+            /// Performs a deep copy of array.
+            /// </summary>
+            /// <returns>KHIVA Array which contains a copy of array.</returns>
             public Array Copy()
             {
                 interop.DLLArray.copy(ref reference, out IntPtr result);
@@ -1735,13 +1759,11 @@ namespace khiva
                 return (new Array(result));
             }
 
-            /**
-             * @brief Changes the type of array.
-             *
-             * @param array KHIVA Array.
-             * @param type Target type of the output array.
-             * @return result KHIVA Array with the result of this operation.
-             */
+            /// <summary>
+            /// Changes the type of array.
+            /// </summary>
+            /// <param name="type">Target type of the output array.</param>
+            /// <returns>KHIVA Array with the result of this operation.</returns>
             public Array As(int type)
             {
                 interop.DLLArray.khiva_as(ref reference, ref type, out IntPtr result);

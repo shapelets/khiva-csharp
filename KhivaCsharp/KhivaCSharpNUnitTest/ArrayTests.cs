@@ -1348,7 +1348,7 @@ namespace khiva.array.tests
         {
             long[] tss = { 1, 2, 3, 4 };
             long[] tss2 = { 2, 2, 2, 2 };
-            using (Array arr = new Array(tss), arr2 = new Array(tss2), arrPow = arr.Pow(arr2))
+            using (Array arr = new Array(tss), arr2 = new Array(tss2), arrPow = Array.Pow(arr,arr2))
             {
                 Assert.AreEqual(new long[] { 1, 4, 9, 16 }, arrPow.GetData1D<long>());
             }

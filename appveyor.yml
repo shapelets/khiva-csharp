@@ -52,7 +52,6 @@ before_build:
   - pip install codecov
 
 build_script:
-  - Nuget Package Restore
   - nuget restore KhivaCsharp/KhivaCsharp.sln
   - msbuild KhivaCsharp/KhivaCsharp/KhivaCsharp.csproj /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll" /p:runCodeAnalysis=true /p:codeanalysislogfile=..\analysis.xml
   - msbuild KhivaCsharp/KhivaCSharpNUnitTest/KhivaCSharpNUnitTest.csproj /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll" /p:runCodeAnalysis=true /p:codeanalysislogfile=..\analysisTest.xml
