@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace khiva.regression.tests
 {
-    [TestFixture]
+    [TestFixture, Category("Regression")]
     public class RegressionTests
     {
         double DELTA = 1e-6;

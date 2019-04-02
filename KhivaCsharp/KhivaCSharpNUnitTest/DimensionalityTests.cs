@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace khiva.dimensionality.tests
 {
-    [TestFixture]
+    [TestFixture, Category("Dimensionality")]
     public class DimensionalityTests
     {
 

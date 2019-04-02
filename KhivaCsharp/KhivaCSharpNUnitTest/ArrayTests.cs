@@ -16,7 +16,7 @@ using System.IO;
 
 namespace khiva.array.tests
 {
-    [TestFixture]
+    [TestFixture, Category("Array")]
     public class ArrayTests
     {
         [SetUp]

@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace khiva.regularization.tests
 {
-    [TestFixture]
+    [TestFixture, Category("Regularization")]
     public class RegularizationTests
     {
         [SetUp]

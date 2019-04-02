@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace khiva.distances.tests
 {
-    [TestFixture]
+    [TestFixture, Category("Distances")]
     public class DistancesTests
     {
         [SetUp]

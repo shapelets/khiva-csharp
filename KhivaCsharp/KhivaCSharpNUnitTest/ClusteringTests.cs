@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace khiva.clustering.tests
 {
-    [TestFixture]
+    [TestFixture, Category("Clustering")]
     public class ClusteringTests
     {
         [SetUp]

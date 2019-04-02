@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace khiva.linalg.tests
 {
-    [TestFixture]
+    [TestFixture, Category("Linalg")]
     public class LinalgTests
     {
         double DELTA = 1e-6;

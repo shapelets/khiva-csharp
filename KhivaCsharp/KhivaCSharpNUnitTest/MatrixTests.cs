@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace khiva.matrix.tests
 {
-    [TestFixture]
+    [TestFixture, Category("Matrix")]
     public class MatrixTests
     {
         double DELTA = 1e-6;

@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace khiva.polynomial.tests
 {
-    [TestFixture]
+    [TestFixture, Category("Polynomial")]
     public class PolynomialTests
     {
         double DELTA = 1e-6;

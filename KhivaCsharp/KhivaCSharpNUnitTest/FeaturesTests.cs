@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace khiva.features.tests
 {
-    [TestFixture]
+    [TestFixture, Category("Features")]
     public class FeaturesTests
     {
         readonly double DELTA = 1e-6;

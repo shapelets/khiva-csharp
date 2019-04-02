@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace khiva.normalization.tests
 {
-    [TestFixture]
+    [TestFixture, Category("Normalization")]
     public class NormalizationTests
     {
         double DELTA = 1e-6;
