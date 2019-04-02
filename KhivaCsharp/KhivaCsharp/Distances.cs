@@ -14,17 +14,19 @@ namespace khiva
 {
     namespace distances
     {
+        /// <summary>
+        /// Khiva Distances class containing distances methods.
+        /// </summary>
         public static class Distances
         {
-            /**
-             * @brief Calculates the Dynamic Time Warping Distance.
-             *
-             * @param arr Expects an input array whose dimension zero is the length of the time series (all the same) and
-             * dimension one indicates the number of time series.
-             * @param result An upper triangular matrix where each position corresponds to the distance between
-             * two time series. Diagonal elements will be zero. For example: Position row 0 column 1 records the
-             * distance between time series 0 and time series 1.
-             */
+            /// <summary>
+            /// Calculates the Dynamic Time Warping Distance.
+            /// </summary>
+            /// <param name="arr">Expects an input array whose dimension zero is the length of the time series (all the same) and
+            /// dimension one indicates the number of time series.</param>
+            /// <returns>An upper triangular matrix where each position corresponds to the distance between
+            /// two time series.Diagonal elements will be zero.For example: Position row 0 column 1 records the
+            /// distance between time series 0 and time series 1.</returns>
             public static array.Array DTW(array.Array arr)
             {
                 IntPtr reference = arr.Reference;
@@ -43,6 +45,14 @@ namespace khiva
              * time series. Diagonal elements will be zero. For example: Position row 0 column 1 records the distance
              * between time series 0 and time series 1.
              */
+            /// <summary>
+            /// Calculates euclidean distances between time series.
+            /// </summary>
+            /// <param name="arr">Expects an input array whose dimension zero is the length of the time series (all the same) and
+            /// dimension one indicates the number of time series.</param>
+            /// <returns>An upper triangular matrix where each position corresponds to the distance between two
+            /// time series.Diagonal elements will be zero. For example: Position row 0 column 1 records the distance
+            /// between time series 0 and time series 1.</returns>
             public static array.Array Euclidean(array.Array arr)
             {
                 IntPtr reference = arr.Reference;
@@ -51,15 +61,14 @@ namespace khiva
                 return (new array.Array(result));
             }
 
-            /**
-             * @brief Calculates Hamming distances between time series.
-             *
-             * @param arr Expects an input array whose dimension zero is the length of the time series (all the same) and
-             * dimension one indicates the number of time series.
-             * @param result An upper triangular matrix where each position corresponds to the distance between two
-             * time series. Diagonal elements will be zero. For example: Position row 0 column 1 records the distance
-             * between time series 0 and time series 1.
-             */
+            /// <summary>
+            /// Calculates Hamming distances between time series.
+            /// </summary>
+            /// <param name="arr">Expects an input array whose dimension zero is the length of the time series (all the same) and
+            /// dimension one indicates the number of time series.</param>
+            /// <returns> An upper triangular matrix where each position corresponds to the distance between two
+            /// time series. Diagonal elements will be zero.For example: Position row 0 column 1 records the distance
+            /// between time series 0 and time series 1.</returns>
             public static array.Array Hamming(array.Array arr)
             {
                 IntPtr reference = arr.Reference;
@@ -68,16 +77,14 @@ namespace khiva
                 return (new array.Array(result));
             }
 
-            /**
-             * @brief Calculates Manhattan distances between time series.
-             *
-             * @param arr Expects an input array whose dimension zero is the length of the time series (all the same) and
-             * dimension one indicates the number of time series.
-             *
-             * @param result An upper triangular matrix where each position corresponds to the distance between two
-             * time series. Diagonal elements will be zero. For example: Position row 0 column 1 records the distance
-             * between time series 0 and time series 1.
-             */
+            /// <summary>
+            /// Calculates Manhattan distances between time series.
+            /// </summary>
+            /// <param name="arr">Expects an input array whose dimension zero is the length of the time series (all the same) and
+            /// dimension one indicates the number of time series.</param>
+            /// <returns>An upper triangular matrix where each position corresponds to the distance between two
+            /// time series.Diagonal elements will be zero. For example: Position row 0 column 1 records the distance
+            /// between time series 0 and time series 1.</returns>
             public static array.Array Manhattan(array.Array arr)
             {
                 IntPtr reference = arr.Reference;
@@ -86,17 +93,15 @@ namespace khiva
                 return (new array.Array(result));
             }
 
-            /**
-             * @brief Calculates the Shape-Based distance (SBD). It computes the normalized cross-correlation and it returns 1.0
-             * minus the value that maximizes the correlation value between each pair of time series.
-             *
-             * @param arr Expects an input array whose dimension zero is the length of the time series (all the same) and
-             * dimension one indicates the number of time series.
-             *
-             * @return array An upper triangular matrix where each position corresponds to the distance between two time series.
-             * Diagonal elements will be zero. For example: Position row 0 column 1 records the distance between time series 0
-             * and time series 1.
-             */
+            /// <summary>
+            /// Calculates the Shape-Based distance (SBD). It computes the normalized cross-correlation and it returns 1.0
+            /// minus the value that maximizes the correlation value between each pair of time series.
+            /// </summary>
+            /// <param name="arr">Expects an input array whose dimension zero is the length of the time series (all the same) and
+            /// dimension one indicates the number of time series.</param>
+            /// <returns>An upper triangular matrix where each position corresponds to the distance between two time series.
+            /// Diagonal elements will be zero.For example: Position row 0 column 1 records the distance between time series 0
+            /// and time series 1.</returns>
             public static array.Array SBD(array.Array arr)
             {
                 IntPtr reference = arr.Reference;
@@ -105,17 +110,15 @@ namespace khiva
                 return (new array.Array(result));
             }
 
-                        /**
-             * @brief Calculates the Shape-Based distance (SBD). It computes the normalized cross-correlation and it returns 1.0
-             * minus the value that maximizes the correlation value between each pair of time series.
-             *
-             * @param arr Expects an input array whose dimension zero is the length of the time series (all the same) and
-             * dimension one indicates the number of time series.
-             *
-             * @return array An upper triangular matrix where each position corresponds to the distance between two time series.
-             * Diagonal elements will be zero. For example: Position row 0 column 1 records the distance between time series 0
-             * and time series 1.
-             */
+            /// <summary>
+            /// Calculates the Shape-Based distance (SBD). It computes the normalized cross-correlation and it returns 1.0
+            /// minus the value that maximizes the correlation value between each pair of time series.
+            /// </summary>
+            /// <param name="arr">Expects an input array whose dimension zero is the length of the time series (all the same) and
+            /// dimension one indicates the number of time series.</param>
+            /// <returns>An upper triangular matrix where each position corresponds to the distance between two time series.
+            /// Diagonal elements will be zero.For example: Position row 0 column 1 records the distance between time series 0
+            /// and time series 1.</returns>
             public static array.Array SquaredEuclidean(array.Array arr)
             {
                 IntPtr reference = arr.Reference;
