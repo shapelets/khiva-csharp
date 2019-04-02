@@ -393,7 +393,6 @@ namespace khiva.features
             array.Reference = reference;
             return (new array.Array(result));
         }
-
         /**
          * @brief Coefficients of polynomial \f$h(x)\f$, which has been fitted to the deterministic
          * dynamics of Langevin model:
@@ -411,6 +410,13 @@ namespace khiva.features
          * @param r Number of quantils to use for averaging.
          * @return result The coefficients for each time series.
          */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="array"></param>
+        /// <param name="m"></param>
+        /// <param name="r"></param>
+        /// <returns></returns>
         public static array.Array FriedrichCoefficients(array.Array array, int m, float r)
         {
             IntPtr reference = array.Reference;
