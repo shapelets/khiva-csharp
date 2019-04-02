@@ -63,4 +63,8 @@ test_script:
    - codecov -f coverage.xml
    # Añadir resultados Test .xml
 on_finish:
-  - ps: (New-Object System.Net.WebClient).UploadFile("https://ci.appveyor.com/api/testresults/junit/$($env:APPVEYOR_JOB_ID)", "coverage.xml")
+  - ps: |
+    $files = Get-ChildItem -Path . -File -Filter *.xml
+    foreach ($file in $files) {
+        (New-Object System.Net.WebClient).UploadFile("https://ci.appveyor.com/api/testresults/junit/$($env:APPVEYOR_JOB_ID)", $file.FullName)
+    }

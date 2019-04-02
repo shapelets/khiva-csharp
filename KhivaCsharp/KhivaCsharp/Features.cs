@@ -379,21 +379,13 @@ namespace khiva.features
             array.Reference = reference;
             return (new array.Array(result));
         }
-        /**
-         * @brief Calculates the first location of the minimal value of each time series. The position
-         * is calculated relatively to the length of the series.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @return result The first relative location of the minimal value of each series.
-         */
+
         /// <summary>
         /// Calculates the first location of the minimal value of each time series. The position is calculated relatively to the length of the series.
         /// </summary>
         /// <param name="array">Expects an input array whose dimension zero is the length of the
         /// time series(all the same) and dimension one indicates the number of time series.</param>
-        /// <returns></returns>
+        /// <returns>The first relative location of the minimal value of each series.</returns>
         public static array.Array FirstLocationOfMinimum(array.Array array)
         {
             IntPtr reference = array.Reference;
