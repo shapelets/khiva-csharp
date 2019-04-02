@@ -119,24 +119,14 @@ namespace khiva
                 tss.Reference = reference;
             }
 
-            /**
-             * @brief Calculates a new set of times series with zero mean and standard deviation one.
-             *
-             * @param tss Time series concatenated in a single row.
-             * @param tss_l Time series length (All time series need to have the same length).
-             * @param tss_n Number of time series.
-             * @param epsilon Minimum standard deviation to consider. It acts as a gatekeeper for
-             * those time series that may be constant or near constant.
-             * @return result Array with the same dimensions as tss where the time series have been
-             * adjusted for zero mean and one as standard deviation.
-             */
             /// <summary>
             /// Calculates a new set of times series with zero mean and standard deviation one.
             /// </summary>
             /// <param name="tss">Time series concatenated in a single row.</param>
             /// <param name="epsilon"> Minimum standard deviation to consider. It acts as a gatekeeper for
             /// those time series that may be constant or near constant.</param>
-            /// <returns></returns>
+            /// <returns>Array with the same dimensions as tss where the time series have been 
+            /// adjusted for zero mean and one as standard deviation.</returns>
             public static array.Array Znorm(array.Array tss, double epsilon)
             {
                 IntPtr reference = tss.Reference;
@@ -145,16 +135,13 @@ namespace khiva
                 return (new array.Array(result));
             }
 
-            /**
-             * @brief Adjusts the time series in the given input and performs z-norm
-             * inplace (without allocating further memory).
-             *
-             * @param tss Expects an input array whose dimension zero is the length of the time
-             * series (all the same) and dimension one indicates the number of
-             * time series.
-             * @param epsilon Minimum standard deviation to consider. It acts as a gatekeeper for
-             * those time series that may be constant or near constant.
-             */
+            /// <summary>
+            /// Adjusts the time series in the given input and performs z-norm inplace(without allocating further memory).
+            /// </summary>
+            /// <param name="tss"> Expects an input array whose dimension zero is the length of the time
+            /// series(all the same) and dimension one indicates the number of time series.</param>
+            /// <param name="epsilon">Minimum standard deviation to consider. It acts as a gatekeeper for
+            /// those time series that may be constant or near constant.</param>
             public static void Znorm(ref array.Array tss, double epsilon)
             {
                 IntPtr reference = tss.Reference;

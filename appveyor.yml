@@ -23,7 +23,6 @@ cache:
   - C:\tools\vcpkg\installed
   - C:\Program Files\ArrayFire
   - C:\Program Files\Khiva
-  - C:\Users\appveyor\.m2
   - C:\ProgramData\chocolatey\bin
   - C:\ProgramData\chocolatey\lib
 
@@ -51,10 +50,10 @@ before_build:
   - cd C:\khiva-csharp
   - pip install codecov
 
-build_script:
-  - nuget restore KhivaCsharp/KhivaCsharp.sln
-  - msbuild KhivaCsharp/KhivaCsharp/KhivaCsharp.csproj /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll" /p:runCodeAnalysis=true /p:codeanalysislogfile=..\analysis.xml
-  - msbuild KhivaCsharp/KhivaCSharpNUnitTest/KhivaCSharpNUnitTest.csproj /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll" /p:runCodeAnalysis=true /p:codeanalysislogfile=..\analysisTest.xml
+build:
+  project: KhivaCsharp\KhivaCsharp.sln
+  verbosity: minimal
+
 test_script:
    - .\KhivaCsharp\packages\OpenCover.4.6.519\tools\OpenCover.Console -target:".\KhivaCsharp\packages\NUnit.ConsoleRunner.3.9.0\tools\nunit3-console.exe" -targetargs:"KhivaCSharpNUnitTest\bin\x64\Debug\KhivaCSharpNUnitTest.dll" -output:"coverage.xml" -register:user
 
