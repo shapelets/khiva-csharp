@@ -76,29 +76,29 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates a linear least-squares regression for values of the time series that were aggregated
-         * over chunks versus the sequence from 0 up to the number of chunks minus one.
-         *
-         * @param array The time series to calculate the features of
-         * @param chunkSize The chunk size used to aggregate the data.
-         * @param aggregation_function Function to be used in the aggregation. It receives an integer which indicates the
-         * function to be applied:
-         *          {
-         *              0 : mean,
-         *              1 : median
-         *              2 : min,
-         *              3 : max,
-         *              4 : stdev,
-         *              default : mean
-         *          }
-         * @return slope Slope of the regression line.
-         * @return intercept Intercept of the regression line.
-         * @return rvalue Correlation coefficient.
-         * @return pvalue Two-sided p-value for a hypothesis test whose null hypothesis is that the slope is zero,
-         * using Wald Test with t-distribution of the test statistic.
-         * @return stderrest Standard error of the estimated gradient.
-         */
+        /// <summary>
+        ///  Calculates a linear least-squares regression for values of the time series that were aggregated
+        /// over chunks versus the sequence from 0 up to the number of chunks minus one.
+        /// </summary>
+        /// <param name="array">The time series to calculate the features of</param>
+        /// <param name="chunkSize">The chunk size used to aggregate the data.</param>
+        /// <param name="aggregationFunction">Function to be used in the aggregation. It receives an integer which indicates the
+        /// function to be applied:
+        ///          {
+        ///              0 : mean,
+        ///              1 : median
+        ///              2 : min,
+        ///              3 : max,
+        ///              4 : stdev,
+        ///              default : mean
+        ///         }
+        ///</param>
+        /// <returns>Tuple with:
+        /// Slope of the regression line.
+        /// Intercept of the regression line.
+        /// Correlation coefficient.
+        /// Two-sided p-value for a hypothesis test whose null hypothesis is that the slope is zero, using Wald Test with t-distribution of the test statistic.
+        /// Standard error of the estimated gradient.</returns>
         public static (array.Array, array.Array, array.Array, array.Array, array.Array) AggregatedLinearTrend(array.Array array, long chunkSize, int aggregationFunction)
         {
             IntPtr reference = array.Reference;
