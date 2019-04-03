@@ -27,7 +27,9 @@ namespace khiva
         public class Array : IDisposable
         {
             private IntPtr reference;
-
+            /// <summary>
+            /// KHIVA array available types.
+            /// </summary>
             public enum Dtype
             {
                 /// <summary>

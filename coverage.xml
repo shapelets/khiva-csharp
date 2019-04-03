@@ -142,7 +142,7 @@
     </Module>
     <Module hash="EE-92-34-AE-A6-A6-A8-2E-8A-34-A1-E4-20-3D-2A-23-C5-9D-D8-D2">
       <Summary numSequencePoints="0" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="0" />
-      <ModulePath>C:\Users\sergio.gonzalez\Desktop\Sergio\khiva-csharp\KhivaCsharp\KhivaCSharpNUnitTest\bin\Debug\nunit.framework.dll</ModulePath>
+      <ModulePath>C:\Users\sergio.gonzalez\Desktop\Sergio\khiva-csharp\KhivaCsharp\KhivaCSharpNUnitTest\bin\x64\Debug\nunit.framework.dll</ModulePath>
       <ModuleTime>2018-10-06T14:52:56Z</ModuleTime>
       <ModuleName>nunit.framework</ModuleName>
       <Files />
@@ -2318,7 +2318,7 @@
       <Classes />
     </Module>
     <Module skippedDueTo="MissingPdb" hash="D5-00-67-52-C5-AF-05-06-2D-35-DF-4F-C4-22-51-88-35-4A-CD-00">
-      <ModulePath>C:\Users\sergio.gonzalez\Desktop\Sergio\khiva-csharp\KhivaCsharp\KhivaCSharpNUnitTest\bin\Debug\nunit.engine.dll</ModulePath>
+      <ModulePath>C:\Users\sergio.gonzalez\Desktop\Sergio\khiva-csharp\KhivaCsharp\KhivaCSharpNUnitTest\bin\x64\Debug\nunit.engine.dll</ModulePath>
       <ModuleTime>2018-09-05T16:18:28Z</ModuleTime>
       <ModuleName>nunit.engine</ModuleName>
       <Classes />
@@ -2329,10 +2329,10 @@
       <ModuleName>System.Web</ModuleName>
       <Classes />
     </Module>
-    <Module hash="A1-9C-55-12-51-D0-17-E2-B7-F1-44-5D-20-07-8F-CE-C2-DE-77-74">
+    <Module hash="6B-1D-B2-BE-3E-C2-73-80-BA-12-D5-00-70-2C-22-05-D4-42-7E-2B">
       <Summary numSequencePoints="3096" visitedSequencePoints="2992" numBranchPoints="422" visitedBranchPoints="409" sequenceCoverage="96.64" branchCoverage="96.92" maxCyclomaticComplexity="10" minCyclomaticComplexity="1" visitedClasses="13" numClasses="13" visitedMethods="272" numMethods="272" />
-      <ModulePath>C:\Users\sergio.gonzalez\Desktop\Sergio\khiva-csharp\KhivaCsharp\KhivaCSharpNUnitTest\bin\Debug\KhivaCSharpNUnitTest.dll</ModulePath>
-      <ModuleTime>2019-04-02T11:52:02.9512222Z</ModuleTime>
+      <ModulePath>C:\Users\sergio.gonzalez\Desktop\Sergio\khiva-csharp\KhivaCsharp\KhivaCSharpNUnitTest\bin\x64\Debug\KhivaCSharpNUnitTest.dll</ModulePath>
+      <ModuleTime>2019-04-03T09:53:52.9409524Z</ModuleTime>
       <ModuleName>KhivaCSharpNUnitTest</ModuleName>
       <Files>
         <File uid="1" fullPath="C:\Users\sergio.gonzalez\Desktop\Sergio\khiva-csharp\KhivaCsharp\KhivaCSharpNUnitTest\StatisticsTests.cs" />
@@ -8498,10 +8498,10 @@
       <ModuleName>System.Xml</ModuleName>
       <Classes />
     </Module>
-    <Module hash="BF-14-5D-A0-FC-05-74-CF-F3-A5-85-B0-51-FD-BA-C4-3A-8E-07-4C">
+    <Module hash="AA-7A-CA-C0-82-47-49-67-E7-AD-17-D8-CC-09-DB-88-0B-FD-10-62">
       <Summary numSequencePoints="1958" visitedSequencePoints="1803" numBranchPoints="473" visitedBranchPoints="408" sequenceCoverage="92.08" branchCoverage="86.26" maxCyclomaticComplexity="14" minCyclomaticComplexity="1" visitedClasses="13" numClasses="13" visitedMethods="216" numMethods="220" />
-      <ModulePath>C:\Users\sergio.gonzalez\Desktop\Sergio\khiva-csharp\KhivaCsharp\KhivaCSharpNUnitTest\bin\Debug\KhivaCsharp.dll</ModulePath>
-      <ModuleTime>2019-04-02T11:51:09.7753408Z</ModuleTime>
+      <ModulePath>C:\Users\sergio.gonzalez\Desktop\Sergio\khiva-csharp\KhivaCsharp\KhivaCSharpNUnitTest\bin\x64\Debug\KhivaCsharp.dll</ModulePath>
+      <ModuleTime>2019-04-03T09:53:52.3661797Z</ModuleTime>
       <ModuleName>KhivaCsharp</ModuleName>
       <Files>
         <File uid="27" fullPath="C:\Users\sergio.gonzalez\Desktop\Sergio\khiva-csharp\KhivaCsharp\KhivaCsharp\Khiva.cs" />
@@ -9372,15 +9372,15 @@
               <Name>khiva.array.Array khiva.features.Features::FirstLocationOfMinimum(khiva.array.Array)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3556" ordinal="0" offset="0" sl="398" sc="9" el="398" ec="10" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3557" ordinal="1" offset="1" sl="399" sc="13" el="399" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3558" ordinal="2" offset="8" sl="400" sc="13" el="400" ec="93" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3559" ordinal="3" offset="18" sl="401" sc="13" el="401" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3560" ordinal="4" offset="26" sl="402" sc="13" el="402" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3561" ordinal="5" offset="35" sl="403" sc="9" el="403" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3556" ordinal="0" offset="0" sl="390" sc="9" el="390" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3557" ordinal="1" offset="1" sl="391" sc="13" el="391" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3558" ordinal="2" offset="8" sl="392" sc="13" el="392" ec="93" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3559" ordinal="3" offset="18" sl="393" sc="13" el="393" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3560" ordinal="4" offset="26" sl="394" sc="13" el="394" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3561" ordinal="5" offset="35" sl="395" sc="9" el="395" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3556" ordinal="0" offset="0" sl="398" sc="9" el="398" ec="10" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3556" ordinal="0" offset="0" sl="390" sc="9" el="390" ec="10" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9388,15 +9388,15 @@
               <Name>khiva.array.Array khiva.features.Features::FriedrichCoefficients(khiva.array.Array,System.Int32,System.Single)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3562" ordinal="0" offset="0" sl="423" sc="9" el="423" ec="10" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3563" ordinal="1" offset="1" sl="424" sc="13" el="424" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3564" ordinal="2" offset="8" sl="425" sc="13" el="425" ec="104" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3565" ordinal="3" offset="22" sl="426" sc="13" el="426" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3566" ordinal="4" offset="30" sl="427" sc="13" el="427" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3567" ordinal="5" offset="39" sl="428" sc="9" el="428" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3562" ordinal="0" offset="0" sl="413" sc="9" el="413" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3563" ordinal="1" offset="1" sl="414" sc="13" el="414" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3564" ordinal="2" offset="8" sl="415" sc="13" el="415" ec="104" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3565" ordinal="3" offset="22" sl="416" sc="13" el="416" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3566" ordinal="4" offset="30" sl="417" sc="13" el="417" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3567" ordinal="5" offset="39" sl="418" sc="9" el="418" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3562" ordinal="0" offset="0" sl="423" sc="9" el="423" ec="10" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3562" ordinal="0" offset="0" sl="413" sc="9" el="413" ec="10" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9404,15 +9404,15 @@
               <Name>khiva.array.Array khiva.features.Features::HasDuplicates(khiva.array.Array)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3568" ordinal="0" offset="0" sl="440" sc="9" el="440" ec="10" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3569" ordinal="1" offset="1" sl="441" sc="13" el="441" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3570" ordinal="2" offset="8" sl="442" sc="13" el="442" ec="82" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3571" ordinal="3" offset="18" sl="443" sc="13" el="443" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3572" ordinal="4" offset="26" sl="444" sc="13" el="444" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3573" ordinal="5" offset="35" sl="445" sc="9" el="445" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3568" ordinal="0" offset="0" sl="427" sc="9" el="427" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3569" ordinal="1" offset="1" sl="428" sc="13" el="428" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3570" ordinal="2" offset="8" sl="429" sc="13" el="429" ec="82" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3571" ordinal="3" offset="18" sl="430" sc="13" el="430" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3572" ordinal="4" offset="26" sl="431" sc="13" el="431" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3573" ordinal="5" offset="35" sl="432" sc="9" el="432" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3568" ordinal="0" offset="0" sl="440" sc="9" el="440" ec="10" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3568" ordinal="0" offset="0" sl="427" sc="9" el="427" ec="10" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9420,15 +9420,15 @@
               <Name>khiva.array.Array khiva.features.Features::HasDuplicateMax(khiva.array.Array)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3574" ordinal="0" offset="0" sl="457" sc="9" el="457" ec="10" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3575" ordinal="1" offset="1" sl="458" sc="13" el="458" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3576" ordinal="2" offset="8" sl="459" sc="13" el="459" ec="85" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3577" ordinal="3" offset="18" sl="460" sc="13" el="460" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3578" ordinal="4" offset="26" sl="461" sc="13" el="461" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3579" ordinal="5" offset="35" sl="462" sc="9" el="462" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3574" ordinal="0" offset="0" sl="441" sc="9" el="441" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3575" ordinal="1" offset="1" sl="442" sc="13" el="442" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3576" ordinal="2" offset="8" sl="443" sc="13" el="443" ec="85" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3577" ordinal="3" offset="18" sl="444" sc="13" el="444" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3578" ordinal="4" offset="26" sl="445" sc="13" el="445" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3579" ordinal="5" offset="35" sl="446" sc="9" el="446" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3574" ordinal="0" offset="0" sl="457" sc="9" el="457" ec="10" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3574" ordinal="0" offset="0" sl="441" sc="9" el="441" ec="10" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9436,15 +9436,15 @@
               <Name>khiva.array.Array khiva.features.Features::HasDuplicateMin(khiva.array.Array)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3580" ordinal="0" offset="0" sl="474" sc="9" el="474" ec="10" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3581" ordinal="1" offset="1" sl="475" sc="13" el="475" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3582" ordinal="2" offset="8" sl="476" sc="13" el="476" ec="85" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3583" ordinal="3" offset="18" sl="477" sc="13" el="477" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3584" ordinal="4" offset="26" sl="478" sc="13" el="478" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3585" ordinal="5" offset="35" sl="479" sc="9" el="479" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3580" ordinal="0" offset="0" sl="455" sc="9" el="455" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3581" ordinal="1" offset="1" sl="456" sc="13" el="456" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3582" ordinal="2" offset="8" sl="457" sc="13" el="457" ec="85" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3583" ordinal="3" offset="18" sl="458" sc="13" el="458" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3584" ordinal="4" offset="26" sl="459" sc="13" el="459" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3585" ordinal="5" offset="35" sl="460" sc="9" el="460" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3580" ordinal="0" offset="0" sl="474" sc="9" el="474" ec="10" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3580" ordinal="0" offset="0" sl="455" sc="9" el="455" ec="10" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9452,15 +9452,15 @@
               <Name>khiva.array.Array khiva.features.Features::IndexMassQuantile(khiva.array.Array,System.Single)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3586" ordinal="0" offset="0" sl="491" sc="9" el="491" ec="10" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3587" ordinal="1" offset="1" sl="492" sc="13" el="492" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3588" ordinal="2" offset="8" sl="493" sc="13" el="493" ec="94" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3589" ordinal="3" offset="20" sl="494" sc="13" el="494" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3590" ordinal="4" offset="28" sl="495" sc="13" el="495" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3591" ordinal="5" offset="37" sl="496" sc="9" el="496" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3586" ordinal="0" offset="0" sl="470" sc="9" el="470" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3587" ordinal="1" offset="1" sl="471" sc="13" el="471" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3588" ordinal="2" offset="8" sl="472" sc="13" el="472" ec="94" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3589" ordinal="3" offset="20" sl="473" sc="13" el="473" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3590" ordinal="4" offset="28" sl="474" sc="13" el="474" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3591" ordinal="5" offset="37" sl="475" sc="9" el="475" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3586" ordinal="0" offset="0" sl="491" sc="9" el="491" ec="10" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3586" ordinal="0" offset="0" sl="470" sc="9" el="470" ec="10" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9468,15 +9468,15 @@
               <Name>khiva.array.Array khiva.features.Features::Kurtosis(khiva.array.Array)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3592" ordinal="0" offset="0" sl="508" sc="9" el="508" ec="10" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3593" ordinal="1" offset="1" sl="509" sc="13" el="509" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3594" ordinal="2" offset="8" sl="510" sc="13" el="510" ec="76" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3595" ordinal="3" offset="18" sl="511" sc="13" el="511" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3596" ordinal="4" offset="26" sl="512" sc="13" el="512" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3597" ordinal="5" offset="35" sl="513" sc="9" el="513" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3592" ordinal="0" offset="0" sl="484" sc="9" el="484" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3593" ordinal="1" offset="1" sl="485" sc="13" el="485" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3594" ordinal="2" offset="8" sl="486" sc="13" el="486" ec="76" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3595" ordinal="3" offset="18" sl="487" sc="13" el="487" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3596" ordinal="4" offset="26" sl="488" sc="13" el="488" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3597" ordinal="5" offset="35" sl="489" sc="9" el="489" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3592" ordinal="0" offset="0" sl="508" sc="9" el="508" ec="10" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3592" ordinal="0" offset="0" sl="484" sc="9" el="484" ec="10" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9484,15 +9484,15 @@
               <Name>khiva.array.Array khiva.features.Features::LargeStandardDeviation(khiva.array.Array,System.Single)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3598" ordinal="0" offset="0" sl="525" sc="9" el="525" ec="10" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3599" ordinal="1" offset="1" sl="526" sc="13" el="526" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3600" ordinal="2" offset="8" sl="527" sc="13" el="527" ec="99" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3601" ordinal="3" offset="20" sl="528" sc="13" el="528" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3602" ordinal="4" offset="28" sl="529" sc="13" el="529" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3603" ordinal="5" offset="37" sl="530" sc="9" el="530" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3598" ordinal="0" offset="0" sl="499" sc="9" el="499" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3599" ordinal="1" offset="1" sl="500" sc="13" el="500" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3600" ordinal="2" offset="8" sl="501" sc="13" el="501" ec="99" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3601" ordinal="3" offset="20" sl="502" sc="13" el="502" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3602" ordinal="4" offset="28" sl="503" sc="13" el="503" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3603" ordinal="5" offset="37" sl="504" sc="9" el="504" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3598" ordinal="0" offset="0" sl="525" sc="9" el="525" ec="10" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3598" ordinal="0" offset="0" sl="499" sc="9" el="499" ec="10" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9500,15 +9500,15 @@
               <Name>khiva.array.Array khiva.features.Features::LastLocationOfMaximum(khiva.array.Array)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3604" ordinal="0" offset="0" sl="542" sc="9" el="542" ec="10" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3605" ordinal="1" offset="1" sl="543" sc="13" el="543" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3606" ordinal="2" offset="8" sl="544" sc="13" el="544" ec="92" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3607" ordinal="3" offset="18" sl="545" sc="13" el="545" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3608" ordinal="4" offset="26" sl="546" sc="13" el="546" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3609" ordinal="5" offset="35" sl="547" sc="9" el="547" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3604" ordinal="0" offset="0" sl="513" sc="9" el="513" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3605" ordinal="1" offset="1" sl="514" sc="13" el="514" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3606" ordinal="2" offset="8" sl="515" sc="13" el="515" ec="92" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3607" ordinal="3" offset="18" sl="516" sc="13" el="516" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3608" ordinal="4" offset="26" sl="517" sc="13" el="517" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3609" ordinal="5" offset="35" sl="518" sc="9" el="518" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3604" ordinal="0" offset="0" sl="542" sc="9" el="542" ec="10" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3604" ordinal="0" offset="0" sl="513" sc="9" el="513" ec="10" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9516,15 +9516,15 @@
               <Name>khiva.array.Array khiva.features.Features::LastLocationOfMinimum(khiva.array.Array)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3610" ordinal="0" offset="0" sl="559" sc="9" el="559" ec="10" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3611" ordinal="1" offset="1" sl="560" sc="13" el="560" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3612" ordinal="2" offset="8" sl="561" sc="13" el="561" ec="92" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3613" ordinal="3" offset="18" sl="562" sc="13" el="562" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3614" ordinal="4" offset="26" sl="563" sc="13" el="563" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3615" ordinal="5" offset="35" sl="564" sc="9" el="564" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3610" ordinal="0" offset="0" sl="527" sc="9" el="527" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3611" ordinal="1" offset="1" sl="528" sc="13" el="528" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3612" ordinal="2" offset="8" sl="529" sc="13" el="529" ec="92" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3613" ordinal="3" offset="18" sl="530" sc="13" el="530" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3614" ordinal="4" offset="26" sl="531" sc="13" el="531" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3615" ordinal="5" offset="35" sl="532" sc="9" el="532" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3610" ordinal="0" offset="0" sl="559" sc="9" el="559" ec="10" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3610" ordinal="0" offset="0" sl="527" sc="9" el="527" ec="10" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9532,15 +9532,15 @@
               <Name>khiva.array.Array khiva.features.Features::Length(khiva.array.Array)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3616" ordinal="0" offset="0" sl="575" sc="9" el="575" ec="10" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3617" ordinal="1" offset="1" sl="576" sc="13" el="576" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3618" ordinal="2" offset="8" sl="577" sc="13" el="577" ec="74" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3619" ordinal="3" offset="18" sl="578" sc="13" el="578" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3620" ordinal="4" offset="26" sl="579" sc="13" el="579" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3621" ordinal="5" offset="35" sl="580" sc="9" el="580" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3616" ordinal="0" offset="0" sl="541" sc="9" el="541" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3617" ordinal="1" offset="1" sl="542" sc="13" el="542" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3618" ordinal="2" offset="8" sl="543" sc="13" el="543" ec="74" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3619" ordinal="3" offset="18" sl="544" sc="13" el="544" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3620" ordinal="4" offset="26" sl="545" sc="13" el="545" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3621" ordinal="5" offset="35" sl="546" sc="9" el="546" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3616" ordinal="0" offset="0" sl="575" sc="9" el="575" ec="10" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3616" ordinal="0" offset="0" sl="541" sc="9" el="541" ec="10" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="7" visitedSequencePoints="7" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9548,16 +9548,16 @@
               <Name>System.ValueTuple`5&lt;khiva.array.Array,khiva.array.Array,khiva.array.Array,khiva.array.Array,khiva.array.Array&gt; khiva.features.Features::LinearTrend(khiva.array.Array)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3622" ordinal="0" offset="0" sl="596" sc="9" el="596" ec="10" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3623" ordinal="1" offset="1" sl="597" sc="13" el="597" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3624" ordinal="2" offset="8" sl="598" sc="13" el="599" ec="137" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3625" ordinal="3" offset="26" sl="600" sc="13" el="600" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3626" ordinal="4" offset="34" sl="601" sc="13" el="605" ec="59" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3627" ordinal="5" offset="73" sl="606" sc="13" el="606" ec="26" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3628" ordinal="6" offset="79" sl="607" sc="9" el="607" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3622" ordinal="0" offset="0" sl="560" sc="9" el="560" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3623" ordinal="1" offset="1" sl="561" sc="13" el="561" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3624" ordinal="2" offset="8" sl="562" sc="13" el="563" ec="137" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3625" ordinal="3" offset="26" sl="564" sc="13" el="564" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3626" ordinal="4" offset="34" sl="565" sc="13" el="569" ec="59" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3627" ordinal="5" offset="73" sl="570" sc="13" el="570" ec="26" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3628" ordinal="6" offset="79" sl="571" sc="9" el="571" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3622" ordinal="0" offset="0" sl="596" sc="9" el="596" ec="10" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3622" ordinal="0" offset="0" sl="560" sc="9" el="560" ec="10" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9565,15 +9565,15 @@
               <Name>khiva.array.Array khiva.features.Features::LocalMaximals(khiva.array.Array)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3629" ordinal="0" offset="0" sl="617" sc="9" el="617" ec="10" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3630" ordinal="1" offset="1" sl="618" sc="13" el="618" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3631" ordinal="2" offset="8" sl="619" sc="13" el="619" ec="82" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3632" ordinal="3" offset="18" sl="620" sc="13" el="620" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3633" ordinal="4" offset="26" sl="621" sc="13" el="621" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3634" ordinal="5" offset="35" sl="622" sc="9" el="622" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3629" ordinal="0" offset="0" sl="580" sc="9" el="580" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3630" ordinal="1" offset="1" sl="581" sc="13" el="581" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3631" ordinal="2" offset="8" sl="582" sc="13" el="582" ec="82" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3632" ordinal="3" offset="18" sl="583" sc="13" el="583" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3633" ordinal="4" offset="26" sl="584" sc="13" el="584" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3634" ordinal="5" offset="35" sl="585" sc="9" el="585" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3629" ordinal="0" offset="0" sl="617" sc="9" el="617" ec="10" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3629" ordinal="0" offset="0" sl="580" sc="9" el="580" ec="10" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9581,15 +9581,15 @@
               <Name>khiva.array.Array khiva.features.Features::LongestStrikeAboveMean(khiva.array.Array)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3635" ordinal="0" offset="0" sl="634" sc="9" el="634" ec="10" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3636" ordinal="1" offset="1" sl="635" sc="13" el="635" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3637" ordinal="2" offset="8" sl="636" sc="13" el="636" ec="93" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3638" ordinal="3" offset="18" sl="637" sc="13" el="637" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3639" ordinal="4" offset="26" sl="638" sc="13" el="638" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3640" ordinal="5" offset="35" sl="639" sc="9" el="639" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3635" ordinal="0" offset="0" sl="594" sc="9" el="594" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3636" ordinal="1" offset="1" sl="595" sc="13" el="595" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3637" ordinal="2" offset="8" sl="596" sc="13" el="596" ec="93" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3638" ordinal="3" offset="18" sl="597" sc="13" el="597" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3639" ordinal="4" offset="26" sl="598" sc="13" el="598" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3640" ordinal="5" offset="35" sl="599" sc="9" el="599" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3635" ordinal="0" offset="0" sl="634" sc="9" el="634" ec="10" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3635" ordinal="0" offset="0" sl="594" sc="9" el="594" ec="10" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9597,15 +9597,15 @@
               <Name>khiva.array.Array khiva.features.Features::LongestStrikeBelowMean(khiva.array.Array)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3641" ordinal="0" offset="0" sl="650" sc="9" el="650" ec="10" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3642" ordinal="1" offset="1" sl="651" sc="13" el="651" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3643" ordinal="2" offset="8" sl="652" sc="13" el="652" ec="93" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3644" ordinal="3" offset="18" sl="653" sc="13" el="653" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3645" ordinal="4" offset="26" sl="654" sc="13" el="654" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3646" ordinal="5" offset="35" sl="655" sc="9" el="655" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3641" ordinal="0" offset="0" sl="608" sc="9" el="608" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3642" ordinal="1" offset="1" sl="609" sc="13" el="609" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3643" ordinal="2" offset="8" sl="610" sc="13" el="610" ec="93" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3644" ordinal="3" offset="18" sl="611" sc="13" el="611" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3645" ordinal="4" offset="26" sl="612" sc="13" el="612" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3646" ordinal="5" offset="35" sl="613" sc="9" el="613" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3641" ordinal="0" offset="0" sl="650" sc="9" el="650" ec="10" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3641" ordinal="0" offset="0" sl="608" sc="9" el="608" ec="10" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9613,15 +9613,15 @@
               <Name>khiva.array.Array khiva.features.Features::MaxLangevinFixedPoint(khiva.array.Array,System.Int32,System.Single)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3647" ordinal="0" offset="0" sl="674" sc="9" el="674" ec="10" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3648" ordinal="1" offset="1" sl="675" sc="13" el="675" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3649" ordinal="2" offset="8" sl="676" sc="13" el="676" ec="106" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3650" ordinal="3" offset="22" sl="677" sc="13" el="677" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3651" ordinal="4" offset="30" sl="678" sc="13" el="678" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3652" ordinal="5" offset="39" sl="679" sc="9" el="679" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3647" ordinal="0" offset="0" sl="630" sc="9" el="630" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3648" ordinal="1" offset="1" sl="631" sc="13" el="631" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3649" ordinal="2" offset="8" sl="632" sc="13" el="632" ec="106" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3650" ordinal="3" offset="22" sl="633" sc="13" el="633" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3651" ordinal="4" offset="30" sl="634" sc="13" el="634" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3652" ordinal="5" offset="39" sl="635" sc="9" el="635" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3647" ordinal="0" offset="0" sl="674" sc="9" el="674" ec="10" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3647" ordinal="0" offset="0" sl="630" sc="9" el="630" ec="10" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9629,15 +9629,15 @@
               <Name>khiva.array.Array khiva.features.Features::Maximum(khiva.array.Array)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3653" ordinal="0" offset="0" sl="690" sc="9" el="690" ec="10" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3654" ordinal="1" offset="1" sl="691" sc="13" el="691" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3655" ordinal="2" offset="8" sl="692" sc="13" el="692" ec="75" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3656" ordinal="3" offset="18" sl="693" sc="13" el="693" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3657" ordinal="4" offset="26" sl="694" sc="13" el="694" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3658" ordinal="5" offset="35" sl="695" sc="9" el="695" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3653" ordinal="0" offset="0" sl="644" sc="9" el="644" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3654" ordinal="1" offset="1" sl="645" sc="13" el="645" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3655" ordinal="2" offset="8" sl="646" sc="13" el="646" ec="75" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3656" ordinal="3" offset="18" sl="647" sc="13" el="647" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3657" ordinal="4" offset="26" sl="648" sc="13" el="648" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3658" ordinal="5" offset="35" sl="649" sc="9" el="649" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3653" ordinal="0" offset="0" sl="690" sc="9" el="690" ec="10" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3653" ordinal="0" offset="0" sl="644" sc="9" el="644" ec="10" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9645,15 +9645,15 @@
               <Name>khiva.array.Array khiva.features.Features::Mean(khiva.array.Array)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3659" ordinal="0" offset="0" sl="706" sc="9" el="706" ec="10" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3660" ordinal="1" offset="1" sl="707" sc="13" el="707" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3661" ordinal="2" offset="8" sl="708" sc="13" el="708" ec="72" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3662" ordinal="3" offset="18" sl="709" sc="13" el="709" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3663" ordinal="4" offset="26" sl="710" sc="13" el="710" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3664" ordinal="5" offset="35" sl="711" sc="9" el="711" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3659" ordinal="0" offset="0" sl="658" sc="9" el="658" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3660" ordinal="1" offset="1" sl="659" sc="13" el="659" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3661" ordinal="2" offset="8" sl="660" sc="13" el="660" ec="72" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3662" ordinal="3" offset="18" sl="661" sc="13" el="661" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3663" ordinal="4" offset="26" sl="662" sc="13" el="662" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3664" ordinal="5" offset="35" sl="663" sc="9" el="663" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3659" ordinal="0" offset="0" sl="706" sc="9" el="706" ec="10" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3659" ordinal="0" offset="0" sl="658" sc="9" el="658" ec="10" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9661,15 +9661,15 @@
               <Name>khiva.array.Array khiva.features.Features::MeanAbsoluteChange(khiva.array.Array)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3665" ordinal="0" offset="0" sl="722" sc="9" el="722" ec="10" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3666" ordinal="1" offset="1" sl="723" sc="13" el="723" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3667" ordinal="2" offset="8" sl="724" sc="13" el="724" ec="88" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3668" ordinal="3" offset="18" sl="725" sc="13" el="725" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3669" ordinal="4" offset="26" sl="726" sc="13" el="726" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3670" ordinal="5" offset="35" sl="727" sc="9" el="727" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3665" ordinal="0" offset="0" sl="672" sc="9" el="672" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3666" ordinal="1" offset="1" sl="673" sc="13" el="673" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3667" ordinal="2" offset="8" sl="674" sc="13" el="674" ec="88" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3668" ordinal="3" offset="18" sl="675" sc="13" el="675" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3669" ordinal="4" offset="26" sl="676" sc="13" el="676" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3670" ordinal="5" offset="35" sl="677" sc="9" el="677" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3665" ordinal="0" offset="0" sl="722" sc="9" el="722" ec="10" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3665" ordinal="0" offset="0" sl="672" sc="9" el="672" ec="10" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9677,15 +9677,15 @@
               <Name>khiva.array.Array khiva.features.Features::MeanChange(khiva.array.Array)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3671" ordinal="0" offset="0" sl="738" sc="9" el="738" ec="10" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3672" ordinal="1" offset="1" sl="739" sc="13" el="739" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3673" ordinal="2" offset="8" sl="740" sc="13" el="740" ec="79" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3674" ordinal="3" offset="18" sl="741" sc="13" el="741" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3675" ordinal="4" offset="26" sl="742" sc="13" el="742" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3676" ordinal="5" offset="35" sl="743" sc="9" el="743" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3671" ordinal="0" offset="0" sl="686" sc="9" el="686" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3672" ordinal="1" offset="1" sl="687" sc="13" el="687" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3673" ordinal="2" offset="8" sl="688" sc="13" el="688" ec="79" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3674" ordinal="3" offset="18" sl="689" sc="13" el="689" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3675" ordinal="4" offset="26" sl="690" sc="13" el="690" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3676" ordinal="5" offset="35" sl="691" sc="9" el="691" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3671" ordinal="0" offset="0" sl="738" sc="9" el="738" ec="10" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3671" ordinal="0" offset="0" sl="686" sc="9" el="686" ec="10" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9693,15 +9693,15 @@
               <Name>khiva.array.Array khiva.features.Features::MeanSecondDerivativeCentral(khiva.array.Array)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3677" ordinal="0" offset="0" sl="754" sc="9" el="754" ec="10" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3678" ordinal="1" offset="1" sl="755" sc="13" el="755" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3679" ordinal="2" offset="8" sl="756" sc="13" el="756" ec="98" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3680" ordinal="3" offset="18" sl="757" sc="13" el="757" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3681" ordinal="4" offset="26" sl="758" sc="13" el="758" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3682" ordinal="5" offset="35" sl="759" sc="9" el="759" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3677" ordinal="0" offset="0" sl="700" sc="9" el="700" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3678" ordinal="1" offset="1" sl="701" sc="13" el="701" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3679" ordinal="2" offset="8" sl="702" sc="13" el="702" ec="98" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3680" ordinal="3" offset="18" sl="703" sc="13" el="703" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3681" ordinal="4" offset="26" sl="704" sc="13" el="704" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3682" ordinal="5" offset="35" sl="705" sc="9" el="705" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3677" ordinal="0" offset="0" sl="754" sc="9" el="754" ec="10" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3677" ordinal="0" offset="0" sl="700" sc="9" el="700" ec="10" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9709,15 +9709,15 @@
               <Name>khiva.array.Array khiva.features.Features::Median(khiva.array.Array)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3683" ordinal="0" offset="0" sl="770" sc="9" el="770" ec="10" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3684" ordinal="1" offset="1" sl="771" sc="13" el="771" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3685" ordinal="2" offset="8" sl="772" sc="13" el="772" ec="74" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3686" ordinal="3" offset="18" sl="773" sc="13" el="773" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3687" ordinal="4" offset="26" sl="774" sc="13" el="774" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3688" ordinal="5" offset="35" sl="775" sc="9" el="775" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3683" ordinal="0" offset="0" sl="714" sc="9" el="714" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3684" ordinal="1" offset="1" sl="715" sc="13" el="715" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3685" ordinal="2" offset="8" sl="716" sc="13" el="716" ec="74" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3686" ordinal="3" offset="18" sl="717" sc="13" el="717" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3687" ordinal="4" offset="26" sl="718" sc="13" el="718" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3688" ordinal="5" offset="35" sl="719" sc="9" el="719" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3683" ordinal="0" offset="0" sl="770" sc="9" el="770" ec="10" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3683" ordinal="0" offset="0" sl="714" sc="9" el="714" ec="10" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9725,15 +9725,15 @@
               <Name>khiva.array.Array khiva.features.Features::Minimum(khiva.array.Array)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3689" ordinal="0" offset="0" sl="786" sc="9" el="786" ec="10" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3690" ordinal="1" offset="1" sl="787" sc="13" el="787" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3691" ordinal="2" offset="8" sl="788" sc="13" el="788" ec="75" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3692" ordinal="3" offset="18" sl="789" sc="13" el="789" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3693" ordinal="4" offset="26" sl="790" sc="13" el="790" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3694" ordinal="5" offset="35" sl="791" sc="9" el="791" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3689" ordinal="0" offset="0" sl="728" sc="9" el="728" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3690" ordinal="1" offset="1" sl="729" sc="13" el="729" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3691" ordinal="2" offset="8" sl="730" sc="13" el="730" ec="75" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3692" ordinal="3" offset="18" sl="731" sc="13" el="731" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3693" ordinal="4" offset="26" sl="732" sc="13" el="732" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3694" ordinal="5" offset="35" sl="733" sc="9" el="733" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3689" ordinal="0" offset="0" sl="786" sc="9" el="786" ec="10" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3689" ordinal="0" offset="0" sl="728" sc="9" el="728" ec="10" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9741,15 +9741,15 @@
               <Name>khiva.array.Array khiva.features.Features::NumberCrossingM(khiva.array.Array,System.Int32)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3695" ordinal="0" offset="0" sl="805" sc="9" el="805" ec="10" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3696" ordinal="1" offset="1" sl="806" sc="13" el="806" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3697" ordinal="2" offset="8" sl="807" sc="13" el="807" ec="92" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3698" ordinal="3" offset="20" sl="808" sc="13" el="808" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3699" ordinal="4" offset="28" sl="809" sc="13" el="809" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3700" ordinal="5" offset="37" sl="810" sc="9" el="810" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3695" ordinal="0" offset="0" sl="745" sc="9" el="745" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3696" ordinal="1" offset="1" sl="746" sc="13" el="746" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3697" ordinal="2" offset="8" sl="747" sc="13" el="747" ec="92" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3698" ordinal="3" offset="20" sl="748" sc="13" el="748" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3699" ordinal="4" offset="28" sl="749" sc="13" el="749" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3700" ordinal="5" offset="37" sl="750" sc="9" el="750" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3695" ordinal="0" offset="0" sl="805" sc="9" el="805" ec="10" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3695" ordinal="0" offset="0" sl="745" sc="9" el="745" ec="10" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9757,15 +9757,15 @@
               <Name>khiva.array.Array khiva.features.Features::NumberCwtPeaks(khiva.array.Array,System.Int32)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3701" ordinal="0" offset="0" sl="823" sc="9" el="823" ec="10" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3702" ordinal="1" offset="1" sl="824" sc="13" el="824" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3703" ordinal="2" offset="8" sl="825" sc="13" el="825" ec="95" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3704" ordinal="3" offset="20" sl="826" sc="13" el="826" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3705" ordinal="4" offset="28" sl="827" sc="13" el="827" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3706" ordinal="5" offset="37" sl="828" sc="9" el="828" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3701" ordinal="0" offset="0" sl="762" sc="9" el="762" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3702" ordinal="1" offset="1" sl="763" sc="13" el="763" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3703" ordinal="2" offset="8" sl="764" sc="13" el="764" ec="95" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3704" ordinal="3" offset="20" sl="765" sc="13" el="765" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3705" ordinal="4" offset="28" sl="766" sc="13" el="766" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3706" ordinal="5" offset="37" sl="767" sc="9" el="767" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3701" ordinal="0" offset="0" sl="823" sc="9" el="823" ec="10" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3701" ordinal="0" offset="0" sl="762" sc="9" el="762" ec="10" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9773,15 +9773,15 @@
               <Name>khiva.array.Array khiva.features.Features::NumberPeaks(khiva.array.Array,System.Int32)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3707" ordinal="0" offset="0" sl="842" sc="9" el="842" ec="10" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3708" ordinal="1" offset="1" sl="843" sc="13" el="843" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3709" ordinal="2" offset="8" sl="844" sc="13" el="844" ec="87" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3710" ordinal="3" offset="20" sl="845" sc="13" el="845" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3711" ordinal="4" offset="28" sl="846" sc="13" el="846" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3712" ordinal="5" offset="37" sl="847" sc="9" el="847" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3707" ordinal="0" offset="0" sl="779" sc="9" el="779" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3708" ordinal="1" offset="1" sl="780" sc="13" el="780" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3709" ordinal="2" offset="8" sl="781" sc="13" el="781" ec="87" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3710" ordinal="3" offset="20" sl="782" sc="13" el="782" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3711" ordinal="4" offset="28" sl="783" sc="13" el="783" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3712" ordinal="5" offset="37" sl="784" sc="9" el="784" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3707" ordinal="0" offset="0" sl="842" sc="9" el="842" ec="10" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3707" ordinal="0" offset="0" sl="779" sc="9" el="779" ec="10" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="8" visitedSequencePoints="8" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9789,17 +9789,17 @@
               <Name>khiva.array.Array khiva.features.Features::PartialAutocorrelation(khiva.array.Array,khiva.array.Array)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3713" ordinal="0" offset="0" sl="876" sc="9" el="876" ec="10" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3714" ordinal="1" offset="1" sl="877" sc="13" el="877" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3715" ordinal="2" offset="8" sl="878" sc="13" el="878" ec="51" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3716" ordinal="3" offset="15" sl="879" sc="13" el="879" ec="110" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3717" ordinal="4" offset="27" sl="880" sc="13" el="880" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3718" ordinal="5" offset="35" sl="881" sc="13" el="881" ec="44" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3719" ordinal="6" offset="43" sl="882" sc="13" el="882" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3720" ordinal="7" offset="52" sl="883" sc="9" el="883" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3713" ordinal="0" offset="0" sl="812" sc="9" el="812" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3714" ordinal="1" offset="1" sl="813" sc="13" el="813" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3715" ordinal="2" offset="8" sl="814" sc="13" el="814" ec="51" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3716" ordinal="3" offset="15" sl="815" sc="13" el="815" ec="110" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3717" ordinal="4" offset="27" sl="816" sc="13" el="816" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3718" ordinal="5" offset="35" sl="817" sc="13" el="817" ec="44" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3719" ordinal="6" offset="43" sl="818" sc="13" el="818" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3720" ordinal="7" offset="52" sl="819" sc="9" el="819" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3713" ordinal="0" offset="0" sl="876" sc="9" el="876" ec="10" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3713" ordinal="0" offset="0" sl="812" sc="9" el="812" ec="10" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9807,15 +9807,15 @@
               <Name>khiva.array.Array khiva.features.Features::PercentageOfReoccurringDatapointsToAllDatapoints(khiva.array.Array,System.Boolean)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3721" ordinal="0" offset="0" sl="900" sc="9" el="900" ec="10" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3722" ordinal="1" offset="1" sl="901" sc="13" el="901" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3723" ordinal="2" offset="8" sl="902" sc="13" el="902" ec="137" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3724" ordinal="3" offset="20" sl="903" sc="13" el="903" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3725" ordinal="4" offset="28" sl="904" sc="13" el="904" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3726" ordinal="5" offset="37" sl="905" sc="9" el="905" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3721" ordinal="0" offset="0" sl="834" sc="9" el="834" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3722" ordinal="1" offset="1" sl="835" sc="13" el="835" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3723" ordinal="2" offset="8" sl="836" sc="13" el="836" ec="137" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3724" ordinal="3" offset="20" sl="837" sc="13" el="837" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3725" ordinal="4" offset="28" sl="838" sc="13" el="838" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3726" ordinal="5" offset="37" sl="839" sc="9" el="839" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3721" ordinal="0" offset="0" sl="900" sc="9" el="900" ec="10" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3721" ordinal="0" offset="0" sl="834" sc="9" el="834" ec="10" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9823,15 +9823,15 @@
               <Name>khiva.array.Array khiva.features.Features::PercentageOfReoccurringValuesToAllValues(khiva.array.Array,System.Boolean)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3727" ordinal="0" offset="0" sl="921" sc="9" el="921" ec="10" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3728" ordinal="1" offset="1" sl="922" sc="13" el="922" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3729" ordinal="2" offset="8" sl="923" sc="13" el="923" ec="129" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3730" ordinal="3" offset="20" sl="924" sc="13" el="924" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3731" ordinal="4" offset="28" sl="925" sc="13" el="925" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3732" ordinal="5" offset="37" sl="926" sc="9" el="926" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3727" ordinal="0" offset="0" sl="854" sc="9" el="854" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3728" ordinal="1" offset="1" sl="855" sc="13" el="855" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3729" ordinal="2" offset="8" sl="856" sc="13" el="856" ec="129" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3730" ordinal="3" offset="20" sl="857" sc="13" el="857" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3731" ordinal="4" offset="28" sl="858" sc="13" el="858" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3732" ordinal="5" offset="37" sl="859" sc="9" el="859" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3727" ordinal="0" offset="0" sl="921" sc="9" el="921" ec="10" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3727" ordinal="0" offset="0" sl="854" sc="9" el="854" ec="10" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="8" visitedSequencePoints="8" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9839,17 +9839,17 @@
               <Name>khiva.array.Array khiva.features.Features::Quantile(khiva.array.Array,khiva.array.Array,System.Single)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3733" ordinal="0" offset="0" sl="939" sc="9" el="939" ec="10" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3734" ordinal="1" offset="1" sl="940" sc="13" el="940" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3735" ordinal="2" offset="8" sl="941" sc="13" el="941" ec="45" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3736" ordinal="3" offset="15" sl="942" sc="13" el="942" ec="107" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3737" ordinal="4" offset="29" sl="943" sc="13" el="943" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3738" ordinal="5" offset="37" sl="944" sc="13" el="944" ec="38" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3739" ordinal="6" offset="45" sl="945" sc="13" el="945" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3740" ordinal="7" offset="54" sl="946" sc="9" el="946" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3733" ordinal="0" offset="0" sl="871" sc="9" el="871" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3734" ordinal="1" offset="1" sl="872" sc="13" el="872" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3735" ordinal="2" offset="8" sl="873" sc="13" el="873" ec="45" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3736" ordinal="3" offset="15" sl="874" sc="13" el="874" ec="107" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3737" ordinal="4" offset="29" sl="875" sc="13" el="875" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3738" ordinal="5" offset="37" sl="876" sc="13" el="876" ec="38" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3739" ordinal="6" offset="45" sl="877" sc="13" el="877" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3740" ordinal="7" offset="54" sl="878" sc="9" el="878" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3733" ordinal="0" offset="0" sl="939" sc="9" el="939" ec="10" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3733" ordinal="0" offset="0" sl="871" sc="9" el="871" ec="10" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9857,15 +9857,15 @@
               <Name>khiva.array.Array khiva.features.Features::RangeCount(khiva.array.Array,System.Single,System.Single)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3741" ordinal="0" offset="0" sl="959" sc="9" el="959" ec="10" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3742" ordinal="1" offset="1" sl="960" sc="13" el="960" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3743" ordinal="2" offset="8" sl="961" sc="13" el="961" ec="97" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3744" ordinal="3" offset="22" sl="962" sc="13" el="962" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3745" ordinal="4" offset="30" sl="963" sc="13" el="963" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3746" ordinal="5" offset="39" sl="964" sc="9" el="964" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3741" ordinal="0" offset="0" sl="889" sc="9" el="889" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3742" ordinal="1" offset="1" sl="890" sc="13" el="890" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3743" ordinal="2" offset="8" sl="891" sc="13" el="891" ec="97" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3744" ordinal="3" offset="22" sl="892" sc="13" el="892" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3745" ordinal="4" offset="30" sl="893" sc="13" el="893" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3746" ordinal="5" offset="39" sl="894" sc="9" el="894" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3741" ordinal="0" offset="0" sl="959" sc="9" el="959" ec="10" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3741" ordinal="0" offset="0" sl="889" sc="9" el="889" ec="10" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9873,15 +9873,15 @@
               <Name>khiva.array.Array khiva.features.Features::RatioBeyondRSigma(khiva.array.Array,System.Single)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3747" ordinal="0" offset="0" sl="978" sc="9" el="978" ec="10" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3748" ordinal="1" offset="1" sl="979" sc="13" el="979" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3749" ordinal="2" offset="8" sl="980" sc="13" el="980" ec="95" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3750" ordinal="3" offset="20" sl="981" sc="13" el="981" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3751" ordinal="4" offset="28" sl="982" sc="13" el="982" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3752" ordinal="5" offset="37" sl="983" sc="9" el="983" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3747" ordinal="0" offset="0" sl="906" sc="9" el="906" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3748" ordinal="1" offset="1" sl="907" sc="13" el="907" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3749" ordinal="2" offset="8" sl="908" sc="13" el="908" ec="95" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3750" ordinal="3" offset="20" sl="909" sc="13" el="909" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3751" ordinal="4" offset="28" sl="910" sc="13" el="910" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3752" ordinal="5" offset="37" sl="911" sc="9" el="911" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3747" ordinal="0" offset="0" sl="978" sc="9" el="978" ec="10" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3747" ordinal="0" offset="0" sl="906" sc="9" el="906" ec="10" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9889,15 +9889,15 @@
               <Name>khiva.array.Array khiva.features.Features::RatioValueNumberToTimeSeriesLength(khiva.array.Array)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3753" ordinal="0" offset="0" sl="998" sc="9" el="998" ec="10" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3754" ordinal="1" offset="1" sl="999" sc="13" el="999" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3755" ordinal="2" offset="8" sl="1000" sc="13" el="1000" ec="108" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3756" ordinal="3" offset="18" sl="1001" sc="13" el="1001" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3757" ordinal="4" offset="26" sl="1002" sc="13" el="1002" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3758" ordinal="5" offset="35" sl="1003" sc="9" el="1003" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3753" ordinal="0" offset="0" sl="925" sc="9" el="925" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3754" ordinal="1" offset="1" sl="926" sc="13" el="926" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3755" ordinal="2" offset="8" sl="927" sc="13" el="927" ec="108" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3756" ordinal="3" offset="18" sl="928" sc="13" el="928" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3757" ordinal="4" offset="26" sl="929" sc="13" el="929" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3758" ordinal="5" offset="35" sl="930" sc="9" el="930" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3753" ordinal="0" offset="0" sl="998" sc="9" el="998" ec="10" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3753" ordinal="0" offset="0" sl="925" sc="9" el="925" ec="10" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9905,15 +9905,15 @@
               <Name>khiva.array.Array khiva.features.Features::SampleEntropy(khiva.array.Array)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3759" ordinal="0" offset="0" sl="1021" sc="8" el="1021" ec="9" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3760" ordinal="1" offset="1" sl="1022" sc="13" el="1022" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3761" ordinal="2" offset="8" sl="1023" sc="13" el="1023" ec="82" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3762" ordinal="3" offset="18" sl="1024" sc="13" el="1024" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3763" ordinal="4" offset="26" sl="1025" sc="13" el="1025" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3764" ordinal="5" offset="35" sl="1026" sc="9" el="1026" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3759" ordinal="0" offset="0" sl="947" sc="8" el="947" ec="9" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3760" ordinal="1" offset="1" sl="948" sc="13" el="948" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3761" ordinal="2" offset="8" sl="949" sc="13" el="949" ec="82" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3762" ordinal="3" offset="18" sl="950" sc="13" el="950" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3763" ordinal="4" offset="26" sl="951" sc="13" el="951" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3764" ordinal="5" offset="35" sl="952" sc="9" el="952" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3759" ordinal="0" offset="0" sl="1021" sc="8" el="1021" ec="9" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3759" ordinal="0" offset="0" sl="947" sc="8" el="947" ec="9" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9921,15 +9921,15 @@
               <Name>khiva.array.Array khiva.features.Features::Skewness(khiva.array.Array)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3765" ordinal="0" offset="0" sl="1038" sc="8" el="1038" ec="9" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3766" ordinal="1" offset="1" sl="1039" sc="13" el="1039" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3767" ordinal="2" offset="8" sl="1040" sc="13" el="1040" ec="76" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3768" ordinal="3" offset="18" sl="1041" sc="13" el="1041" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3769" ordinal="4" offset="26" sl="1042" sc="13" el="1042" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3770" ordinal="5" offset="35" sl="1043" sc="9" el="1043" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3765" ordinal="0" offset="0" sl="963" sc="8" el="963" ec="9" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3766" ordinal="1" offset="1" sl="964" sc="13" el="964" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3767" ordinal="2" offset="8" sl="965" sc="13" el="965" ec="76" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3768" ordinal="3" offset="18" sl="966" sc="13" el="966" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3769" ordinal="4" offset="26" sl="967" sc="13" el="967" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3770" ordinal="5" offset="35" sl="968" sc="9" el="968" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3765" ordinal="0" offset="0" sl="1038" sc="8" el="1038" ec="9" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3765" ordinal="0" offset="0" sl="963" sc="8" el="963" ec="9" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9937,15 +9937,15 @@
               <Name>khiva.array.Array khiva.features.Features::SpktWelchDensity(khiva.array.Array,System.Int32)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3771" ordinal="0" offset="0" sl="1064" sc="8" el="1064" ec="9" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3772" ordinal="1" offset="1" sl="1065" sc="13" el="1065" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3773" ordinal="2" offset="8" sl="1066" sc="13" el="1066" ec="97" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3774" ordinal="3" offset="20" sl="1067" sc="13" el="1067" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3775" ordinal="4" offset="28" sl="1068" sc="13" el="1068" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3776" ordinal="5" offset="37" sl="1069" sc="9" el="1069" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3771" ordinal="0" offset="0" sl="987" sc="8" el="987" ec="9" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3772" ordinal="1" offset="1" sl="988" sc="13" el="988" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3773" ordinal="2" offset="8" sl="989" sc="13" el="989" ec="97" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3774" ordinal="3" offset="20" sl="990" sc="13" el="990" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3775" ordinal="4" offset="28" sl="991" sc="13" el="991" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3776" ordinal="5" offset="37" sl="992" sc="9" el="992" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3771" ordinal="0" offset="0" sl="1064" sc="8" el="1064" ec="9" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3771" ordinal="0" offset="0" sl="987" sc="8" el="987" ec="9" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9953,15 +9953,15 @@
               <Name>khiva.array.Array khiva.features.Features::StandardDeviation(khiva.array.Array)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3777" ordinal="0" offset="0" sl="1080" sc="8" el="1080" ec="9" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3778" ordinal="1" offset="1" sl="1081" sc="13" el="1081" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3779" ordinal="2" offset="8" sl="1082" sc="13" el="1082" ec="86" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3780" ordinal="3" offset="18" sl="1083" sc="13" el="1083" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3781" ordinal="4" offset="26" sl="1084" sc="13" el="1084" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3782" ordinal="5" offset="35" sl="1085" sc="9" el="1085" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3777" ordinal="0" offset="0" sl="1001" sc="8" el="1001" ec="9" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3778" ordinal="1" offset="1" sl="1002" sc="13" el="1002" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3779" ordinal="2" offset="8" sl="1003" sc="13" el="1003" ec="86" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3780" ordinal="3" offset="18" sl="1004" sc="13" el="1004" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3781" ordinal="4" offset="26" sl="1005" sc="13" el="1005" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3782" ordinal="5" offset="35" sl="1006" sc="9" el="1006" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3777" ordinal="0" offset="0" sl="1080" sc="8" el="1080" ec="9" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3777" ordinal="0" offset="0" sl="1001" sc="8" el="1001" ec="9" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9969,15 +9969,15 @@
               <Name>khiva.array.Array khiva.features.Features::SumOfReoccurringDatapoints(khiva.array.Array,System.Boolean)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3783" ordinal="0" offset="0" sl="1097" sc="8" el="1097" ec="9" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3784" ordinal="1" offset="1" sl="1098" sc="13" el="1098" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3785" ordinal="2" offset="8" sl="1099" sc="13" el="1099" ec="112" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3786" ordinal="3" offset="20" sl="1100" sc="13" el="1100" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3787" ordinal="4" offset="28" sl="1101" sc="13" el="1101" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3788" ordinal="5" offset="37" sl="1102" sc="9" el="1102" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3783" ordinal="0" offset="0" sl="1016" sc="8" el="1016" ec="9" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3784" ordinal="1" offset="1" sl="1017" sc="13" el="1017" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3785" ordinal="2" offset="8" sl="1018" sc="13" el="1018" ec="112" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3786" ordinal="3" offset="20" sl="1019" sc="13" el="1019" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3787" ordinal="4" offset="28" sl="1020" sc="13" el="1020" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3788" ordinal="5" offset="37" sl="1021" sc="9" el="1021" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3783" ordinal="0" offset="0" sl="1097" sc="8" el="1097" ec="9" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3783" ordinal="0" offset="0" sl="1016" sc="8" el="1016" ec="9" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -9985,15 +9985,15 @@
               <Name>khiva.array.Array khiva.features.Features::SumOfReoccurringValues(khiva.array.Array,System.Boolean)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3789" ordinal="0" offset="0" sl="1113" sc="8" el="1113" ec="9" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3790" ordinal="1" offset="1" sl="1114" sc="13" el="1114" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3791" ordinal="2" offset="8" sl="1115" sc="13" el="1115" ec="108" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3792" ordinal="3" offset="20" sl="1116" sc="13" el="1116" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3793" ordinal="4" offset="28" sl="1117" sc="13" el="1117" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3794" ordinal="5" offset="37" sl="1118" sc="9" el="1118" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3789" ordinal="0" offset="0" sl="1031" sc="8" el="1031" ec="9" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3790" ordinal="1" offset="1" sl="1032" sc="13" el="1032" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3791" ordinal="2" offset="8" sl="1033" sc="13" el="1033" ec="108" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3792" ordinal="3" offset="20" sl="1034" sc="13" el="1034" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3793" ordinal="4" offset="28" sl="1035" sc="13" el="1035" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3794" ordinal="5" offset="37" sl="1036" sc="9" el="1036" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3789" ordinal="0" offset="0" sl="1113" sc="8" el="1113" ec="9" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3789" ordinal="0" offset="0" sl="1031" sc="8" el="1031" ec="9" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -10001,15 +10001,15 @@
               <Name>khiva.array.Array khiva.features.Features::SumValues(khiva.array.Array)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3795" ordinal="0" offset="0" sl="1128" sc="8" el="1128" ec="9" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3796" ordinal="1" offset="1" sl="1129" sc="13" el="1129" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3797" ordinal="2" offset="8" sl="1130" sc="13" el="1130" ec="78" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3798" ordinal="3" offset="18" sl="1131" sc="13" el="1131" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3799" ordinal="4" offset="26" sl="1132" sc="13" el="1132" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3800" ordinal="5" offset="35" sl="1133" sc="9" el="1133" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3795" ordinal="0" offset="0" sl="1045" sc="8" el="1045" ec="9" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3796" ordinal="1" offset="1" sl="1046" sc="13" el="1046" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3797" ordinal="2" offset="8" sl="1047" sc="13" el="1047" ec="78" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3798" ordinal="3" offset="18" sl="1048" sc="13" el="1048" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3799" ordinal="4" offset="26" sl="1049" sc="13" el="1049" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3800" ordinal="5" offset="35" sl="1050" sc="9" el="1050" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3795" ordinal="0" offset="0" sl="1128" sc="8" el="1128" ec="9" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3795" ordinal="0" offset="0" sl="1045" sc="8" el="1045" ec="9" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -10017,15 +10017,15 @@
               <Name>khiva.array.Array khiva.features.Features::SymmetryLooking(khiva.array.Array,System.Single)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3801" ordinal="0" offset="0" sl="1148" sc="8" el="1148" ec="9" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3802" ordinal="1" offset="1" sl="1149" sc="13" el="1149" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3803" ordinal="2" offset="8" sl="1150" sc="13" el="1150" ec="91" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3804" ordinal="3" offset="20" sl="1151" sc="13" el="1151" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3805" ordinal="4" offset="28" sl="1152" sc="13" el="1152" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3806" ordinal="5" offset="37" sl="1153" sc="9" el="1153" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3801" ordinal="0" offset="0" sl="1063" sc="8" el="1063" ec="9" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3802" ordinal="1" offset="1" sl="1064" sc="13" el="1064" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3803" ordinal="2" offset="8" sl="1065" sc="13" el="1065" ec="91" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3804" ordinal="3" offset="20" sl="1066" sc="13" el="1066" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3805" ordinal="4" offset="28" sl="1067" sc="13" el="1067" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3806" ordinal="5" offset="37" sl="1068" sc="9" el="1068" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3801" ordinal="0" offset="0" sl="1148" sc="8" el="1148" ec="9" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3801" ordinal="0" offset="0" sl="1063" sc="8" el="1063" ec="9" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -10033,15 +10033,15 @@
               <Name>khiva.array.Array khiva.features.Features::TimeReversalAsymmetryStatistic(khiva.array.Array,System.Int32)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3807" ordinal="0" offset="0" sl="1176" sc="8" el="1176" ec="9" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3808" ordinal="1" offset="1" sl="1177" sc="13" el="1177" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3809" ordinal="2" offset="8" sl="1178" sc="13" el="1178" ec="110" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3810" ordinal="3" offset="20" sl="1179" sc="13" el="1179" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3811" ordinal="4" offset="28" sl="1180" sc="13" el="1180" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3812" ordinal="5" offset="37" sl="1181" sc="9" el="1181" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3807" ordinal="0" offset="0" sl="1090" sc="8" el="1090" ec="9" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3808" ordinal="1" offset="1" sl="1091" sc="13" el="1091" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3809" ordinal="2" offset="8" sl="1092" sc="13" el="1092" ec="110" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3810" ordinal="3" offset="20" sl="1093" sc="13" el="1093" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3811" ordinal="4" offset="28" sl="1094" sc="13" el="1094" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3812" ordinal="5" offset="37" sl="1095" sc="9" el="1095" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3807" ordinal="0" offset="0" sl="1176" sc="8" el="1176" ec="9" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3807" ordinal="0" offset="0" sl="1090" sc="8" el="1090" ec="9" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -10049,15 +10049,15 @@
               <Name>khiva.array.Array khiva.features.Features::ValueCount(khiva.array.Array,System.Single)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3813" ordinal="0" offset="0" sl="1193" sc="8" el="1193" ec="9" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3814" ordinal="1" offset="1" sl="1194" sc="13" el="1194" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3815" ordinal="2" offset="8" sl="1195" sc="13" el="1195" ec="86" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3816" ordinal="3" offset="20" sl="1196" sc="13" el="1196" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3817" ordinal="4" offset="28" sl="1197" sc="13" el="1197" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3818" ordinal="5" offset="37" sl="1198" sc="9" el="1198" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3813" ordinal="0" offset="0" sl="1105" sc="8" el="1105" ec="9" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3814" ordinal="1" offset="1" sl="1106" sc="13" el="1106" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3815" ordinal="2" offset="8" sl="1107" sc="13" el="1107" ec="86" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3816" ordinal="3" offset="20" sl="1108" sc="13" el="1108" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3817" ordinal="4" offset="28" sl="1109" sc="13" el="1109" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3818" ordinal="5" offset="37" sl="1110" sc="9" el="1110" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3813" ordinal="0" offset="0" sl="1193" sc="8" el="1193" ec="9" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3813" ordinal="0" offset="0" sl="1105" sc="8" el="1105" ec="9" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -10065,15 +10065,15 @@
               <Name>khiva.array.Array khiva.features.Features::Variance(khiva.array.Array)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3819" ordinal="0" offset="0" sl="1208" sc="8" el="1208" ec="9" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3820" ordinal="1" offset="1" sl="1209" sc="13" el="1209" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3821" ordinal="2" offset="8" sl="1210" sc="13" el="1210" ec="76" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3822" ordinal="3" offset="18" sl="1211" sc="13" el="1211" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3823" ordinal="4" offset="26" sl="1212" sc="13" el="1212" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3824" ordinal="5" offset="35" sl="1213" sc="9" el="1213" ec="10" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3819" ordinal="0" offset="0" sl="1119" sc="8" el="1119" ec="9" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3820" ordinal="1" offset="1" sl="1120" sc="13" el="1120" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3821" ordinal="2" offset="8" sl="1121" sc="13" el="1121" ec="76" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3822" ordinal="3" offset="18" sl="1122" sc="13" el="1122" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3823" ordinal="4" offset="26" sl="1123" sc="13" el="1123" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3824" ordinal="5" offset="35" sl="1124" sc="9" el="1124" ec="10" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3819" ordinal="0" offset="0" sl="1208" sc="8" el="1208" ec="9" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3819" ordinal="0" offset="0" sl="1119" sc="8" el="1119" ec="9" bec="0" bev="0" fileid="33" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -10081,15 +10081,15 @@
               <Name>khiva.array.Array khiva.features.Features::VarianceLargerThanStandardDeviation(khiva.array.Array)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="3825" ordinal="0" offset="0" sl="1224" sc="8" el="1224" ec="9" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3826" ordinal="1" offset="1" sl="1225" sc="13" el="1225" ec="48" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3827" ordinal="2" offset="8" sl="1226" sc="13" el="1226" ec="107" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3828" ordinal="3" offset="18" sl="1227" sc="13" el="1227" ec="41" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3829" ordinal="4" offset="26" sl="1228" sc="13" el="1228" ec="46" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="1" uspid="3830" ordinal="5" offset="35" sl="1228" sc="46" el="1228" ec="47" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3825" ordinal="0" offset="0" sl="1134" sc="8" el="1134" ec="9" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3826" ordinal="1" offset="1" sl="1135" sc="13" el="1135" ec="48" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3827" ordinal="2" offset="8" sl="1136" sc="13" el="1136" ec="107" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3828" ordinal="3" offset="18" sl="1137" sc="13" el="1137" ec="41" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3829" ordinal="4" offset="26" sl="1138" sc="13" el="1138" ec="46" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="3830" ordinal="5" offset="35" sl="1138" sc="46" el="1138" ec="47" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3825" ordinal="0" offset="0" sl="1224" sc="8" el="1224" ec="9" bec="0" bev="0" fileid="33" />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="3825" ordinal="0" offset="0" sl="1134" sc="8" el="1134" ec="9" bec="0" bev="0" fileid="33" />
             </Method>
           </Methods>
         </Class>
