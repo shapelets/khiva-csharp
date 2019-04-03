@@ -234,7 +234,6 @@ namespace khiva.interop
 
         
         /// <summary> Compares (element-wise) if rhs is equal to rhs.</summary>
-        ///
         /// <param name="lhs">Left</param>-hand side KHIVA array for the operation.
         /// <param name="rhs">Right</param>-hand side KHIVA array for the operation.
         /// <param name="result">KHIVA Array with the result of this operation.</param>
@@ -243,7 +242,6 @@ namespace khiva.interop
 
         
         /// <summary> Compares (element-wise) if lhs is not equal to rhs.</summary>
-        ///
         /// <param name="lhs">Left</param>-hand side KHIVA array for the operation.
         /// <param name="rhs">Right</param>-hand side KHIVA array for the operation.
         /// <param name="result">KHIVA Array with the result of this operation.</param>
@@ -252,7 +250,6 @@ namespace khiva.interop
 
         
         /// <summary> Performs an AND operation (element-wise) with lhs and rhs.</summary>
-        ///
         /// <param name="lhs">Left</param>-hand side KHIVA array for the operation.
         /// <param name="rhs">Right</param>-hand side KHIVA array for the operation.
         /// <param name="result">KHIVA Array with the result of this operation.</param>
@@ -261,7 +258,6 @@ namespace khiva.interop
 
         
         /// <summary> Performs an OR operation (element-wise) with lhs and rhs.</summary>
-        ///
         /// <param name="lhs">Left</param>-hand side KHIVA array for the operation.
         /// <param name="rhs">Right</param>-hand side KHIVA array for the operation.
         /// <param name="result">KHIVA Array with the result of this operation.</param>
@@ -270,7 +266,6 @@ namespace khiva.interop
 
         
         /// <summary> Performs an eXclusive-OR operation (element-wise) with lhs and rhs.</summary>
-        ///
         /// <param name="lhs">Left</param>-hand side KHIVA array for the operation.
         /// <param name="rhs">Right</param>-hand side KHIVA array for the operation.
         /// <param name="result">KHIVA Array with the result of this operation.</param>
@@ -279,7 +274,6 @@ namespace khiva.interop
 
         
         /// <summary> Performs a left bit shift operation (element-wise) to array as many times as specified in the parameter n.</summary>
-        ///
         /// <param name="array">KHIVA Array to shift.</param>
         /// <param name="n">Number of bits to be shifted.</param>
         /// <param name="result">KHIVA Array with the result of this operation.</param>
@@ -288,7 +282,6 @@ namespace khiva.interop
 
         
         /// <summary> Performs a right bit shift operation (element-wise) to array as many times as specified in the parameter n.</summary>
-        ///
         /// <param name="array">KHIVA Array to shift.</param>
         /// <param name="n">Number of bits to be shifted.</param>
         /// <param name="result">KHIVA Array with the result of this operation.</param>
@@ -297,7 +290,6 @@ namespace khiva.interop
 
         
         /// <summary> Logical NOT operation to array.</summary>
-        ///
         /// <param name="array">KHIVA Array to negate.</param>
         /// <param name="result">KHIVA Array with the result of this operation.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
@@ -305,7 +297,6 @@ namespace khiva.interop
 
         
         /// <summary> Transposes array.</summary>
-        ///
         /// <param name="array">KHIVA Array to transpose.</param>
         /// <param name="conjugate">If true a conjugate transposition is performed.</param>
         /// <param name="result">KHIVA Array with the result of this operation.</param>
@@ -314,7 +305,6 @@ namespace khiva.interop
 
         
         /// <summary> Retrieves a given column of array.</summary>
-        ///
         /// <param name="array">KHIVA Array.</param>
         /// <param name="index">The column to be retrieved.</param>
         /// <param name="result">KHIVA Array with the result of this operation.</param>
@@ -323,7 +313,6 @@ namespace khiva.interop
 
         
         /// <summary> Retrieves a subset of columns of array, starting at first and finishing at last, both inclusive.</summary>
-        ///
         /// <param name="array">KHIVA Array.</param>
         /// <param name="first">Start of the subset of columns to be retrieved.</param>
         /// <param name="last">End of the subset of columns to be retrieved.</param>
@@ -333,7 +322,6 @@ namespace khiva.interop
 
         
         /// <summary> Retrieves a given row of array.</summary>
-        ///
         /// <param name="array">KHIVA Array.</param>
         /// <param name="index">The row to be retrieved.</param>
         /// <param name="result">KHIVA Array with the result of this operation.</param>
@@ -342,7 +330,6 @@ namespace khiva.interop
 
         
         /// <summary> Retrieves a subset of rows of array, starting at first and finishing at last, both inclusive.</summary>
-        ///
         /// <param name="array">KHIVA Array.</param>
         /// <param name="first">Start of the subset of rows to be retrieved.</param>
         /// <param name="last">End of the subset of rows to be retrieved.</param>
@@ -352,7 +339,6 @@ namespace khiva.interop
 
         
         /// <summary> Performs a matrix multiplication of lhs and rhs.</summary>
-        ///
         /// <param name="lhs">Left</param>-hand side KHIVA array for the operation.
         /// <param name="rhs">Right</param>-hand side KHIVA array for the operation.
         /// <param name="result">KHIVA Array with the result of this operation.</param>
@@ -361,7 +347,6 @@ namespace khiva.interop
 
         
         /// <summary> Performs a deep copy of array.</summary>
-        ///
         /// <param name="array">KHIVA Array.</param>
         /// <param name="result">KHIVA Array which contains a copy of array.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
@@ -369,7 +354,6 @@ namespace khiva.interop
 
         
         /// <summary> Changes the type of array.</summary>
-        ///
         /// <param name="array">KHIVA Array.</param>
         /// <param name="type">Target type of the output array.</param>
         /// <param name="result">KHIVA Array with the result of this operation.</param>
