@@ -991,14 +991,12 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-        * @brief Calculates the standard deviation of each time series within array.
-        *
-        * @param array Expects an input array whose dimension zero is the length of the
-        * time series (all the same) and dimension one indicates the number of time
-        * series.
-        * @return result The standard deviation of each time series within array.
-        */
+        /// <summary>
+        /// Calculates the standard deviation of each time series within array.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <returns>The standard deviation of each time series within array.</returns>
         public static array.Array StandardDeviation(array.Array array)
        {
             IntPtr reference = array.Reference;
@@ -1007,15 +1005,13 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates the sum of all data points, that are present in the time series more than once.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @param is_sorted Indicates if the input time series is sorted or not. Defaults to false.
-         * @return result Returns the sum of all data points, that are present in the time series more than once.
-         */
+        /// <summary>
+        /// Calculates the sum of all data points, that are present in the time series more than once.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <param name="is_sorted">Indicates if the input time series is sorted or not. Defaults to false.</param>
+        /// <returns>Returns the sum of all data points, that are present in the time series more than once.</returns>
         public static array.Array SumOfReoccurringDatapoints(array.Array array, bool is_sorted = false)
        {
             IntPtr reference = array.Reference;
@@ -1024,14 +1020,13 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates the sum of all values, that are present in the time series more than once.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the time series (all the same)
-         * and dimension one indicates the number of time series.
-         * @param is_sorted Indicates if the input time series is sorted or not. Defaults to false.
-         * @return result Returns the sum of all values, that are present in the time series more than once.
-         */
+        /// <summary>
+        /// Calculates the sum of all values, that are present in the time series more than once.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the time series (all the same)
+        /// and dimension one indicates the number of time series.</param>
+        /// <param name="is_sorted">Indicates if the input time series is sorted or not. Defaults to false.</param>
+        /// <returns>Returns the sum of all values, that are present in the time series more than once.</returns>
         public static array.Array SumOfReoccurringValues(array.Array array, bool is_sorted = false)
        {
             IntPtr reference = array.Reference;
@@ -1040,13 +1035,12 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates the sum over the time series array.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the time series (all the same) and
-         * dimension one indicates the number of time series.
-         * @return result An array containing the sum of values in each time series.
-         */
+        /// <summary>
+        /// Calculates the sum over the time series array.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the time series (all the same) and
+        /// dimension one indicates the number of time series.</param>
+        /// <returns>An array containing the sum of values in each time series.</returns>
         public static array.Array SumValues(array.Array array)
        {
             IntPtr reference = array.Reference;
@@ -1055,18 +1049,16 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates if the distribution of array *looks symmetric*. This is the case if
-         * \f[
-         *      | mean(array)-median(array)| < r * (max(array)-min(array))
-         * \f]
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @param r The percentage of the range to compare with.
-         * @return result An array denoting if the input time series look symmetric.
-         */
+        /// <summary>
+        /// Calculates if the distribution of array *looks symmetric*. This is the case if
+        /// \f[
+        ///      | mean(array) - median(array) | \lt r * (max(array) - min(array))
+        /// \f]
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <param name="r">The percentage of the range to compare with.</param>
+        /// <returns>An array denoting if the input time series look symmetric.</returns>
         public static array.Array SymmetryLooking(array.Array array, float r)
        {
             IntPtr reference = array.Reference;
@@ -1075,26 +1067,25 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief This function calculates the value of:
-         * \f[
-         *      \frac{1}{n-2lag} \sum_{i=0}^{n-2lag} x_{i + 2 \cdot lag}^2 \cdot x_{i + lag} - x_{i + lag} \cdot  x_{i}^2
-         * \f]
-         * which is
-         * \f[
-         *       \mathbb{E}[L^2(X)^2 \cdot L(X) - L(X) \cdot X^2]
-         * \f]
-         * where \f$ \mathbb{E} \f$ is the mean and \f$ L \f$ is the lag operator. It was proposed in [1] as a promising
-         * feature to extract from time series.
-         *
-         * [1] Fulcher, B.D., Jones, N.S. (2014). Highly comparative feature-based time-series classification.
-         * Knowledge and Data Engineering, IEEE Transactions on 26, 3026–3037.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the time series (all the same) and
-         * dimension one indicates the number of time series.
-         * @param lag The lag to be computed.
-         * @return result An array containing the time reversal asymetry statistic value in each time series.
-         */
+        /// <summary>
+        /// This function calculates the value of:
+        /// \f[
+        ///      \frac{1}{n-2lag} \sum_{i=0}^{n-2lag} x_{i + 2 \cdot lag}^2 \cdot x_ { i + lag } - x_{i + lag} \cdot x_ { i }^2
+        /// \f]
+        /// which is
+        /// \f[
+        ///       \mathbb{E}[L^2(X)^2 \cdot L(X) - L(X) \cdot X^2]
+        /// \f]
+        /// where \f$ \mathbb{E} \f$ is the mean and \f$ L \f$ is the lag operator. It was proposed in [1] as a promising
+        /// feature to extract from time series.
+        ///
+        /// [1] Fulcher, B.D., Jones, N.S. (2014). Highly comparative feature-based time-series classification.
+        /// Knowledge and Data Engineering, IEEE Transactions on 26, 3026–3037.
+        /// </summary>
+        /// <param name="array">xpects an input array whose dimension zero is the length of the time series (all the same) and
+        /// dimension one indicates the number of time series.</param>
+        /// <param name="lag">The lag to be computed.</param>
+        /// <returns>An array containing the time reversal asymetry statistic value in each time series.</returns>
         public static array.Array TimeReversalAsymmetryStatistic(array.Array array, int lag)
        {
             IntPtr reference = array.Reference;
@@ -1102,7 +1093,6 @@ namespace khiva.features
             array.Reference = reference;
             return (new array.Array(result));
         }
-
         /**
          * @brief Counts occurrences of value in the time series array.
          *
@@ -1112,6 +1102,13 @@ namespace khiva.features
          * @param v The value to be counted.
          * @return result An array containing the count of the given value in each time series.
          */
+        /// <summary>
+        /// Counts occurrences of value in the time series array.
+        /// </summary>
+        /// <param name="array"> Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <param name="v">The value to be counted.</param>
+        /// <returns>An array containing the count of the given value in each time series.</returns>
         public static array.Array ValueCount(array.Array array, float v)
        {
             IntPtr reference = array.Reference;
