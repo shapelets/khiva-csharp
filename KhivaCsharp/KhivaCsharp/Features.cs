@@ -474,15 +474,12 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Returns the kurtosis of array (calculated with the adjusted Fisher-Pearson
-         * standardized moment coefficient G2).
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @return result The kurtosis of each array.
-         */
+        /// <summary>
+        ///  Returns the kurtosis of array (calculated with the adjusted Fisher-Pearson standardized moment coefficient G2).
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <returns>The kurtosis of each array.</returns>
         public static array.Array Kurtosis(array.Array array)
         {
             IntPtr reference = array.Reference;
@@ -491,15 +488,13 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Checks if the time series within array have a large standard deviation.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @param r The threshold.
-         * @return result  Array containing True for those time series in array that have a large standard deviation.
-         */
+        /// <summary>
+        /// Checks if the time series within array have a large standard deviation.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <param name="r">The threshold.</param>
+        /// <returns>Array containing True for those time series in array that have a large standard deviation.</returns>
         public static array.Array LargeStandardDeviation(array.Array array, float r)
         {
             IntPtr reference = array.Reference;
@@ -508,15 +503,12 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates the last location of the maximum value of each time series. The position
-         * is calculated relatively to the length of the series.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @return result The last relative location of the maximum value of each series.
-         */
+        /// <summary>
+        /// Calculates the last location of the maximum value of each time series. The position is calculated relatively to the length of the series.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <returns>The last relative location of the maximum value of each series.</returns>
         public static array.Array LastLocationOfMaximum(array.Array array)
         {
             IntPtr reference = array.Reference;
@@ -525,15 +517,12 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates the last location of the minimum value of each time series. The position
-         * is calculated relatively to the length of the series.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @return result The last relative location of the minimum value of each series.
-         */
+        /// <summary>
+        /// Calculates the last location of the minimum value of each time series. The position is calculated relatively to the length of the series.
+        /// </summary>
+        /// <param name="array"> Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <returns>The last relative location of the minimum value of each series.</returns>
         public static array.Array LastLocationOfMinimum(array.Array array)
         {
             IntPtr reference = array.Reference;
