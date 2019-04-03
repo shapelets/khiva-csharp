@@ -40,12 +40,12 @@ before_build:
             if(!(Test-Path -Path "C:\Program Files\Khiva" )){ appveyor DownloadFile "https://github.com/shapelets/khiva/releases/download/v0.2.0/khiva-v0.2.0-unattended.exe" -FileName khiva-v0.2.0-unattended.exe };
             if(!(Test-Path -Path "C:\Program Files\Khiva" )){ .\khiva-v0.2.0-unattended.exe /S };
           }else{
-            if(!(Test-Path -Path "C:\Program Files\Khiva" )){ git clone -q https://github.com/shapelets/khiva.git C:\khiva-library };
-            if(!(Test-Path -Path "C:\Program Files\Khiva" )){ cd C:\khiva-library };
-            if(!(Test-Path -Path "C:\Program Files\Khiva" )){ mkdir build };
-            if(!(Test-Path -Path "C:\Program Files\Khiva" )){ cd build };
-            if(!(Test-Path -Path "C:\Program Files\Khiva" )){ cmake .. -DCMAKE_TOOLCHAIN_FILE=c:/tools/vcpkg/scripts/buildsystems/vcpkg.cmake -DBOOST_ROOT="$($env:BOOST_PATH)" -DKHIVA_USE_CONAN=OFF -DKHIVA_BUILD_DOCUMENTATION=OFF -DKHIVA_BUILD_BENCHMARKS=OFF -DKHIVA_ONLY_CPU_BACKEND=ON -G"$env:GENERATOR" };
-            if(!(Test-Path -Path "C:\Program Files\Khiva" )){ cmake --build . --config Debug --target INSTALL -- /m };
+            git clone -q https://github.com/shapelets/khiva.git C:\khiva-library ;
+            cd C:\khiva-library;
+            mkdir build;
+            cd build;
+            cmake .. -DCMAKE_TOOLCHAIN_FILE=c:/tools/vcpkg/scripts/buildsystems/vcpkg.cmake -DBOOST_ROOT="$($env:BOOST_PATH)" -DKHIVA_USE_CONAN=OFF -DKHIVA_BUILD_DOCUMENTATION=OFF -DKHIVA_BUILD_BENCHMARKS=OFF -DKHIVA_ONLY_CPU_BACKEND=ON -G"$env:GENERATOR";
+            cmake --build . --config Debug --target INSTALL -- /m;
           }
   - cd c:\projects\khiva-csharp
   - choco install codecov

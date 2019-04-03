@@ -531,14 +531,12 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Returns the length of the input time series.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @return result The length of the time series.
-         */
+        /// <summary>
+        /// Returns the length of the input time series.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <returns>The length of the time series.</returns>
         public static array.Array Length(array.Array array)
         {
             IntPtr reference = array.Reference;
@@ -547,19 +545,17 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculate a linear least-squares regression for the values of the time series versus the sequence from 0 to
-         * length of the time series minus one.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @return pvalue The pvalues for all time series.
-         * @return rvalue The rvalues for all time series.
-         * @return intercept The intercept values for all time series.
-         * @return slope The slope for all time series.
-         * @return stdrr The stderr values for all time series.
-         */
+        /// <summary>
+        /// Calculate a linear least-squares regression for the values of the time series versus the sequence from 0 to length of the time series minus one.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <returns>Tuple with:
+        /// The pvalues for all time series.
+        /// The rvalues for all time series.
+        /// The intercept values for all time series.
+        /// The slope for all time series.
+        /// The stderr values for all time series.</returns>
         public static (array.Array, array.Array, array.Array, array.Array, array.Array) LinearTrend(array.Array array)
         {
             IntPtr reference = array.Reference;
