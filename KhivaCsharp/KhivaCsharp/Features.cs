@@ -1093,15 +1093,7 @@ namespace khiva.features
             array.Reference = reference;
             return (new array.Array(result));
         }
-        /**
-         * @brief Counts occurrences of value in the time series array.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @param v The value to be counted.
-         * @return result An array containing the count of the given value in each time series.
-         */
+
         /// <summary>
         /// Counts occurrences of value in the time series array.
         /// </summary>
@@ -1117,13 +1109,12 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Computes the variance for the time series array.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the time series (all the same) and
-         * dimension one indicates the number of time series.
-         * @return result An array containing the variance in each time series.
-         */
+        /// <summary>
+        /// Computes the variance for the time series array.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the time series (all the same) and
+        /// dimension one indicates the number of time series.</param>
+        /// <returns>An array containing the variance in each time series.</returns>
         public static array.Array Variance(array.Array array)
        {
             IntPtr reference = array.Reference;
@@ -1132,14 +1123,13 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates if the variance of array is greater than the standard deviation. In other words, if the variance of
-         * array is larger than 1.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the time series (all the same) and
-         * dimension one indicates the number of time series.
-         * @return result An array denoting if the variance of array is greater than the standard deviation.
-         */
+        /// <summary>
+        /// Calculates if the variance of array is greater than the standard deviation. In other words, if the variance of
+        /// array is larger than 1.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the time series (all the same) and
+        /// dimension one indicates the number of time series.</param>
+        /// <returns>An array denoting if the variance of array is greater than the standard deviation.</returns>
         public static array.Array VarianceLargerThanStandardDeviation(array.Array array)
        {
             IntPtr reference = array.Reference;
