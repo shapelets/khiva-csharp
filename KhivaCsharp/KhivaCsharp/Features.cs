@@ -393,30 +393,22 @@ namespace khiva.features
             array.Reference = reference;
             return (new array.Array(result));
         }
-        /**
-         * @brief Coefficients of polynomial \f$h(x)\f$, which has been fitted to the deterministic
-         * dynamics of Langevin model:
-         * \f[
-         *    \dot(x)(t) = h(x(t)) + R \mathcal(N)(0,1)
-         * \f]
-         * as described by [1]. For short time series this method is highly dependent on the parameters.
-         *
-         * [1] Friedrich et al. (2000): Physics Letters A 271, p. 217-222
-         * Extracting model equations from experimental data.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the time series (all the same)
-         * and dimension one indicates the number of time series.
-         * @param m Order of polynom to fit for estimating fixed points of dynamics.
-         * @param r Number of quantils to use for averaging.
-         * @return result The coefficients for each time series.
-         */
+
         /// <summary>
-        /// 
+        /// Coefficients of polynomial \f$h(x)\f$, which has been fitted to the deterministic dynamics of Langevin model:
+        /// \f[
+        ///    \dot(x)(t) = h(x(t)) + R \mathcal(N)(0,1)
+        /// \f]
+        /// as described by[1]. For short time series this method is highly dependent on the parameters.
+        ///
+        ///[1] Friedrich et al. (2000): Physics Letters A 271, p. 217-222
+        /// Extracting model equations from experimental data.
         /// </summary>
-        /// <param name="array"></param>
-        /// <param name="m"></param>
-        /// <param name="r"></param>
-        /// <returns></returns>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the time series (all the same)
+        /// and dimension one indicates the number of time series.</param>
+        /// <param name="m">Order of polynom to fit for estimating fixed points of dynamics.</param>
+        /// <param name="r">Number of quantils to use for averaging.</param>
+        /// <returns>The coefficients for each time series.</returns>
         public static array.Array FriedrichCoefficients(array.Array array, int m, float r)
         {
             IntPtr reference = array.Reference;
@@ -425,15 +417,12 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates if the input time series contain duplicated elements.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @return result Array containing True if the time series contains duplicated elements
-         * and false otherwise.
-         */
+        /// <summary>
+        /// Calculates if the input time series contain duplicated elements.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <returns>Array containing True if the time series contains duplicated elements and false otherwise.</returns>
         public static array.Array HasDuplicates(array.Array array)
         {
             IntPtr reference = array.Reference;
@@ -442,15 +431,12 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates if the maximum within input time series is duplicated.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @return result Array containing True if the maximum value of the time series is duplicated
-         * and false otherwise.
-         */
+        /// <summary>
+        /// Calculates if the maximum within input time series is duplicated.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <returns>Array containing True if the maximum value of the time series is duplicated and false otherwise.</returns>
         public static array.Array HasDuplicateMax(array.Array array)
         {
             IntPtr reference = array.Reference;
@@ -459,15 +445,12 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates if the minimum of the input time series is duplicated.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @return result Array containing True if the minimum of the time series is duplicated
-         * and false otherwise.
-         */
+        /// <summary>
+        /// Calculates if the minimum of the input time series is duplicated.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <returns>Array containing True if the minimum of the time series is duplicated and false otherwise.</returns>
         public static array.Array HasDuplicateMin(array.Array array)
         {
             IntPtr reference = array.Reference;
@@ -476,15 +459,13 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates the index of the max quantile.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @param q The quantile.
-         * @return result The index of the max quantile q.
-         */
+        /// <summary>
+        /// Calculates the index of the max quantile.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <param name="q">The quantile.</param>
+        /// <returns>The index of the max quantile q.</returns>
         public static array.Array IndexMassQuantile(array.Array array, float q)
         {
             IntPtr reference = array.Reference;
