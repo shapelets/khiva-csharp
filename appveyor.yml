@@ -48,7 +48,6 @@ before_build:
             cmake --build . --config Release --target INSTALL -- /m;
           }
   - cd c:\projects\khiva-csharp
-  - choco install opencover.portable
   - choco install codecov
 
 build:
@@ -59,7 +58,7 @@ build_script:
   - nuget restore KhivaCsharp/KhivaCsharp.sln
 
 test_script:
-   - .\KhivaCsharp\packages\OpenCover.4.6.519\tools\OpenCover.Console -target:".\KhivaCsharp\packages\NUnit.ConsoleRunner.3.9.0\tools\nunit3-console.exe" -targetargs:"KhivaCsharp\KhivaCSharpNUnitTest\bin\Debug\KhivaCSharpNUnitTest.dll" -output:"coverage.xml" -register:user
+   - .\KhivaCsharp\packages\OpenCover.4.6.519\tools\OpenCover.Console -target:".\KhivaCsharp\packages\NUnit.ConsoleRunner.3.9.0\tools\nunit3-console.exe" -targetargs:"KhivaCsharp\KhivaCSharpNUnitTest\bin\Debug\KhivaCSharpNUnitTest.dll" -output:"coverage.xml" -coverbytest:+[*Tests]* -register:user
    - codecov -f coverage.xml
    # Añadir resultados Test .xml
 
