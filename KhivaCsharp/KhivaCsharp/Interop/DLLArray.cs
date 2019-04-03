@@ -126,283 +126,253 @@ namespace khiva.interop
 
 
         
-            /// <summary> Displays an Array.
-            ///
-            /// <param name=array>The array to display.</param>
-           
+        /// <summary> Displays an Array.</summary>
+        ///
+        /// <param name="array">The array to display.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void display([In] ref IntPtr array);
 
         
-            /// <summary> Decreases the references count of the given array.
-            ///
-            /// <param name=array>The Array to release.</param>
-
+        /// <summary> Decreases the references count of the given array.</summary>
+        ///
+        /// <param name="array">The Array to release.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void delete_array([In, Out] ref IntPtr array);
 
         
-            /// <summary> Gets the type of the array.
-            ///
-            /// <param name=array>The array to obtain the type information from.</param>
-            /// <param name=type>Value of the Dtype enumeration.</param>
-           
+        /// <summary> Gets the type of the array.</summary>
+        ///
+        /// <param name="array">The array to obtain the type information from.</param>
+        /// <param name="type">Value of the Dtype enumeration.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void get_type([In] ref IntPtr array, [Out] out int t);
 
         
-            /// <summary> Adds two arrays.
-            ///
-            /// <param name=lhs>Left</param>-hand side KHIVA array for the operation.
-            /// <param name=rhs>Right</param>-hand side KHIVA array for the operation.
-            /// <param name=result>KHIVA Array with the result of this operation.</param>
-           
+        /// <summary> Adds two arrays.</summary>
+        ///
+        /// <param name="lhs">Left</param>-hand side KHIVA array for the operation.
+        /// <param name="rhs">Right</param>-hand side KHIVA array for the operation.
+        /// <param name="result">KHIVA Array with the result of this operation.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void khiva_add([In] ref IntPtr lhs, [In] ref IntPtr rhs, [Out] out IntPtr result);
 
 
 
         
-            /// <summary> Multiplies two arrays. </summary>
-            /// <param name=lhs>Left</param>-hand side KHIVA array for the operation.
-            /// <param name=rhs>Right</param>-hand side KHIVA array for the operation.
-            /// <param name=result>KHIVA Array with the result of this operation.</param>
-           
+        /// <summary> Multiplies two arrays. </summary>
+        /// <param name="lhs">Left</param>-hand side KHIVA array for the operation.
+        /// <param name="rhs">Right</param>-hand side KHIVA array for the operation.
+        /// <param name="result">KHIVA Array with the result of this operation.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void khiva_mul([In] ref IntPtr lhs, [In] ref IntPtr rhs, [Out] out IntPtr result);
 
         
-            /// <summary> 
-            /// Subtracts two arrays.
-            /// </summary>
-            /// <param name=lhs>Left</param>-hand side KHIVA array for the operation.
-            /// <param name=rhs>Right</param>-hand side KHIVA array for the operation.
-            /// <param name=result>KHIVA Array with the result of this operation.</param>
-           
+        /// <summary> 
+        /// Subtracts two arrays.
+        /// </summary>
+        /// <param name="lhs">Left</param>-hand side KHIVA array for the operation.
+        /// <param name="rhs">Right</param>-hand side KHIVA array for the operation.
+        /// <param name="result">KHIVA Array with the result of this operation.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void khiva_sub([In] ref IntPtr lhs, [In] ref IntPtr rhs, [Out] out IntPtr result);
 
         
-            /// <summary> Divides lhs by rhs (element-wise). </summary>
-            /// <param name=lhs>Left</param>-hand side KHIVA array for the operation.
-            /// <param name=rhs>Right</param>-hand side KHIVA array for the operation.
-            /// <param name=result>KHIVA Array with the result of this operation.</param>
-           
+        /// <summary> Divides lhs by rhs (element-wise). </summary>
+        /// <param name="lhs">Left</param>-hand side KHIVA array for the operation.
+        /// <param name="rhs">Right</param>-hand side KHIVA array for the operation.
+        /// <param name="result">KHIVA Array with the result of this operation.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void khiva_div([In] ref IntPtr lhs, [In] ref IntPtr rhs, [Out] out IntPtr result);
 
         
-            /// <summary> Performs the modulo operation of lhs by rhs.</summary>
-            /// <param name=lhs>Left</param>-hand side KHIVA array for the operation.
-            /// <param name=rhs>Right</param>-hand side KHIVA array for the operation.
-            /// <param name=result>KHIVA Array with the result of this operation.</param>
-           
+        /// <summary> Performs the modulo operation of lhs by rhs.</summary>
+        /// <param name="lhs">Left</param>-hand side KHIVA array for the operation.
+        /// <param name="rhs">Right</param>-hand side KHIVA array for the operation.
+        /// <param name="result">KHIVA Array with the result of this operation.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void khiva_mod([In] ref IntPtr lhs, [In] ref IntPtr rhs, [Out] out IntPtr result);
 
         
-            /// <summary> Powers lhs with rhs.</summary>
-            /// <param name=lhs>Left</param>-hand side KHIVA array for the operation. Base.
-            /// <param name=rhs>Right</param>-hand side KHIVA array for the operation. Exponent.
-            /// <param name=result>KHIVA Array with the result of this operation.</param>
-           
+        /// <summary> Powers lhs with rhs.</summary>
+        /// <param name="lhs">Left</param>-hand side KHIVA array for the operation. Base.
+        /// <param name="rhs">Right</param>-hand side KHIVA array for the operation. Exponent.
+        /// <param name="result">KHIVA Array with the result of this operation.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void khiva_pow([In] ref IntPtr lhs, [In] ref IntPtr rhs, [Out] out IntPtr result);
 
         
-            /// <summary> Compares (element-wise) if lhs is lower than rhs.</summary>
-            /// <param name=lhs>Left</param>-hand side KHIVA array for the operation.
-            /// <param name=rhs>Right</param>-hand side KHIVA array for the operation.
-            /// <param name=result>KHIVA Array with the result of this operation.</param>
-           
+        /// <summary> Compares (element-wise) if lhs is lower than rhs.</summary>
+        /// <param name="lhs">Left</param>-hand side KHIVA array for the operation.
+        /// <param name="rhs">Right</param>-hand side KHIVA array for the operation.
+        /// <param name="result">KHIVA Array with the result of this operation.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void khiva_lt([In] ref IntPtr lhs, [In] ref IntPtr rhs, [Out] out IntPtr result);
 
         
-            /// <summary> Compares (element-wise) if lhs is greater than rhs.</summary>
-            /// <param name=lhs>Left</param>-hand side KHIVA array for the operation.
-            /// <param name=rhs>Right</param>-hand side KHIVA array for the operation.
-            /// <param name=result>KHIVA Array with the result of this operation.</param>
-           
+        /// <summary> Compares (element-wise) if lhs is greater than rhs.</summary>
+        /// <param name="lhs">Left</param>-hand side KHIVA array for the operation.
+        /// <param name="rhs">Right</param>-hand side KHIVA array for the operation.
+        /// <param name="result">KHIVA Array with the result of this operation.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void khiva_gt([In] ref IntPtr lhs, [In] ref IntPtr rhs, [Out] out IntPtr result);
 
         
-            /// <summary> Compares (element-wise) if lhs is lower or equal than rhs.</summary>
-            /// <param name=lhs>Left</param>-hand side KHIVA array for the operation.
-            /// <param name=rhs>Right</param>-hand side KHIVA array for the operation.
-            /// <param name=result>KHIVA Array with the result of this operation.</param>
-           
+        /// <summary> Compares (element-wise) if lhs is lower or equal than rhs.</summary>
+        /// <param name="lhs">Left</param>-hand side KHIVA array for the operation.
+        /// <param name="rhs">Right</param>-hand side KHIVA array for the operation.
+        /// <param name="result">KHIVA Array with the result of this operation.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void khiva_le([In] ref IntPtr lhs, [In] ref IntPtr rhs, [Out] out IntPtr result);
 
         
-            /// <summary> Compares (element-wise) if lhs is greater or equal than rhs.
-            ///
-            /// <param name=lhs>Left</param>-hand side KHIVA array for the operation.
-            /// <param name=rhs>Right</param>-hand side KHIVA array for the operation.
-            /// <param name=result>KHIVA Array with the result of this operation.</param>
-           
+        /// <summary> Compares (element-wise) if lhs is greater or equal than rhs.</summary>
+        /// <param name="lhs">Left</param>-hand side KHIVA array for the operation.
+        /// <param name="rhs">Right</param>-hand side KHIVA array for the operation.
+        /// <param name="result">KHIVA Array with the result of this operation.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void khiva_ge([In] ref IntPtr lhs, [In] ref IntPtr rhs, [Out] out IntPtr result);
 
         
-            /// <summary> Compares (element-wise) if rhs is equal to rhs.
-            ///
-            /// <param name=lhs>Left</param>-hand side KHIVA array for the operation.
-            /// <param name=rhs>Right</param>-hand side KHIVA array for the operation.
-            /// <param name=result>KHIVA Array with the result of this operation.</param>
-           
+        /// <summary> Compares (element-wise) if rhs is equal to rhs.</summary>
+        ///
+        /// <param name="lhs">Left</param>-hand side KHIVA array for the operation.
+        /// <param name="rhs">Right</param>-hand side KHIVA array for the operation.
+        /// <param name="result">KHIVA Array with the result of this operation.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void khiva_eq([In] ref IntPtr lhs, [In] ref IntPtr rhs, [Out] out IntPtr result);
 
         
-            /// <summary> Compares (element-wise) if lhs is not equal to rhs.
-            ///
-            /// <param name=lhs>Left</param>-hand side KHIVA array for the operation.
-            /// <param name=rhs>Right</param>-hand side KHIVA array for the operation.
-            /// <param name=result>KHIVA Array with the result of this operation.</param>
-           
+        /// <summary> Compares (element-wise) if lhs is not equal to rhs.</summary>
+        ///
+        /// <param name="lhs">Left</param>-hand side KHIVA array for the operation.
+        /// <param name="rhs">Right</param>-hand side KHIVA array for the operation.
+        /// <param name="result">KHIVA Array with the result of this operation.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void khiva_ne([In] ref IntPtr lhs, [In] ref IntPtr rhs, [Out] out IntPtr result);
 
         
-            /// <summary> Performs an AND operation (element-wise) with lhs and rhs.
-            ///
-            /// <param name=lhs>Left</param>-hand side KHIVA array for the operation.
-            /// <param name=rhs>Right</param>-hand side KHIVA array for the operation.
-            /// <param name=result>KHIVA Array with the result of this operation.</param>
-           
+        /// <summary> Performs an AND operation (element-wise) with lhs and rhs.</summary>
+        ///
+        /// <param name="lhs">Left</param>-hand side KHIVA array for the operation.
+        /// <param name="rhs">Right</param>-hand side KHIVA array for the operation.
+        /// <param name="result">KHIVA Array with the result of this operation.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void khiva_bitand([In] ref IntPtr lhs, [In] ref IntPtr rhs, [Out] out IntPtr result);
 
         
-            /// <summary> Performs an OR operation (element-wise) with lhs and rhs.
-            ///
-            /// <param name=lhs>Left</param>-hand side KHIVA array for the operation.
-            /// <param name=rhs>Right</param>-hand side KHIVA array for the operation.
-            /// <param name=result>KHIVA Array with the result of this operation.</param>
-           
+        /// <summary> Performs an OR operation (element-wise) with lhs and rhs.</summary>
+        ///
+        /// <param name="lhs">Left</param>-hand side KHIVA array for the operation.
+        /// <param name="rhs">Right</param>-hand side KHIVA array for the operation.
+        /// <param name="result">KHIVA Array with the result of this operation.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void khiva_bitor([In] ref IntPtr lhs, [In] ref IntPtr rhs, [Out] out IntPtr result);
 
         
-            /// <summary> Performs an eXclusive-OR operation (element-wise) with lhs and rhs.
-            ///
-            /// <param name=lhs>Left</param>-hand side KHIVA array for the operation.
-            /// <param name=rhs>Right</param>-hand side KHIVA array for the operation.
-            /// <param name=result>KHIVA Array with the result of this operation.</param>
-           
+        /// <summary> Performs an eXclusive-OR operation (element-wise) with lhs and rhs.</summary>
+        ///
+        /// <param name="lhs">Left</param>-hand side KHIVA array for the operation.
+        /// <param name="rhs">Right</param>-hand side KHIVA array for the operation.
+        /// <param name="result">KHIVA Array with the result of this operation.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void khiva_bitxor([In] ref IntPtr lhs, [In] ref IntPtr rhs, [Out] out IntPtr result);
 
         
-            /// <summary> Performs a left bit shift operation (element-wise) to array as many times as specified in the parameter n.
-            ///
-            /// <param name=array>KHIVA Array to shift.</param>
-            /// <param name=n>Number of bits to be shifted.</param>
-            /// <param name=result>KHIVA Array with the result of this operation.</param>
-           
+        /// <summary> Performs a left bit shift operation (element-wise) to array as many times as specified in the parameter n.</summary>
+        ///
+        /// <param name="array">KHIVA Array to shift.</param>
+        /// <param name="n">Number of bits to be shifted.</param>
+        /// <param name="result">KHIVA Array with the result of this operation.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void khiva_bitshiftl([In] ref IntPtr array, [In] ref int n, [Out] out IntPtr result);
 
         
-            /// <summary> Performs a right bit shift operation (element-wise) to array as many times as specified in the parameter n.
-            ///
-            /// <param name=array>KHIVA Array to shift.</param>
-            /// <param name=n>Number of bits to be shifted.</param>
-            /// <param name=result>KHIVA Array with the result of this operation.</param>
-           
+        /// <summary> Performs a right bit shift operation (element-wise) to array as many times as specified in the parameter n.</summary>
+        ///
+        /// <param name="array">KHIVA Array to shift.</param>
+        /// <param name="n">Number of bits to be shifted.</param>
+        /// <param name="result">KHIVA Array with the result of this operation.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void khiva_bitshiftr([In] ref IntPtr array, [In] ref int n, [Out] out IntPtr result);
 
         
-            /// <summary> Logical NOT operation to array.
-            ///
-            /// <param name=array>KHIVA Array to negate.</param>
-            /// <param name=result>KHIVA Array with the result of this operation.</param>
-           
+        /// <summary> Logical NOT operation to array.</summary>
+        ///
+        /// <param name="array">KHIVA Array to negate.</param>
+        /// <param name="result">KHIVA Array with the result of this operation.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void khiva_not([In] ref IntPtr array, [Out] out IntPtr result);
 
         
-            /// <summary> Transposes array.
-            ///
-            /// <param name=array>KHIVA Array to transpose.</param>
-            /// <param name=conjugate>If true a conjugate transposition is performed.</param>
-            /// <param name=result>KHIVA Array with the result of this operation.</param>
-           
+        /// <summary> Transposes array.</summary>
+        ///
+        /// <param name="array">KHIVA Array to transpose.</param>
+        /// <param name="conjugate">If true a conjugate transposition is performed.</param>
+        /// <param name="result">KHIVA Array with the result of this operation.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void khiva_transpose([In] ref IntPtr array, [In] ref bool conjugate, [Out] out IntPtr result);
 
         
-            /// <summary> Retrieves a given column of array.
-            ///
-            /// <param name=array>KHIVA Array.</param>
-            /// <param name=index>The column to be retrieved.</param>
-            /// <param name=result>KHIVA Array with the result of this operation.</param>
-           
+        /// <summary> Retrieves a given column of array.</summary>
+        ///
+        /// <param name="array">KHIVA Array.</param>
+        /// <param name="index">The column to be retrieved.</param>
+        /// <param name="result">KHIVA Array with the result of this operation.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void khiva_col([In] ref IntPtr array, [In] ref int index, [Out] out IntPtr result);
 
         
-            /// <summary> Retrieves a subset of columns of array, starting at first and finishing at last, both inclusive.
-            ///
-            /// <param name=array>KHIVA Array.</param>
-            /// <param name=first>Start of the subset of columns to be retrieved.</param>
-            /// <param name=last>End of the subset of columns to be retrieved.</param>
-            /// <param name=result>KHIVA Array with the result of this operation.</param>
-           
+        /// <summary> Retrieves a subset of columns of array, starting at first and finishing at last, both inclusive.</summary>
+        ///
+        /// <param name="array">KHIVA Array.</param>
+        /// <param name="first">Start of the subset of columns to be retrieved.</param>
+        /// <param name="last">End of the subset of columns to be retrieved.</param>
+        /// <param name="result">KHIVA Array with the result of this operation.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void khiva_cols([In] ref IntPtr array, [In] ref int first, [In] ref int last, [Out] out IntPtr result);
 
         
-            /// <summary> Retrieves a given row of array.
-            ///
-            /// <param name=array>KHIVA Array.</param>
-            /// <param name=index>The row to be retrieved.</param>
-            /// <param name=result>KHIVA Array with the result of this operation.</param>
-           
+        /// <summary> Retrieves a given row of array.</summary>
+        ///
+        /// <param name="array">KHIVA Array.</param>
+        /// <param name="index">The row to be retrieved.</param>
+        /// <param name="result">KHIVA Array with the result of this operation.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void khiva_row([In] ref IntPtr array, [In] ref int index, [Out] out IntPtr result);
 
         
-            /// <summary> Retrieves a subset of rows of array, starting at first and finishing at last, both inclusive.
-            ///
-            /// <param name=array>KHIVA Array.</param>
-            /// <param name=first>Start of the subset of rows to be retrieved.</param>
-            /// <param name=last>End of the subset of rows to be retrieved.</param>
-            /// <param name=result>KHIVA Array with the result of this operation.</param>
-           
+        /// <summary> Retrieves a subset of rows of array, starting at first and finishing at last, both inclusive.</summary>
+        ///
+        /// <param name="array">KHIVA Array.</param>
+        /// <param name="first">Start of the subset of rows to be retrieved.</param>
+        /// <param name="last">End of the subset of rows to be retrieved.</param>
+        /// <param name="result">KHIVA Array with the result of this operation.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void khiva_rows([In] ref IntPtr array, [In] ref int first, [In] ref int last, [Out] out IntPtr result);
 
         
-            /// <summary> Performs a matrix multiplication of lhs and rhs.
-            ///
-            /// <param name=lhs>Left</param>-hand side KHIVA array for the operation.
-            /// <param name=rhs>Right</param>-hand side KHIVA array for the operation.
-            /// <param name=result>KHIVA Array with the result of this operation.</param>
-           
+        /// <summary> Performs a matrix multiplication of lhs and rhs.</summary>
+        ///
+        /// <param name="lhs">Left</param>-hand side KHIVA array for the operation.
+        /// <param name="rhs">Right</param>-hand side KHIVA array for the operation.
+        /// <param name="result">KHIVA Array with the result of this operation.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void khiva_matmul([In] ref IntPtr lhs, [In] ref IntPtr rhs, [Out] out IntPtr result);
 
         
-            /// <summary> Performs a deep copy of array.
-            ///
-            /// <param name=array>KHIVA Array.</param>
-            /// <param name=result>KHIVA Array which contains a copy of array.</param>
-           
+        /// <summary> Performs a deep copy of array.</summary>
+        ///
+        /// <param name="array">KHIVA Array.</param>
+        /// <param name="result">KHIVA Array which contains a copy of array.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void copy([In] ref IntPtr array, [Out] out IntPtr result);
 
         
-            /// <summary> Changes the type of array.
-            ///
-            /// <param name=array>KHIVA Array.</param>
-            /// <param name=type>Target type of the output array.</param>
-            /// <param name=result>KHIVA Array with the result of this operation.</param>
-           
+        /// <summary> Changes the type of array.</summary>
+        ///
+        /// <param name="array">KHIVA Array.</param>
+        /// <param name="type">Target type of the output array.</param>
+        /// <param name="result">KHIVA Array with the result of this operation.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void khiva_as([In] ref IntPtr array, [In] ref int type, [Out] out IntPtr result);
 
