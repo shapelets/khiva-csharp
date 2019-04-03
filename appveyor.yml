@@ -46,22 +46,24 @@ before_build:
               mkdir build;
               cd build;
               cmake .. -DCMAKE_TOOLCHAIN_FILE=C:/tools/vcpkg/scripts/buildsystems/vcpkg.cmake -DBOOST_ROOT="$($env:BOOST_PATH)" -DKHIVA_USE_CONAN=OFF -DKHIVA_BUILD_DOCUMENTATION=OFF -DKHIVA_BUILD_BENCHMARKS=OFF -DKHIVA_BUILD_EXAMPLES=OFF -DKHIVA_BUILD_TESTS=OFF -DKHIVA_ONLY_CPU_BACKEND=ON -G"$env:GENERATOR";
-              cmake --build . --config Release --target INSTALL -- /m;
+              cmake --build . --config Debug --target INSTALL -- /m;
 			}
           }
   - cd c:\projects\khiva-csharp
   - choco install codecov
+  - nuget restore
 
 build:
   project: KhivaCsharp\KhivaCsharp.sln
   verbosity: minimal
 
 build_script:
-  - nuget restore KhivaCsharp/KhivaCsharp.sln
+  - msbuild /verbosity:quiet KhivaCsharp/KhivaCsharp.sln
 
 test_script:
    - .\KhivaCsharp\packages\OpenCover.4.6.519\tools\OpenCover.Console -target:".\KhivaCsharp\packages\NUnit.ConsoleRunner.3.9.0\tools\nunit3-console.exe" -targetargs:"KhivaCsharp\KhivaCSharpNUnitTest\bin\Debug\KhivaCSharpNUnitTest.dll" -output:"coverage.xml" -filter:"+[*]* -[*Tests]*" -register:user
-   - codecov -f coverage.xml
+after_test:
+   - codecov -f "coverage.xml"
    # Añadir resultados Test .xml
 
 on_finish:
