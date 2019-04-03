@@ -31,6 +31,8 @@ clone_folder: c:\projects\khiva-csharp
 platform:
   - x64
 
+configuration: Debug
+
 before_build:
   - ps: if(!(Test-Path -Path "C:\Program Files\ArrayFire" )){ appveyor DownloadFile "https://www.dropbox.com/s/13wnbd1qynjmw0i/ArrayFire-v3.6.2.zip?dl=1" -FileName ArrayFire-v3.6.2.zip }
   - ps: if(!(Test-Path -Path "C:\Program Files\ArrayFire" )){ 7z x ArrayFire-v3.6.2.zip -o"C:\Program Files" }
@@ -51,15 +53,15 @@ before_build:
   - choco install codecov
   - nuget restore KhivaCsharp/KhivaCsharp.sln
 
-build_script:
-  - msbuild /verbosity:quiet KhivaCsharp/KhivaCsharp.sln /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll" /p:runCodeAnalysis=true /p:codeanalysislogfile=analysis.xml
-  - .\KhivaCsharp\packages\OpenCover.4.6.519\tools\OpenCover.Console -target:".\KhivaCsharp\packages\NUnit.ConsoleRunner.3.9.0\tools\nunit3-console.exe" -targetargs:"KhivaCsharp\KhivaCsharp\bin\Debug\KhivaCsharp.dll" -output:"coverage.xml" -filter:"+[*]khiva -[*Tests]*" -register:user
-
+build:
+  parallel: true
+  project: KhivaCsharp\KhivaCsharp.sln
+  verbosity: minimal
 
 test_script:
-  - .\KhivaCsharp\packages\OpenCover.4.6.519\tools\OpenCover.Console -target:".\KhivaCsharp\packages\NUnit.ConsoleRunner.3.9.0\tools\nunit3-console.exe" -targetargs:"KhivaCsharp\KhivaCSharpNUnitTest\bin\Debug\KhivaCSharpNUnitTest.dll" -output:"coverageTest.xml" -filter:"+[*]tests -[*]*" -register:user
+  - .\KhivaCsharp\packages\OpenCover.4.6.519\tools\OpenCover.Console -target:".\KhivaCsharp\packages\NUnit.ConsoleRunner.3.9.0\tools\nunit3-console.exe" -targetargs:"KhivaCsharp\KhivaCSharpNUnitTest\bin\Debug\KhivaCSharpNUnitTest.dll" -output:"coverage.xml" -filter:"+[*]tests -[*]*" -register:user
 after_test:
-  - codecov -f analysis.xml [Tests]TestResults.xml coverage.xml
+  - codecov -f coverage.xml
   # Añadir resultados Test .xml
 
 on_finish:

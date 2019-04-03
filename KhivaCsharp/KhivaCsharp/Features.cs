@@ -662,14 +662,12 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates the mean over the absolute differences between subsequent time series values in array.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @return result The maximum value of each time series within array.
-         */
+        /// <summary>
+        /// Calculates the mean over the absolute differences between subsequent time series values in array.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <returns>The maximum value of each time series within array.</returns>
         public static array.Array MeanAbsoluteChange(array.Array array)
         {
             IntPtr reference = array.Reference;
@@ -678,14 +676,12 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates the mean over the differences between subsequent time series values in array.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @return result The mean over the differences between subsequent time series values.
-         */
+        /// <summary>
+        /// Calculates the mean over the differences between subsequent time series values in array.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <returns>The mean over the differences between subsequent time series values.</returns>
         public static array.Array MeanChange(array.Array array)
         {
             IntPtr reference = array.Reference;
@@ -694,14 +690,12 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates mean value of a central approximation of the second derivative for each time series in array.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @return result The mean value of a central approximation of the second derivative for each time series.
-         */
+        /// <summary>
+        /// Calculates mean value of a central approximation of the second derivative for each time series in array.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <returns>The mean value of a central approximation of the second derivative for each time series.</returns>
         public static array.Array MeanSecondDerivativeCentral(array.Array array)
         {
             IntPtr reference = array.Reference;
@@ -710,14 +704,12 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates the median value for each time series within array.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @return result The median value of each time series within array.
-         */
+        /// <summary>
+        /// Calculates the median value for each time series within array.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <returns>The median value of each time series within array.</returns>
         public static array.Array Median(array.Array array)
         {
             IntPtr reference = array.Reference;
@@ -726,14 +718,12 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates the minimum value for each time series within array.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @return result The minimum value of each time series within array.
-         */
+        /// <summary>
+        /// Calculates the minimum value for each time series within array.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <returns>The minimum value of each time series within array.</returns>
         public static array.Array Minimum(array.Array array)
         {
             IntPtr reference = array.Reference;
@@ -742,17 +732,15 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates the number of m-crossings. A m-crossing is defined as two sequential values where the first
-         * value is lower than m and the next is greater, or viceversa. If you set m to zero, you will get the number of
-         * zero crossings.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @param m The m value.
-         * @return result The number of m-crossings of each time series within array.
-         */
+        /// <summary>
+        /// Calculates the number of m-crossings. A m-crossing is defined as two sequential values where the first
+        /// value is lower than m and the next is greater, or viceversa.If you set m to zero, you will get the number of
+        /// zero crossings.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <param name="m">The m value.</param>
+        /// <returns>The number of m-crossings of each time series within array.</returns>
         public static array.Array NumberCrossingM(array.Array array, int m)
         {
             IntPtr reference = array.Reference;
@@ -761,16 +749,15 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief This feature calculator searches for different peaks. To do so, the time series is smoothed by a ricker
-         * wavelet and for widths ranging from 1 to max_w. This feature calculator returns the number of peaks that occur at
-         * enough width scales and with sufficiently high Signal-to-Noise-Ratio (SNR).
-         *
-         * @param array Expects an input array whose dimension zero is the length of the time series (all the same)
-         * and dimension one indicates the number of time series.
-         * @param max_w The maximum width to consider.
-         * @return result The number of peaks for each time series.
-         */
+        /// <summary>
+        /// This feature calculator searches for different peaks. To do so, the time series is smoothed by a ricker
+        /// wavelet and for widths ranging from 1 to max_w.This feature calculator returns the number of peaks that occur at
+        /// enough width scales and with sufficiently high Signal-to-Noise-Ratio (SNR).
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the time series (all the same)
+        /// and dimension one indicates the number of time series.</param>
+        /// <param name="max_w">The maximum width to consider.</param>
+        /// <returns>The number of peaks for each time series.</returns>
         public static array.Array NumberCwtPeaks(array.Array array, int max_w)
         {
             IntPtr reference = array.Reference;
@@ -779,17 +766,15 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-        * @brief Calculates the number of peaks of at least support \f$n\f$ in the time series \f$array\f$. A peak of support
-        * \f$n\f$ is defined as a subsequence of \f$array\f$ where a value occurs, which is bigger than its \f$n\f$ neighbours
-        * to the left and to the right.
-        *
-        * @param array Expects an input array whose dimension zero is the length of the
-        * time series (all the same) and dimension one indicates the number of time
-        * series.
-        * @param n The support of the peak.
-        * @return result The number of peaks of at least support \f$n\f$.
-        */
+        /// <summary>
+        /// Calculates the number of peaks of at least support \f$n\f$ in the time series \f$array\f$. A peak of support
+        /// \f$n\f$ is defined as a subsequence of \f$array\f$ where a value occurs, which is bigger than its \f$n\f$ neighbours
+        /// to the left and to the right.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <param name="n">The support of the peak.</param>
+        /// <returns>The number of peaks of at least support \f$n\f$.</returns>
         public static array.Array NumberPeaks(array.Array array, int n)
         {
             IntPtr reference = array.Reference;
@@ -798,32 +783,31 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates the value of the partial autocorrelation function at the given lag. The lag \f$k\f$ partial
-         * autocorrelation of a time series \f$\lbrace x_t, t = 1 \ldots T \rbrace\f$ equals the partial correlation of
-         * \f$x_t\f$ and \f$x_{t-k}\f$, adjusted for the intermediate variables \f$\lbrace x_{t-1}, \ldots, x_{t-k+1}
-         * \rbrace\f$ ([1]). Following [2], it can be defined as:
-         *
-         * \f[
-         *      \alpha_k = \frac{ Cov(x_t, x_{t-k} | x_{t-1}, \ldots, x_{t-k+1})}
-         *      {\sqrt{ Var(x_t | x_{t-1}, \ldots, x_{t-k+1}) Var(x_{t-k} | x_{t-1}, \ldots, x_{t-k+1} )}}
-         * \f]
-         * with (a) \f$x_t = f(x_{t-1}, \ldots, x_{t-k+1})\f$ and (b) \f$ x_{t-k} = f(x_{t-1}, \ldots, x_{t-k+1})\f$
-         * being AR(k-1) models that can be fitted by OLS. Be aware that in (a), the regression is done on past values to
-         * predict \f$ x_t \f$ whereas in (b), future values are used to calculate the past value \f$x_{t-k}\f$.
-         * It is said in [1] that "for an AR(p), the partial autocorrelations \f$ \alpha_k \f$ will be nonzero for \f$ k<=p \f$
-         * and zero for \f$ k>p \f$."
-         * With this property, it is used to determine the lag of an AR-Process.
-         *
-         * [1] Box, G. E., Jenkins, G. M., Reinsel, G. C., & Ljung, G. M. (2015).
-         * Time series analysis: forecasting and control. John Wiley & Sons.
-         * [2] https://onlinecourses.science.psu.edu/stat510/node/62
-         *
-         * @param array Expects an input array whose dimension zero is the length of the time series (all the same) and
-         * dimension one indicates the number of time series.
-         * @param lags Indicates the lags to be calculated.
-         * @return result Returns partial autocorrelation for each time series for the given lag.
-         */
+        /// <summary>
+        ///  Calculates the value of the partial autocorrelation function at the given lag. The lag \f$k\f$ partial
+        /// autocorrelation of a time series \f$\lbrace x_t, t = 1 \ldots T \rbrace\f$ equals the partial correlation of
+        /// \f$x_t\f$ and \f$x_{t-k}\f$, adjusted for the intermediate variables \f$\lbrace x_ { t-1}, \ldots, x_{t-k+1}
+        /// \rbrace\f$ ([1]). Following[2], it can be defined as:
+        ///
+        /// \f[
+        ///      \alpha_k = \frac{ Cov(x_t, x_{ t - k} | x_{t-1}, \ldots, x_{t-k+1})}
+        ///      {\sqrt{ Var(x_t | x_{ t - 1}, \ldots, x_{t-k+1}) Var(x_{ t - k} | x_{t-1}, \ldots, x_{t-k+1} )}}
+        /// \f]
+        /// with(a) \f$x_t = f(x_{ t - 1}, \ldots, x_{t-k+1})\f$ and(b) \f$ x_{t-k} = f(x_{ t - 1}, \ldots, x_{t-k+1})\f$
+        /// being AR(k-1) models that can be fitted by OLS.Be aware that in (a), the regression is done on past values to
+        /// predict \f$ x_t \f$ whereas in (b), future values are used to calculate the past value \f$x_{t-k}\f$.
+        /// It is said in [1] that "for an AR(p), the partial autocorrelations \f$ \alpha_k \f$ will be nonzero for \f$ k \le p \f$
+        /// and zero for \f$ k \gt p \f$."
+        /// With this property, it is used to determine the lag of an AR-Process.
+        ///
+        ///[1] Box, G.E., Jenkins, G.M., Reinsel, G.C., & Ljung, G.M. (2015).
+        /// Time series analysis: forecasting and control. John Wiley & Sons.
+        /// [2] https://onlinecourses.science.psu.edu/stat510/node/62
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the time series (all the same) and
+        /// dimension one indicates the number of time series.</param>
+        /// <param name="lags">Indicates the lags to be calculated.</param>
+        /// <returns>Returns partial autocorrelation for each time series for the given lag.</returns>
         public static array.Array PartialAutocorrelation(array.Array array, array.Array lags)
         {
             IntPtr reference = array.Reference;
@@ -834,21 +818,19 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates the percentage of unique values, that are present in the time series more than once.
-         * \f[
-         *      len(different values occurring more than once) / len(different values)
-         * \f]
-         * This means the percentage is normalized to the number of unique values, in contrast to the
-         * percentageOfReoccurringValuesToAllValues.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @param is_sorted Indicates if the input time series is sorted or not. Defaults to false.
-         * @return result Returns the percentage of unique values, that are present in the time series more than once.
-         */
-        public static array.Array PercentageOfReoccurringDatapointsToAllDatapoints(array.Array array, bool is_sorted)
+        /// <summary>
+        /// Calculates the percentage of unique values, that are present in the time series more than once.
+        /// \f[
+        ///len(different values occurring more than once) / len(different values)
+        /// \f]
+        /// This means the percentage is normalized to the number of unique values, in contrast to the
+        /// percentageOfReoccurringValuesToAllValues.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <param name="is_sorted">Indicates if the input time series is sorted or not. Defaults to false.</param>
+        /// <returns>Returns the percentage of unique values, that are present in the time series more than once.</returns>
+        public static array.Array PercentageOfReoccurringDatapointsToAllDatapoints(array.Array array, bool is_sorted=false)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.percentage_of_reoccurring_datapoints_to_all_datapoints(ref reference, ref is_sorted, out IntPtr result);
@@ -856,20 +838,19 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-        * @brief Calculates the percentage of unique values, that are present in the time series more than once.
-        * \f[
-        *      \frac{\textit{number of data points occurring more than once}}{\textit{number of all data points})}
-        * \f]
-        * This means the percentage is normalized to the number of unique values, in contrast to the
-        * percentageOfReoccurringDatapointsToAllDatapoints.
-        *
-        * @param array Expects an input array whose dimension zero is the length of the time series (all the same)
-        * and dimension one indicates the number of time series.
-        * @param is_sorted Indicates if the input time series is sorted or not. Defaults to false.
-        * @return result Returns the percentage of unique values, that are present in the time series more than once.
-        */
-        public static array.Array PercentageOfReoccurringValuesToAllValues(array.Array array, bool is_sorted)
+        /// <summary>
+        ///  Calculates the percentage of unique values, that are present in the time series more than once.
+        /// \f[
+        ///      \frac{\textit{number of data points occurring more than once}}{\textit{number of all data points})}
+        /// \f]
+        /// This means the percentage is normalized to the number of unique values, in contrast to the
+        /// percentageOfReoccurringDatapointsToAllDatapoints.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the time series (all the same)
+        /// and dimension one indicates the number of time series.</param>
+        /// <param name="is_sorted">Indicates if the input time series is sorted or not. Defaults to false.</param>
+        /// <returns>Returns the percentage of unique values, that are present in the time series more than once.</returns>
+        public static array.Array PercentageOfReoccurringValuesToAllValues(array.Array array, bool is_sorted=false)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.percentage_of_reoccurring_values_to_all_values(ref reference, ref is_sorted, out IntPtr result);
@@ -877,16 +858,15 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Returns values at the given quantile.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @param q Percentile(s) at which to extract score(s). One or many.
-         * @param precision Number of decimals expected.
-         * @return result Values at the given quantile.
-         */
+        /// <summary>
+        /// Returns values at the given quantile.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time
+        /// series.</param>
+        /// <param name="q">Percentile(s) at which to extract score(s). One or many.</param>
+        /// <param name="precision">Number of decimals expected. Defaults to 1e8F</param>
+        /// <returns>Values at the given quantile.</returns>
         public static array.Array Quantile(array.Array array, array.Array q, float precision = 1e8F)
         {
             IntPtr reference = array.Reference;
@@ -897,16 +877,14 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Counts observed values within the interval [min, max).
-         *
-         * @param array Expects an input array whose dimension zero is the length of the time
-         * series (all the same) and dimension one indicates the number of
-         * time series.
-         * @param min Value that sets the lower limit.
-         * @param max Value that sets the upper limit.
-         * @return result Values at the given range.
-         */
+        /// <summary>
+        /// Counts observed values within the interval [min, max).
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the time
+        /// series(all the same) and dimension one indicates the number of time series.</param>
+        /// <param name="min">Value that sets the lower limit.</param>
+        /// <param name="max">Value that sets the upper limit.</param>
+        /// <returns>Values at the given range.</returns>
         public static array.Array RangeCount(array.Array array, float min, float max)
         {
             IntPtr reference = array.Reference;
@@ -914,18 +892,16 @@ namespace khiva.features
             array.Reference = reference;
             return (new array.Array(result));
         }
-
-        /**
-         * @brief Calculates the ratio of values that are more than \f$r*std(x)\f$ (so \f$r\f$ sigma) away from the mean of
-         * \f$x\f$.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @param r Number of times that the values should be away from.
-         * @return result The ratio of values that are more than \f$r*std(x)\f$ (so \f$r\f$ sigma) away from the mean of
-         * \f$x\f$.
-         */
+       
+        /// <summary>
+        /// Calculates the ratio of values that are more than \f$r*std(x)\f$ (so \f$r\f$ sigma) away from the mean of
+        /// \f$x\f$.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <param name="r"> Number of times that the values should be away from.</param>
+        /// <returns>The ratio of values that are more than \f$r*std(x)\f$ (so \f$r\f$ sigma) away from the mean of
+        /// \f$x\f$.</returns>
         public static array.Array RatioBeyondRSigma(array.Array array, float r)
         {
             IntPtr reference = array.Reference;
@@ -934,18 +910,17 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates a factor which is 1 if all values in the time series occur only once, and below one if this is
-         * not the case. In principle, it just returns:
-         *
-         * \f[
-         *      \frac{\textit{number\_unique\_values}}{\textit{number\_values}}
-         * \f]
-         *
-         * @param array Expects an input array whose dimension zero is the length of the time series (all the same) and
-         * dimension one indicates the number of time series.
-         * @return result The ratio of unique values with respect to the total number of values.
-         */
+        /// <summary>
+        /// Calculates a factor which is 1 if all values in the time series occur only once, and below one if this is
+        /// not the case. In principle, it just returns:
+        ///
+        /// \f[
+        ///      \frac{\textit{number\_unique\_values}}{\textit{number\_values}}
+        /// \f]
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the time series (all the same) and
+        /// dimension one indicates the number of time series.</param>
+        /// <returns>The ratio of unique values with respect to the total number of values.</returns>
         public static array.Array RatioValueNumberToTimeSeriesLength(array.Array array)
         {
             IntPtr reference = array.Reference;
@@ -954,22 +929,21 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-        * @brief Calculates a vectorized sample entropy algorithm.
-        * https://en.wikipedia.org/wiki/Sample_entropy
-        * https://www.ncbi.nlm.nih.gov/pubmed/10843903?dopt=Abstract
-        * For short time-series this method is highly dependent on the parameters, but should be stable for N > 2000,
-        * see: Yentes et al. (2012) - The Appropriate Use of Approximate Entropy and Sample Entropy with Short Data Sets
-        * Other shortcomings and alternatives discussed in:
-        * Richman & Moorman (2000) - Physiological time-series analysis using approximate entropy and sample entropy.
-        *
-        * @param array Expects an input array whose dimension zero is the length of the
-        * time series (all the same) and dimension one indicates the number of time
-        * series.
-        * @return result An array with the same dimensions as array, whose values (time series in dimension 0)
-        * contains the vectorized sample entropy for all the input time series in array.
-        */
-        public static array.Array SampleEntropy(array.Array array)
+        /// <summary>
+        /// Calculates a vectorized sample entropy algorithm.
+        /// https://en.wikipedia.org/wiki/Sample_entropy
+        /// https://www.ncbi.nlm.nih.gov/pubmed/10843903?dopt=Abstract
+        /// For short time-series this method is highly dependent on the parameters, but should be stable for N > 2000,
+        /// see: Yentes et al. (2012) - The Appropriate Use of Approximate Entropy and Sample Entropy with Short Data Sets
+        /// Other shortcomings and alternatives discussed in:
+        /// Richman & Moorman (2000) - Physiological time-series analysis using approximate entropy and sample entropy.
+        /// </summary>
+        /// <param name="array"> Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time
+        /// series.</param>
+        /// <returns>An array with the same dimensions as array, whose values (time series in dimension 0)
+        /// contains the vectorized sample entropy for all the input time series in array.</returns>
+    public static array.Array SampleEntropy(array.Array array)
        {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.sample_entropy(ref reference, out IntPtr result);
@@ -977,15 +951,14 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates the sample skewness of array (calculated with the adjusted Fisher-Pearson standardized
-         * moment coefficient G1).
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @return result Array containing the skewness of each time series in array.
-         */
+        /// <summary>
+        /// Calculates the sample skewness of array (calculated with the adjusted Fisher-Pearson standardized
+        /// moment coefficient G1).
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time
+        /// series.</param>
+        /// <returns>Array containing the skewness of each time series in array.</returns>
         public static array.Array Skewness(array.Array array)
        {
             IntPtr reference = array.Reference;
@@ -994,24 +967,22 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-        * @brief Estimates the cross power spectral density of the time series array at different frequencies. To do so, the
-        * time series is first shifted from the time domain to the frequency domain.
-        *
-        * Welch's method computes an estimate of the power spectral density by dividing the data into overlapping
-        * segments, computing a modified periodogram for each segment and averaging the periodograms.
-        * [1] P. Welch, "The use of the fast Fourier transform for the estimation of power spectra: A method based on time
-        *  averaging over short, modified periodograms", IEEE Trans. Audio Electroacoust. vol. 15, pp. 70-73, 1967.
-        * [2] M.S. Bartlett, "Periodogram Analysis and Continuous Spectra", Biometrika, vol. 37, pp. 1-16, 1950.
-        * [3] Rabiner, Lawrence R., and B. Gold. "Theory and Application of Digital Signal Processing" Prentice-Hall, pp.
-        * 414-419, 1975.
-        *
-        * @param array Expects an input array whose dimension zero is the length of the time series (all the same) and
-        * dimension one indicates the number of time series.
-        * @param coeff The coefficient to be returned.
-        * @return result Array containing the power spectrum of the different frequencies for each time series in
-        * array.
-        */
+        /// <summary>
+        /// Estimates the cross power spectral density of the time series array at different frequencies. To do so, the
+        /// time series is first shifted from the time domain to the frequency domain.
+        ///
+        /// Welch's method computes an estimate of the power spectral density by dividing the data into overlapping
+        /// segments, computing a modified periodogram for each segment and averaging the periodograms.
+        /// [1] P.Welch, "The use of the fast Fourier transform for the estimation of power spectra: A method based on time
+        ///  averaging over short, modified periodograms", IEEE Trans. Audio Electroacoust. vol. 15, pp. 70-73, 1967.
+        /// [2] M.S.Bartlett, "Periodogram Analysis and Continuous Spectra", Biometrika, vol. 37, pp. 1-16, 1950.
+        /// [3] Rabiner, Lawrence R., and B. Gold. "Theory and Application of Digital Signal Processing" Prentice-Hall, pp.
+        /// 414-419, 1975.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the time series (all the same) and
+        /// dimension one indicates the number of time series.</param>
+        /// <param name="coeff">The coefficient to be returned.</param>
+        /// <returns>Array containing the power spectrum of the different frequencies for each time series in array.</returns>
         public static array.Array SpktWelchDensity(array.Array array, int coeff)
        {
             IntPtr reference = array.Reference;
