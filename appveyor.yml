@@ -45,7 +45,7 @@ before_build:
             if(!(Test-Path -Path "C:\Program Files\Khiva" )){ mkdir build };
             if(!(Test-Path -Path "C:\Program Files\Khiva" )){ cd build };
             if(!(Test-Path -Path "C:\Program Files\Khiva" )){ cmake .. -DCMAKE_TOOLCHAIN_FILE=c:/tools/vcpkg/scripts/buildsystems/vcpkg.cmake -DBOOST_ROOT="$($env:BOOST_PATH)" -DKHIVA_USE_CONAN=OFF -DKHIVA_BUILD_DOCUMENTATION=OFF -DKHIVA_BUILD_BENCHMARKS=OFF -DKHIVA_ONLY_CPU_BACKEND=ON -G"$env:GENERATOR" };
-            cif(!(Test-Path -Path "C:\Program Files\Khiva" )){ make --build . --config Debug --target INSTALL -- /m };
+            if(!(Test-Path -Path "C:\Program Files\Khiva" )){ cmake --build . --config Debug --target INSTALL -- /m };
           }
   - cd c:\projects\khiva-csharp
   - choco install codecov
