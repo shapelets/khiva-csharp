@@ -570,13 +570,12 @@ namespace khiva.features
             return tuple;
         }
 
-        /**
-         * @brief Calculates all Local Maximals fot the time series in array.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the time series (all the same)
-         * and dimension one indicates the number of time series.
-         * @return result The calculated local maximals for each time series in array.
-         */
+        /// <summary>
+        /// Calculates all Local Maximals fot the time series in array.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the time series (all the same)
+        /// and dimension one indicates the number of time series.</param>
+        /// <returns>The calculated local maximals for each time series in array.</returns>
         public static array.Array LocalMaximals(array.Array array)
         {
             IntPtr reference = array.Reference;
@@ -585,15 +584,12 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates the length of the longest consecutive subsequence in array that is bigger than the mean of array.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @return result The length of the longest consecutive subsequence in the input time series that is bigger than the
-         * mean.
-         */
+        /// <summary>
+        /// Calculates the length of the longest consecutive subsequence in array that is bigger than the mean of array.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <returns>The length of the longest consecutive subsequence in the input time series that is bigger than the mean.</returns>
         public static array.Array LongestStrikeAboveMean(array.Array array)
         {
             IntPtr reference = array.Reference;
@@ -602,14 +598,12 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates the length of the longest consecutive subsequence in array that is below the mean of array.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @return result The length of the longest consecutive subsequence in the input time series that is below the mean.
-         */
+        /// <summary>
+        /// Calculates the length of the longest consecutive subsequence in array that is below the mean of array.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <returns>The length of the longest consecutive subsequence in the input time series that is below the mean.</returns>
         public static array.Array LongestStrikeBelowMean(array.Array array)
         {
             IntPtr reference = array.Reference;
@@ -617,23 +611,21 @@ namespace khiva.features
             array.Reference = reference;
             return (new array.Array(result));
         }
-
-        /**
-         * @brief Largest fixed point of dynamics \f$\max_x {h(x)=0}\f$ estimated from polynomial
-         * \f$h(x)\f$, which has been fitted to the deterministic dynamics of Langevin model
-         * \f[
-         *    \dot(x)(t) = h(x(t)) + R \mathcal(N)(0,1)
-         * \f]
-         * as described by
-         * Friedrich et al. (2000): Physics Letters A 271, p. 217-222 *Extracting model equations from experimental data.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @param m Order of polynom to fit for estimating fixed points of dynamics.
-         * @param r Number of quantiles to use for averaging.
-         * @return result Largest fixed point of deterministic dynamics.
-         */
+       
+        /// <summary>
+        /// Largest fixed point of dynamics \f$\max_x {h(x)=0}\f$ estimated from polynomial
+        /// \f$h(x)\f$, which has been fitted to the deterministic dynamics of Langevin model
+        /// \f[
+        ///    \dot(x)(t) = h(x(t)) + R \mathcal(N)(0, 1)
+        /// \f]
+        /// as described by
+        /// Friedrich et al. (2000): Physics Letters A 271, p. 217-222 *Extracting model equations from experimental data.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <param name="m">Order of polynom to fit for estimating fixed points of dynamics.</param>
+        /// <param name="r">Number of quantiles to use for averaging.</param>
+        /// <returns>Largest fixed point of deterministic dynamics.</returns>
         public static array.Array MaxLangevinFixedPoint(array.Array array, int m, float r)
         {
             IntPtr reference = array.Reference;
@@ -642,14 +634,12 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates the maximum value for each time series within array.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @return result The maximum value of each time series within array.
-         */
+        /// <summary>
+        /// Calculates the maximum value for each time series within array.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <returns>The maximum value of each time series within array.</returns>
         public static array.Array Maximum(array.Array array)
         {
             IntPtr reference = array.Reference;
@@ -658,14 +648,12 @@ namespace khiva.features
             return (new array.Array(result));
         }
 
-        /**
-         * @brief Calculates the mean value for each time series within array.
-         *
-         * @param array Expects an input array whose dimension zero is the length of the
-         * time series (all the same) and dimension one indicates the number of time
-         * series.
-         * @return result The mean value of each time series within array.
-         */
+        /// <summary>
+        /// Calculates the mean value for each time series within array.
+        /// </summary>
+        /// <param name="array">Expects an input array whose dimension zero is the length of the
+        /// time series(all the same) and dimension one indicates the number of time series.</param>
+        /// <returns>The mean value of each time series within array.</returns>
         public static array.Array Mean(array.Array array)
         {
             IntPtr reference = array.Reference;

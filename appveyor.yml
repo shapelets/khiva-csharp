@@ -51,17 +51,15 @@ before_build:
   - choco install codecov
   - nuget restore KhivaCsharp/KhivaCsharp.sln
 
-build:
-  project: KhivaCsharp\KhivaCsharp.sln
-  verbosity: minimal
-
 build_script:
-  - msbuild /verbosity:quiet KhivaCsharp/KhivaCsharp.sln
+  - msbuild /verbosity:quiet KhivaCsharp/KhivaCsharp.sln /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll" /p:runCodeAnalysis=true /p:codeanalysislogfile=..\analysis.xml
+  - .\KhivaCsharp\packages\OpenCover.4.6.519\tools\OpenCover.Console -target:".\KhivaCsharp\packages\NUnit.ConsoleRunner.3.9.0\tools\nunit3-console.exe" -targetargs:"KhivaCsharp\KhivaCsharp\bin\Debug\KhivaCsharp.dll" -output:"coverage.xml" -filter:"+[*]khiva -[*Tests]*" -register:user
+
 
 test_script:
-  - .\KhivaCsharp\packages\OpenCover.4.6.519\tools\OpenCover.Console -target:".\KhivaCsharp\packages\NUnit.ConsoleRunner.3.9.0\tools\nunit3-console.exe" -targetargs:"KhivaCsharp\KhivaCSharpNUnitTest\bin\Debug\KhivaCSharpNUnitTest.dll" -output:"coverage.xml" -filter:"+[*]* -[*Tests]*" -register:user
+  - .\KhivaCsharp\packages\OpenCover.4.6.519\tools\OpenCover.Console -target:".\KhivaCsharp\packages\NUnit.ConsoleRunner.3.9.0\tools\nunit3-console.exe" -targetargs:"KhivaCsharp\KhivaCSharpNUnitTest\bin\Debug\KhivaCSharpNUnitTest.dll" -output:"coverageTest.xml" -filter:"+[*]tests -[*]*" -register:user
 after_test:
-  - codecov -f "coverage.xml"
+  - codecov -f analysis.xml [Tests]TestResults.xml coverage.xml
   # Añadir resultados Test .xml
 
 on_finish:
