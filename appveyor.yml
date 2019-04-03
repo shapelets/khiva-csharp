@@ -59,7 +59,7 @@ build:
 test_script:
   - .\KhivaCsharp\packages\OpenCover.4.6.519\tools\OpenCover.Console -register:user -target:".\KhivaCsharp\packages\NUnit.ConsoleRunner.3.9.0\tools\nunit3-console.exe" -targetargs:"KhivaCsharp\KhivaCSharpNUnitTest\bin\x64\Debug\KhivaCSharpNUnitTest.dll" -output:"coverage.xml" -filter:"+[*]khiva.*"
 after_test:
-  - codecov -f TestResult.xml coverage.xml
+  - codecov -f coverage.xml
   # Añadir resultados Test .xml
 
 on_finish:
