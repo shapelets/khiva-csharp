@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using khiva.array;
 
 namespace khiva.linalg.tests
 {
@@ -29,7 +30,7 @@ namespace khiva.linalg.tests
         {
             float[,] tss = { { 4, 3 }, { -1, -2 } };
             float[] tss2 = { 3, 1 };
-            using (array.Array a = new array.Array(tss), b = new array.Array(tss2), lls = Linalg.Lls(a, b))
+            using (KhivaArray a = new KhivaArray(tss), b = new KhivaArray(tss2), lls = Linalg.Lls(a, b))
             {
                 float[,] result = lls.GetData2D<float>();
                 Assert.AreEqual(1, result[0, 0], DELTA);

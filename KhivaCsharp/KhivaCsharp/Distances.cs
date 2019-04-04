@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using khiva.array;
 
 namespace khiva
 {
@@ -27,12 +28,12 @@ namespace khiva
             /// <returns>An upper triangular matrix where each position corresponds to the distance between
             /// two time series.Diagonal elements will be zero.For example: Position row 0 column 1 records the
             /// distance between time series 0 and time series 1.</returns>
-            public static array.Array DTW(array.Array arr)
+            public static KhivaArray DTW(KhivaArray arr)
             {
                 IntPtr reference = arr.Reference;
                 interop.DLLDistances.dtw(ref reference, out IntPtr result);
                 arr.Reference = reference;
-                return (new array.Array(result));
+                return (new KhivaArray(result));
             }
 
             /**
@@ -53,12 +54,12 @@ namespace khiva
             /// <returns>An upper triangular matrix where each position corresponds to the distance between two
             /// time series.Diagonal elements will be zero. For example: Position row 0 column 1 records the distance
             /// between time series 0 and time series 1.</returns>
-            public static array.Array Euclidean(array.Array arr)
+            public static KhivaArray Euclidean(KhivaArray arr)
             {
                 IntPtr reference = arr.Reference;
                 interop.DLLDistances.euclidean(ref reference, out IntPtr result);
                 arr.Reference = reference;
-                return (new array.Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
@@ -69,12 +70,12 @@ namespace khiva
             /// <returns> An upper triangular matrix where each position corresponds to the distance between two
             /// time series. Diagonal elements will be zero.For example: Position row 0 column 1 records the distance
             /// between time series 0 and time series 1.</returns>
-            public static array.Array Hamming(array.Array arr)
+            public static KhivaArray Hamming(KhivaArray arr)
             {
                 IntPtr reference = arr.Reference;
                 interop.DLLDistances.hamming(ref reference, out IntPtr result);
                 arr.Reference = reference;
-                return (new array.Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
@@ -85,12 +86,12 @@ namespace khiva
             /// <returns>An upper triangular matrix where each position corresponds to the distance between two
             /// time series.Diagonal elements will be zero. For example: Position row 0 column 1 records the distance
             /// between time series 0 and time series 1.</returns>
-            public static array.Array Manhattan(array.Array arr)
+            public static KhivaArray Manhattan(KhivaArray arr)
             {
                 IntPtr reference = arr.Reference;
                 interop.DLLDistances.manhattan(ref reference, out IntPtr result);
                 arr.Reference = reference;
-                return (new array.Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
@@ -102,12 +103,12 @@ namespace khiva
             /// <returns>An upper triangular matrix where each position corresponds to the distance between two time series.
             /// Diagonal elements will be zero.For example: Position row 0 column 1 records the distance between time series 0
             /// and time series 1.</returns>
-            public static array.Array SBD(array.Array arr)
+            public static KhivaArray SBD(KhivaArray arr)
             {
                 IntPtr reference = arr.Reference;
                 interop.DLLDistances.sbd(ref reference, out IntPtr result);
                 arr.Reference = reference;
-                return (new array.Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
@@ -119,12 +120,12 @@ namespace khiva
             /// <returns>An upper triangular matrix where each position corresponds to the distance between two time series.
             /// Diagonal elements will be zero.For example: Position row 0 column 1 records the distance between time series 0
             /// and time series 1.</returns>
-            public static array.Array SquaredEuclidean(array.Array arr)
+            public static KhivaArray SquaredEuclidean(KhivaArray arr)
             {
                 IntPtr reference = arr.Reference;
                 interop.DLLDistances.squared_euclidean(ref reference, out IntPtr result);
                 arr.Reference = reference;
-                return (new array.Array(result));
+                return (new KhivaArray(result));
             }
 
         }

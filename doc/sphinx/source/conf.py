@@ -75,6 +75,7 @@ extensions = [
     'sphinx.ext.coverage',
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
+    'sphinx_csharp.csharp',
     'breathe'
 ]
 
@@ -114,10 +115,10 @@ breathe_projects = {
 breathe_default_project = "Khiva"
 
 # Tell sphinx what the primary language being documented is.
-primary_domain = 'cpp'
+primary_domain = 'csharp'
 
 # Tell sphinx what the pygments highlight language should be.
-highlight_language = 'cpp'
+highlight_language = 'csharp'
 
 
 # -- Options for HTML output -------------------------------------------------

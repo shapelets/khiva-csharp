@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using khiva.array;
 
 namespace khiva
 {
@@ -35,17 +36,17 @@ namespace khiva
             /// the resulting means or centroids and
             /// the resulting labels of each time series which is the closest centroid.
             /// </returns>
-            public static (array.Array, array.Array) KMeans(array.Array arr, int k, float tolerance = 1e-10F, int max_iterations = 100)
+            public static ValueTuple<KhivaArray, KhivaArray> KMeans(KhivaArray arr, int k, float tolerance = 1e-10F, int max_iterations = 100)
             {
                 IntPtr reference = arr.Reference;
                 interop.DLLClustering.k_means(ref reference, ref k, out IntPtr centroids, out IntPtr labels, ref tolerance, ref max_iterations);
                 arr.Reference = reference;
-                var tuple = (centroidsArr: new array.Array(centroids), labelsArr: new array.Array(labels));
+                var tuple = (centroidsArr: new KhivaArray(centroids), labelsArr: new KhivaArray(labels));
                 return tuple;
             }
 
             /// <summary>
-            /// Calculates the K-Shape algorithm.
+            /// Calculates the k-shape algorithm.
             ///
             /// [1] John Paparrizos and Luis Gravano. 2016. k-Shape: Efficient and Accurate Clustering of Time Series.
             /// SIGMOD Rec. 45, 1 (June 2016), 69-76.
@@ -59,12 +60,12 @@ namespace khiva
             /// the resulting means or centroids and
             /// the resulting labels of each time series which is the closest centroid.
             /// </returns>
-            public static (array.Array, array.Array) KShape(array.Array arr, int k, float tolerance = 1e-10F, int max_iterations = 100)
+            public static ValueTuple<KhivaArray, KhivaArray> KShape(KhivaArray arr, int k, float tolerance = 1e-10F, int max_iterations = 100)
             {
                 IntPtr reference = arr.Reference;
                 interop.DLLClustering.k_shape(ref reference, ref k, out IntPtr centroids, out IntPtr labels, ref tolerance, ref max_iterations);
                 arr.Reference = reference;
-                var tuple = (centroidsArr: new array.Array(centroids), labelsArr: new array.Array(labels));
+                var tuple = (centroidsArr: new KhivaArray(centroids), labelsArr: new KhivaArray(labels));
                 return tuple;
             }
         }

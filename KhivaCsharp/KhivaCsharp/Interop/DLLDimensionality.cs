@@ -43,7 +43,7 @@ namespace khiva.interop
          ///</summary>
          /// <param name="a">Expects an input array whose dimension zero is the length of the time series.</param>
          /// <param name="number_ips">The number of points to be returned.</param>
-         /// <param name="result">Array with the most Perceptually Important number_ips.</param>
+         /// <param name="result">KhivaArray with the most Perceptually Important number_ips.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void pip([In] ref IntPtr a, [In] ref int number_ips, [Out] out IntPtr result);
 
@@ -85,9 +85,9 @@ namespace khiva.interop
          /// digitized line or its caricature", The Canadian Cartographer 10(2), 112–122 (1973)
          /// doi:10.3138/FM57-6770-U75U-7727
          ///</summary>
-         /// <param name="points">Array with the x-coordinates and y-coordinates of the input points (x in column 0 and y in column 1).</param>
+         /// <param name="points">KhivaArray with the x-coordinates and y-coordinates of the input points (x in column 0 and y in column 1).</param>
          /// <param name="epsilon">It acts as the threshold value to decide which points should be considered meaningful or not.</param>
-         /// <param name="res_points">Array with the x-coordinates and y-coordinates of the selected points (x in column 0 and y in column 1).</param>
+         /// <param name="res_points">KhivaArray with the x-coordinates and y-coordinates of the selected points (x in column 0 and y in column 1).</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void ramer_douglas_peucker([In] ref IntPtr points, [In] ref double epsilon, [Out] out IntPtr res_points);
 
@@ -103,7 +103,7 @@ namespace khiva.interop
          /// Streaming Algorithms. In proceedings of the 8th ACM SIGMOD Workshop on Research Issues in Data Mining and Knowledge
          /// Discovery. San Diego, CA. June 13.
          ///</summary>
-         /// <param name="a">Array with the input time series.</param>
+         /// <param name="a">KhivaArray with the input time series.</param>
          /// <param name="alphabet_size">Number of element within the alphabet.</param>
          /// <param name="result">An array of symbols.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
@@ -116,9 +116,9 @@ namespace khiva.interop
          /// [1] M. Visvalingam and J. D. Whyatt, Line generalisation by repeated elimination of points,
          /// The Cartographic Journal, 1993.
          /// </summary>
-         /// <param name="points">Array with the x-coordinates and y-coordinates of the input points (x in column 0 and y in column 1).</param>
+         /// <param name="points">KhivaArray with the x-coordinates and y-coordinates of the input points (x in column 0 and y in column 1).</param>
          /// <param name="num_points">Sets the number of points returned after the execution of the method.</param>
-         /// <param name="res_points">Array with the x-coordinates and y-coordinates of the selected points (x in column 0 and y in column 1).</param>
+         /// <param name="res_points">KhivaArray with the x-coordinates and y-coordinates of the selected points (x in column 0 and y in column 1).</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void visvalingam([In] ref IntPtr points, [In] ref int num_points, [Out] out IntPtr res_points);
     }

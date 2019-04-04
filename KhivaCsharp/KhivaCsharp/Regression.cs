@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using khiva.array;
 
 namespace khiva
 {
@@ -34,7 +35,7 @@ namespace khiva
             /// Two-sided p-value for a hypothesis test whose null hypothesis is that the slope is zero, using Wald
             /// Test with t-distribution of the test statistic.
             /// Standard error of the estimated gradient.</returns>
-            public static (array.Array, array.Array, array.Array, array.Array, array.Array) Linear(array.Array xss, array.Array yss)
+            public static ValueTuple<KhivaArray, KhivaArray, KhivaArray, KhivaArray, KhivaArray> Linear(KhivaArray xss, KhivaArray yss)
             {
                 IntPtr xReference = xss.Reference;
                 IntPtr yReference = yss.Reference;
@@ -42,11 +43,11 @@ namespace khiva
                                             out IntPtr slope, out IntPtr intercept, out IntPtr rvalue, out IntPtr pvalue, out IntPtr stderrest);
                 xss.Reference = xReference;
                 yss.Reference = yReference;
-                var tuple = (slope: new array.Array(slope),
-                            intercept: new array.Array(intercept),
-                            rvalue: new array.Array(rvalue),
-                            pvalue: new array.Array(pvalue),
-                            stderrest: new array.Array(stderrest));
+                var tuple = (slope: new KhivaArray(slope),
+                            intercept: new KhivaArray(intercept),
+                            rvalue: new KhivaArray(rvalue),
+                            pvalue: new KhivaArray(pvalue),
+                            stderrest: new KhivaArray(stderrest));
                 return tuple;
             }
         }

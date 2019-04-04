@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using khiva.array;
 
 namespace khiva.matrix.tests
 {
@@ -29,7 +30,7 @@ namespace khiva.matrix.tests
         {
             float[,] tss = { { 10, 10, 11, 11, 10, 11, 10, 10, 11, 11, 10, 11, 10, 10 },
                              { 11, 10, 10, 11, 10, 11, 11, 10, 11, 11, 10, 10, 11, 10 } };
-            using (array.Array arr = new array.Array(tss))
+            using (KhivaArray arr = new KhivaArray(tss))
             {
                 var (p, i) = Matrix.StompSelfJoin(arr, 3);
                 using (p)
@@ -54,7 +55,7 @@ namespace khiva.matrix.tests
                               { 10, 11, 10, 11 } };
             double[,] tss2 = { { 10, 11, 10, 11, 10, 11, 10, 11 }, 
                                { 10, 11, 10, 11, 10, 11, 10, 11 } };
-            using(array.Array arr = new array.Array(tss), arr2 = new array.Array(tss2))
+            using(KhivaArray arr = new KhivaArray(tss), arr2 = new KhivaArray(tss2))
             {
                 var (pArr, iArr) = Matrix.Stomp(arr, arr2, 3);
                 using (pArr)
@@ -84,7 +85,7 @@ namespace khiva.matrix.tests
         {
             double[] tss = { 11, 10, 11, 10, 11, 10, 11, 10, 11, 10, 11, 10, 11 };
             double[] tss2 = { 9, 10.1, 10.2, 10.1, 10.2, 10.1, 10.2, 10.1, 10.2, 10.1, 10.2, 10.1, 9 };
-            using (array.Array arr = new array.Array(tss), arr2 = new array.Array(tss2))
+            using (KhivaArray arr = new KhivaArray(tss), arr2 = new KhivaArray(tss2))
             {
                 var (pArr, iArr) = Matrix.Stomp(arr, arr2, 3);
                 using (pArr)
@@ -117,7 +118,7 @@ namespace khiva.matrix.tests
             double[,] tss = { { 11, 10, 11, 10, 11, 10, 11, 10, 11, 10, 11, 10, 11 }, { 11, 10, 11, 10, 11, 10, 11, 10, 11, 10, 11, 10, 11 } };
             double[,] tss2 = { { 9, 10.1, 10.2, 10.1, 10.2, 10.1, 10.2, 10.1, 10.2, 10.1, 10.2, 10.1, 9 },
                               { 9, 10.1, 10.2, 10.1, 10.2, 10.1, 10.2, 10.1, 10.2, 10.1, 10.2, 10.1, 9 }};
-            using (array.Array arr = new array.Array(tss), arr2 = new array.Array(tss2))
+            using (KhivaArray arr = new KhivaArray(tss), arr2 = new KhivaArray(tss2))
             {
                 var (pArr, iArr) = Matrix.Stomp(arr, arr2, 3);
                 using (pArr)
@@ -147,7 +148,7 @@ namespace khiva.matrix.tests
         public void TestFindbestNDiscordsMirror()
         {
             float[] tss = { 10, 11, 10, 10, 11, 10 };
-            using (array.Array arr = new array.Array(tss))
+            using (KhivaArray arr = new KhivaArray(tss))
             {
                 var (pArr, iArr) = Matrix.StompSelfJoin(arr, 3);
                 using (pArr)
@@ -174,7 +175,7 @@ namespace khiva.matrix.tests
         public void TestFindbestNDiscordsConsecutive()
         {
             float[] tss = { 10, 11, 10, 11, 10, 11, 10, 11, 10, 11, 10, 11, 10, 9.999F, 9.998F };
-            using (array.Array arr = new array.Array(tss))
+            using (KhivaArray arr = new KhivaArray(tss))
             {
                 var (pArr, iArr) = Matrix.StompSelfJoin(arr, 3);
                 using (pArr)
@@ -206,7 +207,7 @@ namespace khiva.matrix.tests
         {
             float[] tss = { 10, 10, 10, 10, 10, 10, 9, 10, 10, 10, 10, 10, 11, 10, 9 };
             float[] tss2 = { 10, 11, 10, 9 };
-            using (array.Array arr = new array.Array(tss), arr2 = new array.Array(tss2))
+            using (KhivaArray arr = new KhivaArray(tss), arr2 = new KhivaArray(tss2))
             {
                 var (pArr, iArr) = Matrix.Stomp(arr, arr2, 3);
                 using (pArr)
@@ -235,7 +236,7 @@ namespace khiva.matrix.tests
             float[,] tss = { { 10, 10, 10, 10, 10, 10, 9, 10, 10, 10, 10, 10, 11, 10, 9 },
                             { 10, 10, 10, 10, 10, 10, 9, 10, 10, 10, 10, 10, 11, 10, 9 } };
             float[,] tss2 = { { 10, 11, 10, 9 }, { 10, 11, 10, 9 } };
-            using (array.Array arr = new array.Array(tss), arr2 = new array.Array(tss2))
+            using (KhivaArray arr = new KhivaArray(tss), arr2 = new KhivaArray(tss2))
             {
                 var (pArr, iArr) = Matrix.Stomp(arr, arr2, 3);
                 using (pArr)
@@ -259,7 +260,7 @@ namespace khiva.matrix.tests
         public void TestFindbestNMotifsMirror()
         {
             float[] tss = { 10.1F, 11, 10.2F, 10.15F, 10.775F, 10.1F, 11, 10.2F };
-            using (array.Array arr = new array.Array(tss))
+            using (KhivaArray arr = new KhivaArray(tss))
             {
                 var (pArr, iArr) = Matrix.StompSelfJoin(arr, 3);
                 using (pArr)
@@ -283,7 +284,7 @@ namespace khiva.matrix.tests
         public void TestFindbestNMotifsConsecutive()
         {
             float[] tss = { 10.1F, 11, 10.1F, 10.15F, 10.075F, 10.1F, 11, 10.1F, 10.15F };
-            using (array.Array arr = new array.Array(tss))
+            using (KhivaArray arr = new KhivaArray(tss))
             {
                 var (pArr, iArr) = Matrix.StompSelfJoin(arr, 3);
                 using (pArr)

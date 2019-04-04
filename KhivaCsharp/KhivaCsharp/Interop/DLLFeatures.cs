@@ -238,7 +238,7 @@ namespace khiva.interop
          ///</summary>
          /// <param name="array">Expects an input array whose dimension zero is the length of the time series (all the same)
          /// and dimension one indicates the number of time series.</param>
-         /// <param name="width">Array that contains all different widths.</param>
+         /// <param name="width">KhivaArray that contains all different widths.</param>
          /// <param name="coeff">Coefficient of interest.</param>
          /// <param name="w">Width of interest.</param>
          /// <param name="result">Result of calculated coefficients.</param>
@@ -334,7 +334,7 @@ namespace khiva.interop
          /// <param name="array">Expects an input array whose dimension zero is the length of the
          /// time series (all the same) and dimension one indicates the number of time
          /// series.</param>
-         /// <param name="result">Array containing True if the time series contains duplicated elements
+         /// <param name="result">KhivaArray containing True if the time series contains duplicated elements
          /// and false otherwise.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void has_duplicates([In] ref IntPtr array, [Out] out IntPtr result);
@@ -345,7 +345,7 @@ namespace khiva.interop
          /// <param name="array">Expects an input array whose dimension zero is the length of the
          /// time series (all the same) and dimension one indicates the number of time
          /// series.</param>
-         /// <param name="result">Array containing True if the maximum value of the time series is duplicated
+         /// <param name="result">KhivaArray containing True if the maximum value of the time series is duplicated
          /// and false otherwise.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void has_duplicate_max([In] ref IntPtr array, [Out] out IntPtr result);
@@ -356,7 +356,7 @@ namespace khiva.interop
          /// <param name="array">Expects an input array whose dimension zero is the length of the
          /// time series (all the same) and dimension one indicates the number of time
          /// series.</param>
-         /// <param name="result">Array containing True if the minimum of the time series is duplicated
+         /// <param name="result">KhivaArray containing True if the minimum of the time series is duplicated
          /// and false otherwise.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void has_duplicate_min([In] ref IntPtr array, [Out] out IntPtr result);
@@ -390,7 +390,7 @@ namespace khiva.interop
          /// time series (all the same) and dimension one indicates the number of time
          /// series.</param>
          /// <param name="r">The threshold.</param>
-         /// <param name="result"> Array containing True for those time series in array that have a large standard deviation.</param>
+         /// <param name="result"> KhivaArray containing True for those time series in array that have a large standard deviation.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void large_standard_deviation([In] ref IntPtr array, [In] ref float r, [Out] out IntPtr result);
 
@@ -733,7 +733,7 @@ namespace khiva.interop
          /// <param name="array">Expects an input array whose dimension zero is the length of the
          /// time series (all the same) and dimension one indicates the number of time
          /// series.</param>
-         /// <param name="result">Array containing the skewness of each time series in array.</param>
+         /// <param name="result">KhivaArray containing the skewness of each time series in array.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void skewness([In] ref IntPtr array, [Out] out IntPtr result);
 
@@ -752,7 +752,7 @@ namespace khiva.interop
          /// <param name="array">Expects an input array whose dimension zero is the length of the time series (all the same) and
          /// dimension one indicates the number of time series.</param>
          /// <param name="coeff">The coefficient to be returned.</param>
-         /// <param name="result">Array containing the power spectrum of the different frequencies for each time series in
+         /// <param name="result">KhivaArray containing the power spectrum of the different frequencies for each time series in
          /// array.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void spkt_welch_density([In] ref IntPtr array, [In] ref int coeff, [Out] out IntPtr result);

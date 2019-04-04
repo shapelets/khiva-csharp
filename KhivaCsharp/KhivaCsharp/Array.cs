@@ -22,9 +22,9 @@ namespace khiva
     {
 
         /// <summary>
-        /// Khiva Array Class.
+        /// Khiva KhivaArray Class.
         /// </summary>
-        public class Array : IDisposable
+        public class KhivaArray : IDisposable
         {
             private IntPtr reference;
             /// <summary>
@@ -82,7 +82,7 @@ namespace khiva
                 u16
             }
             /// <summary>
-            /// Dispose the Array
+            /// Dispose the KhivaArray
             /// </summary>
             public void Dispose()
             {
@@ -98,18 +98,18 @@ namespace khiva
                 this.Reference = IntPtr.Zero;
             }
             /// <summary>
-            /// Destroy Array
+            /// Destroy KhivaArray
             /// </summary>
-            ~Array()
+            ~KhivaArray()
             {
                 CleanUp();
             }
 
             /// <summary>
-            /// Creates an Array object of 1 dimension of type float
+            /// Creates an KhivaArray object of 1 dimension of type float
             /// </summary>
             /// <param name="arr">Data used in order to create the array.</param>
-            public Array(float[] arr)
+            public KhivaArray(float[] arr)
             {
                 if (arr == null)
                 {
@@ -122,10 +122,10 @@ namespace khiva
             }
 
             /// <summary>
-            /// Creates an Array object of 2 dimensions of type float
+            /// Creates an KhivaArray object of 2 dimensions of type float
             /// </summary>
             /// <param name="arr">Data used in order to create the array.</param>
-            public Array(float[,] arr)
+            public KhivaArray(float[,] arr)
             {
                 if (arr == null)
                 {
@@ -138,10 +138,10 @@ namespace khiva
             }
 
             /// <summary>
-            /// Creates an Array object of 3 dimensions of type float
+            /// Creates an KhivaArray object of 3 dimensions of type float
             /// </summary>
             /// <param name="arr">Data used in order to create the array.</param>
-            public Array(float[,,] arr)
+            public KhivaArray(float[,,] arr)
             {
                 if (arr == null)
                 {
@@ -154,10 +154,10 @@ namespace khiva
             }
 
             /// <summary>
-            /// Creates an Array object of 4 dimensions of type float
+            /// Creates an KhivaArray object of 4 dimensions of type float
             /// </summary>
             /// <param name="arr">Data used in order to create the array.</param>
-            public Array(float[,,,] arr)
+            public KhivaArray(float[,,,] arr)
             {
                 if (arr == null)
                 {
@@ -170,10 +170,10 @@ namespace khiva
             }
 
             /// <summary>
-            /// Creates an Array object of 1 dimension of type double
+            /// Creates an KhivaArray object of 1 dimension of type double
             /// </summary>
             /// <param name="arr">Data used in order to create the array.</param>
-            public Array(double[] arr)
+            public KhivaArray(double[] arr)
             {
                 if (arr == null)
                 {
@@ -186,10 +186,10 @@ namespace khiva
             }
 
             /// <summary>
-            /// Creates an Array object of 2 dimensions of type double
+            /// Creates an KhivaArray object of 2 dimensions of type double
             /// </summary>
             /// <param name="arr">Data used in order to create the array.</param>
-            public Array(double[,] arr)
+            public KhivaArray(double[,] arr)
             {
                 if (arr == null)
                 {
@@ -202,10 +202,10 @@ namespace khiva
             }
 
             /// <summary>
-            /// Creates an Array object of 3 dimensions of type double
+            /// Creates an KhivaArray object of 3 dimensions of type double
             /// </summary>
             /// <param name="arr">Data used in order to create the array.</param>
-            public Array(double[,,] arr)
+            public KhivaArray(double[,,] arr)
             {
                 if (arr == null)
                 {
@@ -218,10 +218,10 @@ namespace khiva
             }
 
             /// <summary>
-            /// Creates an Array object of 4 dimensions of type double
+            /// Creates an KhivaArray object of 4 dimensions of type double
             /// </summary>
             /// <param name="arr">Data used in order to create the array.</param>
-            public Array(double[,,,] arr)
+            public KhivaArray(double[,,,] arr)
             {
                 if (arr == null)
                 {
@@ -233,7 +233,7 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
-            public Array(Complex[] arr, bool doublePrecision)
+            public KhivaArray(Complex[] arr, bool doublePrecision)
             {
                 if (arr == null)
                 {
@@ -269,7 +269,7 @@ namespace khiva
                 }
             }
 
-            public Array(Complex[,] arr, bool doublePrecision)
+            public KhivaArray(Complex[,] arr, bool doublePrecision)
             {
                 if (arr == null)
                 {
@@ -308,7 +308,7 @@ namespace khiva
                 }
             }
 
-            public Array(Complex[,,] arr, bool doublePrecision)
+            public KhivaArray(Complex[,,] arr, bool doublePrecision)
             {
                 if (arr == null)
                 {
@@ -350,7 +350,7 @@ namespace khiva
                 }
             }
 
-            public Array(Complex[,,,] arr, bool doublePrecision)
+            public KhivaArray(Complex[,,,] arr, bool doublePrecision)
             {
                 if (arr == null)
                 {
@@ -395,7 +395,7 @@ namespace khiva
                 }
             }
 
-            public Array(bool[] arr)
+            public KhivaArray(bool[] arr)
             {
                 if (arr == null)
                 {
@@ -417,7 +417,7 @@ namespace khiva
                 }
             }
 
-            public Array(bool[,] arr)
+            public KhivaArray(bool[,] arr)
             {
                 if (arr == null)
                 {
@@ -442,7 +442,7 @@ namespace khiva
                 }
             }
 
-            public Array(bool[,,] arr)
+            public KhivaArray(bool[,,] arr)
             {
                 if (arr == null)
                 {
@@ -470,7 +470,7 @@ namespace khiva
                 }
             }
 
-            public Array(bool[,,,] arr)
+            public KhivaArray(bool[,,,] arr)
             {
                 if (arr == null)
                 {
@@ -501,7 +501,7 @@ namespace khiva
                 }
             }
 
-            public Array(int[] arr)
+            public KhivaArray(int[] arr)
             {
                 if (arr == null)
                 {
@@ -513,7 +513,7 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
-            public Array(int[,] arr)
+            public KhivaArray(int[,] arr)
             {
                 if (arr == null)
                 {
@@ -525,7 +525,7 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
-            public Array(int[,,] arr)
+            public KhivaArray(int[,,] arr)
             {
                 if (arr == null)
                 {
@@ -537,7 +537,7 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
-            public Array(int[,,,] arr)
+            public KhivaArray(int[,,,] arr)
             {
                 if (arr == null)
                 {
@@ -549,7 +549,7 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
-            public Array(uint[] arr)
+            public KhivaArray(uint[] arr)
             {
                 if (arr == null)
                 {
@@ -561,7 +561,7 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
-            public Array(uint[,] arr)
+            public KhivaArray(uint[,] arr)
             {
                 if (arr == null)
                 {
@@ -573,7 +573,7 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
-            public Array(uint[,,] arr)
+            public KhivaArray(uint[,,] arr)
             {
                 if (arr == null)
                 {
@@ -585,7 +585,7 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
-            public Array(uint[,,,] arr)
+            public KhivaArray(uint[,,,] arr)
             {
                 if (arr == null)
                 {
@@ -597,7 +597,7 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
-            public Array(byte[] arr)
+            public KhivaArray(byte[] arr)
             {
                 if (arr == null)
                 {
@@ -609,7 +609,7 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
-            public Array(byte[,] arr)
+            public KhivaArray(byte[,] arr)
             {
                 if (arr == null)
                 {
@@ -621,7 +621,7 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
-            public Array(byte[,,] arr)
+            public KhivaArray(byte[,,] arr)
             {
                 if (arr == null)
                 {
@@ -633,7 +633,7 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
-            public Array(byte[,,,] arr)
+            public KhivaArray(byte[,,,] arr)
             {
                 if (arr == null)
                 {
@@ -645,7 +645,7 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
-            public Array(long[] arr)
+            public KhivaArray(long[] arr)
             {
                 if (arr == null)
                 {
@@ -657,7 +657,7 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
-            public Array(long[,] arr)
+            public KhivaArray(long[,] arr)
             {
                 if (arr == null)
                 {
@@ -669,7 +669,7 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
-            public Array(long[,,] arr)
+            public KhivaArray(long[,,] arr)
             {
                 if (arr == null)
                 {
@@ -681,7 +681,7 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
-            public Array(long[,,,] arr)
+            public KhivaArray(long[,,,] arr)
             {
                 if (arr == null)
                 {
@@ -693,7 +693,7 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
-            public Array(ulong[] arr)
+            public KhivaArray(ulong[] arr)
             {
                 if (arr == null)
                 {
@@ -705,7 +705,7 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
-            public Array(ulong[,] arr)
+            public KhivaArray(ulong[,] arr)
             {
                 if (arr == null)
                 {
@@ -717,7 +717,7 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
-            public Array(ulong[,,] arr)
+            public KhivaArray(ulong[,,] arr)
             {
                 if (arr == null)
                 {
@@ -729,7 +729,7 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
-            public Array(ulong[,,,] arr)
+            public KhivaArray(ulong[,,,] arr)
             {
                 if (arr == null)
                 {
@@ -741,7 +741,7 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
-            public Array(short[] arr)
+            public KhivaArray(short[] arr)
             {
                 if (arr == null)
                 {
@@ -753,7 +753,7 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
-            public Array(short[,] arr)
+            public KhivaArray(short[,] arr)
             {
                 if (arr == null)
                 {
@@ -765,7 +765,7 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
-            public Array(short[,,] arr)
+            public KhivaArray(short[,,] arr)
             {
                 if (arr == null)
                 {
@@ -777,7 +777,7 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
-            public Array(short[,,,] arr)
+            public KhivaArray(short[,,,] arr)
             {
                 if (arr == null)
                 {
@@ -789,7 +789,7 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
-            public Array(ushort[] arr)
+            public KhivaArray(ushort[] arr)
             {
                 if (arr == null)
                 {
@@ -801,7 +801,7 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
-            public Array(ushort[,] arr)
+            public KhivaArray(ushort[,] arr)
             {
                 if (arr == null)
                 {
@@ -813,7 +813,7 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
-            public Array(ushort[,,] arr)
+            public KhivaArray(ushort[,,] arr)
             {
                 if (arr == null)
                 {
@@ -825,7 +825,7 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
-            public Array(ushort[,,,] arr)
+            public KhivaArray(ushort[,,,] arr)
             {
                 if (arr == null)
                 {
@@ -837,12 +837,12 @@ namespace khiva
                 interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
-            public Array(IntPtr reference)
+            public KhivaArray(IntPtr reference)
             {
                 this.reference = reference;
             }
 
-            public Array(Array other)
+            public KhivaArray(KhivaArray other)
             {
                 this.reference = other.Reference;
             }
@@ -1253,7 +1253,7 @@ namespace khiva
             }
 
             /// <summary>
-            /// Gets the Array dimensions.
+            /// Gets the KhivaArray dimensions.
             /// </summary>
             public long[] Dims
             {
@@ -1267,7 +1267,7 @@ namespace khiva
             }
 
             /// <summary>
-            /// Displays an Array.
+            /// Displays an KhivaArray.
             /// </summary>
             public void Display()
             {
@@ -1302,13 +1302,13 @@ namespace khiva
             /// </summary>
             /// <param name="lhs">Left-hand side KHIVA array for the operation.</param>
             /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
-            /// <returns>KHIVA Array with the result of this operation.</returns>
-            public static Array operator +(Array lhs, Array rhs)
+            /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
+            public static KhivaArray operator +(KhivaArray lhs, KhivaArray rhs)
             {
                 interop.DLLArray.khiva_add(ref lhs.reference, ref rhs.reference, out IntPtr result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
-                return new Array(result);
+                return new KhivaArray(result);
             }
 
             /// <summary>
@@ -1316,13 +1316,13 @@ namespace khiva
             /// </summary>
             /// <param name="lhs">Left-hand side KHIVA array for the operation.</param>
             /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
-            /// <returns>KHIVA Array with the result of this operation.</returns>
-            public static Array operator *(Array lhs, Array rhs)
+            /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
+            public static KhivaArray operator *(KhivaArray lhs, KhivaArray rhs)
             {
                 interop.DLLArray.khiva_mul(ref lhs.reference, ref rhs.reference, out IntPtr result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
-                return (new Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
@@ -1330,13 +1330,13 @@ namespace khiva
             /// </summary>
             /// <param name="lhs">Left-hand side KHIVA array for the operation.</param>
             /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
-            /// <returns>KHIVA Array with the result of this operation.</returns>
-            public static Array operator -(Array lhs, Array rhs)
+            /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
+            public static KhivaArray operator -(KhivaArray lhs, KhivaArray rhs)
             {
                 interop.DLLArray.khiva_sub(ref lhs.reference, ref rhs.reference, out IntPtr result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
-                return (new Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
@@ -1344,13 +1344,13 @@ namespace khiva
             /// </summary>
             /// <param name="lhs">Left-hand side KHIVA array for the operation.</param>
             /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
-            /// <returns>KHIVA Array with the result of this operation.</returns>
-            public static Array operator /(Array lhs, Array rhs)
+            /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
+            public static KhivaArray operator /(KhivaArray lhs, KhivaArray rhs)
             {
                 interop.DLLArray.khiva_div(ref lhs.reference, ref rhs.reference, out IntPtr result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
-                return (new Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
@@ -1358,13 +1358,13 @@ namespace khiva
             /// </summary>
             /// <param name="lhs">Left-hand side KHIVA array for the operation.</param>
             /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
-            /// <returns>KHIVA Array with the result of this operation.</returns>
-            public static Array operator %(Array lhs, Array rhs)
+            /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
+            public static KhivaArray operator %(KhivaArray lhs, KhivaArray rhs)
             {
                 interop.DLLArray.khiva_mod(ref lhs.reference, ref rhs.reference, out IntPtr result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
-                return (new Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
@@ -1372,13 +1372,13 @@ namespace khiva
             /// </summary>
             /// <param name="lhs">Left-hand side KHIVA array for the operation.</param>
             /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
-            /// <returns>KHIVA Array with the result of this operation.</returns>
-            public static Array Pow(Array lhs, Array rhs)
+            /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
+            public static KhivaArray Pow(KhivaArray lhs, KhivaArray rhs)
             {
                 interop.DLLArray.khiva_pow(ref lhs.reference, ref rhs.reference, out IntPtr result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
-                return (new Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
@@ -1386,13 +1386,13 @@ namespace khiva
             /// </summary>
             /// <param name="lhs">Left-hand side KHIVA array for the operation.</param>
             /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
-            /// <returns>KHIVA Array with the result of this operation.</returns>
-            public static Array operator &(Array lhs, Array rhs)
+            /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
+            public static KhivaArray operator &(KhivaArray lhs, KhivaArray rhs)
             {
                 interop.DLLArray.khiva_bitand(ref lhs.reference, ref rhs.reference, out IntPtr result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
-                return (new Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
@@ -1400,13 +1400,13 @@ namespace khiva
             /// </summary>
             /// <param name="lhs">Left-hand side KHIVA array for the operation.</param>
             /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
-            /// <returns>KHIVA Array with the result of this operation.</returns>
-            public static Array operator |(Array lhs, Array rhs)
+            /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
+            public static KhivaArray operator |(KhivaArray lhs, KhivaArray rhs)
             {
                 interop.DLLArray.khiva_bitor(ref lhs.reference, ref rhs.reference, out IntPtr result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
-                return (new Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
@@ -1414,49 +1414,49 @@ namespace khiva
             /// </summary>
             /// <param name="lhs">Left-hand side KHIVA array for the operation.</param>
             /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
-            /// <returns>KHIVA Array with the result of this operation.</returns>
-            public static Array operator ^(Array lhs, Array rhs)
+            /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
+            public static KhivaArray operator ^(KhivaArray lhs, KhivaArray rhs)
             {
                 interop.DLLArray.khiva_bitxor(ref lhs.reference, ref rhs.reference, out IntPtr result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
-                return (new Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
             /// Performs a left bit shift operation (element-wise) to array as many times as specified in the parameter n.
             /// </summary>
-            /// <param name="lhs">array KHIVA Array to shift.</param>
+            /// <param name="lhs">array KHIVA KhivaArray to shift.</param>
             /// <param name="shift">Number of bits to be shifted.</param>
-            /// <returns>KHIVA Array with the result of this operation.</returns>
-            public static Array operator <<(Array lhs, int shift)
+            /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
+            public static KhivaArray operator <<(KhivaArray lhs, int shift)
             {
                 interop.DLLArray.khiva_bitshiftl(ref lhs.reference, ref shift, out IntPtr result);
                 lhs.Reference = lhs.reference;
-                return (new Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
             /// Performs a right bit shift operation (element-wise) to array as many times as specified in the parameter n.
             /// </summary>
-            /// <param name="lhs">array KHIVA Array to shift.</param>
+            /// <param name="lhs">array KHIVA KhivaArray to shift.</param>
             /// <param name="shift">Number of bits to be shifted.</param>
-            /// <returns>KHIVA Array with the result of this operation.</returns>
-            public static Array operator >>(Array lhs, int shift)
+            /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
+            public static KhivaArray operator >>(KhivaArray lhs, int shift)
             {
                 interop.DLLArray.khiva_bitshiftr(ref lhs.reference, ref shift, out IntPtr result);
                 lhs.Reference = lhs.reference;
-                return (new Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
             /// Unary minus of one array.
             /// </summary>
             /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
-            /// <returns>KHIVA Array with the result of this operation.</returns>
-            public static Array operator -(Array rhs)
+            /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
+            public static KhivaArray operator -(KhivaArray rhs)
             {
-                Array zeros;
+                KhivaArray zeros;
                 long[] dims = rhs.Dims;
                 uint maxDim = GetMaxDim(dims);
                 if (rhs.ArrayType == Dtype.c32 | rhs.ArrayType == Dtype.c64)
@@ -1466,11 +1466,11 @@ namespace khiva
                         Complex[] tss = new Complex[dims[0]];
                         if (rhs.ArrayType == Dtype.c32)
                         {
-                            zeros = new Array(tss, false);
+                            zeros = new KhivaArray(tss, false);
                         }
                         else
                         {
-                            zeros = new Array(tss, true);
+                            zeros = new KhivaArray(tss, true);
                         }
                     }
                     else if (maxDim == 2)
@@ -1478,11 +1478,11 @@ namespace khiva
                         Complex[,] tss = new Complex[dims[0], dims[1]];
                         if (rhs.ArrayType == Dtype.c32)
                         {
-                            zeros = new Array(tss, false);
+                            zeros = new KhivaArray(tss, false);
                         }
                         else
                         {
-                            zeros = new Array(tss, true);
+                            zeros = new KhivaArray(tss, true);
                         }
                     }
                     else if (maxDim == 3)
@@ -1490,11 +1490,11 @@ namespace khiva
                         Complex[,,] tss = new Complex[dims[0], dims[1], dims[2]];
                         if (rhs.ArrayType == Dtype.c32)
                         {
-                            zeros = new Array(tss, false);
+                            zeros = new KhivaArray(tss, false);
                         }
                         else
                         {
-                            zeros = new Array(tss, true);
+                            zeros = new KhivaArray(tss, true);
                         }
                     }
                     else
@@ -1502,11 +1502,11 @@ namespace khiva
                         Complex[,,,] tss = new Complex[dims[0], dims[1], dims[2], dims[3]];
                         if (rhs.ArrayType == Dtype.c32)
                         {
-                            zeros = new Array(tss, false);
+                            zeros = new KhivaArray(tss, false);
                         }
                         else
                         {
-                            zeros = new Array(tss, true);
+                            zeros = new KhivaArray(tss, true);
                         }
                     }
                 }
@@ -1515,27 +1515,27 @@ namespace khiva
                     if (maxDim == 1)
                     {
                         int[] tss = new int[dims[0]];
-                        zeros = new Array(tss);
+                        zeros = new KhivaArray(tss);
                     } else if (maxDim == 2)
                     {
                         int[,] tss = new int[dims[0], dims[1]];
-                        zeros = new Array(tss);
+                        zeros = new KhivaArray(tss);
                     }
                     else if (maxDim == 3)
                     {
                         int[,,] tss = new int[dims[0], dims[1], dims[2]];
-                        zeros = new Array(tss);
+                        zeros = new KhivaArray(tss);
                     }
                     else
                     {
                         int[,,,] tss = new int[dims[0], dims[1], dims[2], dims[3]];
-                        zeros = new Array(tss);
+                        zeros = new KhivaArray(tss);
                     }
                 }
                 interop.DLLArray.khiva_sub(ref zeros.reference, ref rhs.reference, out IntPtr result);
                 zeros.Reference = zeros.reference;
                 rhs.Reference = rhs.reference;
-                return (new Array(result));
+                return (new KhivaArray(result));
             }
 
             private static uint GetMaxDim(long[] dims)
@@ -1555,13 +1555,13 @@ namespace khiva
             /// <summary>
             /// Logical NOT operation to array.
             /// </summary>
-            /// <param name="lhs">KHIVA Array to negate.</param>
-            /// <returns>KHIVA Array with the result of this operation.</returns>
-            public static Array operator !(Array lhs)
+            /// <param name="lhs">KHIVA KhivaArray to negate.</param>
+            /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
+            public static KhivaArray operator !(KhivaArray lhs)
             {
                 interop.DLLArray.khiva_not(ref lhs.reference, out IntPtr result);
                 lhs.Reference = lhs.reference;
-                return (new Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
@@ -1569,13 +1569,13 @@ namespace khiva
             /// </summary>
             /// <param name="lhs">Left-hand side KHIVA array for the operation.</param>
             /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
-            /// <returns>KHIVA Array with the result of this operation.</returns>
-            public static Array operator <(Array lhs, Array rhs)
+            /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
+            public static KhivaArray operator <(KhivaArray lhs, KhivaArray rhs)
             {
                 interop.DLLArray.khiva_lt(ref lhs.reference, ref rhs.reference, out IntPtr result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
-                return (new Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
@@ -1583,13 +1583,13 @@ namespace khiva
             /// </summary>
             /// <param name="lhs">Left-hand side KHIVA array for the operation.</param>
             /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
-            /// <returns>KHIVA Array with the result of this operation.</returns>
-            public static Array operator >(Array lhs, Array rhs)
+            /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
+            public static KhivaArray operator >(KhivaArray lhs, KhivaArray rhs)
             {
                 interop.DLLArray.khiva_gt(ref lhs.reference, ref rhs.reference, out IntPtr result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
-                return (new Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
@@ -1597,13 +1597,13 @@ namespace khiva
             /// </summary>
             /// <param name="lhs">Left-hand side KHIVA array for the operation.</param>
             /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
-            /// <returns>KHIVA Array with the result of this operation.</returns>
-            public static Array operator <=(Array lhs, Array rhs)
+            /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
+            public static KhivaArray operator <=(KhivaArray lhs, KhivaArray rhs)
             {
                 interop.DLLArray.khiva_le(ref lhs.reference, ref rhs.reference, out IntPtr result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
-                return (new Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
@@ -1611,13 +1611,13 @@ namespace khiva
             /// </summary>
             /// <param name="lhs">Left-hand side KHIVA array for the operation.</param>
             /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
-            /// <returns>KHIVA Array with the result of this operation.</returns>
-            public static Array operator >=(Array lhs, Array rhs)
+            /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
+            public static KhivaArray operator >=(KhivaArray lhs, KhivaArray rhs)
             {
                 interop.DLLArray.khiva_ge(ref lhs.reference, ref rhs.reference, out IntPtr result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
-                return (new Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
@@ -1625,13 +1625,13 @@ namespace khiva
             /// </summary>
             /// <param name="lhs">Left-hand side KHIVA array for the operation.</param>
             /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
-            /// <returns>KHIVA Array with the result of this operation.</returns>
-            public static Array operator ==(Array lhs, Array rhs)
+            /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
+            public static KhivaArray operator ==(KhivaArray lhs, KhivaArray rhs)
             {
                 interop.DLLArray.khiva_eq(ref lhs.reference, ref rhs.reference, out IntPtr result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
-                return (new Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
@@ -1639,13 +1639,13 @@ namespace khiva
             /// </summary>
             /// <param name="lhs">Left-hand side KHIVA array for the operation.</param>
             /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
-            /// <returns>KHIVA Array with the result of this operation.</returns>
-            public static Array operator !=(Array lhs, Array rhs)
+            /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
+            public static KhivaArray operator !=(KhivaArray lhs, KhivaArray rhs)
             {
                 interop.DLLArray.khiva_ne(ref lhs.reference, ref rhs.reference, out IntPtr result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
-                return (new Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
@@ -1655,9 +1655,9 @@ namespace khiva
             /// <returns></returns>
             public override bool Equals(object o)
             {
-                if(o.GetType() == typeof(Array))
+                if(o.GetType() == typeof(KhivaArray))
                 {
-                    Array arr = (Array)o;
+                    KhivaArray arr = (KhivaArray)o;
                     return reference.Equals(arr.reference);
                 }
                 else
@@ -1669,7 +1669,7 @@ namespace khiva
             /// <summary>
             /// GetHashCode object method
             /// </summary>
-            /// <returns>Hashcode of the Array</returns>
+            /// <returns>Hashcode of the KhivaArray</returns>
             public override int GetHashCode()
             {
                 return reference.GetHashCode();   
@@ -1679,24 +1679,24 @@ namespace khiva
             /// Transposes array.
             /// </summary>
             /// <param name="conjugate">If true a conjugate transposition is performed.</param>
-            /// <returns>KHIVA Array with the result of this operation.</returns>
-            public Array Transpose(bool conjugate = false)
+            /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
+            public KhivaArray Transpose(bool conjugate = false)
             {
                 interop.DLLArray.khiva_transpose(ref reference, ref conjugate, out IntPtr result);
                 this.Reference = reference;
-                return (new Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
             /// Retrieves a given column of array.
             /// </summary>
             /// <param name="index">The column to be retrieved.</param>
-            /// <returns>KHIVA Array with the result of this operation.</returns>
-            public Array Col(int index)
+            /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
+            public KhivaArray Col(int index)
             {
                 interop.DLLArray.khiva_col(ref reference, ref index, out IntPtr result);
                 this.Reference = reference;
-                return (new Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
@@ -1704,24 +1704,24 @@ namespace khiva
             /// </summary>
             /// <param name="first">Start of the subset of columns to be retrieved.</param>
             /// <param name="last">End of the subset of columns to be retrieved.</param>
-            /// <returns>KHIVA Array with the result of this operation.</returns>
-            public Array Cols(int first, int last)
+            /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
+            public KhivaArray Cols(int first, int last)
             {
                 interop.DLLArray.khiva_cols(ref reference, ref first, ref last, out IntPtr result);
                 this.Reference = reference;
-                return (new Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
             /// Retrieves a given row of array.
             /// </summary>
             /// <param name="index">The row to be retrieved.</param>
-            /// <returns> KHIVA Array with the result of this operation.</returns>
-            public Array Row(int index)
+            /// <returns> KHIVA KhivaArray with the result of this operation.</returns>
+            public KhivaArray Row(int index)
             {
                 interop.DLLArray.khiva_row(ref reference, ref index, out IntPtr result);
                 this.Reference = reference;
-                return (new Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
@@ -1729,48 +1729,48 @@ namespace khiva
             /// </summary>
             /// <param name="first">Start of the subset of rows to be retrieved.</param>
             /// <param name="last">End of the subset of rows to be retrieved.</param>
-            /// <returns>KHIVA Array with the result of this operation.</returns>
-            public Array Rows(int first, int last)
+            /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
+            public KhivaArray Rows(int first, int last)
             {
                 interop.DLLArray.khiva_rows(ref reference, ref first, ref last, out IntPtr result);
                 this.Reference = reference;
-                return (new Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
             /// Performs a matrix multiplication of lhs and rhs.
             /// </summary>
             /// <param name="rhs">Right-hand side KHIVA array for the operation.</param>
-            /// <returns>KHIVA Array with the result of this operation.</returns>
-            public Array Matmul(Array rhs)
+            /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
+            public KhivaArray Matmul(KhivaArray rhs)
             {
                 interop.DLLArray.khiva_matmul(ref reference, ref rhs.reference, out IntPtr result);
                 this.Reference = reference;
                 rhs.Reference = rhs.reference;
-                return (new Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
             /// Performs a deep copy of array.
             /// </summary>
-            /// <returns>KHIVA Array which contains a copy of array.</returns>
-            public Array Copy()
+            /// <returns>KHIVA KhivaArray which contains a copy of array.</returns>
+            public KhivaArray Copy()
             {
                 interop.DLLArray.copy(ref reference, out IntPtr result);
                 this.Reference = reference;
-                return (new Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
             /// Changes the type of array.
             /// </summary>
             /// <param name="type">Target type of the output array.</param>
-            /// <returns>KHIVA Array with the result of this operation.</returns>
-            public Array As(int type)
+            /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
+            public KhivaArray As(int type)
             {
                 interop.DLLArray.khiva_as(ref reference, ref type, out IntPtr result);
                 this.Reference = reference;
-                return (new Array(result));
+                return (new KhivaArray(result));
             }
 
 

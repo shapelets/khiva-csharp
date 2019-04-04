@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using khiva.array;
 
 namespace khiva
 {
@@ -27,12 +28,12 @@ namespace khiva
             /// one indicates the number of time series.</param>
             /// <param name="unbiased">Determines whether it divides by n - 1 (if false) or n (if true).</param>
             /// <returns>The covariance matrix of the time series.</returns>
-            public static array.Array CovarianceStatistics(array.Array tss, bool unbiased)
+            public static KhivaArray CovarianceStatistics(KhivaArray tss, bool unbiased)
             {
                 IntPtr reference = tss.Reference;
                 interop.DLLStatistics.covariance_statistics(ref reference, ref unbiased, out IntPtr result);
                 tss.Reference = reference;
-                return (new array.Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
@@ -41,12 +42,12 @@ namespace khiva
             /// <param name="tss">Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
             /// one indicates the number of time series.</param>
             /// <returns>The kurtosis of tss.</returns>
-            public static array.Array KurtosisStatistics(array.Array tss)
+            public static KhivaArray KurtosisStatistics(KhivaArray tss)
             {
                 IntPtr reference = tss.Reference;
                 interop.DLLStatistics.kurtosis_statistics(ref reference, out IntPtr result);
                 tss.Reference = reference;
-                return (new array.Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
@@ -79,12 +80,12 @@ namespace khiva
             /// one indicates the number of time series.</param>
             /// <param name="lags">Number of lags being tested.</param>
             /// <returns>The Ljung-Box statistic test.</returns>
-            public static array.Array LjungBox(array.Array tss, long lags)
+            public static KhivaArray LjungBox(KhivaArray tss, long lags)
             {
                 IntPtr reference = tss.Reference;
                 interop.DLLStatistics.ljung_box(ref reference, ref lags, out IntPtr result);
                 tss.Reference = reference;
-                return (new array.Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
@@ -94,12 +95,12 @@ namespace khiva
             /// one indicates the number of time series.</param>
             /// <param name="k">The specific moment to be calculated.</param>
             /// <returns>The kth moment of the given time series.</returns>
-            public static array.Array MomentStatistics(array.Array tss, int k)
+            public static KhivaArray MomentStatistics(KhivaArray tss, int k)
             {
                 IntPtr reference = tss.Reference;
                 interop.DLLStatistics.moment_statistics(ref reference, ref k, out IntPtr result);
                 tss.Reference = reference;
-                return (new array.Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
@@ -110,14 +111,14 @@ namespace khiva
             /// <param name="q">Percentile(s) at which to extract score(s). One or many.</param>
             /// <param name="precision">Number of decimals expected.</param>
             /// <returns>Values at the given quantile.</returns>
-            public static array.Array QuantileStatistics(array.Array tss, array.Array q, float precision = 1e-8F)
+            public static KhivaArray QuantileStatistics(KhivaArray tss, KhivaArray q, float precision = 1e-8F)
             {
                 IntPtr reference = tss.Reference;
                 IntPtr qReference = q.Reference;
                 interop.DLLStatistics.quantile_statistics(ref reference, ref qReference, ref precision, out IntPtr result);
                 tss.Reference = reference;
                 q.Reference = qReference;
-                return (new array.Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
@@ -129,12 +130,12 @@ namespace khiva
             /// <param name="precision">Number of decimals expected.</param>
             /// <returns>Matrix with the categories, one category per row, the start of the category in the first column and
             /// the end in the second category.</returns>
-            public static array.Array QuantilesCutStatistics(array.Array tss, float quantiles, float precision = 1e-8F)
+            public static KhivaArray QuantilesCutStatistics(KhivaArray tss, float quantiles, float precision = 1e-8F)
             {
                 IntPtr reference = tss.Reference;
                 interop.DLLStatistics.quantiles_cut_statistics(ref reference, ref quantiles, ref precision, out IntPtr result);
                 tss.Reference = reference;
-                return (new array.Array(result));
+                return (new KhivaArray(result));
             }
             
             /// <summary>
@@ -143,12 +144,12 @@ namespace khiva
             /// <param name="tss">Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
             /// one indicates the number of time series.</param>
             /// <returns>The sample standard deviation.</returns>
-            public static array.Array SampleStdevStatistics(array.Array tss)
+            public static KhivaArray SampleStdevStatistics(KhivaArray tss)
             {
                 IntPtr reference = tss.Reference;
                 interop.DLLStatistics.sample_stdev_statistics(ref reference, out IntPtr result);
                 tss.Reference = reference;
-                return (new array.Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
@@ -156,13 +157,13 @@ namespace khiva
             /// </summary>
             /// <param name="tss">Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
             /// one indicates the number of time series.</param>
-            /// <returns>Array containing the skewness of each time series in tss.</returns>
-            public static array.Array SkewnessStatistics(array.Array tss)
+            /// <returns>KhivaArray containing the skewness of each time series in tss.</returns>
+            public static KhivaArray SkewnessStatistics(KhivaArray tss)
             {
                 IntPtr reference = tss.Reference;
                 interop.DLLStatistics.skewness_statistics(ref reference, out IntPtr result);
                 tss.Reference = reference;
-                return (new array.Array(result));
+                return (new KhivaArray(result));
             }
         }
     }

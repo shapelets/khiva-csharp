@@ -118,7 +118,7 @@ namespace khiva.interop
          ///</summary>
          /// <param name="tss">Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
          /// one indicates the number of time series.</param>
-         /// <param name="result">Array containing the skewness of each time series in tss.</param>
+         /// <param name="result">KhivaArray containing the skewness of each time series in tss.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void skewness_statistics([In] ref IntPtr tss, [Out] out IntPtr result);
     }

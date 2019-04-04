@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using khiva.array;
 
 namespace khiva
 {
@@ -33,12 +34,12 @@ namespace khiva
             /// <param name="arr">Set of points.</param>
             /// <param name="bins">Sets the total number of divisions.</param>
             /// <returns>An array of points with the reduced dimensionality.</returns>
-            public static array.Array PAA(array.Array arr, int bins)
+            public static KhivaArray PAA(KhivaArray arr, int bins)
             {
                 IntPtr reference = arr.Reference;
                 interop.DLLDimensionality.paa(ref reference, ref bins, out IntPtr result);
                 arr.Reference = reference;
-                return (new array.Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
@@ -49,13 +50,13 @@ namespace khiva
             /// </summary>
             /// <param name="arr">Expects an input array whose dimension zero is the length of the time series.</param>
             /// <param name="numberIps">The number of points to be returned.</param>
-            /// <returns>Array with the most Perceptually Important number_ips.</returns>
-            public static array.Array PIP(array.Array arr, int numberIps)
+            /// <returns>KhivaArray with the most Perceptually Important number_ips.</returns>
+            public static KhivaArray PIP(KhivaArray arr, int numberIps)
             {
                 IntPtr reference = arr.Reference;
                 interop.DLLDimensionality.pip(ref reference, ref numberIps, out IntPtr result);
                 arr.Reference = reference;
-                return (new array.Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
@@ -68,12 +69,12 @@ namespace khiva
             /// the first column and the second component of the points in the second column.</param>
             /// <param name="maxError">The maximum approximation error allowed.</param>
             /// <returns>The reduced number of points.</returns>
-            public static array.Array PLABottomUp(array.Array arr, float maxError)
+            public static KhivaArray PLABottomUp(KhivaArray arr, float maxError)
             {
                 IntPtr reference = arr.Reference;
                 interop.DLLDimensionality.pla_bottom_up(ref reference, ref maxError, out IntPtr result);
                 arr.Reference = reference;
-                return (new array.Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
@@ -86,12 +87,12 @@ namespace khiva
             /// the first column and the second component of the points in the second column.</param>
             /// <param name="maxError">The maximum approximation error allowed.</param>
             /// <returns>The reduced number of points.</returns>
-            public static array.Array PLASlidingWindow(array.Array arr, float maxError)
+            public static KhivaArray PLASlidingWindow(KhivaArray arr, float maxError)
             {
                 IntPtr reference = arr.Reference;
                 interop.DLLDimensionality.pla_sliding_window(ref reference, ref maxError, out IntPtr result);
                 arr.Reference = reference;
-                return (new array.Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
@@ -106,15 +107,15 @@ namespace khiva
             /// digitized line or its caricature", The Canadian Cartographer 10(2), 112–122 (1973)
             /// doi:10.3138/FM57-6770-U75U-7727
             /// </summary>
-            /// <param name="points">Array with the x-coordinates and y-coordinates of the input points (x in column 0 and y in column 1).</param>
+            /// <param name="points">KhivaArray with the x-coordinates and y-coordinates of the input points (x in column 0 and y in column 1).</param>
             /// <param name="epsilon">It acts as the threshold value to decide which points should be considered meaningful or not.</param>
-            /// <returns>Array with the x-coordinates and y-coordinates of the selected points (x in column 0 and y in column 1).</returns>
-            public static array.Array RamerDouglasPeucker(array.Array points, double epsilon)
+            /// <returns>KhivaArray with the x-coordinates and y-coordinates of the selected points (x in column 0 and y in column 1).</returns>
+            public static KhivaArray RamerDouglasPeucker(KhivaArray points, double epsilon)
             {
                 IntPtr reference = points.Reference;
                 interop.DLLDimensionality.ramer_douglas_peucker(ref reference, ref epsilon, out IntPtr result);
                 points.Reference = reference;
-                return (new array.Array(result));
+                return (new KhivaArray(result));
             }
            
             /// <summary>
@@ -129,15 +130,15 @@ namespace khiva
             /// Streaming Algorithms. In proceedings of the 8th ACM SIGMOD Workshop on Research Issues in Data Mining and Knowledge
             /// Discovery. San Diego, CA. June 13.
             /// </summary>
-            /// <param name="arr">Array with the input time series.</param>
+            /// <param name="arr">KhivaArray with the input time series.</param>
             /// <param name="alphabetSize">Number of element within the alphabet.</param>
             /// <returns>An array of symbols.</returns>
-            public static array.Array SAX(array.Array arr, int alphabetSize)
+            public static KhivaArray SAX(KhivaArray arr, int alphabetSize)
             {
                 IntPtr reference = arr.Reference;
                 interop.DLLDimensionality.sax(ref reference, ref alphabetSize, out IntPtr result);
                 arr.Reference = reference;
-                return (new array.Array(result));
+                return (new KhivaArray(result));
             }
 
             /// <summary>
@@ -147,15 +148,15 @@ namespace khiva
             /// [1] M. Visvalingam and J. D. Whyatt, Line generalisation by repeated elimination of points,
             /// The Cartographic Journal, 1993.
             /// </summary>
-            /// <param name="points">Array with the x-coordinates and y-coordinates of the input points (x in column 0 and y in column 1).</param>
+            /// <param name="points">KhivaArray with the x-coordinates and y-coordinates of the input points (x in column 0 and y in column 1).</param>
             /// <param name="numPoints">Sets the number of points returned after the execution of the method.</param>
-            /// <returns>Array with the x-coordinates and y-coordinates of the selected points (x in column 0 and y in column 1).</returns>
-            public static array.Array Visvalingam(array.Array points, int numPoints)
+            /// <returns>KhivaArray with the x-coordinates and y-coordinates of the selected points (x in column 0 and y in column 1).</returns>
+            public static KhivaArray Visvalingam(KhivaArray points, int numPoints)
             {
                 IntPtr reference = points.Reference;
                 interop.DLLDimensionality.visvalingam(ref reference, ref numPoints, out IntPtr result);
                 points.Reference = reference;
-                return (new array.Array(result));
+                return (new KhivaArray(result));
             }
         }
     } 

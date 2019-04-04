@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using khiva.array;
 
 namespace khiva.clustering.tests
 {
@@ -37,7 +38,7 @@ namespace khiva.clustering.tests
                                                { 1.5, -1.5, 0.8333, -0.8333 },
                                                { 4.8333, 3.6667, 2.6667, 1.6667 }
                                             };
-            using (array.Array arr = new array.Array(tss))
+            using (KhivaArray arr = new KhivaArray(tss))
             {
                 var (centroidsArr, labelsArr) = clustering.Clustering.KMeans(arr, 3);
                 using (centroidsArr)
@@ -72,7 +73,7 @@ namespace khiva.clustering.tests
                                                    { -0.6278, 1.3812, -2.0090,  0.5022,  0.6278,  0.0000,  0.1256 }
                                                 };
             uint[] expected_l = new uint[] { 0, 1, 2, 0, 0 };
-            using (array.Array arr = new array.Array(tss))
+            using (KhivaArray arr = new KhivaArray(tss))
             {
                 var (centroidsArr, labelsArr) = clustering.Clustering.KShape(arr, 3);
                 using (centroidsArr)

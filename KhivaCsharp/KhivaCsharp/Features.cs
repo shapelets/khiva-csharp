@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using khiva.array;
 
 namespace khiva.features
 {
@@ -26,12 +27,12 @@ namespace khiva.features
         /// series(all the same) and dimension one indicates the number of time series.</param>
         /// <returns>An array with the same dimensions as array, whose values (time series in dimension 0) 
         /// contains the sum of the squares values in the time series.</returns>
-        public static array.Array AbsEnergy(array.Array array)
+        public static KhivaArray AbsEnergy(KhivaArray array)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.abs_energy(ref reference, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -41,13 +42,13 @@ namespace khiva.features
         /// series(all the same) and dimension one indicates the number of time series.</param>
         /// <returns>An array with the same dimensions as array, whose values (time series in dimension 0)
         /// contains absolute value of consecutive changes in the time series.</returns>
-        public static array.Array AbsoluteSumOfChanges(array.Array array)
+        public static KhivaArray AbsoluteSumOfChanges(KhivaArray array)
         {
 
             IntPtr reference = array.Reference;
             interop.DLLFeatures.absolute_sum_of_changes( ref reference, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -68,12 +69,12 @@ namespace khiva.features
         ///             default : mean
         ///          }</param>
         /// <returns>An array whose values contains the aggregated correaltion for each time series.</returns>
-        public static array.Array AggregatedAutocorrelation(array.Array array, int aggregationFunction)
+        public static KhivaArray AggregatedAutocorrelation(KhivaArray array, int aggregationFunction)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.aggregated_autocorrelation(ref reference, ref aggregationFunction, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -99,7 +100,7 @@ namespace khiva.features
         /// Correlation coefficient.
         /// Two-sided p-value for a hypothesis test whose null hypothesis is that the slope is zero, using Wald Test with t-distribution of the test statistic.
         /// Standard error of the estimated gradient.</returns>
-        public static (array.Array, array.Array, array.Array, array.Array, array.Array) AggregatedLinearTrend(array.Array array, long chunkSize, int aggregationFunction)
+        public static ValueTuple<KhivaArray, KhivaArray, KhivaArray, KhivaArray, KhivaArray> AggregatedLinearTrend(KhivaArray array, long chunkSize, int aggregationFunction)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.aggregated_linear_trend(ref reference,
@@ -107,11 +108,11 @@ namespace khiva.features
                                                         ref aggregationFunction,
                                                         out IntPtr slope, out IntPtr intercept, out IntPtr rvalue, out IntPtr pvalue, out IntPtr stderrest);
             array.Reference = reference;
-            var tuple = (slopeArr: new array.Array(slope),
-                    interceptArr: new array.Array(intercept),
-                    rvalueArr: new array.Array(rvalue),
-                    pvalueArr: new array.Array(pvalue),
-                    stderrestArr: new array.Array(stderrest));
+            var tuple = (slopeArr: new KhivaArray(slope),
+                    interceptArr: new KhivaArray(intercept),
+                    rvalueArr: new KhivaArray(rvalue),
+                    pvalueArr: new KhivaArray(pvalue),
+                    stderrestArr: new KhivaArray(stderrest));
             return tuple;
         }
 
@@ -128,12 +129,12 @@ namespace khiva.features
         /// <param name="m">Length of compared run of data.</param>
         /// <param name="r">Filtering level, must be positive.</param>
         /// <returns>The vectorized approximate entropy for all the input time series in array.</returns>
-        public static array.Array ApproximateEntropy(array.Array array, int m, float r)
+        public static KhivaArray ApproximateEntropy(KhivaArray array, int m, float r)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.approximate_entropy(ref reference, ref m, ref r,  out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -145,14 +146,14 @@ namespace khiva.features
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <param name="unbiased">Determines whether it divides by n - lag (if true) or n(if false).</param>
         /// <returns>The cross-covariance value for the given time series.</returns>
-        public static array.Array CrossCovariance(array.Array xss, array.Array yss, bool unbiased)
+        public static KhivaArray CrossCovariance(KhivaArray xss, KhivaArray yss, bool unbiased)
         {
             IntPtr referenceXss = xss.Reference;
             IntPtr referenceYss = yss.Reference;
             interop.DLLFeatures.cross_covariance(ref referenceXss, ref referenceYss, ref unbiased, out IntPtr result);
             xss.Reference = referenceXss;
             yss.Reference = referenceYss;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -162,12 +163,12 @@ namespace khiva.features
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <param name="unbiased">Determines whether it divides by n - lag (if true) or n(if false).</param>
         /// <returns>The auto-covariance value for the given time series.</returns>
-        public static array.Array AutoCovariance(array.Array array, bool unbiased = false)
+        public static KhivaArray AutoCovariance(KhivaArray array, bool unbiased = false)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.auto_covariance(ref reference, ref unbiased, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -179,14 +180,14 @@ namespace khiva.features
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <param name="unbiased"></param>
         /// <returns>The cross-correlation value for the given time series.</returns>
-        public static array.Array CrossCorrelation(array.Array xss, array.Array yss, bool unbiased)
+        public static KhivaArray CrossCorrelation(KhivaArray xss, KhivaArray yss, bool unbiased)
         {
             IntPtr referenceXss = xss.Reference;
             IntPtr referenceYss = yss.Reference;
             interop.DLLFeatures.cross_correlation(ref referenceXss, ref referenceYss, ref unbiased, out IntPtr result);
             xss.Reference = referenceXss;
             yss.Reference = referenceYss;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -197,12 +198,12 @@ namespace khiva.features
         /// <param name="max_lag">The maximum lag to compute.</param>
         /// <param name="unbiased">Determines whether it divides by n - lag (if true) or n ( if false)</param>
         /// <returns>The autocorrelation value for the given time series.</returns>
-        public static array.Array AutoCorrelation(array.Array array, long max_lag, bool unbiased)
+        public static KhivaArray AutoCorrelation(KhivaArray array, long max_lag, bool unbiased)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.auto_correlation(ref reference, ref max_lag, ref unbiased, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -212,12 +213,12 @@ namespace khiva.features
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <param name="max_bins">The number of bins.</param>
         /// <returns>The binned entropy value for the given time series.</returns>
-        public static array.Array BinnedEntropy(array.Array array, int max_bins)
+        public static KhivaArray BinnedEntropy(KhivaArray array, int max_bins)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.binned_entropy(ref reference, ref max_bins, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -227,12 +228,12 @@ namespace khiva.features
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <param name="lag">The lag</param>
         /// <returns>The non-linearity value for the given time series.</returns>
-        public static array.Array C3(array.Array array, long lag)
+        public static KhivaArray C3(KhivaArray array, long lag)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.c3(ref reference, ref lag, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
 
         }
 
@@ -244,12 +245,12 @@ namespace khiva.features
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <param name="zNormalize">Controls whether the time series should be z-normalized or not.</param>
         /// <returns>The complexity value for the given time series.</returns>
-        public static array.Array CidCe(array.Array array, bool zNormalize)
+        public static KhivaArray CidCe(KhivaArray array, bool zNormalize)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.cid_ce(ref reference, ref zNormalize, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -258,12 +259,12 @@ namespace khiva.features
         /// <param name="array">Expects an input array whose dimension zero is the length of the
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <returns>The number of values in the time series that are higher than the mean.</returns>
-        public static array.Array CountAboveMean(array.Array array)
+        public static KhivaArray CountAboveMean(KhivaArray array)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.count_above_mean(ref reference, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -272,12 +273,12 @@ namespace khiva.features
         /// <param name="array">Expects an input array whose dimension zero is the length of the
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <returns>The number of values in the time series that are lower than the mean.</returns>
-        public static array.Array CountBelowMean(array.Array array)
+        public static KhivaArray CountBelowMean(KhivaArray array)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.count_below_mean(ref reference, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -297,18 +298,18 @@ namespace khiva.features
         /// </summary>
         /// <param name="array">Expects an input array whose dimension zero is the length of the time series (all the same)
         /// and dimension one indicates the number of time series.</param>
-        /// <param name="width">Array that contains all different widths.</param>
+        /// <param name="width">KhivaArray that contains all different widths.</param>
         /// <param name="coeff">Coefficient of interest.</param>
         /// <param name="w">Width of interest.</param>
         /// <returns>Result of calculated coefficients.</returns>
-        public static array.Array CwtCoefficients(array.Array array, array.Array width, int coeff, int w)
+        public static KhivaArray CwtCoefficients(KhivaArray array, KhivaArray width, int coeff, int w)
         {
             IntPtr reference = array.Reference;
             IntPtr widthReference = width.Reference;
             interop.DLLFeatures.cwt_coefficients(ref reference, ref widthReference, ref coeff, ref w, out IntPtr result);
             array.Reference = reference;
             width.Reference = widthReference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -320,12 +321,12 @@ namespace khiva.features
         /// <param name="num_segments">The number of segments to divide the series into.</param>
         /// <param name="segment_focus">The segment number (starting at zero) to return a feature on.</param>
         /// <returns>The energy ratio by chunk of the time series.</returns>
-        public static array.Array EnergyRatioByChunks(array.Array array, long num_segments, long segment_focus)
+        public static KhivaArray EnergyRatioByChunks(KhivaArray array, long num_segments, long segment_focus)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.energy_ratio_by_chunks(ref reference, ref num_segments, ref segment_focus, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -334,12 +335,12 @@ namespace khiva.features
         /// <param name="array"> Expects an input array whose dimension zero is the length of the
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <returns>The spectral centroid (mean), variance, skew, and kurtosis of the absolute fourier transform spectrum.</returns>
-        public static array.Array FftAggregated(array.Array array)
+        public static KhivaArray FftAggregated(KhivaArray array)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.fft_aggregated(ref reference, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -353,16 +354,16 @@ namespace khiva.features
         /// The imaginary part of the cofficient.
         /// The absolute value of the coefficient.
         /// The angle of the coefficient.</returns>
-        public static (array.Array, array.Array, array.Array, array.Array) FftCoefficient(array.Array array, long coefficient)
+        public static ValueTuple<KhivaArray, KhivaArray, KhivaArray, KhivaArray> FftCoefficient(KhivaArray array, long coefficient)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.fft_coefficient(ref reference, ref coefficient,
                                                 out IntPtr real, out IntPtr imag, out IntPtr absolute, out IntPtr angle);
             array.Reference = reference;
-            var tuple = (realArr: new array.Array(real),
-                        imagArr: new array.Array(imag),
-                        absoluteArr: new array.Array(absolute),
-                        angleArr: new array.Array(angle));
+            var tuple = (realArr: new KhivaArray(real),
+                        imagArr: new KhivaArray(imag),
+                        absoluteArr: new KhivaArray(absolute),
+                        angleArr: new KhivaArray(angle));
             return tuple;
         }
 
@@ -372,12 +373,12 @@ namespace khiva.features
         /// <param name="array">array Expects an input array whose dimension zero is the length of the
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <returns>The first relative location of the maximum value to the length of the time series, for each time series.</returns>
-        public static array.Array FirstLocationOfMaximum(array.Array array)
+        public static KhivaArray FirstLocationOfMaximum(KhivaArray array)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.first_location_of_maximum(ref reference, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -386,12 +387,12 @@ namespace khiva.features
         /// <param name="array">Expects an input array whose dimension zero is the length of the
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <returns>The first relative location of the minimal value of each series.</returns>
-        public static array.Array FirstLocationOfMinimum(array.Array array)
+        public static KhivaArray FirstLocationOfMinimum(KhivaArray array)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.first_location_of_minimum(ref reference, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -409,12 +410,12 @@ namespace khiva.features
         /// <param name="m">Order of polynom to fit for estimating fixed points of dynamics.</param>
         /// <param name="r">Number of quantils to use for averaging.</param>
         /// <returns>The coefficients for each time series.</returns>
-        public static array.Array FriedrichCoefficients(array.Array array, int m, float r)
+        public static KhivaArray FriedrichCoefficients(KhivaArray array, int m, float r)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.friedrich_coefficients(ref reference, ref m, ref r, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -422,13 +423,13 @@ namespace khiva.features
         /// </summary>
         /// <param name="array">Expects an input array whose dimension zero is the length of the
         /// time series(all the same) and dimension one indicates the number of time series.</param>
-        /// <returns>Array containing True if the time series contains duplicated elements and false otherwise.</returns>
-        public static array.Array HasDuplicates(array.Array array)
+        /// <returns>KhivaArray containing True if the time series contains duplicated elements and false otherwise.</returns>
+        public static KhivaArray HasDuplicates(KhivaArray array)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.has_duplicates(ref reference, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -436,13 +437,13 @@ namespace khiva.features
         /// </summary>
         /// <param name="array">Expects an input array whose dimension zero is the length of the
         /// time series(all the same) and dimension one indicates the number of time series.</param>
-        /// <returns>Array containing True if the maximum value of the time series is duplicated and false otherwise.</returns>
-        public static array.Array HasDuplicateMax(array.Array array)
+        /// <returns>KhivaArray containing True if the maximum value of the time series is duplicated and false otherwise.</returns>
+        public static KhivaArray HasDuplicateMax(KhivaArray array)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.has_duplicate_max(ref reference, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -450,13 +451,13 @@ namespace khiva.features
         /// </summary>
         /// <param name="array">Expects an input array whose dimension zero is the length of the
         /// time series(all the same) and dimension one indicates the number of time series.</param>
-        /// <returns>Array containing True if the minimum of the time series is duplicated and false otherwise.</returns>
-        public static array.Array HasDuplicateMin(array.Array array)
+        /// <returns>KhivaArray containing True if the minimum of the time series is duplicated and false otherwise.</returns>
+        public static KhivaArray HasDuplicateMin(KhivaArray array)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.has_duplicate_min(ref reference, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -466,12 +467,12 @@ namespace khiva.features
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <param name="q">The quantile.</param>
         /// <returns>The index of the max quantile q.</returns>
-        public static array.Array IndexMassQuantile(array.Array array, float q)
+        public static KhivaArray IndexMassQuantile(KhivaArray array, float q)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.index_mass_quantile(ref reference, ref q, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -480,12 +481,12 @@ namespace khiva.features
         /// <param name="array">Expects an input array whose dimension zero is the length of the
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <returns>The kurtosis of each array.</returns>
-        public static array.Array Kurtosis(array.Array array)
+        public static KhivaArray Kurtosis(KhivaArray array)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.kurtosis(ref reference, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -494,13 +495,13 @@ namespace khiva.features
         /// <param name="array">Expects an input array whose dimension zero is the length of the
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <param name="r">The threshold.</param>
-        /// <returns>Array containing True for those time series in array that have a large standard deviation.</returns>
-        public static array.Array LargeStandardDeviation(array.Array array, float r)
+        /// <returns>KhivaArray containing True for those time series in array that have a large standard deviation.</returns>
+        public static KhivaArray LargeStandardDeviation(KhivaArray array, float r)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.large_standard_deviation(ref reference, ref r, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -509,12 +510,12 @@ namespace khiva.features
         /// <param name="array">Expects an input array whose dimension zero is the length of the
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <returns>The last relative location of the maximum value of each series.</returns>
-        public static array.Array LastLocationOfMaximum(array.Array array)
+        public static KhivaArray LastLocationOfMaximum(KhivaArray array)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.last_location_of_maximum(ref reference, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -523,12 +524,12 @@ namespace khiva.features
         /// <param name="array"> Expects an input array whose dimension zero is the length of the
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <returns>The last relative location of the minimum value of each series.</returns>
-        public static array.Array LastLocationOfMinimum(array.Array array)
+        public static KhivaArray LastLocationOfMinimum(KhivaArray array)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.last_location_of_minimum(ref reference, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -537,12 +538,12 @@ namespace khiva.features
         /// <param name="array">Expects an input array whose dimension zero is the length of the
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <returns>The length of the time series.</returns>
-        public static array.Array Length(array.Array array)
+        public static KhivaArray Length(KhivaArray array)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.length(ref reference, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -556,17 +557,17 @@ namespace khiva.features
         /// The intercept values for all time series.
         /// The slope for all time series.
         /// The stderr values for all time series.</returns>
-        public static (array.Array, array.Array, array.Array, array.Array, array.Array) LinearTrend(array.Array array)
+        public static ValueTuple<KhivaArray, KhivaArray, KhivaArray, KhivaArray, KhivaArray> LinearTrend(KhivaArray array)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.linear_trend(ref reference,
                                         out IntPtr pvalue, out IntPtr rvalue, out IntPtr intercept, out IntPtr slope, out IntPtr stdrr);
             array.Reference = reference;
-            var tuple = (pvalueArr: new array.Array(pvalue),
-                        rvalueArr: new array.Array(rvalue),
-                        interceptArr: new array.Array(intercept),
-                        slopeArr: new array.Array(slope),
-                        stdrrArr: new array.Array(stdrr));
+            var tuple = (pvalueArr: new KhivaArray(pvalue),
+                        rvalueArr: new KhivaArray(rvalue),
+                        interceptArr: new KhivaArray(intercept),
+                        slopeArr: new KhivaArray(slope),
+                        stdrrArr: new KhivaArray(stdrr));
             return tuple;
         }
 
@@ -576,12 +577,12 @@ namespace khiva.features
         /// <param name="array">Expects an input array whose dimension zero is the length of the time series (all the same)
         /// and dimension one indicates the number of time series.</param>
         /// <returns>The calculated local maximals for each time series in array.</returns>
-        public static array.Array LocalMaximals(array.Array array)
+        public static KhivaArray LocalMaximals(KhivaArray array)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.local_maximals(ref reference, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -590,12 +591,12 @@ namespace khiva.features
         /// <param name="array">Expects an input array whose dimension zero is the length of the
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <returns>The length of the longest consecutive subsequence in the input time series that is bigger than the mean.</returns>
-        public static array.Array LongestStrikeAboveMean(array.Array array)
+        public static KhivaArray LongestStrikeAboveMean(KhivaArray array)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.longest_strike_above_mean(ref reference, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -604,12 +605,12 @@ namespace khiva.features
         /// <param name="array">Expects an input array whose dimension zero is the length of the
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <returns>The length of the longest consecutive subsequence in the input time series that is below the mean.</returns>
-        public static array.Array LongestStrikeBelowMean(array.Array array)
+        public static KhivaArray LongestStrikeBelowMean(KhivaArray array)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.longest_strike_below_mean(ref reference, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
        
         /// <summary>
@@ -626,12 +627,12 @@ namespace khiva.features
         /// <param name="m">Order of polynom to fit for estimating fixed points of dynamics.</param>
         /// <param name="r">Number of quantiles to use for averaging.</param>
         /// <returns>Largest fixed point of deterministic dynamics.</returns>
-        public static array.Array MaxLangevinFixedPoint(array.Array array, int m, float r)
+        public static KhivaArray MaxLangevinFixedPoint(KhivaArray array, int m, float r)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.max_langevin_fixed_point(ref reference, ref m, ref r, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -640,12 +641,12 @@ namespace khiva.features
         /// <param name="array">Expects an input array whose dimension zero is the length of the
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <returns>The maximum value of each time series within array.</returns>
-        public static array.Array Maximum(array.Array array)
+        public static KhivaArray Maximum(KhivaArray array)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.maximum(ref reference, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -654,12 +655,12 @@ namespace khiva.features
         /// <param name="array">Expects an input array whose dimension zero is the length of the
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <returns>The mean value of each time series within array.</returns>
-        public static array.Array Mean(array.Array array)
+        public static KhivaArray Mean(KhivaArray array)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.mean(ref reference, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -668,12 +669,12 @@ namespace khiva.features
         /// <param name="array">Expects an input array whose dimension zero is the length of the
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <returns>The maximum value of each time series within array.</returns>
-        public static array.Array MeanAbsoluteChange(array.Array array)
+        public static KhivaArray MeanAbsoluteChange(KhivaArray array)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.mean_absolute_change(ref reference, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -682,12 +683,12 @@ namespace khiva.features
         /// <param name="array">Expects an input array whose dimension zero is the length of the
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <returns>The mean over the differences between subsequent time series values.</returns>
-        public static array.Array MeanChange(array.Array array)
+        public static KhivaArray MeanChange(KhivaArray array)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.mean_change(ref reference, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -696,12 +697,12 @@ namespace khiva.features
         /// <param name="array">Expects an input array whose dimension zero is the length of the
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <returns>The mean value of a central approximation of the second derivative for each time series.</returns>
-        public static array.Array MeanSecondDerivativeCentral(array.Array array)
+        public static KhivaArray MeanSecondDerivativeCentral(KhivaArray array)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.mean_second_derivative_central(ref reference, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -710,12 +711,12 @@ namespace khiva.features
         /// <param name="array">Expects an input array whose dimension zero is the length of the
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <returns>The median value of each time series within array.</returns>
-        public static array.Array Median(array.Array array)
+        public static KhivaArray Median(KhivaArray array)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.median(ref reference, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -724,12 +725,12 @@ namespace khiva.features
         /// <param name="array">Expects an input array whose dimension zero is the length of the
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <returns>The minimum value of each time series within array.</returns>
-        public static array.Array Minimum(array.Array array)
+        public static KhivaArray Minimum(KhivaArray array)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.minimum(ref reference, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -741,12 +742,12 @@ namespace khiva.features
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <param name="m">The m value.</param>
         /// <returns>The number of m-crossings of each time series within array.</returns>
-        public static array.Array NumberCrossingM(array.Array array, int m)
+        public static KhivaArray NumberCrossingM(KhivaArray array, int m)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.number_crossing_m(ref reference, ref m, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -758,12 +759,12 @@ namespace khiva.features
         /// and dimension one indicates the number of time series.</param>
         /// <param name="max_w">The maximum width to consider.</param>
         /// <returns>The number of peaks for each time series.</returns>
-        public static array.Array NumberCwtPeaks(array.Array array, int max_w)
+        public static KhivaArray NumberCwtPeaks(KhivaArray array, int max_w)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.number_cwt_peaks(ref reference, ref max_w, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -775,12 +776,12 @@ namespace khiva.features
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <param name="n">The support of the peak.</param>
         /// <returns>The number of peaks of at least support \f$n\f$.</returns>
-        public static array.Array NumberPeaks(array.Array array, int n)
+        public static KhivaArray NumberPeaks(KhivaArray array, int n)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.number_peaks(ref reference, ref n, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -808,14 +809,14 @@ namespace khiva.features
         /// dimension one indicates the number of time series.</param>
         /// <param name="lags">Indicates the lags to be calculated.</param>
         /// <returns>Returns partial autocorrelation for each time series for the given lag.</returns>
-        public static array.Array PartialAutocorrelation(array.Array array, array.Array lags)
+        public static KhivaArray PartialAutocorrelation(KhivaArray array, KhivaArray lags)
         {
             IntPtr reference = array.Reference;
             IntPtr lagsReference = lags.Reference;
             interop.DLLFeatures.partial_autocorrelation(ref reference, ref lagsReference, out IntPtr result);
             array.Reference = reference;
             lags.Reference = lagsReference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -830,12 +831,12 @@ namespace khiva.features
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <param name="is_sorted">Indicates if the input time series is sorted or not. Defaults to false.</param>
         /// <returns>Returns the percentage of unique values, that are present in the time series more than once.</returns>
-        public static array.Array PercentageOfReoccurringDatapointsToAllDatapoints(array.Array array, bool is_sorted=false)
+        public static KhivaArray PercentageOfReoccurringDatapointsToAllDatapoints(KhivaArray array, bool is_sorted=false)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.percentage_of_reoccurring_datapoints_to_all_datapoints(ref reference, ref is_sorted, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -850,12 +851,12 @@ namespace khiva.features
         /// and dimension one indicates the number of time series.</param>
         /// <param name="is_sorted">Indicates if the input time series is sorted or not. Defaults to false.</param>
         /// <returns>Returns the percentage of unique values, that are present in the time series more than once.</returns>
-        public static array.Array PercentageOfReoccurringValuesToAllValues(array.Array array, bool is_sorted=false)
+        public static KhivaArray PercentageOfReoccurringValuesToAllValues(KhivaArray array, bool is_sorted=false)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.percentage_of_reoccurring_values_to_all_values(ref reference, ref is_sorted, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -867,14 +868,14 @@ namespace khiva.features
         /// <param name="q">Percentile(s) at which to extract score(s). One or many.</param>
         /// <param name="precision">Number of decimals expected. Defaults to 1e8F</param>
         /// <returns>Values at the given quantile.</returns>
-        public static array.Array Quantile(array.Array array, array.Array q, float precision = 1e8F)
+        public static KhivaArray Quantile(KhivaArray array, KhivaArray q, float precision = 1e8F)
         {
             IntPtr reference = array.Reference;
             IntPtr qReference = q.Reference;
             interop.DLLFeatures.quantile(ref reference, ref qReference, ref precision, out IntPtr result);
             array.Reference = reference;
             q.Reference = qReference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -885,12 +886,12 @@ namespace khiva.features
         /// <param name="min">Value that sets the lower limit.</param>
         /// <param name="max">Value that sets the upper limit.</param>
         /// <returns>Values at the given range.</returns>
-        public static array.Array RangeCount(array.Array array, float min, float max)
+        public static KhivaArray RangeCount(KhivaArray array, float min, float max)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.range_count(ref reference, ref min, ref max, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
        
         /// <summary>
@@ -902,12 +903,12 @@ namespace khiva.features
         /// <param name="r"> Number of times that the values should be away from.</param>
         /// <returns>The ratio of values that are more than \f$r*std(x)\f$ (so \f$r\f$ sigma) away from the mean of
         /// \f$x\f$.</returns>
-        public static array.Array RatioBeyondRSigma(array.Array array, float r)
+        public static KhivaArray RatioBeyondRSigma(KhivaArray array, float r)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.ratio_beyond_r_sigma(ref reference, ref r, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -921,12 +922,12 @@ namespace khiva.features
         /// <param name="array">Expects an input array whose dimension zero is the length of the time series (all the same) and
         /// dimension one indicates the number of time series.</param>
         /// <returns>The ratio of unique values with respect to the total number of values.</returns>
-        public static array.Array RatioValueNumberToTimeSeriesLength(array.Array array)
+        public static KhivaArray RatioValueNumberToTimeSeriesLength(KhivaArray array)
         {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.ratio_value_number_to_time_series_length(ref reference, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -943,12 +944,12 @@ namespace khiva.features
         /// series.</param>
         /// <returns>An array with the same dimensions as array, whose values (time series in dimension 0)
         /// contains the vectorized sample entropy for all the input time series in array.</returns>
-    public static array.Array SampleEntropy(array.Array array)
+    public static KhivaArray SampleEntropy(KhivaArray array)
        {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.sample_entropy(ref reference, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -958,13 +959,13 @@ namespace khiva.features
         /// <param name="array">Expects an input array whose dimension zero is the length of the
         /// time series(all the same) and dimension one indicates the number of time
         /// series.</param>
-        /// <returns>Array containing the skewness of each time series in array.</returns>
-        public static array.Array Skewness(array.Array array)
+        /// <returns>KhivaArray containing the skewness of each time series in array.</returns>
+        public static KhivaArray Skewness(KhivaArray array)
        {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.skewness(ref reference, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -982,13 +983,13 @@ namespace khiva.features
         /// <param name="array">Expects an input array whose dimension zero is the length of the time series (all the same) and
         /// dimension one indicates the number of time series.</param>
         /// <param name="coeff">The coefficient to be returned.</param>
-        /// <returns>Array containing the power spectrum of the different frequencies for each time series in array.</returns>
-        public static array.Array SpktWelchDensity(array.Array array, int coeff)
+        /// <returns>KhivaArray containing the power spectrum of the different frequencies for each time series in array.</returns>
+        public static KhivaArray SpktWelchDensity(KhivaArray array, int coeff)
        {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.spkt_welch_density(ref reference, ref coeff, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -997,12 +998,12 @@ namespace khiva.features
         /// <param name="array">Expects an input array whose dimension zero is the length of the
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <returns>The standard deviation of each time series within array.</returns>
-        public static array.Array StandardDeviation(array.Array array)
+        public static KhivaArray StandardDeviation(KhivaArray array)
        {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.standard_deviation(ref reference, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -1012,12 +1013,12 @@ namespace khiva.features
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <param name="is_sorted">Indicates if the input time series is sorted or not. Defaults to false.</param>
         /// <returns>Returns the sum of all data points, that are present in the time series more than once.</returns>
-        public static array.Array SumOfReoccurringDatapoints(array.Array array, bool is_sorted = false)
+        public static KhivaArray SumOfReoccurringDatapoints(KhivaArray array, bool is_sorted = false)
        {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.sum_of_reoccurring_datapoints(ref reference, ref is_sorted, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -1027,12 +1028,12 @@ namespace khiva.features
         /// and dimension one indicates the number of time series.</param>
         /// <param name="is_sorted">Indicates if the input time series is sorted or not. Defaults to false.</param>
         /// <returns>Returns the sum of all values, that are present in the time series more than once.</returns>
-        public static array.Array SumOfReoccurringValues(array.Array array, bool is_sorted = false)
+        public static KhivaArray SumOfReoccurringValues(KhivaArray array, bool is_sorted = false)
        {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.sum_of_reoccurring_values(ref reference, ref is_sorted, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -1041,12 +1042,12 @@ namespace khiva.features
         /// <param name="array">Expects an input array whose dimension zero is the length of the time series (all the same) and
         /// dimension one indicates the number of time series.</param>
         /// <returns>An array containing the sum of values in each time series.</returns>
-        public static array.Array SumValues(array.Array array)
+        public static KhivaArray SumValues(KhivaArray array)
        {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.sum_values(ref reference, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -1059,12 +1060,12 @@ namespace khiva.features
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <param name="r">The percentage of the range to compare with.</param>
         /// <returns>An array denoting if the input time series look symmetric.</returns>
-        public static array.Array SymmetryLooking(array.Array array, float r)
+        public static KhivaArray SymmetryLooking(KhivaArray array, float r)
        {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.symmetry_looking(ref reference, ref r, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -1086,12 +1087,12 @@ namespace khiva.features
         /// dimension one indicates the number of time series.</param>
         /// <param name="lag">The lag to be computed.</param>
         /// <returns>An array containing the time reversal asymetry statistic value in each time series.</returns>
-        public static array.Array TimeReversalAsymmetryStatistic(array.Array array, int lag)
+        public static KhivaArray TimeReversalAsymmetryStatistic(KhivaArray array, int lag)
        {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.time_reversal_asymmetry_statistic(ref reference, ref lag, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -1101,12 +1102,12 @@ namespace khiva.features
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <param name="v">The value to be counted.</param>
         /// <returns>An array containing the count of the given value in each time series.</returns>
-        public static array.Array ValueCount(array.Array array, float v)
+        public static KhivaArray ValueCount(KhivaArray array, float v)
        {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.value_count(ref reference, ref v, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -1115,12 +1116,12 @@ namespace khiva.features
         /// <param name="array">Expects an input array whose dimension zero is the length of the time series (all the same) and
         /// dimension one indicates the number of time series.</param>
         /// <returns>An array containing the variance in each time series.</returns>
-        public static array.Array Variance(array.Array array)
+        public static KhivaArray Variance(KhivaArray array)
        {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.variance(ref reference, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));
+            return (new KhivaArray(result));
         }
 
         /// <summary>
@@ -1130,12 +1131,12 @@ namespace khiva.features
         /// <param name="array">Expects an input array whose dimension zero is the length of the time series (all the same) and
         /// dimension one indicates the number of time series.</param>
         /// <returns>An array denoting if the variance of array is greater than the standard deviation.</returns>
-        public static array.Array VarianceLargerThanStandardDeviation(array.Array array)
+        public static KhivaArray VarianceLargerThanStandardDeviation(KhivaArray array)
        {
             IntPtr reference = array.Reference;
             interop.DLLFeatures.variance_larger_than_standard_deviation(ref reference, out IntPtr result);
             array.Reference = reference;
-            return (new array.Array(result));}
+            return (new KhivaArray(result));}
        
     }
 }

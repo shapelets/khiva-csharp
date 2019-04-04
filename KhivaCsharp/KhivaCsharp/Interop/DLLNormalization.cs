@@ -48,7 +48,7 @@ namespace khiva.interop
          /// <param name="low"> Minimum final value (Defaults to 0.0).</param>
          /// <param name="epsilon">Safeguard for constant (or near constant) time series as the operation implies a unit scale operation
          /// between min and max values in the tss.</param>
-         /// <param name="result">Array with the same dimensions as tss, whose values (time series in dimension 0) have been
+         /// <param name="result">KhivaArray with the same dimensions as tss, whose values (time series in dimension 0) have been
          /// normalized by maximum and minimum values, and scaled as per high and low parameters.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void max_min_norm([In] ref IntPtr tss, [In] ref double high, [In] ref double low, [In] ref double epsilon, [Out] out IntPtr result);
@@ -99,7 +99,7 @@ namespace khiva.interop
          /// <param name="tss">Time series concatenated in a single row.</param>
          /// <param name="epsilon">Minimum standard deviation to consider. It acts as a gatekeeper for
          /// those time series that may be constant or near constant.</param>
-         /// <param name="result">Array with the same dimensions as tss where the time series have been
+         /// <param name="result">KhivaArray with the same dimensions as tss where the time series have been
          /// adjusted for zero mean and one as standard deviation.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void znorm([In] ref IntPtr tss, [In] ref double epsilon, [Out] out IntPtr result);

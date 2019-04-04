@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using khiva.array;
 
 namespace khiva
 {
@@ -29,14 +30,14 @@ namespace khiva
             /// <param name="a">A coefficient matrix containing the coefficients of the linear equation problem to solve.</param>
             /// <param name="b">A vector with the measured values.</param>
             /// <returns>Contains the solution to the linear equation problem minimizing the norm 2.</returns>
-            public static array.Array Lls(array.Array a, array.Array b)
+            public static KhivaArray Lls(KhivaArray a, KhivaArray b)
             {
                 IntPtr aReference = a.Reference;
                 IntPtr bReference = b.Reference;
                 interop.DLLLinalg.lls(ref aReference, ref bReference, out IntPtr result);
                 a.Reference = aReference;
                 b.Reference = bReference;
-                return (new array.Array(result));
+                return (new KhivaArray(result));
             }
         }
     }

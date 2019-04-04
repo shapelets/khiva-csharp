@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using khiva.array;
 
 namespace khiva
 {
@@ -49,7 +50,7 @@ namespace khiva
             /// The distance of the best N discords
             /// The indices of the best N discords
             /// The indices of the query sequences that produced the "N" bigger discords.</returns>
-            public static (array.Array, array.Array, array.Array) FindbestNDiscords(array.Array profile, array.Array index, long m, long n, bool self_join = false)
+            public static ValueTuple<KhivaArray, KhivaArray, KhivaArray> FindbestNDiscords(KhivaArray profile, KhivaArray index, long m, long n, bool self_join = false)
             {
                 IntPtr profileReference = profile.Reference;
                 IntPtr indexReference = index.Reference;
@@ -58,9 +59,9 @@ namespace khiva
                                                         ref self_join);
                 profile.Reference = profileReference;
                 index.Reference = indexReference;
-                var tuple = (distances: new array.Array(discords_distances),
-                             indices: new array.Array(discords_indices),
-                             subsequence: new array.Array(subsequence_indices));
+                var tuple = (distances: new KhivaArray(discords_distances),
+                             indices: new KhivaArray(discords_indices),
+                             subsequence: new KhivaArray(subsequence_indices));
                 return tuple;
             }
            
@@ -78,7 +79,7 @@ namespace khiva
             /// The indices of the best N motifs.
             /// The indices of the query sequences that produced
             /// the minimum reported in the motifs.</returns>
-            public static (array.Array, array.Array, array.Array) FindbestNMotifs(array.Array profile, array.Array index, long m, long n, bool self_join=false)
+            public static ValueTuple<KhivaArray, KhivaArray, KhivaArray> FindbestNMotifs(KhivaArray profile, KhivaArray index, long m, long n, bool self_join=false)
             {
                 IntPtr profileReference = profile.Reference;
                 IntPtr indexReference = index.Reference;
@@ -87,9 +88,9 @@ namespace khiva
                                                         ref self_join);
                 profile.Reference = profileReference;
                 index.Reference = indexReference;
-                var tuple = (distances: new array.Array(motif_distances),
-                             indices: new array.Array(motif_indices),
-                             subsequence: new array.Array(subsequence_indices));
+                var tuple = (distances: new KhivaArray(motif_distances),
+                             indices: new KhivaArray(motif_indices),
+                             subsequence: new KhivaArray(subsequence_indices));
                 return tuple;
             }
 
@@ -106,7 +107,7 @@ namespace khiva
             /// <returns>Tuple with:
             /// The matrix profile, whichlects the distance to the closer element of the subsequence from 'tssa' in 'tssb'.
             /// The matrix profile index, which points to where the aforementioned minimum is located.</returns>
-            public static (array.Array, array.Array) Stomp(array.Array tssa, array.Array tssb, long m)
+            public static ValueTuple<KhivaArray, KhivaArray> Stomp(KhivaArray tssa, KhivaArray tssb, long m)
             {
                 IntPtr aReference = tssa.Reference;
                 IntPtr bReference = tssb.Reference;
@@ -114,8 +115,8 @@ namespace khiva
                                         out IntPtr p, out IntPtr i);
                 tssa.Reference = aReference;
                 tssb.Reference = bReference;
-                var tuple = (p: new array.Array(p),
-                             i: new array.Array(i));
+                var tuple = (p: new KhivaArray(p),
+                             i: new KhivaArray(i));
                 return tuple;
             }
 
@@ -131,14 +132,14 @@ namespace khiva
             /// <returns>Tuple with:
             /// The matrix profile, whichlects the distance to the closer element of the subsequence from 'tss' in a different location of itself
             /// The matrix profile index, which points to where the aforementioned minimum is located</returns>
-            public static (array.Array, array.Array) StompSelfJoin(array.Array tss, long m)
+            public static ValueTuple<KhivaArray, KhivaArray> StompSelfJoin(KhivaArray tss, long m)
             {
                 IntPtr reference = tss.Reference;
                 interop.DLLMatrix.stomp_self_join(ref reference, ref m,
                                         out IntPtr p, out IntPtr i);
                 tss.Reference = reference;
-                var tuple = (p: new array.Array(p),
-                             i: new array.Array(i));
+                var tuple = (p: new KhivaArray(p),
+                             i: new KhivaArray(i));
                 return tuple;
             }
         }

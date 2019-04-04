@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using khiva.array;
 
 namespace khiva
 {
@@ -41,13 +42,13 @@ namespace khiva
             /// <param name="n_columns_key">Number of columns conforming the key.</param>
             /// <param name="n_columns_value">Number of columns conforming the value (they are expected to be consecutive to the column</param>
             /// <returns>An array with the values of the group keys aggregated using the aggregation_function.</returns>
-            public static array.Array GroupBy(array.Array array, int aggregation_function, int n_columns_key=1, int n_columns_value=1)
+            public static KhivaArray GroupBy(KhivaArray array, int aggregation_function, int n_columns_key=1, int n_columns_value=1)
             {
                 IntPtr reference = array.Reference;
                 interop.DLLRegularization.group_by(ref reference, ref aggregation_function, ref n_columns_key, ref n_columns_value,
                                                     out IntPtr result);
                 array.Reference = reference;
-                return (new array.Array(result));
+                return (new KhivaArray(result));
             }
         }
     }
