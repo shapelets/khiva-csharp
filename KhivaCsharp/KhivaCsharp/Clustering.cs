@@ -31,9 +31,9 @@ namespace khiva
             /// <param name="k">The number of means to be computed.</param>
             /// <param name="tolerance">The error tolerance to stop the computation of the centroids.</param>
             /// <param name="max_iterations">The maximum number of iterations allowed.</param>
-            /// <returns> Tuple with:
-            /// <description>The resulting means or centroids.</description>
-            /// The resulting labels of each time series which is the closest centroid.
+            /// <returns> Tuple with
+            /// the resulting means or centroids and
+            /// the resulting labels of each time series which is the closest centroid.
             /// </returns>
             public static (array.Array, array.Array) KMeans(array.Array arr, int k, float tolerance = 1e-10F, int max_iterations = 100)
             {
@@ -55,13 +55,9 @@ namespace khiva
             /// <param name="k">The number of means to be computed.</param>
             /// <param name="tolerance">The error tolerance to stop the computation of the centroids.</param>
             /// <param name="max_iterations">The maximum number of iterations allowed.</param>
-            /// <returns> Tuple with:
-            /// <list type="bullet">
-            /// <term>Centroids</term>
-            /// <description>The resulting means or centroids.</description>
-            /// <term>Labels</term>
-            /// <description>The resulting labels of each time series which is the closest centroid.</description>
-            /// </list>
+            /// <returns> Tuple with
+            /// the resulting means or centroids and
+            /// the resulting labels of each time series which is the closest centroid.
             /// </returns>
             public static (array.Array, array.Array) KShape(array.Array arr, int k, float tolerance = 1e-10F, int max_iterations = 100)
             {
