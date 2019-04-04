@@ -22,8 +22,8 @@ namespace khiva
 
             /// <summary>
             /// Calculates the k-means algorithm.
-            /// <para>[1] S.Lloyd. 1982. Least squares quantization in PCM.IEEE Transactions on Information Theory, 28, 2,
-            /// Pages 129-137.</para>
+            /// [1] S.Lloyd. 1982. Least squares quantization in PCM.IEEE Transactions on Information Theory, 28, 2,
+            /// Pages 129-137.
             /// </summary>
             /// <param name="arr">Expects an input array whose dimension zero is the length of the time series (all the same) and
             ///                       dimension one indicates the number of time series.</param>
@@ -44,8 +44,8 @@ namespace khiva
 
             /// <summary>
             /// Calculates the k-shape algorithm.
-            /// <para>[1] John Paparrizos and Luis Gravano. 2016. k-Shape: Efficient and Accurate Clustering of Time Series.
-            /// SIGMOD Rec. 45, 1 (June 2016), 69-76.</para>
+            /// [1] John Paparrizos and Luis Gravano. 2016. k-Shape: Efficient and Accurate Clustering of Time Series.
+            /// SIGMOD Rec. 45, 1 (June 2016), 69-76.
             /// </summary>
             /// <param name="arr">Expects an input array whose dimension zero is the length of the time series (all the same) and
             ///                       dimension one indicates the number of time series.</param>

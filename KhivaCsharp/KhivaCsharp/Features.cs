@@ -93,12 +93,12 @@ namespace khiva.features
         ///              default : mean
         ///         }
         ///</param>
-        /// <returns>Tuple with:
-        /// Slope of the regression line.
-        /// Intercept of the regression line.
-        /// Correlation coefficient.
-        /// Two-sided p-value for a hypothesis test whose null hypothesis is that the slope is zero, using Wald Test with t-distribution of the test statistic.
-        /// Standard error of the estimated gradient.</returns>
+        /// <returns>Tuple with:</returns>
+        /// <returns>Slope of the regression line.</returns>
+        /// <returns>Intercept of the regression line.</returns>
+        /// <returns>Correlation coefficient.</returns>
+        /// <returns>Two-sided p-value for a hypothesis test whose null hypothesis is that the slope is zero, using Wald Test with t-distribution of the test statistic.</returns>
+        /// <returns>Standard error of the estimated gradient.</returns>
         public static (array.Array, array.Array, array.Array, array.Array, array.Array) AggregatedLinearTrend(array.Array array, long chunkSize, int aggregationFunction)
         {
             IntPtr reference = array.Reference;
