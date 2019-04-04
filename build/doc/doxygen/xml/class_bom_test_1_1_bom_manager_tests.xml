@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_bom_test_1_1_bom_manager_tests" kind="class" language="C#" prot="public">
+    <compoundname>BomTest::BomManagerTests</compoundname>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_bom_test_1_1_bom_manager_tests_1a3ccc7263a8e8f40d49e2d23c084d7b18" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void BomTest.BomManagerTests.Sum_Is_Zero_When_No_Entries</definition>
+        <argsstring>()</argsstring>
+        <name>Sum_Is_Zero_When_No_Entries</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/packages/OpenCover.4.6.519/SampleSln/BomTest/BomManagerTests.cs" line="16" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/packages/OpenCover.4.6.519/SampleSln/BomTest/BomManagerTests.cs" bodystart="16" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bom_test_1_1_bom_manager_tests_1aff82aa5344cd370d227317bbecbb4846" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void BomTest.BomManagerTests.Sum_Is_Calculated_Correctly_When_Entries_Supplied</definition>
+        <argsstring>(int[] data, int expected)</argsstring>
+        <name>Sum_Is_Calculated_Correctly_When_Entries_Supplied</name>
+        <param>
+          <type>int []</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>expected</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/packages/OpenCover.4.6.519/SampleSln/BomTest/BomManagerTests.cs" line="26" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/packages/OpenCover.4.6.519/SampleSln/BomTest/BomManagerTests.cs" bodystart="26" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bom_test_1_1_bom_manager_tests_1a15f99229c5e904f90e0cf1dead175869" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void BomTest.BomManagerTests.Sum_Is_Zero_When_Null_Collection</definition>
+        <argsstring>()</argsstring>
+        <name>Sum_Is_Zero_When_Null_Collection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/packages/OpenCover.4.6.519/SampleSln/BomTest/BomManagerTests.cs" line="33" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/packages/OpenCover.4.6.519/SampleSln/BomTest/BomManagerTests.cs" bodystart="33" bodyend="37"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/packages/OpenCover.4.6.519/SampleSln/BomTest/BomManagerTests.cs" line="14" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/packages/OpenCover.4.6.519/SampleSln/BomTest/BomManagerTests.cs" bodystart="13" bodyend="38"/>
+    <listofallmembers>
+      <member refid="class_bom_test_1_1_bom_manager_tests_1aff82aa5344cd370d227317bbecbb4846" prot="public" virt="non-virtual"><scope>BomTest::BomManagerTests</scope><name>Sum_Is_Calculated_Correctly_When_Entries_Supplied</name></member>
+      <member refid="class_bom_test_1_1_bom_manager_tests_1a3ccc7263a8e8f40d49e2d23c084d7b18" prot="public" virt="non-virtual"><scope>BomTest::BomManagerTests</scope><name>Sum_Is_Zero_When_No_Entries</name></member>
+      <member refid="class_bom_test_1_1_bom_manager_tests_1a15f99229c5e904f90e0cf1dead175869" prot="public" virt="non-virtual"><scope>BomTest::BomManagerTests</scope><name>Sum_Is_Zero_When_Null_Collection</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,381 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="classkhiva_1_1interop_1_1_d_l_l_matrix" kind="class" language="C#" prot="public">
+    <compoundname>khiva::interop::DLLMatrix</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_matrix_1a44df4cfe48e7ef33f60eda2c88889d1e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLMatrix.find_best_n_discords</definition>
+        <argsstring>([In] ref IntPtr profile, [In] ref IntPtr index, ref long m, ref long n, [Out] out IntPtr discord_distances, [Out] out IntPtr discord_indices, [Out] out IntPtr subsequence_indices, ref bool self_join)</argsstring>
+        <name>find_best_n_discords</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>profile</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>ref long</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>ref long</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>discord_distances</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>discord_indices</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>subsequence_indices</declname>
+        </param>
+        <param>
+          <type>ref bool</type>
+          <declname>self_join</declname>
+        </param>
+        <briefdescription>
+<para>Primitive of the findBestNDiscords function. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>profile</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The matrix profile containing the minimum distance of each subsequence</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The matrix profile index containing the index of the most similar subsequence</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>length_profile</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of the matrix profile</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Subsequence length value used to calculate the input matrix profile.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of discords to extract</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>discord_distances</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The distance of the best N discords</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>discord_indices</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The indices of the best N discords</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>subsequence_indices</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The indices of the query sequences that produced the &quot;N&quot; bigger discords.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>self_join</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indicates whether the input profile comes from a self join operation or not. It determines whether the mirror similar region is included in the output or not.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLMatrix.cs" line="39" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_matrix_1a6d7807c201a0b105ab3ab608b6e45a21" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLMatrix.find_best_n_motifs</definition>
+        <argsstring>([In] ref IntPtr profile, [In] ref IntPtr index, ref long m, ref long n, [Out] out IntPtr motif_distances, [Out] out IntPtr motif_indices, [Out] out IntPtr subsequence_indices, ref bool self_join)</argsstring>
+        <name>find_best_n_motifs</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>profile</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>ref long</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>ref long</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>motif_distances</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>motif_indices</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>subsequence_indices</declname>
+        </param>
+        <param>
+          <type>ref bool</type>
+          <declname>self_join</declname>
+        </param>
+        <briefdescription>
+<para>Primitive of the findBestNMotifs function. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>profile</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The matrix profile containing the minimum distance of each subsequence.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The matrix profile index containing where each minimum occurs.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>length_profile</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of the matrix profile.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Subsequence length value used to calculate the input matrix profile.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of motifs to extract.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>motif_distances</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The distance of the best N motifs.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>motif_indices</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The indices of the best N motifs.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>subsequence_indices</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The indices of the query sequences that produced the minimum reported in the motifs.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>self_join</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indicates whether the input profile comes from a self join operation or not. It determines whether the mirror similar region is included in the output or not.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLMatrix.cs" line="59" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_matrix_1a8e4c34c4cbc1f5258d20525b5dd91112" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLMatrix.stomp</definition>
+        <argsstring>([In] ref IntPtr tssa, [In] ref IntPtr tssb, ref long m, [Out] out IntPtr p, [Out] out IntPtr i)</argsstring>
+        <name>stomp</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>tssa</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>tssb</declname>
+        </param>
+        <param>
+          <type>ref long</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+<para>Primitive of the STOMP algorithm. </para>        </briefdescription>
+        <detaileddescription>
+<para>[1] Yan Zhu, Zachary Zimmerman, Nader Shakibay Senobari, Chin-Chia Michael Yeh, Gareth Funning, Abdullah Mueen, Philip Brisk and Eamonn Keogh (2016). Matrix Profile II: Exploiting a Novel Algorithm and GPUs to break the one Hundred Million Barrier for Time Series Motifs and Joins. IEEE ICDM 2016. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tssa</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Query time series</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tssb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference time series</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a long with the length of the subsequence.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The matrix profile, which reflects the distance to the closer element of the subsequence from &apos;tssa&apos; in &apos;tssb&apos;.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The matrix profile index, which points to where the aforementioned minimum is located.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLMatrix.cs" line="77" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_matrix_1a965e2ee319c1b66e483c2477849d3f83" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLMatrix.stomp_self_join</definition>
+        <argsstring>([In] ref IntPtr tss, ref long m, [Out] out IntPtr p, [Out] out IntPtr i)</argsstring>
+        <name>stomp_self_join</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>tss</declname>
+        </param>
+        <param>
+          <type>ref long</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+<para>Primitive of the STOMP self join algorithm. </para>        </briefdescription>
+        <detaileddescription>
+<para>[1] Yan Zhu, Zachary Zimmerman, Nader Shakibay Senobari, Chin-Chia Michael Yeh, Gareth Funning, Abdullah Mueen, Philip Brisk and Eamonn Keogh (2016). Matrix Profile II: Exploiting a Novel Algorithm and GPUs to break the one Hundred Million Barrier for Time Series Motifs and Joins. IEEE ICDM 2016. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Query and reference time series</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a long with the length of the subsequence.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The matrix profile, which reflects the distance to the closer element of the subsequence from &apos;tss&apos; in a different location of itself</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The matrix profile index, which points to where the aforementioned minimum is located</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLMatrix.cs" line="92" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classkhiva_1_1_khiva" kindref="compound">Khiva</ref> Matrix Profile class containing matrix profile methods. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLMatrix.cs" line="20" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLMatrix.cs" bodystart="19" bodyend="93"/>
+    <listofallmembers>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_matrix_1a44df4cfe48e7ef33f60eda2c88889d1e" prot="public" virt="non-virtual"><scope>khiva::interop::DLLMatrix</scope><name>find_best_n_discords</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_matrix_1a6d7807c201a0b105ab3ab608b6e45a21" prot="public" virt="non-virtual"><scope>khiva::interop::DLLMatrix</scope><name>find_best_n_motifs</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_matrix_1a8e4c34c4cbc1f5258d20525b5dd91112" prot="public" virt="non-virtual"><scope>khiva::interop::DLLMatrix</scope><name>stomp</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_matrix_1a965e2ee319c1b66e483c2477849d3f83" prot="public" virt="non-virtual"><scope>khiva::interop::DLLMatrix</scope><name>stomp_self_join</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

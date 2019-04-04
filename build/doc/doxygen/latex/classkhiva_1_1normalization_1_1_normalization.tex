@@ -1,0 +1,223 @@
+\hypertarget{classkhiva_1_1normalization_1_1_normalization}{}\section{khiva.\+normalization.\+Normalization Class Reference}
+\label{classkhiva_1_1normalization_1_1_normalization}\index{khiva.\+normalization.\+Normalization@{khiva.\+normalization.\+Normalization}}
+
+
+\mbox{\hyperlink{classkhiva_1_1_khiva}{Khiva}} \mbox{\hyperlink{classkhiva_1_1normalization_1_1_normalization}{Normalization}} class containing several normalization methods.  
+
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} \mbox{\hyperlink{classkhiva_1_1normalization_1_1_normalization_a291b871a81c368b7d3319858edcf1de0}{Decimal\+Scaling\+Norm}} (\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} tss)
+\begin{DoxyCompactList}\small\item\em Normalizes the given time series according to its maximum value and adjusts each value within the range (-\/1, 1). \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classkhiva_1_1normalization_1_1_normalization_acfd4bed1b714bd16d51831c207db9c11}{Decimal\+Scaling\+Norm}} (ref \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} tss)
+\begin{DoxyCompactList}\small\item\em Same as decimal\+\_\+scaling\+\_\+norm, but it performs the operation in place, without allocating further memory. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} \mbox{\hyperlink{classkhiva_1_1normalization_1_1_normalization_ab3eae533383b43c78d27aac6d61f257c}{Max\+Min\+Norm}} (\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} tss, double high, double low, double epsilon=0.\+00000001)
+\begin{DoxyCompactList}\small\item\em Normalizes the given time series according to its minimum and maximum value and adjusts each value within the range\mbox{[}low, high\mbox{]}. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classkhiva_1_1normalization_1_1_normalization_af484ba6fbbec31a345f085037d9f41de}{Max\+Min\+Norm}} (ref \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} tss, double high, double low, double epsilon=0.\+00000001)
+\begin{DoxyCompactList}\small\item\em Same as max\+\_\+min\+\_\+norm, but it performs the operation in place, without allocating further memory. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} \mbox{\hyperlink{classkhiva_1_1normalization_1_1_normalization_a415116b28fbc879cb8d303d23fa27960}{Mean\+Norm}} (\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} tss)
+\begin{DoxyCompactList}\small\item\em Normalizes the given time series according to its maximum-\/minimum value and its mean. It follows the following formulae\+: \[ \acute{x} = \frac{x - mean(x)}{max(x) - min(x)}. \] \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classkhiva_1_1normalization_1_1_normalization_a0ea50b378b754403bf80a895a7ddb63f}{Mean\+Norm}} (ref \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} tss)
+\begin{DoxyCompactList}\small\item\em Normalizes the given time series according to its maximum-\/minimum value and its mean. It follows the following formulae\+: \[ \acute{x} = \frac{x - mean(x)}{max(x) - min(x)}. \] \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} \mbox{\hyperlink{classkhiva_1_1normalization_1_1_normalization_a20d08a7e62353599b85bb223ee2b07bc}{Znorm}} (\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} tss, double epsilon)
+\begin{DoxyCompactList}\small\item\em Calculates a new set of times series with zero mean and standard deviation one. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classkhiva_1_1normalization_1_1_normalization_a708ca228ebe1822c77eabf8a78338747}{Znorm}} (ref \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} tss, double epsilon)
+\begin{DoxyCompactList}\small\item\em Adjusts the time series in the given input and performs z-\/norm inplace(without allocating further memory). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{classkhiva_1_1_khiva}{Khiva}} \mbox{\hyperlink{classkhiva_1_1normalization_1_1_normalization}{Normalization}} class containing several normalization methods. 
+
+
+
+Definition at line 20 of file Normalization.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classkhiva_1_1normalization_1_1_normalization_a291b871a81c368b7d3319858edcf1de0}\label{classkhiva_1_1normalization_1_1_normalization_a291b871a81c368b7d3319858edcf1de0}} 
+\index{khiva\+::normalization\+::\+Normalization@{khiva\+::normalization\+::\+Normalization}!Decimal\+Scaling\+Norm@{Decimal\+Scaling\+Norm}}
+\index{Decimal\+Scaling\+Norm@{Decimal\+Scaling\+Norm}!khiva\+::normalization\+::\+Normalization@{khiva\+::normalization\+::\+Normalization}}
+\subsubsection{\texorpdfstring{Decimal\+Scaling\+Norm()}{DecimalScalingNorm()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} khiva.\+normalization.\+Normalization.\+Decimal\+Scaling\+Norm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}}}]{tss }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Normalizes the given time series according to its maximum value and adjusts each value within the range (-\/1, 1). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tss} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An array with the same dimensions as tss, whose values (time series in dimension 0) have been normalized by dividing each number by 10$^\wedge$j, where j is the number of integer digits of the max number in the time series.
+\end{DoxyReturn}
+
+
+Definition at line 31 of file Normalization.\+cs.
+
+\mbox{\Hypertarget{classkhiva_1_1normalization_1_1_normalization_acfd4bed1b714bd16d51831c207db9c11}\label{classkhiva_1_1normalization_1_1_normalization_acfd4bed1b714bd16d51831c207db9c11}} 
+\index{khiva\+::normalization\+::\+Normalization@{khiva\+::normalization\+::\+Normalization}!Decimal\+Scaling\+Norm@{Decimal\+Scaling\+Norm}}
+\index{Decimal\+Scaling\+Norm@{Decimal\+Scaling\+Norm}!khiva\+::normalization\+::\+Normalization@{khiva\+::normalization\+::\+Normalization}}
+\subsubsection{\texorpdfstring{Decimal\+Scaling\+Norm()}{DecimalScalingNorm()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void khiva.\+normalization.\+Normalization.\+Decimal\+Scaling\+Norm (\begin{DoxyParamCaption}\item[{ref \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}}}]{tss }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Same as decimal\+\_\+scaling\+\_\+norm, but it performs the operation in place, without allocating further memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tss} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 44 of file Normalization.\+cs.
+
+\mbox{\Hypertarget{classkhiva_1_1normalization_1_1_normalization_ab3eae533383b43c78d27aac6d61f257c}\label{classkhiva_1_1normalization_1_1_normalization_ab3eae533383b43c78d27aac6d61f257c}} 
+\index{khiva\+::normalization\+::\+Normalization@{khiva\+::normalization\+::\+Normalization}!Max\+Min\+Norm@{Max\+Min\+Norm}}
+\index{Max\+Min\+Norm@{Max\+Min\+Norm}!khiva\+::normalization\+::\+Normalization@{khiva\+::normalization\+::\+Normalization}}
+\subsubsection{\texorpdfstring{Max\+Min\+Norm()}{MaxMinNorm()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} khiva.\+normalization.\+Normalization.\+Max\+Min\+Norm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}}}]{tss,  }\item[{double}]{high,  }\item[{double}]{low,  }\item[{double}]{epsilon = {\ttfamily 0.00000001} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Normalizes the given time series according to its minimum and maximum value and adjusts each value within the range\mbox{[}low, high\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tss} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.\\
+\hline
+{\em high} & Maximum final value (Defaults to 1.\+0).\\
+\hline
+{\em low} & Minimum final value (Defaults to 0.\+0).\\
+\hline
+{\em epsilon} & Safeguard for constant (or near constant) time series as the operation implies a unit scale operation between min and max values in the tss.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array with the same dimensions as tss, whose values (time series in dimension 0) have been normalized by maximum and minimum values, and scaled as per high and low parameters.
+\end{DoxyReturn}
+
+
+Definition at line 62 of file Normalization.\+cs.
+
+\mbox{\Hypertarget{classkhiva_1_1normalization_1_1_normalization_af484ba6fbbec31a345f085037d9f41de}\label{classkhiva_1_1normalization_1_1_normalization_af484ba6fbbec31a345f085037d9f41de}} 
+\index{khiva\+::normalization\+::\+Normalization@{khiva\+::normalization\+::\+Normalization}!Max\+Min\+Norm@{Max\+Min\+Norm}}
+\index{Max\+Min\+Norm@{Max\+Min\+Norm}!khiva\+::normalization\+::\+Normalization@{khiva\+::normalization\+::\+Normalization}}
+\subsubsection{\texorpdfstring{Max\+Min\+Norm()}{MaxMinNorm()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void khiva.\+normalization.\+Normalization.\+Max\+Min\+Norm (\begin{DoxyParamCaption}\item[{ref \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}}}]{tss,  }\item[{double}]{high,  }\item[{double}]{low,  }\item[{double}]{epsilon = {\ttfamily 0.00000001} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Same as max\+\_\+min\+\_\+norm, but it performs the operation in place, without allocating further memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tss} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.\\
+\hline
+{\em high} & Maximum final value (Defaults to 1.\+0).\\
+\hline
+{\em low} & Minimum final value (Defaults to 0.\+0).\\
+\hline
+{\em epsilon} & Safeguard for constant (or near constant) time series as the operation implies a unit scale operation between min and max values in the tss.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 79 of file Normalization.\+cs.
+
+\mbox{\Hypertarget{classkhiva_1_1normalization_1_1_normalization_a415116b28fbc879cb8d303d23fa27960}\label{classkhiva_1_1normalization_1_1_normalization_a415116b28fbc879cb8d303d23fa27960}} 
+\index{khiva\+::normalization\+::\+Normalization@{khiva\+::normalization\+::\+Normalization}!Mean\+Norm@{Mean\+Norm}}
+\index{Mean\+Norm@{Mean\+Norm}!khiva\+::normalization\+::\+Normalization@{khiva\+::normalization\+::\+Normalization}}
+\subsubsection{\texorpdfstring{Mean\+Norm()}{MeanNorm()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} khiva.\+normalization.\+Normalization.\+Mean\+Norm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}}}]{tss }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Normalizes the given time series according to its maximum-\/minimum value and its mean. It follows the following formulae\+: \[ \acute{x} = \frac{x - mean(x)}{max(x) - min(x)}. \] 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tss} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An array with the same dimensions as tss, whose values (time series in dimension 0) have been normalized by substracting the mean from each number and dividing each number by $ max(x) - min(x)$, in the time series.
+\end{DoxyReturn}
+
+
+Definition at line 98 of file Normalization.\+cs.
+
+\mbox{\Hypertarget{classkhiva_1_1normalization_1_1_normalization_a0ea50b378b754403bf80a895a7ddb63f}\label{classkhiva_1_1normalization_1_1_normalization_a0ea50b378b754403bf80a895a7ddb63f}} 
+\index{khiva\+::normalization\+::\+Normalization@{khiva\+::normalization\+::\+Normalization}!Mean\+Norm@{Mean\+Norm}}
+\index{Mean\+Norm@{Mean\+Norm}!khiva\+::normalization\+::\+Normalization@{khiva\+::normalization\+::\+Normalization}}
+\subsubsection{\texorpdfstring{Mean\+Norm()}{MeanNorm()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void khiva.\+normalization.\+Normalization.\+Mean\+Norm (\begin{DoxyParamCaption}\item[{ref \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}}}]{tss }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Normalizes the given time series according to its maximum-\/minimum value and its mean. It follows the following formulae\+: \[ \acute{x} = \frac{x - mean(x)}{max(x) - min(x)}. \] 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tss} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 115 of file Normalization.\+cs.
+
+\mbox{\Hypertarget{classkhiva_1_1normalization_1_1_normalization_a20d08a7e62353599b85bb223ee2b07bc}\label{classkhiva_1_1normalization_1_1_normalization_a20d08a7e62353599b85bb223ee2b07bc}} 
+\index{khiva\+::normalization\+::\+Normalization@{khiva\+::normalization\+::\+Normalization}!Znorm@{Znorm}}
+\index{Znorm@{Znorm}!khiva\+::normalization\+::\+Normalization@{khiva\+::normalization\+::\+Normalization}}
+\subsubsection{\texorpdfstring{Znorm()}{Znorm()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} khiva.\+normalization.\+Normalization.\+Znorm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}}}]{tss,  }\item[{double}]{epsilon }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Calculates a new set of times series with zero mean and standard deviation one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tss} & Time series concatenated in a single row.\\
+\hline
+{\em epsilon} & Minimum standard deviation to consider. It acts as a gatekeeper for those time series that may be constant or near constant.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array with the same dimensions as tss where the time series have been adjusted for zero mean and one as standard deviation.
+\end{DoxyReturn}
+
+
+Definition at line 130 of file Normalization.\+cs.
+
+\mbox{\Hypertarget{classkhiva_1_1normalization_1_1_normalization_a708ca228ebe1822c77eabf8a78338747}\label{classkhiva_1_1normalization_1_1_normalization_a708ca228ebe1822c77eabf8a78338747}} 
+\index{khiva\+::normalization\+::\+Normalization@{khiva\+::normalization\+::\+Normalization}!Znorm@{Znorm}}
+\index{Znorm@{Znorm}!khiva\+::normalization\+::\+Normalization@{khiva\+::normalization\+::\+Normalization}}
+\subsubsection{\texorpdfstring{Znorm()}{Znorm()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void khiva.\+normalization.\+Normalization.\+Znorm (\begin{DoxyParamCaption}\item[{ref \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}}}]{tss,  }\item[{double}]{epsilon }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Adjusts the time series in the given input and performs z-\/norm inplace(without allocating further memory). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tss} & Expects an input array whose dimension zero is the length of the time series(all the same) and dimension one indicates the number of time series.\\
+\hline
+{\em epsilon} & Minimum standard deviation to consider. It acts as a gatekeeper for those time series that may be constant or near constant.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 145 of file Normalization.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_normalization_8cs}{Normalization.\+cs}}\end{DoxyCompactItemize}

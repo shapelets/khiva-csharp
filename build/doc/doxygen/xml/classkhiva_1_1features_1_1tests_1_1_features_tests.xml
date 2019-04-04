@@ -1,0 +1,953 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="classkhiva_1_1features_1_1tests_1_1_features_tests" kind="class" language="C#" prot="public">
+    <compoundname>khiva::features::tests::FeaturesTests</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a84b40d90e0416bcb899dda735d1fe4d2" prot="private" static="no" mutable="no">
+        <type>readonly double</type>
+        <definition>readonly double khiva.features.tests.FeaturesTests.DELTA</definition>
+        <argsstring></argsstring>
+        <name>DELTA</name>
+        <initializer>= 1e-6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="19" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1ab66ad8e9e59d29de45c9ce95031cb5b3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.Init</definition>
+        <argsstring>()</argsstring>
+        <name>Init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="22" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="22" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a7c82c0f5592e5169fd533a3598718e48" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestAbsEnergy</definition>
+        <argsstring>()</argsstring>
+        <name>TestAbsEnergy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="28" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="28" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a2592e8726035a17d27cdc68452d8b869" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestAbsoluteSumOfChanges</definition>
+        <argsstring>()</argsstring>
+        <name>TestAbsoluteSumOfChanges</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="39" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="39" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a20059bbc219f03d333da502442c01643" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestAggregatedAutocorrelation</definition>
+        <argsstring>()</argsstring>
+        <name>TestAggregatedAutocorrelation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="52" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="52" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a39802d69b6973184f2c4a1486d65e01a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestAggregatedLinearTrendMean</definition>
+        <argsstring>()</argsstring>
+        <name>TestAggregatedLinearTrendMean</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="64" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="64" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a7846d19ac2dec1b742830f0a3a950dc1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestApproximateEntropy</definition>
+        <argsstring>()</argsstring>
+        <name>TestApproximateEntropy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="91" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="91" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a4e2b89b96bd4b372eef0ca5d8ce7233e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestCrossCovariance</definition>
+        <argsstring>()</argsstring>
+        <name>TestCrossCovariance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="103" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="103" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a3fad0e420ec54a51fb3cff75d1c2fb16" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestAutoCovariance</definition>
+        <argsstring>()</argsstring>
+        <name>TestAutoCovariance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="139" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="139" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a58917785a5365cb25b6ca53d59714a0f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestCrossCorrelation</definition>
+        <argsstring>()</argsstring>
+        <name>TestCrossCorrelation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="157" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="157" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1ae53df30c57cc9fcde4a7d6f283499b79" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestAutoCorrelation</definition>
+        <argsstring>()</argsstring>
+        <name>TestAutoCorrelation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="174" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="174" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1aaf8462c5c69cbccec585ba6d4db466c4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestBinnedEntropy</definition>
+        <argsstring>()</argsstring>
+        <name>TestBinnedEntropy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="192" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="192" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1af5f3a7f86324b5021d03266a97ea4935" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestC3</definition>
+        <argsstring>()</argsstring>
+        <name>TestC3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="208" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="208" bodyend="218"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1aced6b4f866c47c52d54c31dd540336b0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestCidCe</definition>
+        <argsstring>()</argsstring>
+        <name>TestCidCe</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="221" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="221" bodyend="233"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a1c4531b9f4a2d4517772c67a7567a609" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestCountAboveMean</definition>
+        <argsstring>()</argsstring>
+        <name>TestCountAboveMean</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="236" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="236" bodyend="245"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a2c56c2fbd90c545bfd5ca49c32073c0d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestCountBellowMean</definition>
+        <argsstring>()</argsstring>
+        <name>TestCountBellowMean</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="248" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="248" bodyend="257"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a6a5bdcc5e0cb17a89dab77b3f730a99d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestCwtCoefficients</definition>
+        <argsstring>()</argsstring>
+        <name>TestCwtCoefficients</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="260" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="260" bodyend="272"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1ab77e9561c77d20e7a1062f6a4bdfbf2c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestEnergyRatioByChunks</definition>
+        <argsstring>()</argsstring>
+        <name>TestEnergyRatioByChunks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="275" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="275" bodyend="289"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1ae34de6e83714e5da8810988664149b62" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestFftAggregated</definition>
+        <argsstring>()</argsstring>
+        <name>TestFftAggregated</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="292" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="292" bodyend="308"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a4c173947fd8938ffb388badccac937d6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestFftCoefficient</definition>
+        <argsstring>()</argsstring>
+        <name>TestFftCoefficient</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="311" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="311" bodyend="339"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a85f6553aca92db824383cdded5a4f211" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestFirstLocationOfMaximum</definition>
+        <argsstring>()</argsstring>
+        <name>TestFirstLocationOfMaximum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="342" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="342" bodyend="352"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1af045e5c50dc093d9fda1a4434345e098" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestFirstLocationOfMinimum</definition>
+        <argsstring>()</argsstring>
+        <name>TestFirstLocationOfMinimum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="355" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="355" bodyend="365"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a59288a7aa65107014a1f5088aafd50b7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestFriedrichCoefficients</definition>
+        <argsstring>()</argsstring>
+        <name>TestFriedrichCoefficients</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="368" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="368" bodyend="387"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a28b1f0dae64f93dbf7ff4e0ed25c7d10" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestHasDuplicates</definition>
+        <argsstring>()</argsstring>
+        <name>TestHasDuplicates</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="390" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="390" bodyend="400"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1ad72a83083060a305e82b6d08cd39a23c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestHasDuplicateMax</definition>
+        <argsstring>()</argsstring>
+        <name>TestHasDuplicateMax</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="403" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="403" bodyend="413"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a1f3ea2c6e586090d937f17a268e1086a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestHasDuplicateMin</definition>
+        <argsstring>()</argsstring>
+        <name>TestHasDuplicateMin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="416" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="416" bodyend="426"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a77029909679e4ffa340b6b168656cc31" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestIndexMassQuantile</definition>
+        <argsstring>()</argsstring>
+        <name>TestIndexMassQuantile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="429" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="429" bodyend="439"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a9e9caa0a79155467822aad97d52aa0e5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestKurtosis</definition>
+        <argsstring>()</argsstring>
+        <name>TestKurtosis</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="442" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="442" bodyend="452"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1ad90c3b3cf8da5a70f7d0e866e79ca285" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestLargeStandardDeviation</definition>
+        <argsstring>()</argsstring>
+        <name>TestLargeStandardDeviation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="455" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="455" bodyend="465"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1ad9c563f3b98aad13193417da2ee02300" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestLastLocationOfMaximum</definition>
+        <argsstring>()</argsstring>
+        <name>TestLastLocationOfMaximum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="468" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="468" bodyend="478"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1af6a9c84da0f1162c0990b7d37d377254" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestLastLocationOfMinimum</definition>
+        <argsstring>()</argsstring>
+        <name>TestLastLocationOfMinimum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="481" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="481" bodyend="491"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a24a634bd680cacb334120dd29597fb61" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestLength</definition>
+        <argsstring>()</argsstring>
+        <name>TestLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="494" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="494" bodyend="504"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1acc9c0b04463479b665e3676f2a30a541" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestLinearTrend</definition>
+        <argsstring>()</argsstring>
+        <name>TestLinearTrend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="507" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="507" bodyend="542"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a4ea849011ede735fc163c22e0dbc6ccf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestLongestStrikeAboveMean</definition>
+        <argsstring>()</argsstring>
+        <name>TestLongestStrikeAboveMean</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="559" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="559" bodyend="571"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1ab949453ddb11442fc296f0db33ada913" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestLongestStrikeBelowMean</definition>
+        <argsstring>()</argsstring>
+        <name>TestLongestStrikeBelowMean</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="574" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="574" bodyend="586"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1ae10f31864c2cc51f63259facb971fedb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestMaxLangevinFixedPoint</definition>
+        <argsstring>()</argsstring>
+        <name>TestMaxLangevinFixedPoint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="589" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="589" bodyend="599"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a0c211585bef72fc354978f6ac66de6b4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestMaximum</definition>
+        <argsstring>()</argsstring>
+        <name>TestMaximum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="602" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="602" bodyend="612"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1afea86ba39b62a49dea5b36b290c01f43" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestMean</definition>
+        <argsstring>()</argsstring>
+        <name>TestMean</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="615" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="615" bodyend="625"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a931e9934e6f550177df4aa91ff2a386c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestMeanAbsoluteChange</definition>
+        <argsstring>()</argsstring>
+        <name>TestMeanAbsoluteChange</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="628" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="628" bodyend="639"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1aa8ffc02c514cd59d1ca41bfc107fc2c8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestMeanChange</definition>
+        <argsstring>()</argsstring>
+        <name>TestMeanChange</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="642" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="642" bodyend="653"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1ab36d220ce32df13db8a0e6c5757898dc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestMeanSecondDerivativeCentral</definition>
+        <argsstring>()</argsstring>
+        <name>TestMeanSecondDerivativeCentral</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="656" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="656" bodyend="666"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a7087a7fc0600d5f1a27eea19babf4327" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestMedian</definition>
+        <argsstring>()</argsstring>
+        <name>TestMedian</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="669" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="669" bodyend="679"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1ab8965ec072050d1963ecc4fa9b7417bb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestMinimum</definition>
+        <argsstring>()</argsstring>
+        <name>TestMinimum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="682" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="682" bodyend="692"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1ae94267f19b1e2cebf170bac87a55318c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestNumberCrossingM</definition>
+        <argsstring>()</argsstring>
+        <name>TestNumberCrossingM</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="695" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="695" bodyend="705"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1acaad5459398b8edd341eb6457880db73" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestNumberCwtPeaks</definition>
+        <argsstring>()</argsstring>
+        <name>TestNumberCwtPeaks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="708" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="708" bodyend="718"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1afbb4170eedb202447f9f2f72a55339e7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestNumberPeaks</definition>
+        <argsstring>()</argsstring>
+        <name>TestNumberPeaks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="721" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="721" bodyend="731"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a054cd00054d39a03e27836481c34688c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestPartialAutocorrelation</definition>
+        <argsstring>()</argsstring>
+        <name>TestPartialAutocorrelation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="734" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="734" bodyend="765"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a1250a73119f4959d6b0a1e43ad079b74" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestPercentageOfReoccurringDatapointsToAllDatapoints</definition>
+        <argsstring>()</argsstring>
+        <name>TestPercentageOfReoccurringDatapointsToAllDatapoints</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="768" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="768" bodyend="777"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1af52faddee2d984d9916afab95daeeb3d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestPercentageOfReoccurringValuesToAllValues</definition>
+        <argsstring>()</argsstring>
+        <name>TestPercentageOfReoccurringValuesToAllValues</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="780" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="780" bodyend="789"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a1bb2e00bb8712854f785a00542a38f4d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestQuantile</definition>
+        <argsstring>()</argsstring>
+        <name>TestQuantile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="792" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="792" bodyend="803"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a29a0208149b3a90c39ab27542d302c9c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestRangeCount</definition>
+        <argsstring>()</argsstring>
+        <name>TestRangeCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="806" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="806" bodyend="816"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a32271f1d15b79750f9ea8d3e7fb46a9e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestRatioBeyondRSigma</definition>
+        <argsstring>()</argsstring>
+        <name>TestRatioBeyondRSigma</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="819" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="819" bodyend="829"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1ac7113dda7c166daa49362bf3a0d2e507" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestRatioValueNumberToTimeSeriesLength</definition>
+        <argsstring>()</argsstring>
+        <name>TestRatioValueNumberToTimeSeriesLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="832" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="832" bodyend="842"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a2fae2e7beee3ddce3557a673ca8335cf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestSampleEntropy</definition>
+        <argsstring>()</argsstring>
+        <name>TestSampleEntropy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="845" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="845" bodyend="855"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a7c86e7abadc21f9e45a52352732c5dc3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestSkewness</definition>
+        <argsstring>()</argsstring>
+        <name>TestSkewness</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="858" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="858" bodyend="868"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1ab88fbe6a884ee0fff5babddde7e19648" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestSpktWelchDensity</definition>
+        <argsstring>()</argsstring>
+        <name>TestSpktWelchDensity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="871" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="871" bodyend="881"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a5b350b97d87ed8501afeeb3a3228159d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestStandardDeviation</definition>
+        <argsstring>()</argsstring>
+        <name>TestStandardDeviation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="884" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="884" bodyend="894"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a2bbbf32002f6913ace3f5569676d5c46" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestSumOfReoccurringDatapoints</definition>
+        <argsstring>()</argsstring>
+        <name>TestSumOfReoccurringDatapoints</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="897" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="897" bodyend="907"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a17480c44436ffe3905a6aa252a0bc4c9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestSumOfReoccurringValues</definition>
+        <argsstring>()</argsstring>
+        <name>TestSumOfReoccurringValues</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="910" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="910" bodyend="920"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1aaef5ed1c6afc2e0140e76e145460d843" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestSumValues</definition>
+        <argsstring>()</argsstring>
+        <name>TestSumValues</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="923" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="923" bodyend="933"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a84cae4fe630035d7cbdd134f660ff743" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestSymmetryLooking</definition>
+        <argsstring>()</argsstring>
+        <name>TestSymmetryLooking</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="936" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="936" bodyend="946"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a0793b143de56a8c8460868840b707fcf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestTimeReversalAsymmetryStatistic</definition>
+        <argsstring>()</argsstring>
+        <name>TestTimeReversalAsymmetryStatistic</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="949" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="949" bodyend="960"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a27efa6d100a230d764f15a03620d958e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestValueCount</definition>
+        <argsstring>()</argsstring>
+        <name>TestValueCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="963" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="963" bodyend="973"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1af12b2dce1b8487ce0a26171e582818ba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestVariance</definition>
+        <argsstring>()</argsstring>
+        <name>TestVariance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="976" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="976" bodyend="986"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1abb9c797cffedf7be9d80b7f2f66fad39" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.TestVarianceLargerThanStandardDeviation</definition>
+        <argsstring>()</argsstring>
+        <name>TestVarianceLargerThanStandardDeviation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="989" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="989" bodyend="999"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classkhiva_1_1features_1_1tests_1_1_features_tests_1a225f46a6a3300c4f4c50f8e7550f2542" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.features.tests.FeaturesTests.Flatten3D&lt; T &gt;</definition>
+        <argsstring>(ref T[] flattenArr, T[,,] arr)</argsstring>
+        <name>Flatten3D&lt; T &gt;</name>
+        <param>
+          <type>ref T []</type>
+          <declname>flattenArr</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>arr</declname>
+          <array>[,,]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="124" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="124" bodyend="136"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" line="18" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/FeaturesTests.cs" bodystart="17" bodyend="1000"/>
+    <listofallmembers>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a84b40d90e0416bcb899dda735d1fe4d2" prot="private" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>DELTA</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a225f46a6a3300c4f4c50f8e7550f2542" prot="private" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>Flatten3D&lt; T &gt;</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1ab66ad8e9e59d29de45c9ce95031cb5b3" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>Init</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a7c82c0f5592e5169fd533a3598718e48" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestAbsEnergy</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a2592e8726035a17d27cdc68452d8b869" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestAbsoluteSumOfChanges</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a20059bbc219f03d333da502442c01643" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestAggregatedAutocorrelation</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a39802d69b6973184f2c4a1486d65e01a" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestAggregatedLinearTrendMean</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a7846d19ac2dec1b742830f0a3a950dc1" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestApproximateEntropy</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1ae53df30c57cc9fcde4a7d6f283499b79" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestAutoCorrelation</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a3fad0e420ec54a51fb3cff75d1c2fb16" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestAutoCovariance</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1aaf8462c5c69cbccec585ba6d4db466c4" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestBinnedEntropy</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1af5f3a7f86324b5021d03266a97ea4935" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestC3</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1aced6b4f866c47c52d54c31dd540336b0" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestCidCe</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a1c4531b9f4a2d4517772c67a7567a609" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestCountAboveMean</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a2c56c2fbd90c545bfd5ca49c32073c0d" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestCountBellowMean</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a58917785a5365cb25b6ca53d59714a0f" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestCrossCorrelation</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a4e2b89b96bd4b372eef0ca5d8ce7233e" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestCrossCovariance</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a6a5bdcc5e0cb17a89dab77b3f730a99d" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestCwtCoefficients</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1ab77e9561c77d20e7a1062f6a4bdfbf2c" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestEnergyRatioByChunks</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1ae34de6e83714e5da8810988664149b62" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestFftAggregated</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a4c173947fd8938ffb388badccac937d6" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestFftCoefficient</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a85f6553aca92db824383cdded5a4f211" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestFirstLocationOfMaximum</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1af045e5c50dc093d9fda1a4434345e098" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestFirstLocationOfMinimum</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a59288a7aa65107014a1f5088aafd50b7" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestFriedrichCoefficients</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1ad72a83083060a305e82b6d08cd39a23c" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestHasDuplicateMax</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a1f3ea2c6e586090d937f17a268e1086a" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestHasDuplicateMin</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a28b1f0dae64f93dbf7ff4e0ed25c7d10" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestHasDuplicates</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a77029909679e4ffa340b6b168656cc31" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestIndexMassQuantile</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a9e9caa0a79155467822aad97d52aa0e5" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestKurtosis</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1ad90c3b3cf8da5a70f7d0e866e79ca285" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestLargeStandardDeviation</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1ad9c563f3b98aad13193417da2ee02300" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestLastLocationOfMaximum</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1af6a9c84da0f1162c0990b7d37d377254" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestLastLocationOfMinimum</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a24a634bd680cacb334120dd29597fb61" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestLength</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1acc9c0b04463479b665e3676f2a30a541" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestLinearTrend</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a4ea849011ede735fc163c22e0dbc6ccf" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestLongestStrikeAboveMean</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1ab949453ddb11442fc296f0db33ada913" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestLongestStrikeBelowMean</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a0c211585bef72fc354978f6ac66de6b4" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestMaximum</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1ae10f31864c2cc51f63259facb971fedb" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestMaxLangevinFixedPoint</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1afea86ba39b62a49dea5b36b290c01f43" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestMean</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a931e9934e6f550177df4aa91ff2a386c" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestMeanAbsoluteChange</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1aa8ffc02c514cd59d1ca41bfc107fc2c8" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestMeanChange</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1ab36d220ce32df13db8a0e6c5757898dc" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestMeanSecondDerivativeCentral</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a7087a7fc0600d5f1a27eea19babf4327" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestMedian</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1ab8965ec072050d1963ecc4fa9b7417bb" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestMinimum</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1ae94267f19b1e2cebf170bac87a55318c" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestNumberCrossingM</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1acaad5459398b8edd341eb6457880db73" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestNumberCwtPeaks</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1afbb4170eedb202447f9f2f72a55339e7" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestNumberPeaks</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a054cd00054d39a03e27836481c34688c" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestPartialAutocorrelation</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a1250a73119f4959d6b0a1e43ad079b74" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestPercentageOfReoccurringDatapointsToAllDatapoints</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1af52faddee2d984d9916afab95daeeb3d" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestPercentageOfReoccurringValuesToAllValues</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a1bb2e00bb8712854f785a00542a38f4d" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestQuantile</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a29a0208149b3a90c39ab27542d302c9c" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestRangeCount</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a32271f1d15b79750f9ea8d3e7fb46a9e" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestRatioBeyondRSigma</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1ac7113dda7c166daa49362bf3a0d2e507" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestRatioValueNumberToTimeSeriesLength</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a2fae2e7beee3ddce3557a673ca8335cf" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestSampleEntropy</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a7c86e7abadc21f9e45a52352732c5dc3" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestSkewness</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1ab88fbe6a884ee0fff5babddde7e19648" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestSpktWelchDensity</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a5b350b97d87ed8501afeeb3a3228159d" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestStandardDeviation</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a2bbbf32002f6913ace3f5569676d5c46" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestSumOfReoccurringDatapoints</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a17480c44436ffe3905a6aa252a0bc4c9" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestSumOfReoccurringValues</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1aaef5ed1c6afc2e0140e76e145460d843" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestSumValues</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a84cae4fe630035d7cbdd134f660ff743" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestSymmetryLooking</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a0793b143de56a8c8460868840b707fcf" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestTimeReversalAsymmetryStatistic</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a27efa6d100a230d764f15a03620d958e" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestValueCount</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1af12b2dce1b8487ce0a26171e582818ba" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestVariance</name></member>
+      <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1abb9c797cffedf7be9d80b7f2f66fad39" prot="public" virt="non-virtual"><scope>khiva::features::tests::FeaturesTests</scope><name>TestVarianceLargerThanStandardDeviation</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

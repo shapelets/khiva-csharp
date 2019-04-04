@@ -1,0 +1,333 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>khiva.normalization &mdash; Khiva v0.2.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Khiva
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/main.html">1. API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../text/faq.html">2. FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">3. License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../authors.html">4. Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../text/how_to_contribute.html">5. How to contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Khiva</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>khiva.normalization</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for khiva.normalization</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/python</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1">#</span>
+<span class="c1"># Copyright (c) 2019 Shapelets.io</span>
+<span class="c1">#</span>
+<span class="c1"># This Source Code Form is subject to the terms of the Mozilla Public</span>
+<span class="c1"># License, v. 2.0. If a copy of the MPL was not distributed with this</span>
+<span class="c1"># file, You can obtain one at http://mozilla.org/MPL/2.0/.</span>
+
+
+<span class="c1">########################################################################################################################</span>
+<span class="c1"># IMPORT</span>
+<span class="c1">########################################################################################################################</span>
+<span class="kn">import</span> <span class="nn">ctypes</span>
+<span class="kn">from</span> <span class="nn">khiva.library</span> <span class="kn">import</span> <span class="n">KhivaLibrary</span>
+<span class="kn">from</span> <span class="nn">khiva.array</span> <span class="kn">import</span> <span class="n">Array</span>
+
+
+<span class="c1">########################################################################################################################</span>
+
+<div class="viewcode-block" id="decimal_scaling_norm"><a class="viewcode-back" href="../../khiva.html#khiva.normalization.decimal_scaling_norm">[docs]</a><span class="k">def</span> <span class="nf">decimal_scaling_norm</span><span class="p">(</span><span class="n">tss</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Normalizes the given time series according to its maximum value and adjusts each value within the range (-1, 1).</span>
+
+<span class="sd">    :param tss: KHIVA array with the time series.</span>
+
+<span class="sd">    :return: KHIVA array with the same dimensions as tss, whose values (time series in dimension 0) have been</span>
+<span class="sd">             normalized by dividing each number by :math::`10^j` , where j is the number of integer digits of the max number in</span>
+<span class="sd">             the time series.`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_void_p</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">KhivaLibrary</span><span class="p">()</span><span class="o">.</span><span class="n">c_khiva_library</span><span class="o">.</span><span class="n">decimal_scaling_norm</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">pointer</span><span class="p">(</span><span class="n">tss</span><span class="o">.</span><span class="n">arr_reference</span><span class="p">),</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">pointer</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">Array</span><span class="p">(</span><span class="n">array_reference</span><span class="o">=</span><span class="n">b</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="decimal_scaling_norm_in_place"><a class="viewcode-back" href="../../khiva.html#khiva.normalization.decimal_scaling_norm_in_place">[docs]</a><span class="k">def</span> <span class="nf">decimal_scaling_norm_in_place</span><span class="p">(</span><span class="n">tss</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Same as decimal_scaling_norm, but it performs the operation in place, without allocating further memory.</span>
+
+<span class="sd">    :param tss: KHIVA array with the time series.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">KhivaLibrary</span><span class="p">()</span><span class="o">.</span><span class="n">c_khiva_library</span><span class="o">.</span><span class="n">decimal_scaling_norm_in_place</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">pointer</span><span class="p">(</span><span class="n">tss</span><span class="o">.</span><span class="n">arr_reference</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="max_min_norm"><a class="viewcode-back" href="../../khiva.html#khiva.normalization.max_min_norm">[docs]</a><span class="k">def</span> <span class="nf">max_min_norm</span><span class="p">(</span><span class="n">tss</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">low</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">0.00000001</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Normalizes the given time series according to its minimum and maximum value and adjusts each value within the</span>
+<span class="sd">    range [low, high].</span>
+
+<span class="sd">    :param tss: KHIVA array with the time series.</span>
+<span class="sd">    :param high: Maximum final value (Defaults to 1.0).</span>
+<span class="sd">    :param low: Minimum final value (Defaults to 0.0).</span>
+<span class="sd">    :param epsilon: Safeguard for constant (or near constant) time series as the operation implies a unit scale</span>
+<span class="sd">                    operation between min and max values in the tss.</span>
+
+<span class="sd">    :return: KHIVA array with the same dimensions as tss where the time series have been adjusted for zero mean and</span>
+<span class="sd">            one as standard deviation.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_void_p</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">KhivaLibrary</span><span class="p">()</span><span class="o">.</span><span class="n">c_khiva_library</span><span class="o">.</span><span class="n">max_min_norm</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">pointer</span><span class="p">(</span><span class="n">tss</span><span class="o">.</span><span class="n">arr_reference</span><span class="p">),</span>
+                                                <span class="n">ctypes</span><span class="o">.</span><span class="n">pointer</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_double</span><span class="p">(</span><span class="n">high</span><span class="p">)),</span>
+                                                <span class="n">ctypes</span><span class="o">.</span><span class="n">pointer</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_double</span><span class="p">(</span><span class="n">low</span><span class="p">)),</span>
+                                                <span class="n">ctypes</span><span class="o">.</span><span class="n">pointer</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_double</span><span class="p">(</span><span class="n">epsilon</span><span class="p">)),</span>
+                                                <span class="n">ctypes</span><span class="o">.</span><span class="n">pointer</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">Array</span><span class="p">(</span><span class="n">array_reference</span><span class="o">=</span><span class="n">b</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="max_min_norm_in_place"><a class="viewcode-back" href="../../khiva.html#khiva.normalization.max_min_norm_in_place">[docs]</a><span class="k">def</span> <span class="nf">max_min_norm_in_place</span><span class="p">(</span><span class="n">tss</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">low</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">0.00000001</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Same as max_min_norm, but it performs the operation in place, without allocating further memory.</span>
+
+<span class="sd">    :param tss: KHIVA array with the time series.</span>
+<span class="sd">    :param high: Maximum final value (Defaults to 1.0).</span>
+<span class="sd">    :param low: Minimum final value (Defaults to 0.0).</span>
+<span class="sd">    :param epsilon: Safeguard for constant (or near constant) time series as the operation implies a unit scale</span>
+<span class="sd">                    operation between min and max values in the tss.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">KhivaLibrary</span><span class="p">()</span><span class="o">.</span><span class="n">c_khiva_library</span><span class="o">.</span><span class="n">max_min_norm_in_place</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">pointer</span><span class="p">(</span><span class="n">tss</span><span class="o">.</span><span class="n">arr_reference</span><span class="p">),</span>
+                                                         <span class="n">ctypes</span><span class="o">.</span><span class="n">pointer</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_double</span><span class="p">(</span><span class="n">high</span><span class="p">)),</span>
+                                                         <span class="n">ctypes</span><span class="o">.</span><span class="n">pointer</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_double</span><span class="p">(</span><span class="n">low</span><span class="p">)),</span>
+                                                         <span class="n">ctypes</span><span class="o">.</span><span class="n">pointer</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_double</span><span class="p">(</span><span class="n">epsilon</span><span class="p">)))</span></div>
+
+
+<div class="viewcode-block" id="mean_norm"><a class="viewcode-back" href="../../khiva.html#khiva.normalization.mean_norm">[docs]</a><span class="k">def</span> <span class="nf">mean_norm</span><span class="p">(</span><span class="n">tss</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Normalizes the given time series according to its maximum-minimum value and its mean. It follows the following</span>
+<span class="sd">    formulae:</span>
+
+<span class="sd">    .. math::</span>
+<span class="sd">        \\acute{x} = frac{x - mean(x)}{max(x) - min(x)}.</span>
+
+<span class="sd">    :param tss: KHIVA array with the time series.</span>
+
+<span class="sd">    :return: An array with the same dimensions as tss, whose values (time series in dimension 0) have been</span>
+<span class="sd">            normalized by substracting the mean from each number and dividing each number by :math:`max(x) - min(`x)`,</span>
+<span class="sd">            in the time series.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_void_p</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">KhivaLibrary</span><span class="p">()</span><span class="o">.</span><span class="n">c_khiva_library</span><span class="o">.</span><span class="n">mean_norm</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">pointer</span><span class="p">(</span><span class="n">tss</span><span class="o">.</span><span class="n">arr_reference</span><span class="p">),</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">pointer</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">Array</span><span class="p">(</span><span class="n">array_reference</span><span class="o">=</span><span class="n">b</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="mean_norm_in_place"><a class="viewcode-back" href="../../khiva.html#khiva.normalization.mean_norm_in_place">[docs]</a><span class="k">def</span> <span class="nf">mean_norm_in_place</span><span class="p">(</span><span class="n">tss</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Normalizes the given time series according to its maximum-minimum value and its mean. It follows the following</span>
+<span class="sd">    formulae:</span>
+
+<span class="sd">    .. math:</span>
+<span class="sd">        \\acute{x} = frac{x - mean(x)}{max(x) - min(x)}.</span>
+
+<span class="sd">    :param tss: KHIVA array with the time series.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">KhivaLibrary</span><span class="p">()</span><span class="o">.</span><span class="n">c_khiva_library</span><span class="o">.</span><span class="n">mean_norm_in_place</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">pointer</span><span class="p">(</span><span class="n">tss</span><span class="o">.</span><span class="n">arr_reference</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="znorm"><a class="viewcode-back" href="../../khiva.html#khiva.normalization.znorm">[docs]</a><span class="k">def</span> <span class="nf">znorm</span><span class="p">(</span><span class="n">tss</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">0.00000001</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Calculates a new set of time series with zero mean and standard deviation one.</span>
+
+<span class="sd">    :param tss: KHIVA array with the time series.</span>
+<span class="sd">    :param epsilon: Minimum standard deviation to consider. It acts as a gatekeeper for those time series that</span>
+<span class="sd">           may be constant or near constant.</span>
+
+<span class="sd">    :return: KHIVA array with the same dimensions as tss where the time series have been adjusted for zero mean and</span>
+<span class="sd">            one as standard deviation.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_void_p</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">KhivaLibrary</span><span class="p">()</span><span class="o">.</span><span class="n">c_khiva_library</span><span class="o">.</span><span class="n">znorm</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">pointer</span><span class="p">(</span><span class="n">tss</span><span class="o">.</span><span class="n">arr_reference</span><span class="p">),</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">pointer</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_double</span><span class="p">(</span><span class="n">epsilon</span><span class="p">)),</span>
+                                         <span class="n">ctypes</span><span class="o">.</span><span class="n">pointer</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">Array</span><span class="p">(</span><span class="n">array_reference</span><span class="o">=</span><span class="n">b</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="znorm_in_place"><a class="viewcode-back" href="../../khiva.html#khiva.normalization.znorm_in_place">[docs]</a><span class="k">def</span> <span class="nf">znorm_in_place</span><span class="p">(</span><span class="n">tss</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">0.00000001</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Adjusts the time series in the given input and performs z-norm</span>
+<span class="sd">    in place (without allocating further memory).</span>
+
+<span class="sd">    :param tss: KHIVA array with the time series.</span>
+<span class="sd">    :param epsilon: epsilon Minimum standard deviation to consider. It acts as a gatekeeper for</span>
+<span class="sd">                    those time series that may be constant or near constant.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">KhivaLibrary</span><span class="p">()</span><span class="o">.</span><span class="n">c_khiva_library</span><span class="o">.</span><span class="n">znorm_in_place</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">pointer</span><span class="p">(</span><span class="n">tss</span><span class="o">.</span><span class="n">arr_reference</span><span class="p">),</span>
+                                                  <span class="n">ctypes</span><span class="o">.</span><span class="n">pointer</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_double</span><span class="p">(</span><span class="n">epsilon</span><span class="p">)))</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Shapelets
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

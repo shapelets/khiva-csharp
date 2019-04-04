@@ -1,0 +1,282 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="classkhiva_1_1dimensionality_1_1_dimensionality" kind="class" language="C#" prot="public">
+    <compoundname>khiva::dimensionality::Dimensionality</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classkhiva_1_1dimensionality_1_1_dimensionality_1a94804fb9064e5cb1eb2b34a8c8a3fadd" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classkhiva_1_1array_1_1_array" kindref="compound">array.Array</ref></type>
+        <definition>static array.Array khiva.dimensionality.Dimensionality.PAA</definition>
+        <argsstring>(array.Array arr, int bins)</argsstring>
+        <name>PAA</name>
+        <param>
+          <type><ref refid="classkhiva_1_1array_1_1_array" kindref="compound">array.Array</ref></type>
+          <declname>arr</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>bins</declname>
+        </param>
+        <briefdescription>
+<para>Piecewise Aggregate Approximation (PAA) approximates a time series <formula id="0">$X$</formula> of length <formula id="1">$n$</formula> into vector <formula id="2">$\bar{X}=(\bar{x}_{1},…,\bar{x}_{M})$</formula> of any arbitrary length <formula id="3">$M \leq n$</formula> where each of <formula id="4">$\bar{x_{i}}$</formula> is calculated as follows: <formula id="5">\[ \bar{x}_{i} = \frac{M}{n} \sum_{j=n/M(i-1)+1}^{(n/M)i} x_{j}. \]</formula> Which simply means that in order to reduce the dimensionality from <formula id="1">$n$</formula> to <formula id="6">$M$</formula>, we first divide the original time series into <formula id="6">$M$</formula> equally sized frames and secondly compute the mean values for each frame.The sequence assembled from the mean values is the PAA approximation (i.e., transform) of the original time series. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>arr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set of points.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bins</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Sets the total number of divisions.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An array of points with the reduced dimensionality.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Dimensionality.cs" line="36" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Dimensionality.cs" bodystart="36" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1dimensionality_1_1_dimensionality_1a0e27cdaf20c83fd722198b297357ec8b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classkhiva_1_1array_1_1_array" kindref="compound">array.Array</ref></type>
+        <definition>static array.Array khiva.dimensionality.Dimensionality.PIP</definition>
+        <argsstring>(array.Array arr, int numberIps)</argsstring>
+        <name>PIP</name>
+        <param>
+          <type><ref refid="classkhiva_1_1array_1_1_array" kindref="compound">array.Array</ref></type>
+          <declname>arr</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>numberIps</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the number of Perceptually Important Points (PIP) in the time series. </para>        </briefdescription>
+        <detaileddescription>
+<para>[1] Fu TC, Chung FL, Luk R, and Ng CM. Representing financial time series based on data point importance. Engineering Applications of Artificial Intelligence, 21(2):277-300, 2008. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>arr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>numberIps</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of points to be returned.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Array with the most Perceptually Important number_ips.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Dimensionality.cs" line="53" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Dimensionality.cs" bodystart="53" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1dimensionality_1_1_dimensionality_1aef75096686fdf86ead6ca02f6ce8b742" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classkhiva_1_1array_1_1_array" kindref="compound">array.Array</ref></type>
+        <definition>static array.Array khiva.dimensionality.Dimensionality.PLABottomUp</definition>
+        <argsstring>(array.Array arr, float maxError)</argsstring>
+        <name>PLABottomUp</name>
+        <param>
+          <type><ref refid="classkhiva_1_1array_1_1_array" kindref="compound">array.Array</ref></type>
+          <declname>arr</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>maxError</declname>
+        </param>
+        <briefdescription>
+<para>Applies the Piecewise Linear Approximation (PLA BottomUP) to the time series. </para>        </briefdescription>
+        <detaileddescription>
+<para>[1] Zhu Y, Wu D, Li Sh (2007). A Piecewise Linear Representation Method of Time Series Based on Feature Points. Knowledge-Based Intelligent Information and Engineering Systems 4693:1066-1072. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>arr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects a khiva_array containing the set of points to be reduced. The first component of the points in the first column and the second component of the points in the second column.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>maxError</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum approximation error allowed.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The reduced number of points.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Dimensionality.cs" line="71" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Dimensionality.cs" bodystart="71" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1dimensionality_1_1_dimensionality_1a4c165a099afe2a32612b1b45f7b317c7" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classkhiva_1_1array_1_1_array" kindref="compound">array.Array</ref></type>
+        <definition>static array.Array khiva.dimensionality.Dimensionality.PLASlidingWindow</definition>
+        <argsstring>(array.Array arr, float maxError)</argsstring>
+        <name>PLASlidingWindow</name>
+        <param>
+          <type><ref refid="classkhiva_1_1array_1_1_array" kindref="compound">array.Array</ref></type>
+          <declname>arr</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>maxError</declname>
+        </param>
+        <briefdescription>
+<para>Applies the Piecewise Linear Approximation (PLA Sliding Window) to the time series. </para>        </briefdescription>
+        <detaileddescription>
+<para>[1] Zhu Y, Wu D, Li Sh (2007). A Piecewise Linear Representation Method of Time Series Based on Feature Points. Knowledge-Based Intelligent Information and Engineering Systems 4693:1066-1072. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>arr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects a khiva_array containing the set of points to be reduced. The first component of the points in the first column and the second component of the points in the second column.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>maxError</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum approximation error allowed.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The reduced number of points.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Dimensionality.cs" line="89" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Dimensionality.cs" bodystart="89" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1dimensionality_1_1_dimensionality_1a6d2b5b3b9a7ce8f22f61e4e149975fa4" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classkhiva_1_1array_1_1_array" kindref="compound">array.Array</ref></type>
+        <definition>static array.Array khiva.dimensionality.Dimensionality.RamerDouglasPeucker</definition>
+        <argsstring>(array.Array points, double epsilon)</argsstring>
+        <name>RamerDouglasPeucker</name>
+        <param>
+          <type><ref refid="classkhiva_1_1array_1_1_array" kindref="compound">array.Array</ref></type>
+          <declname>points</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>epsilon</declname>
+        </param>
+        <briefdescription>
+<para>The Ramer–Douglas–Peucker algorithm (RDP) is an algorithm for reducing the number of points in a curve that is approximated by a series of points. It reduces a set of points depending on the perpendicular distance of the points and epsilon, the greater epsilon, more points are deleted. </para>        </briefdescription>
+        <detaileddescription>
+<para>[1] Urs Ramer, &quot;An iterative procedure for the polygonal approximation of plane curves&quot;, Computer Graphics and Image Processing, 1(3), 244–256 (1972) doi:10.1016/S0146-664X(72)80017-0.</para><para>[2] David Douglas &amp; Thomas Peucker, &quot;Algorithms for the reduction of the number of points required to represent a
+digitized line or its caricature&quot;, The Canadian Cartographer 10(2), 112–122 (1973) doi:10.3138/FM57-6770-U75U-7727 </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>points</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array with the x-coordinates and y-coordinates of the input points (x in column 0 and y in column 1).</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>epsilon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>It acts as the threshold value to decide which points should be considered meaningful or not.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Array with the x-coordinates and y-coordinates of the selected points (x in column 0 and y in column 1).</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Dimensionality.cs" line="112" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Dimensionality.cs" bodystart="112" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1dimensionality_1_1_dimensionality_1a668eb21bc1cce2ce731a7e6f6b3b2a0d" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classkhiva_1_1array_1_1_array" kindref="compound">array.Array</ref></type>
+        <definition>static array.Array khiva.dimensionality.Dimensionality.SAX</definition>
+        <argsstring>(array.Array arr, int alphabetSize)</argsstring>
+        <name>SAX</name>
+        <param>
+          <type><ref refid="classkhiva_1_1array_1_1_array" kindref="compound">array.Array</ref></type>
+          <declname>arr</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>alphabetSize</declname>
+        </param>
+        <briefdescription>
+<para>Symbolic Aggregate approXimation (SAX). It transforms a numeric time series into a time series of symbols with the same size. The algorithm was proposed by Lin et al.) and extends the PAA-based approach inheriting the original algorithm simplicity and low computational complexity while providing satisfactory sensitivity and selectivity in range query processing. Moreover, the use of a symbolic representation opened a door to the existing wealth of data-structures and string-manipulation algorithms in computer science such as hashing, regular expression, pattern matching, suffix trees, and grammatical inference. </para>        </briefdescription>
+        <detaileddescription>
+<para>[1] Lin, J., Keogh, E., Lonardi, S. &amp; Chiu, B. (2003) A Symbolic Representation of Time Series, with Implications for Streaming Algorithms. In proceedings of the 8th ACM SIGMOD Workshop on Research Issues in Data Mining and Knowledge Discovery. San Diego, CA. June 13. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>arr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array with the input time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alphabetSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of element within the alphabet.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An array of symbols.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Dimensionality.cs" line="135" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Dimensionality.cs" bodystart="135" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1dimensionality_1_1_dimensionality_1ae2b4c8288f9537bce116837abe7e0539" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classkhiva_1_1array_1_1_array" kindref="compound">array.Array</ref></type>
+        <definition>static array.Array khiva.dimensionality.Dimensionality.Visvalingam</definition>
+        <argsstring>(array.Array points, int numPoints)</argsstring>
+        <name>Visvalingam</name>
+        <param>
+          <type><ref refid="classkhiva_1_1array_1_1_array" kindref="compound">array.Array</ref></type>
+          <declname>points</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>numPoints</declname>
+        </param>
+        <briefdescription>
+<para>Reduces a set of points by applying the Visvalingam method (minimum triangle area) until the number of points is reduced to numPoints. </para>        </briefdescription>
+        <detaileddescription>
+<para>[1] M. Visvalingam and J. D. Whyatt, Line generalisation by repeated elimination of points, The Cartographic Journal, 1993. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>points</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array with the x-coordinates and y-coordinates of the input points (x in column 0 and y in column 1).</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>numPoints</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Sets the number of points returned after the execution of the method.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Array with the x-coordinates and y-coordinates of the selected points (x in column 0 and y in column 1).</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Dimensionality.cs" line="153" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Dimensionality.cs" bodystart="153" bodyend="159"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classkhiva_1_1_khiva" kindref="compound">Khiva</ref> <ref refid="classkhiva_1_1dimensionality_1_1_dimensionality" kindref="compound">Dimensionality</ref> class containing several dimensionality reduction methods. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Dimensionality.cs" line="21" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Dimensionality.cs" bodystart="20" bodyend="160"/>
+    <listofallmembers>
+      <member refid="classkhiva_1_1dimensionality_1_1_dimensionality_1a94804fb9064e5cb1eb2b34a8c8a3fadd" prot="public" virt="non-virtual"><scope>khiva::dimensionality::Dimensionality</scope><name>PAA</name></member>
+      <member refid="classkhiva_1_1dimensionality_1_1_dimensionality_1a0e27cdaf20c83fd722198b297357ec8b" prot="public" virt="non-virtual"><scope>khiva::dimensionality::Dimensionality</scope><name>PIP</name></member>
+      <member refid="classkhiva_1_1dimensionality_1_1_dimensionality_1aef75096686fdf86ead6ca02f6ce8b742" prot="public" virt="non-virtual"><scope>khiva::dimensionality::Dimensionality</scope><name>PLABottomUp</name></member>
+      <member refid="classkhiva_1_1dimensionality_1_1_dimensionality_1a4c165a099afe2a32612b1b45f7b317c7" prot="public" virt="non-virtual"><scope>khiva::dimensionality::Dimensionality</scope><name>PLASlidingWindow</name></member>
+      <member refid="classkhiva_1_1dimensionality_1_1_dimensionality_1a6d2b5b3b9a7ce8f22f61e4e149975fa4" prot="public" virt="non-virtual"><scope>khiva::dimensionality::Dimensionality</scope><name>RamerDouglasPeucker</name></member>
+      <member refid="classkhiva_1_1dimensionality_1_1_dimensionality_1a668eb21bc1cce2ce731a7e6f6b3b2a0d" prot="public" virt="non-virtual"><scope>khiva::dimensionality::Dimensionality</scope><name>SAX</name></member>
+      <member refid="classkhiva_1_1dimensionality_1_1_dimensionality_1ae2b4c8288f9537bce116837abe7e0539" prot="public" virt="non-virtual"><scope>khiva::dimensionality::Dimensionality</scope><name>Visvalingam</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,1032 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.14">
+  <compound refid="classkhiva_1_1array_1_1_array" kind="class"><name>khiva::array::Array</name>
+    <member refid="classkhiva_1_1array_1_1_array_1a6bc9c0c6ade06a8675643de4880a116c" kind="enum"><name>Dtype</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a6bc9c0c6ade06a8675643de4880a116ca512dc597be7ae761876315165dc8bd2e" kind="enumvalue"><name>f32</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a6bc9c0c6ade06a8675643de4880a116ca8c6aa8068da0e0de08691b91863f11f6" kind="enumvalue"><name>c32</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a6bc9c0c6ade06a8675643de4880a116ca714b98e0a797e8f119f257a4ab802f86" kind="enumvalue"><name>f64</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a6bc9c0c6ade06a8675643de4880a116ca88da64cd45164153e9f301457d992eb2" kind="enumvalue"><name>c64</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a6bc9c0c6ade06a8675643de4880a116ca75d99404a02e2bc993a6bac34c60d679" kind="enumvalue"><name>b8</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a6bc9c0c6ade06a8675643de4880a116caa860868d23f3a68323a2e3f6563d7f31" kind="enumvalue"><name>s32</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a6bc9c0c6ade06a8675643de4880a116caa311a831b48d59687cf0822a612c9032" kind="enumvalue"><name>u32</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a6bc9c0c6ade06a8675643de4880a116ca077393852be20e37026d6281827662f2" kind="enumvalue"><name>u8</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a6bc9c0c6ade06a8675643de4880a116ca1919b6c3d1a9b2545d55cd7176afd38b" kind="enumvalue"><name>s64</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a6bc9c0c6ade06a8675643de4880a116ca476bf781fb66b23778b1004edc3a1028" kind="enumvalue"><name>u64</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a6bc9c0c6ade06a8675643de4880a116ca396f387f2e22fb295b941df41a05f0dc" kind="enumvalue"><name>s16</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a6bc9c0c6ade06a8675643de4880a116cade59a481c9d8ace262670bda2b39cb1f" kind="enumvalue"><name>u16</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1aa9fd46262eb0ad25c4da2db9d80d4edf" kind="variable"><name>reference</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1abfcf232b5b58cb7e4947ea1c10068efa" kind="property"><name>Reference</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1affdbea2ed2a063b156b6289d44591505" kind="property"><name>Dims</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1addb89dab0c05f4d0b3157a948702b47d" kind="property"><name>ArrayType</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a28ae91149f1cfb1974b3ebb91f013421" kind="function"><name>Dispose</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1acf6eb7cec3d471df6180ac78fd5f46eb" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1aad963c08b59b6dc77a59f8b8c14d9a05" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a1dedcbb4b8d015d0f18ec811d034a092" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1ac66e1423286505b97c30ff89bb9d52b6" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a8f470923dc4890df05558aac21f1a49c" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a1c7e8738b372e1302304407010e7ddb5" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1ab9ff6c9b0d6aae4d478b652027f06cc7" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a0b04615a046c8aacbfbf954c6e978188" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a20548767e46ad5aab5a2fb4cb9295250" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a948cabef3c08dd8111e2425fa3ceaaad" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1aeadaf6a13e5d5d2e1fd1cf10697b6661" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a98bf389ff3930879b1c0c62cf55612d2" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a78f5d47ca205ba9c4f6ef789db4ca172" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a7fdf7bbdff405cc633b82af387d42e59" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1aa0d9f61f1b7afaf75e767c96c41ab481" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a24d824523b6495d7452d5a694b5e8489" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1af7049907d0bfb4b113d14f908aeea150" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a4bbdc82396e41f050480eed78310e8d7" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a3540ff2ae5e84a60983416861feb382c" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a55fdd49a0f8954067ad5826bdc4e4897" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a277e63a1b1f39c7299f4739a0fd06e56" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a8d36a2fa3bcf36721f488ca2c23d1a42" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1ab246356d3744ef097b306659a6c8d7bc" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1acf888557283df92964226cb03d32f1fe" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1ada189cabe962460a72cfb9e90a6123a6" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a38f950c0e739247672d03db66e4e2db6" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1ab1fe5d5ac3f46b3f9c0047db772c7603" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a6446cd7717b9d0a75c0a6ec86db88f87" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1ac9eeae816240ba0103441b4469c10fac" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a27f01b31791667e1ea86e1e3918785ff" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1ae4f4896b13a1b26868534741677dccaf" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a2b92457f149deb22b20ddf70b79662a5" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a9165cefcfa229876cd5435cc2f93b7f0" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1aea1a9e3cdb0551a5f9266668c1b7dd66" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a04c4b4e7070451d4b6b08ca1d019099f" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a6ca56eeaa504c5c56d31353f61104816" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a282bc9517bbed108a54de8ea609a890d" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1aba869352b5d7a3627d9134efe344f2ed" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1aeb67515d23739647eec9cd0b36e720a6" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a4510312af21001a1c9bdf65225d1cc96" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a4fc722a581490f31c8e6a5095da0cedf" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a0ff9cb9c98102c2fe8e3e359da6d8f92" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a9c7d71ca30c2b0d3a332a5925db2015a" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1aa372a9219b251025eb8462cfc7491d11" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1aa6bf4bb56bdf3070b88ef438f4be6b04" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1ab754cc1534896f8451d717aa3f09901d" kind="function"><name>Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a7df0163f57f98043ec898c9378a8c1c4" kind="function"><name>GetData1D&lt; T &gt;</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a456b5971538b718b30eb088c05e02326" kind="function"><name>GetData2D&lt; T &gt;</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a3996ff16f532b05862169501f3afeda1" kind="function"><name>GetData3D&lt; T &gt;</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a2ce7b4495a9be089d5747530b83eccbd" kind="function"><name>GetData4D&lt; T &gt;</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1adf556e2b36f77d285c92c1fbae9f59bb" kind="function"><name>Display</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1abb95e64e8c3514136fe8a5fb2a0e929d" kind="function"><name>DeleteArray</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a3ace1346ee73dfa29c0aeb396526250e" kind="function"><name>Equals</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a35f31b244d648799ebd9d7294950551a" kind="function"><name>GetHashCode</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a51c8e2b81d2305bad110957c7c495e9e" kind="function"><name>Transpose</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1ad5a1611739c07fa7dac698a8fa6dd388" kind="function"><name>Col</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a873de346b0e3e7972d25f9206dc98679" kind="function"><name>Cols</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a5d233225d9134829d619bdabbdffd086" kind="function"><name>Row</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a510cc22793c427195b392c0c1b787a53" kind="function"><name>Rows</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1af2ca1ae045713c110a401ccb1938b8d0" kind="function"><name>Matmul</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a2e7db9e6ce44e8e1f5e4a44552150847" kind="function"><name>Copy</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a654cd4889c75244ff3048a3f53eb6980" kind="function"><name>As</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1ad63c4898e4451692b65a5c2e918b6e01" kind="function"><name>CleanUp</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1ac63e2f2f702b31ca78ef94ed25ed880d" kind="function"><name>~Array</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a295790934ad0df610ff4b0929a2f52fb" kind="function"><name>Flatten1D&lt; T &gt;</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1ac558f96d48e3cd272d99918454f9bbd6" kind="function"><name>Flatten2D&lt; T &gt;</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a40b216dc37ed75e43ff355e6aff36a0d" kind="function"><name>Flatten3D&lt; T &gt;</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a5b298cc9ac9b1748daa6804b04965b16" kind="function"><name>Flatten4D&lt; T &gt;</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a1a481adc627929b9633f25695a494377" kind="function"><name>BoolToByte1D</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1afaabdfe47e549fd273c153c01527e88b" kind="function"><name>BoolToByte2D</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1acdff46621e7e2cba33b4919100ff7d9a" kind="function"><name>BoolToByte3D</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a5f4c7dcc74be8164345cae938157ae3c" kind="function"><name>BoolToByte4D</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a6f57408769021f8f74fa4187899b11a2" kind="function"><name>ByteToGeneric1D&lt; T &gt;</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1af3f709b403e5f84b77820f220d61af73" kind="function"><name>ToGenericComplex1D&lt; T, R &gt;</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a865c383c620a32207161375406b970e1" kind="function"><name>ByteToGeneric2D&lt; T &gt;</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1ab74303681ca476b4dbd68f0fa9002692" kind="function"><name>ToGenericComplex2D&lt; T, R &gt;</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a93667cb7e2f83228ece3bf2a498ddd8d" kind="function"><name>ByteToGeneric3D&lt; T &gt;</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a442c53a3fa0fdf948714e42a3f1ceebd" kind="function"><name>ToGenericComplex3D&lt; T, R &gt;</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a75cae36970e3910b0a984e4f32db9174" kind="function"><name>ByteToGeneric4D&lt; T &gt;</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1aa738110ff8c2917ffeaaa4b0e60f1fbc" kind="function"><name>ToGenericComplex4D&lt; T, R &gt;</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1aa71d4a5e7dde7250eaadf61c906a3c8f" kind="function"><name>CheckType</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a7fe475a1762c4464467c497487a6643d" kind="function"><name>CheckNdims</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1ac9e97f3bcab5b1d144627e859758887a" kind="function"><name>operator+</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1ac414d3eaa3d9e007d00dac663890e205" kind="function"><name>operator*</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a16054029322102ab9f9e7cea45430bcd" kind="function"><name>operator-</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1ab2e76a11f2c6a71975ef5f0fde70eab8" kind="function"><name>operator/</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1ad68751be70f9242bfcc539143c6690b8" kind="function"><name>operator%</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a1d73dc0fe824ffc5667f64b995c80bdc" kind="function"><name>Pow</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a0f6a83bf6d269bbe810900ec48de4d8e" kind="function"><name>operator&amp;</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a9afedf82b778a5dd5e57e4a12c6df835" kind="function"><name>operator|</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a9c14257fa56cce75b7c50132d2333bfb" kind="function"><name>operator^</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a13cb635c3e15fc0751e94009ad4f2570" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1afa54ea024da0e4af55766a1b23f8e10e" kind="function"><name>operator&gt;&gt;</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a617cc526ee701a1f1d6c8f9513a3b3dc" kind="function"><name>operator-</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a49651c727023f9b2160bc32265c37394" kind="function"><name>operator!</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1ae1f2d444b7e917810fa703f624ee4b0a" kind="function"><name>operator&lt;</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a63c37c04d800a2360e3bc6a05b4d0fbd" kind="function"><name>operator&gt;</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1ac038773f7b9393447aca3232671f6c1a" kind="function"><name>operator&lt;=</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a9c53762fa8e9ef134c18e56fe2e18da8" kind="function"><name>operator&gt;=</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a258905dc9565c1727d9a38ae73d2b110" kind="function"><name>operator==</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a1533f8e4ae260226062c753da4376f42" kind="function"><name>operator!=</name></member>
+    <member refid="classkhiva_1_1array_1_1_array_1a7d684e8b4a10426e1fec0f05270e0fae" kind="function"><name>GetMaxDim</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1array_1_1tests_1_1_array_tests" kind="class"><name>khiva::array::tests::ArrayTests</name>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ac70ee772bc0e6f1d37f66c7a4345df5e" kind="function"><name>Init</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a93c4df898907e810e73152d5872036a3" kind="function"><name>TestGetType</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a64bbba90fe580e98cba6c5b33384930f" kind="function"><name>TestGetDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a4c411189d5ca6eafaeac5a95ea19269d" kind="function"><name>TestDoubleNull</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a3c24a0fa2d099d15294b8a2c56f82a29" kind="function"><name>TestFloatNull</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ab500cceff8cb4502680be3fe7950e376" kind="function"><name>TestComplexDoubleNull</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ab6a6a5d6ab2f6cd4db6fc7ed61d6fd3b" kind="function"><name>TestComplexFloatNull</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1af430825597c6c381bc886ee8265e4d59" kind="function"><name>TestBooleanNull</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1afe1c8f914c3adb555faf282b8b9c1b22" kind="function"><name>TestShortNull</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1aca7bf16329d72fb93a2b1a78d3812a82" kind="function"><name>TestUshortNull</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1acba72b76c602f9c9c47cc5e699017d72" kind="function"><name>TestByteNull</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1af130919038363a9a234129cf75becc70" kind="function"><name>TestLongNull</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ad5ce01c3979fa00330064b2a596e2fb1" kind="function"><name>TestUlongNull</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a7968189cdde2726cdc6df15893fd79e9" kind="function"><name>TestIntNull</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a30e0ae7b5c57d564271f1a7760c0b22a" kind="function"><name>TestUintNull</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a942a65f7082d8a9d24904bf6fa3d84d9" kind="function"><name>TestDoubleD1MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a24feac7e30384a3d63dcd5174a520eed" kind="function"><name>TestFloatD1MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a822ec841cc21f98fd9181ec02ebdc1be" kind="function"><name>TestComplexDoubleD1MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ada4b6639e164103a9695a18b03cbcfc8" kind="function"><name>TestComplexFloatD1MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a17c1b31e57ae68efc885969c1a646dda" kind="function"><name>TestBooleanD1MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ac252e6c618c90768852e1fe20476ecde" kind="function"><name>TestShortD1MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a6c9347b1e8962da19138e4abdb767b57" kind="function"><name>TestUshortD1MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a51e983afb16c3a167282e9a275e93abf" kind="function"><name>TestByteD1MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ad052f8f825eb514c93e1d0462b337fda" kind="function"><name>TestLongD1MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a0027f28087b18a067a0f4452790a16f0" kind="function"><name>TestUlongD1MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a2b2e738e9a135f070734523334ed77bd" kind="function"><name>TestIntD1MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a81af7c62b6da78784db2ac656a755099" kind="function"><name>TestUintD1MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a7e8676e30e18073f8066ac45da975dd8" kind="function"><name>TestDoubleD2MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a59325a294bbf5522326f6216ebaca21b" kind="function"><name>TestFloatD2MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a63f4e85ef98716f3b98861bf99d327bd" kind="function"><name>TestComplexDoubleD2MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a090208d340d0dccec74f775425f1a9d5" kind="function"><name>TestComplexFloatD2MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1afbad8d53a7198e92ac97033415d6334e" kind="function"><name>TestBooleanD2MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a2de92215a5aad48b471354abf7d2c904" kind="function"><name>TestShortD2MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a42f006f8f944be370175a053c94ad67c" kind="function"><name>TestUshortD2MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a61e1210a7a491c10aa06f1a7f1dfa9b4" kind="function"><name>TestByteD2MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a1bf8ac66257f9191d82142b95ba06e12" kind="function"><name>TestLongD2MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1afd6895dfa0031937e4c6b1fbbdd08ec2" kind="function"><name>TestUlongD2MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a9d966bfde5ad2092403f74e183ce3203" kind="function"><name>TestIntD2MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a496d484f4bc2629837251fee001e5144" kind="function"><name>TestUintD2MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a2d51d546f4d7c98dec2f2bd95931b922" kind="function"><name>TestDoubleD3MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ae8b16bf7e2a8c6db8d2e45d6abdbdfe8" kind="function"><name>TestFloatD3MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1afaadc18fca5abb32d4577b9bf0a32a30" kind="function"><name>TestComplexDoubleD3MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a2910c349829e73d421314899dac8a9de" kind="function"><name>TestComplexFloatD3MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1afa75558eed03ecf479b7eac8892b2101" kind="function"><name>TestBooleanD3MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1aa3c3b31b6f7e65373057b67e06254d51" kind="function"><name>TestShortD3MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1afe74a75dbc7110471860bf54f9ab66df" kind="function"><name>TestUshortD3MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a047a0fe28303a7ca828e5f6d70367591" kind="function"><name>TestByteD3MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a27ee2a07f686ec1ae343dad6099b5554" kind="function"><name>TestLongD3MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ae5f1f516b01dfce42af4c48664076f7c" kind="function"><name>TestUlongD3MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a1008ae5273cb19804e0ffcff7e200a73" kind="function"><name>TestIntD3MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1aae587ac9497a88318ca3aef37a4d5baf" kind="function"><name>TestUintD3MismatchDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a62519a28c791d4bc65dde90bb7743554" kind="function"><name>TestDoubleD1OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1adb6a78f1bed2551c832fe1db24e73bd9" kind="function"><name>TestFloatD1OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a2157c8821b637346db1c11c7dad5952f" kind="function"><name>TestComplexDoubleD1OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1abfda4ef65b1ab8068e5d5d0d038b3190" kind="function"><name>TestComplexFloatD1OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a50e40c94a388df549d68a6e0cb372847" kind="function"><name>TestBooleanD1OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a6417ef133741f905ab2215cdb542153b" kind="function"><name>TestShortD1OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a0142d92c422e7e32d9ff94f85ca9a974" kind="function"><name>TestUshortD1OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a98a6965a945c065cf6fb7c9fe1053426" kind="function"><name>TestByteD1OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ae889f12ea658731d2018816453f2de2d" kind="function"><name>TestLongD1OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a69d4ecf1b3869092d767f08c375f58cf" kind="function"><name>TestUlongD1OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a683d441627eaf48b2947eb6aead18253" kind="function"><name>TestIntD1OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a8a749d29940d651f989d6109c4ba8d96" kind="function"><name>TestUintD1OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1abdcc245dae55c9b79b786b3e238fe8d2" kind="function"><name>TestDoubleD2OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ac711dbbee42fe7a33eb318a32aab115d" kind="function"><name>TestFloatD2OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1aeceaa8569493aa72ce0767b3a22b8387" kind="function"><name>TestComplexDoubleD2OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ab14d5364bd75fdd3c8b1b858f8de052e" kind="function"><name>TestComplexFloatD2OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a21a45e6527685b8583f6b092fbdac4d9" kind="function"><name>TestBooleanD2OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a15ff724c8ed13335c58228ebb50d9102" kind="function"><name>TestShortD2OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1afd0e8ee98cb4a407188315575cb9b309" kind="function"><name>TestUshortD2OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a238d4d4316dd0c26c8d7112926a54cdd" kind="function"><name>TestByteD2OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a8e97c439b234c7b1306ec2f29b1bfd3b" kind="function"><name>TestLongD2OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1addeb68945cc2a49e18c66801db7180bc" kind="function"><name>TestUlongD2OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1adaaf92e020b9da5159873b8b27f1416e" kind="function"><name>TestIntD2OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ae28d8ff8122a577e8221967b6f6f4802" kind="function"><name>TestUintD2OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a1bcb85014bbd6d87a5e2b365b740855e" kind="function"><name>TestDoubleD3OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1aac32da18ed0177da086886e9b21be657" kind="function"><name>TestFloatD3OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1afed406c7d7db8fe7fe3b5c6c5e3c8884" kind="function"><name>TestComplexDoubleD3OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a09d4e2fa2669160ca62fa24840911dde" kind="function"><name>TestComplexFloatD3OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1aebdfa8e27a220d8efc707ed3e1e03ece" kind="function"><name>TestBooleanD3OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a520d8713a5a41a0352216e8521172565" kind="function"><name>TestShortD3OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1afe5d1db9f62fda2cd14823bacb1a6763" kind="function"><name>TestUshortD3OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1aee404fb3de1308c6d803d23e487ed833" kind="function"><name>TestByteD3OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a382211ee8e488e9851bc03a21a871072" kind="function"><name>TestLongD3OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a328dadce78810fc2b869bd2f9be821db" kind="function"><name>TestUlongD3OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a8b385f4ab896ae2c11f54548b4f25e76" kind="function"><name>TestIntD3OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a757cbacf81843125cb7dadb9ea966356" kind="function"><name>TestUintD3OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ad348e608e3511014b546e58335fc6968" kind="function"><name>TestDoubleD4OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ae6aa09bfbcfbb7d6859303c11ae672a5" kind="function"><name>TestFloatD4OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a7a1f6c52384a2be93d4c93d56f34ed2e" kind="function"><name>TestComplexDoubleD4OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1aca7c2568dddc16be0855cf0b83c5d3b7" kind="function"><name>TestComplexFloatD4OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a911031f42700d7f13c2ce893af49dfc1" kind="function"><name>TestBooleanD4OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a285abd537318b8138e9822e67b9f96c0" kind="function"><name>TestShortD4OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a73b485e99b692dff2990f3b38754956d" kind="function"><name>TestUshortD4OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a3d299369d1a24aa7853b9df46f53b2c4" kind="function"><name>TestByteD4OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a20fdc8ca67fbb763ad35bf47235daefb" kind="function"><name>TestLongD4OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a96385d796677939e48a73aebc9391a71" kind="function"><name>TestUlongD4OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a6fba7dfd9acd1d52ee1f5622c0222955" kind="function"><name>TestIntD4OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a193a858cda514c64e892a7cc6b4eb00b" kind="function"><name>TestUintD4OkDims</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a3df6eafff48e26ae1cde52cf3b4ffd7f" kind="function"><name>TestPlusOperator</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a3389bec5f2694e9a7346ed10d26a2304" kind="function"><name>TestPlusSelfOperator</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a3b4f171c3619e4b1d7ef4b307d31c2ee" kind="function"><name>TestSubOperator</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a145e2f65560a47238fafbb219dbd0eda" kind="function"><name>TestMulOperator</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a11f32f49550620902a8e0fceb9295173" kind="function"><name>TestDivOperator</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1aa3e1498fb7b9eb32190682258e003931" kind="function"><name>TestModOperator</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a03f01fdca6ce138a8a788667094e51bb" kind="function"><name>TestPowOperator</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a282db60866fd7b60ecb7ccde2be3a6c1" kind="function"><name>TestAndOperator</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ab2d0b42f4044cdbdf5b3ce5c64fd2d05" kind="function"><name>TestOrOperator</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a04601c645a5f859378a6e5e01969ce9d" kind="function"><name>TestXorOperator</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a81185865311f397d298cc751fb907cc8" kind="function"><name>TestBitShiftRightOperator</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a7a6c478ff7876620f2a5bdef5d968efe" kind="function"><name>TestBitShiftLeftOperator</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ab8b4adf01774507ab1f52880c3380eba" kind="function"><name>TestNegOperator</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ab9072eb101d5239280299f9452d1b1e9" kind="function"><name>TestNotOperator</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1af39b93fb45cf292126b464512aef0580" kind="function"><name>TestLtOperator</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1aa7a668cb284bd4721a0b183913b45eac" kind="function"><name>TestGtOperator</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ac69848058d55d502015a1a2e9ff03400" kind="function"><name>TestLeOperator</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1aaf0f707196a012805f2250da6ba2d121" kind="function"><name>TestGeOperator</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1afc905395136caa079d3fa8305b9ef3ba" kind="function"><name>TestEqOperator</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ac5410c846c813df349a128009400b88f" kind="function"><name>TestNeOperator</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a2b7c7f85909d1c6fbc83692348d31642" kind="function"><name>TestTransposeNotConjugate</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a96376aa2896b2f16743b4e41d8b4922e" kind="function"><name>TestTransposeConjugate</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a7275619291342d730a70edb4e782b1bd" kind="function"><name>TestCol</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a79406c424e0cfb8181896970ad2acdd3" kind="function"><name>TestCols</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1afdd3625f78cb80ddef17c4b0ac478839" kind="function"><name>TestRow</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ab93019b636cc61174e9d4477c495a7a6" kind="function"><name>TestRows</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a3a533534bb44dbd1ed61cc3f9ae0c7d3" kind="function"><name>TestMatmul</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1af1789d0d096b3a00bbcfb2ca13b00faa" kind="function"><name>TestCopy</name></member>
+    <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a78ff58d5c1409c4d5791b194ff111952" kind="function"><name>TestAs</name></member>
+  </compound>
+  <compound refid="class_bom_1_1_bom_manager" kind="class"><name>Bom::BomManager</name>
+    <member refid="class_bom_1_1_bom_manager_1a8264943563518a5a9094e8162958b9ab" kind="function"><name>MethodToTest</name></member>
+  </compound>
+  <compound refid="class_bom_test_1_1_bom_manager_tests" kind="class"><name>BomTest::BomManagerTests</name>
+    <member refid="class_bom_test_1_1_bom_manager_tests_1a3ccc7263a8e8f40d49e2d23c084d7b18" kind="function"><name>Sum_Is_Zero_When_No_Entries</name></member>
+    <member refid="class_bom_test_1_1_bom_manager_tests_1aff82aa5344cd370d227317bbecbb4846" kind="function"><name>Sum_Is_Calculated_Correctly_When_Entries_Supplied</name></member>
+    <member refid="class_bom_test_1_1_bom_manager_tests_1a15f99229c5e904f90e0cf1dead175869" kind="function"><name>Sum_Is_Zero_When_Null_Collection</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1clustering_1_1_clustering" kind="class"><name>khiva::clustering::Clustering</name>
+    <member refid="classkhiva_1_1clustering_1_1_clustering_1a3e647c9d8f3b4e9dbe3d94774270c47e" kind="variable"><name>Array</name></member>
+    <member refid="classkhiva_1_1clustering_1_1_clustering_1a5bb6474f7eb13a0c52333316d4d1f17d" kind="function"><name>KMeans</name></member>
+    <member refid="classkhiva_1_1clustering_1_1_clustering_1ae7845c16c04330e6b9841152770fa4d7" kind="function"><name>KShape</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1clustering_1_1tests_1_1_clustering_tests" kind="class"><name>khiva::clustering::tests::ClusteringTests</name>
+    <member refid="classkhiva_1_1clustering_1_1tests_1_1_clustering_tests_1a2a7df6c4407ddc028251544baa009698" kind="function"><name>Init</name></member>
+    <member refid="classkhiva_1_1clustering_1_1tests_1_1_clustering_tests_1a2135ab26c9481d3f04140e74520b6e93" kind="function"><name>TestKMeans</name></member>
+    <member refid="classkhiva_1_1clustering_1_1tests_1_1_clustering_tests_1a10c280e15c599f833cd9b3b7b006edb9" kind="function"><name>TestKShape</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1dimensionality_1_1_dimensionality" kind="class"><name>khiva::dimensionality::Dimensionality</name>
+    <member refid="classkhiva_1_1dimensionality_1_1_dimensionality_1a94804fb9064e5cb1eb2b34a8c8a3fadd" kind="function"><name>PAA</name></member>
+    <member refid="classkhiva_1_1dimensionality_1_1_dimensionality_1a0e27cdaf20c83fd722198b297357ec8b" kind="function"><name>PIP</name></member>
+    <member refid="classkhiva_1_1dimensionality_1_1_dimensionality_1aef75096686fdf86ead6ca02f6ce8b742" kind="function"><name>PLABottomUp</name></member>
+    <member refid="classkhiva_1_1dimensionality_1_1_dimensionality_1a4c165a099afe2a32612b1b45f7b317c7" kind="function"><name>PLASlidingWindow</name></member>
+    <member refid="classkhiva_1_1dimensionality_1_1_dimensionality_1a6d2b5b3b9a7ce8f22f61e4e149975fa4" kind="function"><name>RamerDouglasPeucker</name></member>
+    <member refid="classkhiva_1_1dimensionality_1_1_dimensionality_1a668eb21bc1cce2ce731a7e6f6b3b2a0d" kind="function"><name>SAX</name></member>
+    <member refid="classkhiva_1_1dimensionality_1_1_dimensionality_1ae2b4c8288f9537bce116837abe7e0539" kind="function"><name>Visvalingam</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1dimensionality_1_1tests_1_1_dimensionality_tests" kind="class"><name>khiva::dimensionality::tests::DimensionalityTests</name>
+    <member refid="classkhiva_1_1dimensionality_1_1tests_1_1_dimensionality_tests_1aae3d36c0db57f5d5137554b0887dc6a1" kind="function"><name>Init</name></member>
+    <member refid="classkhiva_1_1dimensionality_1_1tests_1_1_dimensionality_tests_1a6cac6f4126779021cc77337770c8a78e" kind="function"><name>TestPAA</name></member>
+    <member refid="classkhiva_1_1dimensionality_1_1tests_1_1_dimensionality_tests_1af34eb904196c9410e9fa203bd6743fd7" kind="function"><name>TestPIP</name></member>
+    <member refid="classkhiva_1_1dimensionality_1_1tests_1_1_dimensionality_tests_1a9f6bcad724ef0b8f7e6f573d2fdde4bf" kind="function"><name>TestPLABottomUp</name></member>
+    <member refid="classkhiva_1_1dimensionality_1_1tests_1_1_dimensionality_tests_1ae25912345444c48dae23ff5ae7f989ab" kind="function"><name>TestPLASlidingWindow</name></member>
+    <member refid="classkhiva_1_1dimensionality_1_1tests_1_1_dimensionality_tests_1aa0e010d2afe7bf019a4ddf2baa68ef3a" kind="function"><name>TestRamerDouglasPeucker</name></member>
+    <member refid="classkhiva_1_1dimensionality_1_1tests_1_1_dimensionality_tests_1a28b9e6627b9cdca9717a8f143d5ea9de" kind="function"><name>TestSAX</name></member>
+    <member refid="classkhiva_1_1dimensionality_1_1tests_1_1_dimensionality_tests_1ab8f56577510e09c8df597152cbb1265d" kind="function"><name>TestVisvalingam</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1distances_1_1_distances" kind="class"><name>khiva::distances::Distances</name>
+    <member refid="classkhiva_1_1distances_1_1_distances_1a851cefe60d2daa550bbd3b1e75b9de7a" kind="function"><name>DTW</name></member>
+    <member refid="classkhiva_1_1distances_1_1_distances_1af54414ba6d52bf6e17d43e4e7c34cd38" kind="function"><name>Euclidean</name></member>
+    <member refid="classkhiva_1_1distances_1_1_distances_1a88646f3ee47c7e0d91610d6c27685fee" kind="function"><name>Hamming</name></member>
+    <member refid="classkhiva_1_1distances_1_1_distances_1a5b30df6dcb8bb413a81040757f453107" kind="function"><name>Manhattan</name></member>
+    <member refid="classkhiva_1_1distances_1_1_distances_1a5047a6e83a2e870929ab537e328dc306" kind="function"><name>SBD</name></member>
+    <member refid="classkhiva_1_1distances_1_1_distances_1addaafe2d58ec05fbe00e7cbfbe5eef6c" kind="function"><name>SquaredEuclidean</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1distances_1_1tests_1_1_distances_tests" kind="class"><name>khiva::distances::tests::DistancesTests</name>
+    <member refid="classkhiva_1_1distances_1_1tests_1_1_distances_tests_1a39925a5af3eeabacdd1e3e2707f2b10b" kind="function"><name>Init</name></member>
+    <member refid="classkhiva_1_1distances_1_1tests_1_1_distances_tests_1a966328e03e1198c403163365c70b6d70" kind="function"><name>TestDTW</name></member>
+    <member refid="classkhiva_1_1distances_1_1tests_1_1_distances_tests_1abe14df3b05c5f701823d65d1714b8796" kind="function"><name>TestEuclidean</name></member>
+    <member refid="classkhiva_1_1distances_1_1tests_1_1_distances_tests_1ac25cb952ae56b6088e4a2217e7dfdb94" kind="function"><name>TestHamming</name></member>
+    <member refid="classkhiva_1_1distances_1_1tests_1_1_distances_tests_1a1a287607f24e252735762262f083bddd" kind="function"><name>TestManhattan</name></member>
+    <member refid="classkhiva_1_1distances_1_1tests_1_1_distances_tests_1abb9b055483788527ee497347c6dc4060" kind="function"><name>TestSBD</name></member>
+    <member refid="classkhiva_1_1distances_1_1tests_1_1_distances_tests_1a4a96ea1742672b33fa95a5dd0c8ab42b" kind="function"><name>TestSquaredEuclidean</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1interop_1_1_d_l_l_array" kind="class"><name>khiva::interop::DLLArray</name>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1aef88578891fc8cf10a37806e6782184c" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a0d4fcc4e5da42f9461adbb9cede473ab" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1ae0a90962e63d8353932a4c2dbbeb28a2" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a528013431583f1908245a12d0dd4687d" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1ac6e0b2907774bf20bae24c7b6306786c" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a757e5578815a9d722a51b49f192ba142" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a3ecf2a802b8625f987063fbecf0a9b9b" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a21c408711bfa6cb46da83f7a0af500b2" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a1861f2e948c0e30e771c61c8e4337410" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a91edaf7879a63e4cb8915ff491fd8e41" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1ac766ed81750272e0727c2c19c99530f6" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1ac27516813e841d5c684fc6df8ee43094" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1ad44c8df121817c99bfd4b198a3634fc6" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a64a55f5bfb3ad1a3a952d30d86101a7f" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1ab375d7195ded9e7835a23f548c1338be" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a5e309f5157241d17eba398f86a9abccc" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1abeb09bac96f36fd4554bfef73b24da11" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a22615cf699595c8b74276e4eb6c7b4fc" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a4b2bfac8b941b5ba24c92f1be6da1402" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1aa796da5d4a3776a531530b752e7cb942" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a636bb2570d6f589073f3fdd4807a9ef0" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1aed6dca9b59d482b683588f1d2c6b333d" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a61f4af3a9023b61759a1b9b2df5a59e8" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1ac02456b0d3ab9af426aa2291debeaada" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a7ff83d119d055a4f07cfda93c810a561" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1abee89097df2610bfd2c498c5872400ea" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1abc6c56698c77e653f55a0a569e144ead" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a6030188e4f1910685fc53583acfcf6bd" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a2b7e8b6ae9fc35bf465ea4961ec52faf" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a4d884bc823a8c4d1564e43aae4b8a169" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a75249f0ad6eee63545bb23f59e778cad" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1aadb30ea2d65247d87ec04e8b3f117822" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a7e7b9e580e70cc03be545145e7d42a74" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a0a5c1212455c38f6593a0ab201bd73d4" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a5a19d5961b39f9d32fa5ca01a84a6bc3" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a6b20b48f2fb0361017739b96ffc45e29" kind="function"><name>create_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a985ee0561469c6c64809a041839b2768" kind="function"><name>get_data</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a92cd10bd1187d836be00d5ded15b4854" kind="function"><name>get_dims</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a71bf7b23c2cb8191f3e05764bd4e36e6" kind="function"><name>display</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a03efeb6e247558a10abbd2f1878825b6" kind="function"><name>delete_array</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1afbcddd8c8ef3c095cb1d37366f6012a7" kind="function"><name>get_type</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a4c9506632f032803da33e8de37f8de63" kind="function"><name>khiva_add</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1aa7241f7a40f599f9654a4bb5fad143c4" kind="function"><name>khiva_mul</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1aaff9621d2933f2b9900be47987e4ceee" kind="function"><name>khiva_sub</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1ab87ce8c6cc203ba558edd5ea2c3fba57" kind="function"><name>khiva_div</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1ab4a8e192211b2df1f8699640b9b113b1" kind="function"><name>khiva_mod</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a8f77d606bc6f4d309f4d780f7ebacc46" kind="function"><name>khiva_pow</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1abd5288ae8182d3f23a15ddd790b06ea5" kind="function"><name>khiva_lt</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a3ef02ed8d73c45dcc4dff13579567bdf" kind="function"><name>khiva_gt</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a7b810d44a1482760ade3b4f930078452" kind="function"><name>khiva_le</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1ac77b65893e98b262b6398022e9dd54e6" kind="function"><name>khiva_ge</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a8e3ac336f9c4f3fa31928a5f95e1c9bf" kind="function"><name>khiva_eq</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1aa7036f8f9ef7dc3b5746ac74717d0452" kind="function"><name>khiva_ne</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a39e8611822e9b44fcbd4a8c6a584c301" kind="function"><name>khiva_bitand</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a5e1513736d93714a206bf002651700b3" kind="function"><name>khiva_bitor</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a75af15beca66bc413e5763f106379cd9" kind="function"><name>khiva_bitxor</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1ad4e05b6b3a7f5bdf4071af7e167cad1e" kind="function"><name>khiva_bitshiftl</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a26bace5b212b2be6e0935db8ce87e110" kind="function"><name>khiva_bitshiftr</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a2a70436d5aad2bcf2aef932fb643b1a5" kind="function"><name>khiva_not</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a3c36f406b88f909f8659daff96302f9a" kind="function"><name>khiva_transpose</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1aa7774ea0bc886ee100b2e5c8c4bc0b35" kind="function"><name>khiva_col</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a9ff314998131fb68ed5c635921e485e7" kind="function"><name>khiva_cols</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a62afacf313648e9cf65d3c93e0dcae3e" kind="function"><name>khiva_row</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1addfd86bdfd940e1d93756f49640a6e2a" kind="function"><name>khiva_rows</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a37e6308ea00012bdea79f3efdc7f1f04" kind="function"><name>khiva_matmul</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1af1af3d10d8381ee4720f73463096d4c6" kind="function"><name>copy</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_array_1a88716921138806edf6919de78815ca91" kind="function"><name>khiva_as</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1interop_1_1_d_l_l_clustering" kind="class"><name>khiva::interop::DLLClustering</name>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_clustering_1a1ee5a73f1c1cd9bbf4e4c6e8274473ee" kind="function"><name>k_means</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_clustering_1a94b4cc72d14549e2a0bcadf85fd73965" kind="function"><name>k_shape</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1interop_1_1_d_l_l_dimensionality" kind="class"><name>khiva::interop::DLLDimensionality</name>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_dimensionality_1a4c419ec83c5c61c775ed3b3fc2940517" kind="function"><name>paa</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_dimensionality_1af5114c22229f13307ec0d9c9ac1a791a" kind="function"><name>pip</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_dimensionality_1ab5c72fe004f84626d33b2037f0edc8fc" kind="function"><name>pla_bottom_up</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_dimensionality_1a68bebe8954becb18716bc51f83bf88ba" kind="function"><name>pla_sliding_window</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_dimensionality_1ab2af9b3c074719d48e011dbbda082c71" kind="function"><name>ramer_douglas_peucker</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_dimensionality_1af18beafb24bed357a0860b448d42ee33" kind="function"><name>sax</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_dimensionality_1af04060492f8d33205549517696003194" kind="function"><name>visvalingam</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1interop_1_1_d_l_l_distances" kind="class"><name>khiva::interop::DLLDistances</name>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_distances_1a00c1906d6308f864e2034743c6e1c3c6" kind="function"><name>dtw</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_distances_1aa869f8c6d5c45991db203eaf91dfa918" kind="function"><name>euclidean</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_distances_1a684f7b2f7009e190ec568fb71b0a725d" kind="function"><name>hamming</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_distances_1a739d40b582b68694ea71525d7092768f" kind="function"><name>manhattan</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_distances_1a5286690f1572dc2f1a71e8bc85c3266a" kind="function"><name>sbd</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_distances_1a3a8cc5cc29f67e204899e32694bd1bc7" kind="function"><name>squared_euclidean</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1interop_1_1_d_l_l_features" kind="class"><name>khiva::interop::DLLFeatures</name>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1add3f5d3cd2b14953f9472087ae07ba2f" kind="function"><name>abs_energy</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a95e6cc3d240709e4304a0a35477c14e6" kind="function"><name>absolute_sum_of_changes</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a288ecd6e1fcbf929f58eec74bf654164" kind="function"><name>aggregated_autocorrelation</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a4bd96e198aa003b96828ba58045eba6d" kind="function"><name>aggregated_linear_trend</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1ab9469b2de1150c75716fdf3123a1dfc0" kind="function"><name>approximate_entropy</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a50a567df5e829e1c4139598139ffc227" kind="function"><name>cross_covariance</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1afafe384c3cddf5d2f3b3c294971b0a50" kind="function"><name>auto_covariance</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a857ec574d5fb5492b861efff45494932" kind="function"><name>cross_correlation</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a2c3bffd96676d0b5985f4778182dcc1c" kind="function"><name>auto_correlation</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a5e37b3513e5a00aee63db348fae291c9" kind="function"><name>binned_entropy</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1ae4a1ae31462928a004613a867ee2fadf" kind="function"><name>c3</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a75438219add17f13f41ebd0b852ed8b2" kind="function"><name>cid_ce</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a67ac8d1dbcb01c227c9c27f78e959aed" kind="function"><name>count_above_mean</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a5559115107d672d504af9fec765278e8" kind="function"><name>count_below_mean</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1acf0dfe79937a46d9cfa3125d24b440d7" kind="function"><name>cwt_coefficients</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a1840fee4dad604ae632bc8d1c7f06321" kind="function"><name>energy_ratio_by_chunks</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a1c87c966c982ad8aa2c51478d509afe6" kind="function"><name>fft_aggregated</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a88800114f2e9afb24f1c6bcfa6ade957" kind="function"><name>fft_coefficient</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1ae70db85ecb8283db50c8b4b2bedc1af1" kind="function"><name>first_location_of_maximum</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a6d193c97885c6df4215c9d6802b83625" kind="function"><name>first_location_of_minimum</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1afd32548eecfa4ff70d1f98dbfe7ca53b" kind="function"><name>friedrich_coefficients</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a574c813d82b8d022be812f54bc140788" kind="function"><name>has_duplicates</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a6ffb5faf3926fe75fb246f367b551cea" kind="function"><name>has_duplicate_max</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1af45a7b69d5140c2d7645facc413cf24c" kind="function"><name>has_duplicate_min</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a9eed336a9d138b9a4f37bcbbcf40287e" kind="function"><name>index_mass_quantile</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a97470f56bfa5bd147e77adeab9bb6873" kind="function"><name>kurtosis</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a9c7f3b29bebee0b1fa4b091d27390cf8" kind="function"><name>large_standard_deviation</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a930c49b2c612bcb8385f3553d893bfba" kind="function"><name>last_location_of_maximum</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1af801e4d6b8fed411a5a8bf0a3f32a631" kind="function"><name>last_location_of_minimum</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a106f996c2c7cded64905d3dd25ed023a" kind="function"><name>length</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a4dc041ded2e63f00f64a73158a1ebac9" kind="function"><name>linear_trend</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a2da29b6a1c0287cb219a6a4731ce3850" kind="function"><name>local_maximals</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a5f10b0f0c8a164e833332bf8dadc4be8" kind="function"><name>longest_strike_above_mean</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a49f978188a34926c68faa4653b9c3f00" kind="function"><name>longest_strike_below_mean</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a57584c970ae956c1ed2b4793ebd4fc69" kind="function"><name>max_langevin_fixed_point</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1aac41033b24b4c8001cefc20d365a9cc4" kind="function"><name>maximum</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a79cdfdec4a4a04bb765842747d6fb955" kind="function"><name>mean</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a88f943ce2a238bb143e32f2d4fe632d5" kind="function"><name>mean_absolute_change</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1abc61c1c3c5f9aa52732f8631fdd7db6d" kind="function"><name>mean_change</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a3676b48b12dc2a86e796c29ab37ec02f" kind="function"><name>mean_second_derivative_central</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a7d81c9be7dd0383ee0aa696a86232255" kind="function"><name>median</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a3be3069b086e3790b877a535b267bd43" kind="function"><name>minimum</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1abdfebe8a203d23b22848cd2a8e4f033d" kind="function"><name>number_crossing_m</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1abbeca07d57cd3fd6bdcfd7306f4ca34d" kind="function"><name>number_cwt_peaks</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a78341949bf960804409322fe39226fdf" kind="function"><name>number_peaks</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a94abb3453dc0a6b6055f04aad906b654" kind="function"><name>partial_autocorrelation</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a413b1a77d06c42c21608e9f26492e5b5" kind="function"><name>percentage_of_reoccurring_datapoints_to_all_datapoints</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a18f68c40c2e747582e31c1541cd188f5" kind="function"><name>percentage_of_reoccurring_values_to_all_values</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a72b887d0da16c17aad67c54e1c2e0184" kind="function"><name>quantile</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a790bcab1d5066bd065a6c4b249e0f3a9" kind="function"><name>range_count</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a29791b93875f52914a3f42a6682c0bb7" kind="function"><name>ratio_beyond_r_sigma</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1ad0e8e20fb0297eb7165724286bd159ed" kind="function"><name>ratio_value_number_to_time_series_length</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1adbc8254807e97c7d248744aaa1722ed9" kind="function"><name>sample_entropy</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a4f22bda60315614bcc21fd2d7467f821" kind="function"><name>skewness</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1aa81ee009b068590d2d685bcaa3cdf4a9" kind="function"><name>spkt_welch_density</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a7e2fde4593b08431f573d93e6c2e1679" kind="function"><name>standard_deviation</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a79e38f9cb8b354c0f554f7754bb5e169" kind="function"><name>sum_of_reoccurring_datapoints</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a00a99ef3e65334993b4c129f0835349d" kind="function"><name>sum_of_reoccurring_values</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a79a476c0ef597cb23f7cd34836fd1fa7" kind="function"><name>sum_values</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1acc4cc0b5e5c243f87a555a56e2dde286" kind="function"><name>symmetry_looking</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1ad92511867dc0ab98a37d448efde724da" kind="function"><name>time_reversal_asymmetry_statistic</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a5b34dd9d7a490908ae478983cbd1a6a2" kind="function"><name>value_count</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1ac4b7f5fc3d28280df33109144eda6f8a" kind="function"><name>variance</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a467faca41be774c30029d492d73e1a8f" kind="function"><name>variance_larger_than_standard_deviation</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1interop_1_1_d_l_l_library" kind="class"><name>khiva::interop::DLLLibrary</name>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_library_1ab866b901c6b9b3ba453be2e7e0720299" kind="variable"><name>khivaPath</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_library_1a7a21ec94c18f920773864e076ed96fdd" kind="function"><name>backend_info</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_library_1ad74860666bd91cc93b07f5b5d8d24984" kind="function"><name>set_backend</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_library_1aab970f341d2b40489672c960f6f67203" kind="function"><name>set_device</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_library_1a9b85fc84cb87801da32b62119a58b710" kind="function"><name>get_backends</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_library_1ac02fd5c68ca77e632601922dad9ba635" kind="function"><name>get_device_id</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_library_1ad98c4f20777e3b375befab351daaa948" kind="function"><name>get_backend</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_library_1a89897882221d9c471efa503eba37901a" kind="function"><name>get_device_count</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_library_1a143d6d635c6fc596dcad11bfa72bce64" kind="function"><name>version</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1interop_1_1_d_l_l_linalg" kind="class"><name>khiva::interop::DLLLinalg</name>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_linalg_1a051ddc162ebfe5f773c9e22149d4efad" kind="function"><name>lls</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1interop_1_1_d_l_l_matrix" kind="class"><name>khiva::interop::DLLMatrix</name>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_matrix_1a44df4cfe48e7ef33f60eda2c88889d1e" kind="function"><name>find_best_n_discords</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_matrix_1a6d7807c201a0b105ab3ab608b6e45a21" kind="function"><name>find_best_n_motifs</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_matrix_1a8e4c34c4cbc1f5258d20525b5dd91112" kind="function"><name>stomp</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_matrix_1a965e2ee319c1b66e483c2477849d3f83" kind="function"><name>stomp_self_join</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1interop_1_1_d_l_l_normalization" kind="class"><name>khiva::interop::DLLNormalization</name>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_normalization_1a4b8a8b57779a2e2a9681873ed38d1ead" kind="function"><name>decimal_scaling_norm</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_normalization_1afef20cc6ada16fe84c8c659677899c74" kind="function"><name>decimal_scaling_norm_in_place</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_normalization_1ab6df70047b9dcf69e9723fe2fb3d920a" kind="function"><name>max_min_norm</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_normalization_1afc93cd8f4b41be72d52a2d606d0cdf92" kind="function"><name>max_min_norm_in_place</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_normalization_1af6584451101ce922dad0d4dfb2bbe01a" kind="function"><name>mean_norm</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_normalization_1a4a3c01d6d03e465f4e3afce9e2cfe2d9" kind="function"><name>mean_norm_in_place</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_normalization_1af64a7d51d051bc5d9259a3b5ea7c9900" kind="function"><name>znorm</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_normalization_1ae58535dd3096b81e75973ec26c388486" kind="function"><name>znorm_in_place</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1interop_1_1_d_l_l_polynomial" kind="class"><name>khiva::interop::DLLPolynomial</name>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_polynomial_1ac96d70c8bbeb29a608542fa9310534dc" kind="function"><name>polyfit</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_polynomial_1a31f25fb318fb1fe8f4b4c1684e355f96" kind="function"><name>roots</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1interop_1_1_d_l_l_regression" kind="class"><name>khiva::interop::DLLRegression</name>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_regression_1ad3c7e4dbe514d3a447af192b983e77a7" kind="function"><name>linear</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1interop_1_1_d_l_l_regularization" kind="class"><name>khiva::interop::DLLRegularization</name>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_regularization_1a10e0bd8ee9417e34f6e40027bc3e3f38" kind="function"><name>group_by</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1interop_1_1_d_l_l_statistics" kind="class"><name>khiva::interop::DLLStatistics</name>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_statistics_1a4469f0b7a6f6e67948fe659de6c3cd7e" kind="function"><name>covariance_statistics</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_statistics_1a4f0b0cb0f247c3ab832a627c69ad5fa4" kind="function"><name>kurtosis_statistics</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_statistics_1a3af99a17a16f48d5d0914d69101385cf" kind="function"><name>ljung_box</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_statistics_1ab849e99c88eed74f40ae62268d7a42c2" kind="function"><name>moment_statistics</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_statistics_1a05326ea4529905b6d75bd79c64c0c4a1" kind="function"><name>quantile_statistics</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_statistics_1a7ac2cfeecfff5f705d848bfed8adf33b" kind="function"><name>quantiles_cut_statistics</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_statistics_1adb2cd392d8195616874042120458a1bf" kind="function"><name>sample_stdev_statistics</name></member>
+    <member refid="classkhiva_1_1interop_1_1_d_l_l_statistics_1a8b1aee0f04bf7185e91460e4b861f8eb" kind="function"><name>skewness_statistics</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1features_1_1_features" kind="class"><name>khiva::features::Features</name>
+    <member refid="classkhiva_1_1features_1_1_features_1a055f8745244a303a358d35407c8200c5" kind="variable"><name>Array</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a2599b4437f42015866b9bf300642f38e" kind="variable"><name>Array</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a10b227b399f0e2393a507070fcca2e91" kind="variable"><name>Array</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a2a28266aff85d2549c3388515303de14" kind="variable"><name>Array</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a94a5f3acdf3070a1874035df485f9491" kind="function"><name>AbsEnergy</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a0084451068ce2f104b7075350aad9eba" kind="function"><name>AbsoluteSumOfChanges</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a5caed649747363b05e0311d7d6d1e68d" kind="function"><name>AggregatedAutocorrelation</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1aa9e69b44583edf0ecad24b02910c228f" kind="function"><name>ApproximateEntropy</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1ac776cd4f95b6fc3456230c2c0c6f163e" kind="function"><name>CrossCovariance</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a25519a7c4fc82a826882212c7a1fb9e7" kind="function"><name>AutoCovariance</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a9df662ac943af3fe38bfc3e50f965c42" kind="function"><name>CrossCorrelation</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a8849fc3aabbc0cb9896c596a79eee4f6" kind="function"><name>AutoCorrelation</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a31971d8e1841648005522eb08a7120c8" kind="function"><name>BinnedEntropy</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a462639f20b7a0c7cac1522cbaa0d2122" kind="function"><name>C3</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a06e07fc2169ecd94fbf7f21b407a683d" kind="function"><name>CidCe</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1aebdccf7a2d77f12e1b8869e24369d231" kind="function"><name>CountAboveMean</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a3b5f991bd9bf561b338f107a594775fd" kind="function"><name>CountBelowMean</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1afa6e9b78f842ac8f61a81047527e3f74" kind="function"><name>CwtCoefficients</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a3e87d889e02f21b8c5568bd6faaaaeb3" kind="function"><name>EnergyRatioByChunks</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a669ffd81229f9fd3bc8dd33434585606" kind="function"><name>FftAggregated</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a336ef7bbade66652a361d94acf475fc1" kind="function"><name>FirstLocationOfMaximum</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1ac9bd93efc7e586df11c5208985794832" kind="function"><name>FirstLocationOfMinimum</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a7b79a95ce1b07a35884a41abb3b4248f" kind="function"><name>FriedrichCoefficients</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1ab7e5472a6a67a3d7116c278a98a82545" kind="function"><name>HasDuplicates</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a27d4abe4e9c83930ccec3278338e2b52" kind="function"><name>HasDuplicateMax</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a1c89f58b3851d06f57635ef4abbb0293" kind="function"><name>HasDuplicateMin</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a0fc139d3350ca0fa6774bd5a4003061a" kind="function"><name>IndexMassQuantile</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a911d30988298ecd88427bec4ee37d0c8" kind="function"><name>Kurtosis</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a70067042add15b9eb09cb155ba210b5d" kind="function"><name>LargeStandardDeviation</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a7131dcc52520fbddaf1e4906cda15423" kind="function"><name>LastLocationOfMaximum</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1aff001af10442ea2e923bf3d82a201e77" kind="function"><name>LastLocationOfMinimum</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a20c2e7a25ea7cb185d4093affc417edf" kind="function"><name>Length</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1aecd48dfe93b9ba4790a53ce80da6b80d" kind="function"><name>LocalMaximals</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1ad57efb15959db76c4e9f7de34b78a7bc" kind="function"><name>LongestStrikeAboveMean</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a271a7e30ff4941af9df98d042c4d7cd4" kind="function"><name>LongestStrikeBelowMean</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a173e9d29094ff881cbdae80cc61a2471" kind="function"><name>MaxLangevinFixedPoint</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1acf9f8fa70526909d97eaafdfe3a2e446" kind="function"><name>Maximum</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a797758a91f71993552c3f6908d2bb85e" kind="function"><name>Mean</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a04d4e4db46271eef51144eae76b00531" kind="function"><name>MeanAbsoluteChange</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a50341ca54e63df0a57db6383be276920" kind="function"><name>MeanChange</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a9110d16052e9f3272eccc127cc0b9e36" kind="function"><name>MeanSecondDerivativeCentral</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1ade195f3e93cb66c5e84900d97aec1e68" kind="function"><name>Median</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a8214d2c861fef7bd0329349031c4d473" kind="function"><name>Minimum</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a9dc2fc89c2b9e1c5a397c6c47ae16171" kind="function"><name>NumberCrossingM</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a7fff71c6ba7f4ce4344e4395f506a35d" kind="function"><name>NumberCwtPeaks</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a4c4ac859a6d16dfafc5aa108b02b2c86" kind="function"><name>NumberPeaks</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a01ba2fa7975e7cddf82c93bf515856a6" kind="function"><name>PartialAutocorrelation</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a3405f05243a79947dd4aab24b63a38d5" kind="function"><name>PercentageOfReoccurringDatapointsToAllDatapoints</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a9c60a397c28bf172ab54f0293a7260d5" kind="function"><name>PercentageOfReoccurringValuesToAllValues</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a2fa1e072e11ee66d5a990e8693453baf" kind="function"><name>Quantile</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1ac94058b3f4bc3b8e0e21be262b1b217a" kind="function"><name>RangeCount</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a7d4cb680ce6da51a624f3bb5d7ebfc7b" kind="function"><name>RatioBeyondRSigma</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a3d266e683f95b94a05b0846163ded46d" kind="function"><name>RatioValueNumberToTimeSeriesLength</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a64710838a714e6a1263bada2c04ad1a1" kind="function"><name>SampleEntropy</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a31ad18b51c0f5016e87fbd4e6e61be4f" kind="function"><name>Skewness</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a96814e8fb33d72bd2ba7cb552bcf4d02" kind="function"><name>SpktWelchDensity</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1afcda5621d1ba777b856df4784245c562" kind="function"><name>StandardDeviation</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1ad2943eb1b4ed0dff06ffd36b6eb3c858" kind="function"><name>SumOfReoccurringDatapoints</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1afd4ed289029b84b26a55b7e3f358fd43" kind="function"><name>SumOfReoccurringValues</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a4ff27da1f1df300039a060ae5495383b" kind="function"><name>SumValues</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1aee05d0d4a8c61a95f8080a0ee9040739" kind="function"><name>SymmetryLooking</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1afee3c3d5d23ffc2085e9cdeb369e8bf6" kind="function"><name>TimeReversalAsymmetryStatistic</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1ad5c7c9e151ece61006ae5d7102cbaac0" kind="function"><name>ValueCount</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a3f345f5e1ba5db83f4aae546bcc4688e" kind="function"><name>Variance</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a2714c653b8dfcd69ddef827c6ce6afd7" kind="function"><name>VarianceLargerThanStandardDeviation</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a682754591a8ec8c73629c1df128671e4" kind="function"><name>AggregatedLinearTrend</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1add9ca381dc76b1e3db9c2ca2a7ce0393" kind="function"><name>FftCoefficient</name></member>
+    <member refid="classkhiva_1_1features_1_1_features_1a6d4c529bedc55676cf293557f18a5cf3" kind="function"><name>LinearTrend</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1features_1_1tests_1_1_features_tests" kind="class"><name>khiva::features::tests::FeaturesTests</name>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a84b40d90e0416bcb899dda735d1fe4d2" kind="variable"><name>DELTA</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1ab66ad8e9e59d29de45c9ce95031cb5b3" kind="function"><name>Init</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a7c82c0f5592e5169fd533a3598718e48" kind="function"><name>TestAbsEnergy</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a2592e8726035a17d27cdc68452d8b869" kind="function"><name>TestAbsoluteSumOfChanges</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a20059bbc219f03d333da502442c01643" kind="function"><name>TestAggregatedAutocorrelation</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a39802d69b6973184f2c4a1486d65e01a" kind="function"><name>TestAggregatedLinearTrendMean</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a7846d19ac2dec1b742830f0a3a950dc1" kind="function"><name>TestApproximateEntropy</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a4e2b89b96bd4b372eef0ca5d8ce7233e" kind="function"><name>TestCrossCovariance</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a3fad0e420ec54a51fb3cff75d1c2fb16" kind="function"><name>TestAutoCovariance</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a58917785a5365cb25b6ca53d59714a0f" kind="function"><name>TestCrossCorrelation</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1ae53df30c57cc9fcde4a7d6f283499b79" kind="function"><name>TestAutoCorrelation</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1aaf8462c5c69cbccec585ba6d4db466c4" kind="function"><name>TestBinnedEntropy</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1af5f3a7f86324b5021d03266a97ea4935" kind="function"><name>TestC3</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1aced6b4f866c47c52d54c31dd540336b0" kind="function"><name>TestCidCe</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a1c4531b9f4a2d4517772c67a7567a609" kind="function"><name>TestCountAboveMean</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a2c56c2fbd90c545bfd5ca49c32073c0d" kind="function"><name>TestCountBellowMean</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a6a5bdcc5e0cb17a89dab77b3f730a99d" kind="function"><name>TestCwtCoefficients</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1ab77e9561c77d20e7a1062f6a4bdfbf2c" kind="function"><name>TestEnergyRatioByChunks</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1ae34de6e83714e5da8810988664149b62" kind="function"><name>TestFftAggregated</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a4c173947fd8938ffb388badccac937d6" kind="function"><name>TestFftCoefficient</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a85f6553aca92db824383cdded5a4f211" kind="function"><name>TestFirstLocationOfMaximum</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1af045e5c50dc093d9fda1a4434345e098" kind="function"><name>TestFirstLocationOfMinimum</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a59288a7aa65107014a1f5088aafd50b7" kind="function"><name>TestFriedrichCoefficients</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a28b1f0dae64f93dbf7ff4e0ed25c7d10" kind="function"><name>TestHasDuplicates</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1ad72a83083060a305e82b6d08cd39a23c" kind="function"><name>TestHasDuplicateMax</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a1f3ea2c6e586090d937f17a268e1086a" kind="function"><name>TestHasDuplicateMin</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a77029909679e4ffa340b6b168656cc31" kind="function"><name>TestIndexMassQuantile</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a9e9caa0a79155467822aad97d52aa0e5" kind="function"><name>TestKurtosis</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1ad90c3b3cf8da5a70f7d0e866e79ca285" kind="function"><name>TestLargeStandardDeviation</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1ad9c563f3b98aad13193417da2ee02300" kind="function"><name>TestLastLocationOfMaximum</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1af6a9c84da0f1162c0990b7d37d377254" kind="function"><name>TestLastLocationOfMinimum</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a24a634bd680cacb334120dd29597fb61" kind="function"><name>TestLength</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1acc9c0b04463479b665e3676f2a30a541" kind="function"><name>TestLinearTrend</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a4ea849011ede735fc163c22e0dbc6ccf" kind="function"><name>TestLongestStrikeAboveMean</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1ab949453ddb11442fc296f0db33ada913" kind="function"><name>TestLongestStrikeBelowMean</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1ae10f31864c2cc51f63259facb971fedb" kind="function"><name>TestMaxLangevinFixedPoint</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a0c211585bef72fc354978f6ac66de6b4" kind="function"><name>TestMaximum</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1afea86ba39b62a49dea5b36b290c01f43" kind="function"><name>TestMean</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a931e9934e6f550177df4aa91ff2a386c" kind="function"><name>TestMeanAbsoluteChange</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1aa8ffc02c514cd59d1ca41bfc107fc2c8" kind="function"><name>TestMeanChange</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1ab36d220ce32df13db8a0e6c5757898dc" kind="function"><name>TestMeanSecondDerivativeCentral</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a7087a7fc0600d5f1a27eea19babf4327" kind="function"><name>TestMedian</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1ab8965ec072050d1963ecc4fa9b7417bb" kind="function"><name>TestMinimum</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1ae94267f19b1e2cebf170bac87a55318c" kind="function"><name>TestNumberCrossingM</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1acaad5459398b8edd341eb6457880db73" kind="function"><name>TestNumberCwtPeaks</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1afbb4170eedb202447f9f2f72a55339e7" kind="function"><name>TestNumberPeaks</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a054cd00054d39a03e27836481c34688c" kind="function"><name>TestPartialAutocorrelation</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a1250a73119f4959d6b0a1e43ad079b74" kind="function"><name>TestPercentageOfReoccurringDatapointsToAllDatapoints</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1af52faddee2d984d9916afab95daeeb3d" kind="function"><name>TestPercentageOfReoccurringValuesToAllValues</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a1bb2e00bb8712854f785a00542a38f4d" kind="function"><name>TestQuantile</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a29a0208149b3a90c39ab27542d302c9c" kind="function"><name>TestRangeCount</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a32271f1d15b79750f9ea8d3e7fb46a9e" kind="function"><name>TestRatioBeyondRSigma</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1ac7113dda7c166daa49362bf3a0d2e507" kind="function"><name>TestRatioValueNumberToTimeSeriesLength</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a2fae2e7beee3ddce3557a673ca8335cf" kind="function"><name>TestSampleEntropy</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a7c86e7abadc21f9e45a52352732c5dc3" kind="function"><name>TestSkewness</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1ab88fbe6a884ee0fff5babddde7e19648" kind="function"><name>TestSpktWelchDensity</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a5b350b97d87ed8501afeeb3a3228159d" kind="function"><name>TestStandardDeviation</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a2bbbf32002f6913ace3f5569676d5c46" kind="function"><name>TestSumOfReoccurringDatapoints</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a17480c44436ffe3905a6aa252a0bc4c9" kind="function"><name>TestSumOfReoccurringValues</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1aaef5ed1c6afc2e0140e76e145460d843" kind="function"><name>TestSumValues</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a84cae4fe630035d7cbdd134f660ff743" kind="function"><name>TestSymmetryLooking</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a0793b143de56a8c8460868840b707fcf" kind="function"><name>TestTimeReversalAsymmetryStatistic</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a27efa6d100a230d764f15a03620d958e" kind="function"><name>TestValueCount</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1af12b2dce1b8487ce0a26171e582818ba" kind="function"><name>TestVariance</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1abb9c797cffedf7be9d80b7f2f66fad39" kind="function"><name>TestVarianceLargerThanStandardDeviation</name></member>
+    <member refid="classkhiva_1_1features_1_1tests_1_1_features_tests_1a225f46a6a3300c4f4c50f8e7550f2542" kind="function"><name>Flatten3D&lt; T &gt;</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1_khiva" kind="class"><name>khiva::Khiva</name>
+    <member refid="classkhiva_1_1_khiva_1a149c512eefcef84e8e94eca721d8cd8f" kind="enum"><name>Backend</name></member>
+    <member refid="classkhiva_1_1_khiva_1a149c512eefcef84e8e94eca721d8cd8fa50b86107f9208ed92a2b46d4f8a15f1a" kind="enumvalue"><name>KHIVA_BACKEND_DEFAULT</name></member>
+    <member refid="classkhiva_1_1_khiva_1a149c512eefcef84e8e94eca721d8cd8fa3798a2e99dee408ddbb160ffeb68eb4c" kind="enumvalue"><name>KHIVA_BACKEND_CPU</name></member>
+    <member refid="classkhiva_1_1_khiva_1a149c512eefcef84e8e94eca721d8cd8fa289887560a71d121a8d14d39280ac7cc" kind="enumvalue"><name>KHIVA_BACKEND_CUDA</name></member>
+    <member refid="classkhiva_1_1_khiva_1a149c512eefcef84e8e94eca721d8cd8fa18d3fb3a791bfb3ceeaa8582f9347dd0" kind="enumvalue"><name>KHIVA_BACKEND_OPENCL</name></member>
+    <member refid="classkhiva_1_1_khiva_1afe2a41bd88fb117ae27f5504438e25a2" kind="property"><name>ActualBackend</name></member>
+    <member refid="classkhiva_1_1_khiva_1ab4b9691c46e4db5099d7e182a3062a0f" kind="property"><name>SupportedBackends</name></member>
+    <member refid="classkhiva_1_1_khiva_1ad5c8679d21f7397030d5dd273e40d2f3" kind="property"><name>BackendInfo</name></member>
+    <member refid="classkhiva_1_1_khiva_1a099fd26a65c0f76e4ae9e5cc3c63377e" kind="property"><name>Device</name></member>
+    <member refid="classkhiva_1_1_khiva_1add36612816a3c1921bea61c441833f46" kind="property"><name>DeviceCount</name></member>
+    <member refid="classkhiva_1_1_khiva_1ab4f011c19a19bdf3b1e4ff8c21df359b" kind="property"><name>Version</name></member>
+    <member refid="classkhiva_1_1_khiva_1ada7dc4e61974d5b14204063e520875c8" kind="function"><name>PrintBackendInfo</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1tests_1_1_library_tests" kind="class"><name>khiva::tests::LibraryTests</name>
+    <member refid="classkhiva_1_1tests_1_1_library_tests_1ae624a8db90ded824948654d119a80908" kind="function"><name>Init</name></member>
+    <member refid="classkhiva_1_1tests_1_1_library_tests_1a86e1ff816c1dcb200794bf7023318092" kind="function"><name>PrintBackendInfoTest</name></member>
+    <member refid="classkhiva_1_1tests_1_1_library_tests_1a3b0583ea03e8a2f847a4b094b1d01690" kind="function"><name>GetBackendInfoTest</name></member>
+    <member refid="classkhiva_1_1tests_1_1_library_tests_1ad7aa97e9d85daf6ba8ce436384c81299" kind="function"><name>SetKhivaBackendTest</name></member>
+    <member refid="classkhiva_1_1tests_1_1_library_tests_1ab964e30f331c2c3cc8ef3217efa374a4" kind="function"><name>GetDeviceIDTest</name></member>
+    <member refid="classkhiva_1_1tests_1_1_library_tests_1aa48592f610a5a641727e300dd642b1df" kind="function"><name>GetKhivaVersionTest</name></member>
+    <member refid="classkhiva_1_1tests_1_1_library_tests_1a1f716b1cd4878a1f77b6743ea3d63157" kind="function"><name>GetKhivaVersionFromFile</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1linalg_1_1_linalg" kind="class"><name>khiva::linalg::Linalg</name>
+    <member refid="classkhiva_1_1linalg_1_1_linalg_1a5755536b7444370e2014430f5fb81140" kind="function"><name>Lls</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1linalg_1_1tests_1_1_linalg_tests" kind="class"><name>khiva::linalg::tests::LinalgTests</name>
+    <member refid="classkhiva_1_1linalg_1_1tests_1_1_linalg_tests_1afe0fc1f7e20140ce1df119a5a8af0db6" kind="variable"><name>DELTA</name></member>
+    <member refid="classkhiva_1_1linalg_1_1tests_1_1_linalg_tests_1a491f9357d2e91964d141d93968543ff2" kind="function"><name>Init</name></member>
+    <member refid="classkhiva_1_1linalg_1_1tests_1_1_linalg_tests_1a752038ecb5c51c7fca14684fa3e769e6" kind="function"><name>Testlls</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1matrix_1_1_matrix" kind="class"><name>khiva::matrix::Matrix</name>
+    <member refid="classkhiva_1_1matrix_1_1_matrix_1a263a6854538f39bd68e038d667f1cc8c" kind="variable"><name>Array</name></member>
+    <member refid="classkhiva_1_1matrix_1_1_matrix_1a82b0042773361673e0f5cde0c287c9fd" kind="variable"><name>Array</name></member>
+    <member refid="classkhiva_1_1matrix_1_1_matrix_1ac43c6aeaaae4e88980d938cdf89d2034" kind="function"><name>FindbestNDiscords</name></member>
+    <member refid="classkhiva_1_1matrix_1_1_matrix_1a7dee246eac2b65bd5bf2058df2af1987" kind="function"><name>FindbestNMotifs</name></member>
+    <member refid="classkhiva_1_1matrix_1_1_matrix_1a58106574084f168d3e309319069a3235" kind="function"><name>Stomp</name></member>
+    <member refid="classkhiva_1_1matrix_1_1_matrix_1a1d0761af8d530991423504fc4ceeb003" kind="function"><name>StompSelfJoin</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1matrix_1_1tests_1_1_matrix_tests" kind="class"><name>khiva::matrix::tests::MatrixTests</name>
+    <member refid="classkhiva_1_1matrix_1_1tests_1_1_matrix_tests_1afbcf28eab0114a143c40cc9a1f591215" kind="variable"><name>DELTA</name></member>
+    <member refid="classkhiva_1_1matrix_1_1tests_1_1_matrix_tests_1aa742f33f3d6368cb811b2a5e22191414" kind="function"><name>Init</name></member>
+    <member refid="classkhiva_1_1matrix_1_1tests_1_1_matrix_tests_1aa0b35c45818a0adc9aa1d6fc44093a80" kind="function"><name>TestStompSelfJoin</name></member>
+    <member refid="classkhiva_1_1matrix_1_1tests_1_1_matrix_tests_1a01d81245f9551d73740fd1d2abbbd134" kind="function"><name>TestStomp</name></member>
+    <member refid="classkhiva_1_1matrix_1_1tests_1_1_matrix_tests_1a916a2cedf018da205ae2270723f57684" kind="function"><name>TestFindbestNDiscords</name></member>
+    <member refid="classkhiva_1_1matrix_1_1tests_1_1_matrix_tests_1a12054222cd51bf9f8a3697a20e4daba7" kind="function"><name>TestFindbestNDiscordsMultipleProfiles</name></member>
+    <member refid="classkhiva_1_1matrix_1_1tests_1_1_matrix_tests_1a51f1aa0530a44438b1185bb09d8c57a3" kind="function"><name>TestFindbestNDiscordsMirror</name></member>
+    <member refid="classkhiva_1_1matrix_1_1tests_1_1_matrix_tests_1a9eb578fe5a11fadcec5b0b1143aa8d0c" kind="function"><name>TestFindbestNDiscordsConsecutive</name></member>
+    <member refid="classkhiva_1_1matrix_1_1tests_1_1_matrix_tests_1a67ac3f478060b74ed9e08507c51a23ac" kind="function"><name>TestFindbestNMotifs</name></member>
+    <member refid="classkhiva_1_1matrix_1_1tests_1_1_matrix_tests_1a86eedf47f59021d466a27c3a87094b1e" kind="function"><name>TestFindbestNMotifsMultipleProfiles</name></member>
+    <member refid="classkhiva_1_1matrix_1_1tests_1_1_matrix_tests_1a6faf01428462cebc27460f269b98d39a" kind="function"><name>TestFindbestNMotifsMirror</name></member>
+    <member refid="classkhiva_1_1matrix_1_1tests_1_1_matrix_tests_1a3e9c9a9efd657236ba30241251aa85fa" kind="function"><name>TestFindbestNMotifsConsecutive</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1normalization_1_1_normalization" kind="class"><name>khiva::normalization::Normalization</name>
+    <member refid="classkhiva_1_1normalization_1_1_normalization_1a291b871a81c368b7d3319858edcf1de0" kind="function"><name>DecimalScalingNorm</name></member>
+    <member refid="classkhiva_1_1normalization_1_1_normalization_1acfd4bed1b714bd16d51831c207db9c11" kind="function"><name>DecimalScalingNorm</name></member>
+    <member refid="classkhiva_1_1normalization_1_1_normalization_1ab3eae533383b43c78d27aac6d61f257c" kind="function"><name>MaxMinNorm</name></member>
+    <member refid="classkhiva_1_1normalization_1_1_normalization_1af484ba6fbbec31a345f085037d9f41de" kind="function"><name>MaxMinNorm</name></member>
+    <member refid="classkhiva_1_1normalization_1_1_normalization_1a415116b28fbc879cb8d303d23fa27960" kind="function"><name>MeanNorm</name></member>
+    <member refid="classkhiva_1_1normalization_1_1_normalization_1a0ea50b378b754403bf80a895a7ddb63f" kind="function"><name>MeanNorm</name></member>
+    <member refid="classkhiva_1_1normalization_1_1_normalization_1a20d08a7e62353599b85bb223ee2b07bc" kind="function"><name>Znorm</name></member>
+    <member refid="classkhiva_1_1normalization_1_1_normalization_1a708ca228ebe1822c77eabf8a78338747" kind="function"><name>Znorm</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1normalization_1_1tests_1_1_normalization_tests" kind="class"><name>khiva::normalization::tests::NormalizationTests</name>
+    <member refid="classkhiva_1_1normalization_1_1tests_1_1_normalization_tests_1a331a78d9c3afa7d0d72bfeff3dc65d32" kind="variable"><name>DELTA</name></member>
+    <member refid="classkhiva_1_1normalization_1_1tests_1_1_normalization_tests_1abd6916db57bdb9513e17c8384d87d5a2" kind="function"><name>Init</name></member>
+    <member refid="classkhiva_1_1normalization_1_1tests_1_1_normalization_tests_1a91485de46151e488526f823e592670df" kind="function"><name>TestDecimalScalingNorm</name></member>
+    <member refid="classkhiva_1_1normalization_1_1tests_1_1_normalization_tests_1aee69aa5a84c32252b3d6f3db97ae2ad4" kind="function"><name>TestDecimalScalingNormInPlace</name></member>
+    <member refid="classkhiva_1_1normalization_1_1tests_1_1_normalization_tests_1a044041b255a1e5684727a9c5beaf37d1" kind="function"><name>TestMaxMinNorm</name></member>
+    <member refid="classkhiva_1_1normalization_1_1tests_1_1_normalization_tests_1afa0d94578ead23d17173795e2e1e8c9c" kind="function"><name>TestMaxMinNormInPlace</name></member>
+    <member refid="classkhiva_1_1normalization_1_1tests_1_1_normalization_tests_1a72ade016c9c7727062b6dcd8c64dcefd" kind="function"><name>TestMeanNorm</name></member>
+    <member refid="classkhiva_1_1normalization_1_1tests_1_1_normalization_tests_1a17f9be6ee33f5e8b0175e1d65f406ef4" kind="function"><name>TestMeanNormInPlace</name></member>
+    <member refid="classkhiva_1_1normalization_1_1tests_1_1_normalization_tests_1a6a9dac9f8ab27810bcefe71cf12b0adc" kind="function"><name>TestZnorm</name></member>
+    <member refid="classkhiva_1_1normalization_1_1tests_1_1_normalization_tests_1a63dd8cfff79eb91053d9bf45990f691c" kind="function"><name>TestZnormInPlace</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1polynomial_1_1_polynomial" kind="class"><name>khiva::polynomial::Polynomial</name>
+    <member refid="classkhiva_1_1polynomial_1_1_polynomial_1a3a0251dc90d23bebc83776785a615ad9" kind="function"><name>Polyfit</name></member>
+    <member refid="classkhiva_1_1polynomial_1_1_polynomial_1a557baa3b31ba666176f9ed67b6a06abb" kind="function"><name>Roots</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1polynomial_1_1tests_1_1_polynomial_tests" kind="class"><name>khiva::polynomial::tests::PolynomialTests</name>
+    <member refid="classkhiva_1_1polynomial_1_1tests_1_1_polynomial_tests_1a869e43d05b73febe56317a981ffd30e3" kind="variable"><name>DELTA</name></member>
+    <member refid="classkhiva_1_1polynomial_1_1tests_1_1_polynomial_tests_1a9d3cca2aba3e92cbea743e16bf7c1e9c" kind="function"><name>Init</name></member>
+    <member refid="classkhiva_1_1polynomial_1_1tests_1_1_polynomial_tests_1ae03468abcbce05c5560fe022dfd700bc" kind="function"><name>TestPolyfit1</name></member>
+    <member refid="classkhiva_1_1polynomial_1_1tests_1_1_polynomial_tests_1ac9a921f74df21257045a1f32962cf3a2" kind="function"><name>TestPolyfit3</name></member>
+    <member refid="classkhiva_1_1polynomial_1_1tests_1_1_polynomial_tests_1a86b1c90ecccd4b308247e373afd366aa" kind="function"><name>TestRoots</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1regression_1_1_regression" kind="class"><name>khiva::regression::Regression</name>
+    <member refid="classkhiva_1_1regression_1_1_regression_1a43cbb0d2e3ae7327c0b4be13a41fd22f" kind="variable"><name>Array</name></member>
+    <member refid="classkhiva_1_1regression_1_1_regression_1a875444952ab132ec9e481920d4459358" kind="variable"><name>Array</name></member>
+    <member refid="classkhiva_1_1regression_1_1_regression_1ae3932bb6514d107f461a381587071f0b" kind="variable"><name>Array</name></member>
+    <member refid="classkhiva_1_1regression_1_1_regression_1aeb3ab5983fa6291bd92043cbf44ff916" kind="variable"><name>Array</name></member>
+    <member refid="classkhiva_1_1regression_1_1_regression_1ad0cd73ce4b9089e7e333fa3f671aae30" kind="function"><name>Linear</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1regression_1_1tests_1_1_regression_tests" kind="class"><name>khiva::regression::tests::RegressionTests</name>
+    <member refid="classkhiva_1_1regression_1_1tests_1_1_regression_tests_1ae6a27b1d7c07274d8e9624f3f48c1978" kind="variable"><name>DELTA</name></member>
+    <member refid="classkhiva_1_1regression_1_1tests_1_1_regression_tests_1a1a3a01aba829690e2b9d490279f63247" kind="function"><name>Init</name></member>
+    <member refid="classkhiva_1_1regression_1_1tests_1_1_regression_tests_1a280a8aa6664ff39f71b00ab262fafb49" kind="function"><name>TestLinear</name></member>
+    <member refid="classkhiva_1_1regression_1_1tests_1_1_regression_tests_1a4b3779772a551679193d55aad3e81e70" kind="function"><name>TestLinearMultipleTimeSeries</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1regularization_1_1_regularization" kind="class"><name>khiva::regularization::Regularization</name>
+    <member refid="classkhiva_1_1regularization_1_1_regularization_1a7d971eb08d562b329e6e93700c7d1e81" kind="function"><name>GroupBy</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1regularization_1_1tests_1_1_regularization_tests" kind="class"><name>khiva::regularization::tests::RegularizationTests</name>
+    <member refid="classkhiva_1_1regularization_1_1tests_1_1_regularization_tests_1ac5b1e958f08a15cd70e035f62a9b590f" kind="function"><name>Init</name></member>
+    <member refid="classkhiva_1_1regularization_1_1tests_1_1_regularization_tests_1a3afa87d13c51c794b895b812f1efbb74" kind="function"><name>TestGroupBySingleColumn</name></member>
+    <member refid="classkhiva_1_1regularization_1_1tests_1_1_regularization_tests_1a5c1f7fe81efa52a795ec5b01882214c0" kind="function"><name>TestGroupByDoubleKeyColumn</name></member>
+    <member refid="classkhiva_1_1regularization_1_1tests_1_1_regularization_tests_1a25d058103cb1acb90a2d087ac9ee845d" kind="function"><name>TestGroupByDoubleKeyColumn2</name></member>
+    <member refid="classkhiva_1_1regularization_1_1tests_1_1_regularization_tests_1aa9c7ae5b745ef6a14c883cd3753c405d" kind="function"><name>TestGroupByDoubleKeyDoubleValueColumn</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1statistics_1_1_statistics" kind="class"><name>khiva::statistics::Statistics</name>
+    <member refid="classkhiva_1_1statistics_1_1_statistics_1ab05455d82ea2d082ac4bc80810fce5fa" kind="function"><name>CovarianceStatistics</name></member>
+    <member refid="classkhiva_1_1statistics_1_1_statistics_1ab96b6c235e6ea20c702067c28473802b" kind="function"><name>KurtosisStatistics</name></member>
+    <member refid="classkhiva_1_1statistics_1_1_statistics_1a1ac4be386c872cf4db7119e62bac0e32" kind="function"><name>LjungBox</name></member>
+    <member refid="classkhiva_1_1statistics_1_1_statistics_1a86385983836f53b52640f11dcd4d78b6" kind="function"><name>MomentStatistics</name></member>
+    <member refid="classkhiva_1_1statistics_1_1_statistics_1a2314281b0dacaec606e6e469e7e414b6" kind="function"><name>QuantileStatistics</name></member>
+    <member refid="classkhiva_1_1statistics_1_1_statistics_1a6cdf0ca7e81e5564d91f9b630f18e43d" kind="function"><name>QuantilesCutStatistics</name></member>
+    <member refid="classkhiva_1_1statistics_1_1_statistics_1a65c5170ee0777cf6a38bd05a3daf2ab3" kind="function"><name>SampleStdevStatistics</name></member>
+    <member refid="classkhiva_1_1statistics_1_1_statistics_1a2b1bc2a41eff99f2900e7cca95b28fbb" kind="function"><name>SkewnessStatistics</name></member>
+  </compound>
+  <compound refid="classkhiva_1_1statistics_1_1tests_1_1_statistics_tests" kind="class"><name>khiva::statistics::tests::StatisticsTests</name>
+    <member refid="classkhiva_1_1statistics_1_1tests_1_1_statistics_tests_1adb9e83e65ca21b4615e7c46df2622eba" kind="variable"><name>DELTA</name></member>
+    <member refid="classkhiva_1_1statistics_1_1tests_1_1_statistics_tests_1a4b6360c19b7dc8d242485d040206dca7" kind="function"><name>Init</name></member>
+    <member refid="classkhiva_1_1statistics_1_1tests_1_1_statistics_tests_1a6ccc72b6d4aa368f8cf7442489f31afe" kind="function"><name>TestCovarianceUnbiased</name></member>
+    <member refid="classkhiva_1_1statistics_1_1tests_1_1_statistics_tests_1a035d0f2062a28a1264c76013ec8aaa62" kind="function"><name>TestCovarianceBiased</name></member>
+    <member refid="classkhiva_1_1statistics_1_1tests_1_1_statistics_tests_1a7718e3bde3db7facfb4b9cbf64b5e06f" kind="function"><name>TestKurtosis</name></member>
+    <member refid="classkhiva_1_1statistics_1_1tests_1_1_statistics_tests_1ac4244c9d3e156a6f3d2a02ebd992b5a5" kind="function"><name>TestLjungBox</name></member>
+    <member refid="classkhiva_1_1statistics_1_1tests_1_1_statistics_tests_1a4c61fa764bc1ef026f56da971380b56e" kind="function"><name>TestMoment</name></member>
+    <member refid="classkhiva_1_1statistics_1_1tests_1_1_statistics_tests_1a0ca2ba2e60d4617a253b0b8e9ebb810d" kind="function"><name>TestQuantile</name></member>
+    <member refid="classkhiva_1_1statistics_1_1tests_1_1_statistics_tests_1a87896e44e2e1538767931e473ed4a141" kind="function"><name>TestQuantileCut2</name></member>
+    <member refid="classkhiva_1_1statistics_1_1tests_1_1_statistics_tests_1a8acff2bfbd29dd3c54fb48b2e0a0efd9" kind="function"><name>TestQuantileCut3</name></member>
+    <member refid="classkhiva_1_1statistics_1_1tests_1_1_statistics_tests_1aa52af32975d55d8bb5031890d07cc5de" kind="function"><name>TestQuantileCut7</name></member>
+    <member refid="classkhiva_1_1statistics_1_1tests_1_1_statistics_tests_1aea520bbbe8023ed5a3eb8bb1a724a695" kind="function"><name>TestStdev</name></member>
+    <member refid="classkhiva_1_1statistics_1_1tests_1_1_statistics_tests_1aaab247eb80f08e6f3a34316f3e927439" kind="function"><name>TestSkewness</name></member>
+  </compound>
+  <compound refid="class_khiva_c_sharp_n_unit_test_1_1_test" kind="class"><name>KhivaCSharpNUnitTest::Test</name>
+    <member refid="class_khiva_c_sharp_n_unit_test_1_1_test_1ab8943fa04f6cf5124c623d97e1c22300" kind="function"><name>TestCase</name></member>
+  </compound>
+  <compound refid="namespace_bom" kind="namespace"><name>Bom</name>
+  </compound>
+  <compound refid="namespace_bom_test" kind="namespace"><name>BomTest</name>
+  </compound>
+  <compound refid="namespacekhiva" kind="namespace"><name>khiva</name>
+  </compound>
+  <compound refid="namespacekhiva_1_1array" kind="namespace"><name>khiva::array</name>
+  </compound>
+  <compound refid="namespacekhiva_1_1array_1_1tests" kind="namespace"><name>khiva::array::tests</name>
+  </compound>
+  <compound refid="namespacekhiva_1_1clustering" kind="namespace"><name>khiva::clustering</name>
+  </compound>
+  <compound refid="namespacekhiva_1_1clustering_1_1tests" kind="namespace"><name>khiva::clustering::tests</name>
+  </compound>
+  <compound refid="namespacekhiva_1_1dimensionality" kind="namespace"><name>khiva::dimensionality</name>
+  </compound>
+  <compound refid="namespacekhiva_1_1dimensionality_1_1tests" kind="namespace"><name>khiva::dimensionality::tests</name>
+  </compound>
+  <compound refid="namespacekhiva_1_1distances" kind="namespace"><name>khiva::distances</name>
+  </compound>
+  <compound refid="namespacekhiva_1_1distances_1_1tests" kind="namespace"><name>khiva::distances::tests</name>
+  </compound>
+  <compound refid="namespacekhiva_1_1features" kind="namespace"><name>khiva::features</name>
+  </compound>
+  <compound refid="namespacekhiva_1_1features_1_1tests" kind="namespace"><name>khiva::features::tests</name>
+  </compound>
+  <compound refid="namespacekhiva_1_1interop" kind="namespace"><name>khiva::interop</name>
+  </compound>
+  <compound refid="namespacekhiva_1_1linalg" kind="namespace"><name>khiva::linalg</name>
+  </compound>
+  <compound refid="namespacekhiva_1_1linalg_1_1tests" kind="namespace"><name>khiva::linalg::tests</name>
+  </compound>
+  <compound refid="namespacekhiva_1_1matrix" kind="namespace"><name>khiva::matrix</name>
+  </compound>
+  <compound refid="namespacekhiva_1_1matrix_1_1tests" kind="namespace"><name>khiva::matrix::tests</name>
+  </compound>
+  <compound refid="namespacekhiva_1_1normalization" kind="namespace"><name>khiva::normalization</name>
+  </compound>
+  <compound refid="namespacekhiva_1_1normalization_1_1tests" kind="namespace"><name>khiva::normalization::tests</name>
+  </compound>
+  <compound refid="namespacekhiva_1_1polynomial" kind="namespace"><name>khiva::polynomial</name>
+  </compound>
+  <compound refid="namespacekhiva_1_1polynomial_1_1tests" kind="namespace"><name>khiva::polynomial::tests</name>
+  </compound>
+  <compound refid="namespacekhiva_1_1regression" kind="namespace"><name>khiva::regression</name>
+  </compound>
+  <compound refid="namespacekhiva_1_1regression_1_1tests" kind="namespace"><name>khiva::regression::tests</name>
+  </compound>
+  <compound refid="namespacekhiva_1_1regularization" kind="namespace"><name>khiva::regularization</name>
+  </compound>
+  <compound refid="namespacekhiva_1_1regularization_1_1tests" kind="namespace"><name>khiva::regularization::tests</name>
+  </compound>
+  <compound refid="namespacekhiva_1_1statistics" kind="namespace"><name>khiva::statistics</name>
+  </compound>
+  <compound refid="namespacekhiva_1_1statistics_1_1tests" kind="namespace"><name>khiva::statistics::tests</name>
+  </compound>
+  <compound refid="namespacekhiva_1_1tests" kind="namespace"><name>khiva::tests</name>
+  </compound>
+  <compound refid="namespace_khiva_c_sharp_n_unit_test" kind="namespace"><name>KhivaCSharpNUnitTest</name>
+  </compound>
+  <compound refid="namespace_n_unit_1_1_framework" kind="namespace"><name>NUnit::Framework</name>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="namespace_system" kind="namespace"><name>System</name>
+  </compound>
+  <compound refid="namespace_system_1_1_collections_1_1_generic" kind="namespace"><name>System::Collections::Generic</name>
+  </compound>
+  <compound refid="namespace_system_1_1_collections_1_1_object_model" kind="namespace"><name>System::Collections::ObjectModel</name>
+  </compound>
+  <compound refid="namespace_system_1_1_i_o" kind="namespace"><name>System::IO</name>
+  </compound>
+  <compound refid="namespace_system_1_1_linq" kind="namespace"><name>System::Linq</name>
+  </compound>
+  <compound refid="namespace_system_1_1_numerics" kind="namespace"><name>System::Numerics</name>
+  </compound>
+  <compound refid="namespace_system_1_1_reflection" kind="namespace"><name>System::Reflection</name>
+  </compound>
+  <compound refid="namespace_system_1_1_runtime_1_1_compiler_services" kind="namespace"><name>System::Runtime::CompilerServices</name>
+  </compound>
+  <compound refid="namespace_system_1_1_runtime_1_1_interop_services" kind="namespace"><name>System::Runtime::InteropServices</name>
+  </compound>
+  <compound refid="namespace_system_1_1_text" kind="namespace"><name>System::Text</name>
+  </compound>
+  <compound refid="namespace_system_1_1_text_1_1_regular_expressions" kind="namespace"><name>System::Text::RegularExpressions</name>
+  </compound>
+  <compound refid="namespace_system_1_1_threading_1_1_tasks" kind="namespace"><name>System::Threading::Tasks</name>
+  </compound>
+  <compound refid="_array_8cs" kind="file"><name>Array.cs</name>
+  </compound>
+  <compound refid="_array_tests_8cs" kind="file"><name>ArrayTests.cs</name>
+  </compound>
+  <compound refid="_khiva_csharp_2_properties_2_assembly_info_8cs" kind="file"><name>KhivaCsharp/Properties/AssemblyInfo.cs</name>
+  </compound>
+  <compound refid="packages_2_open_cover_84_86_8519_2_sample_sln_2_bom_2_properties_2_assembly_info_8cs" kind="file"><name>packages/OpenCover.4.6.519/SampleSln/Bom/Properties/AssemblyInfo.cs</name>
+  </compound>
+  <compound refid="packages_2_open_cover_84_86_8519_2_sample_sln_2_bom_test_2_properties_2_assembly_info_8cs" kind="file"><name>packages/OpenCover.4.6.519/SampleSln/BomTest/Properties/AssemblyInfo.cs</name>
+  </compound>
+  <compound refid="_bom_manager_8cs" kind="file"><name>BomManager.cs</name>
+  </compound>
+  <compound refid="_bom_manager_tests_8cs" kind="file"><name>BomManagerTests.cs</name>
+  </compound>
+  <compound refid="_clustering_8cs" kind="file"><name>Clustering.cs</name>
+  </compound>
+  <compound refid="_clustering_tests_8cs" kind="file"><name>ClusteringTests.cs</name>
+  </compound>
+  <compound refid="_dimensionality_8cs" kind="file"><name>Dimensionality.cs</name>
+  </compound>
+  <compound refid="_dimensionality_tests_8cs" kind="file"><name>DimensionalityTests.cs</name>
+  </compound>
+  <compound refid="_distances_8cs" kind="file"><name>Distances.cs</name>
+  </compound>
+  <compound refid="_distances_tests_8cs" kind="file"><name>DistancesTests.cs</name>
+  </compound>
+  <compound refid="_d_l_l_array_8cs" kind="file"><name>DLLArray.cs</name>
+  </compound>
+  <compound refid="_d_l_l_clustering_8cs" kind="file"><name>DLLClustering.cs</name>
+  </compound>
+  <compound refid="_d_l_l_dimensionality_8cs" kind="file"><name>DLLDimensionality.cs</name>
+  </compound>
+  <compound refid="_d_l_l_distances_8cs" kind="file"><name>DLLDistances.cs</name>
+  </compound>
+  <compound refid="_d_l_l_features_8cs" kind="file"><name>DLLFeatures.cs</name>
+  </compound>
+  <compound refid="_d_l_l_library_8cs" kind="file"><name>DLLLibrary.cs</name>
+  </compound>
+  <compound refid="_d_l_l_linalg_8cs" kind="file"><name>DLLLinalg.cs</name>
+  </compound>
+  <compound refid="_d_l_l_matrix_8cs" kind="file"><name>DLLMatrix.cs</name>
+  </compound>
+  <compound refid="_d_l_l_normalization_8cs" kind="file"><name>DLLNormalization.cs</name>
+  </compound>
+  <compound refid="_d_l_l_polynomial_8cs" kind="file"><name>DLLPolynomial.cs</name>
+  </compound>
+  <compound refid="_d_l_l_regression_8cs" kind="file"><name>DLLRegression.cs</name>
+  </compound>
+  <compound refid="_d_l_l_regularization_8cs" kind="file"><name>DLLRegularization.cs</name>
+  </compound>
+  <compound refid="_d_l_l_statistics_8cs" kind="file"><name>DLLStatistics.cs</name>
+  </compound>
+  <compound refid="_features_8cs" kind="file"><name>Features.cs</name>
+  </compound>
+  <compound refid="_features_tests_8cs" kind="file"><name>FeaturesTests.cs</name>
+  </compound>
+  <compound refid="_khiva_8cs" kind="file"><name>Khiva.cs</name>
+  </compound>
+  <compound refid="_library_tests_8cs" kind="file"><name>LibraryTests.cs</name>
+  </compound>
+  <compound refid="_linalg_8cs" kind="file"><name>Linalg.cs</name>
+  </compound>
+  <compound refid="_linalg_tests_8cs" kind="file"><name>LinalgTests.cs</name>
+  </compound>
+  <compound refid="_matrix_8cs" kind="file"><name>Matrix.cs</name>
+  </compound>
+  <compound refid="_matrix_tests_8cs" kind="file"><name>MatrixTests.cs</name>
+  </compound>
+  <compound refid="_normalization_8cs" kind="file"><name>Normalization.cs</name>
+  </compound>
+  <compound refid="_normalization_tests_8cs" kind="file"><name>NormalizationTests.cs</name>
+  </compound>
+  <compound refid="_polynomial_8cs" kind="file"><name>Polynomial.cs</name>
+  </compound>
+  <compound refid="_polynomial_tests_8cs" kind="file"><name>PolynomialTests.cs</name>
+  </compound>
+  <compound refid="_regression_8cs" kind="file"><name>Regression.cs</name>
+  </compound>
+  <compound refid="_regression_tests_8cs" kind="file"><name>RegressionTests.cs</name>
+  </compound>
+  <compound refid="_regularization_8cs" kind="file"><name>Regularization.cs</name>
+  </compound>
+  <compound refid="_regularization_tests_8cs" kind="file"><name>RegularizationTests.cs</name>
+  </compound>
+  <compound refid="_statistics_8cs" kind="file"><name>Statistics.cs</name>
+  </compound>
+  <compound refid="_statistics_tests_8cs" kind="file"><name>StatisticsTests.cs</name>
+  </compound>
+  <compound refid="_khiva_csharp_2obj_2_debug_2_temporary_generated_file__036_c0_b5_b-1481-4323-8_d20-8_f5_a_d_c_b23_d92_8cs" kind="file"><name>KhivaCsharp/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs</name>
+  </compound>
+  <compound refid="_khiva_csharp_2obj_2x64_2_debug_2_temporary_generated_file__036_c0_b5_b-1481-4323-8_d20-8_f5_a_d_c_b23_d92_8cs" kind="file"><name>KhivaCsharp/obj/x64/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs</name>
+  </compound>
+  <compound refid="_khiva_csharp_2obj_2x64_2_release_2_temporary_generated_file__036_c0_b5_b-1481-4323-8_d20-8_f5_a_d_c_b23_d92_8cs" kind="file"><name>KhivaCsharp/obj/x64/Release/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs</name>
+  </compound>
+  <compound refid="_khiva_c_sharp_n_unit_test_2obj_2x64_2_debug_2_temporary_generated_file__036_c0_b5_b-1481-4323-8_d20-8_f5_a_d_c_b23_d92_8cs" kind="file"><name>KhivaCSharpNUnitTest/obj/x64/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs</name>
+  </compound>
+  <compound refid="_khiva_csharp_2obj_2_debug_2_temporary_generated_file__5937a670-0e60-4077-877b-f7221da3dda1_8cs" kind="file"><name>KhivaCsharp/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs</name>
+  </compound>
+  <compound refid="_khiva_csharp_2obj_2x64_2_debug_2_temporary_generated_file__5937a670-0e60-4077-877b-f7221da3dda1_8cs" kind="file"><name>KhivaCsharp/obj/x64/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs</name>
+  </compound>
+  <compound refid="_khiva_csharp_2obj_2x64_2_release_2_temporary_generated_file__5937a670-0e60-4077-877b-f7221da3dda1_8cs" kind="file"><name>KhivaCsharp/obj/x64/Release/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs</name>
+  </compound>
+  <compound refid="_khiva_c_sharp_n_unit_test_2obj_2x64_2_debug_2_temporary_generated_file__5937a670-0e60-4077-877b-f7221da3dda1_8cs" kind="file"><name>KhivaCSharpNUnitTest/obj/x64/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs</name>
+  </compound>
+  <compound refid="_khiva_csharp_2obj_2_debug_2_temporary_generated_file___e7_a71_f73-0_f8_d-4_b9_b-_b56_e-8_e70_b10_b_c5_d3_8cs" kind="file"><name>KhivaCsharp/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs</name>
+  </compound>
+  <compound refid="_khiva_csharp_2obj_2x64_2_debug_2_temporary_generated_file___e7_a71_f73-0_f8_d-4_b9_b-_b56_e-8_e70_b10_b_c5_d3_8cs" kind="file"><name>KhivaCsharp/obj/x64/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs</name>
+  </compound>
+  <compound refid="_khiva_csharp_2obj_2x64_2_release_2_temporary_generated_file___e7_a71_f73-0_f8_d-4_b9_b-_b56_e-8_e70_b10_b_c5_d3_8cs" kind="file"><name>KhivaCsharp/obj/x64/Release/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs</name>
+  </compound>
+  <compound refid="_khiva_c_sharp_n_unit_test_2obj_2x64_2_debug_2_temporary_generated_file___e7_a71_f73-0_f8_d-4_b9_b-_b56_e-8_e70_b10_b_c5_d3_8cs" kind="file"><name>KhivaCSharpNUnitTest/obj/x64/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs</name>
+  </compound>
+  <compound refid="_test_8cs" kind="file"><name>Test.cs</name>
+  </compound>
+  <compound refid="dir_69e2d92053a123a19f5f017613f16bc5" kind="dir"><name>Bom</name>
+  </compound>
+  <compound refid="dir_387f8524b52c4743eb1004ec57fa6c9c" kind="dir"><name>BomTest</name>
+  </compound>
+  <compound refid="dir_ffdb891217b5fdb7d051d5d7c2a69ddf" kind="dir"><name>Debug</name>
+  </compound>
+  <compound refid="dir_68796f2b821d414e30610a5a64a1f404" kind="dir"><name>Debug</name>
+  </compound>
+  <compound refid="dir_37bc1981ad7dfc8db385494ade441dc3" kind="dir"><name>Debug</name>
+  </compound>
+  <compound refid="dir_db613c891d1e7161415da725152594f1" kind="dir"><name>Interop</name>
+  </compound>
+  <compound refid="dir_167ed27ed00e1a4a248853e9a2f70d91" kind="dir"><name>KhivaCsharp</name>
+  </compound>
+  <compound refid="dir_29ecdff0950a729e530269e6be80ad6f" kind="dir"><name>KhivaCsharp</name>
+  </compound>
+  <compound refid="dir_85adb1f508f55db850baeed3b169f9fa" kind="dir"><name>KhivaCSharpNUnitTest</name>
+  </compound>
+  <compound refid="dir_efd74b6c6f1679582534f9d614cb73c4" kind="dir"><name>obj</name>
+  </compound>
+  <compound refid="dir_09edaf3a71f56c97c6583381415481da" kind="dir"><name>obj</name>
+  </compound>
+  <compound refid="dir_03f4cb490767b40f1cf7f5cf83b8de78" kind="dir"><name>OpenCover.4.6.519</name>
+  </compound>
+  <compound refid="dir_5d1b6e18cb300d6791b647d42f43c43c" kind="dir"><name>packages</name>
+  </compound>
+  <compound refid="dir_bd12cc98eacb5306e9dc64c1410bb12d" kind="dir"><name>Properties</name>
+  </compound>
+  <compound refid="dir_f027c795d7e533e80056a7a2f50bf0c2" kind="dir"><name>Properties</name>
+  </compound>
+  <compound refid="dir_2600b13c785f2b79faf4ba34bc897d7b" kind="dir"><name>Properties</name>
+  </compound>
+  <compound refid="dir_bdb6117080bd4d73ec16901ae15b7c48" kind="dir"><name>Release</name>
+  </compound>
+  <compound refid="dir_f313d15617405d15133419e975d39c70" kind="dir"><name>SampleSln</name>
+  </compound>
+  <compound refid="dir_0f9c9e1f0378ff81f155c20d83c59605" kind="dir"><name>x64</name>
+  </compound>
+  <compound refid="dir_8cd0fe7a2a98e3bf227421dd3ce5ac75" kind="dir"><name>x64</name>
+  </compound>
+</doxygenindex>

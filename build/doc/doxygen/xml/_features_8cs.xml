@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_features_8cs" kind="file" language="C#">
+    <compoundname>Features.cs</compoundname>
+    <innerclass refid="classkhiva_1_1features_1_1_features" prot="public">khiva::features::Features</innerclass>
+    <innernamespace refid="namespacekhiva_1_1features">khiva::features</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Features.cs"/>
+  </compounddef>
+</doxygen>

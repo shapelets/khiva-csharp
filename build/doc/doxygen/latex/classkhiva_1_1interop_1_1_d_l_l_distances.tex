@@ -1,0 +1,202 @@
+\hypertarget{classkhiva_1_1interop_1_1_d_l_l_distances}{}\section{khiva.\+interop.\+D\+L\+L\+Distances Class Reference}
+\label{classkhiva_1_1interop_1_1_d_l_l_distances}\index{khiva.\+interop.\+D\+L\+L\+Distances@{khiva.\+interop.\+D\+L\+L\+Distances}}
+
+
+\mbox{\hyperlink{classkhiva_1_1_khiva}{Khiva}} Distances class containing distances methods.  
+
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classkhiva_1_1interop_1_1_d_l_l_distances_a00c1906d6308f864e2034743c6e1c3c6}{dtw}} (\mbox{[}In\mbox{]} ref Int\+Ptr tss, \mbox{[}Out\mbox{]} out Int\+Ptr result)
+\begin{DoxyCompactList}\small\item\em Calculates the Dynamic Time Warping Distance. /summary$>$ 
+\begin{DoxyParams}{Parameters}
+{\em tss} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.\\
+\hline
+{\em result} & An upper triangular matrix where each position corresponds to the distance between two time series. Diagonal elements will be zero. For example\+: Position row 0 column 1 records the distance between time series 0 and time series 1.\\
+\hline
+\end{DoxyParams}
+\end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classkhiva_1_1interop_1_1_d_l_l_distances_aa869f8c6d5c45991db203eaf91dfa918}{euclidean}} (\mbox{[}In\mbox{]} ref Int\+Ptr tss, \mbox{[}Out\mbox{]} out Int\+Ptr result)
+\begin{DoxyCompactList}\small\item\em Calculates euclidean distances between time series. /summary$>$ 
+\begin{DoxyParams}{Parameters}
+{\em tss} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series. /param$>$ 
+\begin{DoxyParams}{Parameters}
+{\em result} & An upper triangular matrix where each position corresponds to the distance between two time series. Diagonal elements will be zero. For example\+: Position row 0 column 1 records the distance between time series 0 and time series 1.\\
+\hline
+\end{DoxyParams}
+\\
+\hline
+\end{DoxyParams}
+\end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classkhiva_1_1interop_1_1_d_l_l_distances_a684f7b2f7009e190ec568fb71b0a725d}{hamming}} (\mbox{[}In\mbox{]} ref Int\+Ptr tss, \mbox{[}Out\mbox{]} out Int\+Ptr result)
+\begin{DoxyCompactList}\small\item\em Calculates Hamming distances between time series. /summary$>$ 
+\begin{DoxyParams}{Parameters}
+{\em tss} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.\\
+\hline
+{\em result} & An upper triangular matrix where each position corresponds to the distance between two time series. Diagonal elements will be zero. For example\+: Position row 0 column 1 records the distance between time series 0 and time series 1.\\
+\hline
+\end{DoxyParams}
+\end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classkhiva_1_1interop_1_1_d_l_l_distances_a739d40b582b68694ea71525d7092768f}{manhattan}} (\mbox{[}In\mbox{]} ref Int\+Ptr tss, \mbox{[}Out\mbox{]} out Int\+Ptr result)
+\begin{DoxyCompactList}\small\item\em Calculates Manhattan distances between time series. /summary$>$ 
+\begin{DoxyParams}{Parameters}
+{\em tss} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series. /param$>$ 
+\begin{DoxyParams}{Parameters}
+{\em result} & An upper triangular matrix where each position corresponds to the distance between two time series. Diagonal elements will be zero. For example\+: Position row 0 column 1 records the distance between time series 0 and time series 1.\\
+\hline
+\end{DoxyParams}
+\\
+\hline
+\end{DoxyParams}
+\end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classkhiva_1_1interop_1_1_d_l_l_distances_a5286690f1572dc2f1a71e8bc85c3266a}{sbd}} (\mbox{[}In\mbox{]} ref Int\+Ptr tss, \mbox{[}Out\mbox{]} out Int\+Ptr result)
+\begin{DoxyCompactList}\small\item\em Calculates the Shape-\/\+Based distance (S\+BD). It computes the normalized cross-\/correlation and it returns 1.\+0 minus the value that maximizes the correlation value between each pair of time series. /summary$>$ 
+\begin{DoxyParams}{Parameters}
+{\em tss} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series. /param$>$ 
+\begin{DoxyParams}{Parameters}
+{\em result} & An upper triangular matrix where each position corresponds to the distance between two time series. Diagonal elements will be zero. For example\+: Position row 0 column 1 records the distance between time series 0 and time series 1.\\
+\hline
+\end{DoxyParams}
+\\
+\hline
+\end{DoxyParams}
+\end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classkhiva_1_1interop_1_1_d_l_l_distances_a3a8cc5cc29f67e204899e32694bd1bc7}{squared\+\_\+euclidean}} (\mbox{[}In\mbox{]} ref Int\+Ptr tss, \mbox{[}Out\mbox{]} out Int\+Ptr result)
+\begin{DoxyCompactList}\small\item\em Calculates the Shape-\/\+Based distance (S\+BD). It computes the normalized cross-\/correlation and it returns 1.\+0 minus the value that maximizes the correlation value between each pair of time series. /summary$>$ 
+\begin{DoxyParams}{Parameters}
+{\em tss} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.\\
+\hline
+\end{DoxyParams}
+\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{classkhiva_1_1_khiva}{Khiva}} Distances class containing distances methods. 
+
+
+
+Definition at line 19 of file D\+L\+L\+Distances.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classkhiva_1_1interop_1_1_d_l_l_distances_a00c1906d6308f864e2034743c6e1c3c6}\label{classkhiva_1_1interop_1_1_d_l_l_distances_a00c1906d6308f864e2034743c6e1c3c6}} 
+\index{khiva\+::interop\+::\+D\+L\+L\+Distances@{khiva\+::interop\+::\+D\+L\+L\+Distances}!dtw@{dtw}}
+\index{dtw@{dtw}!khiva\+::interop\+::\+D\+L\+L\+Distances@{khiva\+::interop\+::\+D\+L\+L\+Distances}}
+\subsubsection{\texorpdfstring{dtw()}{dtw()}}
+{\footnotesize\ttfamily static void khiva.\+interop.\+D\+L\+L\+Distances.\+dtw (\begin{DoxyParamCaption}\item[{\mbox{[}\+In\mbox{]} ref Int\+Ptr}]{tss,  }\item[{\mbox{[}\+Out\mbox{]} out Int\+Ptr}]{result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Calculates the Dynamic Time Warping Distance. /summary$>$ 
+\begin{DoxyParams}{Parameters}
+{\em tss} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.\\
+\hline
+{\em result} & An upper triangular matrix where each position corresponds to the distance between two time series. Diagonal elements will be zero. For example\+: Position row 0 column 1 records the distance between time series 0 and time series 1.\\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\Hypertarget{classkhiva_1_1interop_1_1_d_l_l_distances_aa869f8c6d5c45991db203eaf91dfa918}\label{classkhiva_1_1interop_1_1_d_l_l_distances_aa869f8c6d5c45991db203eaf91dfa918}} 
+\index{khiva\+::interop\+::\+D\+L\+L\+Distances@{khiva\+::interop\+::\+D\+L\+L\+Distances}!euclidean@{euclidean}}
+\index{euclidean@{euclidean}!khiva\+::interop\+::\+D\+L\+L\+Distances@{khiva\+::interop\+::\+D\+L\+L\+Distances}}
+\subsubsection{\texorpdfstring{euclidean()}{euclidean()}}
+{\footnotesize\ttfamily static void khiva.\+interop.\+D\+L\+L\+Distances.\+euclidean (\begin{DoxyParamCaption}\item[{\mbox{[}\+In\mbox{]} ref Int\+Ptr}]{tss,  }\item[{\mbox{[}\+Out\mbox{]} out Int\+Ptr}]{result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Calculates euclidean distances between time series. /summary$>$ 
+\begin{DoxyParams}{Parameters}
+{\em tss} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series. /param$>$ 
+\begin{DoxyParams}{Parameters}
+{\em result} & An upper triangular matrix where each position corresponds to the distance between two time series. Diagonal elements will be zero. For example\+: Position row 0 column 1 records the distance between time series 0 and time series 1.\\
+\hline
+\end{DoxyParams}
+\\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\Hypertarget{classkhiva_1_1interop_1_1_d_l_l_distances_a684f7b2f7009e190ec568fb71b0a725d}\label{classkhiva_1_1interop_1_1_d_l_l_distances_a684f7b2f7009e190ec568fb71b0a725d}} 
+\index{khiva\+::interop\+::\+D\+L\+L\+Distances@{khiva\+::interop\+::\+D\+L\+L\+Distances}!hamming@{hamming}}
+\index{hamming@{hamming}!khiva\+::interop\+::\+D\+L\+L\+Distances@{khiva\+::interop\+::\+D\+L\+L\+Distances}}
+\subsubsection{\texorpdfstring{hamming()}{hamming()}}
+{\footnotesize\ttfamily static void khiva.\+interop.\+D\+L\+L\+Distances.\+hamming (\begin{DoxyParamCaption}\item[{\mbox{[}\+In\mbox{]} ref Int\+Ptr}]{tss,  }\item[{\mbox{[}\+Out\mbox{]} out Int\+Ptr}]{result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Calculates Hamming distances between time series. /summary$>$ 
+\begin{DoxyParams}{Parameters}
+{\em tss} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.\\
+\hline
+{\em result} & An upper triangular matrix where each position corresponds to the distance between two time series. Diagonal elements will be zero. For example\+: Position row 0 column 1 records the distance between time series 0 and time series 1.\\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\Hypertarget{classkhiva_1_1interop_1_1_d_l_l_distances_a739d40b582b68694ea71525d7092768f}\label{classkhiva_1_1interop_1_1_d_l_l_distances_a739d40b582b68694ea71525d7092768f}} 
+\index{khiva\+::interop\+::\+D\+L\+L\+Distances@{khiva\+::interop\+::\+D\+L\+L\+Distances}!manhattan@{manhattan}}
+\index{manhattan@{manhattan}!khiva\+::interop\+::\+D\+L\+L\+Distances@{khiva\+::interop\+::\+D\+L\+L\+Distances}}
+\subsubsection{\texorpdfstring{manhattan()}{manhattan()}}
+{\footnotesize\ttfamily static void khiva.\+interop.\+D\+L\+L\+Distances.\+manhattan (\begin{DoxyParamCaption}\item[{\mbox{[}\+In\mbox{]} ref Int\+Ptr}]{tss,  }\item[{\mbox{[}\+Out\mbox{]} out Int\+Ptr}]{result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Calculates Manhattan distances between time series. /summary$>$ 
+\begin{DoxyParams}{Parameters}
+{\em tss} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series. /param$>$ 
+\begin{DoxyParams}{Parameters}
+{\em result} & An upper triangular matrix where each position corresponds to the distance between two time series. Diagonal elements will be zero. For example\+: Position row 0 column 1 records the distance between time series 0 and time series 1.\\
+\hline
+\end{DoxyParams}
+\\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\Hypertarget{classkhiva_1_1interop_1_1_d_l_l_distances_a5286690f1572dc2f1a71e8bc85c3266a}\label{classkhiva_1_1interop_1_1_d_l_l_distances_a5286690f1572dc2f1a71e8bc85c3266a}} 
+\index{khiva\+::interop\+::\+D\+L\+L\+Distances@{khiva\+::interop\+::\+D\+L\+L\+Distances}!sbd@{sbd}}
+\index{sbd@{sbd}!khiva\+::interop\+::\+D\+L\+L\+Distances@{khiva\+::interop\+::\+D\+L\+L\+Distances}}
+\subsubsection{\texorpdfstring{sbd()}{sbd()}}
+{\footnotesize\ttfamily static void khiva.\+interop.\+D\+L\+L\+Distances.\+sbd (\begin{DoxyParamCaption}\item[{\mbox{[}\+In\mbox{]} ref Int\+Ptr}]{tss,  }\item[{\mbox{[}\+Out\mbox{]} out Int\+Ptr}]{result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Calculates the Shape-\/\+Based distance (S\+BD). It computes the normalized cross-\/correlation and it returns 1.\+0 minus the value that maximizes the correlation value between each pair of time series. /summary$>$ 
+\begin{DoxyParams}{Parameters}
+{\em tss} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series. /param$>$ 
+\begin{DoxyParams}{Parameters}
+{\em result} & An upper triangular matrix where each position corresponds to the distance between two time series. Diagonal elements will be zero. For example\+: Position row 0 column 1 records the distance between time series 0 and time series 1.\\
+\hline
+\end{DoxyParams}
+\\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\Hypertarget{classkhiva_1_1interop_1_1_d_l_l_distances_a3a8cc5cc29f67e204899e32694bd1bc7}\label{classkhiva_1_1interop_1_1_d_l_l_distances_a3a8cc5cc29f67e204899e32694bd1bc7}} 
+\index{khiva\+::interop\+::\+D\+L\+L\+Distances@{khiva\+::interop\+::\+D\+L\+L\+Distances}!squared\+\_\+euclidean@{squared\+\_\+euclidean}}
+\index{squared\+\_\+euclidean@{squared\+\_\+euclidean}!khiva\+::interop\+::\+D\+L\+L\+Distances@{khiva\+::interop\+::\+D\+L\+L\+Distances}}
+\subsubsection{\texorpdfstring{squared\+\_\+euclidean()}{squared\_euclidean()}}
+{\footnotesize\ttfamily static void khiva.\+interop.\+D\+L\+L\+Distances.\+squared\+\_\+euclidean (\begin{DoxyParamCaption}\item[{\mbox{[}\+In\mbox{]} ref Int\+Ptr}]{tss,  }\item[{\mbox{[}\+Out\mbox{]} out Int\+Ptr}]{result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Calculates the Shape-\/\+Based distance (S\+BD). It computes the normalized cross-\/correlation and it returns 1.\+0 minus the value that maximizes the correlation value between each pair of time series. /summary$>$ 
+\begin{DoxyParams}{Parameters}
+{\em tss} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em result} & An upper triangular matrix where each position corresponds to the distance between two time series. Diagonal elements will be zero. For example\+: Position row 0 column 1 records the distance between time series 0 and time series 1.\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_d_l_l_distances_8cs}{D\+L\+L\+Distances.\+cs}}\end{DoxyCompactItemize}

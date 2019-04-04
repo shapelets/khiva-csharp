@@ -1,0 +1,183 @@
+\hypertarget{classkhiva_1_1interop_1_1_d_l_l_matrix}{}\section{khiva.\+interop.\+D\+L\+L\+Matrix Class Reference}
+\label{classkhiva_1_1interop_1_1_d_l_l_matrix}\index{khiva.\+interop.\+D\+L\+L\+Matrix@{khiva.\+interop.\+D\+L\+L\+Matrix}}
+
+
+\mbox{\hyperlink{classkhiva_1_1_khiva}{Khiva}} Matrix Profile class containing matrix profile methods.  
+
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classkhiva_1_1interop_1_1_d_l_l_matrix_a44df4cfe48e7ef33f60eda2c88889d1e}{find\+\_\+best\+\_\+n\+\_\+discords}} (\mbox{[}In\mbox{]} ref Int\+Ptr profile, \mbox{[}In\mbox{]} ref Int\+Ptr index, ref long m, ref long n, \mbox{[}Out\mbox{]} out Int\+Ptr discord\+\_\+distances, \mbox{[}Out\mbox{]} out Int\+Ptr discord\+\_\+indices, \mbox{[}Out\mbox{]} out Int\+Ptr subsequence\+\_\+indices, ref bool self\+\_\+join)
+\begin{DoxyCompactList}\small\item\em Primitive of the find\+Best\+N\+Discords function. /summary$>$ 
+\begin{DoxyParams}{Parameters}
+{\em profile} & The matrix profile containing the minimum distance of each subsequence\\
+\hline
+{\em index} & The matrix profile index containing the index of the most similar subsequence\\
+\hline
+{\em length\+\_\+profile} & Length of the matrix profile\\
+\hline
+{\em m} & Subsequence length value used to calculate the input matrix profile.\\
+\hline
+{\em n} & Number of discords to extract\\
+\hline
+{\em discord\+\_\+distances} & The distance of the best N discords\\
+\hline
+{\em discord\+\_\+indices} & The indices of the best N discords\\
+\hline
+{\em subsequence\+\_\+indices} & The indices of the query sequences that produced the \char`\"{}\+N\char`\"{} bigger discords.\\
+\hline
+{\em self\+\_\+join} & Indicates whether the input profile comes from a self join operation or not. It determines whether the mirror similar region is included in the output or not.\\
+\hline
+\end{DoxyParams}
+\end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classkhiva_1_1interop_1_1_d_l_l_matrix_a6d7807c201a0b105ab3ab608b6e45a21}{find\+\_\+best\+\_\+n\+\_\+motifs}} (\mbox{[}In\mbox{]} ref Int\+Ptr profile, \mbox{[}In\mbox{]} ref Int\+Ptr index, ref long m, ref long n, \mbox{[}Out\mbox{]} out Int\+Ptr motif\+\_\+distances, \mbox{[}Out\mbox{]} out Int\+Ptr motif\+\_\+indices, \mbox{[}Out\mbox{]} out Int\+Ptr subsequence\+\_\+indices, ref bool self\+\_\+join)
+\begin{DoxyCompactList}\small\item\em Primitive of the find\+Best\+N\+Motifs function. /summary$>$ 
+\begin{DoxyParams}{Parameters}
+{\em profile} & The matrix profile containing the minimum distance of each subsequence.\\
+\hline
+{\em index} & The matrix profile index containing where each minimum occurs.\\
+\hline
+{\em length\+\_\+profile} & Length of the matrix profile.\\
+\hline
+{\em m} & Subsequence length value used to calculate the input matrix profile.\\
+\hline
+{\em n} & Number of motifs to extract.\\
+\hline
+{\em motif\+\_\+distances} & The distance of the best N motifs.\\
+\hline
+{\em motif\+\_\+indices} & The indices of the best N motifs.\\
+\hline
+{\em subsequence\+\_\+indices} & The indices of the query sequences that produced the minimum reported in the motifs.\\
+\hline
+{\em self\+\_\+join} & Indicates whether the input profile comes from a self join operation or not. It determines whether the mirror similar region is included in the output or not.\\
+\hline
+\end{DoxyParams}
+\end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classkhiva_1_1interop_1_1_d_l_l_matrix_a8e4c34c4cbc1f5258d20525b5dd91112}{stomp}} (\mbox{[}In\mbox{]} ref Int\+Ptr tssa, \mbox{[}In\mbox{]} ref Int\+Ptr tssb, ref long m, \mbox{[}Out\mbox{]} out Int\+Ptr p, \mbox{[}Out\mbox{]} out Int\+Ptr i)
+\begin{DoxyCompactList}\small\item\em Primitive of the S\+T\+O\+MP algorithm. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classkhiva_1_1interop_1_1_d_l_l_matrix_a965e2ee319c1b66e483c2477849d3f83}{stomp\+\_\+self\+\_\+join}} (\mbox{[}In\mbox{]} ref Int\+Ptr tss, ref long m, \mbox{[}Out\mbox{]} out Int\+Ptr p, \mbox{[}Out\mbox{]} out Int\+Ptr i)
+\begin{DoxyCompactList}\small\item\em Primitive of the S\+T\+O\+MP self join algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{classkhiva_1_1_khiva}{Khiva}} Matrix Profile class containing matrix profile methods. 
+
+
+
+Definition at line 19 of file D\+L\+L\+Matrix.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classkhiva_1_1interop_1_1_d_l_l_matrix_a44df4cfe48e7ef33f60eda2c88889d1e}\label{classkhiva_1_1interop_1_1_d_l_l_matrix_a44df4cfe48e7ef33f60eda2c88889d1e}} 
+\index{khiva\+::interop\+::\+D\+L\+L\+Matrix@{khiva\+::interop\+::\+D\+L\+L\+Matrix}!find\+\_\+best\+\_\+n\+\_\+discords@{find\+\_\+best\+\_\+n\+\_\+discords}}
+\index{find\+\_\+best\+\_\+n\+\_\+discords@{find\+\_\+best\+\_\+n\+\_\+discords}!khiva\+::interop\+::\+D\+L\+L\+Matrix@{khiva\+::interop\+::\+D\+L\+L\+Matrix}}
+\subsubsection{\texorpdfstring{find\+\_\+best\+\_\+n\+\_\+discords()}{find\_best\_n\_discords()}}
+{\footnotesize\ttfamily static void khiva.\+interop.\+D\+L\+L\+Matrix.\+find\+\_\+best\+\_\+n\+\_\+discords (\begin{DoxyParamCaption}\item[{\mbox{[}\+In\mbox{]} ref Int\+Ptr}]{profile,  }\item[{\mbox{[}\+In\mbox{]} ref Int\+Ptr}]{index,  }\item[{ref long}]{m,  }\item[{ref long}]{n,  }\item[{\mbox{[}\+Out\mbox{]} out Int\+Ptr}]{discord\+\_\+distances,  }\item[{\mbox{[}\+Out\mbox{]} out Int\+Ptr}]{discord\+\_\+indices,  }\item[{\mbox{[}\+Out\mbox{]} out Int\+Ptr}]{subsequence\+\_\+indices,  }\item[{ref bool}]{self\+\_\+join }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Primitive of the find\+Best\+N\+Discords function. /summary$>$ 
+\begin{DoxyParams}{Parameters}
+{\em profile} & The matrix profile containing the minimum distance of each subsequence\\
+\hline
+{\em index} & The matrix profile index containing the index of the most similar subsequence\\
+\hline
+{\em length\+\_\+profile} & Length of the matrix profile\\
+\hline
+{\em m} & Subsequence length value used to calculate the input matrix profile.\\
+\hline
+{\em n} & Number of discords to extract\\
+\hline
+{\em discord\+\_\+distances} & The distance of the best N discords\\
+\hline
+{\em discord\+\_\+indices} & The indices of the best N discords\\
+\hline
+{\em subsequence\+\_\+indices} & The indices of the query sequences that produced the \char`\"{}\+N\char`\"{} bigger discords.\\
+\hline
+{\em self\+\_\+join} & Indicates whether the input profile comes from a self join operation or not. It determines whether the mirror similar region is included in the output or not.\\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\Hypertarget{classkhiva_1_1interop_1_1_d_l_l_matrix_a6d7807c201a0b105ab3ab608b6e45a21}\label{classkhiva_1_1interop_1_1_d_l_l_matrix_a6d7807c201a0b105ab3ab608b6e45a21}} 
+\index{khiva\+::interop\+::\+D\+L\+L\+Matrix@{khiva\+::interop\+::\+D\+L\+L\+Matrix}!find\+\_\+best\+\_\+n\+\_\+motifs@{find\+\_\+best\+\_\+n\+\_\+motifs}}
+\index{find\+\_\+best\+\_\+n\+\_\+motifs@{find\+\_\+best\+\_\+n\+\_\+motifs}!khiva\+::interop\+::\+D\+L\+L\+Matrix@{khiva\+::interop\+::\+D\+L\+L\+Matrix}}
+\subsubsection{\texorpdfstring{find\+\_\+best\+\_\+n\+\_\+motifs()}{find\_best\_n\_motifs()}}
+{\footnotesize\ttfamily static void khiva.\+interop.\+D\+L\+L\+Matrix.\+find\+\_\+best\+\_\+n\+\_\+motifs (\begin{DoxyParamCaption}\item[{\mbox{[}\+In\mbox{]} ref Int\+Ptr}]{profile,  }\item[{\mbox{[}\+In\mbox{]} ref Int\+Ptr}]{index,  }\item[{ref long}]{m,  }\item[{ref long}]{n,  }\item[{\mbox{[}\+Out\mbox{]} out Int\+Ptr}]{motif\+\_\+distances,  }\item[{\mbox{[}\+Out\mbox{]} out Int\+Ptr}]{motif\+\_\+indices,  }\item[{\mbox{[}\+Out\mbox{]} out Int\+Ptr}]{subsequence\+\_\+indices,  }\item[{ref bool}]{self\+\_\+join }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Primitive of the find\+Best\+N\+Motifs function. /summary$>$ 
+\begin{DoxyParams}{Parameters}
+{\em profile} & The matrix profile containing the minimum distance of each subsequence.\\
+\hline
+{\em index} & The matrix profile index containing where each minimum occurs.\\
+\hline
+{\em length\+\_\+profile} & Length of the matrix profile.\\
+\hline
+{\em m} & Subsequence length value used to calculate the input matrix profile.\\
+\hline
+{\em n} & Number of motifs to extract.\\
+\hline
+{\em motif\+\_\+distances} & The distance of the best N motifs.\\
+\hline
+{\em motif\+\_\+indices} & The indices of the best N motifs.\\
+\hline
+{\em subsequence\+\_\+indices} & The indices of the query sequences that produced the minimum reported in the motifs.\\
+\hline
+{\em self\+\_\+join} & Indicates whether the input profile comes from a self join operation or not. It determines whether the mirror similar region is included in the output or not.\\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\Hypertarget{classkhiva_1_1interop_1_1_d_l_l_matrix_a8e4c34c4cbc1f5258d20525b5dd91112}\label{classkhiva_1_1interop_1_1_d_l_l_matrix_a8e4c34c4cbc1f5258d20525b5dd91112}} 
+\index{khiva\+::interop\+::\+D\+L\+L\+Matrix@{khiva\+::interop\+::\+D\+L\+L\+Matrix}!stomp@{stomp}}
+\index{stomp@{stomp}!khiva\+::interop\+::\+D\+L\+L\+Matrix@{khiva\+::interop\+::\+D\+L\+L\+Matrix}}
+\subsubsection{\texorpdfstring{stomp()}{stomp()}}
+{\footnotesize\ttfamily static void khiva.\+interop.\+D\+L\+L\+Matrix.\+stomp (\begin{DoxyParamCaption}\item[{\mbox{[}\+In\mbox{]} ref Int\+Ptr}]{tssa,  }\item[{\mbox{[}\+In\mbox{]} ref Int\+Ptr}]{tssb,  }\item[{ref long}]{m,  }\item[{\mbox{[}\+Out\mbox{]} out Int\+Ptr}]{p,  }\item[{\mbox{[}\+Out\mbox{]} out Int\+Ptr}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Primitive of the S\+T\+O\+MP algorithm. 
+
+\mbox{[}1\mbox{]} Yan Zhu, Zachary Zimmerman, Nader Shakibay Senobari, Chin-\/\+Chia Michael Yeh, Gareth Funning, Abdullah Mueen, Philip Brisk and Eamonn Keogh (2016). Matrix Profile II\+: Exploiting a Novel Algorithm and G\+P\+Us to break the one Hundred Million Barrier for Time Series Motifs and Joins. I\+E\+EE I\+C\+DM 2016. /summary$>$ 
+\begin{DoxyParams}{Parameters}
+{\em tssa} & Query time series\\
+\hline
+{\em tssb} & Reference time series\\
+\hline
+{\em m} & Pointer to a long with the length of the subsequence.\\
+\hline
+{\em p} & The matrix profile, which reflects the distance to the closer element of the subsequence from \textquotesingle{}tssa\textquotesingle{} in \textquotesingle{}tssb\textquotesingle{}.\\
+\hline
+{\em i} & The matrix profile index, which points to where the aforementioned minimum is located.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classkhiva_1_1interop_1_1_d_l_l_matrix_a965e2ee319c1b66e483c2477849d3f83}\label{classkhiva_1_1interop_1_1_d_l_l_matrix_a965e2ee319c1b66e483c2477849d3f83}} 
+\index{khiva\+::interop\+::\+D\+L\+L\+Matrix@{khiva\+::interop\+::\+D\+L\+L\+Matrix}!stomp\+\_\+self\+\_\+join@{stomp\+\_\+self\+\_\+join}}
+\index{stomp\+\_\+self\+\_\+join@{stomp\+\_\+self\+\_\+join}!khiva\+::interop\+::\+D\+L\+L\+Matrix@{khiva\+::interop\+::\+D\+L\+L\+Matrix}}
+\subsubsection{\texorpdfstring{stomp\+\_\+self\+\_\+join()}{stomp\_self\_join()}}
+{\footnotesize\ttfamily static void khiva.\+interop.\+D\+L\+L\+Matrix.\+stomp\+\_\+self\+\_\+join (\begin{DoxyParamCaption}\item[{\mbox{[}\+In\mbox{]} ref Int\+Ptr}]{tss,  }\item[{ref long}]{m,  }\item[{\mbox{[}\+Out\mbox{]} out Int\+Ptr}]{p,  }\item[{\mbox{[}\+Out\mbox{]} out Int\+Ptr}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Primitive of the S\+T\+O\+MP self join algorithm. 
+
+\mbox{[}1\mbox{]} Yan Zhu, Zachary Zimmerman, Nader Shakibay Senobari, Chin-\/\+Chia Michael Yeh, Gareth Funning, Abdullah Mueen, Philip Brisk and Eamonn Keogh (2016). Matrix Profile II\+: Exploiting a Novel Algorithm and G\+P\+Us to break the one Hundred Million Barrier for Time Series Motifs and Joins. I\+E\+EE I\+C\+DM 2016. /summary$>$ 
+\begin{DoxyParams}{Parameters}
+{\em tss} & Query and reference time series\\
+\hline
+{\em m} & Pointer to a long with the length of the subsequence.\\
+\hline
+{\em p} & The matrix profile, which reflects the distance to the closer element of the subsequence from \textquotesingle{}tss\textquotesingle{} in a different location of itself\\
+\hline
+{\em i} & The matrix profile index, which points to where the aforementioned minimum is located\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_d_l_l_matrix_8cs}{D\+L\+L\+Matrix.\+cs}}\end{DoxyCompactItemize}

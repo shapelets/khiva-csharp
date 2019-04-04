@@ -1,0 +1,71 @@
+\hypertarget{classkhiva_1_1interop_1_1_d_l_l_regularization}{}\section{khiva.\+interop.\+D\+L\+L\+Regularization Class Reference}
+\label{classkhiva_1_1interop_1_1_d_l_l_regularization}\index{khiva.\+interop.\+D\+L\+L\+Regularization@{khiva.\+interop.\+D\+L\+L\+Regularization}}
+
+
+\mbox{\hyperlink{classkhiva_1_1_khiva}{Khiva}} Regularization class containing different regularization methods.  
+
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classkhiva_1_1interop_1_1_d_l_l_regularization_a10e0bd8ee9417e34f6e40027bc3e3f38}{group\+\_\+by}} (\mbox{[}In\mbox{]} ref Int\+Ptr array, \mbox{[}In\mbox{]} ref int aggregation\+\_\+function, \mbox{[}In\mbox{]} ref int n\+\_\+columns\+\_\+key, \mbox{[}In\mbox{]} ref int n\+\_\+columns\+\_\+value, \mbox{[}Out\mbox{]} out Int\+Ptr result)
+\begin{DoxyCompactList}\small\item\em Group by operation in the input array using n\+\_\+columns\+\_\+key columns as group keys and n\+\_\+columns\+\_\+value columns as values. The data is expected to be sorted. The aggregation function determines the operation to aggregate the values. /summary$>$ 
+\begin{DoxyParams}{Parameters}
+{\em array} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.\\
+\hline
+{\em aggregation\+\_\+function} & Function to be used in the aggregation. It receives an integer which indicates the function to be applied\+: \{ 0 \+: mean, 1 \+: median 2 \+: min, 3 \+: max, 4 \+: stdev, 5 \+: var, default \+: mean \}\\
+\hline
+{\em n\+\_\+columns\+\_\+key} & Number of columns conforming the key.\\
+\hline
+{\em n\+\_\+columns\+\_\+value} & Number of columns conforming the value (they are expected to be consecutive to the column keys). /param$>$ 
+\begin{DoxyParams}{Parameters}
+{\em result} & An array with the values of the group keys aggregated using the aggregation\+\_\+function.\\
+\hline
+\end{DoxyParams}
+\\
+\hline
+\end{DoxyParams}
+\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{classkhiva_1_1_khiva}{Khiva}} Regularization class containing different regularization methods. 
+
+
+
+Definition at line 19 of file D\+L\+L\+Regularization.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classkhiva_1_1interop_1_1_d_l_l_regularization_a10e0bd8ee9417e34f6e40027bc3e3f38}\label{classkhiva_1_1interop_1_1_d_l_l_regularization_a10e0bd8ee9417e34f6e40027bc3e3f38}} 
+\index{khiva\+::interop\+::\+D\+L\+L\+Regularization@{khiva\+::interop\+::\+D\+L\+L\+Regularization}!group\+\_\+by@{group\+\_\+by}}
+\index{group\+\_\+by@{group\+\_\+by}!khiva\+::interop\+::\+D\+L\+L\+Regularization@{khiva\+::interop\+::\+D\+L\+L\+Regularization}}
+\subsubsection{\texorpdfstring{group\+\_\+by()}{group\_by()}}
+{\footnotesize\ttfamily static void khiva.\+interop.\+D\+L\+L\+Regularization.\+group\+\_\+by (\begin{DoxyParamCaption}\item[{\mbox{[}\+In\mbox{]} ref Int\+Ptr}]{array,  }\item[{\mbox{[}\+In\mbox{]} ref int}]{aggregation\+\_\+function,  }\item[{\mbox{[}\+In\mbox{]} ref int}]{n\+\_\+columns\+\_\+key,  }\item[{\mbox{[}\+In\mbox{]} ref int}]{n\+\_\+columns\+\_\+value,  }\item[{\mbox{[}\+Out\mbox{]} out Int\+Ptr}]{result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Group by operation in the input array using n\+\_\+columns\+\_\+key columns as group keys and n\+\_\+columns\+\_\+value columns as values. The data is expected to be sorted. The aggregation function determines the operation to aggregate the values. /summary$>$ 
+\begin{DoxyParams}{Parameters}
+{\em array} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.\\
+\hline
+{\em aggregation\+\_\+function} & Function to be used in the aggregation. It receives an integer which indicates the function to be applied\+: \{ 0 \+: mean, 1 \+: median 2 \+: min, 3 \+: max, 4 \+: stdev, 5 \+: var, default \+: mean \}\\
+\hline
+{\em n\+\_\+columns\+\_\+key} & Number of columns conforming the key.\\
+\hline
+{\em n\+\_\+columns\+\_\+value} & Number of columns conforming the value (they are expected to be consecutive to the column keys). /param$>$ 
+\begin{DoxyParams}{Parameters}
+{\em result} & An array with the values of the group keys aggregated using the aggregation\+\_\+function.\\
+\hline
+\end{DoxyParams}
+\\
+\hline
+\end{DoxyParams}
+
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_d_l_l_regularization_8cs}{D\+L\+L\+Regularization.\+cs}}\end{DoxyCompactItemize}

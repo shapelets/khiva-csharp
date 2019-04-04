@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_matrix_tests_8cs" kind="file" language="C#">
+    <compoundname>MatrixTests.cs</compoundname>
+    <innerclass refid="classkhiva_1_1matrix_1_1tests_1_1_matrix_tests" prot="public">khiva::matrix::tests::MatrixTests</innerclass>
+    <innernamespace refid="namespacekhiva_1_1matrix_1_1tests">khiva::matrix::tests</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/MatrixTests.cs"/>
+  </compounddef>
+</doxygen>

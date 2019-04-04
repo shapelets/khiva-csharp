@@ -1,0 +1,253 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="classkhiva_1_1interop_1_1_d_l_l_distances" kind="class" language="C#" prot="public">
+    <compoundname>khiva::interop::DLLDistances</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_distances_1a00c1906d6308f864e2034743c6e1c3c6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLDistances.dtw</definition>
+        <argsstring>([In] ref IntPtr tss, [Out] out IntPtr result)</argsstring>
+        <name>dtw</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>tss</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the Dynamic Time Warping Distance. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An upper triangular matrix where each position corresponds to the distance between two time series. Diagonal elements will be zero. For example: Position row 0 column 1 records the distance between time series 0 and time series 1.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLDistances.cs" line="30" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_distances_1aa869f8c6d5c45991db203eaf91dfa918" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLDistances.euclidean</definition>
+        <argsstring>([In] ref IntPtr tss, [Out] out IntPtr result)</argsstring>
+        <name>euclidean</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>tss</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates euclidean distances between time series. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series. /param&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An upper triangular matrix where each position corresponds to the distance between two time series. Diagonal elements will be zero. For example: Position row 0 column 1 records the distance between time series 0 and time series 1.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLDistances.cs" line="42" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_distances_1a684f7b2f7009e190ec568fb71b0a725d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLDistances.hamming</definition>
+        <argsstring>([In] ref IntPtr tss, [Out] out IntPtr result)</argsstring>
+        <name>hamming</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>tss</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates Hamming distances between time series. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An upper triangular matrix where each position corresponds to the distance between two time series. Diagonal elements will be zero. For example: Position row 0 column 1 records the distance between time series 0 and time series 1.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLDistances.cs" line="53" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_distances_1a739d40b582b68694ea71525d7092768f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLDistances.manhattan</definition>
+        <argsstring>([In] ref IntPtr tss, [Out] out IntPtr result)</argsstring>
+        <name>manhattan</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>tss</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates Manhattan distances between time series. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series. /param&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An upper triangular matrix where each position corresponds to the distance between two time series. Diagonal elements will be zero. For example: Position row 0 column 1 records the distance between time series 0 and time series 1.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLDistances.cs" line="65" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_distances_1a5286690f1572dc2f1a71e8bc85c3266a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLDistances.sbd</definition>
+        <argsstring>([In] ref IntPtr tss, [Out] out IntPtr result)</argsstring>
+        <name>sbd</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>tss</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the Shape-Based distance (SBD). It computes the normalized cross-correlation and it returns 1.0 minus the value that maximizes the correlation value between each pair of time series. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series. /param&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An upper triangular matrix where each position corresponds to the distance between two time series. Diagonal elements will be zero. For example: Position row 0 column 1 records the distance between time series 0 and time series 1.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLDistances.cs" line="78" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_distances_1a3a8cc5cc29f67e204899e32694bd1bc7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLDistances.squared_euclidean</definition>
+        <argsstring>([In] ref IntPtr tss, [Out] out IntPtr result)</argsstring>
+        <name>squared_euclidean</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>tss</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the Shape-Based distance (SBD). It computes the normalized cross-correlation and it returns 1.0 minus the value that maximizes the correlation value between each pair of time series. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An upper triangular matrix where each position corresponds to the distance between two time series. Diagonal elements will be zero. For example: Position row 0 column 1 records the distance between time series 0 and time series 1.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLDistances.cs" line="91" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classkhiva_1_1_khiva" kindref="compound">Khiva</ref> Distances class containing distances methods. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLDistances.cs" line="20" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLDistances.cs" bodystart="19" bodyend="92"/>
+    <listofallmembers>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_distances_1a00c1906d6308f864e2034743c6e1c3c6" prot="public" virt="non-virtual"><scope>khiva::interop::DLLDistances</scope><name>dtw</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_distances_1aa869f8c6d5c45991db203eaf91dfa918" prot="public" virt="non-virtual"><scope>khiva::interop::DLLDistances</scope><name>euclidean</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_distances_1a684f7b2f7009e190ec568fb71b0a725d" prot="public" virt="non-virtual"><scope>khiva::interop::DLLDistances</scope><name>hamming</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_distances_1a739d40b582b68694ea71525d7092768f" prot="public" virt="non-virtual"><scope>khiva::interop::DLLDistances</scope><name>manhattan</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_distances_1a5286690f1572dc2f1a71e8bc85c3266a" prot="public" virt="non-virtual"><scope>khiva::interop::DLLDistances</scope><name>sbd</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_distances_1a3a8cc5cc29f67e204899e32694bd1bc7" prot="public" virt="non-virtual"><scope>khiva::interop::DLLDistances</scope><name>squared_euclidean</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

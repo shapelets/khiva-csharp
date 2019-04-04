@@ -1,0 +1,310 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="classkhiva_1_1statistics_1_1_statistics" kind="class" language="C#" prot="public">
+    <compoundname>khiva::statistics::Statistics</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classkhiva_1_1statistics_1_1_statistics_1ab05455d82ea2d082ac4bc80810fce5fa" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classkhiva_1_1array_1_1_array" kindref="compound">array.Array</ref></type>
+        <definition>static array.Array khiva.statistics.Statistics.CovarianceStatistics</definition>
+        <argsstring>(array.Array tss, bool unbiased)</argsstring>
+        <name>CovarianceStatistics</name>
+        <param>
+          <type><ref refid="classkhiva_1_1array_1_1_array" kindref="compound">array.Array</ref></type>
+          <declname>tss</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>unbiased</declname>
+        </param>
+        <briefdescription>
+<para>Returns the covariance matrix of the time series contained in tss. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>unbiased</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Determines whether it divides by n - 1 (if false) or n (if true).</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The covariance matrix of the time series.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Statistics.cs" line="30" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Statistics.cs" bodystart="30" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1statistics_1_1_statistics_1ab96b6c235e6ea20c702067c28473802b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classkhiva_1_1array_1_1_array" kindref="compound">array.Array</ref></type>
+        <definition>static array.Array khiva.statistics.Statistics.KurtosisStatistics</definition>
+        <argsstring>(array.Array tss)</argsstring>
+        <name>KurtosisStatistics</name>
+        <param>
+          <type><ref refid="classkhiva_1_1array_1_1_array" kindref="compound">array.Array</ref></type>
+          <declname>tss</declname>
+        </param>
+        <briefdescription>
+<para>Returns the kurtosis of tss (calculated with the adjusted Fisher-Pearson standardized moment coefficient G2). </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The kurtosis of tss.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Statistics.cs" line="44" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Statistics.cs" bodystart="44" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1statistics_1_1_statistics_1a1ac4be386c872cf4db7119e62bac0e32" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classkhiva_1_1array_1_1_array" kindref="compound">array.Array</ref></type>
+        <definition>static array.Array khiva.statistics.Statistics.LjungBox</definition>
+        <argsstring>(array.Array tss, long lags)</argsstring>
+        <name>LjungBox</name>
+        <param>
+          <type><ref refid="classkhiva_1_1array_1_1_array" kindref="compound">array.Array</ref></type>
+          <declname>tss</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>lags</declname>
+        </param>
+        <briefdescription>
+<para>The Ljung–Box test checks that data whithin the time series are independently distributed (i.e. the correlations in the population from which the sample is taken are 0, so that any observed correlations in the data result from randomness of the sampling process). Data are no independently distributed, if they exhibit serial correlation. </para>        </briefdescription>
+        <detaileddescription>
+<para>The test statistic is:</para><para><formula id="67">\[ Q = n\left(n + 2\right)\sum_{ k = 1}^h\frac{\hat{\rho}^2_k}{n-k} \]</formula></para><para>where &apos;&apos;n&apos;&apos; is the sample size, <formula id="58">$\hat{\rho}k $</formula> is the sample autocorrelation at lag &apos;&apos;k&apos;&apos;, and &apos;&apos;h&apos;&apos; is the number of lags being tested.Under <formula id="59">$ H_0 $</formula> the statistic Q follows a <formula id="68">$\chi^2{ (h)} $</formula>. For significance level <formula id="61">$\alpha$</formula>, the <formula id="62">$critical region$</formula> for rejection of the hypothesis of randomness is:</para><para><formula id="63">\[ Q &gt; \chi_{1-\alpha,h}^2 \]</formula></para><para>where <formula id="64">$ \chi_{1-\alpha,h}^2 $</formula> is the <formula id="61">$\alpha$</formula>-quantile of the chi-squared distribution with &apos;&apos;h&apos;&apos; degrees of freedom.</para><para>[1] G.M.Ljung G. E.P.Box (1978). On a measure of lack of fit in time series models. Biometrika, Volume 65, Issue 2, 1 August 1978, Pages 297–303. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lags</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of lags being tested.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The Ljung-Box statistic test.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Statistics.cs" line="82" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Statistics.cs" bodystart="82" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1statistics_1_1_statistics_1a86385983836f53b52640f11dcd4d78b6" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classkhiva_1_1array_1_1_array" kindref="compound">array.Array</ref></type>
+        <definition>static array.Array khiva.statistics.Statistics.MomentStatistics</definition>
+        <argsstring>(array.Array tss, int k)</argsstring>
+        <name>MomentStatistics</name>
+        <param>
+          <type><ref refid="classkhiva_1_1array_1_1_array" kindref="compound">array.Array</ref></type>
+          <declname>tss</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <briefdescription>
+<para>Returns the kth moment of the given time series. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>k</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The specific moment to be calculated.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The kth moment of the given time series.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Statistics.cs" line="97" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Statistics.cs" bodystart="97" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1statistics_1_1_statistics_1a2314281b0dacaec606e6e469e7e414b6" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classkhiva_1_1array_1_1_array" kindref="compound">array.Array</ref></type>
+        <definition>static array.Array khiva.statistics.Statistics.QuantileStatistics</definition>
+        <argsstring>(array.Array tss, array.Array q, float precision=1e-8F)</argsstring>
+        <name>QuantileStatistics</name>
+        <param>
+          <type><ref refid="classkhiva_1_1array_1_1_array" kindref="compound">array.Array</ref></type>
+          <declname>tss</declname>
+        </param>
+        <param>
+          <type><ref refid="classkhiva_1_1array_1_1_array" kindref="compound">array.Array</ref></type>
+          <declname>q</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>precision</declname>
+          <defval>1e-8F</defval>
+        </param>
+        <briefdescription>
+<para>Returns values at the given quantile. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.NOTE: the time series should be sorted.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Percentile(s) at which to extract score(s). One or many.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>precision</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of decimals expected.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Values at the given quantile.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Statistics.cs" line="113" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Statistics.cs" bodystart="113" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1statistics_1_1_statistics_1a6cdf0ca7e81e5564d91f9b630f18e43d" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classkhiva_1_1array_1_1_array" kindref="compound">array.Array</ref></type>
+        <definition>static array.Array khiva.statistics.Statistics.QuantilesCutStatistics</definition>
+        <argsstring>(array.Array tss, float quantiles, float precision=1e-8F)</argsstring>
+        <name>QuantilesCutStatistics</name>
+        <param>
+          <type><ref refid="classkhiva_1_1array_1_1_array" kindref="compound">array.Array</ref></type>
+          <declname>tss</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>quantiles</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>precision</declname>
+          <defval>1e-8F</defval>
+        </param>
+        <briefdescription>
+<para>Discretizes the time series into equal-sized buckets based on sample quantiles. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.NOTE: the time series should be sorted.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>quantiles</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of quantiles to extract. From 0 to 1, step 1/quantiles.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>precision</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of decimals expected.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Matrix with the categories, one category per row, the start of the category in the first column and the end in the second category.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Statistics.cs" line="132" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Statistics.cs" bodystart="132" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1statistics_1_1_statistics_1a65c5170ee0777cf6a38bd05a3daf2ab3" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classkhiva_1_1array_1_1_array" kindref="compound">array.Array</ref></type>
+        <definition>static array.Array khiva.statistics.Statistics.SampleStdevStatistics</definition>
+        <argsstring>(array.Array tss)</argsstring>
+        <name>SampleStdevStatistics</name>
+        <param>
+          <type><ref refid="classkhiva_1_1array_1_1_array" kindref="compound">array.Array</ref></type>
+          <declname>tss</declname>
+        </param>
+        <briefdescription>
+<para>Estimates standard deviation based on a sample. The standard deviation is calculated using the &quot;n-1&quot; method. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The sample standard deviation.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Statistics.cs" line="146" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Statistics.cs" bodystart="146" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1statistics_1_1_statistics_1a2b1bc2a41eff99f2900e7cca95b28fbb" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classkhiva_1_1array_1_1_array" kindref="compound">array.Array</ref></type>
+        <definition>static array.Array khiva.statistics.Statistics.SkewnessStatistics</definition>
+        <argsstring>(array.Array tss)</argsstring>
+        <name>SkewnessStatistics</name>
+        <param>
+          <type><ref refid="classkhiva_1_1array_1_1_array" kindref="compound">array.Array</ref></type>
+          <declname>tss</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the sample skewness of tss (calculated with the adjusted Fisher-Pearson standardized moment coefficient G1). </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Array containing the skewness of each time series in tss.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Statistics.cs" line="160" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Statistics.cs" bodystart="160" bodyend="166"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classkhiva_1_1_khiva" kindref="compound">Khiva</ref> <ref refid="classkhiva_1_1statistics_1_1_statistics" kindref="compound">Statistics</ref> class containing statistics methods. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Statistics.cs" line="21" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Statistics.cs" bodystart="20" bodyend="167"/>
+    <listofallmembers>
+      <member refid="classkhiva_1_1statistics_1_1_statistics_1ab05455d82ea2d082ac4bc80810fce5fa" prot="public" virt="non-virtual"><scope>khiva::statistics::Statistics</scope><name>CovarianceStatistics</name></member>
+      <member refid="classkhiva_1_1statistics_1_1_statistics_1ab96b6c235e6ea20c702067c28473802b" prot="public" virt="non-virtual"><scope>khiva::statistics::Statistics</scope><name>KurtosisStatistics</name></member>
+      <member refid="classkhiva_1_1statistics_1_1_statistics_1a1ac4be386c872cf4db7119e62bac0e32" prot="public" virt="non-virtual"><scope>khiva::statistics::Statistics</scope><name>LjungBox</name></member>
+      <member refid="classkhiva_1_1statistics_1_1_statistics_1a86385983836f53b52640f11dcd4d78b6" prot="public" virt="non-virtual"><scope>khiva::statistics::Statistics</scope><name>MomentStatistics</name></member>
+      <member refid="classkhiva_1_1statistics_1_1_statistics_1a6cdf0ca7e81e5564d91f9b630f18e43d" prot="public" virt="non-virtual"><scope>khiva::statistics::Statistics</scope><name>QuantilesCutStatistics</name></member>
+      <member refid="classkhiva_1_1statistics_1_1_statistics_1a2314281b0dacaec606e6e469e7e414b6" prot="public" virt="non-virtual"><scope>khiva::statistics::Statistics</scope><name>QuantileStatistics</name></member>
+      <member refid="classkhiva_1_1statistics_1_1_statistics_1a65c5170ee0777cf6a38bd05a3daf2ab3" prot="public" virt="non-virtual"><scope>khiva::statistics::Statistics</scope><name>SampleStdevStatistics</name></member>
+      <member refid="classkhiva_1_1statistics_1_1_statistics_1a2b1bc2a41eff99f2900e7cca95b28fbb" prot="public" virt="non-virtual"><scope>khiva::statistics::Statistics</scope><name>SkewnessStatistics</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

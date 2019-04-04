@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_09edaf3a71f56c97c6583381415481da" kind="dir">
+    <compoundname>obj</compoundname>
+    <innerdir refid="dir_37bc1981ad7dfc8db385494ade441dc3">Debug</innerdir>
+    <innerdir refid="dir_8cd0fe7a2a98e3bf227421dd3ce5ac75">x64</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/obj/"/>
+  </compounddef>
+</doxygen>

@@ -55,7 +55,7 @@ namespace khiva
             /// <param name="k">The number of means to be computed.</param>
             /// <param name="tolerance">The error tolerance to stop the computation of the centroids.</param>
             /// <param name="max_iterations">The maximum number of iterations allowed.</param>
-            /// <returns> atuple with:
+            /// <returns> Tuple with:
             /// The resulting means or centroids.
             /// The resulting labels of each time series which is the closest centroid.
             /// The error tolerance to stop the computation of the centroids.</returns>

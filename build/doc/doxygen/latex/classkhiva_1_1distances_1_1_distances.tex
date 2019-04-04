@@ -1,0 +1,180 @@
+\hypertarget{classkhiva_1_1distances_1_1_distances}{}\section{khiva.\+distances.\+Distances Class Reference}
+\label{classkhiva_1_1distances_1_1_distances}\index{khiva.\+distances.\+Distances@{khiva.\+distances.\+Distances}}
+
+
+\mbox{\hyperlink{classkhiva_1_1_khiva}{Khiva}} \mbox{\hyperlink{classkhiva_1_1distances_1_1_distances}{Distances}} class containing distances methods.  
+
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} \mbox{\hyperlink{classkhiva_1_1distances_1_1_distances_a851cefe60d2daa550bbd3b1e75b9de7a}{D\+TW}} (\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} arr)
+\begin{DoxyCompactList}\small\item\em Calculates the Dynamic Time Warping Distance. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} \mbox{\hyperlink{classkhiva_1_1distances_1_1_distances_af54414ba6d52bf6e17d43e4e7c34cd38}{Euclidean}} (\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} arr)
+\begin{DoxyCompactList}\small\item\em Calculates euclidean distances between time series. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} \mbox{\hyperlink{classkhiva_1_1distances_1_1_distances_a88646f3ee47c7e0d91610d6c27685fee}{Hamming}} (\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} arr)
+\begin{DoxyCompactList}\small\item\em Calculates Hamming distances between time series. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} \mbox{\hyperlink{classkhiva_1_1distances_1_1_distances_a5b30df6dcb8bb413a81040757f453107}{Manhattan}} (\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} arr)
+\begin{DoxyCompactList}\small\item\em Calculates Manhattan distances between time series. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} \mbox{\hyperlink{classkhiva_1_1distances_1_1_distances_a5047a6e83a2e870929ab537e328dc306}{S\+BD}} (\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} arr)
+\begin{DoxyCompactList}\small\item\em Calculates the Shape-\/\+Based distance (S\+BD). It computes the normalized cross-\/correlation and it returns 1.\+0 minus the value that maximizes the correlation value between each pair of time series. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} \mbox{\hyperlink{classkhiva_1_1distances_1_1_distances_addaafe2d58ec05fbe00e7cbfbe5eef6c}{Squared\+Euclidean}} (\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} arr)
+\begin{DoxyCompactList}\small\item\em Calculates the Shape-\/\+Based distance (S\+BD). It computes the normalized cross-\/correlation and it returns 1.\+0 minus the value that maximizes the correlation value between each pair of time series. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{classkhiva_1_1_khiva}{Khiva}} \mbox{\hyperlink{classkhiva_1_1distances_1_1_distances}{Distances}} class containing distances methods. 
+
+
+
+Definition at line 20 of file Distances.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classkhiva_1_1distances_1_1_distances_a851cefe60d2daa550bbd3b1e75b9de7a}\label{classkhiva_1_1distances_1_1_distances_a851cefe60d2daa550bbd3b1e75b9de7a}} 
+\index{khiva\+::distances\+::\+Distances@{khiva\+::distances\+::\+Distances}!D\+TW@{D\+TW}}
+\index{D\+TW@{D\+TW}!khiva\+::distances\+::\+Distances@{khiva\+::distances\+::\+Distances}}
+\subsubsection{\texorpdfstring{D\+T\+W()}{DTW()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} khiva.\+distances.\+Distances.\+D\+TW (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}}}]{arr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Calculates the Dynamic Time Warping Distance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An upper triangular matrix where each position corresponds to the distance between two time series.\+Diagonal elements will be zero.\+For example\+: Position row 0 column 1 records the distance between time series 0 and time series 1.
+\end{DoxyReturn}
+
+
+Definition at line 30 of file Distances.\+cs.
+
+\mbox{\Hypertarget{classkhiva_1_1distances_1_1_distances_af54414ba6d52bf6e17d43e4e7c34cd38}\label{classkhiva_1_1distances_1_1_distances_af54414ba6d52bf6e17d43e4e7c34cd38}} 
+\index{khiva\+::distances\+::\+Distances@{khiva\+::distances\+::\+Distances}!Euclidean@{Euclidean}}
+\index{Euclidean@{Euclidean}!khiva\+::distances\+::\+Distances@{khiva\+::distances\+::\+Distances}}
+\subsubsection{\texorpdfstring{Euclidean()}{Euclidean()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} khiva.\+distances.\+Distances.\+Euclidean (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}}}]{arr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Calculates euclidean distances between time series. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.\\
+\hline
+{\em result} & An upper triangular matrix where each position corresponds to the distance between two time series. Diagonal elements will be zero. For example\+: Position row 0 column 1 records the distance between time series 0 and time series 1.\\
+\hline
+\end{DoxyParams}
+Calculates euclidean distances between time series. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An upper triangular matrix where each position corresponds to the distance between two time series.\+Diagonal elements will be zero. For example\+: Position row 0 column 1 records the distance between time series 0 and time series 1.
+\end{DoxyReturn}
+
+
+Definition at line 56 of file Distances.\+cs.
+
+\mbox{\Hypertarget{classkhiva_1_1distances_1_1_distances_a88646f3ee47c7e0d91610d6c27685fee}\label{classkhiva_1_1distances_1_1_distances_a88646f3ee47c7e0d91610d6c27685fee}} 
+\index{khiva\+::distances\+::\+Distances@{khiva\+::distances\+::\+Distances}!Hamming@{Hamming}}
+\index{Hamming@{Hamming}!khiva\+::distances\+::\+Distances@{khiva\+::distances\+::\+Distances}}
+\subsubsection{\texorpdfstring{Hamming()}{Hamming()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} khiva.\+distances.\+Distances.\+Hamming (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}}}]{arr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Calculates Hamming distances between time series. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An upper triangular matrix where each position corresponds to the distance between two time series. Diagonal elements will be zero.\+For example\+: Position row 0 column 1 records the distance between time series 0 and time series 1.
+\end{DoxyReturn}
+
+
+Definition at line 72 of file Distances.\+cs.
+
+\mbox{\Hypertarget{classkhiva_1_1distances_1_1_distances_a5b30df6dcb8bb413a81040757f453107}\label{classkhiva_1_1distances_1_1_distances_a5b30df6dcb8bb413a81040757f453107}} 
+\index{khiva\+::distances\+::\+Distances@{khiva\+::distances\+::\+Distances}!Manhattan@{Manhattan}}
+\index{Manhattan@{Manhattan}!khiva\+::distances\+::\+Distances@{khiva\+::distances\+::\+Distances}}
+\subsubsection{\texorpdfstring{Manhattan()}{Manhattan()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} khiva.\+distances.\+Distances.\+Manhattan (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}}}]{arr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Calculates Manhattan distances between time series. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An upper triangular matrix where each position corresponds to the distance between two time series.\+Diagonal elements will be zero. For example\+: Position row 0 column 1 records the distance between time series 0 and time series 1.
+\end{DoxyReturn}
+
+
+Definition at line 88 of file Distances.\+cs.
+
+\mbox{\Hypertarget{classkhiva_1_1distances_1_1_distances_a5047a6e83a2e870929ab537e328dc306}\label{classkhiva_1_1distances_1_1_distances_a5047a6e83a2e870929ab537e328dc306}} 
+\index{khiva\+::distances\+::\+Distances@{khiva\+::distances\+::\+Distances}!S\+BD@{S\+BD}}
+\index{S\+BD@{S\+BD}!khiva\+::distances\+::\+Distances@{khiva\+::distances\+::\+Distances}}
+\subsubsection{\texorpdfstring{S\+B\+D()}{SBD()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} khiva.\+distances.\+Distances.\+S\+BD (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}}}]{arr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Calculates the Shape-\/\+Based distance (S\+BD). It computes the normalized cross-\/correlation and it returns 1.\+0 minus the value that maximizes the correlation value between each pair of time series. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An upper triangular matrix where each position corresponds to the distance between two time series. Diagonal elements will be zero.\+For example\+: Position row 0 column 1 records the distance between time series 0 and time series 1.
+\end{DoxyReturn}
+
+
+Definition at line 105 of file Distances.\+cs.
+
+\mbox{\Hypertarget{classkhiva_1_1distances_1_1_distances_addaafe2d58ec05fbe00e7cbfbe5eef6c}\label{classkhiva_1_1distances_1_1_distances_addaafe2d58ec05fbe00e7cbfbe5eef6c}} 
+\index{khiva\+::distances\+::\+Distances@{khiva\+::distances\+::\+Distances}!Squared\+Euclidean@{Squared\+Euclidean}}
+\index{Squared\+Euclidean@{Squared\+Euclidean}!khiva\+::distances\+::\+Distances@{khiva\+::distances\+::\+Distances}}
+\subsubsection{\texorpdfstring{Squared\+Euclidean()}{SquaredEuclidean()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} khiva.\+distances.\+Distances.\+Squared\+Euclidean (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}}}]{arr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Calculates the Shape-\/\+Based distance (S\+BD). It computes the normalized cross-\/correlation and it returns 1.\+0 minus the value that maximizes the correlation value between each pair of time series. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An upper triangular matrix where each position corresponds to the distance between two time series. Diagonal elements will be zero.\+For example\+: Position row 0 column 1 records the distance between time series 0 and time series 1.
+\end{DoxyReturn}
+
+
+Definition at line 122 of file Distances.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_distances_8cs}{Distances.\+cs}}\end{DoxyCompactItemize}

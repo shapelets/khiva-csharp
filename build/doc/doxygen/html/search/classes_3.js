@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['dimensionality',['Dimensionality',['../classkhiva_1_1dimensionality_1_1_dimensionality.html',1,'khiva::dimensionality']]],
+  ['dimensionalitytests',['DimensionalityTests',['../classkhiva_1_1dimensionality_1_1tests_1_1_dimensionality_tests.html',1,'khiva::dimensionality::tests']]],
+  ['distances',['Distances',['../classkhiva_1_1distances_1_1_distances.html',1,'khiva::distances']]],
+  ['distancestests',['DistancesTests',['../classkhiva_1_1distances_1_1tests_1_1_distances_tests.html',1,'khiva::distances::tests']]],
+  ['dllarray',['DLLArray',['../classkhiva_1_1interop_1_1_d_l_l_array.html',1,'khiva::interop']]],
+  ['dllclustering',['DLLClustering',['../classkhiva_1_1interop_1_1_d_l_l_clustering.html',1,'khiva::interop']]],
+  ['dlldimensionality',['DLLDimensionality',['../classkhiva_1_1interop_1_1_d_l_l_dimensionality.html',1,'khiva::interop']]],
+  ['dlldistances',['DLLDistances',['../classkhiva_1_1interop_1_1_d_l_l_distances.html',1,'khiva::interop']]],
+  ['dllfeatures',['DLLFeatures',['../classkhiva_1_1interop_1_1_d_l_l_features.html',1,'khiva::interop']]],
+  ['dlllibrary',['DLLLibrary',['../classkhiva_1_1interop_1_1_d_l_l_library.html',1,'khiva::interop']]],
+  ['dlllinalg',['DLLLinalg',['../classkhiva_1_1interop_1_1_d_l_l_linalg.html',1,'khiva::interop']]],
+  ['dllmatrix',['DLLMatrix',['../classkhiva_1_1interop_1_1_d_l_l_matrix.html',1,'khiva::interop']]],
+  ['dllnormalization',['DLLNormalization',['../classkhiva_1_1interop_1_1_d_l_l_normalization.html',1,'khiva::interop']]],
+  ['dllpolynomial',['DLLPolynomial',['../classkhiva_1_1interop_1_1_d_l_l_polynomial.html',1,'khiva::interop']]],
+  ['dllregression',['DLLRegression',['../classkhiva_1_1interop_1_1_d_l_l_regression.html',1,'khiva::interop']]],
+  ['dllregularization',['DLLRegularization',['../classkhiva_1_1interop_1_1_d_l_l_regularization.html',1,'khiva::interop']]],
+  ['dllstatistics',['DLLStatistics',['../classkhiva_1_1interop_1_1_d_l_l_statistics.html',1,'khiva::interop']]]
+];

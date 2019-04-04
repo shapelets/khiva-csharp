@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="classkhiva_1_1tests_1_1_library_tests" kind="class" language="C#" prot="public">
+    <compoundname>khiva::tests::LibraryTests</compoundname>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classkhiva_1_1tests_1_1_library_tests_1ae624a8db90ded824948654d119a80908" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.tests.LibraryTests.Init</definition>
+        <argsstring>()</argsstring>
+        <name>Init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/LibraryTests.cs" line="23" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/LibraryTests.cs" bodystart="23" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1tests_1_1_library_tests_1a86e1ff816c1dcb200794bf7023318092" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.tests.LibraryTests.PrintBackendInfoTest</definition>
+        <argsstring>()</argsstring>
+        <name>PrintBackendInfoTest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/LibraryTests.cs" line="29" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/LibraryTests.cs" bodystart="29" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1tests_1_1_library_tests_1a3b0583ea03e8a2f847a4b094b1d01690" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.tests.LibraryTests.GetBackendInfoTest</definition>
+        <argsstring>()</argsstring>
+        <name>GetBackendInfoTest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/LibraryTests.cs" line="48" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/LibraryTests.cs" bodystart="48" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1tests_1_1_library_tests_1ad7aa97e9d85daf6ba8ce436384c81299" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.tests.LibraryTests.SetKhivaBackendTest</definition>
+        <argsstring>()</argsstring>
+        <name>SetKhivaBackendTest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/LibraryTests.cs" line="56" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/LibraryTests.cs" bodystart="56" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1tests_1_1_library_tests_1ab964e30f331c2c3cc8ef3217efa374a4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.tests.LibraryTests.GetDeviceIDTest</definition>
+        <argsstring>()</argsstring>
+        <name>GetDeviceIDTest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/LibraryTests.cs" line="85" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/LibraryTests.cs" bodystart="85" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1tests_1_1_library_tests_1aa48592f610a5a641727e300dd642b1df" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.tests.LibraryTests.GetKhivaVersionTest</definition>
+        <argsstring>()</argsstring>
+        <name>GetKhivaVersionTest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/LibraryTests.cs" line="124" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/LibraryTests.cs" bodystart="124" bodyend="127"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classkhiva_1_1tests_1_1_library_tests_1a1f716b1cd4878a1f77b6743ea3d63157" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String khiva.tests.LibraryTests.GetKhivaVersionFromFile</definition>
+        <argsstring>()</argsstring>
+        <name>GetKhivaVersionFromFile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/LibraryTests.cs" line="129" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/LibraryTests.cs" bodystart="129" bodyend="164"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/LibraryTests.cs" line="20" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/LibraryTests.cs" bodystart="19" bodyend="165"/>
+    <listofallmembers>
+      <member refid="classkhiva_1_1tests_1_1_library_tests_1a3b0583ea03e8a2f847a4b094b1d01690" prot="public" virt="non-virtual"><scope>khiva::tests::LibraryTests</scope><name>GetBackendInfoTest</name></member>
+      <member refid="classkhiva_1_1tests_1_1_library_tests_1ab964e30f331c2c3cc8ef3217efa374a4" prot="public" virt="non-virtual"><scope>khiva::tests::LibraryTests</scope><name>GetDeviceIDTest</name></member>
+      <member refid="classkhiva_1_1tests_1_1_library_tests_1a1f716b1cd4878a1f77b6743ea3d63157" prot="private" virt="non-virtual"><scope>khiva::tests::LibraryTests</scope><name>GetKhivaVersionFromFile</name></member>
+      <member refid="classkhiva_1_1tests_1_1_library_tests_1aa48592f610a5a641727e300dd642b1df" prot="public" virt="non-virtual"><scope>khiva::tests::LibraryTests</scope><name>GetKhivaVersionTest</name></member>
+      <member refid="classkhiva_1_1tests_1_1_library_tests_1ae624a8db90ded824948654d119a80908" prot="public" virt="non-virtual"><scope>khiva::tests::LibraryTests</scope><name>Init</name></member>
+      <member refid="classkhiva_1_1tests_1_1_library_tests_1a86e1ff816c1dcb200794bf7023318092" prot="public" virt="non-virtual"><scope>khiva::tests::LibraryTests</scope><name>PrintBackendInfoTest</name></member>
+      <member refid="classkhiva_1_1tests_1_1_library_tests_1ad7aa97e9d85daf6ba8ce436384c81299" prot="public" virt="non-virtual"><scope>khiva::tests::LibraryTests</scope><name>SetKhivaBackendTest</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

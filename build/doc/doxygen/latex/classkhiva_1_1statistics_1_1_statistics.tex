@@ -1,0 +1,245 @@
+\hypertarget{classkhiva_1_1statistics_1_1_statistics}{}\section{khiva.\+statistics.\+Statistics Class Reference}
+\label{classkhiva_1_1statistics_1_1_statistics}\index{khiva.\+statistics.\+Statistics@{khiva.\+statistics.\+Statistics}}
+
+
+\mbox{\hyperlink{classkhiva_1_1_khiva}{Khiva}} \mbox{\hyperlink{classkhiva_1_1statistics_1_1_statistics}{Statistics}} class containing statistics methods.  
+
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} \mbox{\hyperlink{classkhiva_1_1statistics_1_1_statistics_ab05455d82ea2d082ac4bc80810fce5fa}{Covariance\+Statistics}} (\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} tss, bool unbiased)
+\begin{DoxyCompactList}\small\item\em Returns the covariance matrix of the time series contained in tss. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} \mbox{\hyperlink{classkhiva_1_1statistics_1_1_statistics_ab96b6c235e6ea20c702067c28473802b}{Kurtosis\+Statistics}} (\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} tss)
+\begin{DoxyCompactList}\small\item\em Returns the kurtosis of tss (calculated with the adjusted Fisher-\/\+Pearson standardized moment coefficient G2). \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} \mbox{\hyperlink{classkhiva_1_1statistics_1_1_statistics_a1ac4be386c872cf4db7119e62bac0e32}{Ljung\+Box}} (\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} tss, long lags)
+\begin{DoxyCompactList}\small\item\em The Ljung–\+Box test checks that data whithin the time series are independently distributed (i.\+e. the correlations in the population from which the sample is taken are 0, so that any observed correlations in the data result from randomness of the sampling process). Data are no independently distributed, if they exhibit serial correlation. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} \mbox{\hyperlink{classkhiva_1_1statistics_1_1_statistics_a86385983836f53b52640f11dcd4d78b6}{Moment\+Statistics}} (\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} tss, int k)
+\begin{DoxyCompactList}\small\item\em Returns the kth moment of the given time series. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} \mbox{\hyperlink{classkhiva_1_1statistics_1_1_statistics_a2314281b0dacaec606e6e469e7e414b6}{Quantile\+Statistics}} (\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} tss, \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} q, float precision=1e-\/8\+F)
+\begin{DoxyCompactList}\small\item\em Returns values at the given quantile. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} \mbox{\hyperlink{classkhiva_1_1statistics_1_1_statistics_a6cdf0ca7e81e5564d91f9b630f18e43d}{Quantiles\+Cut\+Statistics}} (\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} tss, float quantiles, float precision=1e-\/8\+F)
+\begin{DoxyCompactList}\small\item\em Discretizes the time series into equal-\/sized buckets based on sample quantiles. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} \mbox{\hyperlink{classkhiva_1_1statistics_1_1_statistics_a65c5170ee0777cf6a38bd05a3daf2ab3}{Sample\+Stdev\+Statistics}} (\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} tss)
+\begin{DoxyCompactList}\small\item\em Estimates standard deviation based on a sample. The standard deviation is calculated using the \char`\"{}n-\/1\char`\"{} method. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} \mbox{\hyperlink{classkhiva_1_1statistics_1_1_statistics_a2b1bc2a41eff99f2900e7cca95b28fbb}{Skewness\+Statistics}} (\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} tss)
+\begin{DoxyCompactList}\small\item\em Calculates the sample skewness of tss (calculated with the adjusted Fisher-\/\+Pearson standardized moment coefficient G1). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{classkhiva_1_1_khiva}{Khiva}} \mbox{\hyperlink{classkhiva_1_1statistics_1_1_statistics}{Statistics}} class containing statistics methods. 
+
+
+
+Definition at line 20 of file Statistics.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classkhiva_1_1statistics_1_1_statistics_ab05455d82ea2d082ac4bc80810fce5fa}\label{classkhiva_1_1statistics_1_1_statistics_ab05455d82ea2d082ac4bc80810fce5fa}} 
+\index{khiva\+::statistics\+::\+Statistics@{khiva\+::statistics\+::\+Statistics}!Covariance\+Statistics@{Covariance\+Statistics}}
+\index{Covariance\+Statistics@{Covariance\+Statistics}!khiva\+::statistics\+::\+Statistics@{khiva\+::statistics\+::\+Statistics}}
+\subsubsection{\texorpdfstring{Covariance\+Statistics()}{CovarianceStatistics()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} khiva.\+statistics.\+Statistics.\+Covariance\+Statistics (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}}}]{tss,  }\item[{bool}]{unbiased }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns the covariance matrix of the time series contained in tss. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tss} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.\\
+\hline
+{\em unbiased} & Determines whether it divides by n -\/ 1 (if false) or n (if true).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The covariance matrix of the time series.
+\end{DoxyReturn}
+
+
+Definition at line 30 of file Statistics.\+cs.
+
+\mbox{\Hypertarget{classkhiva_1_1statistics_1_1_statistics_ab96b6c235e6ea20c702067c28473802b}\label{classkhiva_1_1statistics_1_1_statistics_ab96b6c235e6ea20c702067c28473802b}} 
+\index{khiva\+::statistics\+::\+Statistics@{khiva\+::statistics\+::\+Statistics}!Kurtosis\+Statistics@{Kurtosis\+Statistics}}
+\index{Kurtosis\+Statistics@{Kurtosis\+Statistics}!khiva\+::statistics\+::\+Statistics@{khiva\+::statistics\+::\+Statistics}}
+\subsubsection{\texorpdfstring{Kurtosis\+Statistics()}{KurtosisStatistics()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} khiva.\+statistics.\+Statistics.\+Kurtosis\+Statistics (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}}}]{tss }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns the kurtosis of tss (calculated with the adjusted Fisher-\/\+Pearson standardized moment coefficient G2). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tss} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The kurtosis of tss.
+\end{DoxyReturn}
+
+
+Definition at line 44 of file Statistics.\+cs.
+
+\mbox{\Hypertarget{classkhiva_1_1statistics_1_1_statistics_a1ac4be386c872cf4db7119e62bac0e32}\label{classkhiva_1_1statistics_1_1_statistics_a1ac4be386c872cf4db7119e62bac0e32}} 
+\index{khiva\+::statistics\+::\+Statistics@{khiva\+::statistics\+::\+Statistics}!Ljung\+Box@{Ljung\+Box}}
+\index{Ljung\+Box@{Ljung\+Box}!khiva\+::statistics\+::\+Statistics@{khiva\+::statistics\+::\+Statistics}}
+\subsubsection{\texorpdfstring{Ljung\+Box()}{LjungBox()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} khiva.\+statistics.\+Statistics.\+Ljung\+Box (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}}}]{tss,  }\item[{long}]{lags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+The Ljung–\+Box test checks that data whithin the time series are independently distributed (i.\+e. the correlations in the population from which the sample is taken are 0, so that any observed correlations in the data result from randomness of the sampling process). Data are no independently distributed, if they exhibit serial correlation. 
+
+The test statistic is\+:
+
+\[ Q = n\left(n + 2\right)\sum_{ k = 1}^h\frac{\hat{\rho}^2_k}{n-k} \]
+
+where \textquotesingle{}\textquotesingle{}n\textquotesingle{}\textquotesingle{} is the sample size, $\hat{\rho}k $ is the sample autocorrelation at lag \textquotesingle{}\textquotesingle{}k\textquotesingle{}\textquotesingle{}, and \textquotesingle{}\textquotesingle{}h\textquotesingle{}\textquotesingle{} is the number of lags being tested.\+Under $ H_0 $ the statistic Q follows a $\chi^2{ (h)} $. For significance level $\alpha$, the $critical region$ for rejection of the hypothesis of randomness is\+:
+
+\[ Q > \chi_{1-\alpha,h}^2 \]
+
+where $ \chi_{1-\alpha,h}^2 $ is the $\alpha$-\/quantile of the chi-\/squared distribution with \textquotesingle{}\textquotesingle{}h\textquotesingle{}\textquotesingle{} degrees of freedom.
+
+\mbox{[}1\mbox{]} G.\+M.\+Ljung G. E.\+P.\+Box (1978). On a measure of lack of fit in time series models. Biometrika, Volume 65, Issue 2, 1 August 1978, Pages 297–303. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tss} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.\\
+\hline
+{\em lags} & Number of lags being tested.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Ljung-\/\+Box statistic test.
+\end{DoxyReturn}
+
+
+Definition at line 82 of file Statistics.\+cs.
+
+\mbox{\Hypertarget{classkhiva_1_1statistics_1_1_statistics_a86385983836f53b52640f11dcd4d78b6}\label{classkhiva_1_1statistics_1_1_statistics_a86385983836f53b52640f11dcd4d78b6}} 
+\index{khiva\+::statistics\+::\+Statistics@{khiva\+::statistics\+::\+Statistics}!Moment\+Statistics@{Moment\+Statistics}}
+\index{Moment\+Statistics@{Moment\+Statistics}!khiva\+::statistics\+::\+Statistics@{khiva\+::statistics\+::\+Statistics}}
+\subsubsection{\texorpdfstring{Moment\+Statistics()}{MomentStatistics()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} khiva.\+statistics.\+Statistics.\+Moment\+Statistics (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}}}]{tss,  }\item[{int}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns the kth moment of the given time series. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tss} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.\\
+\hline
+{\em k} & The specific moment to be calculated.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The kth moment of the given time series.
+\end{DoxyReturn}
+
+
+Definition at line 97 of file Statistics.\+cs.
+
+\mbox{\Hypertarget{classkhiva_1_1statistics_1_1_statistics_a6cdf0ca7e81e5564d91f9b630f18e43d}\label{classkhiva_1_1statistics_1_1_statistics_a6cdf0ca7e81e5564d91f9b630f18e43d}} 
+\index{khiva\+::statistics\+::\+Statistics@{khiva\+::statistics\+::\+Statistics}!Quantiles\+Cut\+Statistics@{Quantiles\+Cut\+Statistics}}
+\index{Quantiles\+Cut\+Statistics@{Quantiles\+Cut\+Statistics}!khiva\+::statistics\+::\+Statistics@{khiva\+::statistics\+::\+Statistics}}
+\subsubsection{\texorpdfstring{Quantiles\+Cut\+Statistics()}{QuantilesCutStatistics()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} khiva.\+statistics.\+Statistics.\+Quantiles\+Cut\+Statistics (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}}}]{tss,  }\item[{float}]{quantiles,  }\item[{float}]{precision = {\ttfamily 1e-\/8F} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Discretizes the time series into equal-\/sized buckets based on sample quantiles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tss} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.\+N\+O\+TE\+: the time series should be sorted.\\
+\hline
+{\em quantiles} & Number of quantiles to extract. From 0 to 1, step 1/quantiles.\\
+\hline
+{\em precision} & Number of decimals expected.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Matrix with the categories, one category per row, the start of the category in the first column and the end in the second category.
+\end{DoxyReturn}
+
+
+Definition at line 132 of file Statistics.\+cs.
+
+\mbox{\Hypertarget{classkhiva_1_1statistics_1_1_statistics_a2314281b0dacaec606e6e469e7e414b6}\label{classkhiva_1_1statistics_1_1_statistics_a2314281b0dacaec606e6e469e7e414b6}} 
+\index{khiva\+::statistics\+::\+Statistics@{khiva\+::statistics\+::\+Statistics}!Quantile\+Statistics@{Quantile\+Statistics}}
+\index{Quantile\+Statistics@{Quantile\+Statistics}!khiva\+::statistics\+::\+Statistics@{khiva\+::statistics\+::\+Statistics}}
+\subsubsection{\texorpdfstring{Quantile\+Statistics()}{QuantileStatistics()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} khiva.\+statistics.\+Statistics.\+Quantile\+Statistics (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}}}]{tss,  }\item[{\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}}}]{q,  }\item[{float}]{precision = {\ttfamily 1e-\/8F} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns values at the given quantile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tss} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.\+N\+O\+TE\+: the time series should be sorted.\\
+\hline
+{\em q} & Percentile(s) at which to extract score(s). One or many.\\
+\hline
+{\em precision} & Number of decimals expected.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Values at the given quantile.
+\end{DoxyReturn}
+
+
+Definition at line 113 of file Statistics.\+cs.
+
+\mbox{\Hypertarget{classkhiva_1_1statistics_1_1_statistics_a65c5170ee0777cf6a38bd05a3daf2ab3}\label{classkhiva_1_1statistics_1_1_statistics_a65c5170ee0777cf6a38bd05a3daf2ab3}} 
+\index{khiva\+::statistics\+::\+Statistics@{khiva\+::statistics\+::\+Statistics}!Sample\+Stdev\+Statistics@{Sample\+Stdev\+Statistics}}
+\index{Sample\+Stdev\+Statistics@{Sample\+Stdev\+Statistics}!khiva\+::statistics\+::\+Statistics@{khiva\+::statistics\+::\+Statistics}}
+\subsubsection{\texorpdfstring{Sample\+Stdev\+Statistics()}{SampleStdevStatistics()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} khiva.\+statistics.\+Statistics.\+Sample\+Stdev\+Statistics (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}}}]{tss }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Estimates standard deviation based on a sample. The standard deviation is calculated using the \char`\"{}n-\/1\char`\"{} method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tss} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The sample standard deviation.
+\end{DoxyReturn}
+
+
+Definition at line 146 of file Statistics.\+cs.
+
+\mbox{\Hypertarget{classkhiva_1_1statistics_1_1_statistics_a2b1bc2a41eff99f2900e7cca95b28fbb}\label{classkhiva_1_1statistics_1_1_statistics_a2b1bc2a41eff99f2900e7cca95b28fbb}} 
+\index{khiva\+::statistics\+::\+Statistics@{khiva\+::statistics\+::\+Statistics}!Skewness\+Statistics@{Skewness\+Statistics}}
+\index{Skewness\+Statistics@{Skewness\+Statistics}!khiva\+::statistics\+::\+Statistics@{khiva\+::statistics\+::\+Statistics}}
+\subsubsection{\texorpdfstring{Skewness\+Statistics()}{SkewnessStatistics()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} khiva.\+statistics.\+Statistics.\+Skewness\+Statistics (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}}}]{tss }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Calculates the sample skewness of tss (calculated with the adjusted Fisher-\/\+Pearson standardized moment coefficient G1). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tss} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array containing the skewness of each time series in tss.
+\end{DoxyReturn}
+
+
+Definition at line 160 of file Statistics.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_statistics_8cs}{Statistics.\+cs}}\end{DoxyCompactItemize}

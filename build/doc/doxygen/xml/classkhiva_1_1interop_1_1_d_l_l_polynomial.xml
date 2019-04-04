@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="classkhiva_1_1interop_1_1_d_l_l_polynomial" kind="class" language="C#" prot="public">
+    <compoundname>khiva::interop::DLLPolynomial</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_polynomial_1ac96d70c8bbeb29a608542fa9310534dc" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLPolynomial.polyfit</definition>
+        <argsstring>([In] ref IntPtr x, [In] ref IntPtr y, [In] ref int deg, [Out] out IntPtr result)</argsstring>
+        <name>polyfit</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref int</type>
+          <declname>deg</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Least squares polynomial fit. Fit a polynomial <formula id="50">$p(x) = p[0] /// x^{deg} + ... + p[deg]$</formula> of degree <formula id="51">$deg$</formula> to points <formula id="52">$(x, y)$</formula>. Returns a vector of coefficients <formula id="53">$p$</formula> that minimises the squared error. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>x-coordinates of the M sample points <formula id="54">$(x[i], y[i])$</formula>.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>y-coordinates of the sample points.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>deg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Degree of the fitting polynomial.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Polynomial coefficients, highest power first.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLPolynomial.cs" line="30" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_polynomial_1a31f25fb318fb1fe8f4b4c1684e355f96" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLPolynomial.roots</definition>
+        <argsstring>([In] ref IntPtr p, [Out] out IntPtr result)</argsstring>
+        <name>roots</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the roots of a polynomial with coefficients given in <formula id="53">$p$</formula>. The values in the rank-1 array <formula id="53">$p$</formula> are coefficients of a polynomial. If the length of <formula id="53">$p$</formula> is <formula id="55">$n+1$</formula> then the polynomial is described by: <formula id="56">\[ p[0] /// x^n + p[1] /// x^{n-1} + ... + p[n-1] /// x + p[n] \]</formula> /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of polynomial coefficients.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array containing the roots of the polynomial.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLPolynomial.cs" line="42" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classkhiva_1_1_khiva" kindref="compound">Khiva</ref> Polynomial class containing a number of polynomial methods. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLPolynomial.cs" line="20" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLPolynomial.cs" bodystart="19" bodyend="44"/>
+    <listofallmembers>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_polynomial_1ac96d70c8bbeb29a608542fa9310534dc" prot="public" virt="non-virtual"><scope>khiva::interop::DLLPolynomial</scope><name>polyfit</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_polynomial_1a31f25fb318fb1fe8f4b4c1684e355f96" prot="public" virt="non-virtual"><scope>khiva::interop::DLLPolynomial</scope><name>roots</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

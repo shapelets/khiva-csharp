@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_d_l_l_matrix_8cs" kind="file" language="C#">
+    <compoundname>DLLMatrix.cs</compoundname>
+    <innerclass refid="classkhiva_1_1interop_1_1_d_l_l_matrix" prot="public">khiva::interop::DLLMatrix</innerclass>
+    <innernamespace refid="namespacekhiva_1_1interop">khiva::interop</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLMatrix.cs"/>
+  </compounddef>
+</doxygen>

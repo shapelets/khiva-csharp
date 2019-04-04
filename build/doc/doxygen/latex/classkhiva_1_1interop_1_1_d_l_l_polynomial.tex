@@ -1,0 +1,87 @@
+\hypertarget{classkhiva_1_1interop_1_1_d_l_l_polynomial}{}\section{khiva.\+interop.\+D\+L\+L\+Polynomial Class Reference}
+\label{classkhiva_1_1interop_1_1_d_l_l_polynomial}\index{khiva.\+interop.\+D\+L\+L\+Polynomial@{khiva.\+interop.\+D\+L\+L\+Polynomial}}
+
+
+\mbox{\hyperlink{classkhiva_1_1_khiva}{Khiva}} Polynomial class containing a number of polynomial methods.  
+
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classkhiva_1_1interop_1_1_d_l_l_polynomial_ac96d70c8bbeb29a608542fa9310534dc}{polyfit}} (\mbox{[}In\mbox{]} ref Int\+Ptr x, \mbox{[}In\mbox{]} ref Int\+Ptr y, \mbox{[}In\mbox{]} ref int deg, \mbox{[}Out\mbox{]} out Int\+Ptr result)
+\begin{DoxyCompactList}\small\item\em Least squares polynomial fit. Fit a polynomial $p(x) = p[0] /// x^{deg} + ... + p[deg]$ of degree $deg$ to points $(x, y)$. Returns a vector of coefficients $p$ that minimises the squared error. /summary$>$ 
+\begin{DoxyParams}{Parameters}
+{\em x} & x-\/coordinates of the M sample points $(x[i], y[i])$.\\
+\hline
+{\em y} & y-\/coordinates of the sample points.\\
+\hline
+{\em deg} & Degree of the fitting polynomial.\\
+\hline
+{\em result} & Polynomial coefficients, highest power first.\\
+\hline
+\end{DoxyParams}
+\end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classkhiva_1_1interop_1_1_d_l_l_polynomial_a31f25fb318fb1fe8f4b4c1684e355f96}{roots}} (\mbox{[}In\mbox{]} ref Int\+Ptr p, \mbox{[}Out\mbox{]} out Int\+Ptr result)
+\begin{DoxyCompactList}\small\item\em Calculates the roots of a polynomial with coefficients given in $p$. The values in the rank-\/1 array $p$ are coefficients of a polynomial. If the length of $p$ is $n+1$ then the polynomial is described by\+: \[ p[0] /// x^n + p[1] /// x^{n-1} + ... + p[n-1] /// x + p[n] \] /summary$>$ 
+\begin{DoxyParams}{Parameters}
+{\em pp} & Array of polynomial coefficients.\\
+\hline
+{\em result} & Array containing the roots of the polynomial.\\
+\hline
+\end{DoxyParams}
+\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{classkhiva_1_1_khiva}{Khiva}} Polynomial class containing a number of polynomial methods. 
+
+
+
+Definition at line 19 of file D\+L\+L\+Polynomial.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classkhiva_1_1interop_1_1_d_l_l_polynomial_ac96d70c8bbeb29a608542fa9310534dc}\label{classkhiva_1_1interop_1_1_d_l_l_polynomial_ac96d70c8bbeb29a608542fa9310534dc}} 
+\index{khiva\+::interop\+::\+D\+L\+L\+Polynomial@{khiva\+::interop\+::\+D\+L\+L\+Polynomial}!polyfit@{polyfit}}
+\index{polyfit@{polyfit}!khiva\+::interop\+::\+D\+L\+L\+Polynomial@{khiva\+::interop\+::\+D\+L\+L\+Polynomial}}
+\subsubsection{\texorpdfstring{polyfit()}{polyfit()}}
+{\footnotesize\ttfamily static void khiva.\+interop.\+D\+L\+L\+Polynomial.\+polyfit (\begin{DoxyParamCaption}\item[{\mbox{[}\+In\mbox{]} ref Int\+Ptr}]{x,  }\item[{\mbox{[}\+In\mbox{]} ref Int\+Ptr}]{y,  }\item[{\mbox{[}\+In\mbox{]} ref int}]{deg,  }\item[{\mbox{[}\+Out\mbox{]} out Int\+Ptr}]{result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Least squares polynomial fit. Fit a polynomial $p(x) = p[0] /// x^{deg} + ... + p[deg]$ of degree $deg$ to points $(x, y)$. Returns a vector of coefficients $p$ that minimises the squared error. /summary$>$ 
+\begin{DoxyParams}{Parameters}
+{\em x} & x-\/coordinates of the M sample points $(x[i], y[i])$.\\
+\hline
+{\em y} & y-\/coordinates of the sample points.\\
+\hline
+{\em deg} & Degree of the fitting polynomial.\\
+\hline
+{\em result} & Polynomial coefficients, highest power first.\\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\Hypertarget{classkhiva_1_1interop_1_1_d_l_l_polynomial_a31f25fb318fb1fe8f4b4c1684e355f96}\label{classkhiva_1_1interop_1_1_d_l_l_polynomial_a31f25fb318fb1fe8f4b4c1684e355f96}} 
+\index{khiva\+::interop\+::\+D\+L\+L\+Polynomial@{khiva\+::interop\+::\+D\+L\+L\+Polynomial}!roots@{roots}}
+\index{roots@{roots}!khiva\+::interop\+::\+D\+L\+L\+Polynomial@{khiva\+::interop\+::\+D\+L\+L\+Polynomial}}
+\subsubsection{\texorpdfstring{roots()}{roots()}}
+{\footnotesize\ttfamily static void khiva.\+interop.\+D\+L\+L\+Polynomial.\+roots (\begin{DoxyParamCaption}\item[{\mbox{[}\+In\mbox{]} ref Int\+Ptr}]{p,  }\item[{\mbox{[}\+Out\mbox{]} out Int\+Ptr}]{result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Calculates the roots of a polynomial with coefficients given in $p$. The values in the rank-\/1 array $p$ are coefficients of a polynomial. If the length of $p$ is $n+1$ then the polynomial is described by\+: \[ p[0] /// x^n + p[1] /// x^{n-1} + ... + p[n-1] /// x + p[n] \] /summary$>$ 
+\begin{DoxyParams}{Parameters}
+{\em pp} & Array of polynomial coefficients.\\
+\hline
+{\em result} & Array containing the roots of the polynomial.\\
+\hline
+\end{DoxyParams}
+
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_d_l_l_polynomial_8cs}{D\+L\+L\+Polynomial.\+cs}}\end{DoxyCompactItemize}

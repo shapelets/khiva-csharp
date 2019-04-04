@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_statistics_tests_8cs" kind="file" language="C#">
+    <compoundname>StatisticsTests.cs</compoundname>
+    <innerclass refid="classkhiva_1_1statistics_1_1tests_1_1_statistics_tests" prot="public">khiva::statistics::tests::StatisticsTests</innerclass>
+    <innernamespace refid="namespacekhiva_1_1statistics_1_1tests">khiva::statistics::tests</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/StatisticsTests.cs"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="classkhiva_1_1interop_1_1_d_l_l_regression" kind="class" language="C#" prot="public">
+    <compoundname>khiva::interop::DLLRegression</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_regression_1ad3c7e4dbe514d3a447af192b983e77a7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLRegression.linear</definition>
+        <argsstring>([In] ref IntPtr xss, [In] ref IntPtr yss, [Out] out IntPtr slope, [Out] out IntPtr intercept, [Out] out IntPtr rvalue, [Out] out IntPtr pvalue, [Out] out IntPtr stderrest)</argsstring>
+        <name>linear</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>xss</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>yss</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>slope</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>intercept</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>rvalue</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>pvalue</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>stderrest</declname>
+        </param>
+        <briefdescription>
+<para>Calculates a linear least-squares regression for two sets of measurements. Both arrays should have the same length. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>yss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>slope</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Slope of the regression line.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>intercept</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Intercept of the regression line.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rvalue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Correlation coefficient.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pvalue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Two-sided p-value for a hypothesis test whose null hypothesis is that the slope is zero, using Wald Test with t-distribution of the test statistic.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>stderrest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Standard error of the estimated gradient.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLRegression.cs" line="36" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classkhiva_1_1_khiva" kindref="compound">Khiva</ref> Regression class containing regression methods. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLRegression.cs" line="20" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLRegression.cs" bodystart="19" bodyend="38"/>
+    <listofallmembers>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_regression_1ad3c7e4dbe514d3a447af192b983e77a7" prot="public" virt="non-virtual"><scope>khiva::interop::DLLRegression</scope><name>linear</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

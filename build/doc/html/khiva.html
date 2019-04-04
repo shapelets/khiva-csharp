@@ -1,0 +1,2756 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>khiva &mdash; Khiva v0.2.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Khiva
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/main.html">1. API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text/faq.html">2. FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">3. License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html">4. Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text/how_to_contribute.html">5. How to contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Khiva</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>khiva</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/khiva.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="khiva">
+<h1>khiva<a class="headerlink" href="#khiva" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-khiva.array">
+<span id="khiva-array"></span><h3>khiva.array<a class="headerlink" href="#module-khiva.array" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="khiva.array.Array">
+<em class="property">class </em><code class="descclassname">khiva.array.</code><code class="descname">Array</code><span class="sig-paren">(</span><em>data=None</em>, <em>khiva_type=&lt;dtype.f32: 0&gt;</em>, <em>array_reference=None</em>, <em>arrayfire_reference=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/array.html#Array"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.array.Array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="khiva.array.Array.as_type">
+<code class="descname">as_type</code><span class="sig-paren">(</span><em>dtype</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/array.html#Array.as_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.array.Array.as_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the array to a desired array with a desired type.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dtype</strong> – The desired KHIVA data type.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">An array with the desired data type.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="khiva.array.Array.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/array.html#Array.copy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.array.Array.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs a deep copy of the array.</p>
+<p>return: An identical copy of self.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="khiva.array.Array.display">
+<code class="descname">display</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/array.html#Array.display"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.array.Array.display" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dispays the data stored in the KHIVA array.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="khiva.array.Array.from_arrayfire">
+<em class="property">classmethod </em><code class="descname">from_arrayfire</code><span class="sig-paren">(</span><em>arrayfire</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/array.html#Array.from_arrayfire"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.array.Array.from_arrayfire" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a KHIVA array from an array of ArrayFire.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arrayfire</strong> – An ArrayFire array.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">a KHIVA array.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="khiva.array.Array.get_col">
+<code class="descname">get_col</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/array.html#Array.get_col"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.array.Array.get_col" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a desired column.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>index</strong> – Index of the desired column.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The desired column.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="khiva.array.Array.get_cols">
+<code class="descname">get_cols</code><span class="sig-paren">(</span><em>first</em>, <em>last</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/array.html#Array.get_cols"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.array.Array.get_cols" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a sequence of columns using the first column index and the last column index, both columns included.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>first</strong> – First column of the subsequence of columns.</li>
+<li><strong>last</strong> – Last column of the subsequence of columns.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A subsequence of columns between ‘first’ and ‘last’.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="khiva.array.Array.get_dims">
+<code class="descname">get_dims</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/array.html#Array.get_dims"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.array.Array.get_dims" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the dimensions of the KHIVA array.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The dimensions of the KHIVA array.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="khiva.array.Array.get_row">
+<code class="descname">get_row</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/array.html#Array.get_row"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.array.Array.get_row" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a desired row.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>index</strong> – Index of the desired row.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The desired row.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="khiva.array.Array.get_rows">
+<code class="descname">get_rows</code><span class="sig-paren">(</span><em>first</em>, <em>last</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/array.html#Array.get_rows"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.array.Array.get_rows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a sequence of rows using the first row index and the last row index, both rows included.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>first</strong> – First row of the subsequence of rows.</li>
+<li><strong>last</strong> – Last row of the subsequence of rows.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A subsequence of rows between ‘first’ and ‘last’.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="khiva.array.Array.get_type">
+<code class="descname">get_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/array.html#Array.get_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.array.Array.get_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the type of the KHIVA array.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The type of the KHIVA array.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="khiva.array.Array.matmul">
+<code class="descname">matmul</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/array.html#Array.matmul"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.array.Array.matmul" title="Permalink to this definition">¶</a></dt>
+<dd><p>Matrix multiplication.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> – KHIVA Array</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The matrix multiplication between these two KHIVA Arrays.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="khiva.array.Array.to_arrayfire">
+<code class="descname">to_arrayfire</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/array.html#Array.to_arrayfire"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.array.Array.to_arrayfire" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an Arrayfire array from this KHIVA array. This need to be used carefully as the same array
+reference is oging to be used by both of them. Once the Arrayfire array is created, the destructor of
+the KHIVA array is not going to free the allocated array.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">an Arrayfire Array</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="khiva.array.Array.to_list">
+<code class="descname">to_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/array.html#Array.to_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.array.Array.to_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the KHIVA array to a list.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array converted to list.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="khiva.array.Array.to_numpy">
+<code class="descname">to_numpy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/array.html#Array.to_numpy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.array.Array.to_numpy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the KHIVA array to a numpy array.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array converted to numpy.array.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="khiva.array.Array.to_pandas">
+<code class="descname">to_pandas</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/array.html#Array.to_pandas"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.array.Array.to_pandas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the KHIVA array to a pandas data frame.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array converted to a pandas data frame.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="khiva.array.Array.transpose">
+<code class="descname">transpose</code><span class="sig-paren">(</span><em>conjugate=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/array.html#Array.transpose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.array.Array.transpose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transpose the KHIVA Array.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>conjugate</strong> – Indicates if the transpose is conjugated or not.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The transposed KHIVA Array.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="khiva.array.dtype">
+<em class="property">class </em><code class="descclassname">khiva.array.</code><code class="descname">dtype</code><a class="reference internal" href="_modules/khiva/array.html#dtype"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.array.dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>KHIVA array available types.</p>
+<dl class="attribute">
+<dt id="khiva.array.dtype.b8">
+<code class="descname">b8</code><em class="property"> = 4</em><a class="headerlink" href="#khiva.array.dtype.b8" title="Permalink to this definition">¶</a></dt>
+<dd><p>Boolean. khiva.dtype</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="khiva.array.dtype.c32">
+<code class="descname">c32</code><em class="property"> = 1</em><a class="headerlink" href="#khiva.array.dtype.c32" title="Permalink to this definition">¶</a></dt>
+<dd><p>32 bits Complex. khiva.dtype</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="khiva.array.dtype.c64">
+<code class="descname">c64</code><em class="property"> = 3</em><a class="headerlink" href="#khiva.array.dtype.c64" title="Permalink to this definition">¶</a></dt>
+<dd><p>64 bits Complex. khiva.dtype</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="khiva.array.dtype.f32">
+<code class="descname">f32</code><em class="property"> = 0</em><a class="headerlink" href="#khiva.array.dtype.f32" title="Permalink to this definition">¶</a></dt>
+<dd><p>Float. khiva.dtype</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="khiva.array.dtype.f64">
+<code class="descname">f64</code><em class="property"> = 2</em><a class="headerlink" href="#khiva.array.dtype.f64" title="Permalink to this definition">¶</a></dt>
+<dd><p>64 bits Double. khiva.dtype</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="khiva.array.dtype.s16">
+<code class="descname">s16</code><em class="property"> = 10</em><a class="headerlink" href="#khiva.array.dtype.s16" title="Permalink to this definition">¶</a></dt>
+<dd><p>16 bits Int. khiva.dtype</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="khiva.array.dtype.s32">
+<code class="descname">s32</code><em class="property"> = 5</em><a class="headerlink" href="#khiva.array.dtype.s32" title="Permalink to this definition">¶</a></dt>
+<dd><p>32 bits Int. khiva.dtype</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="khiva.array.dtype.s64">
+<code class="descname">s64</code><em class="property"> = 8</em><a class="headerlink" href="#khiva.array.dtype.s64" title="Permalink to this definition">¶</a></dt>
+<dd><p>64 bits Integer. khiva.dtype</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="khiva.array.dtype.u16">
+<code class="descname">u16</code><em class="property"> = 11</em><a class="headerlink" href="#khiva.array.dtype.u16" title="Permalink to this definition">¶</a></dt>
+<dd><p>16 bits Unsigned int. khiva.dtype</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="khiva.array.dtype.u32">
+<code class="descname">u32</code><em class="property"> = 6</em><a class="headerlink" href="#khiva.array.dtype.u32" title="Permalink to this definition">¶</a></dt>
+<dd><p>32 bits Unsigned Int. khiva.dtype</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="khiva.array.dtype.u64">
+<code class="descname">u64</code><em class="property"> = 9</em><a class="headerlink" href="#khiva.array.dtype.u64" title="Permalink to this definition">¶</a></dt>
+<dd><p>64 bits Unsigned Int. khiva.dtype</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="khiva.array.dtype.u8">
+<code class="descname">u8</code><em class="property"> = 7</em><a class="headerlink" href="#khiva.array.dtype.u8" title="Permalink to this definition">¶</a></dt>
+<dd><p>8 bits Unsigned Int. khiva.dtype</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-khiva.dimensionality">
+<span id="khiva-dimensionality"></span><h3>khiva.dimensionality<a class="headerlink" href="#module-khiva.dimensionality" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="khiva.dimensionality.paa">
+<code class="descclassname">khiva.dimensionality.</code><code class="descname">paa</code><span class="sig-paren">(</span><em>a</em>, <em>bins</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/dimensionality.html#paa"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.dimensionality.paa" title="Permalink to this definition">¶</a></dt>
+<dd><p>Piecewise Aggregate Approximation (PAA) approximates a time series <span class="math notranslate nohighlight">\(X\)</span> of length <span class="math notranslate nohighlight">\(n\)</span> into vector
+<span class="math notranslate nohighlight">\(\bar{X}=(\bar{x}_{1},…,\bar{x}_{M})\)</span> of any arbitrary length <span class="math notranslate nohighlight">\(M \leq n\)</span> where each of
+<span class="math notranslate nohighlight">\(\bar{x_{i}}\)</span> is calculated as follows:</p>
+<div class="math notranslate nohighlight">
+\[\bar{x}_{i} = \frac{M}{n} \sum_{j=n/M(i-1)+1}^{(n/M)i} x_{j}.\]</div>
+<p>Which simply means that in order to reduce the dimensionality from <span class="math notranslate nohighlight">\(n\)</span> to <span class="math notranslate nohighlight">\(M\)</span>, we first divide the original
+time series into <span class="math notranslate nohighlight">\(M\)</span> equally sized frames and secondly compute the mean values for each frame. The sequence
+assembled from the mean values is the PAA approximation (i.e., transform) of the original time series.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>a</strong> – Set of points.</li>
+<li><strong>bins</strong> – Sets the total number of divisions.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array of points with the reduced dimensionality.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.dimensionality.pip">
+<code class="descclassname">khiva.dimensionality.</code><code class="descname">pip</code><span class="sig-paren">(</span><em>a</em>, <em>number_ips</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/dimensionality.html#pip"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.dimensionality.pip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the number of Perceptually Important Points (PIP) in the time series.</p>
+<p>[1] Fu TC, Chung FL, Luk R, and Ng CM. Representing financial time series based on data point importance.
+Engineering Applications of Artificial Intelligence, 21(2):277-300, 2008.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>a</strong> – KHIVA array whose dimension zero is the length of the time series.</li>
+<li><strong>number_ips</strong> – The number of points to be returned.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array with the most Perceptually Important number_ips.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.dimensionality.pla_bottom_up">
+<code class="descclassname">khiva.dimensionality.</code><code class="descname">pla_bottom_up</code><span class="sig-paren">(</span><em>ts</em>, <em>max_error</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/dimensionality.html#pla_bottom_up"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.dimensionality.pla_bottom_up" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Piecewise Linear Approximation (PLA BottomUP) to the time series.</p>
+<p>[1] Zhu Y, Wu D, Li Sh (2007). A Piecewise Linear Representation Method of Time Series Based on Feature Points.
+Knowledge-Based Intelligent Information and Engineering Systems 4693:1066-1072.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>ts</strong> – Expects a khiva array containing the set of points to be reduced. The first component of the points in
+the first column and the second component of the points in the second column.</li>
+<li><strong>max_error</strong> – The maximum approximation error allowed.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The reduced number of points.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.dimensionality.pla_sliding_window">
+<code class="descclassname">khiva.dimensionality.</code><code class="descname">pla_sliding_window</code><span class="sig-paren">(</span><em>ts</em>, <em>max_error</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/dimensionality.html#pla_sliding_window"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.dimensionality.pla_sliding_window" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Piecewise Linear Approximation (PLA Sliding Window) to the time series.</p>
+<p>[1] Zhu Y, Wu D, Li Sh (2007). A Piecewise Linear Representation Method of Time Series Based on Feature Points.
+Knowledge-Based Intelligent Information and Engineering Systems 4693:1066-1072.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>ts</strong> – Expects a khiva array containing the set of points to be reduced. The first component of the points in
+the first column and the second component of the points in the second column.</li>
+<li><strong>max_error</strong> – The maximum approximation error allowed.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The reduced number of points.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.dimensionality.ramer_douglas_peucker">
+<code class="descclassname">khiva.dimensionality.</code><code class="descname">ramer_douglas_peucker</code><span class="sig-paren">(</span><em>a</em>, <em>epsilon</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/dimensionality.html#ramer_douglas_peucker"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.dimensionality.ramer_douglas_peucker" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Ramer–Douglas–Peucker algorithm (RDP) is an algorithm for reducing the number of points in a curve that is
+approximated by a series of points. It reduces a set of points depending on the perpendicular distance of the points
+and epsilon, the greater epsilon, more points are deleted.</p>
+<p>[1] Urs Ramer, “An iterative procedure for the polygonal approximation of plane curves”, Computer Graphics and Image
+Processing, 1(3), 244–256 (1972) doi:10.1016/S0146-664X(72)80017-0.</p>
+<p>[2] David Douglas &amp; Thomas Peucker, “Algorithms for the reduction of the number of points required to represent a
+digitized line or its caricature”, The Canadian Cartographer 10(2), 112–122 (1973) doi:10.3138/FM57-6770-U75U-7727</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>a</strong> – KHIVA array with the x-coordinates and y-coordinates of the input points (x in column 0 and y in column 1).</li>
+<li><strong>epsilon</strong> – It acts as the threshold value to decide which points should be considered meaningful or not.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array with the x-coordinates and y-coordinates of the selected points (x in column 0 and y in
+column 1).</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.dimensionality.sax">
+<code class="descclassname">khiva.dimensionality.</code><code class="descname">sax</code><span class="sig-paren">(</span><em>a</em>, <em>alphabet_size</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/dimensionality.html#sax"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.dimensionality.sax" title="Permalink to this definition">¶</a></dt>
+<dd><p>Symbolic Aggregate approXimation (SAX). It transforms a numeric time series into a time series of symbols with
+the same size. The algorithm was proposed by Lin et al.) and extends the PAA-based approach inheriting the original
+algorithm simplicity and low computational complexity while providing satisfactory sensitivity and selectivity in
+range query processing. Moreover, the use of a symbolic representation opened a door to the existing wealth of
+data-structures and string-manipulation algorithms in computer science such as hashing, regular expression, pattern
+matching, suffix trees, and grammatical inference.</p>
+<p>[1] Lin, J., Keogh, E., Lonardi, S. &amp; Chiu, B. (2003) A Symbolic Representation of Time Series, with Implications
+for Streaming Algorithms. In proceedings of the 8th ACM SIGMOD Workshop on Research Issues in Data Mining and
+Knowledge Discovery. San Diego, CA. June 13.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>a</strong> – KHIVA array with the input time series.</li>
+<li><strong>alphabet_size</strong> – Number of element within the alphabet.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array of points with the reduced dimensionality.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.dimensionality.visvalingam">
+<code class="descclassname">khiva.dimensionality.</code><code class="descname">visvalingam</code><span class="sig-paren">(</span><em>a</em>, <em>num_points</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/dimensionality.html#visvalingam"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.dimensionality.visvalingam" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reduces a set of points by applying the Visvalingam method (minimun triangle area) until the number
+of points is reduced to numPoints.</p>
+<p>[1] M. Visvalingam and J. D. Whyatt, Line generalisation by repeated elimination of points,
+The Cartographic Journal, 1993.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>a</strong> – KHIVA array with the x-coordinates and y-coordinates of the input points (x in column 0 and y in column 1).</li>
+<li><strong>num_points</strong> – Sets the number of points returned after the execution of the method.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array with the x-coordinates and y-coordinates of the selected points (x in column 0 and y in
+column 1).</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-khiva.distances">
+<span id="khiva-distances"></span><h3>khiva.distances<a class="headerlink" href="#module-khiva.distances" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="khiva.distances.dtw">
+<code class="descclassname">khiva.distances.</code><code class="descname">dtw</code><span class="sig-paren">(</span><em>tss</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/distances.html#dtw"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.distances.dtw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the Dynamic Time Warping Distance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tss</strong> – Expects an input array whose dimension zero is the length of the time series (all the same) and
+dimension one indicates the number of time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Array with an upper triangular matrix where each position corresponds to the distance between
+two time series. Diagonal elements will be zero. For example: Position row 0 column 1 records the
+distance between time series 0 and time series 1.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.distances.euclidean">
+<code class="descclassname">khiva.distances.</code><code class="descname">euclidean</code><span class="sig-paren">(</span><em>tss</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/distances.html#euclidean"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.distances.euclidean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates euclidean distances between time series.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tss</strong> – Expects an input array whose dimension zero is the length of the time series (all the same) and
+dimension one indicates the number of time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Array with an upper triangular matrix where each position corresponds to the distance between two
+time series. Diagonal elements will be zero. For example: Position row 0 column 1 records the distance
+between time series 0 and time series 1.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.distances.hamming">
+<code class="descclassname">khiva.distances.</code><code class="descname">hamming</code><span class="sig-paren">(</span><em>tss</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/distances.html#hamming"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.distances.hamming" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates Hamming distances between time series.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tss</strong> – Expects an input array whose dimension zero is the length of the time series (all the same) and
+dimension one indicates the number of time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Array with an upper triangular matrix where each position corresponds to the distance between two
+time series. Diagonal elements will be zero. For example: Position row 0 column 1 records the distance
+between time series 0 and time series 1.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.distances.manhattan">
+<code class="descclassname">khiva.distances.</code><code class="descname">manhattan</code><span class="sig-paren">(</span><em>tss</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/distances.html#manhattan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.distances.manhattan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates Manhattan distances between time series.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tss</strong> – Expects an input array whose dimension zero is the length of the time series (all the same) and
+dimension one indicates the number of time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Array with an upper triangular matrix where each position corresponds to the distance between two
+time series. Diagonal elements will be zero. For example: Position row 0 column 1 records the distance
+between time series 0 and time series 1.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.distances.sbd">
+<code class="descclassname">khiva.distances.</code><code class="descname">sbd</code><span class="sig-paren">(</span><em>tss</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/distances.html#sbd"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.distances.sbd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the Shape-Based distance (SBD). It computes the normalized cross-correlation and
+it returns the value that maximizes the correlation value between time series.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tss</strong> – Expects an input array whose dimension zero is the length of the time series (all the same) and
+dimension one indicates the number of time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Array with an upper triangular matrix where each position corresponds to the distance between two time series.
+Diagonal elements will be zero. For example: Position row 0 column 1 records the distance between time series 0
+and time series 1.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.distances.squared_euclidean">
+<code class="descclassname">khiva.distances.</code><code class="descname">squared_euclidean</code><span class="sig-paren">(</span><em>tss</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/distances.html#squared_euclidean"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.distances.squared_euclidean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the non squared version of the euclidean distance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tss</strong> – Expects an input array whose dimension zero is the length of the time series (all the same) and
+dimension one indicates the number of time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Array with an upper triangular matrix where each position corresponds to the distance between two time series.
+Diagonal elements will be zero. For example: Position row 0 column 1 records the distance between time series 0
+and time series 1.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-khiva.features">
+<span id="khiva-features"></span><h3>khiva.features<a class="headerlink" href="#module-khiva.features" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="khiva.features.abs_energy">
+<code class="descclassname">khiva.features.</code><code class="descname">abs_energy</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#abs_energy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.abs_energy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the sum over the square values of the time series.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arr</strong> (<em>khiva.array</em>) – KHIVA array with the time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array with the absEnergy.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.absolute_sum_of_changes">
+<code class="descclassname">khiva.features.</code><code class="descname">absolute_sum_of_changes</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#absolute_sum_of_changes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.absolute_sum_of_changes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the value of an aggregation function f_agg (e.g. var or mean) of the autocorrelation
+(Compare to <a class="reference external" href="http://en.wikipedia.org/wiki/Autocorrelation#Estimation">http://en.wikipedia.org/wiki/Autocorrelation#Estimation</a>), taken over different all possible
+lags (1 to length of x)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arr</strong> (<em>khiva.array</em>) – KHIVA array with the time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array with the absolute sum of changes.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.aggregated_autocorrelation">
+<code class="descclassname">khiva.features.</code><code class="descname">aggregated_autocorrelation</code><span class="sig-paren">(</span><em>arr</em>, <em>aggregation_function</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#aggregated_autocorrelation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.aggregated_autocorrelation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates a linear least-squares regression for values of the time series that were aggregated
+over chunks versus the sequence from 0 up to the number of chunks minus one.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arr</strong> – A KHIVA array with the time series.</li>
+<li><strong>aggregation_function</strong> – Function to be used in the aggregation. It receives an integer which indicates
+the function to be applied.
+0 : mean,
+1 : median
+2 : min,
+3 : max,
+4 : stdev,
+5 : var,
+default : mean</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array that contains the aggregated correlation for each time series.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.aggregated_linear_trend">
+<code class="descclassname">khiva.features.</code><code class="descname">aggregated_linear_trend</code><span class="sig-paren">(</span><em>arr</em>, <em>chunk_size</em>, <em>aggregation_function</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#aggregated_linear_trend"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.aggregated_linear_trend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates a linear least-squares regression for values of the time series that were aggregated
+over chunks versus the sequence from 0 up to the number of chunks minus one.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arr</strong> – A KHIVA array with the time series.</li>
+<li><strong>chunk_size</strong> – The chunk size used to aggregate the data.</li>
+<li><strong>aggregation_function</strong> – Function to be used in the aggregation. It receives an integer which indicates the
+function to be applied:
+0 : mean,
+1 : median
+2 : min,
+3 : max,
+4 : stdev,
+default : mean</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">( pvalue: KHIVA array with the pvalues for all time series.
+rvalue: KHIVA array with the rvalues for all time series.
+intercept: KHIVA array with the intercept values for all time series.
+slope: KHIVA array with the slope for all time series.
+stdrr: KHIVA array with the stderr values for all time series. )</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.approximate_entropy">
+<code class="descclassname">khiva.features.</code><code class="descname">approximate_entropy</code><span class="sig-paren">(</span><em>arr</em>, <em>m</em>, <em>r</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#approximate_entropy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.approximate_entropy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates a vectorized Approximate entropy algorithm.
+<a class="reference external" href="https://en.wikipedia.org/wiki/Approximate_entropy">https://en.wikipedia.org/wiki/Approximate_entropy</a>
+For short time-series this method is highly dependent on the parameters, but should be stable for N &gt; 2000,
+see: Yentes et al. (2012) - The Appropriate Use of Approximate Entropy and Sample Entropy with Short Data Sets
+Other shortcomings and alternatives discussed in:
+Richman &amp; Moorman (2000) - Physiological time-series analysis using approximate entropy and sample entropy</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arr</strong> – A KHIVA array with the time series.</li>
+<li><strong>m</strong> – Length of compared run of data.</li>
+<li><strong>r</strong> – Filtering level, must be positive.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array with the vectorized approximate entropy for all the input time series in tss.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.auto_correlation">
+<code class="descclassname">khiva.features.</code><code class="descname">auto_correlation</code><span class="sig-paren">(</span><em>arr</em>, <em>max_lag</em>, <em>unbiased</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#auto_correlation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.auto_correlation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the autocorrelation of the specified lag for the given time series.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arr</strong> – KHIVA array with the time series.</li>
+<li><strong>max_lag</strong> – The maximum lag to compute.</li>
+<li><strong>unbiased</strong> – Determines whether it divides by n - lag (if true) or n (if false).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array with the autocorrelation value for the given time series.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.auto_covariance">
+<code class="descclassname">khiva.features.</code><code class="descname">auto_covariance</code><span class="sig-paren">(</span><em>arr</em>, <em>unbiased=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#auto_covariance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.auto_covariance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the auto-covariance the given time series.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arr</strong> – KHIVA array with the time series.</li>
+<li><strong>unbiased</strong> – Determines whether it divides by n - lag (if true) or n (if false).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array with the auto-covariance value for the given time series.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.binned_entropy">
+<code class="descclassname">khiva.features.</code><code class="descname">binned_entropy</code><span class="sig-paren">(</span><em>arr</em>, <em>max_bins</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#binned_entropy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.binned_entropy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the binned entropy for the given time series and number of bins.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arr</strong> – KHIVA array with the time series.</li>
+<li><strong>max_bins</strong> – The number of bins.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array with the binned entropy value for the given time series.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.c3">
+<code class="descclassname">khiva.features.</code><code class="descname">c3</code><span class="sig-paren">(</span><em>arr</em>, <em>lag</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#c3"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.c3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the Schreiber, T. and Schmitz, A. (1997) measure of non-linearity
+for the given time series</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arr</strong> – KHIVA array with the time series.</li>
+<li><strong>lag</strong> – The lag.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array with non-linearity value for the given time series.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.cid_ce">
+<code class="descclassname">khiva.features.</code><code class="descname">cid_ce</code><span class="sig-paren">(</span><em>arr</em>, <em>z_normalize</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#cid_ce"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.cid_ce" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates an estimate for the time series complexity defined by
+Batista, Gustavo EAPA, et al (2014). (A more complex time series has more peaks,
+valleys, etc.)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arr</strong> – KHIVA array with the time series.</li>
+<li><strong>z_normalize</strong> – Controls wheter the time series should be z-normalized or not.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array with the complexity value for the given time series.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.count_above_mean">
+<code class="descclassname">khiva.features.</code><code class="descname">count_above_mean</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#count_above_mean"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.count_above_mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the number of values in the time series that are higher than
+the mean.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arr</strong> – KHIVA array with the time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array with the number of values in the time series that are higher than the mean.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.count_below_mean">
+<code class="descclassname">khiva.features.</code><code class="descname">count_below_mean</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#count_below_mean"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.count_below_mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the number of values in the time series that are lower than
+the mean.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arr</strong> – KHIVA array with the time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">KHIVA Array with the number of values in the time series that are lower than the mean.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.cross_correlation">
+<code class="descclassname">khiva.features.</code><code class="descname">cross_correlation</code><span class="sig-paren">(</span><em>xss</em>, <em>yss</em>, <em>unbiased</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#cross_correlation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.cross_correlation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the cross-correlation of the given time series.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>xss</strong> – KHIVA array with the time series.</li>
+<li><strong>yss</strong> – KHIVA array with the time series.</li>
+<li><strong>unbiased</strong> – Determines whether it divides by n - lag (if true) or n (if false).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array with cross-correlation value for the given time series.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.cross_covariance">
+<code class="descclassname">khiva.features.</code><code class="descname">cross_covariance</code><span class="sig-paren">(</span><em>xss</em>, <em>yss</em>, <em>unbiased</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#cross_covariance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.cross_covariance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the cross-covariance of the given time series.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>xss</strong> – A KHIVA array with time series.</li>
+<li><strong>yss</strong> – A KHIVA Array with time series.</li>
+<li><strong>unbiased</strong> – Determines whether it divides by n - lag (if true) or n (if false).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array with the cross-covariance value for the given time series.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.cwt_coefficients">
+<code class="descclassname">khiva.features.</code><code class="descname">cwt_coefficients</code><span class="sig-paren">(</span><em>tss</em>, <em>widths</em>, <em>coeff</em>, <em>w</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#cwt_coefficients"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.cwt_coefficients" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates a Continuous wavelet transform for the Ricker wavelet, also known as
+the “Mexican hat wavelet”.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>tss</strong> – KHIVA array with the time series.</li>
+<li><strong>widths</strong> – Widths. It accepts a list of lists or a numpy array with one or several widths.</li>
+<li><strong>coeff</strong> – Coefficient of interest.</li>
+<li><strong>w</strong> – Width of interest.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA Array with the result of calculated coefficients.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.energy_ratio_by_chunks">
+<code class="descclassname">khiva.features.</code><code class="descname">energy_ratio_by_chunks</code><span class="sig-paren">(</span><em>arr</em>, <em>num_segments</em>, <em>segment_focus</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#energy_ratio_by_chunks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.energy_ratio_by_chunks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the sum of squares of chunk i out of N chunks expressed as a ratio
+with the sum of squares over the whole series. segmentFocus should be lower
+than the number of segments.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arr</strong> – KHIVA array with the time series.</li>
+<li><strong>num_segments</strong> – The number of segments to divide the series into.</li>
+<li><strong>segment_focus</strong> – The segment number (starting at zero) to return a feature on.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array with the energy ratio by chunk of the time series.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.fft_aggregated">
+<code class="descclassname">khiva.features.</code><code class="descname">fft_aggregated</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#fft_aggregated"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.fft_aggregated" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the spectral centroid(mean), variance, skew, and kurtosis of the absolute fourier transform
+spectrum.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arr</strong> – KHIVA array with the time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array with the spectral centroid (mean), variance, skew, and kurtosis of the absolute fourier transform
+spectrum.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.fft_coefficient">
+<code class="descclassname">khiva.features.</code><code class="descname">fft_coefficient</code><span class="sig-paren">(</span><em>arr</em>, <em>coefficient</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#fft_coefficient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.fft_coefficient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the fourier coefficients of the one-dimensional discrete
+Fourier Transform for real input by fast fourier transformation algorithm.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arr</strong> – KHIVA array with the time series.</li>
+<li><strong>coefficient</strong> – The coefficient to extract from the FFT.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Tuple with:
+real: KHIVA array with the real part of the coefficient.
+imag: KHIVA array with the imaginary part of the coefficient.
+abs: KHIVA array with the absolute value of the coefficient.
+angle: KHIVA array with the angle of the coefficient.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.first_location_of_maximum">
+<code class="descclassname">khiva.features.</code><code class="descname">first_location_of_maximum</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#first_location_of_maximum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.first_location_of_maximum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the first relative location of the maximal value for each time series.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arr</strong> – KHIVA array with the time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array with the first relative location of the maximum value to the length of the time series, for each
+time series.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.first_location_of_minimum">
+<code class="descclassname">khiva.features.</code><code class="descname">first_location_of_minimum</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#first_location_of_minimum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.first_location_of_minimum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the first location of the minimal value of each time series. The position is calculated relatively
+to the length of the series.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arr</strong> – KHIVA array with the time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array with the first relative location of the minimal value of each series.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.friedrich_coefficients">
+<code class="descclassname">khiva.features.</code><code class="descname">friedrich_coefficients</code><span class="sig-paren">(</span><em>arr</em>, <em>m</em>, <em>r</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#friedrich_coefficients"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.friedrich_coefficients" title="Permalink to this definition">¶</a></dt>
+<dd><p>Coefficients of polynomial <span class="math notranslate nohighlight">\(h(x)\)</span>, which has been fitted to the deterministic dynamics of Langevin model:
+Largest fixed point of dynamics  <span class="math notranslate nohighlight">\(argmax_x {h(x)=0}\)</span> estimated from polynomial <span class="math notranslate nohighlight">\(h(x)\)</span>,
+which has been fitted to the deterministic dynamics of Langevin model:</p>
+<div class="math notranslate nohighlight">
+\[\dot(x)(t) = h(x(t)) + R \mathcal(N)(0,1)\]</div>
+<p>as described by [1]. For short time series this method is highly dependent on the parameters.</p>
+<p>[1] Friedrich et al. (2000): Physics Letters A 271, p. 217-222
+Extracting model equations from experimental data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arr</strong> – KHIVA array with the time series.</li>
+<li><strong>m</strong> – Order of polynom to fit for estimating fixed points of dynamics.</li>
+<li><strong>r</strong> – Number of quantiles to use for averaging.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array with the coefficients for each time seriess.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.has_duplicate_max">
+<code class="descclassname">khiva.features.</code><code class="descname">has_duplicate_max</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#has_duplicate_max"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.has_duplicate_max" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates if the maximum within input time series is duplicated.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arr</strong> – KHIVA array with the time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array containing True if the maximum value of the time series is duplicated and false otherwise.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.has_duplicate_min">
+<code class="descclassname">khiva.features.</code><code class="descname">has_duplicate_min</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#has_duplicate_min"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.has_duplicate_min" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates if the minimum of the input time series is duplicated.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arr</strong> – KHIVA array with the time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array containing True if the minimum of the time series is duplicated and False otherwise.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.has_duplicates">
+<code class="descclassname">khiva.features.</code><code class="descname">has_duplicates</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#has_duplicates"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.has_duplicates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates if the input time series contain duplicated elements.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arr</strong> – KHIVA array with the time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array containing True if the time series contains duplicated elements
+and false otherwise.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.index_mass_quantile">
+<code class="descclassname">khiva.features.</code><code class="descname">index_mass_quantile</code><span class="sig-paren">(</span><em>arr</em>, <em>q</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#index_mass_quantile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.index_mass_quantile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the index of the mass quantile.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arr</strong> – KHIVA array with the time series.</li>
+<li><strong>q</strong> – The quantile.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array with the index of the mass quantile q.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.kurtosis">
+<code class="descclassname">khiva.features.</code><code class="descname">kurtosis</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#kurtosis"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.kurtosis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the kurtosis of tss (calculated with the adjusted Fisher-Pearson
+standardized moment coefficient G2).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arr</strong> – KHIVA array with the time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array with the kurtosis of each time series.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.large_standard_deviation">
+<code class="descclassname">khiva.features.</code><code class="descname">large_standard_deviation</code><span class="sig-paren">(</span><em>arr</em>, <em>r</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#large_standard_deviation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.large_standard_deviation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the time series within tss have a large standard deviation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arr</strong> – KHIVA array with the time series.</li>
+<li><strong>r</strong> – The threshold.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array containing True for those time series in tss that have a large standard deviation.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.last_location_of_maximum">
+<code class="descclassname">khiva.features.</code><code class="descname">last_location_of_maximum</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#last_location_of_maximum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.last_location_of_maximum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the last location of the maximum value of each time series. The position
+is calculated relatively to the length of the series.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arr</strong> – KHIVA array with the time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array with the last relative location of the maximum value of each series.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.last_location_of_minimum">
+<code class="descclassname">khiva.features.</code><code class="descname">last_location_of_minimum</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#last_location_of_minimum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.last_location_of_minimum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the last location of the minimum value of each time series. The position
+is calculated relatively to the length of the series.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arr</strong> – KHIVA array with the time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array the last relative location of the minimum value of each series.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.length">
+<code class="descclassname">khiva.features.</code><code class="descname">length</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#length"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the length of the input time series.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arr</strong> – KHIVA array with the time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array the length of tss.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.linear_trend">
+<code class="descclassname">khiva.features.</code><code class="descname">linear_trend</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#linear_trend"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.linear_trend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate a linear least-squares regression for the values of the time series versus the sequence from 0 to
+length of the time series minus one.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arr</strong> – KHIVA array with the time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Return a tuple with:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">pvalue: KHIVA array the pvalues for all time series.
+rvalue: KHIVA array The rvalues for all time series.
+intercept: KHIVA array the intercept values for all time series.
+slope: KHIVA array the slope for all time series.
+stdrr: KHIVA array the stderr values for all time series.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.local_maximals">
+<code class="descclassname">khiva.features.</code><code class="descname">local_maximals</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#local_maximals"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.local_maximals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates all Local Maximals fot the time series in array.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arr</strong> – KHIVA array with the time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array with the calculated local maximals for each time series in arr.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.longest_strike_above_mean">
+<code class="descclassname">khiva.features.</code><code class="descname">longest_strike_above_mean</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#longest_strike_above_mean"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.longest_strike_above_mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the length of the longest consecutive subsequence in tss that is bigger than the mean of tss.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arr</strong> – KHIVA array with the time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array with the length of the longest consecutive subsequence in the input time series that is bigger
+than the mean.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.longest_strike_below_mean">
+<code class="descclassname">khiva.features.</code><code class="descname">longest_strike_below_mean</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#longest_strike_below_mean"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.longest_strike_below_mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the length of the longest consecutive subsequence in tss that is below the mean of tss.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arr</strong> – KHIVA array with the time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array with the length of the longest consecutive subsequence in the input time series that is below
+the mean.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.max_langevin_fixed_point">
+<code class="descclassname">khiva.features.</code><code class="descname">max_langevin_fixed_point</code><span class="sig-paren">(</span><em>arr</em>, <em>m</em>, <em>r</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#max_langevin_fixed_point"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.max_langevin_fixed_point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Largest fixed point of dynamics  <span class="math notranslate nohighlight">\(argmax_x {h(x)=0}\)</span> estimated from polynomial <span class="math notranslate nohighlight">\(h(x)\)</span>,
+which has been fitted to the deterministic dynamics of Langevin model</p>
+<div class="math notranslate nohighlight">
+\[\dot(x)(t) = h(x(t)) + R \mathcal(N)(0,1)\]</div>
+<p>as described by</p>
+<blockquote>
+<div>Friedrich et al. (2000): Physics Letters A 271, p. 217-222
+<em>Extracting model equations from experimental data</em></div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arr</strong> – KHIVA array with the time series.</li>
+<li><strong>m</strong> – Order of polynom to fit for estimating fixed points of dynamics.</li>
+<li><strong>r</strong> – Number of quantiles to use for averaging.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array with the largest fixed point of deterministic dynamics.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.maximum">
+<code class="descclassname">khiva.features.</code><code class="descname">maximum</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#maximum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.maximum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the maximum value for each time series within tss.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arr</strong> – KHIVA array with the time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array with the maximum value of each time series within tss.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.mean">
+<code class="descclassname">khiva.features.</code><code class="descname">mean</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#mean"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the mean value for each time series within tss.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arr</strong> – KHIVA array with the time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array with the mean value of each time series within tss.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.mean_absolute_change">
+<code class="descclassname">khiva.features.</code><code class="descname">mean_absolute_change</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#mean_absolute_change"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.mean_absolute_change" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the mean over the absolute differences between subsequent time series values in tss.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arr</strong> – KHIVA array with the time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array with the mean over the absolute differences between subsequent time series values.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.mean_change">
+<code class="descclassname">khiva.features.</code><code class="descname">mean_change</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#mean_change"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.mean_change" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the mean over the differences between subsequent time series values in tss.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arr</strong> – KHIVA array with the time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array with the mean over the differences between subsequent time series values.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.mean_second_derivative_central">
+<code class="descclassname">khiva.features.</code><code class="descname">mean_second_derivative_central</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#mean_second_derivative_central"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.mean_second_derivative_central" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates mean value of a central approximation of the second derivative for each time series in tss.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arr</strong> – KHIVA array with the time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array with the mean value of a central approximation of the second derivative for each time series.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.median">
+<code class="descclassname">khiva.features.</code><code class="descname">median</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#median"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.median" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the median value for each time series within tss.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arr</strong> – KHIVA array with the time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array with the median value of each time series within tss.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.minimum">
+<code class="descclassname">khiva.features.</code><code class="descname">minimum</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#minimum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.minimum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the minimum value for each time series within tss.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arr</strong> – KHIVA array with the time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array with the minimum value of each time series within tss.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.number_crossing_m">
+<code class="descclassname">khiva.features.</code><code class="descname">number_crossing_m</code><span class="sig-paren">(</span><em>arr</em>, <em>m</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#number_crossing_m"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.number_crossing_m" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the number of m-crossings. A m-crossing is defined as two sequential values where the first
+value is lower than m and the next is greater, or viceversa. If you set m to zero, you will get the number of
+zero crossings.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arr</strong> – KHIVA array with the time series.</li>
+<li><strong>m</strong> – The m value.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array with the number of m-crossings of each time series within tss.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.number_cwt_peaks">
+<code class="descclassname">khiva.features.</code><code class="descname">number_cwt_peaks</code><span class="sig-paren">(</span><em>arr</em>, <em>max_w</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#number_cwt_peaks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.number_cwt_peaks" title="Permalink to this definition">¶</a></dt>
+<dd><p>This feature calculator searches for different peaks. To do so, the time series is smoothed by a ricker
+wavelet and for widths ranging from 1 to :math:’max_w`. This feature calculator returns the number of peaks that
+occur at enough width scales and with sufficiently high Signal-to-Noise-Ratio (SNR).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arr</strong> – KHIVA array with the time series.</li>
+<li><strong>max_w</strong> – The maximum width to consider.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array with the number of peaks for each time series.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.number_peaks">
+<code class="descclassname">khiva.features.</code><code class="descname">number_peaks</code><span class="sig-paren">(</span><em>arr</em>, <em>n</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#number_peaks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.number_peaks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the number of peaks of at least support <span class="math notranslate nohighlight">\(n\)</span> in the time series <span class="math notranslate nohighlight">\(tss\)</span>. A peak of support
+<span class="math notranslate nohighlight">\(n\)</span> is defined as a subsequence of <span class="math notranslate nohighlight">\(tss where a value occurs, which is bigger than
+its :math:\)</span> neighbours to the left and to the right.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arr</strong> – KHIVA array with the time series.</li>
+<li><strong>n</strong> – The support of the peak.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array with the number of peaks of at least support <span class="math notranslate nohighlight">\(n\)</span>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.partial_autocorrelation">
+<code class="descclassname">khiva.features.</code><code class="descname">partial_autocorrelation</code><span class="sig-paren">(</span><em>arr</em>, <em>lags</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#partial_autocorrelation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.partial_autocorrelation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the value of the partial autocorrelation function at the given lag. The lag <span class="math notranslate nohighlight">\(k'\)</span>  partial
+autocorrelation of a time series <span class="math notranslate nohighlight">\(\lbrace x_t, t = 1 \ldots T \rbrace\)</span> equals the partial correlation of
+<span class="math notranslate nohighlight">\(x_t\)</span> and <span class="math notranslate nohighlight">\(x_{t-k}\)</span>, adjusted for the intermediate variables <span class="math notranslate nohighlight">\(\lbrace x_{t-1}, \ldots, x_{t-k+1}\rbrace\)</span>
+([1]). Following [2], it can be defined as:</p>
+<div class="math notranslate nohighlight">
+\[\alpha_k = \frac{ Cov(x_t, x_{t-k} | x_{t-1}, \ldots, x_{t-k+1})}
+{\sqrt{ Var(x_t | x_{t-1}, \ldots, x_{t-k+1}) Var(x_{t-k} | x_{t-1}, \ldots, x_{t-k+1} )}}\]</div>
+<p>with (a) <span class="math notranslate nohighlight">\(x_t = f(x_{t-1}, \ldots, x_{t-k+1})\)</span> and (b) <span class="math notranslate nohighlight">\(x_{t-k} = f(x_{t-1}, \ldots, x_{t-k+1})\)</span>
+being AR(k-1) models that can be fitted by OLS. Be aware that in (a), the regression is done on past values to
+predict <span class="math notranslate nohighlight">\(x_t\)</span> whereas in (b), future values are used to calculate the past value <span class="math notranslate nohighlight">\(x_{t-k}\)</span>.
+It is said in [1] that “for an AR(p), the partial autocorrelations <span class="math notranslate nohighlight">\(\alpha_k\)</span> will be nonzero for <span class="math notranslate nohighlight">\(k&lt;=p\)</span>
+and zero for <span class="math notranslate nohighlight">\(k&gt;p\)</span>.”
+With this property, it is used to determine the lag of an AR-Process.</p>
+<p>[1] Box, G. E., Jenkins, G. M., Reinsel, G. C., &amp; Ljung, G. M. (2015).
+Time series analysis: forecasting and control. John Wiley &amp; Sons.
+[2] <a class="reference external" href="https://onlinecourses.science.psu.edu/stat510/node/62">https://onlinecourses.science.psu.edu/stat510/node/62</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arr</strong> – KHIVA array with the time series.</li>
+<li><strong>lags</strong> – KHIVA array with the lags to be calculated.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array with the partial autocorrelation for each time series for the given lag.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.percentage_of_reoccurring_datapoints_to_all_datapoints">
+<code class="descclassname">khiva.features.</code><code class="descname">percentage_of_reoccurring_datapoints_to_all_datapoints</code><span class="sig-paren">(</span><em>arr</em>, <em>is_sorted</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#percentage_of_reoccurring_datapoints_to_all_datapoints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.percentage_of_reoccurring_datapoints_to_all_datapoints" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the percentage of unique values, that are present in the time series more than once.</p>
+<div class="math notranslate nohighlight">
+\[len(different values occurring more than once) / len(different values)\]</div>
+<p>This means the percentage is normalized to the number of unique values, in contrast to the
+percentage_of_reoccurring_values_to_all_values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arr</strong> – KHIVA array with the time series.</li>
+<li><strong>is_sorted</strong> – Indicates if the input time series is sorted or not. Defaults to false.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array with the percentage of unique values, that are present in the time series more than once.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.percentage_of_reoccurring_values_to_all_values">
+<code class="descclassname">khiva.features.</code><code class="descname">percentage_of_reoccurring_values_to_all_values</code><span class="sig-paren">(</span><em>arr</em>, <em>is_sorted</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#percentage_of_reoccurring_values_to_all_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.percentage_of_reoccurring_values_to_all_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the percentage of unique values, that are present in the time series more than once.</p>
+<div class="math notranslate nohighlight">
+\[\frac{\textit{number of data points occurring more than once}}{\textit{number of all data points})}\]</div>
+<p>This means the percentage is normalized to the number of unique values, in contrast to the
+percentage_of_reoccurring_datapoints_to_all_datapoints.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arr</strong> – KHIVA array with the time series.</li>
+<li><strong>is_sorted</strong> – Indicates if the input time series is sorted or not. Defaults to false.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array with the percentage of unique values, that are present in the time series more than once.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.quantile">
+<code class="descclassname">khiva.features.</code><code class="descname">quantile</code><span class="sig-paren">(</span><em>arr</em>, <em>q</em>, <em>precision=100000000.0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#quantile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.quantile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns values at the given quantile.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arr</strong> – KHIVA array with the time series.</li>
+<li><strong>q</strong> – Khiva array with the percentile(s) at which to extract score(s). One or many.</li>
+<li><strong>precision</strong> – Number of decimals expected.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Values at the given quantile.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.range_count">
+<code class="descclassname">khiva.features.</code><code class="descname">range_count</code><span class="sig-paren">(</span><em>arr</em>, <em>min</em>, <em>max</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#range_count"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.range_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Counts observed values within the interval [min, max).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arr</strong> – KHIVA array with the time series.</li>
+<li><strong>min</strong> – Value that sets the lower limit.</li>
+<li><strong>max</strong> – Value that sets the upper limit.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array with the values at the given range.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.ratio_beyond_r_sigma">
+<code class="descclassname">khiva.features.</code><code class="descname">ratio_beyond_r_sigma</code><span class="sig-paren">(</span><em>arr</em>, <em>r</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#ratio_beyond_r_sigma"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.ratio_beyond_r_sigma" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the ratio of values that are more than <span class="math notranslate nohighlight">\(r*std(x)\)</span> (so <span class="math notranslate nohighlight">\(r\)</span> sigma) away from the mean of
+<span class="math notranslate nohighlight">\(x\)</span>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arr</strong> – KHIVA array with the time series.</li>
+<li><strong>r</strong> – Number of times that the values should be away from.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array with the ratio of values that are more than <span class="math notranslate nohighlight">\(r*std(x)\)</span> (so <span class="math notranslate nohighlight">\(r\)</span> sigma) away from
+the mean of <span class="math notranslate nohighlight">\(x\)</span>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.ratio_value_number_to_time_series_length">
+<code class="descclassname">khiva.features.</code><code class="descname">ratio_value_number_to_time_series_length</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#ratio_value_number_to_time_series_length"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.ratio_value_number_to_time_series_length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates a factor which is 1 if all values in the time series occur only once, and below one if this is
+not the case. In principle, it just returns:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\textit{number unique values}}{\textit{number values}}\]</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arr</strong> – KHIVA array with the time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array with the ratio of unique values with respect to the total number of values.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.sample_entropy">
+<code class="descclassname">khiva.features.</code><code class="descname">sample_entropy</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#sample_entropy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.sample_entropy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates a vectorized sample entropy algorithm.
+<a class="reference external" href="https://en.wikipedia.org/wiki/Sample_entropy">https://en.wikipedia.org/wiki/Sample_entropy</a>
+<a class="reference external" href="https://www.ncbi.nlm.nih.gov/pubmed/10843903?dopt=Abstract">https://www.ncbi.nlm.nih.gov/pubmed/10843903?dopt=Abstract</a>
+For short time-series this method is highly dependent on the parameters, but should be stable for N &gt; 2000,
+see: Yentes et al. (2012) - The Appropriate Use of Approximate Entropy and Sample Entropy with Short Data Sets
+Other shortcomings and alternatives discussed in:
+Richman &amp; Moorman (2000) - Physiological time-series analysis using approximate entropy and sample entropy.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arr</strong> – KHIVA array with the time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array with the same dimensions as tss, whose values (time series in dimension 0)
+contains the vectorized sample entropy for all the input time series in tss.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.skewness">
+<code class="descclassname">khiva.features.</code><code class="descname">skewness</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#skewness"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.skewness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the sample skewness of tss (calculated with the adjusted Fisher-Pearson standardized
+moment coefficient G1).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arr</strong> – KHIVA array with the time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array containing the skewness of each time series in tss.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.spkt_welch_density">
+<code class="descclassname">khiva.features.</code><code class="descname">spkt_welch_density</code><span class="sig-paren">(</span><em>arr</em>, <em>coeff</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#spkt_welch_density"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.spkt_welch_density" title="Permalink to this definition">¶</a></dt>
+<dd><p>Estimates the cross power spectral density of the time series array at different frequencies. To do so, the
+time series is first shifted from the time domain to the frequency domain.</p>
+<p>Welch’s method computes an estimate of the power spectral density by dividing the data into overlapping
+segments, computing a modified periodogram for each segment and averaging the periodograms.
+[1] P. Welch, “The use of the fast Fourier transform for the estimation of power spectra: A method based on time
+averaging over short, modified periodograms”, IEEE Trans. Audio Electroacoust. vol. 15, pp. 70-73, 1967.
+[2] M.S. Bartlett, “Periodogram Analysis and Continuous Spectra”, Biometrika, vol. 37, pp. 1-16, 1950.
+[3] Rabiner, Lawrence R., and B. Gold. “Theory and Application of Digital Signal Processing” Prentice-Hall, pp.
+414-419, 1975.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arr</strong> – KHIVA array with the time series.</li>
+<li><strong>coeff</strong> – The coefficient to be returned.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array containing the power spectrum of the different frequencies for each time series in arr.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.standard_deviation">
+<code class="descclassname">khiva.features.</code><code class="descname">standard_deviation</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#standard_deviation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.standard_deviation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the standard deviation of each time series within tss.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arr</strong> – KHIVA array with the time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array with the standard deviation of each time series within tss.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.sum_of_reoccurring_datapoints">
+<code class="descclassname">khiva.features.</code><code class="descname">sum_of_reoccurring_datapoints</code><span class="sig-paren">(</span><em>arr</em>, <em>is_sorted=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#sum_of_reoccurring_datapoints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.sum_of_reoccurring_datapoints" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the sum of all data points, that are present in the time series more than once.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arr</strong> – KHIVA array with the time series.</li>
+<li><strong>is_sorted</strong> – Indicates if the input time series is sorted or not. Defaults to false.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array with the sum of all data points, that are present in the time series more than once.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.sum_of_reoccurring_values">
+<code class="descclassname">khiva.features.</code><code class="descname">sum_of_reoccurring_values</code><span class="sig-paren">(</span><em>arr</em>, <em>is_sorted=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#sum_of_reoccurring_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.sum_of_reoccurring_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the sum of all values, that are present in the time series more than once.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arr</strong> – KHIVA array with the time series.</li>
+<li><strong>is_sorted</strong> – Indicates if the input time series is sorted or not. Defaults to false.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array with the sum of all values, that are present in the time series more than once.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.sum_values">
+<code class="descclassname">khiva.features.</code><code class="descname">sum_values</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#sum_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.sum_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the sum over the time series arr.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arr</strong> – KHIVA array with the time series.</li>
+<li><strong>is_sorted</strong> – Indicates if the input time series is sorted or not. Defaults to false.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array with the sum of values in each time series.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.symmetry_looking">
+<code class="descclassname">khiva.features.</code><code class="descname">symmetry_looking</code><span class="sig-paren">(</span><em>arr</em>, <em>r</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#symmetry_looking"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.symmetry_looking" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates if the distribution of tss <em>looks symmetric</em>. This is the case if</p>
+<div class="math notranslate nohighlight">
+\[| mean(tss)-median(tss)| &lt; r * (max(tss)-min(tss))\]</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arr</strong> – KHIVA array with the time series.</li>
+<li><strong>r</strong> – The percentage of the range to compare with.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array denoting if the input time series look symmetric.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.time_reversal_asymmetry_statistic">
+<code class="descclassname">khiva.features.</code><code class="descname">time_reversal_asymmetry_statistic</code><span class="sig-paren">(</span><em>arr</em>, <em>lag</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#time_reversal_asymmetry_statistic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.time_reversal_asymmetry_statistic" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function calculates the value of:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{n-2lag} \sum_{i=0}^{n-2lag} x_{i + 2 \cdot lag}^2 \cdot x_{i + lag} - x_{i + lag} \cdot  x_{i}^2\]</div>
+<p>which is</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{E}[L^2(X)^2 \cdot L(X) - L(X) \cdot X^2]\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbb{E}\)</span> is the mean and <span class="math notranslate nohighlight">\(L\)</span> is the lag operator. It was proposed in [1] as a promising
+feature to extract from time series.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arr</strong> – KHIVA array with the time series.</li>
+<li><strong>lag</strong> – The lag to be computed.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array containing the count of the given value in each time series.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.value_count">
+<code class="descclassname">khiva.features.</code><code class="descname">value_count</code><span class="sig-paren">(</span><em>arr</em>, <em>v</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#value_count"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.value_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Counts occurrences of value in the time series tss.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>arr</strong> – KHIVA array with the time series.</li>
+<li><strong>v</strong> – The value to be counted.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array containing the count of the given value in each time series.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.variance">
+<code class="descclassname">khiva.features.</code><code class="descname">variance</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#variance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.variance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the variance for the time series array.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arr</strong> – KHIVA array with the time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array containing the variance in each time series.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.features.variance_larger_than_standard_deviation">
+<code class="descclassname">khiva.features.</code><code class="descname">variance_larger_than_standard_deviation</code><span class="sig-paren">(</span><em>arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/features.html#variance_larger_than_standard_deviation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.features.variance_larger_than_standard_deviation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates if the variance of array is greater than the standard deviation. In other words, if the variance of
+array is larger than 1.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arr</strong> – KHIVA array with the time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array denoting if the variance of array is greater than the standard deviation.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id1">
+<h3>khiva<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<span class="target" id="module-khiva"></span></div>
+<div class="section" id="module-khiva.linalg">
+<span id="khiva-linalg"></span><h3>khiva.linalg<a class="headerlink" href="#module-khiva.linalg" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="khiva.linalg.lls">
+<code class="descclassname">khiva.linalg.</code><code class="descname">lls</code><span class="sig-paren">(</span><em>a</em>, <em>b</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/linalg.html#lls"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.linalg.lls" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the minimum norm least squares solution <span class="math notranslate nohighlight">\(x\)</span> <span class="math notranslate nohighlight">\((||A·x - b||^2)\)</span> to <span class="math notranslate nohighlight">\(A·x = b\)</span>. This
+function uses the singular value decomposition function of Arrayfire. The actual formula that this function computes
+is <span class="math notranslate nohighlight">\(x = V·D\dagger·U^T·b\)</span>. Where <span class="math notranslate nohighlight">\(U\)</span> and <span class="math notranslate nohighlight">\(V\)</span> are orthogonal matrices and <span class="math notranslate nohighlight">\(D\dagger\)</span> contains
+the inverse values of the singular values contained in <span class="math notranslate nohighlight">\(D\)</span> if they are not zero, and zero otherwise.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>a</strong> – KHIVA array with the coefficients of the linear equation problem to solve. It accepts a list of lists or
+a numpy array with one or several time series.</li>
+<li><strong>b</strong> – KHIVA array with the measured values.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array with the solution to the linear equation problem minimizing the norm 2.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-khiva.matrix">
+<span id="khiva-matrix"></span><h3>khiva.matrix<a class="headerlink" href="#module-khiva.matrix" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="khiva.matrix.find_best_n_discords">
+<code class="descclassname">khiva.matrix.</code><code class="descname">find_best_n_discords</code><span class="sig-paren">(</span><em>profile</em>, <em>index</em>, <em>m</em>, <em>n</em>, <em>self_join=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/matrix.html#find_best_n_discords"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.matrix.find_best_n_discords" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function extracts the best N motifs from a previously calculated matrix profile.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>profile</strong> – KHIVA array with the matrix profile containing the minimum distance of each subsequence.</li>
+<li><strong>index</strong> – KHIVA array with the matrix profile index containing where each minimum occurs.</li>
+<li><strong>m</strong> – Subsequence length value used to calculate the input matrix profile.</li>
+<li><strong>n</strong> – Number of discords to extract.</li>
+<li><strong>self_join</strong> – Indicates whether the input profile comes from a self join operation or not. It determines
+whether the mirror similar region is included in the output or not.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA arrays with the discord distances, the discord indices and the subsequence indices.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.matrix.find_best_n_motifs">
+<code class="descclassname">khiva.matrix.</code><code class="descname">find_best_n_motifs</code><span class="sig-paren">(</span><em>profile</em>, <em>index</em>, <em>m</em>, <em>n</em>, <em>self_join=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/matrix.html#find_best_n_motifs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.matrix.find_best_n_motifs" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function extracts the best N discords from a previously calculated matrix profile.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>profile</strong> – KHIVA array with the matrix profile containing the minimum distance of each subsequence.</li>
+<li><strong>index</strong> – KHIVA array with the matrix profile index containing where each minimum occurs.</li>
+<li><strong>m</strong> – Subsequence length value used to calculate the input matrix profile.</li>
+<li><strong>n</strong> – Number of motifs to extract.</li>
+<li><strong>self_join</strong> – Indicates whether the input profile comes from a self join operation or not. It determines
+whether the mirror similar region is included in the output or not.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA arrays with the motif distances, the motif indices and the subsequence indices.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.matrix.stomp">
+<code class="descclassname">khiva.matrix.</code><code class="descname">stomp</code><span class="sig-paren">(</span><em>first_time_series</em>, <em>second_time_series</em>, <em>subsequence_length</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/matrix.html#stomp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.matrix.stomp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stomp algorithm to calculate the matrix profile between <cite>ta</cite> and <cite>tb</cite> using a subsequence length of <cite>m</cite>.</p>
+<p>[1] Yan Zhu, Zachary Zimmerman, Nader Shakibay Senobari, Chin-Chia Michael Yeh, Gareth Funning, Abdullah Mueen,
+Philip Brisk and Eamonn Keogh (2016). Matrix Profile II: Exploiting a Novel Algorithm and GPUs to break the one
+Hundred Million Barrier for Time Series Motifs and Joins. IEEE ICDM 2016.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>first_time_series</strong> – KHIVA array with the first time series.</li>
+<li><strong>second_time_series</strong> – KHIVA array with the second time series.</li>
+<li><strong>subsequence_length</strong> – Length of the subsequence.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA arrays with the profile and index.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.matrix.stomp_self_join">
+<code class="descclassname">khiva.matrix.</code><code class="descname">stomp_self_join</code><span class="sig-paren">(</span><em>time_series</em>, <em>subsequence_length</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/matrix.html#stomp_self_join"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.matrix.stomp_self_join" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stomp algorithm to calculate the matrix profile between <cite>t</cite> and itself using a subsequence length of <cite>m</cite>.
+This method filters the trivial matches.</p>
+<p>[1] Yan Zhu, Zachary Zimmerman, Nader Shakibay Senobari, Chin-Chia Michael Yeh, Gareth Funning, Abdullah Mueen,
+Philip Brisk and Eamonn Keogh (2016). Matrix Profile II: Exploiting a Novel Algorithm and GPUs to break the one
+Hundred Million Barrier for Time Series Motifs and Joins. IEEE ICDM 2016.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>time_series</strong> – The query and reference time series in KHIVA array format.</li>
+<li><strong>subsequence_length</strong> – Lenght of the subsequence</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA arrays with the profile and index.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-khiva.normalization">
+<span id="khiva-normalization"></span><h3>khiva.normalization<a class="headerlink" href="#module-khiva.normalization" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="khiva.normalization.decimal_scaling_norm">
+<code class="descclassname">khiva.normalization.</code><code class="descname">decimal_scaling_norm</code><span class="sig-paren">(</span><em>tss</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/normalization.html#decimal_scaling_norm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.normalization.decimal_scaling_norm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Normalizes the given time series according to its maximum value and adjusts each value within the range (-1, 1).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tss</strong> – KHIVA array with the time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array with the same dimensions as tss, whose values (time series in dimension 0) have been
+normalized by dividing each number by :math::<cite>10^j</cite> , where j is the number of integer digits of the max number in
+the time series.`</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.normalization.decimal_scaling_norm_in_place">
+<code class="descclassname">khiva.normalization.</code><code class="descname">decimal_scaling_norm_in_place</code><span class="sig-paren">(</span><em>tss</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/normalization.html#decimal_scaling_norm_in_place"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.normalization.decimal_scaling_norm_in_place" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as decimal_scaling_norm, but it performs the operation in place, without allocating further memory.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tss</strong> – KHIVA array with the time series.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.normalization.max_min_norm">
+<code class="descclassname">khiva.normalization.</code><code class="descname">max_min_norm</code><span class="sig-paren">(</span><em>tss</em>, <em>high=1.0</em>, <em>low=0.0</em>, <em>epsilon=1e-08</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/normalization.html#max_min_norm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.normalization.max_min_norm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Normalizes the given time series according to its minimum and maximum value and adjusts each value within the
+range [low, high].</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>tss</strong> – KHIVA array with the time series.</li>
+<li><strong>high</strong> – Maximum final value (Defaults to 1.0).</li>
+<li><strong>low</strong> – Minimum final value (Defaults to 0.0).</li>
+<li><strong>epsilon</strong> – Safeguard for constant (or near constant) time series as the operation implies a unit scale
+operation between min and max values in the tss.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array with the same dimensions as tss where the time series have been adjusted for zero mean and
+one as standard deviation.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.normalization.max_min_norm_in_place">
+<code class="descclassname">khiva.normalization.</code><code class="descname">max_min_norm_in_place</code><span class="sig-paren">(</span><em>tss</em>, <em>high=1.0</em>, <em>low=0.0</em>, <em>epsilon=1e-08</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/normalization.html#max_min_norm_in_place"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.normalization.max_min_norm_in_place" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as max_min_norm, but it performs the operation in place, without allocating further memory.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>tss</strong> – KHIVA array with the time series.</li>
+<li><strong>high</strong> – Maximum final value (Defaults to 1.0).</li>
+<li><strong>low</strong> – Minimum final value (Defaults to 0.0).</li>
+<li><strong>epsilon</strong> – Safeguard for constant (or near constant) time series as the operation implies a unit scale
+operation between min and max values in the tss.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.normalization.mean_norm">
+<code class="descclassname">khiva.normalization.</code><code class="descname">mean_norm</code><span class="sig-paren">(</span><em>tss</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/normalization.html#mean_norm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.normalization.mean_norm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Normalizes the given time series according to its maximum-minimum value and its mean. It follows the following
+formulae:</p>
+<div class="math notranslate nohighlight">
+\[\acute{x} = frac{x - mean(x)}{max(x) - min(x)}.\]</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tss</strong> – KHIVA array with the time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">An array with the same dimensions as tss, whose values (time series in dimension 0) have been
+normalized by substracting the mean from each number and dividing each number by <span class="math notranslate nohighlight">\(max(x) - min(\)</span>,
+in the time series.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.normalization.mean_norm_in_place">
+<code class="descclassname">khiva.normalization.</code><code class="descname">mean_norm_in_place</code><span class="sig-paren">(</span><em>tss</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/normalization.html#mean_norm_in_place"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.normalization.mean_norm_in_place" title="Permalink to this definition">¶</a></dt>
+<dd><p>Normalizes the given time series according to its maximum-minimum value and its mean. It follows the following
+formulae:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tss</strong> – KHIVA array with the time series.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.normalization.znorm">
+<code class="descclassname">khiva.normalization.</code><code class="descname">znorm</code><span class="sig-paren">(</span><em>tss</em>, <em>epsilon=1e-08</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/normalization.html#znorm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.normalization.znorm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates a new set of time series with zero mean and standard deviation one.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>tss</strong> – KHIVA array with the time series.</li>
+<li><strong>epsilon</strong> – Minimum standard deviation to consider. It acts as a gatekeeper for those time series that
+may be constant or near constant.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array with the same dimensions as tss where the time series have been adjusted for zero mean and
+one as standard deviation.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.normalization.znorm_in_place">
+<code class="descclassname">khiva.normalization.</code><code class="descname">znorm_in_place</code><span class="sig-paren">(</span><em>tss</em>, <em>epsilon=1e-08</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/normalization.html#znorm_in_place"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.normalization.znorm_in_place" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adjusts the time series in the given input and performs z-norm
+in place (without allocating further memory).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>tss</strong> – KHIVA array with the time series.</li>
+<li><strong>epsilon</strong> – epsilon Minimum standard deviation to consider. It acts as a gatekeeper for
+those time series that may be constant or near constant.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-khiva.polynomial">
+<span id="khiva-polynomial"></span><h3>khiva.polynomial<a class="headerlink" href="#module-khiva.polynomial" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="khiva.polynomial.polyfit">
+<code class="descclassname">khiva.polynomial.</code><code class="descname">polyfit</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>deg</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/polynomial.html#polyfit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.polynomial.polyfit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Least squares polynomial fit. Fit a polynomial <span class="math notranslate nohighlight">\(p(x) = p[0] * x^{deg} + ... + p[deg]\)</span> of degree
+<span class="math notranslate nohighlight">\(deg\)</span> to points <span class="math notranslate nohighlight">\((x, y)\)</span>. Returns a vector of coefficients <span class="math notranslate nohighlight">\(p\)</span> that minimises the squared error.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> – KHIVA array with the x-coordinates of the M sample points <span class="math notranslate nohighlight">\((x[i], y[i])\)</span>.</li>
+<li><strong>y</strong> – KHIVA array with the y-coordinates of the sample points.</li>
+<li><strong>deg</strong> – Degree of the fitting polynomial</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array with the polynomial coefficients, highest power first.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.polynomial.roots">
+<code class="descclassname">khiva.polynomial.</code><code class="descname">roots</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/polynomial.html#roots"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.polynomial.roots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the roots of a polynomial with coefficients given in <span class="math notranslate nohighlight">\(p\)</span>. The values in the rank-1 array
+<span class="math notranslate nohighlight">\(p\)</span> are coefficients of a polynomial. If the length of <span class="math notranslate nohighlight">\(p\)</span> is <span class="math notranslate nohighlight">\(n+1\)</span> then the polynomial is
+described by:</p>
+<div class="math notranslate nohighlight">
+\[p[0] * x^n + p[1] * x^{n-1} + ... + p[n-1] * x + p[n]\]</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>p</strong> – KHIVA array with the polynomial coefficients.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">KHIVA array with the roots of the polynomial.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-khiva.regression">
+<span id="khiva-regression"></span><h3>khiva.regression<a class="headerlink" href="#module-khiva.regression" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="khiva.regression.linear">
+<code class="descclassname">khiva.regression.</code><code class="descname">linear</code><span class="sig-paren">(</span><em>xss</em>, <em>yss</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/regression.html#linear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.regression.linear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates a linear least-squares regression for two sets of measurements. Both arrays should have the same
+length.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>xss</strong> – Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
+one indicates the number of time series.</li>
+<li><strong>yss</strong> – Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
+one indicates the number of time series.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">slope Slope of the regression line.
+intercept Intercept of the regression line.
+rvalue Correlation coefficient.
+pvalue Two-sided p-value for a hypothesis test whose null hypothesis is that the slope is zero, using Wald
+Test with t-distribution of the test statistic.
+stderrest Standard error of the estimated gradient.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-khiva.regularization">
+<span id="khiva-regularization"></span><h3>khiva.regularization<a class="headerlink" href="#module-khiva.regularization" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="khiva.regularization.group_by">
+<code class="descclassname">khiva.regularization.</code><code class="descname">group_by</code><span class="sig-paren">(</span><em>tss</em>, <em>aggregation_function</em>, <em>n_columns_key=1</em>, <em>n_columns_value=1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/regularization.html#group_by"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.regularization.group_by" title="Permalink to this definition">¶</a></dt>
+<dd><p>Group by operation in the input array using n_columns_key columns as group keys and n_columns_value columns as
+values. The data is expected to be sorted. The aggregation function determines the operation to aggregate the
+values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>tss</strong> – KHIVA array with the time series.</li>
+<li><strong>aggregation_function</strong> – Function to be used in the aggregation. It receives an integer which indicates
+the function to be applied.
+0 : mean,
+1 : median
+2 : min,
+3 : max,
+4 : stdev,
+5 : var,
+default : mean</li>
+<li><strong>n_columns_key</strong> – Number of columns conforming the key.</li>
+<li><strong>n_columns_value</strong> – Number of columns conforming the value (they are expected to be consecutive to the column
+keys).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">KHIVA array with the values of the group keys aggregated using the aggregation_function.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-khiva.statistics">
+<span id="khiva-statistics"></span><h3>khiva.statistics<a class="headerlink" href="#module-khiva.statistics" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="khiva.statistics.covariance">
+<code class="descclassname">khiva.statistics.</code><code class="descname">covariance</code><span class="sig-paren">(</span><em>tss</em>, <em>unbiased=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/statistics.html#covariance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.statistics.covariance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the covariance matrix of the time series contained in tss.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>tss</strong> – Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
+one indicates the number of time series.</li>
+<li><strong>unbiased</strong> – Determines whether it divides by n - 1 (if false) or n (if true).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The covariance matrix of the time series.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.statistics.kurtosis">
+<code class="descclassname">khiva.statistics.</code><code class="descname">kurtosis</code><span class="sig-paren">(</span><em>tss</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/statistics.html#kurtosis"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.statistics.kurtosis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the kurtosis of tss (calculated with the adjusted Fisher-Pearson standardized moment coefficient G2).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tss</strong> – Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
+one indicates the number of time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The kurtosis of tss.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.statistics.ljung_box">
+<code class="descclassname">khiva.statistics.</code><code class="descname">ljung_box</code><span class="sig-paren">(</span><em>tss</em>, <em>lags</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/statistics.html#ljung_box"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.statistics.ljung_box" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Ljung–Box test checks that data whithin the time series are independently distributed (i.e. the correlations
+in the population from which the sample is taken are 0, so that any observed correlations in the data result from
+randomness of the sampling process). Data are no independently distributed, if they exhibit serial correlation.
+The test statistic is:</p>
+<div class="math notranslate nohighlight">
+\[Q = n\left(n+2\right)\sum_{k=1}^h\frac{\hat{\rho}^2_k}{n-k}\]</div>
+<p>where <span class="math notranslate nohighlight">\(n\)</span> is the sample size, <span class="math notranslate nohighlight">\(\hat{\rho}k\)</span> is the sample autocorrelation at lag <span class="math notranslate nohighlight">\(k\)</span>, and
+<span class="math notranslate nohighlight">\(h\)</span> is the number of lags being tested. Under <span class="math notranslate nohighlight">\(H_0\)</span> the statistic Q follows a <span class="math notranslate nohighlight">\(\chi^2{(h)}\)</span>.
+For significance level <span class="math notranslate nohighlight">\(\alpha\)</span>, the <span class="math notranslate nohighlight">\(critical region\)</span> for rejection of the hypothesis of randomness
+is:</p>
+<div class="math notranslate nohighlight">
+\[Q &gt; \chi_{1-\alpha,h}^2\]</div>
+<p>where <span class="math notranslate nohighlight">\(\chi_{1-\alpha,h}^2\)</span> is the <span class="math notranslate nohighlight">\(\alpha\)</span>-quantile of the chi-squared distribution with <span class="math notranslate nohighlight">\(h\)</span>
+degrees of freedom.</p>
+<p>[1] G. M. Ljung G. E. P. Box (1978). On a measure of lack of fit in time series models.
+Biometrika, Volume 65, Issue 2, 1 August 1978, Pages 297–303.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>tss</strong> – Expects an input array whose dimension zero is the length of the time series (all the same) and
+dimension one indicates the number of time series.</li>
+<li><strong>lags</strong> – Number of lags being tested.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Array containing the Ljung-Box statistic test.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.statistics.moment">
+<code class="descclassname">khiva.statistics.</code><code class="descname">moment</code><span class="sig-paren">(</span><em>tss</em>, <em>k</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/statistics.html#moment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.statistics.moment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the kth moment of the given time series.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>tss</strong> – Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
+one indicates the number of time series.</li>
+<li><strong>k</strong> – The specific moment to be calculated.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The kth moment of the given time series.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.statistics.quantile">
+<code class="descclassname">khiva.statistics.</code><code class="descname">quantile</code><span class="sig-paren">(</span><em>tss</em>, <em>q</em>, <em>precision=100000000.0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/statistics.html#quantile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.statistics.quantile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns values at the given quantile.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>tss</strong> – Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
+one indicates the number of time series. NOTE: the time series should be sorted.</li>
+<li><strong>q</strong> – Percentile(s) at which to extract score(s). One or many.</li>
+<li><strong>precision</strong> – Number of decimals expected.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Values at the given quantile.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.statistics.quantiles_cut">
+<code class="descclassname">khiva.statistics.</code><code class="descname">quantiles_cut</code><span class="sig-paren">(</span><em>tss</em>, <em>quantiles</em>, <em>precision=1e-08</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/statistics.html#quantiles_cut"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.statistics.quantiles_cut" title="Permalink to this definition">¶</a></dt>
+<dd><p>Discretizes the time series into equal-sized buckets based on sample quantiles.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>tss</strong> – Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
+one indicates the number of time series. NOTE: the time series should be sorted.</li>
+<li><strong>quantiles</strong> – Number of quantiles to extract. From 0 to 1, step 1/quantiles.</li>
+<li><strong>precision</strong> – Number of decimals expected.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Matrix with the categories, one category per row, the start of the category in the first column and
+the end in the second category.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.statistics.sample_stdev">
+<code class="descclassname">khiva.statistics.</code><code class="descname">sample_stdev</code><span class="sig-paren">(</span><em>tss</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/statistics.html#sample_stdev"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.statistics.sample_stdev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Estimates standard deviation based on a sample. The standard deviation is calculated using the “n-1” method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tss</strong> – Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
+one indicates the number of time series.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The sample standard deviation.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="khiva.statistics.skewness">
+<code class="descclassname">khiva.statistics.</code><code class="descname">skewness</code><span class="sig-paren">(</span><em>tss</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/khiva/statistics.html#skewness"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#khiva.statistics.skewness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the sample skewness of tss (calculated with the adjusted Fisher-Pearson standardized moment
+coefficient G1).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tss</strong> – Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
+one indicates the number of time series. NOTE: the time series should be sorted.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Array containing the skewness of each time series in tss.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Shapelets
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

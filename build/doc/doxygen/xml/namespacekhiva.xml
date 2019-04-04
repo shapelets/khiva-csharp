@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespacekhiva" kind="namespace" language="C#">
+    <compoundname>khiva</compoundname>
+    <innerclass refid="classkhiva_1_1_khiva" prot="public">khiva::Khiva</innerclass>
+    <innernamespace refid="namespacekhiva_1_1array">khiva::array</innernamespace>
+    <innernamespace refid="namespacekhiva_1_1clustering">khiva::clustering</innernamespace>
+    <innernamespace refid="namespacekhiva_1_1dimensionality">khiva::dimensionality</innernamespace>
+    <innernamespace refid="namespacekhiva_1_1distances">khiva::distances</innernamespace>
+    <innernamespace refid="namespacekhiva_1_1features">khiva::features</innernamespace>
+    <innernamespace refid="namespacekhiva_1_1interop">khiva::interop</innernamespace>
+    <innernamespace refid="namespacekhiva_1_1linalg">khiva::linalg</innernamespace>
+    <innernamespace refid="namespacekhiva_1_1matrix">khiva::matrix</innernamespace>
+    <innernamespace refid="namespacekhiva_1_1normalization">khiva::normalization</innernamespace>
+    <innernamespace refid="namespacekhiva_1_1polynomial">khiva::polynomial</innernamespace>
+    <innernamespace refid="namespacekhiva_1_1regression">khiva::regression</innernamespace>
+    <innernamespace refid="namespacekhiva_1_1regularization">khiva::regularization</innernamespace>
+    <innernamespace refid="namespacekhiva_1_1statistics">khiva::statistics</innernamespace>
+    <innernamespace refid="namespacekhiva_1_1tests">khiva::tests</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Array.cs" line="20" column="1"/>
+  </compounddef>
+</doxygen>

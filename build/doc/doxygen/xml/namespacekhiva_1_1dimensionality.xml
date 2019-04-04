@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespacekhiva_1_1dimensionality" kind="namespace" language="C#">
+    <compoundname>khiva::dimensionality</compoundname>
+    <innerclass refid="classkhiva_1_1dimensionality_1_1_dimensionality" prot="public">khiva::dimensionality::Dimensionality</innerclass>
+    <innernamespace refid="namespacekhiva_1_1dimensionality_1_1tests">khiva::dimensionality::tests</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Dimensionality.cs" line="16" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,1807 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="classkhiva_1_1array_1_1tests_1_1_array_tests" kind="class" language="C#" prot="public">
+    <compoundname>khiva::array::tests::ArrayTests</compoundname>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1ac70ee772bc0e6f1d37f66c7a4345df5e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.Init</definition>
+        <argsstring>()</argsstring>
+        <name>Init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="23" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="23" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a93c4df898907e810e73152d5872036a3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestGetType</definition>
+        <argsstring>()</argsstring>
+        <name>TestGetType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="29" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="29" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a64bbba90fe580e98cba6c5b33384930f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestGetDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestGetDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="38" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="38" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a4c411189d5ca6eafaeac5a95ea19269d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestDoubleNull</definition>
+        <argsstring>()</argsstring>
+        <name>TestDoubleNull</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="46" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="46" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a3c24a0fa2d099d15294b8a2c56f82a29" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestFloatNull</definition>
+        <argsstring>()</argsstring>
+        <name>TestFloatNull</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="60" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="60" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1ab500cceff8cb4502680be3fe7950e376" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestComplexDoubleNull</definition>
+        <argsstring>()</argsstring>
+        <name>TestComplexDoubleNull</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="74" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="74" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1ab6a6a5d6ab2f6cd4db6fc7ed61d6fd3b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestComplexFloatNull</definition>
+        <argsstring>()</argsstring>
+        <name>TestComplexFloatNull</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="88" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="88" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1af430825597c6c381bc886ee8265e4d59" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestBooleanNull</definition>
+        <argsstring>()</argsstring>
+        <name>TestBooleanNull</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="102" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="102" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1afe1c8f914c3adb555faf282b8b9c1b22" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestShortNull</definition>
+        <argsstring>()</argsstring>
+        <name>TestShortNull</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="116" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="116" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1aca7bf16329d72fb93a2b1a78d3812a82" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestUshortNull</definition>
+        <argsstring>()</argsstring>
+        <name>TestUshortNull</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="130" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="130" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1acba72b76c602f9c9c47cc5e699017d72" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestByteNull</definition>
+        <argsstring>()</argsstring>
+        <name>TestByteNull</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="144" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="144" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1af130919038363a9a234129cf75becc70" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestLongNull</definition>
+        <argsstring>()</argsstring>
+        <name>TestLongNull</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="158" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="158" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1ad5ce01c3979fa00330064b2a596e2fb1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestUlongNull</definition>
+        <argsstring>()</argsstring>
+        <name>TestUlongNull</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="172" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="172" bodyend="183"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a7968189cdde2726cdc6df15893fd79e9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestIntNull</definition>
+        <argsstring>()</argsstring>
+        <name>TestIntNull</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="186" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="186" bodyend="197"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a30e0ae7b5c57d564271f1a7760c0b22a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestUintNull</definition>
+        <argsstring>()</argsstring>
+        <name>TestUintNull</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="200" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="200" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a942a65f7082d8a9d24904bf6fa3d84d9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestDoubleD1MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestDoubleD1MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="214" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="214" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a24feac7e30384a3d63dcd5174a520eed" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestFloatD1MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestFloatD1MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="229" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="229" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a822ec841cc21f98fd9181ec02ebdc1be" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestComplexDoubleD1MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestComplexDoubleD1MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="244" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="244" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1ada4b6639e164103a9695a18b03cbcfc8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestComplexFloatD1MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestComplexFloatD1MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="259" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="259" bodyend="271"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a17c1b31e57ae68efc885969c1a646dda" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestBooleanD1MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestBooleanD1MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="274" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="274" bodyend="286"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1ac252e6c618c90768852e1fe20476ecde" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestShortD1MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestShortD1MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="289" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="289" bodyend="301"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a6c9347b1e8962da19138e4abdb767b57" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestUshortD1MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestUshortD1MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="304" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="304" bodyend="316"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a51e983afb16c3a167282e9a275e93abf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestByteD1MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestByteD1MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="319" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="319" bodyend="331"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1ad052f8f825eb514c93e1d0462b337fda" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestLongD1MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestLongD1MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="334" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="334" bodyend="346"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a0027f28087b18a067a0f4452790a16f0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestUlongD1MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestUlongD1MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="349" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="349" bodyend="361"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a2b2e738e9a135f070734523334ed77bd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestIntD1MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestIntD1MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="364" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="364" bodyend="376"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a81af7c62b6da78784db2ac656a755099" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestUintD1MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestUintD1MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="379" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="379" bodyend="391"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a7e8676e30e18073f8066ac45da975dd8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestDoubleD2MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestDoubleD2MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="394" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="394" bodyend="406"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a59325a294bbf5522326f6216ebaca21b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestFloatD2MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestFloatD2MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="409" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="409" bodyend="421"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a63f4e85ef98716f3b98861bf99d327bd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestComplexDoubleD2MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestComplexDoubleD2MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="424" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="424" bodyend="436"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a090208d340d0dccec74f775425f1a9d5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestComplexFloatD2MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestComplexFloatD2MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="439" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="439" bodyend="451"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1afbad8d53a7198e92ac97033415d6334e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestBooleanD2MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestBooleanD2MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="454" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="454" bodyend="466"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a2de92215a5aad48b471354abf7d2c904" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestShortD2MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestShortD2MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="469" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="469" bodyend="481"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a42f006f8f944be370175a053c94ad67c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestUshortD2MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestUshortD2MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="484" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="484" bodyend="496"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a61e1210a7a491c10aa06f1a7f1dfa9b4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestByteD2MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestByteD2MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="499" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="499" bodyend="511"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a1bf8ac66257f9191d82142b95ba06e12" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestLongD2MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestLongD2MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="514" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="514" bodyend="526"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1afd6895dfa0031937e4c6b1fbbdd08ec2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestUlongD2MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestUlongD2MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="529" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="529" bodyend="541"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a9d966bfde5ad2092403f74e183ce3203" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestIntD2MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestIntD2MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="544" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="544" bodyend="556"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a496d484f4bc2629837251fee001e5144" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestUintD2MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestUintD2MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="559" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="559" bodyend="571"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a2d51d546f4d7c98dec2f2bd95931b922" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestDoubleD3MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestDoubleD3MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="574" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="574" bodyend="586"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1ae8b16bf7e2a8c6db8d2e45d6abdbdfe8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestFloatD3MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestFloatD3MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="589" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="589" bodyend="601"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1afaadc18fca5abb32d4577b9bf0a32a30" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestComplexDoubleD3MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestComplexDoubleD3MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="604" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="604" bodyend="616"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a2910c349829e73d421314899dac8a9de" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestComplexFloatD3MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestComplexFloatD3MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="619" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="619" bodyend="631"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1afa75558eed03ecf479b7eac8892b2101" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestBooleanD3MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestBooleanD3MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="634" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="634" bodyend="646"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1aa3c3b31b6f7e65373057b67e06254d51" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestShortD3MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestShortD3MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="649" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="649" bodyend="661"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1afe74a75dbc7110471860bf54f9ab66df" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestUshortD3MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestUshortD3MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="664" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="664" bodyend="676"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a047a0fe28303a7ca828e5f6d70367591" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestByteD3MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestByteD3MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="679" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="679" bodyend="691"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a27ee2a07f686ec1ae343dad6099b5554" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestLongD3MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestLongD3MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="694" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="694" bodyend="706"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1ae5f1f516b01dfce42af4c48664076f7c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestUlongD3MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestUlongD3MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="709" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="709" bodyend="721"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a1008ae5273cb19804e0ffcff7e200a73" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestIntD3MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestIntD3MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="724" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="724" bodyend="736"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1aae587ac9497a88318ca3aef37a4d5baf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestUintD3MismatchDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestUintD3MismatchDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="739" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="739" bodyend="751"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a62519a28c791d4bc65dde90bb7743554" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestDoubleD1OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestDoubleD1OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="754" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="754" bodyend="762"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1adb6a78f1bed2551c832fe1db24e73bd9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestFloatD1OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestFloatD1OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="765" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="765" bodyend="773"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a2157c8821b637346db1c11c7dad5952f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestComplexDoubleD1OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestComplexDoubleD1OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="776" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="776" bodyend="784"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1abfda4ef65b1ab8068e5d5d0d038b3190" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestComplexFloatD1OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestComplexFloatD1OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="787" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="787" bodyend="795"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a50e40c94a388df549d68a6e0cb372847" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestBooleanD1OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestBooleanD1OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="798" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="798" bodyend="806"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a6417ef133741f905ab2215cdb542153b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestShortD1OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestShortD1OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="809" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="809" bodyend="817"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a0142d92c422e7e32d9ff94f85ca9a974" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestUshortD1OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestUshortD1OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="820" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="820" bodyend="828"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a98a6965a945c065cf6fb7c9fe1053426" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestByteD1OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestByteD1OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="831" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="831" bodyend="839"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1ae889f12ea658731d2018816453f2de2d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestLongD1OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestLongD1OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="842" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="842" bodyend="850"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a69d4ecf1b3869092d767f08c375f58cf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestUlongD1OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestUlongD1OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="853" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="853" bodyend="861"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a683d441627eaf48b2947eb6aead18253" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestIntD1OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestIntD1OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="864" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="864" bodyend="872"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a8a749d29940d651f989d6109c4ba8d96" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestUintD1OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestUintD1OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="875" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="875" bodyend="883"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1abdcc245dae55c9b79b786b3e238fe8d2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestDoubleD2OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestDoubleD2OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="886" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="886" bodyend="894"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1ac711dbbee42fe7a33eb318a32aab115d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestFloatD2OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestFloatD2OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="897" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="897" bodyend="905"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1aeceaa8569493aa72ce0767b3a22b8387" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestComplexDoubleD2OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestComplexDoubleD2OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="908" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="908" bodyend="916"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1ab14d5364bd75fdd3c8b1b858f8de052e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestComplexFloatD2OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestComplexFloatD2OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="919" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="919" bodyend="926"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a21a45e6527685b8583f6b092fbdac4d9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestBooleanD2OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestBooleanD2OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="929" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="929" bodyend="937"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a15ff724c8ed13335c58228ebb50d9102" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestShortD2OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestShortD2OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="940" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="940" bodyend="948"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1afd0e8ee98cb4a407188315575cb9b309" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestUshortD2OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestUshortD2OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="951" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="951" bodyend="959"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a238d4d4316dd0c26c8d7112926a54cdd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestByteD2OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestByteD2OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="962" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="962" bodyend="970"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a8e97c439b234c7b1306ec2f29b1bfd3b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestLongD2OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestLongD2OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="973" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="973" bodyend="981"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1addeb68945cc2a49e18c66801db7180bc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestUlongD2OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestUlongD2OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="984" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="984" bodyend="992"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1adaaf92e020b9da5159873b8b27f1416e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestIntD2OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestIntD2OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="995" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="995" bodyend="1003"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1ae28d8ff8122a577e8221967b6f6f4802" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestUintD2OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestUintD2OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1006" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1006" bodyend="1014"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a1bcb85014bbd6d87a5e2b365b740855e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestDoubleD3OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestDoubleD3OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1017" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1017" bodyend="1025"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1aac32da18ed0177da086886e9b21be657" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestFloatD3OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestFloatD3OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1028" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1028" bodyend="1036"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1afed406c7d7db8fe7fe3b5c6c5e3c8884" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestComplexDoubleD3OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestComplexDoubleD3OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1039" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1039" bodyend="1047"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a09d4e2fa2669160ca62fa24840911dde" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestComplexFloatD3OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestComplexFloatD3OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1050" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1050" bodyend="1058"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1aebdfa8e27a220d8efc707ed3e1e03ece" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestBooleanD3OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestBooleanD3OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1061" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1061" bodyend="1069"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a520d8713a5a41a0352216e8521172565" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestShortD3OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestShortD3OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1072" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1072" bodyend="1080"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1afe5d1db9f62fda2cd14823bacb1a6763" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestUshortD3OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestUshortD3OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1083" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1083" bodyend="1091"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1aee404fb3de1308c6d803d23e487ed833" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestByteD3OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestByteD3OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1094" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1094" bodyend="1102"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a382211ee8e488e9851bc03a21a871072" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestLongD3OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestLongD3OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1105" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1105" bodyend="1113"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a328dadce78810fc2b869bd2f9be821db" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestUlongD3OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestUlongD3OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1116" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1116" bodyend="1124"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a8b385f4ab896ae2c11f54548b4f25e76" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestIntD3OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestIntD3OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1127" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1127" bodyend="1135"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a757cbacf81843125cb7dadb9ea966356" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestUintD3OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestUintD3OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1138" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1138" bodyend="1146"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1ad348e608e3511014b546e58335fc6968" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestDoubleD4OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestDoubleD4OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1149" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1149" bodyend="1157"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1ae6aa09bfbcfbb7d6859303c11ae672a5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestFloatD4OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestFloatD4OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1160" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1160" bodyend="1168"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a7a1f6c52384a2be93d4c93d56f34ed2e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestComplexDoubleD4OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestComplexDoubleD4OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1171" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1171" bodyend="1179"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1aca7c2568dddc16be0855cf0b83c5d3b7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestComplexFloatD4OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestComplexFloatD4OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1182" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1182" bodyend="1190"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a911031f42700d7f13c2ce893af49dfc1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestBooleanD4OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestBooleanD4OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1193" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1193" bodyend="1201"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a285abd537318b8138e9822e67b9f96c0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestShortD4OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestShortD4OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1204" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1204" bodyend="1212"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a73b485e99b692dff2990f3b38754956d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestUshortD4OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestUshortD4OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1215" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1215" bodyend="1223"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a3d299369d1a24aa7853b9df46f53b2c4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestByteD4OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestByteD4OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1226" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1226" bodyend="1234"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a20fdc8ca67fbb763ad35bf47235daefb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestLongD4OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestLongD4OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1237" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1237" bodyend="1245"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a96385d796677939e48a73aebc9391a71" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestUlongD4OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestUlongD4OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1248" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1248" bodyend="1256"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a6fba7dfd9acd1d52ee1f5622c0222955" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestIntD4OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestIntD4OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1259" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1259" bodyend="1267"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a193a858cda514c64e892a7cc6b4eb00b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestUintD4OkDims</definition>
+        <argsstring>()</argsstring>
+        <name>TestUintD4OkDims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1270" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1270" bodyend="1278"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a3df6eafff48e26ae1cde52cf3b4ffd7f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestPlusOperator</definition>
+        <argsstring>()</argsstring>
+        <name>TestPlusOperator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1282" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1282" bodyend="1289"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a3389bec5f2694e9a7346ed10d26a2304" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestPlusSelfOperator</definition>
+        <argsstring>()</argsstring>
+        <name>TestPlusSelfOperator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1292" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1292" bodyend="1299"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a3b4f171c3619e4b1d7ef4b307d31c2ee" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestSubOperator</definition>
+        <argsstring>()</argsstring>
+        <name>TestSubOperator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1302" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1302" bodyend="1309"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a145e2f65560a47238fafbb219dbd0eda" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestMulOperator</definition>
+        <argsstring>()</argsstring>
+        <name>TestMulOperator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1312" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1312" bodyend="1320"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a11f32f49550620902a8e0fceb9295173" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestDivOperator</definition>
+        <argsstring>()</argsstring>
+        <name>TestDivOperator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1325" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1325" bodyend="1333"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1aa3e1498fb7b9eb32190682258e003931" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestModOperator</definition>
+        <argsstring>()</argsstring>
+        <name>TestModOperator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1336" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1336" bodyend="1344"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a03f01fdca6ce138a8a788667094e51bb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestPowOperator</definition>
+        <argsstring>()</argsstring>
+        <name>TestPowOperator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1347" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1347" bodyend="1355"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a282db60866fd7b60ecb7ccde2be3a6c1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestAndOperator</definition>
+        <argsstring>()</argsstring>
+        <name>TestAndOperator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1358" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1358" bodyend="1366"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1ab2d0b42f4044cdbdf5b3ce5c64fd2d05" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestOrOperator</definition>
+        <argsstring>()</argsstring>
+        <name>TestOrOperator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1369" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1369" bodyend="1377"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a04601c645a5f859378a6e5e01969ce9d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestXorOperator</definition>
+        <argsstring>()</argsstring>
+        <name>TestXorOperator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1380" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1380" bodyend="1388"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a81185865311f397d298cc751fb907cc8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestBitShiftRightOperator</definition>
+        <argsstring>()</argsstring>
+        <name>TestBitShiftRightOperator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1391" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1391" bodyend="1398"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a7a6c478ff7876620f2a5bdef5d968efe" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestBitShiftLeftOperator</definition>
+        <argsstring>()</argsstring>
+        <name>TestBitShiftLeftOperator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1401" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1401" bodyend="1408"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1ab8b4adf01774507ab1f52880c3380eba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestNegOperator</definition>
+        <argsstring>()</argsstring>
+        <name>TestNegOperator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1411" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1411" bodyend="1418"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1ab9072eb101d5239280299f9452d1b1e9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestNotOperator</definition>
+        <argsstring>()</argsstring>
+        <name>TestNotOperator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1421" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1421" bodyend="1426"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1af39b93fb45cf292126b464512aef0580" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestLtOperator</definition>
+        <argsstring>()</argsstring>
+        <name>TestLtOperator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1429" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1429" bodyend="1435"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1aa7a668cb284bd4721a0b183913b45eac" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestGtOperator</definition>
+        <argsstring>()</argsstring>
+        <name>TestGtOperator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1438" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1438" bodyend="1444"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1ac69848058d55d502015a1a2e9ff03400" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestLeOperator</definition>
+        <argsstring>()</argsstring>
+        <name>TestLeOperator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1447" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1447" bodyend="1453"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1aaf0f707196a012805f2250da6ba2d121" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestGeOperator</definition>
+        <argsstring>()</argsstring>
+        <name>TestGeOperator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1455" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1455" bodyend="1461"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1afc905395136caa079d3fa8305b9ef3ba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestEqOperator</definition>
+        <argsstring>()</argsstring>
+        <name>TestEqOperator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1463" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1463" bodyend="1469"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1ac5410c846c813df349a128009400b88f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestNeOperator</definition>
+        <argsstring>()</argsstring>
+        <name>TestNeOperator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1471" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1471" bodyend="1477"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a2b7c7f85909d1c6fbc83692348d31642" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestTransposeNotConjugate</definition>
+        <argsstring>()</argsstring>
+        <name>TestTransposeNotConjugate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1480" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1480" bodyend="1485"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a96376aa2896b2f16743b4e41d8b4922e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestTransposeConjugate</definition>
+        <argsstring>()</argsstring>
+        <name>TestTransposeConjugate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1488" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1488" bodyend="1493"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a7275619291342d730a70edb4e782b1bd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestCol</definition>
+        <argsstring>()</argsstring>
+        <name>TestCol</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1496" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1496" bodyend="1501"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a79406c424e0cfb8181896970ad2acdd3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestCols</definition>
+        <argsstring>()</argsstring>
+        <name>TestCols</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1504" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1504" bodyend="1509"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1afdd3625f78cb80ddef17c4b0ac478839" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestRow</definition>
+        <argsstring>()</argsstring>
+        <name>TestRow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1512" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1512" bodyend="1517"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1ab93019b636cc61174e9d4477c495a7a6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestRows</definition>
+        <argsstring>()</argsstring>
+        <name>TestRows</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1520" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1520" bodyend="1525"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a3a533534bb44dbd1ed61cc3f9ae0c7d3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestMatmul</definition>
+        <argsstring>()</argsstring>
+        <name>TestMatmul</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1528" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1528" bodyend="1534"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1af1789d0d096b3a00bbcfb2ca13b00faa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestCopy</definition>
+        <argsstring>()</argsstring>
+        <name>TestCopy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1537" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1537" bodyend="1542"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1array_1_1tests_1_1_array_tests_1a78ff58d5c1409c4d5791b194ff111952" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.array.tests.ArrayTests.TestAs</definition>
+        <argsstring>()</argsstring>
+        <name>TestAs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="1545" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="1545" bodyend="1550"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" line="21" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/ArrayTests.cs" bodystart="20" bodyend="1551"/>
+    <listofallmembers>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ac70ee772bc0e6f1d37f66c7a4345df5e" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>Init</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a282db60866fd7b60ecb7ccde2be3a6c1" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestAndOperator</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a78ff58d5c1409c4d5791b194ff111952" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestAs</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a7a6c478ff7876620f2a5bdef5d968efe" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestBitShiftLeftOperator</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a81185865311f397d298cc751fb907cc8" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestBitShiftRightOperator</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a17c1b31e57ae68efc885969c1a646dda" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestBooleanD1MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a50e40c94a388df549d68a6e0cb372847" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestBooleanD1OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1afbad8d53a7198e92ac97033415d6334e" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestBooleanD2MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a21a45e6527685b8583f6b092fbdac4d9" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestBooleanD2OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1afa75558eed03ecf479b7eac8892b2101" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestBooleanD3MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1aebdfa8e27a220d8efc707ed3e1e03ece" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestBooleanD3OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a911031f42700d7f13c2ce893af49dfc1" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestBooleanD4OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1af430825597c6c381bc886ee8265e4d59" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestBooleanNull</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a51e983afb16c3a167282e9a275e93abf" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestByteD1MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a98a6965a945c065cf6fb7c9fe1053426" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestByteD1OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a61e1210a7a491c10aa06f1a7f1dfa9b4" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestByteD2MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a238d4d4316dd0c26c8d7112926a54cdd" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestByteD2OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a047a0fe28303a7ca828e5f6d70367591" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestByteD3MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1aee404fb3de1308c6d803d23e487ed833" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestByteD3OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a3d299369d1a24aa7853b9df46f53b2c4" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestByteD4OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1acba72b76c602f9c9c47cc5e699017d72" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestByteNull</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a7275619291342d730a70edb4e782b1bd" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestCol</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a79406c424e0cfb8181896970ad2acdd3" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestCols</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a822ec841cc21f98fd9181ec02ebdc1be" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestComplexDoubleD1MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a2157c8821b637346db1c11c7dad5952f" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestComplexDoubleD1OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a63f4e85ef98716f3b98861bf99d327bd" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestComplexDoubleD2MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1aeceaa8569493aa72ce0767b3a22b8387" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestComplexDoubleD2OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1afaadc18fca5abb32d4577b9bf0a32a30" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestComplexDoubleD3MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1afed406c7d7db8fe7fe3b5c6c5e3c8884" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestComplexDoubleD3OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a7a1f6c52384a2be93d4c93d56f34ed2e" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestComplexDoubleD4OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ab500cceff8cb4502680be3fe7950e376" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestComplexDoubleNull</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ada4b6639e164103a9695a18b03cbcfc8" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestComplexFloatD1MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1abfda4ef65b1ab8068e5d5d0d038b3190" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestComplexFloatD1OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a090208d340d0dccec74f775425f1a9d5" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestComplexFloatD2MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ab14d5364bd75fdd3c8b1b858f8de052e" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestComplexFloatD2OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a2910c349829e73d421314899dac8a9de" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestComplexFloatD3MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a09d4e2fa2669160ca62fa24840911dde" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestComplexFloatD3OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1aca7c2568dddc16be0855cf0b83c5d3b7" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestComplexFloatD4OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ab6a6a5d6ab2f6cd4db6fc7ed61d6fd3b" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestComplexFloatNull</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1af1789d0d096b3a00bbcfb2ca13b00faa" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestCopy</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a11f32f49550620902a8e0fceb9295173" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestDivOperator</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a942a65f7082d8a9d24904bf6fa3d84d9" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestDoubleD1MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a62519a28c791d4bc65dde90bb7743554" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestDoubleD1OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a7e8676e30e18073f8066ac45da975dd8" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestDoubleD2MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1abdcc245dae55c9b79b786b3e238fe8d2" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestDoubleD2OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a2d51d546f4d7c98dec2f2bd95931b922" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestDoubleD3MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a1bcb85014bbd6d87a5e2b365b740855e" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestDoubleD3OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ad348e608e3511014b546e58335fc6968" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestDoubleD4OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a4c411189d5ca6eafaeac5a95ea19269d" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestDoubleNull</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1afc905395136caa079d3fa8305b9ef3ba" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestEqOperator</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a24feac7e30384a3d63dcd5174a520eed" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestFloatD1MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1adb6a78f1bed2551c832fe1db24e73bd9" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestFloatD1OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a59325a294bbf5522326f6216ebaca21b" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestFloatD2MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ac711dbbee42fe7a33eb318a32aab115d" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestFloatD2OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ae8b16bf7e2a8c6db8d2e45d6abdbdfe8" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestFloatD3MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1aac32da18ed0177da086886e9b21be657" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestFloatD3OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ae6aa09bfbcfbb7d6859303c11ae672a5" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestFloatD4OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a3c24a0fa2d099d15294b8a2c56f82a29" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestFloatNull</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1aaf0f707196a012805f2250da6ba2d121" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestGeOperator</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a64bbba90fe580e98cba6c5b33384930f" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestGetDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a93c4df898907e810e73152d5872036a3" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestGetType</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1aa7a668cb284bd4721a0b183913b45eac" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestGtOperator</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a2b2e738e9a135f070734523334ed77bd" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestIntD1MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a683d441627eaf48b2947eb6aead18253" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestIntD1OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a9d966bfde5ad2092403f74e183ce3203" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestIntD2MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1adaaf92e020b9da5159873b8b27f1416e" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestIntD2OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a1008ae5273cb19804e0ffcff7e200a73" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestIntD3MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a8b385f4ab896ae2c11f54548b4f25e76" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestIntD3OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a6fba7dfd9acd1d52ee1f5622c0222955" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestIntD4OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a7968189cdde2726cdc6df15893fd79e9" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestIntNull</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ac69848058d55d502015a1a2e9ff03400" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestLeOperator</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ad052f8f825eb514c93e1d0462b337fda" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestLongD1MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ae889f12ea658731d2018816453f2de2d" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestLongD1OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a1bf8ac66257f9191d82142b95ba06e12" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestLongD2MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a8e97c439b234c7b1306ec2f29b1bfd3b" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestLongD2OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a27ee2a07f686ec1ae343dad6099b5554" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestLongD3MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a382211ee8e488e9851bc03a21a871072" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestLongD3OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a20fdc8ca67fbb763ad35bf47235daefb" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestLongD4OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1af130919038363a9a234129cf75becc70" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestLongNull</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1af39b93fb45cf292126b464512aef0580" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestLtOperator</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a3a533534bb44dbd1ed61cc3f9ae0c7d3" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestMatmul</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1aa3e1498fb7b9eb32190682258e003931" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestModOperator</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a145e2f65560a47238fafbb219dbd0eda" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestMulOperator</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ab8b4adf01774507ab1f52880c3380eba" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestNegOperator</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ac5410c846c813df349a128009400b88f" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestNeOperator</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ab9072eb101d5239280299f9452d1b1e9" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestNotOperator</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ab2d0b42f4044cdbdf5b3ce5c64fd2d05" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestOrOperator</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a3df6eafff48e26ae1cde52cf3b4ffd7f" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestPlusOperator</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a3389bec5f2694e9a7346ed10d26a2304" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestPlusSelfOperator</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a03f01fdca6ce138a8a788667094e51bb" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestPowOperator</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1afdd3625f78cb80ddef17c4b0ac478839" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestRow</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ab93019b636cc61174e9d4477c495a7a6" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestRows</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ac252e6c618c90768852e1fe20476ecde" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestShortD1MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a6417ef133741f905ab2215cdb542153b" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestShortD1OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a2de92215a5aad48b471354abf7d2c904" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestShortD2MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a15ff724c8ed13335c58228ebb50d9102" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestShortD2OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1aa3c3b31b6f7e65373057b67e06254d51" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestShortD3MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a520d8713a5a41a0352216e8521172565" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestShortD3OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a285abd537318b8138e9822e67b9f96c0" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestShortD4OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1afe1c8f914c3adb555faf282b8b9c1b22" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestShortNull</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a3b4f171c3619e4b1d7ef4b307d31c2ee" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestSubOperator</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a96376aa2896b2f16743b4e41d8b4922e" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestTransposeConjugate</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a2b7c7f85909d1c6fbc83692348d31642" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestTransposeNotConjugate</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a81af7c62b6da78784db2ac656a755099" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestUintD1MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a8a749d29940d651f989d6109c4ba8d96" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestUintD1OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a496d484f4bc2629837251fee001e5144" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestUintD2MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ae28d8ff8122a577e8221967b6f6f4802" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestUintD2OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1aae587ac9497a88318ca3aef37a4d5baf" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestUintD3MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a757cbacf81843125cb7dadb9ea966356" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestUintD3OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a193a858cda514c64e892a7cc6b4eb00b" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestUintD4OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a30e0ae7b5c57d564271f1a7760c0b22a" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestUintNull</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a0027f28087b18a067a0f4452790a16f0" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestUlongD1MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a69d4ecf1b3869092d767f08c375f58cf" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestUlongD1OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1afd6895dfa0031937e4c6b1fbbdd08ec2" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestUlongD2MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1addeb68945cc2a49e18c66801db7180bc" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestUlongD2OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ae5f1f516b01dfce42af4c48664076f7c" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestUlongD3MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a328dadce78810fc2b869bd2f9be821db" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestUlongD3OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a96385d796677939e48a73aebc9391a71" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestUlongD4OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1ad5ce01c3979fa00330064b2a596e2fb1" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestUlongNull</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a6c9347b1e8962da19138e4abdb767b57" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestUshortD1MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a0142d92c422e7e32d9ff94f85ca9a974" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestUshortD1OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a42f006f8f944be370175a053c94ad67c" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestUshortD2MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1afd0e8ee98cb4a407188315575cb9b309" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestUshortD2OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1afe74a75dbc7110471860bf54f9ab66df" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestUshortD3MismatchDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1afe5d1db9f62fda2cd14823bacb1a6763" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestUshortD3OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a73b485e99b692dff2990f3b38754956d" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestUshortD4OkDims</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1aca7bf16329d72fb93a2b1a78d3812a82" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestUshortNull</name></member>
+      <member refid="classkhiva_1_1array_1_1tests_1_1_array_tests_1a04601c645a5f859378a6e5e01969ce9d" prot="public" virt="non-virtual"><scope>khiva::array::tests::ArrayTests</scope><name>TestXorOperator</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

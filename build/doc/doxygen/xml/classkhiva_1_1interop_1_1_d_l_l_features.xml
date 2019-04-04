@@ -1,0 +1,3176 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="classkhiva_1_1interop_1_1_d_l_l_features" kind="class" language="C#" prot="public">
+    <compoundname>khiva::interop::DLLFeatures</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1add3f5d3cd2b14953f9472087ae07ba2f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.abs_energy</definition>
+        <argsstring>([In] ref IntPtr array, [Out] out IntPtr result)</argsstring>
+        <name>abs_energy</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the sum over the square values of the timeseries /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array with the same dimensions as array, whose values (time series in dimension 0) contains the sum of the squares values in the time series.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="31" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a95e6cc3d240709e4304a0a35477c14e6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.absolute_sum_of_changes</definition>
+        <argsstring>([In] ref IntPtr array, [Out] out IntPtr result)</argsstring>
+        <name>absolute_sum_of_changes</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the sum over the absolute value of consecutive changes in the time series. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array with the same dimensions as array, whose values (time series in dimension 0) contains absolute value of consecutive changes in the time series.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="42" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a288ecd6e1fcbf929f58eec74bf654164" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.aggregated_autocorrelation</definition>
+        <argsstring>([In] ref IntPtr array, [In] ref int aggregation_function, [Out] out IntPtr result)</argsstring>
+        <name>aggregated_autocorrelation</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref int</type>
+          <declname>aggregation_function</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the value of an aggregation function f_agg (e.g. var or mean) of the autocorrelation (Compare to <ulink url="http://en.wikipedia.org/wiki/Autocorrelation#Estimation">http://en.wikipedia.org/wiki/Autocorrelation#Estimation</ulink>), taken over different all possible lags (1 to length of x). </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aggregation_function</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Function to be used in the aggregation. It receives an integer which indicates the function to be applied: { 0 : mean, 1 : median 2 : min, 3 : max, 4 : stdev, 5 : var, default : mean }</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array whose values contains the aggregated correaltion for each time series.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="64" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a4bd96e198aa003b96828ba58045eba6d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.aggregated_linear_trend</definition>
+        <argsstring>([In] ref IntPtr array, [In] ref long chunkSize, [In] ref int aggregation_function, [Out] out IntPtr slope, [Out] out IntPtr intercept, [Out] out IntPtr rvalue, [Out] out IntPtr pvalue, [Out] out IntPtr stderrest)</argsstring>
+        <name>aggregated_linear_trend</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref long</type>
+          <declname>chunkSize</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref int</type>
+          <declname>aggregation_function</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>slope</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>intercept</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>rvalue</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>pvalue</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>stderrest</declname>
+        </param>
+        <briefdescription>
+<para>Calculates a linear least-squares regression for values of the time series that were aggregated over chunks versus the sequence from 0 up to the number of chunks minus one. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The time series to calculate the features of</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>chunkSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The chunk size used to aggregate the data.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aggregation_function</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Function to be used in the aggregation. It receives an integer which indicates the function to be applied: { 0 : mean, 1 : median 2 : min, 3 : max, 4 : stdev, default : mean }</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>slope</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Slope of the regression line.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>intercept</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Intercept of the regression line.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rvalue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Correlation coefficient.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pvalue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Two-sided p-value for a hypothesis test whose null hypothesis is that the slope is zero, using Wald Test with t-distribution of the test statistic.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>stderrest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Standard error of the estimated gradient.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="89" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1ab9469b2de1150c75716fdf3123a1dfc0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.approximate_entropy</definition>
+        <argsstring>([In] ref IntPtr array, [In] ref int m, [In] ref float r, [Out] out IntPtr result)</argsstring>
+        <name>approximate_entropy</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref int</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref float</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates a vectorized Approximate entropy algorithm. <ulink url="https://en.wikipedia.org/wiki/Approximate_entropy">https://en.wikipedia.org/wiki/Approximate_entropy</ulink> For short time-series this method is highly dependent on the parameters, but should be stable for N &gt; 2000, see: Yentes et al. (2012) - The Appropriate Use of Approximate Entropy and Sample Entropy with Short Data Sets Other shortcomings and alternatives discussed in: Richman &amp; Moorman (2000) - Physiological time-series analysis using approximate entropy and sample entropy. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of compared run of data.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>r</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Filtering level, must be positive.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vectorized approximate entropy for all the input time series in array.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="107" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a50a567df5e829e1c4139598139ffc227" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.cross_covariance</definition>
+        <argsstring>([In] ref IntPtr xss, [In] ref IntPtr yss, [In] ref bool unbiased, [Out] out IntPtr result)</argsstring>
+        <name>cross_covariance</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>xss</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>yss</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref bool</type>
+          <declname>unbiased</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the cross-covariance of the given time series. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>yss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>unbiased</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Determines whether it divides by n - lag (if true) or n (if false).</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The cross-covariance value for the given time series.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="122" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1afafe384c3cddf5d2f3b3c294971b0a50" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.auto_covariance</definition>
+        <argsstring>([In] ref IntPtr array, [In] ref bool unbiased, [Out] out IntPtr result)</argsstring>
+        <name>auto_covariance</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref bool</type>
+          <declname>unbiased</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the auto-covariance the given time series. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>unbiased</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Determines whether it divides by n - lag (if true) or n (if false).</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The auto-covariance value for the given time series.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="134" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a857ec574d5fb5492b861efff45494932" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.cross_correlation</definition>
+        <argsstring>([In] ref IntPtr xss, [In] ref IntPtr yss, [In] ref bool unbiased, [Out] out IntPtr result)</argsstring>
+        <name>cross_correlation</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>xss</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>yss</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref bool</type>
+          <declname>unbiased</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the cross-correlation of the given time series. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>yss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>unbiased</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Determines whether it divides by n - lag (if true) or n (if false).</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The cross-correlation value for the given time series.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="149" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a2c3bffd96676d0b5985f4778182dcc1c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.auto_correlation</definition>
+        <argsstring>([In] ref IntPtr array, [In] ref long max_lag, [In] ref bool unbiased, [Out] out IntPtr result)</argsstring>
+        <name>auto_correlation</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref long</type>
+          <declname>max_lag</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref bool</type>
+          <declname>unbiased</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the autocorrelation of the specified lag for the given time. series. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max_lag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum lag to compute.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>unbiased</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Determines whether it divides by n - lag (if true) or n ( if false)</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The autocorrelation value for the given time series.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="162" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a5e37b3513e5a00aee63db348fae291c9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.binned_entropy</definition>
+        <argsstring>([In] ref IntPtr array, [In] ref int max_bins, [Out] out IntPtr result)</argsstring>
+        <name>binned_entropy</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref int</type>
+          <declname>max_bins</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the binned entropy for the given time series and number of bins. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max_bins</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of bins.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The binned entropy value for the given time series.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="173" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1ae4a1ae31462928a004613a867ee2fadf" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.c3</definition>
+        <argsstring>([In] ref IntPtr array, [In] ref long lag, [Out] out IntPtr result)</argsstring>
+        <name>c3</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref long</type>
+          <declname>lag</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the Schreiber, T. and Schmitz, A. (1997) measure of non-linearity for the given time series. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The lag</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The non-linearity value for the given time series.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="185" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a75438219add17f13f41ebd0b852ed8b2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.cid_ce</definition>
+        <argsstring>([In] ref IntPtr array, [In] ref bool zNormalize, [Out] out IntPtr result)</argsstring>
+        <name>cid_ce</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref bool</type>
+          <declname>zNormalize</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates an estimate for the time series complexity defined by Batista, Gustavo EAPA, et al (2014). (A more complex time series has more peaks, valleys, etc.). /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>zNormalize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Controls whether the time series should be z-normalized or not. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The complexity value for the given time series.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="198" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a67ac8d1dbcb01c227c9c27f78e959aed" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.count_above_mean</definition>
+        <argsstring>([In] ref IntPtr array, [Out] out IntPtr result)</argsstring>
+        <name>count_above_mean</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the number of values in the time series that are higher than the mean. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of values in the time series that are higher than the mean.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="210" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a5559115107d672d504af9fec765278e8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.count_below_mean</definition>
+        <argsstring>([In] ref IntPtr array, [Out] out IntPtr result)</argsstring>
+        <name>count_below_mean</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the number of values in the time series that are lower than the mean. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of values in the time series that are lower than the mean.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="222" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1acf0dfe79937a46d9cfa3125d24b440d7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.cwt_coefficients</definition>
+        <argsstring>([In] ref IntPtr array, [In] ref IntPtr width, [In] ref int coeff, [In] ref int w, [Out] out IntPtr result)</argsstring>
+        <name>cwt_coefficients</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref int</type>
+          <declname>coeff</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref int</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates a Continuous wavelet transform for the Ricker wavelet, also known as the &quot;Mexican hat wavelet&quot; which is defined by: </para>        </briefdescription>
+        <detaileddescription>
+<para>.. math:: {2}{{3a} ^{ {1} { 4 }}} (1 - {x^2}{a^2}) exp(-{x^2}{2a^2})</para><para>where :math:<computeroutput>a</computeroutput> is the width parameter of the wavelet function.</para><para>This feature calculator takes three different parameter: widths, coeff and w. The feature calculator takes all the different widths arrays and then calculates the cwt one time for each different width array. Then the values for the different coefficient for coeff and width w are returned. (For each dic in param one feature is returned). /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array that contains all different widths.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>coeff</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Coefficient of interest.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>w</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Width of interest.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Result of calculated coefficients.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="246" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a1840fee4dad604ae632bc8d1c7f06321" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.energy_ratio_by_chunks</definition>
+        <argsstring>([In] ref IntPtr array, [In] ref long num_segments, [In] ref long segment_focus, [Out] out IntPtr result)</argsstring>
+        <name>energy_ratio_by_chunks</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref long</type>
+          <declname>num_segments</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref long</type>
+          <declname>segment_focus</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the sum of squares of chunk i out of N chunks expressed as a ratio. with the sum of squares over the whole series. segmentFocus should be lower than the number of segments /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num_segments</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of segments to divide the series into.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>segment_focus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The segment number (starting at zero) to return a feature on.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The energy ratio by chunk of the time series.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="260" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a1c87c966c982ad8aa2c51478d509afe6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.fft_aggregated</definition>
+        <argsstring>([In] ref IntPtr array, [Out] out IntPtr result)</argsstring>
+        <name>fft_aggregated</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the spectral centroid(mean), variance, skew, and kurtosis of the absolute fourier transform spectrum. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The spectral centroid (mean), variance, skew, and kurtosis of the absolute fourier transform spectrum.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="272" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a88800114f2e9afb24f1c6bcfa6ade957" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.fft_coefficient</definition>
+        <argsstring>([In] ref IntPtr array, [In] ref long coefficient, [Out] out IntPtr real, [Out] out IntPtr imag, [Out] out IntPtr absolute, [Out] out IntPtr angle)</argsstring>
+        <name>fft_coefficient</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref long</type>
+          <declname>coefficient</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>real</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>imag</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>absolute</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>angle</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the fourier coefficients of the one-dimensional discrete Fourier Transform for real input by fast fourier transformation algorithm. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>coefficient</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The coefficient to extract from the FFT.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>real</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The real part of the coefficient.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>imag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The imaginary part of the cofficient.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>absolute</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The absolute value of the coefficient.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>angle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The angle of the coefficient.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="287" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1ae70db85ecb8283db50c8b4b2bedc1af1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.first_location_of_maximum</definition>
+        <argsstring>([In] ref IntPtr array, [Out] out IntPtr result)</argsstring>
+        <name>first_location_of_maximum</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the first relative location of the maximal value for each time series. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first relative location of the maximum value to the length of the time series, for each time series.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="299" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a6d193c97885c6df4215c9d6802b83625" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.first_location_of_minimum</definition>
+        <argsstring>([In] ref IntPtr array, [Out] out IntPtr result)</argsstring>
+        <name>first_location_of_minimum</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the first location of the minimal value of each time series. The position is calculated relatively to the length of the series. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first relative location of the minimal value of each series.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="310" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1afd32548eecfa4ff70d1f98dbfe7ca53b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.friedrich_coefficients</definition>
+        <argsstring>([In] ref IntPtr array, [In] ref int m, [In] ref float r, [Out] out IntPtr result)</argsstring>
+        <name>friedrich_coefficients</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref int</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref float</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Coefficients of polynomial <formula id="7">$h(x)$</formula>, which has been fitted to the deterministic dynamics of Langevin model: <formula id="8">\[ \dot(x)(t) = h(x(t)) + R \mathcal(N)(0,1) \]</formula> as described by [1]. For short time series this method is highly dependent on the parameters. </para>        </briefdescription>
+        <detaileddescription>
+<para>[1] Friedrich et al. (2000): Physics Letters A 271, p. 217-222 Extracting model equations from experimental data. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Order of polynom to fit for estimating fixed points of dynamics.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>r</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of quantils to use for averaging.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The coefficients for each time series.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="329" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a574c813d82b8d022be812f54bc140788" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.has_duplicates</definition>
+        <argsstring>([In] ref IntPtr array, [Out] out IntPtr result)</argsstring>
+        <name>has_duplicates</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates if the input time series contain duplicated elements. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array containing True if the time series contains duplicated elements and false otherwise.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="340" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a6ffb5faf3926fe75fb246f367b551cea" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.has_duplicate_max</definition>
+        <argsstring>([In] ref IntPtr array, [Out] out IntPtr result)</argsstring>
+        <name>has_duplicate_max</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates if the maximum within input time series is duplicated. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array containing True if the maximum value of the time series is duplicated and false otherwise.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="351" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1af45a7b69d5140c2d7645facc413cf24c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.has_duplicate_min</definition>
+        <argsstring>([In] ref IntPtr array, [Out] out IntPtr result)</argsstring>
+        <name>has_duplicate_min</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates if the minimum of the input time series is duplicated. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array containing True if the minimum of the time series is duplicated and false otherwise.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="362" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a9eed336a9d138b9a4f37bcbbcf40287e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.index_mass_quantile</definition>
+        <argsstring>([In] ref IntPtr array, [In] ref float q, [Out] out IntPtr result)</argsstring>
+        <name>index_mass_quantile</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref float</type>
+          <declname>q</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the index of the max quantile. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The quantile.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the max quantile q.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="373" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a97470f56bfa5bd147e77adeab9bb6873" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.kurtosis</definition>
+        <argsstring>([In] ref IntPtr array, [Out] out IntPtr result)</argsstring>
+        <name>kurtosis</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Returns the kurtosis of array (calculated with the adjusted Fisher-Pearson standardized moment coefficient G2). /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The kurtosis of each array.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="384" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a9c7f3b29bebee0b1fa4b091d27390cf8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.large_standard_deviation</definition>
+        <argsstring>([In] ref IntPtr array, [In] ref float r, [Out] out IntPtr result)</argsstring>
+        <name>large_standard_deviation</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref float</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the time series within array have a large standard deviation. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>r</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The threshold.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array containing True for those time series in array that have a large standard deviation.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="395" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a930c49b2c612bcb8385f3553d893bfba" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.last_location_of_maximum</definition>
+        <argsstring>([In] ref IntPtr array, [Out] out IntPtr result)</argsstring>
+        <name>last_location_of_maximum</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the last location of the maximum value of each time series. The position is calculated relatively to the length of the series. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The last relative location of the maximum value of each series.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="406" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1af801e4d6b8fed411a5a8bf0a3f32a631" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.last_location_of_minimum</definition>
+        <argsstring>([In] ref IntPtr array, [Out] out IntPtr result)</argsstring>
+        <name>last_location_of_minimum</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the last location of the minimum value of each time series. The position is calculated relatively to the length of the series. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The last relative location of the minimum value of each series.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="417" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a106f996c2c7cded64905d3dd25ed023a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.length</definition>
+        <argsstring>([In] ref IntPtr array, [Out] out IntPtr result)</argsstring>
+        <name>length</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Returns the length of the input time series. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length of the time series.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="427" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a4dc041ded2e63f00f64a73158a1ebac9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.linear_trend</definition>
+        <argsstring>([In] ref IntPtr array, [Out] out IntPtr pvalue, [Out] out IntPtr rvalue, [Out] out IntPtr intercept, [Out] out IntPtr slope, [Out] out IntPtr stdrr)</argsstring>
+        <name>linear_trend</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>pvalue</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>rvalue</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>intercept</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>slope</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>stdrr</declname>
+        </param>
+        <briefdescription>
+<para>Calculate a linear least-squares regression for the values of the time series versus the sequence from 0 to length of the time series minus one. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pvalue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pvalues for all time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rvalue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The rvalues for all time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>intercept</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The intercept values for all time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>slope</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The slope for all time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>stdrr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The stderr values for all time series.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="442" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a2da29b6a1c0287cb219a6a4731ce3850" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.local_maximals</definition>
+        <argsstring>([In] ref IntPtr array, [Out] out IntPtr result)</argsstring>
+        <name>local_maximals</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates all Local Maximals fot the time series in array. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The calculated local maximals for each time series in array.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="452" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a5f10b0f0c8a164e833332bf8dadc4be8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.longest_strike_above_mean</definition>
+        <argsstring>([In] ref IntPtr array, [Out] out IntPtr result)</argsstring>
+        <name>longest_strike_above_mean</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the length of the longest consecutive subsequence in array that is bigger than the mean of array. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length of the longest consecutive subsequence in the input time series that is bigger than the mean.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="463" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a49f978188a34926c68faa4653b9c3f00" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.longest_strike_below_mean</definition>
+        <argsstring>([In] ref IntPtr array, [Out] out IntPtr result)</argsstring>
+        <name>longest_strike_below_mean</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the length of the longest consecutive subsequence in array that is below the mean of array. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length of the longest consecutive subsequence in the input time series that is below the mean.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="473" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a57584c970ae956c1ed2b4793ebd4fc69" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.max_langevin_fixed_point</definition>
+        <argsstring>([In] ref IntPtr array, [In] ref int m, [In] ref float r, [Out] out IntPtr result)</argsstring>
+        <name>max_langevin_fixed_point</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref int</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref float</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Largest fixed point of dynamics <formula id="9">$\max_x {h(x)=0}$</formula> estimated from polynomial <formula id="7">$h(x)$</formula>, which has been fitted to the deterministic dynamics of Langevin model <formula id="8">\[ \dot(x)(t) = h(x(t)) + R \mathcal(N)(0,1) \]</formula> as described by Friedrich et al. (2000): Physics Letters A 271, p. 217-222 ///Extracting model equations from experimental data. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Order of polynom to fit for estimating fixed points of dynamics.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>r</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of quantiles to use for averaging.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Largest fixed point of deterministic dynamics.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="491" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1aac41033b24b4c8001cefc20d365a9cc4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.maximum</definition>
+        <argsstring>([In] ref IntPtr array, [Out] out IntPtr result)</argsstring>
+        <name>maximum</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the maximum value for each time series within array. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum value of each time series within array.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="501" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a79cdfdec4a4a04bb765842747d6fb955" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.mean</definition>
+        <argsstring>([In] ref IntPtr array, [Out] out IntPtr result)</argsstring>
+        <name>mean</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the mean value for each time series within array. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The mean value of each time series within array.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="511" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a88f943ce2a238bb143e32f2d4fe632d5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.mean_absolute_change</definition>
+        <argsstring>([In] ref IntPtr array, [Out] out IntPtr result)</argsstring>
+        <name>mean_absolute_change</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the mean over the absolute differences between subsequent time series values in array. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum value of each time series within array.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="521" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1abc61c1c3c5f9aa52732f8631fdd7db6d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.mean_change</definition>
+        <argsstring>([In] ref IntPtr array, [Out] out IntPtr result)</argsstring>
+        <name>mean_change</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the mean over the differences between subsequent time series values in array. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The mean over the differences between subsequent time series values.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="531" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a3676b48b12dc2a86e796c29ab37ec02f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.mean_second_derivative_central</definition>
+        <argsstring>([In] ref IntPtr array, [Out] out IntPtr result)</argsstring>
+        <name>mean_second_derivative_central</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates mean value of a central approximation of the second derivative for each time series in array. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The mean value of a central approximation of the second derivative for each time series.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="541" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a7d81c9be7dd0383ee0aa696a86232255" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.median</definition>
+        <argsstring>([In] ref IntPtr array, [Out] out IntPtr result)</argsstring>
+        <name>median</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the median value for each time series within array. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The median value of each time series within array.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="551" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a3be3069b086e3790b877a535b267bd43" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.minimum</definition>
+        <argsstring>([In] ref IntPtr array, [Out] out IntPtr result)</argsstring>
+        <name>minimum</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the minimum value for each time series within array. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The minimum value of each time series within array.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="561" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1abdfebe8a203d23b22848cd2a8e4f033d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.number_crossing_m</definition>
+        <argsstring>([In] ref IntPtr array, [In] ref int m, [Out] out IntPtr result)</argsstring>
+        <name>number_crossing_m</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref int</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the number of m-crossings. A m-crossing is defined as two sequential values where the first value is lower than m and the next is greater, or viceversa. If you set m to zero, you will get the number of zero crossings. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The m value.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of m-crossings of each time series within array.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="574" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1abbeca07d57cd3fd6bdcfd7306f4ca34d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.number_cwt_peaks</definition>
+        <argsstring>([In] ref IntPtr array, [In] ref int max_w, [Out] out IntPtr result)</argsstring>
+        <name>number_cwt_peaks</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref int</type>
+          <declname>max_w</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>This feature calculator searches for different peaks. To do so, the time series is smoothed by a ricker wavelet and for widths ranging from 1 to max_w. This feature calculator returns the number of peaks that occur at enough width scales and with sufficiently high Signal-to-Noise-Ratio (SNR). /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max_w</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum width to consider.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of peaks for each time series.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="586" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a78341949bf960804409322fe39226fdf" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.number_peaks</definition>
+        <argsstring>([In] ref IntPtr array, [In] ref int n, [Out] out IntPtr result)</argsstring>
+        <name>number_peaks</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the number of peaks of at least support <formula id="1">$n$</formula> in the time series <formula id="11">$array$</formula>. A peak of support <formula id="1">$n$</formula> is defined as a subsequence of <formula id="11">$array$</formula> where a value occurs, which is bigger than its <formula id="1">$n$</formula> neighbours to the left and to the right. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The support of the peak.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of peaks of at least support <formula id="1">$n$</formula>.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="599" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a94abb3453dc0a6b6055f04aad906b654" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.partial_autocorrelation</definition>
+        <argsstring>([In] ref IntPtr array, [In] ref IntPtr lags, [Out] out IntPtr result)</argsstring>
+        <name>partial_autocorrelation</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>lags</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the value of the partial autocorrelation function at the given lag. The lag <formula id="12">$k$</formula> partial autocorrelation of a time series <formula id="13">$\lbrace x_t, t = 1 \ldots T \rbrace$</formula> equals the partial correlation of <formula id="14">$x_t$</formula> and <formula id="15">$x_{t-k}$</formula>, adjusted for the intermediate variables <formula id="35">$\lbrace x_{t-1}, \ldots, x_{t-k+1} \rbrace$</formula> ([1]). Following [2], it can be defined as: </para>        </briefdescription>
+        <detaileddescription>
+<para><formula id="36">\[ \alpha_k = \frac{ Cov(x_t, x_{t-k} | x_{t-1}, \ldots, x_{t-k+1})} {\sqrt{ Var(x_t | x_{t-1}, \ldots, x_{t-k+1}) Var(x_{t-k} | x_{t-1}, \ldots, x_{t-k+1} )}} \]</formula> with (a) <formula id="37">$x_t = f(x_{t-1}, \ldots, x_{t-k+1})$</formula> and (b) <formula id="38">$ x_{t-k} = f(x_{t-1}, \ldots, x_{t-k+1})$</formula> being AR(k-1) models that can be fitted by OLS. Be aware that in (a), the regression is done on past values to predict <formula id="20">$ x_t $</formula> whereas in (b), future values are used to calculate the past value <formula id="15">$x_{t-k}$</formula>. It is said in [1] that &quot;for an AR(p), the partial autocorrelations \form#21 will be nonzero for \form#22
+and zero for \form#23.&quot; With this property, it is used to determine the lag of an AR-Process.</para><para>[1] Box, G. E., Jenkins, G. M., Reinsel, G. C., &amp; Ljung, G. M. (2015). Time series analysis: forecasting and control. John Wiley &amp; Sons. [2] <ulink url="https://onlinecourses.science.psu.edu/stat510/node/62">https://onlinecourses.science.psu.edu/stat510/node/62</ulink> /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lags</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indicates the lags to be calculated.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Returns partial autocorrelation for each time series for the given lag.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="627" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a413b1a77d06c42c21608e9f26492e5b5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.percentage_of_reoccurring_datapoints_to_all_datapoints</definition>
+        <argsstring>([In] ref IntPtr array, [In] ref bool is_sorted, [Out] out IntPtr result)</argsstring>
+        <name>percentage_of_reoccurring_datapoints_to_all_datapoints</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref bool</type>
+          <declname>is_sorted</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the percentage of unique values, that are present in the time series more than once. <formula id="24">\[ len(different values occurring more than once) / len(different values) \]</formula> This means the percentage is normalized to the number of unique values, in contrast to the percentageOfReoccurringValuesToAllValues. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>is_sorted</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indicates if the input time series is sorted or not. Defaults to false.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Returns the percentage of unique values, that are present in the time series more than once.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="643" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a18f68c40c2e747582e31c1541cd188f5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.percentage_of_reoccurring_values_to_all_values</definition>
+        <argsstring>([In] ref IntPtr array, [In] ref bool is_sorted, [Out] out IntPtr result)</argsstring>
+        <name>percentage_of_reoccurring_values_to_all_values</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref bool</type>
+          <declname>is_sorted</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the percentage of unique values, that are present in the time series more than once. <formula id="25">\[ \frac{\textit{number of data points occurring more than once}}{\textit{number of all data points})} \]</formula> This means the percentage is normalized to the number of unique values, in contrast to the percentageOfReoccurringDatapointsToAllDatapoints. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>is_sorted</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indicates if the input time series is sorted or not. Defaults to false.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Returns the percentage of unique values, that are present in the time series more than once.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="659" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a72b887d0da16c17aad67c54e1c2e0184" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.quantile</definition>
+        <argsstring>([In] ref IntPtr array, [In] ref IntPtr q, [In] ref float precision, [Out] out IntPtr result)</argsstring>
+        <name>quantile</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>q</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref float</type>
+          <declname>precision</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Returns values at the given quantile. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Percentile(s) at which to extract score(s). One or many.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>precision</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of decimals expected.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Values at the given quantile.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="671" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a790bcab1d5066bd065a6c4b249e0f3a9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.range_count</definition>
+        <argsstring>([In] ref IntPtr array, [In] ref float min, [In] ref float max, [Out] out IntPtr result)</argsstring>
+        <name>range_count</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref float</type>
+          <declname>min</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref float</type>
+          <declname>max</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Counts observed values within the interval [min, max). /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>min</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value that sets the lower limit.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value that sets the upper limit.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Values at the given range.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="683" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a29791b93875f52914a3f42a6682c0bb7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.ratio_beyond_r_sigma</definition>
+        <argsstring>([In] ref IntPtr array, [In] ref float r, [Out] out IntPtr result)</argsstring>
+        <name>ratio_beyond_r_sigma</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref float</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the ratio of values that are more than <formula id="39">$r///std(x)$</formula> (so <formula id="27">$r$</formula> sigma) away from the mean of <formula id="28">$x$</formula>. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>r</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of times that the values should be away from.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ratio of values that are more than <formula id="39">$r///std(x)$</formula> (so <formula id="27">$r$</formula> sigma) away from the mean of <formula id="28">$x$</formula>.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="696" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1ad0e8e20fb0297eb7165724286bd159ed" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.ratio_value_number_to_time_series_length</definition>
+        <argsstring>([In] ref IntPtr array, [Out] out IntPtr result)</argsstring>
+        <name>ratio_value_number_to_time_series_length</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates a factor which is 1 if all values in the time series occur only once, and below one if this is not the case. In principle, it just returns: </para>        </briefdescription>
+        <detaileddescription>
+<para><formula id="29">\[ \frac{\textit{number\_unique\_values}}{\textit{number\_values}} \]</formula> /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ratio of unique values with respect to the total number of values.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="710" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1adbc8254807e97c7d248744aaa1722ed9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.sample_entropy</definition>
+        <argsstring>([In] ref IntPtr array, [Out] out IntPtr result)</argsstring>
+        <name>sample_entropy</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates a vectorized sample entropy algorithm. <ulink url="https://en.wikipedia.org/wiki/Sample_entropy">https://en.wikipedia.org/wiki/Sample_entropy</ulink> <ulink url="https://www.ncbi.nlm.nih.gov/pubmed/10843903?dopt=Abstract">https://www.ncbi.nlm.nih.gov/pubmed/10843903?dopt=Abstract</ulink> For short time-series this method is highly dependent on the parameters, but should be stable for N &gt; 2000, see: Yentes et al. (2012) - The Appropriate Use of Approximate Entropy and Sample Entropy with Short Data Sets Other shortcomings and alternatives discussed in: Richman &amp; Moorman (2000) - Physiological time-series analysis using approximate entropy and sample entropy. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array with the same dimensions as array, whose values (time series in dimension 0) contains the vectorized sample entropy for all the input time series in array.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="727" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a4f22bda60315614bcc21fd2d7467f821" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.skewness</definition>
+        <argsstring>([In] ref IntPtr array, [Out] out IntPtr result)</argsstring>
+        <name>skewness</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the sample skewness of array (calculated with the adjusted Fisher-Pearson standardized moment coefficient G1). /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array containing the skewness of each time series in array.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="738" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1aa81ee009b068590d2d685bcaa3cdf4a9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.spkt_welch_density</definition>
+        <argsstring>([In] ref IntPtr array, [In] ref int coeff, [Out] out IntPtr result)</argsstring>
+        <name>spkt_welch_density</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref int</type>
+          <declname>coeff</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Estimates the cross power spectral density of the time series array at different frequencies. To do so, the time series is first shifted from the time domain to the frequency domain. </para>        </briefdescription>
+        <detaileddescription>
+<para>Welch&apos;s method computes an estimate of the power spectral density by dividing the data into overlapping segments, computing a modified periodogram for each segment and averaging the periodograms. [1] P. Welch, &quot;The use of the fast Fourier transform for the estimation of power spectra: A method based on time
+ averaging over short, modified periodograms&quot;, IEEE Trans. Audio Electroacoust. vol. 15, pp. 70-73, 1967. [2] M.S. Bartlett, &quot;Periodogram Analysis and Continuous Spectra&quot;, Biometrika, vol. 37, pp. 1-16, 1950. [3] Rabiner, Lawrence R., and B. Gold. &quot;Theory and Application of Digital Signal Processing&quot; Prentice-Hall, pp. 414-419, 1975. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>coeff</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The coefficient to be returned.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array containing the power spectrum of the different frequencies for each time series in array.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="758" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a7e2fde4593b08431f573d93e6c2e1679" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.standard_deviation</definition>
+        <argsstring>([In] ref IntPtr array, [Out] out IntPtr result)</argsstring>
+        <name>standard_deviation</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the standard deviation of each time series within array. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The standard deviation of each time series within array.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="768" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a79e38f9cb8b354c0f554f7754bb5e169" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.sum_of_reoccurring_datapoints</definition>
+        <argsstring>([In] ref IntPtr array, [In] ref bool is_sorted, [Out] out IntPtr result)</argsstring>
+        <name>sum_of_reoccurring_datapoints</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref bool</type>
+          <declname>is_sorted</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the sum of all data points, that are present in the time series more than once. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>is_sorted</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indicates if the input time series is sorted or not. Defaults to false.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Returns the sum of all data points, that are present in the time series more than once.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="779" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a00a99ef3e65334993b4c129f0835349d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.sum_of_reoccurring_values</definition>
+        <argsstring>([In] ref IntPtr array, [In] ref bool is_sorted, [Out] out IntPtr result)</argsstring>
+        <name>sum_of_reoccurring_values</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref bool</type>
+          <declname>is_sorted</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the sum of all values, that are present in the time series more than once. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>is_sorted</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indicates if the input time series is sorted or not. Defaults to false.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Returns the sum of all values, that are present in the time series more than once.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="789" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a79a476c0ef597cb23f7cd34836fd1fa7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.sum_values</definition>
+        <argsstring>([In] ref IntPtr array, [Out] out IntPtr result)</argsstring>
+        <name>sum_values</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the sum over the time series array. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array containing the sum of values in each time series.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="798" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1acc4cc0b5e5c243f87a555a56e2dde286" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.symmetry_looking</definition>
+        <argsstring>([In] ref IntPtr array, [In] ref float r, [Out] out IntPtr result)</argsstring>
+        <name>symmetry_looking</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref float</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates if the distribution of array ///looks symmetric///. This is the case if <formula id="40">\[ | mean(array)-median(array)| \lt r * (max(array)-min(array)) \]</formula> /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>r</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The percentage of the range to compare with.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array denoting if the input time series look symmetric.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="812" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1ad92511867dc0ab98a37d448efde724da" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.time_reversal_asymmetry_statistic</definition>
+        <argsstring>([In] ref IntPtr array, [In] ref int lag, [Out] out IntPtr result)</argsstring>
+        <name>time_reversal_asymmetry_statistic</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref int</type>
+          <declname>lag</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>This function calculates the value of: <formula id="41">\[ \frac{1}{n-2lag} \sum_{i=0}^{n-2lag} x_{i + 2 \cdot lag}^2 \cdot x_{i + lag} - x_{i + lag} \cdot x_{i}^2 \]</formula> which is <formula id="32">\[ \mathbb{E}[L^2(X)^2 \cdot L(X) - L(X) \cdot X^2] \]</formula> where <formula id="33">$ \mathbb{E} $</formula> is the mean and <formula id="34">$ L $</formula> is the lag operator. It was proposed in [1] as a promising feature to extract from time series. </para>        </briefdescription>
+        <detaileddescription>
+<para>[1] Fulcher, B.D., Jones, N.S. (2014). Highly comparative feature-based time-series classification. Knowledge and Data Engineering, IEEE Transactions on 26, 3026–3037. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The lag to be computed.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array containing the time reversal asymetry statistic value in each time series.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="834" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a5b34dd9d7a490908ae478983cbd1a6a2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.value_count</definition>
+        <argsstring>([In] ref IntPtr array, [In] ref float v, [Out] out IntPtr result)</argsstring>
+        <name>value_count</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref float</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Counts occurrences of value in the time series array. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to be counted.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array containing the count of the given value in each time series.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="845" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1ac4b7f5fc3d28280df33109144eda6f8a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.variance</definition>
+        <argsstring>([In] ref IntPtr array, [Out] out IntPtr result)</argsstring>
+        <name>variance</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Computes the variance for the time series array. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array containing the variance in each time series.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="854" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_features_1a467faca41be774c30029d492d73e1a8f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLFeatures.variance_larger_than_standard_deviation</definition>
+        <argsstring>([In] ref IntPtr array, [Out] out IntPtr result)</argsstring>
+        <name>variance_larger_than_standard_deviation</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates if the variance of array is greater than the standard deviation. In other words, if the variance of array is larger than 1. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array denoting if the variance of array is greater than the standard deviation.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="864" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classkhiva_1_1_khiva" kindref="compound">Khiva</ref> Features class containing a number of features that can be extracted from time series. All the methods operate with instances of the ARRAY class as input and output. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" line="21" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLFeatures.cs" bodystart="20" bodyend="866"/>
+    <listofallmembers>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1add3f5d3cd2b14953f9472087ae07ba2f" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>abs_energy</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a95e6cc3d240709e4304a0a35477c14e6" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>absolute_sum_of_changes</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a288ecd6e1fcbf929f58eec74bf654164" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>aggregated_autocorrelation</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a4bd96e198aa003b96828ba58045eba6d" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>aggregated_linear_trend</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1ab9469b2de1150c75716fdf3123a1dfc0" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>approximate_entropy</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a2c3bffd96676d0b5985f4778182dcc1c" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>auto_correlation</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1afafe384c3cddf5d2f3b3c294971b0a50" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>auto_covariance</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a5e37b3513e5a00aee63db348fae291c9" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>binned_entropy</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1ae4a1ae31462928a004613a867ee2fadf" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>c3</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a75438219add17f13f41ebd0b852ed8b2" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>cid_ce</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a67ac8d1dbcb01c227c9c27f78e959aed" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>count_above_mean</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a5559115107d672d504af9fec765278e8" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>count_below_mean</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a857ec574d5fb5492b861efff45494932" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>cross_correlation</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a50a567df5e829e1c4139598139ffc227" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>cross_covariance</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1acf0dfe79937a46d9cfa3125d24b440d7" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>cwt_coefficients</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a1840fee4dad604ae632bc8d1c7f06321" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>energy_ratio_by_chunks</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a1c87c966c982ad8aa2c51478d509afe6" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>fft_aggregated</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a88800114f2e9afb24f1c6bcfa6ade957" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>fft_coefficient</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1ae70db85ecb8283db50c8b4b2bedc1af1" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>first_location_of_maximum</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a6d193c97885c6df4215c9d6802b83625" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>first_location_of_minimum</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1afd32548eecfa4ff70d1f98dbfe7ca53b" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>friedrich_coefficients</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a6ffb5faf3926fe75fb246f367b551cea" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>has_duplicate_max</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1af45a7b69d5140c2d7645facc413cf24c" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>has_duplicate_min</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a574c813d82b8d022be812f54bc140788" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>has_duplicates</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a9eed336a9d138b9a4f37bcbbcf40287e" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>index_mass_quantile</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a97470f56bfa5bd147e77adeab9bb6873" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>kurtosis</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a9c7f3b29bebee0b1fa4b091d27390cf8" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>large_standard_deviation</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a930c49b2c612bcb8385f3553d893bfba" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>last_location_of_maximum</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1af801e4d6b8fed411a5a8bf0a3f32a631" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>last_location_of_minimum</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a106f996c2c7cded64905d3dd25ed023a" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>length</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a4dc041ded2e63f00f64a73158a1ebac9" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>linear_trend</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a2da29b6a1c0287cb219a6a4731ce3850" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>local_maximals</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a5f10b0f0c8a164e833332bf8dadc4be8" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>longest_strike_above_mean</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a49f978188a34926c68faa4653b9c3f00" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>longest_strike_below_mean</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a57584c970ae956c1ed2b4793ebd4fc69" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>max_langevin_fixed_point</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1aac41033b24b4c8001cefc20d365a9cc4" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>maximum</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a79cdfdec4a4a04bb765842747d6fb955" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>mean</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a88f943ce2a238bb143e32f2d4fe632d5" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>mean_absolute_change</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1abc61c1c3c5f9aa52732f8631fdd7db6d" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>mean_change</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a3676b48b12dc2a86e796c29ab37ec02f" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>mean_second_derivative_central</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a7d81c9be7dd0383ee0aa696a86232255" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>median</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a3be3069b086e3790b877a535b267bd43" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>minimum</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1abdfebe8a203d23b22848cd2a8e4f033d" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>number_crossing_m</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1abbeca07d57cd3fd6bdcfd7306f4ca34d" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>number_cwt_peaks</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a78341949bf960804409322fe39226fdf" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>number_peaks</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a94abb3453dc0a6b6055f04aad906b654" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>partial_autocorrelation</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a413b1a77d06c42c21608e9f26492e5b5" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>percentage_of_reoccurring_datapoints_to_all_datapoints</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a18f68c40c2e747582e31c1541cd188f5" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>percentage_of_reoccurring_values_to_all_values</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a72b887d0da16c17aad67c54e1c2e0184" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>quantile</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a790bcab1d5066bd065a6c4b249e0f3a9" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>range_count</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a29791b93875f52914a3f42a6682c0bb7" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>ratio_beyond_r_sigma</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1ad0e8e20fb0297eb7165724286bd159ed" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>ratio_value_number_to_time_series_length</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1adbc8254807e97c7d248744aaa1722ed9" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>sample_entropy</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a4f22bda60315614bcc21fd2d7467f821" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>skewness</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1aa81ee009b068590d2d685bcaa3cdf4a9" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>spkt_welch_density</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a7e2fde4593b08431f573d93e6c2e1679" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>standard_deviation</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a79e38f9cb8b354c0f554f7754bb5e169" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>sum_of_reoccurring_datapoints</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a00a99ef3e65334993b4c129f0835349d" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>sum_of_reoccurring_values</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a79a476c0ef597cb23f7cd34836fd1fa7" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>sum_values</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1acc4cc0b5e5c243f87a555a56e2dde286" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>symmetry_looking</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1ad92511867dc0ab98a37d448efde724da" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>time_reversal_asymmetry_statistic</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a5b34dd9d7a490908ae478983cbd1a6a2" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>value_count</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1ac4b7f5fc3d28280df33109144eda6f8a" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>variance</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_features_1a467faca41be774c30029d492d73e1a8f" prot="public" virt="non-virtual"><scope>khiva::interop::DLLFeatures</scope><name>variance_larger_than_standard_deviation</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

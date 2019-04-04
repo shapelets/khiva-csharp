@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['large_5fstandard_5fdeviation',['large_standard_deviation',['../classkhiva_1_1interop_1_1_d_l_l_features.html#a9c7f3b29bebee0b1fa4b091d27390cf8',1,'khiva::interop::DLLFeatures']]],
+  ['largestandarddeviation',['LargeStandardDeviation',['../classkhiva_1_1features_1_1_features.html#a70067042add15b9eb09cb155ba210b5d',1,'khiva::features::Features']]],
+  ['last_5flocation_5fof_5fmaximum',['last_location_of_maximum',['../classkhiva_1_1interop_1_1_d_l_l_features.html#a930c49b2c612bcb8385f3553d893bfba',1,'khiva::interop::DLLFeatures']]],
+  ['last_5flocation_5fof_5fminimum',['last_location_of_minimum',['../classkhiva_1_1interop_1_1_d_l_l_features.html#af801e4d6b8fed411a5a8bf0a3f32a631',1,'khiva::interop::DLLFeatures']]],
+  ['lastlocationofmaximum',['LastLocationOfMaximum',['../classkhiva_1_1features_1_1_features.html#a7131dcc52520fbddaf1e4906cda15423',1,'khiva::features::Features']]],
+  ['lastlocationofminimum',['LastLocationOfMinimum',['../classkhiva_1_1features_1_1_features.html#aff001af10442ea2e923bf3d82a201e77',1,'khiva::features::Features']]],
+  ['length',['length',['../classkhiva_1_1interop_1_1_d_l_l_features.html#a106f996c2c7cded64905d3dd25ed023a',1,'khiva.interop.DLLFeatures.length()'],['../classkhiva_1_1features_1_1_features.html#a20c2e7a25ea7cb185d4093affc417edf',1,'khiva.features.Features.Length()']]],
+  ['linear',['linear',['../classkhiva_1_1interop_1_1_d_l_l_regression.html#ad3c7e4dbe514d3a447af192b983e77a7',1,'khiva::interop::DLLRegression']]],
+  ['linear_5ftrend',['linear_trend',['../classkhiva_1_1interop_1_1_d_l_l_features.html#a4dc041ded2e63f00f64a73158a1ebac9',1,'khiva::interop::DLLFeatures']]],
+  ['ljung_5fbox',['ljung_box',['../classkhiva_1_1interop_1_1_d_l_l_statistics.html#a3af99a17a16f48d5d0914d69101385cf',1,'khiva::interop::DLLStatistics']]],
+  ['ljungbox',['LjungBox',['../classkhiva_1_1statistics_1_1_statistics.html#a1ac4be386c872cf4db7119e62bac0e32',1,'khiva::statistics::Statistics']]],
+  ['lls',['lls',['../classkhiva_1_1interop_1_1_d_l_l_linalg.html#a051ddc162ebfe5f773c9e22149d4efad',1,'khiva.interop.DLLLinalg.lls()'],['../classkhiva_1_1linalg_1_1_linalg.html#a5755536b7444370e2014430f5fb81140',1,'khiva.linalg.Linalg.Lls()']]],
+  ['local_5fmaximals',['local_maximals',['../classkhiva_1_1interop_1_1_d_l_l_features.html#a2da29b6a1c0287cb219a6a4731ce3850',1,'khiva::interop::DLLFeatures']]],
+  ['localmaximals',['LocalMaximals',['../classkhiva_1_1features_1_1_features.html#aecd48dfe93b9ba4790a53ce80da6b80d',1,'khiva::features::Features']]],
+  ['longest_5fstrike_5fabove_5fmean',['longest_strike_above_mean',['../classkhiva_1_1interop_1_1_d_l_l_features.html#a5f10b0f0c8a164e833332bf8dadc4be8',1,'khiva::interop::DLLFeatures']]],
+  ['longest_5fstrike_5fbelow_5fmean',['longest_strike_below_mean',['../classkhiva_1_1interop_1_1_d_l_l_features.html#a49f978188a34926c68faa4653b9c3f00',1,'khiva::interop::DLLFeatures']]],
+  ['longeststrikeabovemean',['LongestStrikeAboveMean',['../classkhiva_1_1features_1_1_features.html#ad57efb15959db76c4e9f7de34b78a7bc',1,'khiva::features::Features']]],
+  ['longeststrikebelowmean',['LongestStrikeBelowMean',['../classkhiva_1_1features_1_1_features.html#a271a7e30ff4941af9df98d042c4d7cd4',1,'khiva::features::Features']]]
+];

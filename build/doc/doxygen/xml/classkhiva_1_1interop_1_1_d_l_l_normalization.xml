@@ -1,0 +1,376 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="classkhiva_1_1interop_1_1_d_l_l_normalization" kind="class" language="C#" prot="public">
+    <compoundname>khiva::interop::DLLNormalization</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_normalization_1a4b8a8b57779a2e2a9681873ed38d1ead" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLNormalization.decimal_scaling_norm</definition>
+        <argsstring>([In] ref IntPtr tss, [Out] out IntPtr result)</argsstring>
+        <name>decimal_scaling_norm</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>tss</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Normalizes the given time series according to its maximum value and adjusts each value within the range (-1, 1). /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array with the same dimensions as tss, whose values (time series in dimension 0) have been normalized by dividing each number by 10^j, where j is the number of integer digits of the max number in the time series.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLNormalization.cs" line="31" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_normalization_1afef20cc6ada16fe84c8c659677899c74" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLNormalization.decimal_scaling_norm_in_place</definition>
+        <argsstring>([In, Out] ref IntPtr tss)</argsstring>
+        <name>decimal_scaling_norm_in_place</name>
+        <param>
+          <attributes>[In, Out]</attributes>
+          <type>ref IntPtr</type>
+          <declname>tss</declname>
+        </param>
+        <briefdescription>
+<para>Same as decimal_scaling_norm, but it performs the operation in place, without allocating further memory. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLNormalization.cs" line="39" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_normalization_1ab6df70047b9dcf69e9723fe2fb3d920a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLNormalization.max_min_norm</definition>
+        <argsstring>([In] ref IntPtr tss, [In] ref double high, [In] ref double low, [In] ref double epsilon, [Out] out IntPtr result)</argsstring>
+        <name>max_min_norm</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>tss</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref double</type>
+          <declname>high</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref double</type>
+          <declname>low</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref double</type>
+          <declname>epsilon</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Normalizes the given time series according to its minimum and maximum value and adjusts each value within the range [low, high]. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>high</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum final value (Defaults to 1.0).</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>low</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Minimum final value (Defaults to 0.0).</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>epsilon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Safeguard for constant (or near constant) time series as the operation implies a unit scale operation between min and max values in the tss.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array with the same dimensions as tss, whose values (time series in dimension 0) have been normalized by maximum and minimum values, and scaled as per high and low parameters.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLNormalization.cs" line="54" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_normalization_1afc93cd8f4b41be72d52a2d606d0cdf92" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLNormalization.max_min_norm_in_place</definition>
+        <argsstring>([In, Out] ref IntPtr tss, [In] ref double high, [In] ref double low, [In] ref double epsilon)</argsstring>
+        <name>max_min_norm_in_place</name>
+        <param>
+          <attributes>[In, Out]</attributes>
+          <type>ref IntPtr</type>
+          <declname>tss</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref double</type>
+          <declname>high</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref double</type>
+          <declname>low</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref double</type>
+          <declname>epsilon</declname>
+        </param>
+        <briefdescription>
+<para>Same as max_min_norm, but it performs the operation in place, without allocating further memory. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>high</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum final value (Defaults to 1.0).</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>low</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Minimum final value (Defaults to 0.0).</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>epsilon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Safeguard for constant (or near constant) time series as the operation implies a unit scale operation between min and max values in the tss.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLNormalization.cs" line="66" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_normalization_1af6584451101ce922dad0d4dfb2bbe01a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLNormalization.mean_norm</definition>
+        <argsstring>([In] ref IntPtr tss, [Out] out IntPtr result)</argsstring>
+        <name>mean_norm</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>tss</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Normalizes the given time series according to its maximum-minimum value and its mean. It follows the following formulae: <formula id="48">\[ \acute{x} = \frac{x - mean(x)}{max(x) - min(x)}. \]</formula> /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series. /param&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array with the same dimensions as tss, whose values (time series in dimension 0) have been normalized by substracting the mean from each number and dividing each number by <formula id="49">$ max(x) - min(x)$</formula>, in the time series.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLNormalization.cs" line="82" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_normalization_1a4a3c01d6d03e465f4e3afce9e2cfe2d9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLNormalization.mean_norm_in_place</definition>
+        <argsstring>([In, Out] ref IntPtr tss)</argsstring>
+        <name>mean_norm_in_place</name>
+        <param>
+          <attributes>[In, Out]</attributes>
+          <type>ref IntPtr</type>
+          <declname>tss</declname>
+        </param>
+        <briefdescription>
+<para>Normalizes the given time series according to its maximum-minimum value and its mean. It follows the following formulae: <formula id="48">\[ \acute{x} = \frac{x - mean(x)}{max(x) - min(x)}. \]</formula> /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLNormalization.cs" line="94" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_normalization_1af64a7d51d051bc5d9259a3b5ea7c9900" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLNormalization.znorm</definition>
+        <argsstring>([In] ref IntPtr tss, [In] ref double epsilon, [Out] out IntPtr result)</argsstring>
+        <name>znorm</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>tss</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref double</type>
+          <declname>epsilon</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Calculates a new set of times series with zero mean and standard deviation one. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time series concatenated in a single row.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>epsilon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Minimum standard deviation to consider. It acts as a gatekeeper for those time series that may be constant or near constant.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array with the same dimensions as tss where the time series have been adjusted for zero mean and one as standard deviation.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLNormalization.cs" line="105" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_normalization_1ae58535dd3096b81e75973ec26c388486" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLNormalization.znorm_in_place</definition>
+        <argsstring>([In, Out] ref IntPtr tss, [In] ref double epsilon)</argsstring>
+        <name>znorm_in_place</name>
+        <param>
+          <attributes>[In, Out]</attributes>
+          <type>ref IntPtr</type>
+          <declname>tss</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref double</type>
+          <declname>epsilon</declname>
+        </param>
+        <briefdescription>
+<para>Adjusts the time series in the given input and performs z-norm inplace (without allocating further memory). /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>epsilon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Minimum standard deviation to consider. It acts as a gatekeeper for those time series that may be constant or near constant.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLNormalization.cs" line="117" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classkhiva_1_1_khiva" kindref="compound">Khiva</ref> Normalization class containing several normalization methods. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLNormalization.cs" line="20" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLNormalization.cs" bodystart="19" bodyend="119"/>
+    <listofallmembers>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_normalization_1a4b8a8b57779a2e2a9681873ed38d1ead" prot="public" virt="non-virtual"><scope>khiva::interop::DLLNormalization</scope><name>decimal_scaling_norm</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_normalization_1afef20cc6ada16fe84c8c659677899c74" prot="public" virt="non-virtual"><scope>khiva::interop::DLLNormalization</scope><name>decimal_scaling_norm_in_place</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_normalization_1ab6df70047b9dcf69e9723fe2fb3d920a" prot="public" virt="non-virtual"><scope>khiva::interop::DLLNormalization</scope><name>max_min_norm</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_normalization_1afc93cd8f4b41be72d52a2d606d0cdf92" prot="public" virt="non-virtual"><scope>khiva::interop::DLLNormalization</scope><name>max_min_norm_in_place</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_normalization_1af6584451101ce922dad0d4dfb2bbe01a" prot="public" virt="non-virtual"><scope>khiva::interop::DLLNormalization</scope><name>mean_norm</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_normalization_1a4a3c01d6d03e465f4e3afce9e2cfe2d9" prot="public" virt="non-virtual"><scope>khiva::interop::DLLNormalization</scope><name>mean_norm_in_place</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_normalization_1af64a7d51d051bc5d9259a3b5ea7c9900" prot="public" virt="non-virtual"><scope>khiva::interop::DLLNormalization</scope><name>znorm</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_normalization_1ae58535dd3096b81e75973ec26c388486" prot="public" virt="non-virtual"><scope>khiva::interop::DLLNormalization</scope><name>znorm_in_place</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

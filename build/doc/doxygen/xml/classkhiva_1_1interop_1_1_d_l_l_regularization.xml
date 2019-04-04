@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="classkhiva_1_1interop_1_1_d_l_l_regularization" kind="class" language="C#" prot="public">
+    <compoundname>khiva::interop::DLLRegularization</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_regularization_1a10e0bd8ee9417e34f6e40027bc3e3f38" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLRegularization.group_by</definition>
+        <argsstring>([In] ref IntPtr array, [In] ref int aggregation_function, [In] ref int n_columns_key, [In] ref int n_columns_value, [Out] out IntPtr result)</argsstring>
+        <name>group_by</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref int</type>
+          <declname>aggregation_function</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref int</type>
+          <declname>n_columns_key</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref int</type>
+          <declname>n_columns_value</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Group by operation in the input array using n_columns_key columns as group keys and n_columns_value columns as values. The data is expected to be sorted. The aggregation function determines the operation to aggregate the values. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aggregation_function</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Function to be used in the aggregation. It receives an integer which indicates the function to be applied: { 0 : mean, 1 : median 2 : min, 3 : max, 4 : stdev, 5 : var, default : mean }</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n_columns_key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of columns conforming the key.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n_columns_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of columns conforming the value (they are expected to be consecutive to the column keys). /param&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array with the values of the group keys aggregated using the aggregation_function.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLRegularization.cs" line="44" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classkhiva_1_1_khiva" kindref="compound">Khiva</ref> Regularization class containing different regularization methods. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLRegularization.cs" line="20" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLRegularization.cs" bodystart="19" bodyend="46"/>
+    <listofallmembers>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_regularization_1a10e0bd8ee9417e34f6e40027bc3e3f38" prot="public" virt="non-virtual"><scope>khiva::interop::DLLRegularization</scope><name>group_by</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

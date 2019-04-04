@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_69e2d92053a123a19f5f017613f16bc5" kind="dir">
+    <compoundname>Bom</compoundname>
+    <innerdir refid="dir_bd12cc98eacb5306e9dc64c1410bb12d">Properties</innerdir>
+    <innerfile refid="_bom_manager_8cs">BomManager.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/packages/OpenCover.4.6.519/SampleSln/Bom/"/>
+  </compounddef>
+</doxygen>

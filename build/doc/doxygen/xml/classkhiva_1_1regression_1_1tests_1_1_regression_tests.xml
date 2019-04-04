@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="classkhiva_1_1regression_1_1tests_1_1_regression_tests" kind="class" language="C#" prot="public">
+    <compoundname>khiva::regression::tests::RegressionTests</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classkhiva_1_1regression_1_1tests_1_1_regression_tests_1ae6a27b1d7c07274d8e9624f3f48c1978" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double khiva.regression.tests.RegressionTests.DELTA</definition>
+        <argsstring></argsstring>
+        <name>DELTA</name>
+        <initializer>= 1e-6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/RegressionTests.cs" line="19" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/RegressionTests.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classkhiva_1_1regression_1_1tests_1_1_regression_tests_1a1a3a01aba829690e2b9d490279f63247" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.regression.tests.RegressionTests.Init</definition>
+        <argsstring>()</argsstring>
+        <name>Init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/RegressionTests.cs" line="22" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/RegressionTests.cs" bodystart="22" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1regression_1_1tests_1_1_regression_tests_1a280a8aa6664ff39f71b00ab262fafb49" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.regression.tests.RegressionTests.TestLinear</definition>
+        <argsstring>()</argsstring>
+        <name>TestLinear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/RegressionTests.cs" line="28" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/RegressionTests.cs" bodystart="28" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1regression_1_1tests_1_1_regression_tests_1a4b3779772a551679193d55aad3e81e70" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.regression.tests.RegressionTests.TestLinearMultipleTimeSeries</definition>
+        <argsstring>()</argsstring>
+        <name>TestLinearMultipleTimeSeries</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/RegressionTests.cs" line="62" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/RegressionTests.cs" bodystart="62" bodyend="100"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/RegressionTests.cs" line="18" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/RegressionTests.cs" bodystart="17" bodyend="102"/>
+    <listofallmembers>
+      <member refid="classkhiva_1_1regression_1_1tests_1_1_regression_tests_1ae6a27b1d7c07274d8e9624f3f48c1978" prot="private" virt="non-virtual"><scope>khiva::regression::tests::RegressionTests</scope><name>DELTA</name></member>
+      <member refid="classkhiva_1_1regression_1_1tests_1_1_regression_tests_1a1a3a01aba829690e2b9d490279f63247" prot="public" virt="non-virtual"><scope>khiva::regression::tests::RegressionTests</scope><name>Init</name></member>
+      <member refid="classkhiva_1_1regression_1_1tests_1_1_regression_tests_1a280a8aa6664ff39f71b00ab262fafb49" prot="public" virt="non-virtual"><scope>khiva::regression::tests::RegressionTests</scope><name>TestLinear</name></member>
+      <member refid="classkhiva_1_1regression_1_1tests_1_1_regression_tests_1a4b3779772a551679193d55aad3e81e70" prot="public" virt="non-virtual"><scope>khiva::regression::tests::RegressionTests</scope><name>TestLinearMultipleTimeSeries</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

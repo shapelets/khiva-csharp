@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_bom_manager_8cs" kind="file" language="C#">
+    <compoundname>BomManager.cs</compoundname>
+    <innerclass refid="class_bom_1_1_bom_manager" prot="public">Bom::BomManager</innerclass>
+    <innernamespace refid="namespace_bom">Bom</innernamespace>
+    <innernamespace refid="namespace_system_1_1_collections_1_1_object_model">System::Collections::ObjectModel</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/packages/OpenCover.4.6.519/SampleSln/Bom/BomManager.cs"/>
+  </compounddef>
+</doxygen>

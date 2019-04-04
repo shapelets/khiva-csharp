@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_khiva_csharp_2_properties_2_assembly_info_8cs" kind="file" language="C#">
+    <compoundname>KhivaCsharp/Properties/AssemblyInfo.cs</compoundname>
+    <innernamespace refid="namespace_system_1_1_reflection">System::Reflection</innernamespace>
+    <innernamespace refid="namespace_system_1_1_runtime_1_1_compiler_services">System::Runtime::CompilerServices</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Properties/AssemblyInfo.cs"/>
+  </compounddef>
+</doxygen>

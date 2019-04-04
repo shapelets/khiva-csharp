@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_167ed27ed00e1a4a248853e9a2f70d91" kind="dir">
+    <compoundname>KhivaCsharp</compoundname>
+    <innerdir refid="dir_db613c891d1e7161415da725152594f1">Interop</innerdir>
+    <innerdir refid="dir_09edaf3a71f56c97c6583381415481da">obj</innerdir>
+    <innerdir refid="dir_f027c795d7e533e80056a7a2f50bf0c2">Properties</innerdir>
+    <innerfile refid="_array_8cs">Array.cs</innerfile>
+    <innerfile refid="_clustering_8cs">Clustering.cs</innerfile>
+    <innerfile refid="_dimensionality_8cs">Dimensionality.cs</innerfile>
+    <innerfile refid="_distances_8cs">Distances.cs</innerfile>
+    <innerfile refid="_features_8cs">Features.cs</innerfile>
+    <innerfile refid="_khiva_8cs">Khiva.cs</innerfile>
+    <innerfile refid="_linalg_8cs">Linalg.cs</innerfile>
+    <innerfile refid="_matrix_8cs">Matrix.cs</innerfile>
+    <innerfile refid="_normalization_8cs">Normalization.cs</innerfile>
+    <innerfile refid="_polynomial_8cs">Polynomial.cs</innerfile>
+    <innerfile refid="_regression_8cs">Regression.cs</innerfile>
+    <innerfile refid="_regularization_8cs">Regularization.cs</innerfile>
+    <innerfile refid="_statistics_8cs">Statistics.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/"/>
+  </compounddef>
+</doxygen>

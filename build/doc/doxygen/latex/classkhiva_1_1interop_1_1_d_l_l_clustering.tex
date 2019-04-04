@@ -1,0 +1,81 @@
+\hypertarget{classkhiva_1_1interop_1_1_d_l_l_clustering}{}\section{khiva.\+interop.\+D\+L\+L\+Clustering Class Reference}
+\label{classkhiva_1_1interop_1_1_d_l_l_clustering}\index{khiva.\+interop.\+D\+L\+L\+Clustering@{khiva.\+interop.\+D\+L\+L\+Clustering}}
+
+
+\mbox{\hyperlink{classkhiva_1_1_khiva}{Khiva}} Clustering class containing several clustering methods.  
+
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classkhiva_1_1interop_1_1_d_l_l_clustering_a1ee5a73f1c1cd9bbf4e4c6e8274473ee}{k\+\_\+means}} (\mbox{[}In\mbox{]} ref Int\+Ptr tss, \mbox{[}In\mbox{]} ref int k, \mbox{[}Out\mbox{]} out Int\+Ptr centroids, \mbox{[}Out\mbox{]} out Int\+Ptr labels, \mbox{[}In\mbox{]} ref float tolerance, \mbox{[}In\mbox{]} ref int max\+\_\+iterations)
+\begin{DoxyCompactList}\small\item\em Calculates the k-\/means algorithm. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classkhiva_1_1interop_1_1_d_l_l_clustering_a94b4cc72d14549e2a0bcadf85fd73965}{k\+\_\+shape}} (\mbox{[}In\mbox{]} ref Int\+Ptr tss, \mbox{[}In\mbox{]} ref int k, \mbox{[}Out\mbox{]} out Int\+Ptr centroids, \mbox{[}Out\mbox{]} out Int\+Ptr labels, \mbox{[}In\mbox{]} ref float tolerance, \mbox{[}In\mbox{]} ref int max\+\_\+iterations)
+\begin{DoxyCompactList}\small\item\em Calculates the K-\/\+Shape algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{classkhiva_1_1_khiva}{Khiva}} Clustering class containing several clustering methods. 
+
+
+
+Definition at line 19 of file D\+L\+L\+Clustering.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classkhiva_1_1interop_1_1_d_l_l_clustering_a1ee5a73f1c1cd9bbf4e4c6e8274473ee}\label{classkhiva_1_1interop_1_1_d_l_l_clustering_a1ee5a73f1c1cd9bbf4e4c6e8274473ee}} 
+\index{khiva\+::interop\+::\+D\+L\+L\+Clustering@{khiva\+::interop\+::\+D\+L\+L\+Clustering}!k\+\_\+means@{k\+\_\+means}}
+\index{k\+\_\+means@{k\+\_\+means}!khiva\+::interop\+::\+D\+L\+L\+Clustering@{khiva\+::interop\+::\+D\+L\+L\+Clustering}}
+\subsubsection{\texorpdfstring{k\+\_\+means()}{k\_means()}}
+{\footnotesize\ttfamily static void khiva.\+interop.\+D\+L\+L\+Clustering.\+k\+\_\+means (\begin{DoxyParamCaption}\item[{\mbox{[}\+In\mbox{]} ref Int\+Ptr}]{tss,  }\item[{\mbox{[}\+In\mbox{]} ref int}]{k,  }\item[{\mbox{[}\+Out\mbox{]} out Int\+Ptr}]{centroids,  }\item[{\mbox{[}\+Out\mbox{]} out Int\+Ptr}]{labels,  }\item[{\mbox{[}\+In\mbox{]} ref float}]{tolerance,  }\item[{\mbox{[}\+In\mbox{]} ref int}]{max\+\_\+iterations }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Calculates the k-\/means algorithm. 
+
+\mbox{[}1\mbox{]} S. Lloyd. 1982. Least squares quantization in P\+CM. I\+E\+EE Transactions on Information Theory, 28, 2, Pages 129-\/137. /summary$>$ 
+\begin{DoxyParams}{Parameters}
+{\em tss} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.\\
+\hline
+{\em k} & The number of means to be computed.\\
+\hline
+{\em centroids} & The resulting means or centroids.\\
+\hline
+{\em labels} & The resulting labels of each time series which is the closest centroid.\\
+\hline
+{\em tolerance} & The error tolerance to stop the computation of the centroids.\\
+\hline
+{\em max\+\_\+iterations} & The maximum number of iterations allowed.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classkhiva_1_1interop_1_1_d_l_l_clustering_a94b4cc72d14549e2a0bcadf85fd73965}\label{classkhiva_1_1interop_1_1_d_l_l_clustering_a94b4cc72d14549e2a0bcadf85fd73965}} 
+\index{khiva\+::interop\+::\+D\+L\+L\+Clustering@{khiva\+::interop\+::\+D\+L\+L\+Clustering}!k\+\_\+shape@{k\+\_\+shape}}
+\index{k\+\_\+shape@{k\+\_\+shape}!khiva\+::interop\+::\+D\+L\+L\+Clustering@{khiva\+::interop\+::\+D\+L\+L\+Clustering}}
+\subsubsection{\texorpdfstring{k\+\_\+shape()}{k\_shape()}}
+{\footnotesize\ttfamily static void khiva.\+interop.\+D\+L\+L\+Clustering.\+k\+\_\+shape (\begin{DoxyParamCaption}\item[{\mbox{[}\+In\mbox{]} ref Int\+Ptr}]{tss,  }\item[{\mbox{[}\+In\mbox{]} ref int}]{k,  }\item[{\mbox{[}\+Out\mbox{]} out Int\+Ptr}]{centroids,  }\item[{\mbox{[}\+Out\mbox{]} out Int\+Ptr}]{labels,  }\item[{\mbox{[}\+In\mbox{]} ref float}]{tolerance,  }\item[{\mbox{[}\+In\mbox{]} ref int}]{max\+\_\+iterations }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Calculates the K-\/\+Shape algorithm. 
+
+\mbox{[}1\mbox{]} John Paparrizos and Luis Gravano. 2016. k-\/\+Shape\+: Efficient and Accurate Clustering of Time Series. S\+I\+G\+M\+OD Rec. 45, 1 (June 2016), 69-\/76. /summary$>$ 
+\begin{DoxyParams}{Parameters}
+{\em tss} & Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.\\
+\hline
+{\em k} & The number of means to be computed.\\
+\hline
+{\em centroids} & The resulting means or centroids.\\
+\hline
+{\em labels} & The resulting labels of each time series which is the closest centroid.\\
+\hline
+{\em tolerance} & The error tolerance to stop the computation of the centroids.\\
+\hline
+{\em max\+\_\+iterations} & The maximum number of iterations allowed.\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_d_l_l_clustering_8cs}{D\+L\+L\+Clustering.\+cs}}\end{DoxyCompactItemize}

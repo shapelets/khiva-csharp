@@ -1,0 +1,224 @@
+\hypertarget{classkhiva_1_1dimensionality_1_1_dimensionality}{}\section{khiva.\+dimensionality.\+Dimensionality Class Reference}
+\label{classkhiva_1_1dimensionality_1_1_dimensionality}\index{khiva.\+dimensionality.\+Dimensionality@{khiva.\+dimensionality.\+Dimensionality}}
+
+
+\mbox{\hyperlink{classkhiva_1_1_khiva}{Khiva}} \mbox{\hyperlink{classkhiva_1_1dimensionality_1_1_dimensionality}{Dimensionality}} class containing several dimensionality reduction methods.  
+
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} \mbox{\hyperlink{classkhiva_1_1dimensionality_1_1_dimensionality_a94804fb9064e5cb1eb2b34a8c8a3fadd}{P\+AA}} (\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} arr, int bins)
+\begin{DoxyCompactList}\small\item\em Piecewise Aggregate Approximation (P\+AA) approximates a time series $X$ of length $n$ into vector $\bar{X}=(\bar{x}_{1},…,\bar{x}_{M})$ of any arbitrary length $M \leq n$ where each of $\bar{x_{i}}$ is calculated as follows\+: \[ \bar{x}_{i} = \frac{M}{n} \sum_{j=n/M(i-1)+1}^{(n/M)i} x_{j}. \] Which simply means that in order to reduce the dimensionality from $n$ to $M$, we first divide the original time series into $M$ equally sized frames and secondly compute the mean values for each frame.\+The sequence assembled from the mean values is the P\+AA approximation (i.\+e., transform) of the original time series. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} \mbox{\hyperlink{classkhiva_1_1dimensionality_1_1_dimensionality_a0e27cdaf20c83fd722198b297357ec8b}{P\+IP}} (\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} arr, int number\+Ips)
+\begin{DoxyCompactList}\small\item\em Calculates the number of Perceptually Important Points (P\+IP) in the time series. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} \mbox{\hyperlink{classkhiva_1_1dimensionality_1_1_dimensionality_aef75096686fdf86ead6ca02f6ce8b742}{P\+L\+A\+Bottom\+Up}} (\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} arr, float max\+Error)
+\begin{DoxyCompactList}\small\item\em Applies the Piecewise Linear Approximation (P\+LA Bottom\+UP) to the time series. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} \mbox{\hyperlink{classkhiva_1_1dimensionality_1_1_dimensionality_a4c165a099afe2a32612b1b45f7b317c7}{P\+L\+A\+Sliding\+Window}} (\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} arr, float max\+Error)
+\begin{DoxyCompactList}\small\item\em Applies the Piecewise Linear Approximation (P\+LA Sliding Window) to the time series. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} \mbox{\hyperlink{classkhiva_1_1dimensionality_1_1_dimensionality_a6d2b5b3b9a7ce8f22f61e4e149975fa4}{Ramer\+Douglas\+Peucker}} (\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} points, double epsilon)
+\begin{DoxyCompactList}\small\item\em The Ramer–\+Douglas–\+Peucker algorithm (R\+DP) is an algorithm for reducing the number of points in a curve that is approximated by a series of points. It reduces a set of points depending on the perpendicular distance of the points and epsilon, the greater epsilon, more points are deleted. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} \mbox{\hyperlink{classkhiva_1_1dimensionality_1_1_dimensionality_a668eb21bc1cce2ce731a7e6f6b3b2a0d}{S\+AX}} (\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} arr, int alphabet\+Size)
+\begin{DoxyCompactList}\small\item\em Symbolic Aggregate appro\+Ximation (S\+AX). It transforms a numeric time series into a time series of symbols with the same size. The algorithm was proposed by Lin et al.) and extends the P\+A\+A-\/based approach inheriting the original algorithm simplicity and low computational complexity while providing satisfactory sensitivity and selectivity in range query processing. Moreover, the use of a symbolic representation opened a door to the existing wealth of data-\/structures and string-\/manipulation algorithms in computer science such as hashing, regular expression, pattern matching, suffix trees, and grammatical inference. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} \mbox{\hyperlink{classkhiva_1_1dimensionality_1_1_dimensionality_ae2b4c8288f9537bce116837abe7e0539}{Visvalingam}} (\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} points, int num\+Points)
+\begin{DoxyCompactList}\small\item\em Reduces a set of points by applying the Visvalingam method (minimum triangle area) until the number of points is reduced to num\+Points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{classkhiva_1_1_khiva}{Khiva}} \mbox{\hyperlink{classkhiva_1_1dimensionality_1_1_dimensionality}{Dimensionality}} class containing several dimensionality reduction methods. 
+
+
+
+Definition at line 20 of file Dimensionality.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classkhiva_1_1dimensionality_1_1_dimensionality_a94804fb9064e5cb1eb2b34a8c8a3fadd}\label{classkhiva_1_1dimensionality_1_1_dimensionality_a94804fb9064e5cb1eb2b34a8c8a3fadd}} 
+\index{khiva\+::dimensionality\+::\+Dimensionality@{khiva\+::dimensionality\+::\+Dimensionality}!P\+AA@{P\+AA}}
+\index{P\+AA@{P\+AA}!khiva\+::dimensionality\+::\+Dimensionality@{khiva\+::dimensionality\+::\+Dimensionality}}
+\subsubsection{\texorpdfstring{P\+A\+A()}{PAA()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} khiva.\+dimensionality.\+Dimensionality.\+P\+AA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}}}]{arr,  }\item[{int}]{bins }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Piecewise Aggregate Approximation (P\+AA) approximates a time series $X$ of length $n$ into vector $\bar{X}=(\bar{x}_{1},…,\bar{x}_{M})$ of any arbitrary length $M \leq n$ where each of $\bar{x_{i}}$ is calculated as follows\+: \[ \bar{x}_{i} = \frac{M}{n} \sum_{j=n/M(i-1)+1}^{(n/M)i} x_{j}. \] Which simply means that in order to reduce the dimensionality from $n$ to $M$, we first divide the original time series into $M$ equally sized frames and secondly compute the mean values for each frame.\+The sequence assembled from the mean values is the P\+AA approximation (i.\+e., transform) of the original time series. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & Set of points.\\
+\hline
+{\em bins} & Sets the total number of divisions.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An array of points with the reduced dimensionality.
+\end{DoxyReturn}
+
+
+Definition at line 36 of file Dimensionality.\+cs.
+
+\mbox{\Hypertarget{classkhiva_1_1dimensionality_1_1_dimensionality_a0e27cdaf20c83fd722198b297357ec8b}\label{classkhiva_1_1dimensionality_1_1_dimensionality_a0e27cdaf20c83fd722198b297357ec8b}} 
+\index{khiva\+::dimensionality\+::\+Dimensionality@{khiva\+::dimensionality\+::\+Dimensionality}!P\+IP@{P\+IP}}
+\index{P\+IP@{P\+IP}!khiva\+::dimensionality\+::\+Dimensionality@{khiva\+::dimensionality\+::\+Dimensionality}}
+\subsubsection{\texorpdfstring{P\+I\+P()}{PIP()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} khiva.\+dimensionality.\+Dimensionality.\+P\+IP (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}}}]{arr,  }\item[{int}]{number\+Ips }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Calculates the number of Perceptually Important Points (P\+IP) in the time series. 
+
+\mbox{[}1\mbox{]} Fu TC, Chung FL, Luk R, and Ng CM. Representing financial time series based on data point importance. Engineering Applications of Artificial Intelligence, 21(2)\+:277-\/300, 2008. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & Expects an input array whose dimension zero is the length of the time series.\\
+\hline
+{\em number\+Ips} & The number of points to be returned.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array with the most Perceptually Important number\+\_\+ips.
+\end{DoxyReturn}
+
+
+Definition at line 53 of file Dimensionality.\+cs.
+
+\mbox{\Hypertarget{classkhiva_1_1dimensionality_1_1_dimensionality_aef75096686fdf86ead6ca02f6ce8b742}\label{classkhiva_1_1dimensionality_1_1_dimensionality_aef75096686fdf86ead6ca02f6ce8b742}} 
+\index{khiva\+::dimensionality\+::\+Dimensionality@{khiva\+::dimensionality\+::\+Dimensionality}!P\+L\+A\+Bottom\+Up@{P\+L\+A\+Bottom\+Up}}
+\index{P\+L\+A\+Bottom\+Up@{P\+L\+A\+Bottom\+Up}!khiva\+::dimensionality\+::\+Dimensionality@{khiva\+::dimensionality\+::\+Dimensionality}}
+\subsubsection{\texorpdfstring{P\+L\+A\+Bottom\+Up()}{PLABottomUp()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} khiva.\+dimensionality.\+Dimensionality.\+P\+L\+A\+Bottom\+Up (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}}}]{arr,  }\item[{float}]{max\+Error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Applies the Piecewise Linear Approximation (P\+LA Bottom\+UP) to the time series. 
+
+\mbox{[}1\mbox{]} Zhu Y, Wu D, Li Sh (2007). A Piecewise Linear Representation Method of Time Series Based on Feature Points. Knowledge-\/\+Based Intelligent Information and Engineering Systems 4693\+:1066-\/1072. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & Expects a khiva\+\_\+array containing the set of points to be reduced. The first component of the points in the first column and the second component of the points in the second column.\\
+\hline
+{\em max\+Error} & The maximum approximation error allowed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The reduced number of points.
+\end{DoxyReturn}
+
+
+Definition at line 71 of file Dimensionality.\+cs.
+
+\mbox{\Hypertarget{classkhiva_1_1dimensionality_1_1_dimensionality_a4c165a099afe2a32612b1b45f7b317c7}\label{classkhiva_1_1dimensionality_1_1_dimensionality_a4c165a099afe2a32612b1b45f7b317c7}} 
+\index{khiva\+::dimensionality\+::\+Dimensionality@{khiva\+::dimensionality\+::\+Dimensionality}!P\+L\+A\+Sliding\+Window@{P\+L\+A\+Sliding\+Window}}
+\index{P\+L\+A\+Sliding\+Window@{P\+L\+A\+Sliding\+Window}!khiva\+::dimensionality\+::\+Dimensionality@{khiva\+::dimensionality\+::\+Dimensionality}}
+\subsubsection{\texorpdfstring{P\+L\+A\+Sliding\+Window()}{PLASlidingWindow()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} khiva.\+dimensionality.\+Dimensionality.\+P\+L\+A\+Sliding\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}}}]{arr,  }\item[{float}]{max\+Error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Applies the Piecewise Linear Approximation (P\+LA Sliding Window) to the time series. 
+
+\mbox{[}1\mbox{]} Zhu Y, Wu D, Li Sh (2007). A Piecewise Linear Representation Method of Time Series Based on Feature Points. Knowledge-\/\+Based Intelligent Information and Engineering Systems 4693\+:1066-\/1072. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & Expects a khiva\+\_\+array containing the set of points to be reduced. The first component of the points in the first column and the second component of the points in the second column.\\
+\hline
+{\em max\+Error} & The maximum approximation error allowed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The reduced number of points.
+\end{DoxyReturn}
+
+
+Definition at line 89 of file Dimensionality.\+cs.
+
+\mbox{\Hypertarget{classkhiva_1_1dimensionality_1_1_dimensionality_a6d2b5b3b9a7ce8f22f61e4e149975fa4}\label{classkhiva_1_1dimensionality_1_1_dimensionality_a6d2b5b3b9a7ce8f22f61e4e149975fa4}} 
+\index{khiva\+::dimensionality\+::\+Dimensionality@{khiva\+::dimensionality\+::\+Dimensionality}!Ramer\+Douglas\+Peucker@{Ramer\+Douglas\+Peucker}}
+\index{Ramer\+Douglas\+Peucker@{Ramer\+Douglas\+Peucker}!khiva\+::dimensionality\+::\+Dimensionality@{khiva\+::dimensionality\+::\+Dimensionality}}
+\subsubsection{\texorpdfstring{Ramer\+Douglas\+Peucker()}{RamerDouglasPeucker()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} khiva.\+dimensionality.\+Dimensionality.\+Ramer\+Douglas\+Peucker (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}}}]{points,  }\item[{double}]{epsilon }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+The Ramer–\+Douglas–\+Peucker algorithm (R\+DP) is an algorithm for reducing the number of points in a curve that is approximated by a series of points. It reduces a set of points depending on the perpendicular distance of the points and epsilon, the greater epsilon, more points are deleted. 
+
+\mbox{[}1\mbox{]} Urs Ramer, \char`\"{}\+An iterative procedure for the polygonal approximation of plane curves\char`\"{}, Computer Graphics and Image Processing, 1(3), 244–256 (1972) doi\+:10.\+1016/\+S0146-\/664X(72)80017-\/0.
+
+\mbox{[}2\mbox{]} David Douglas \& Thomas Peucker, \char`\"{}\+Algorithms for the reduction of the number of points required to represent a
+digitized line or its caricature\char`\"{}, The Canadian Cartographer 10(2), 112–122 (1973) doi\+:10.\+3138/\+F\+M57-\/6770-\/\+U75\+U-\/7727 
+
+
+\begin{DoxyParams}{Parameters}
+{\em points} & Array with the x-\/coordinates and y-\/coordinates of the input points (x in column 0 and y in column 1).\\
+\hline
+{\em epsilon} & It acts as the threshold value to decide which points should be considered meaningful or not.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array with the x-\/coordinates and y-\/coordinates of the selected points (x in column 0 and y in column 1).
+\end{DoxyReturn}
+
+
+Definition at line 112 of file Dimensionality.\+cs.
+
+\mbox{\Hypertarget{classkhiva_1_1dimensionality_1_1_dimensionality_a668eb21bc1cce2ce731a7e6f6b3b2a0d}\label{classkhiva_1_1dimensionality_1_1_dimensionality_a668eb21bc1cce2ce731a7e6f6b3b2a0d}} 
+\index{khiva\+::dimensionality\+::\+Dimensionality@{khiva\+::dimensionality\+::\+Dimensionality}!S\+AX@{S\+AX}}
+\index{S\+AX@{S\+AX}!khiva\+::dimensionality\+::\+Dimensionality@{khiva\+::dimensionality\+::\+Dimensionality}}
+\subsubsection{\texorpdfstring{S\+A\+X()}{SAX()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} khiva.\+dimensionality.\+Dimensionality.\+S\+AX (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}}}]{arr,  }\item[{int}]{alphabet\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Symbolic Aggregate appro\+Ximation (S\+AX). It transforms a numeric time series into a time series of symbols with the same size. The algorithm was proposed by Lin et al.) and extends the P\+A\+A-\/based approach inheriting the original algorithm simplicity and low computational complexity while providing satisfactory sensitivity and selectivity in range query processing. Moreover, the use of a symbolic representation opened a door to the existing wealth of data-\/structures and string-\/manipulation algorithms in computer science such as hashing, regular expression, pattern matching, suffix trees, and grammatical inference. 
+
+\mbox{[}1\mbox{]} Lin, J., Keogh, E., Lonardi, S. \& Chiu, B. (2003) A Symbolic Representation of Time Series, with Implications for Streaming Algorithms. In proceedings of the 8th A\+CM S\+I\+G\+M\+OD Workshop on Research Issues in Data Mining and Knowledge Discovery. San Diego, CA. June 13. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & Array with the input time series.\\
+\hline
+{\em alphabet\+Size} & Number of element within the alphabet.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An array of symbols.
+\end{DoxyReturn}
+
+
+Definition at line 135 of file Dimensionality.\+cs.
+
+\mbox{\Hypertarget{classkhiva_1_1dimensionality_1_1_dimensionality_ae2b4c8288f9537bce116837abe7e0539}\label{classkhiva_1_1dimensionality_1_1_dimensionality_ae2b4c8288f9537bce116837abe7e0539}} 
+\index{khiva\+::dimensionality\+::\+Dimensionality@{khiva\+::dimensionality\+::\+Dimensionality}!Visvalingam@{Visvalingam}}
+\index{Visvalingam@{Visvalingam}!khiva\+::dimensionality\+::\+Dimensionality@{khiva\+::dimensionality\+::\+Dimensionality}}
+\subsubsection{\texorpdfstring{Visvalingam()}{Visvalingam()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}} khiva.\+dimensionality.\+Dimensionality.\+Visvalingam (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classkhiva_1_1array_1_1_array}{array.\+Array}}}]{points,  }\item[{int}]{num\+Points }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Reduces a set of points by applying the Visvalingam method (minimum triangle area) until the number of points is reduced to num\+Points. 
+
+\mbox{[}1\mbox{]} M. Visvalingam and J. D. Whyatt, Line generalisation by repeated elimination of points, The Cartographic Journal, 1993. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em points} & Array with the x-\/coordinates and y-\/coordinates of the input points (x in column 0 and y in column 1).\\
+\hline
+{\em num\+Points} & Sets the number of points returned after the execution of the method.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array with the x-\/coordinates and y-\/coordinates of the selected points (x in column 0 and y in column 1).
+\end{DoxyReturn}
+
+
+Definition at line 153 of file Dimensionality.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_dimensionality_8cs}{Dimensionality.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_polynomial_tests_8cs" kind="file" language="C#">
+    <compoundname>PolynomialTests.cs</compoundname>
+    <innerclass refid="classkhiva_1_1polynomial_1_1tests_1_1_polynomial_tests" prot="public">khiva::polynomial::tests::PolynomialTests</innerclass>
+    <innernamespace refid="namespacekhiva_1_1polynomial_1_1tests">khiva::polynomial::tests</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/PolynomialTests.cs"/>
+  </compounddef>
+</doxygen>

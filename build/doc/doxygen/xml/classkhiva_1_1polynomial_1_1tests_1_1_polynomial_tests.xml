@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="classkhiva_1_1polynomial_1_1tests_1_1_polynomial_tests" kind="class" language="C#" prot="public">
+    <compoundname>khiva::polynomial::tests::PolynomialTests</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classkhiva_1_1polynomial_1_1tests_1_1_polynomial_tests_1a869e43d05b73febe56317a981ffd30e3" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double khiva.polynomial.tests.PolynomialTests.DELTA</definition>
+        <argsstring></argsstring>
+        <name>DELTA</name>
+        <initializer>= 1e-6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/PolynomialTests.cs" line="20" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/PolynomialTests.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classkhiva_1_1polynomial_1_1tests_1_1_polynomial_tests_1a9d3cca2aba3e92cbea743e16bf7c1e9c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.polynomial.tests.PolynomialTests.Init</definition>
+        <argsstring>()</argsstring>
+        <name>Init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/PolynomialTests.cs" line="23" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/PolynomialTests.cs" bodystart="23" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1polynomial_1_1tests_1_1_polynomial_tests_1ae03468abcbce05c5560fe022dfd700bc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.polynomial.tests.PolynomialTests.TestPolyfit1</definition>
+        <argsstring>()</argsstring>
+        <name>TestPolyfit1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/PolynomialTests.cs" line="29" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/PolynomialTests.cs" bodystart="29" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1polynomial_1_1tests_1_1_polynomial_tests_1ac9a921f74df21257045a1f32962cf3a2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.polynomial.tests.PolynomialTests.TestPolyfit3</definition>
+        <argsstring>()</argsstring>
+        <name>TestPolyfit3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/PolynomialTests.cs" line="44" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/PolynomialTests.cs" bodystart="44" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1polynomial_1_1tests_1_1_polynomial_tests_1a86b1c90ecccd4b308247e373afd366aa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void khiva.polynomial.tests.PolynomialTests.TestRoots</definition>
+        <argsstring>()</argsstring>
+        <name>TestRoots</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/PolynomialTests.cs" line="60" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/PolynomialTests.cs" bodystart="60" bodyend="73"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/PolynomialTests.cs" line="19" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/PolynomialTests.cs" bodystart="18" bodyend="74"/>
+    <listofallmembers>
+      <member refid="classkhiva_1_1polynomial_1_1tests_1_1_polynomial_tests_1a869e43d05b73febe56317a981ffd30e3" prot="private" virt="non-virtual"><scope>khiva::polynomial::tests::PolynomialTests</scope><name>DELTA</name></member>
+      <member refid="classkhiva_1_1polynomial_1_1tests_1_1_polynomial_tests_1a9d3cca2aba3e92cbea743e16bf7c1e9c" prot="public" virt="non-virtual"><scope>khiva::polynomial::tests::PolynomialTests</scope><name>Init</name></member>
+      <member refid="classkhiva_1_1polynomial_1_1tests_1_1_polynomial_tests_1ae03468abcbce05c5560fe022dfd700bc" prot="public" virt="non-virtual"><scope>khiva::polynomial::tests::PolynomialTests</scope><name>TestPolyfit1</name></member>
+      <member refid="classkhiva_1_1polynomial_1_1tests_1_1_polynomial_tests_1ac9a921f74df21257045a1f32962cf3a2" prot="public" virt="non-virtual"><scope>khiva::polynomial::tests::PolynomialTests</scope><name>TestPolyfit3</name></member>
+      <member refid="classkhiva_1_1polynomial_1_1tests_1_1_polynomial_tests_1a86b1c90ecccd4b308247e373afd366aa" prot="public" virt="non-virtual"><scope>khiva::polynomial::tests::PolynomialTests</scope><name>TestRoots</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

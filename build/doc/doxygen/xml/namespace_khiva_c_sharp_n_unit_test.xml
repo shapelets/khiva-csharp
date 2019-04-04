@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespace_khiva_c_sharp_n_unit_test" kind="namespace" language="C#">
+    <compoundname>KhivaCSharpNUnitTest</compoundname>
+    <innerclass refid="class_khiva_c_sharp_n_unit_test_1_1_test" prot="public">KhivaCSharpNUnitTest::Test</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCSharpNUnitTest/Test.cs" line="4" column="1"/>
+  </compounddef>
+</doxygen>

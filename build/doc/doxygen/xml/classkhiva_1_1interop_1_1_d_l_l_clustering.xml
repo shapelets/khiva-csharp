@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="classkhiva_1_1interop_1_1_d_l_l_clustering" kind="class" language="C#" prot="public">
+    <compoundname>khiva::interop::DLLClustering</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_clustering_1a1ee5a73f1c1cd9bbf4e4c6e8274473ee" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLClustering.k_means</definition>
+        <argsstring>([In] ref IntPtr tss, [In] ref int k, [Out] out IntPtr centroids, [Out] out IntPtr labels, [In] ref float tolerance, [In] ref int max_iterations)</argsstring>
+        <name>k_means</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>tss</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>centroids</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>labels</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref float</type>
+          <declname>tolerance</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref int</type>
+          <declname>max_iterations</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the k-means algorithm. </para>        </briefdescription>
+        <detaileddescription>
+<para>[1] S. Lloyd. 1982. Least squares quantization in PCM. IEEE Transactions on Information Theory, 28, 2, Pages 129-137. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>k</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of means to be computed.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>centroids</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The resulting means or centroids.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>labels</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The resulting labels of each time series which is the closest centroid.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tolerance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The error tolerance to stop the computation of the centroids.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max_iterations</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum number of iterations allowed.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLClustering.cs" line="36" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classkhiva_1_1interop_1_1_d_l_l_clustering_1a94b4cc72d14549e2a0bcadf85fd73965" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void khiva.interop.DLLClustering.k_shape</definition>
+        <argsstring>([In] ref IntPtr tss, [In] ref int k, [Out] out IntPtr centroids, [Out] out IntPtr labels, [In] ref float tolerance, [In] ref int max_iterations)</argsstring>
+        <name>k_shape</name>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref IntPtr</type>
+          <declname>tss</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>centroids</declname>
+        </param>
+        <param>
+          <attributes>[Out]</attributes>
+          <type>out IntPtr</type>
+          <declname>labels</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref float</type>
+          <declname>tolerance</declname>
+        </param>
+        <param>
+          <attributes>[In]</attributes>
+          <type>ref int</type>
+          <declname>max_iterations</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the K-Shape algorithm. </para>        </briefdescription>
+        <detaileddescription>
+<para>[1] John Paparrizos and Luis Gravano. 2016. k-Shape: Efficient and Accurate Clustering of Time Series. SIGMOD Rec. 45, 1 (June 2016), 69-76. /summary&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Expects an input array whose dimension zero is the length of the time series (all the same) and dimension one indicates the number of time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>k</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of means to be computed.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>centroids</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The resulting means or centroids.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>labels</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The resulting labels of each time series which is the closest centroid.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tolerance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The error tolerance to stop the computation of the centroids.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max_iterations</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum number of iterations allowed.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLClustering.cs" line="51" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classkhiva_1_1_khiva" kindref="compound">Khiva</ref> Clustering class containing several clustering methods. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLClustering.cs" line="20" column="1" bodyfile="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/DLLClustering.cs" bodystart="19" bodyend="52"/>
+    <listofallmembers>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_clustering_1a1ee5a73f1c1cd9bbf4e4c6e8274473ee" prot="public" virt="non-virtual"><scope>khiva::interop::DLLClustering</scope><name>k_means</name></member>
+      <member refid="classkhiva_1_1interop_1_1_d_l_l_clustering_1a94b4cc72d14549e2a0bcadf85fd73965" prot="public" virt="non-virtual"><scope>khiva::interop::DLLClustering</scope><name>k_shape</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_db613c891d1e7161415da725152594f1" kind="dir">
+    <compoundname>Interop</compoundname>
+    <innerfile refid="_d_l_l_array_8cs">DLLArray.cs</innerfile>
+    <innerfile refid="_d_l_l_clustering_8cs">DLLClustering.cs</innerfile>
+    <innerfile refid="_d_l_l_dimensionality_8cs">DLLDimensionality.cs</innerfile>
+    <innerfile refid="_d_l_l_distances_8cs">DLLDistances.cs</innerfile>
+    <innerfile refid="_d_l_l_features_8cs">DLLFeatures.cs</innerfile>
+    <innerfile refid="_d_l_l_library_8cs">DLLLibrary.cs</innerfile>
+    <innerfile refid="_d_l_l_linalg_8cs">DLLLinalg.cs</innerfile>
+    <innerfile refid="_d_l_l_matrix_8cs">DLLMatrix.cs</innerfile>
+    <innerfile refid="_d_l_l_normalization_8cs">DLLNormalization.cs</innerfile>
+    <innerfile refid="_d_l_l_polynomial_8cs">DLLPolynomial.cs</innerfile>
+    <innerfile refid="_d_l_l_regression_8cs">DLLRegression.cs</innerfile>
+    <innerfile refid="_d_l_l_regularization_8cs">DLLRegularization.cs</innerfile>
+    <innerfile refid="_d_l_l_statistics_8cs">DLLStatistics.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/sergio.gonzalez/Desktop/Sergio/khiva-csharp/KhivaCsharp/KhivaCsharp/Interop/"/>
+  </compounddef>
+</doxygen>
