@@ -11,7 +11,7 @@ Welcome to KHIVA's documentation!
    :caption: Contents:
    :numbered:
 
-   API <api/main>
+   Modules <api/main>
    FAQ <text/faq>
    License <license>
    Authors <authors>

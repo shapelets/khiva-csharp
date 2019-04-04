@@ -31,7 +31,6 @@ namespace khiva.interop
          /// <param name="labels">        The resulting labels of each time series which is the closest centroid.</param>
          /// <param name="tolerance">     The error tolerance to stop the computation of the centroids.</param>
          /// <param name="max_iterations">The maximum number of iterations allowed.</param>
-         ////
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void k_means([In] ref IntPtr tss, [In] ref int k, [Out] out IntPtr centroids, [Out] out IntPtr labels, [In] ref float tolerance, [In] ref int max_iterations);
 

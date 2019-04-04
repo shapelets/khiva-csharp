@@ -22,19 +22,17 @@ namespace khiva
 
             /// <summary>
             /// Calculates the k-means algorithm.
-            ///
-            /// [1] S.Lloyd. 1982. Least squares quantization in PCM.IEEE Transactions on Information Theory, 28, 2,
-            /// Pages 129-137.
+            /// <para>[1] S.Lloyd. 1982. Least squares quantization in PCM.IEEE Transactions on Information Theory, 28, 2,
+            /// Pages 129-137.</para>
             /// </summary>
             /// <param name="arr">Expects an input array whose dimension zero is the length of the time series (all the same) and
             ///                       dimension one indicates the number of time series.</param>
             /// <param name="k">The number of means to be computed.</param>
             /// <param name="tolerance">The error tolerance to stop the computation of the centroids.</param>
             /// <param name="max_iterations">The maximum number of iterations allowed.</param>
-            /// <returns> atuple with:
-            /// The resulting means or centroids.
-            /// The resulting labels of each time series which is the closest centroid.
-            /// The error tolerance to stop the computation of the centroids.</returns>
+            /// <returns> Tuple with: </returns>
+            /// <returns>The resulting means or centroids.</returns>
+            /// <returns>The resulting labels of each time series which is the closest centroid.</returns>
             public static (array.Array, array.Array) KMeans(array.Array arr, int k, float tolerance = 1e-10F, int max_iterations = 100)
             {
                 IntPtr reference = arr.Reference;
@@ -45,20 +43,18 @@ namespace khiva
             }
 
             /// <summary>
-            /// Calculates the K-Shape algorithm.
-            ///
-            /// [1] John Paparrizos and Luis Gravano. 2016. k-Shape: Efficient and Accurate Clustering of Time Series.
-            /// SIGMOD Rec. 45, 1 (June 2016), 69-76.
+            /// Calculates the k-shape algorithm.
+            /// <para>[1] John Paparrizos and Luis Gravano. 2016. k-Shape: Efficient and Accurate Clustering of Time Series.
+            /// SIGMOD Rec. 45, 1 (June 2016), 69-76.</para>
             /// </summary>
             /// <param name="arr">Expects an input array whose dimension zero is the length of the time series (all the same) and
             ///                       dimension one indicates the number of time series.</param>
             /// <param name="k">The number of means to be computed.</param>
             /// <param name="tolerance">The error tolerance to stop the computation of the centroids.</param>
             /// <param name="max_iterations">The maximum number of iterations allowed.</param>
-            /// <returns> Tuple with:
-            /// The resulting means or centroids.
-            /// The resulting labels of each time series which is the closest centroid.
-            /// The error tolerance to stop the computation of the centroids.</returns>
+            /// <returns> Tuple with: </returns>
+            /// <returns>The resulting means or centroids.</returns>
+            /// <returns>The resulting labels of each time series which is the closest centroid.</returns>
             public static (array.Array, array.Array) KShape(array.Array arr, int k, float tolerance = 1e-10F, int max_iterations = 100)
             {
                 IntPtr reference = arr.Reference;
