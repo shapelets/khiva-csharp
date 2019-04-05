@@ -52,7 +52,7 @@ before_build:
             cd C:\khiva-library;
             mkdir build;
             cd build;
-			echo %generator%
+			echo %generator%;
             cmake .. -DCMAKE_TOOLCHAIN_FILE=c:/tools/vcpkg/scripts/buildsystems/vcpkg.cmake -DBOOST_ROOT="$($env:BOOST_PATH)" -DKHIVA_USE_CONAN=OFF -DKHIVA_BUILD_DOCUMENTATION=OFF -DKHIVA_BUILD_BENCHMARKS=OFF -DKHIVA_ONLY_CPU_BACKEND=ON -G %generator%;
             cmake --build . --config Debug --target INSTALL -- /m;
           }
