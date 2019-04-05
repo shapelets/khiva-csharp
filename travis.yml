@@ -9,6 +9,7 @@ solution: KhivaCsharp\KhivaCsharp.sln
 
 matrix:
 	include:
-		- dotnet: 2.1.502
+		- dotnet: 4.7
 		  mono: none
+
 
