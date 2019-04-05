@@ -2,8 +2,8 @@
 
 Namespace LinAlg
 ================
-
-.. doxygennamespace:: khiva::linalg
+.. default-domain:: csharp
+.. namespace:: khiva::linalg
     :project: Khiva
     :members:
     :protected-members:

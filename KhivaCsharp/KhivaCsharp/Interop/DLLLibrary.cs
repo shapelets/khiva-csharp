@@ -18,11 +18,10 @@ namespace khiva.interop
     /// </summary>
     public static class DLLLibrary
     {
-#if (_WINDOWS)
-        public const String khivaPath = "C:\\Program Files\\Khiva\\v0\\lib\\khiva_c.dll";
-#else
-            public const String khivaPath = "libkhiva_c";
-#endif
+        /// <summary>
+        /// Khiva DLL path.
+        /// </summary>
+        public const String khivaPath = "khiva_c";
         
          /// <summary> Gets information from the active backend.</summary>
         [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]

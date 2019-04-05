@@ -50,9 +50,6 @@
     <DefineConstants>TRACE;DEBUG</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(OS)' == 'Windows_NT' ">
-    <DefineConstants>_WINDOWS</DefineConstants>
-  </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
   </PropertyGroup>
