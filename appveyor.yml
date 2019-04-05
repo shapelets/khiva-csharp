@@ -13,7 +13,7 @@ image:
 - Visual Studio 2013
 
 environment:
-  GENERATOR: "Visual Studio 15 Win64"
+  GENERATOR: "Visual Studio 15 2017 Win64"
   BOOST_PATH: C:\Libraries\boost_1_67_0
   AF_PATH: C:\Program Files\ArrayFire\v3
   KHIVA_PATH: C:\Program Files\Khiva\v0
@@ -73,20 +73,20 @@ on_finish:
       }
 
 for: 
-- matrix:
+- image:
   only:
-  - image: Visual Studio 2015
+  - Visual Studio 2015
   environment:
-    GENERATOR: "Visual Studio 14 Win64"
+    GENERATOR: "Visual Studio 14 2015 Win64"
     BOOST_PATH: C:\Libraries\boost_1_67_0
     AF_PATH: C:\Program Files\ArrayFire\v3
     KHIVA_PATH: C:\Program Files\Khiva\v0
     PATH: $(AF_PATH)\lib;$(KHIVA_PATH)\lib;C:\Python36-x64;C:\Python36-x64\Scripts;$(PATH)
-- matrix:
+- image:
   only:
-  - image: Visual Studio 2017
+  - Visual Studio 2013
   environment:
-    GENERATOR: "Visual Studio 13 Win64"
+    GENERATOR: "Visual Studio 12 2013 Win64"
     BOOST_PATH: C:\Libraries\boost_1_67_0
     AF_PATH: C:\Program Files\ArrayFire\v3
     KHIVA_PATH: C:\Program Files\Khiva\v0
