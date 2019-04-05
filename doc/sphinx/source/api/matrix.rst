@@ -2,7 +2,7 @@
 
 Namespace Matrix
 ================
-
+.. default-domain:: csharp
 .. doxygennamespace:: khiva::matrix
     :project: Khiva
     :members:

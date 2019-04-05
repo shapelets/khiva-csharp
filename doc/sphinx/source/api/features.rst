@@ -2,7 +2,7 @@
 
 Namespace Features
 ==================
-
+.. default-domain:: csharp
 .. doxygennamespace:: khiva::features
     :project: Khiva
     :members:

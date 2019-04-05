@@ -349,7 +349,7 @@ namespace khiva.features
         /// <param name="array">Expects an input array whose dimension zero is the length of the
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <param name="coefficient">The coefficient to extract from the FFT.</param>
-        /// <returns>tuple with
+        /// <returns>Tuple with
         /// the real part of the coefficient,
         /// the imaginary part of the cofficient,
         /// the absolute value of the coefficient and

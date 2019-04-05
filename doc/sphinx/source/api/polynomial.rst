@@ -2,7 +2,7 @@
 
 Namespace Polynomial
 ====================
-
+.. default-domain:: csharp
 .. doxygennamespace:: khiva::polynomial
     :project: Khiva
     :members:

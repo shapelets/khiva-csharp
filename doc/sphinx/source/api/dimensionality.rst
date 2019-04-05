@@ -2,7 +2,7 @@
 
 Namespace Dimensionality
 ========================
-
+.. default-domain:: csharp
 .. doxygennamespace:: khiva::dimensionality
     :project: Khiva
     :members:
