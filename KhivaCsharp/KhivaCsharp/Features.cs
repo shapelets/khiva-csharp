@@ -94,12 +94,12 @@ namespace khiva.features
         ///              default : mean
         ///         }
         ///</param>
-        /// <returns>Tuple with:
-        /// Slope of the regression line.
-        /// Intercept of the regression line.
-        /// Correlation coefficient.
-        /// Two-sided p-value for a hypothesis test whose null hypothesis is that the slope is zero, using Wald Test with t-distribution of the test statistic.
-        /// Standard error of the estimated gradient.</returns>
+        /// <returns>Tuple with
+        /// the slope of the regression line,
+        /// the intercept of the regression line,
+        /// the correlation coefficient,
+        /// the two-sided p-value for a hypothesis test whose null hypothesis is that the slope is zero, using Wald Test with t-distribution of the test statistic and
+        /// the standard error of the estimated gradient.</returns>
         public static ValueTuple<KhivaArray, KhivaArray, KhivaArray, KhivaArray, KhivaArray> AggregatedLinearTrend(KhivaArray array, long chunkSize, int aggregationFunction)
         {
             IntPtr reference = array.Reference;
@@ -349,11 +349,11 @@ namespace khiva.features
         /// <param name="array">Expects an input array whose dimension zero is the length of the
         /// time series(all the same) and dimension one indicates the number of time series.</param>
         /// <param name="coefficient">The coefficient to extract from the FFT.</param>
-        /// <returns>tuple with:
-        /// The real part of the coefficient.
-        /// The imaginary part of the cofficient.
-        /// The absolute value of the coefficient.
-        /// The angle of the coefficient.</returns>
+        /// <returns>tuple with
+        /// the real part of the coefficient,
+        /// the imaginary part of the cofficient,
+        /// the absolute value of the coefficient and
+        /// the angle of the coefficient.</returns>
         public static ValueTuple<KhivaArray, KhivaArray, KhivaArray, KhivaArray> FftCoefficient(KhivaArray array, long coefficient)
         {
             IntPtr reference = array.Reference;
@@ -551,12 +551,12 @@ namespace khiva.features
         /// </summary>
         /// <param name="array">Expects an input array whose dimension zero is the length of the
         /// time series(all the same) and dimension one indicates the number of time series.</param>
-        /// <returns>Tuple with:
-        /// The pvalues for all time series.
-        /// The rvalues for all time series.
-        /// The intercept values for all time series.
-        /// The slope for all time series.
-        /// The stderr values for all time series.</returns>
+        /// <returns>Tuple with
+        /// the pvalues for all time series, 
+        /// the rvalues for all time series, 
+        /// the intercept values for all time series, 
+        /// the slope for all time series and
+        /// the stderr values for all time series.</returns>
         public static ValueTuple<KhivaArray, KhivaArray, KhivaArray, KhivaArray, KhivaArray> LinearTrend(KhivaArray array)
         {
             IntPtr reference = array.Reference;

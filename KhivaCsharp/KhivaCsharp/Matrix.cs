@@ -46,10 +46,10 @@ namespace khiva
             /// <param name="n">Number of discords to extract</param>
             /// <param name="self_join">Indicates whether the input profile comes from a self join operation or not. It determines
             /// whether the mirror similar region is included in the output or not.</param>
-            /// <returns>Tuple with:
-            /// The distance of the best N discords
-            /// The indices of the best N discords
-            /// The indices of the query sequences that produced the "N" bigger discords.</returns>
+            /// <returns>Tuple with 
+            /// the distance of the best N discords, 
+            /// the indices of the best N discords and 
+            /// the indices of the query sequences that produced the "N" bigger discords.</returns>
             public static ValueTuple<KhivaArray, KhivaArray, KhivaArray> FindbestNDiscords(KhivaArray profile, KhivaArray index, long m, long n, bool self_join = false)
             {
                 IntPtr profileReference = profile.Reference;
@@ -74,10 +74,10 @@ namespace khiva
             /// <param name="n">Number of motifs to extract.</param>
             /// <param name="self_join">Indicates whether the input profile comes from a self join operation or not. It determines
             /// whether the mirror similar region is included in the output or not.</param>
-            /// <returns>Tuple with:
-            /// The distance of the best N motifs.
-            /// The indices of the best N motifs.
-            /// The indices of the query sequences that produced
+            /// <returns>Tuple with 
+            /// the distance of the best N motifs, 
+            /// the indices of the best N motifs, 
+            /// the indices of the query sequences that produced
             /// the minimum reported in the motifs.</returns>
             public static ValueTuple<KhivaArray, KhivaArray, KhivaArray> FindbestNMotifs(KhivaArray profile, KhivaArray index, long m, long n, bool self_join=false)
             {
@@ -104,9 +104,9 @@ namespace khiva
             /// <param name="tssa">Query time series</param>
             /// <param name="tssb">Reference time series</param>
             /// <param name="m">Pointer to a long with the length of the subsequence.</param>
-            /// <returns>Tuple with:
-            /// The matrix profile, whichlects the distance to the closer element of the subsequence from 'tssa' in 'tssb'.
-            /// The matrix profile index, which points to where the aforementioned minimum is located.</returns>
+            /// <returns>Tuple with 
+            /// the matrix profile, whichlects the distance to the closer element of the subsequence from 'tssa' in 'tssb' and 
+            /// the matrix profile index, which points to where the aforementioned minimum is located.</returns>
             public static ValueTuple<KhivaArray, KhivaArray> Stomp(KhivaArray tssa, KhivaArray tssb, long m)
             {
                 IntPtr aReference = tssa.Reference;
@@ -129,9 +129,9 @@ namespace khiva
             /// </summary>
             /// <param name="tss">Query anderence time series</param>
             /// <param name="m">Pointer to a long with the length of the subsequence.</param>
-            /// <returns>Tuple with:
-            /// The matrix profile, whichlects the distance to the closer element of the subsequence from 'tss' in a different location of itself
-            /// The matrix profile index, which points to where the aforementioned minimum is located</returns>
+            /// <returns>Tuple with 
+            /// the matrix profile, whichlects the distance to the closer element of the subsequence from 'tss' in a different location of itself and
+            /// the matrix profile index, which points to where the aforementioned minimum is located</returns>
             public static ValueTuple<KhivaArray, KhivaArray> StompSelfJoin(KhivaArray tss, long m)
             {
                 IntPtr reference = tss.Reference;

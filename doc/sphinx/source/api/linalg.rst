@@ -3,7 +3,7 @@
 Namespace LinAlg
 ================
 
-.. doxygennamespace:: khiva.linalg
+.. doxygennamespace:: khiva::linalg
     :project: Khiva
     :members:
     :protected-members:

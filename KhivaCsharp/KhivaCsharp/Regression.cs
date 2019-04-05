@@ -29,12 +29,12 @@ namespace khiva
             /// one indicates the number of time series.</param>
             /// <param name="yss">Expects an input array whose dimension zero is the length of the time series (all the same) and dimension
             /// one indicates the number of time series.</param>
-            /// <returns>tuple with:
-            /// Slope of the regression line.
-            /// Correlation coefficient.
-            /// Two-sided p-value for a hypothesis test whose null hypothesis is that the slope is zero, using Wald
-            /// Test with t-distribution of the test statistic.
-            /// Standard error of the estimated gradient.</returns>
+            /// <returns>tuple with 
+            /// the slope of the regression line, 
+            /// the correlation coefficient, 
+            /// the two-sided p-value for a hypothesis test whose null hypothesis is that the slope is zero, using Wald
+            /// Test with t-distribution of the test statistic and 
+            /// the standard error of the estimated gradient.</returns>
             public static ValueTuple<KhivaArray, KhivaArray, KhivaArray, KhivaArray, KhivaArray> Linear(KhivaArray xss, KhivaArray yss)
             {
                 IntPtr xReference = xss.Reference;

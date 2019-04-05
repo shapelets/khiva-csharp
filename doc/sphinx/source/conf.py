@@ -183,7 +183,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'Khiva.tex', u'Khiva Documentation',
+    (master_doc, 'khiva::tex', u'Khiva Documentation',
      u'Shapelets.io', 'manual'),
 ]
 
