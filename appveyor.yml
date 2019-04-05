@@ -7,7 +7,10 @@
 version: 1.0.{build}
 configuration: Debug
 
-image: Visual Studio 2017
+image: 
+- Visual Studio 2017
+- Visual Studio 2015
+- Visual Studio 2013
 
 environment:
   GENERATOR: "Visual Studio 15 Win64"
@@ -15,6 +18,7 @@ environment:
   AF_PATH: C:\Program Files\ArrayFire\v3
   KHIVA_PATH: C:\Program Files\Khiva\v0
   PATH: $(AF_PATH)\lib;$(KHIVA_PATH)\lib;C:\Python36-x64;C:\Python36-x64\Scripts;$(PATH)
+
 
 matrix:
   fast_finish: true
