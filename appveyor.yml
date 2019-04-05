@@ -74,9 +74,9 @@ on_finish:
 
 for: 
 - matrix:
-  only:
+  - only:
   - image: Visual Studio 2015
-  environment:
+  - environment:
     GENERATOR: "Visual Studio 14 2015 Win64"
     BOOST_PATH: C:\Libraries\boost_1_67_0
     AF_PATH: C:\Program Files\ArrayFire\v3
