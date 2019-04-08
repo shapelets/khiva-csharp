@@ -5,5 +5,5 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-msbuild money/cs-money.csproj /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll" /p:runCodeAnalysis=true /p:codeanalysislogfile=..\analysis.xml
-.\KhivaCsharp\packages\OpenCover.4.6.519\tools\OpenCover.Console -register:user -target:".\KhivaCsharp\packages\NUnit.ConsoleRunner.3.9.0\tools\nunit3-console.exe" -targetargs:"KhivaCsharp\KhivaCSharpNUnitTest\bin\x64\Debug\KhivaCSharpNUnitTest.dll" -output:"coverage.xml" -filter:"+[*]khiva.*"
+msbuild /p:Configuration=Debug KhivaCsharp/KhivaCsharp.sln
+mono ./KhivaCsharp/testrunner/NUnit.ConsoleRunner.3.9.0/tools/nunit3-console.exe ./KhivaCsharp/KhivaCSharpNUnitTest/bin/x64/Debug/KhivaCSharpNUnitTest.dll -output:"coverage.xml" -filter:"+[*]khiva.*"

@@ -4,7 +4,8 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-
+language: csharp
+solution: KhivaCsharp/KhivaCsharp.sln
 
 matrix:
   fast_finish: true
@@ -12,8 +13,6 @@ matrix:
     - os: linux
 	  dotnet: 2.2
       mono: none
-	language: csharp
-    solution: KhivaCsharp\KhivaCsharp.sln
     cache:
       directories:
         - ${TRAVIS_BUILD_DIR}/installers
@@ -23,8 +22,6 @@ matrix:
     after_success:
     - codecov -f coverage.xml
     - mono: latest
-	language: csharp
-    solution: KhivaCsharp\KhivaCsharp.sln
 	cache:
       directories:
         - ${TRAVIS_BUILD_DIR}/installers
@@ -36,8 +33,6 @@ matrix:
 	- os: osx
 	  dotnet: 2.2
       mono: none
-	language: csharp
-    solution: KhivaCsharp\KhivaCsharp.sln
     cache:
       directories:
         - ${TRAVIS_BUILD_DIR}/installers
@@ -47,8 +42,6 @@ matrix:
     after_success:
     - codecov -f coverage.xml
     - mono: latest
-	language: csharp
-    solution: KhivaCsharp\KhivaCsharp.sln
 	cache:
       directories:
         - ${TRAVIS_BUILD_DIR}/installers
