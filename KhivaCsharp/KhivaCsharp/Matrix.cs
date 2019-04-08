@@ -54,8 +54,9 @@ namespace khiva
             {
                 IntPtr profileReference = profile.Reference;
                 IntPtr indexReference = index.Reference;
+                IntPtr discords_distances; IntPtr discords_indices; IntPtr subsequence_indices;
                 interop.DLLMatrix.find_best_n_discords(ref profileReference, ref indexReference, ref m, ref n,
-                                                        out IntPtr discords_distances, out IntPtr discords_indices, out IntPtr subsequence_indices,
+                                                        out discords_distances, out discords_indices, out subsequence_indices,
                                                         ref self_join);
                 profile.Reference = profileReference;
                 index.Reference = indexReference;
@@ -83,8 +84,9 @@ namespace khiva
             {
                 IntPtr profileReference = profile.Reference;
                 IntPtr indexReference = index.Reference;
+                IntPtr motif_distances; IntPtr motif_indices; IntPtr subsequence_indices
                 interop.DLLMatrix.find_best_n_motifs(ref profileReference, ref indexReference, ref m, ref n,
-                                                        out IntPtr motif_distances, out IntPtr motif_indices, out IntPtr subsequence_indices,
+                                                        out motif_distances, out motif_indices, out subsequence_indices,
                                                         ref self_join);
                 profile.Reference = profileReference;
                 index.Reference = indexReference;
@@ -111,8 +113,9 @@ namespace khiva
             {
                 IntPtr aReference = tssa.Reference;
                 IntPtr bReference = tssb.Reference;
+                IntPtr p; IntPtr i;
                 interop.DLLMatrix.stomp(ref aReference, ref bReference, ref m,
-                                        out IntPtr p, out IntPtr i);
+                                        out p, out i);
                 tssa.Reference = aReference;
                 tssb.Reference = bReference;
                 var tuple = (p: new KhivaArray(p),
@@ -135,8 +138,9 @@ namespace khiva
             public static ValueTuple<KhivaArray, KhivaArray> StompSelfJoin(KhivaArray tss, long m)
             {
                 IntPtr reference = tss.Reference;
+                IntPtr p; IntPtr i;
                 interop.DLLMatrix.stomp_self_join(ref reference, ref m,
-                                        out IntPtr p, out IntPtr i);
+                                        out p, out i);
                 tss.Reference = reference;
                 var tuple = (p: new KhivaArray(p),
                              i: new KhivaArray(i));

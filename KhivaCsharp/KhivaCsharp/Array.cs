@@ -1291,7 +1291,8 @@ namespace khiva
             {
                 get
                 {
-                    interop.DLLArray.get_type(ref reference, out int type);
+                    int type;
+                    interop.DLLArray.get_type(ref reference, out type);
                     this.Reference = reference;
                     return (Dtype)type;
                 }
@@ -1305,7 +1306,8 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator +(KhivaArray lhs, KhivaArray rhs)
             {
-                interop.DLLArray.khiva_add(ref lhs.reference, ref rhs.reference, out IntPtr result);
+			IntPtr result;
+                interop.DLLArray.khiva_add(ref lhs.reference, ref rhs.reference, out result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
                 return new KhivaArray(result);
@@ -1319,7 +1321,8 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator *(KhivaArray lhs, KhivaArray rhs)
             {
-                interop.DLLArray.khiva_mul(ref lhs.reference, ref rhs.reference, out IntPtr result);
+			IntPtr result;
+                interop.DLLArray.khiva_mul(ref lhs.reference, ref rhs.reference, out result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
                 return (new KhivaArray(result));
@@ -1333,7 +1336,8 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator -(KhivaArray lhs, KhivaArray rhs)
             {
-                interop.DLLArray.khiva_sub(ref lhs.reference, ref rhs.reference, out IntPtr result);
+			IntPtr result;
+                interop.DLLArray.khiva_sub(ref lhs.reference, ref rhs.reference, out result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
                 return (new KhivaArray(result));
@@ -1347,7 +1351,8 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator /(KhivaArray lhs, KhivaArray rhs)
             {
-                interop.DLLArray.khiva_div(ref lhs.reference, ref rhs.reference, out IntPtr result);
+			IntPtr result;
+                interop.DLLArray.khiva_div(ref lhs.reference, ref rhs.reference, out result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
                 return (new KhivaArray(result));
@@ -1361,7 +1366,8 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator %(KhivaArray lhs, KhivaArray rhs)
             {
-                interop.DLLArray.khiva_mod(ref lhs.reference, ref rhs.reference, out IntPtr result);
+			IntPtr result;
+                interop.DLLArray.khiva_mod(ref lhs.reference, ref rhs.reference, out result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
                 return (new KhivaArray(result));
@@ -1375,7 +1381,8 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray Pow(KhivaArray lhs, KhivaArray rhs)
             {
-                interop.DLLArray.khiva_pow(ref lhs.reference, ref rhs.reference, out IntPtr result);
+			IntPtr result;
+                interop.DLLArray.khiva_pow(ref lhs.reference, ref rhs.reference, out result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
                 return (new KhivaArray(result));
@@ -1389,7 +1396,8 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator &(KhivaArray lhs, KhivaArray rhs)
             {
-                interop.DLLArray.khiva_bitand(ref lhs.reference, ref rhs.reference, out IntPtr result);
+			IntPtr result;
+                interop.DLLArray.khiva_bitand(ref lhs.reference, ref rhs.reference, out result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
                 return (new KhivaArray(result));
@@ -1403,7 +1411,8 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator |(KhivaArray lhs, KhivaArray rhs)
             {
-                interop.DLLArray.khiva_bitor(ref lhs.reference, ref rhs.reference, out IntPtr result);
+			IntPtr result;
+                interop.DLLArray.khiva_bitor(ref lhs.reference, ref rhs.reference, out result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
                 return (new KhivaArray(result));
@@ -1417,7 +1426,8 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator ^(KhivaArray lhs, KhivaArray rhs)
             {
-                interop.DLLArray.khiva_bitxor(ref lhs.reference, ref rhs.reference, out IntPtr result);
+			IntPtr result;
+                interop.DLLArray.khiva_bitxor(ref lhs.reference, ref rhs.reference, out result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
                 return (new KhivaArray(result));
@@ -1431,7 +1441,8 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator <<(KhivaArray lhs, int shift)
             {
-                interop.DLLArray.khiva_bitshiftl(ref lhs.reference, ref shift, out IntPtr result);
+			IntPtr result;
+                interop.DLLArray.khiva_bitshiftl(ref lhs.reference, ref shift, out result);
                 lhs.Reference = lhs.reference;
                 return (new KhivaArray(result));
             }
@@ -1444,7 +1455,8 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator >>(KhivaArray lhs, int shift)
             {
-                interop.DLLArray.khiva_bitshiftr(ref lhs.reference, ref shift, out IntPtr result);
+			IntPtr result;
+                interop.DLLArray.khiva_bitshiftr(ref lhs.reference, ref shift, out result);
                 lhs.Reference = lhs.reference;
                 return (new KhivaArray(result));
             }
@@ -1532,7 +1544,8 @@ namespace khiva
                         zeros = new KhivaArray(tss);
                     }
                 }
-                interop.DLLArray.khiva_sub(ref zeros.reference, ref rhs.reference, out IntPtr result);
+			IntPtr result;
+                interop.DLLArray.khiva_sub(ref zeros.reference, ref rhs.reference, out result);
                 zeros.Reference = zeros.reference;
                 rhs.Reference = rhs.reference;
                 return (new KhivaArray(result));
@@ -1559,7 +1572,8 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator !(KhivaArray lhs)
             {
-                interop.DLLArray.khiva_not(ref lhs.reference, out IntPtr result);
+			IntPtr result;
+                interop.DLLArray.khiva_not(ref lhs.reference, out result);
                 lhs.Reference = lhs.reference;
                 return (new KhivaArray(result));
             }
@@ -1572,7 +1586,8 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator <(KhivaArray lhs, KhivaArray rhs)
             {
-                interop.DLLArray.khiva_lt(ref lhs.reference, ref rhs.reference, out IntPtr result);
+			IntPtr result;
+                interop.DLLArray.khiva_lt(ref lhs.reference, ref rhs.reference, out result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
                 return (new KhivaArray(result));
@@ -1586,7 +1601,8 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator >(KhivaArray lhs, KhivaArray rhs)
             {
-                interop.DLLArray.khiva_gt(ref lhs.reference, ref rhs.reference, out IntPtr result);
+			IntPtr result;
+                interop.DLLArray.khiva_gt(ref lhs.reference, ref rhs.reference, out result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
                 return (new KhivaArray(result));
@@ -1600,7 +1616,8 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator <=(KhivaArray lhs, KhivaArray rhs)
             {
-                interop.DLLArray.khiva_le(ref lhs.reference, ref rhs.reference, out IntPtr result);
+			IntPtr result;
+                interop.DLLArray.khiva_le(ref lhs.reference, ref rhs.reference, out result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
                 return (new KhivaArray(result));
@@ -1614,7 +1631,8 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator >=(KhivaArray lhs, KhivaArray rhs)
             {
-                interop.DLLArray.khiva_ge(ref lhs.reference, ref rhs.reference, out IntPtr result);
+			IntPtr result;
+                interop.DLLArray.khiva_ge(ref lhs.reference, ref rhs.reference, out result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
                 return (new KhivaArray(result));
@@ -1628,7 +1646,8 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator ==(KhivaArray lhs, KhivaArray rhs)
             {
-                interop.DLLArray.khiva_eq(ref lhs.reference, ref rhs.reference, out IntPtr result);
+			IntPtr result;
+                interop.DLLArray.khiva_eq(ref lhs.reference, ref rhs.reference, out result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
                 return (new KhivaArray(result));
@@ -1642,7 +1661,8 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator !=(KhivaArray lhs, KhivaArray rhs)
             {
-                interop.DLLArray.khiva_ne(ref lhs.reference, ref rhs.reference, out IntPtr result);
+			IntPtr result;
+                interop.DLLArray.khiva_ne(ref lhs.reference, ref rhs.reference, out result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
                 return (new KhivaArray(result));
@@ -1682,7 +1702,8 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public KhivaArray Transpose(bool conjugate = false)
             {
-                interop.DLLArray.khiva_transpose(ref reference, ref conjugate, out IntPtr result);
+			IntPtr result;
+                interop.DLLArray.khiva_transpose(ref reference, ref conjugate, out result);
                 this.Reference = reference;
                 return (new KhivaArray(result));
             }
@@ -1694,7 +1715,8 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public KhivaArray Col(int index)
             {
-                interop.DLLArray.khiva_col(ref reference, ref index, out IntPtr result);
+			IntPtr result;
+                interop.DLLArray.khiva_col(ref reference, ref index, out result);
                 this.Reference = reference;
                 return (new KhivaArray(result));
             }
@@ -1707,7 +1729,8 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public KhivaArray Cols(int first, int last)
             {
-                interop.DLLArray.khiva_cols(ref reference, ref first, ref last, out IntPtr result);
+			IntPtr result;
+                interop.DLLArray.khiva_cols(ref reference, ref first, ref last, out result);
                 this.Reference = reference;
                 return (new KhivaArray(result));
             }
@@ -1719,7 +1742,8 @@ namespace khiva
             /// <returns> KHIVA KhivaArray with the result of this operation.</returns>
             public KhivaArray Row(int index)
             {
-                interop.DLLArray.khiva_row(ref reference, ref index, out IntPtr result);
+			IntPtr result;
+                interop.DLLArray.khiva_row(ref reference, ref index, out result);
                 this.Reference = reference;
                 return (new KhivaArray(result));
             }
@@ -1732,7 +1756,8 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public KhivaArray Rows(int first, int last)
             {
-                interop.DLLArray.khiva_rows(ref reference, ref first, ref last, out IntPtr result);
+			IntPtr result;
+                interop.DLLArray.khiva_rows(ref reference, ref first, ref last, out result);
                 this.Reference = reference;
                 return (new KhivaArray(result));
             }
@@ -1744,7 +1769,8 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public KhivaArray Matmul(KhivaArray rhs)
             {
-                interop.DLLArray.khiva_matmul(ref reference, ref rhs.reference, out IntPtr result);
+			IntPtr result;
+                interop.DLLArray.khiva_matmul(ref reference, ref rhs.reference, out result);
                 this.Reference = reference;
                 rhs.Reference = rhs.reference;
                 return (new KhivaArray(result));
@@ -1756,7 +1782,8 @@ namespace khiva
             /// <returns>KHIVA KhivaArray which contains a copy of array.</returns>
             public KhivaArray Copy()
             {
-                interop.DLLArray.copy(ref reference, out IntPtr result);
+			IntPtr result;
+                interop.DLLArray.copy(ref reference, out result);
                 this.Reference = reference;
                 return (new KhivaArray(result));
             }
@@ -1768,7 +1795,8 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public KhivaArray As(int type)
             {
-                interop.DLLArray.khiva_as(ref reference, ref type, out IntPtr result);
+			IntPtr result;
+                interop.DLLArray.khiva_as(ref reference, ref type, out result);
                 this.Reference = reference;
                 return (new KhivaArray(result));
             }

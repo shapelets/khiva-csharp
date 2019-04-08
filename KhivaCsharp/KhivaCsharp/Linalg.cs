@@ -34,7 +34,8 @@ namespace khiva
             {
                 IntPtr aReference = a.Reference;
                 IntPtr bReference = b.Reference;
-                interop.DLLLinalg.lls(ref aReference, ref bReference, out IntPtr result);
+			    IntPtr result;
+                interop.DLLLinalg.lls(ref aReference, ref bReference, out result);
                 a.Reference = aReference;
                 b.Reference = bReference;
                 return (new KhivaArray(result));

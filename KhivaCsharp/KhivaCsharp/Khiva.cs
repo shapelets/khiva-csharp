@@ -49,7 +49,8 @@ namespace khiva
         public static Backend ActualBackend
         {
             get {
-                interop.DLLLibrary.get_backend(out int backend);
+                int backend;
+                interop.DLLLibrary.get_backend(out backend);
                 return (Backend)backend;
             }
             set
@@ -107,7 +108,8 @@ namespace khiva
             }
             get
             {
-                interop.DLLLibrary.get_device_id(out int device_id);
+                int device_id;
+                interop.DLLLibrary.get_device_id(out device_id);
                 return device_id;
             }
         }   
@@ -119,7 +121,8 @@ namespace khiva
         {
             get
             {
-                interop.DLLLibrary.get_device_count(out int device_count);
+                int device_count;
+                interop.DLLLibrary.get_device_count(out device_count);
                 return device_count;
             }
         }

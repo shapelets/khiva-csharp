@@ -39,8 +39,9 @@ namespace khiva
             {
                 IntPtr xReference = xss.Reference;
                 IntPtr yReference = yss.Reference;
+                IntPtr slope; IntPtr intercept; IntPtr rvalue; IntPtr pvalue; IntPtr stderrest;
                 interop.DLLRegression.linear(ref xReference, ref yReference,
-                                            out IntPtr slope, out IntPtr intercept, out IntPtr rvalue, out IntPtr pvalue, out IntPtr stderrest);
+                                            out slope, out intercept, out rvalue, out pvalue, out stderrest);
                 xss.Reference = xReference;
                 yss.Reference = yReference;
                 var tuple = (slope: new KhivaArray(slope),

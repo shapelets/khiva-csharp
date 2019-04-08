@@ -37,7 +37,8 @@ namespace khiva
             public static KhivaArray PAA(KhivaArray arr, int bins)
             {
                 IntPtr reference = arr.Reference;
-                interop.DLLDimensionality.paa(ref reference, ref bins, out IntPtr result);
+			    IntPtr result;
+                interop.DLLDimensionality.paa(ref reference, ref bins, out result);
                 arr.Reference = reference;
                 return (new KhivaArray(result));
             }
@@ -54,7 +55,8 @@ namespace khiva
             public static KhivaArray PIP(KhivaArray arr, int numberIps)
             {
                 IntPtr reference = arr.Reference;
-                interop.DLLDimensionality.pip(ref reference, ref numberIps, out IntPtr result);
+			    IntPtr result;
+                interop.DLLDimensionality.pip(ref reference, ref numberIps, out result);
                 arr.Reference = reference;
                 return (new KhivaArray(result));
             }
@@ -72,7 +74,8 @@ namespace khiva
             public static KhivaArray PLABottomUp(KhivaArray arr, float maxError)
             {
                 IntPtr reference = arr.Reference;
-                interop.DLLDimensionality.pla_bottom_up(ref reference, ref maxError, out IntPtr result);
+			    IntPtr result;
+                interop.DLLDimensionality.pla_bottom_up(ref reference, ref maxError, out result);
                 arr.Reference = reference;
                 return (new KhivaArray(result));
             }
@@ -90,7 +93,8 @@ namespace khiva
             public static KhivaArray PLASlidingWindow(KhivaArray arr, float maxError)
             {
                 IntPtr reference = arr.Reference;
-                interop.DLLDimensionality.pla_sliding_window(ref reference, ref maxError, out IntPtr result);
+			    IntPtr result;
+                interop.DLLDimensionality.pla_sliding_window(ref reference, ref maxError, out result);
                 arr.Reference = reference;
                 return (new KhivaArray(result));
             }
@@ -113,7 +117,8 @@ namespace khiva
             public static KhivaArray RamerDouglasPeucker(KhivaArray points, double epsilon)
             {
                 IntPtr reference = points.Reference;
-                interop.DLLDimensionality.ramer_douglas_peucker(ref reference, ref epsilon, out IntPtr result);
+			    IntPtr result;
+                interop.DLLDimensionality.ramer_douglas_peucker(ref reference, ref epsilon, out result);
                 points.Reference = reference;
                 return (new KhivaArray(result));
             }
@@ -136,7 +141,8 @@ namespace khiva
             public static KhivaArray SAX(KhivaArray arr, int alphabetSize)
             {
                 IntPtr reference = arr.Reference;
-                interop.DLLDimensionality.sax(ref reference, ref alphabetSize, out IntPtr result);
+			    IntPtr result;
+                interop.DLLDimensionality.sax(ref reference, ref alphabetSize, out result);
                 arr.Reference = reference;
                 return (new KhivaArray(result));
             }
@@ -154,7 +160,8 @@ namespace khiva
             public static KhivaArray Visvalingam(KhivaArray points, int numPoints)
             {
                 IntPtr reference = points.Reference;
-                interop.DLLDimensionality.visvalingam(ref reference, ref numPoints, out IntPtr result);
+			    IntPtr result;
+                interop.DLLDimensionality.visvalingam(ref reference, ref numPoints, out result);
                 points.Reference = reference;
                 return (new KhivaArray(result));
             }

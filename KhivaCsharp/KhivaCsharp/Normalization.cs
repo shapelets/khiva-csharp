@@ -32,7 +32,8 @@ namespace khiva
             public static KhivaArray DecimalScalingNorm(KhivaArray tss)
             {
                 IntPtr reference = tss.Reference;
-                interop.DLLNormalization.decimal_scaling_norm(ref reference, out IntPtr result);
+			    IntPtr result;
+                interop.DLLNormalization.decimal_scaling_norm(ref reference, out result);
                 tss.Reference = reference;
                 return (new KhivaArray(result));
             }
@@ -63,7 +64,8 @@ namespace khiva
             public static KhivaArray MaxMinNorm(KhivaArray tss, double high, double low, double epsilon=0.00000001)
             {
                 IntPtr reference = tss.Reference;
-                interop.DLLNormalization.max_min_norm(ref reference, ref high, ref low, ref epsilon, out IntPtr result);
+			    IntPtr result;
+                interop.DLLNormalization.max_min_norm(ref reference, ref high, ref low, ref epsilon, out result);
                 tss.Reference = reference;
                 return (new KhivaArray(result));
             }
@@ -99,7 +101,8 @@ namespace khiva
             public static KhivaArray MeanNorm(KhivaArray tss)
             {
                 IntPtr reference = tss.Reference;
-                interop.DLLNormalization.mean_norm(ref reference, out IntPtr result);
+			    IntPtr result;
+                interop.DLLNormalization.mean_norm(ref reference, out result);
                 tss.Reference = reference;
                 return (new KhivaArray(result));
             }
@@ -131,7 +134,8 @@ namespace khiva
             public static KhivaArray Znorm(KhivaArray tss, double epsilon)
             {
                 IntPtr reference = tss.Reference;
-                interop.DLLNormalization.znorm(ref reference, ref epsilon, out IntPtr result);
+			    IntPtr result;
+                interop.DLLNormalization.znorm(ref reference, ref epsilon, out result);
                 tss.Reference = reference;
                 return (new KhivaArray(result));
             }

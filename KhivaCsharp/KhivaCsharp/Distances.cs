@@ -31,7 +31,8 @@ namespace khiva
             public static KhivaArray DTW(KhivaArray arr)
             {
                 IntPtr reference = arr.Reference;
-                interop.DLLDistances.dtw(ref reference, out IntPtr result);
+			    IntPtr result;
+                interop.DLLDistances.dtw(ref reference, out result);
                 arr.Reference = reference;
                 return (new KhivaArray(result));
             }
@@ -57,7 +58,8 @@ namespace khiva
             public static KhivaArray Euclidean(KhivaArray arr)
             {
                 IntPtr reference = arr.Reference;
-                interop.DLLDistances.euclidean(ref reference, out IntPtr result);
+			    IntPtr result;
+                interop.DLLDistances.euclidean(ref reference, out result);
                 arr.Reference = reference;
                 return (new KhivaArray(result));
             }
@@ -73,7 +75,8 @@ namespace khiva
             public static KhivaArray Hamming(KhivaArray arr)
             {
                 IntPtr reference = arr.Reference;
-                interop.DLLDistances.hamming(ref reference, out IntPtr result);
+			    IntPtr result;
+                interop.DLLDistances.hamming(ref reference, out result);
                 arr.Reference = reference;
                 return (new KhivaArray(result));
             }
@@ -89,7 +92,8 @@ namespace khiva
             public static KhivaArray Manhattan(KhivaArray arr)
             {
                 IntPtr reference = arr.Reference;
-                interop.DLLDistances.manhattan(ref reference, out IntPtr result);
+			    IntPtr result;
+                interop.DLLDistances.manhattan(ref reference, out result);
                 arr.Reference = reference;
                 return (new KhivaArray(result));
             }
@@ -106,7 +110,8 @@ namespace khiva
             public static KhivaArray SBD(KhivaArray arr)
             {
                 IntPtr reference = arr.Reference;
-                interop.DLLDistances.sbd(ref reference, out IntPtr result);
+			    IntPtr result;
+                interop.DLLDistances.sbd(ref reference, out result);
                 arr.Reference = reference;
                 return (new KhivaArray(result));
             }
@@ -123,7 +128,8 @@ namespace khiva
             public static KhivaArray SquaredEuclidean(KhivaArray arr)
             {
                 IntPtr reference = arr.Reference;
-                interop.DLLDistances.squared_euclidean(ref reference, out IntPtr result);
+			    IntPtr result;
+                interop.DLLDistances.squared_euclidean(ref reference, out result);
                 arr.Reference = reference;
                 return (new KhivaArray(result));
             }

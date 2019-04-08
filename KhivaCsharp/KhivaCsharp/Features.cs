@@ -30,7 +30,8 @@ namespace khiva.features
         public static KhivaArray AbsEnergy(KhivaArray array)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.abs_energy(ref reference, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.abs_energy(ref reference, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -46,7 +47,8 @@ namespace khiva.features
         {
 
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.absolute_sum_of_changes( ref reference, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.absolute_sum_of_changes( ref reference, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -72,7 +74,8 @@ namespace khiva.features
         public static KhivaArray AggregatedAutocorrelation(KhivaArray array, int aggregationFunction)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.aggregated_autocorrelation(ref reference, ref aggregationFunction, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.aggregated_autocorrelation(ref reference, ref aggregationFunction, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -103,10 +106,11 @@ namespace khiva.features
         public static ValueTuple<KhivaArray, KhivaArray, KhivaArray, KhivaArray, KhivaArray> AggregatedLinearTrend(KhivaArray array, long chunkSize, int aggregationFunction)
         {
             IntPtr reference = array.Reference;
+            IntPtr slope; IntPtr intercept; IntPtr rvalue; IntPtr pvalue; IntPtr stderrest;
             interop.DLLFeatures.aggregated_linear_trend(ref reference,
                                                         ref chunkSize,
                                                         ref aggregationFunction,
-                                                        out IntPtr slope, out IntPtr intercept, out IntPtr rvalue, out IntPtr pvalue, out IntPtr stderrest);
+                                                        out slope, out intercept, out rvalue, out pvalue, out stderrest);
             array.Reference = reference;
             var tuple = (slopeArr: new KhivaArray(slope),
                     interceptArr: new KhivaArray(intercept),
@@ -132,7 +136,8 @@ namespace khiva.features
         public static KhivaArray ApproximateEntropy(KhivaArray array, int m, float r)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.approximate_entropy(ref reference, ref m, ref r,  out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.approximate_entropy(ref reference, ref m, ref r,  out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -150,7 +155,8 @@ namespace khiva.features
         {
             IntPtr referenceXss = xss.Reference;
             IntPtr referenceYss = yss.Reference;
-            interop.DLLFeatures.cross_covariance(ref referenceXss, ref referenceYss, ref unbiased, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.cross_covariance(ref referenceXss, ref referenceYss, ref unbiased, out result);
             xss.Reference = referenceXss;
             yss.Reference = referenceYss;
             return (new KhivaArray(result));
@@ -166,7 +172,8 @@ namespace khiva.features
         public static KhivaArray AutoCovariance(KhivaArray array, bool unbiased = false)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.auto_covariance(ref reference, ref unbiased, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.auto_covariance(ref reference, ref unbiased, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -184,7 +191,8 @@ namespace khiva.features
         {
             IntPtr referenceXss = xss.Reference;
             IntPtr referenceYss = yss.Reference;
-            interop.DLLFeatures.cross_correlation(ref referenceXss, ref referenceYss, ref unbiased, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.cross_correlation(ref referenceXss, ref referenceYss, ref unbiased, out result);
             xss.Reference = referenceXss;
             yss.Reference = referenceYss;
             return (new KhivaArray(result));
@@ -201,7 +209,8 @@ namespace khiva.features
         public static KhivaArray AutoCorrelation(KhivaArray array, long max_lag, bool unbiased)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.auto_correlation(ref reference, ref max_lag, ref unbiased, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.auto_correlation(ref reference, ref max_lag, ref unbiased, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -216,7 +225,8 @@ namespace khiva.features
         public static KhivaArray BinnedEntropy(KhivaArray array, int max_bins)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.binned_entropy(ref reference, ref max_bins, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.binned_entropy(ref reference, ref max_bins, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -231,7 +241,8 @@ namespace khiva.features
         public static KhivaArray C3(KhivaArray array, long lag)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.c3(ref reference, ref lag, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.c3(ref reference, ref lag, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
 
@@ -248,7 +259,8 @@ namespace khiva.features
         public static KhivaArray CidCe(KhivaArray array, bool zNormalize)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.cid_ce(ref reference, ref zNormalize, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.cid_ce(ref reference, ref zNormalize, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -262,7 +274,8 @@ namespace khiva.features
         public static KhivaArray CountAboveMean(KhivaArray array)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.count_above_mean(ref reference, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.count_above_mean(ref reference, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -276,7 +289,8 @@ namespace khiva.features
         public static KhivaArray CountBelowMean(KhivaArray array)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.count_below_mean(ref reference, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.count_below_mean(ref reference, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -306,7 +320,8 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             IntPtr widthReference = width.Reference;
-            interop.DLLFeatures.cwt_coefficients(ref reference, ref widthReference, ref coeff, ref w, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.cwt_coefficients(ref reference, ref widthReference, ref coeff, ref w, out result);
             array.Reference = reference;
             width.Reference = widthReference;
             return (new KhivaArray(result));
@@ -324,7 +339,8 @@ namespace khiva.features
         public static KhivaArray EnergyRatioByChunks(KhivaArray array, long num_segments, long segment_focus)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.energy_ratio_by_chunks(ref reference, ref num_segments, ref segment_focus, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.energy_ratio_by_chunks(ref reference, ref num_segments, ref segment_focus, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -338,7 +354,8 @@ namespace khiva.features
         public static KhivaArray FftAggregated(KhivaArray array)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.fft_aggregated(ref reference, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.fft_aggregated(ref reference, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -357,8 +374,9 @@ namespace khiva.features
         public static ValueTuple<KhivaArray, KhivaArray, KhivaArray, KhivaArray> FftCoefficient(KhivaArray array, long coefficient)
         {
             IntPtr reference = array.Reference;
+            IntPtr real; IntPtr imag; IntPtr absolute; IntPtr angle;
             interop.DLLFeatures.fft_coefficient(ref reference, ref coefficient,
-                                                out IntPtr real, out IntPtr imag, out IntPtr absolute, out IntPtr angle);
+                                                out real, out imag, out absolute, out angle);
             array.Reference = reference;
             var tuple = (realArr: new KhivaArray(real),
                         imagArr: new KhivaArray(imag),
@@ -376,7 +394,8 @@ namespace khiva.features
         public static KhivaArray FirstLocationOfMaximum(KhivaArray array)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.first_location_of_maximum(ref reference, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.first_location_of_maximum(ref reference, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -390,7 +409,8 @@ namespace khiva.features
         public static KhivaArray FirstLocationOfMinimum(KhivaArray array)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.first_location_of_minimum(ref reference, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.first_location_of_minimum(ref reference, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -413,7 +433,8 @@ namespace khiva.features
         public static KhivaArray FriedrichCoefficients(KhivaArray array, int m, float r)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.friedrich_coefficients(ref reference, ref m, ref r, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.friedrich_coefficients(ref reference, ref m, ref r, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -427,7 +448,8 @@ namespace khiva.features
         public static KhivaArray HasDuplicates(KhivaArray array)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.has_duplicates(ref reference, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.has_duplicates(ref reference, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -441,7 +463,8 @@ namespace khiva.features
         public static KhivaArray HasDuplicateMax(KhivaArray array)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.has_duplicate_max(ref reference, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.has_duplicate_max(ref reference, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -455,7 +478,8 @@ namespace khiva.features
         public static KhivaArray HasDuplicateMin(KhivaArray array)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.has_duplicate_min(ref reference, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.has_duplicate_min(ref reference, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -470,7 +494,8 @@ namespace khiva.features
         public static KhivaArray IndexMassQuantile(KhivaArray array, float q)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.index_mass_quantile(ref reference, ref q, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.index_mass_quantile(ref reference, ref q, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -484,7 +509,8 @@ namespace khiva.features
         public static KhivaArray Kurtosis(KhivaArray array)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.kurtosis(ref reference, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.kurtosis(ref reference, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -499,7 +525,8 @@ namespace khiva.features
         public static KhivaArray LargeStandardDeviation(KhivaArray array, float r)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.large_standard_deviation(ref reference, ref r, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.large_standard_deviation(ref reference, ref r, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -513,7 +540,8 @@ namespace khiva.features
         public static KhivaArray LastLocationOfMaximum(KhivaArray array)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.last_location_of_maximum(ref reference, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.last_location_of_maximum(ref reference, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -527,7 +555,8 @@ namespace khiva.features
         public static KhivaArray LastLocationOfMinimum(KhivaArray array)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.last_location_of_minimum(ref reference, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.last_location_of_minimum(ref reference, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -541,7 +570,8 @@ namespace khiva.features
         public static KhivaArray Length(KhivaArray array)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.length(ref reference, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.length(ref reference, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -560,8 +590,9 @@ namespace khiva.features
         public static ValueTuple<KhivaArray, KhivaArray, KhivaArray, KhivaArray, KhivaArray> LinearTrend(KhivaArray array)
         {
             IntPtr reference = array.Reference;
+            IntPtr pvalue; IntPtr rvalue; IntPtr intercept; IntPtr slope; IntPtr stdrr;
             interop.DLLFeatures.linear_trend(ref reference,
-                                        out IntPtr pvalue, out IntPtr rvalue, out IntPtr intercept, out IntPtr slope, out IntPtr stdrr);
+                                        out pvalue, out rvalue, out intercept, out slope, out stdrr);
             array.Reference = reference;
             var tuple = (pvalueArr: new KhivaArray(pvalue),
                         rvalueArr: new KhivaArray(rvalue),
@@ -580,7 +611,8 @@ namespace khiva.features
         public static KhivaArray LocalMaximals(KhivaArray array)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.local_maximals(ref reference, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.local_maximals(ref reference, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -594,7 +626,8 @@ namespace khiva.features
         public static KhivaArray LongestStrikeAboveMean(KhivaArray array)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.longest_strike_above_mean(ref reference, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.longest_strike_above_mean(ref reference, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -608,7 +641,8 @@ namespace khiva.features
         public static KhivaArray LongestStrikeBelowMean(KhivaArray array)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.longest_strike_below_mean(ref reference, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.longest_strike_below_mean(ref reference, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -630,7 +664,8 @@ namespace khiva.features
         public static KhivaArray MaxLangevinFixedPoint(KhivaArray array, int m, float r)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.max_langevin_fixed_point(ref reference, ref m, ref r, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.max_langevin_fixed_point(ref reference, ref m, ref r, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -644,7 +679,8 @@ namespace khiva.features
         public static KhivaArray Maximum(KhivaArray array)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.maximum(ref reference, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.maximum(ref reference, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -658,7 +694,8 @@ namespace khiva.features
         public static KhivaArray Mean(KhivaArray array)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.mean(ref reference, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.mean(ref reference, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -672,7 +709,8 @@ namespace khiva.features
         public static KhivaArray MeanAbsoluteChange(KhivaArray array)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.mean_absolute_change(ref reference, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.mean_absolute_change(ref reference, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -686,7 +724,8 @@ namespace khiva.features
         public static KhivaArray MeanChange(KhivaArray array)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.mean_change(ref reference, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.mean_change(ref reference, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -700,7 +739,8 @@ namespace khiva.features
         public static KhivaArray MeanSecondDerivativeCentral(KhivaArray array)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.mean_second_derivative_central(ref reference, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.mean_second_derivative_central(ref reference, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -714,7 +754,8 @@ namespace khiva.features
         public static KhivaArray Median(KhivaArray array)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.median(ref reference, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.median(ref reference, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -728,7 +769,8 @@ namespace khiva.features
         public static KhivaArray Minimum(KhivaArray array)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.minimum(ref reference, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.minimum(ref reference, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -745,7 +787,8 @@ namespace khiva.features
         public static KhivaArray NumberCrossingM(KhivaArray array, int m)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.number_crossing_m(ref reference, ref m, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.number_crossing_m(ref reference, ref m, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -762,7 +805,8 @@ namespace khiva.features
         public static KhivaArray NumberCwtPeaks(KhivaArray array, int max_w)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.number_cwt_peaks(ref reference, ref max_w, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.number_cwt_peaks(ref reference, ref max_w, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -779,7 +823,8 @@ namespace khiva.features
         public static KhivaArray NumberPeaks(KhivaArray array, int n)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.number_peaks(ref reference, ref n, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.number_peaks(ref reference, ref n, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -813,7 +858,8 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             IntPtr lagsReference = lags.Reference;
-            interop.DLLFeatures.partial_autocorrelation(ref reference, ref lagsReference, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.partial_autocorrelation(ref reference, ref lagsReference, out result);
             array.Reference = reference;
             lags.Reference = lagsReference;
             return (new KhivaArray(result));
@@ -834,7 +880,8 @@ namespace khiva.features
         public static KhivaArray PercentageOfReoccurringDatapointsToAllDatapoints(KhivaArray array, bool is_sorted=false)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.percentage_of_reoccurring_datapoints_to_all_datapoints(ref reference, ref is_sorted, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.percentage_of_reoccurring_datapoints_to_all_datapoints(ref reference, ref is_sorted, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -854,7 +901,8 @@ namespace khiva.features
         public static KhivaArray PercentageOfReoccurringValuesToAllValues(KhivaArray array, bool is_sorted=false)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.percentage_of_reoccurring_values_to_all_values(ref reference, ref is_sorted, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.percentage_of_reoccurring_values_to_all_values(ref reference, ref is_sorted, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -872,7 +920,8 @@ namespace khiva.features
         {
             IntPtr reference = array.Reference;
             IntPtr qReference = q.Reference;
-            interop.DLLFeatures.quantile(ref reference, ref qReference, ref precision, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.quantile(ref reference, ref qReference, ref precision, out result);
             array.Reference = reference;
             q.Reference = qReference;
             return (new KhivaArray(result));
@@ -889,7 +938,8 @@ namespace khiva.features
         public static KhivaArray RangeCount(KhivaArray array, float min, float max)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.range_count(ref reference, ref min, ref max, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.range_count(ref reference, ref min, ref max, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -906,7 +956,8 @@ namespace khiva.features
         public static KhivaArray RatioBeyondRSigma(KhivaArray array, float r)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.ratio_beyond_r_sigma(ref reference, ref r, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.ratio_beyond_r_sigma(ref reference, ref r, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -925,7 +976,8 @@ namespace khiva.features
         public static KhivaArray RatioValueNumberToTimeSeriesLength(KhivaArray array)
         {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.ratio_value_number_to_time_series_length(ref reference, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.ratio_value_number_to_time_series_length(ref reference, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -947,7 +999,8 @@ namespace khiva.features
     public static KhivaArray SampleEntropy(KhivaArray array)
        {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.sample_entropy(ref reference, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.sample_entropy(ref reference, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -963,7 +1016,8 @@ namespace khiva.features
         public static KhivaArray Skewness(KhivaArray array)
        {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.skewness(ref reference, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.skewness(ref reference, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -987,7 +1041,8 @@ namespace khiva.features
         public static KhivaArray SpktWelchDensity(KhivaArray array, int coeff)
        {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.spkt_welch_density(ref reference, ref coeff, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.spkt_welch_density(ref reference, ref coeff, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -1001,7 +1056,8 @@ namespace khiva.features
         public static KhivaArray StandardDeviation(KhivaArray array)
        {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.standard_deviation(ref reference, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.standard_deviation(ref reference, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -1016,7 +1072,8 @@ namespace khiva.features
         public static KhivaArray SumOfReoccurringDatapoints(KhivaArray array, bool is_sorted = false)
        {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.sum_of_reoccurring_datapoints(ref reference, ref is_sorted, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.sum_of_reoccurring_datapoints(ref reference, ref is_sorted, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -1031,7 +1088,8 @@ namespace khiva.features
         public static KhivaArray SumOfReoccurringValues(KhivaArray array, bool is_sorted = false)
        {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.sum_of_reoccurring_values(ref reference, ref is_sorted, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.sum_of_reoccurring_values(ref reference, ref is_sorted, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -1045,7 +1103,8 @@ namespace khiva.features
         public static KhivaArray SumValues(KhivaArray array)
        {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.sum_values(ref reference, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.sum_values(ref reference, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -1063,7 +1122,8 @@ namespace khiva.features
         public static KhivaArray SymmetryLooking(KhivaArray array, float r)
        {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.symmetry_looking(ref reference, ref r, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.symmetry_looking(ref reference, ref r, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -1090,7 +1150,8 @@ namespace khiva.features
         public static KhivaArray TimeReversalAsymmetryStatistic(KhivaArray array, int lag)
        {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.time_reversal_asymmetry_statistic(ref reference, ref lag, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.time_reversal_asymmetry_statistic(ref reference, ref lag, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -1105,7 +1166,8 @@ namespace khiva.features
         public static KhivaArray ValueCount(KhivaArray array, float v)
        {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.value_count(ref reference, ref v, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.value_count(ref reference, ref v, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -1119,7 +1181,8 @@ namespace khiva.features
         public static KhivaArray Variance(KhivaArray array)
        {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.variance(ref reference, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.variance(ref reference, out result);
             array.Reference = reference;
             return (new KhivaArray(result));
         }
@@ -1134,7 +1197,8 @@ namespace khiva.features
         public static KhivaArray VarianceLargerThanStandardDeviation(KhivaArray array)
        {
             IntPtr reference = array.Reference;
-            interop.DLLFeatures.variance_larger_than_standard_deviation(ref reference, out IntPtr result);
+			IntPtr result;
+            interop.DLLFeatures.variance_larger_than_standard_deviation(ref reference, out result);
             array.Reference = reference;
             return (new KhivaArray(result));}
        

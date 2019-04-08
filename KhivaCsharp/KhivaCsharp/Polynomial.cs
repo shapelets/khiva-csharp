@@ -33,7 +33,8 @@ namespace khiva
             {
                 IntPtr xReference = x.Reference;
                 IntPtr yReference = y.Reference;
-                interop.DLLPolynomial.polyfit(ref xReference, ref yReference, ref deg, out IntPtr result);
+			    IntPtr result;
+                interop.DLLPolynomial.polyfit(ref xReference, ref yReference, ref deg, out result);
                 x.Reference = xReference;
                 y.Reference = yReference;
                 return (new KhivaArray(result));
@@ -51,7 +52,8 @@ namespace khiva
             public static KhivaArray Roots(KhivaArray p)
             {
                 IntPtr reference = p.Reference;
-                interop.DLLPolynomial.roots(ref reference, out IntPtr result);
+			    IntPtr result;
+                interop.DLLPolynomial.roots(ref reference, out result);
                 p.Reference = reference;
                 return (new KhivaArray(result));
             }

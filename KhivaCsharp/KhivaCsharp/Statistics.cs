@@ -31,7 +31,8 @@ namespace khiva
             public static KhivaArray CovarianceStatistics(KhivaArray tss, bool unbiased)
             {
                 IntPtr reference = tss.Reference;
-                interop.DLLStatistics.covariance_statistics(ref reference, ref unbiased, out IntPtr result);
+			    IntPtr result;
+                interop.DLLStatistics.covariance_statistics(ref reference, ref unbiased, out result);
                 tss.Reference = reference;
                 return (new KhivaArray(result));
             }
@@ -45,7 +46,8 @@ namespace khiva
             public static KhivaArray KurtosisStatistics(KhivaArray tss)
             {
                 IntPtr reference = tss.Reference;
-                interop.DLLStatistics.kurtosis_statistics(ref reference, out IntPtr result);
+			    IntPtr result;
+                interop.DLLStatistics.kurtosis_statistics(ref reference, out result);
                 tss.Reference = reference;
                 return (new KhivaArray(result));
             }
@@ -83,7 +85,8 @@ namespace khiva
             public static KhivaArray LjungBox(KhivaArray tss, long lags)
             {
                 IntPtr reference = tss.Reference;
-                interop.DLLStatistics.ljung_box(ref reference, ref lags, out IntPtr result);
+			    IntPtr result;
+                interop.DLLStatistics.ljung_box(ref reference, ref lags, out result);
                 tss.Reference = reference;
                 return (new KhivaArray(result));
             }
@@ -98,7 +101,8 @@ namespace khiva
             public static KhivaArray MomentStatistics(KhivaArray tss, int k)
             {
                 IntPtr reference = tss.Reference;
-                interop.DLLStatistics.moment_statistics(ref reference, ref k, out IntPtr result);
+			    IntPtr result;
+                interop.DLLStatistics.moment_statistics(ref reference, ref k, out result);
                 tss.Reference = reference;
                 return (new KhivaArray(result));
             }
@@ -115,7 +119,8 @@ namespace khiva
             {
                 IntPtr reference = tss.Reference;
                 IntPtr qReference = q.Reference;
-                interop.DLLStatistics.quantile_statistics(ref reference, ref qReference, ref precision, out IntPtr result);
+			    IntPtr result;
+                interop.DLLStatistics.quantile_statistics(ref reference, ref qReference, ref precision, out result);
                 tss.Reference = reference;
                 q.Reference = qReference;
                 return (new KhivaArray(result));
@@ -133,7 +138,8 @@ namespace khiva
             public static KhivaArray QuantilesCutStatistics(KhivaArray tss, float quantiles, float precision = 1e-8F)
             {
                 IntPtr reference = tss.Reference;
-                interop.DLLStatistics.quantiles_cut_statistics(ref reference, ref quantiles, ref precision, out IntPtr result);
+			    IntPtr result;
+                interop.DLLStatistics.quantiles_cut_statistics(ref reference, ref quantiles, ref precision, out result);
                 tss.Reference = reference;
                 return (new KhivaArray(result));
             }
@@ -147,7 +153,8 @@ namespace khiva
             public static KhivaArray SampleStdevStatistics(KhivaArray tss)
             {
                 IntPtr reference = tss.Reference;
-                interop.DLLStatistics.sample_stdev_statistics(ref reference, out IntPtr result);
+			    IntPtr result;
+                interop.DLLStatistics.sample_stdev_statistics(ref reference, out result);
                 tss.Reference = reference;
                 return (new KhivaArray(result));
             }
@@ -161,7 +168,8 @@ namespace khiva
             public static KhivaArray SkewnessStatistics(KhivaArray tss)
             {
                 IntPtr reference = tss.Reference;
-                interop.DLLStatistics.skewness_statistics(ref reference, out IntPtr result);
+			    IntPtr result;
+                interop.DLLStatistics.skewness_statistics(ref reference, out result);
                 tss.Reference = reference;
                 return (new KhivaArray(result));
             }

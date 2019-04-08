@@ -45,8 +45,9 @@ namespace khiva
             public static KhivaArray GroupBy(KhivaArray array, int aggregation_function, int n_columns_key=1, int n_columns_value=1)
             {
                 IntPtr reference = array.Reference;
+                IntPtr result;
                 interop.DLLRegularization.group_by(ref reference, ref aggregation_function, ref n_columns_key, ref n_columns_value,
-                                                    out IntPtr result);
+                                                    out result);
                 array.Reference = reference;
                 return (new KhivaArray(result));
             }
