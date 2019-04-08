@@ -67,7 +67,12 @@ namespace khiva.features.tests
             float[] tss = new float[] { 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5 };
             using (KhivaArray arr = new KhivaArray(tss))
             {
-                var (slopeArr, interceptArr, rvalueArr, pValueArr, stderrestArr) = Features.AggregatedLinearTrend(arr, 3, 0);
+                Tuple<KhivaArray, KhivaArray , KhivaArray , KhivaArray , KhivaArray> tuple = Features.AggregatedLinearTrend(arr, 3, 0);
+                var slopeArr = tuple.Item1;
+                var interceptArr = tuple.Item2;
+                var rvalueArr = tuple.Item3;
+                var pValueArr = tuple.Item4;
+                var stderrestArr = tuple.Item5;
                 using (slopeArr)
                 using (interceptArr)
                 using (rvalueArr)
@@ -314,7 +319,11 @@ namespace khiva.features.tests
             double[,] tss = { { 0, 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10, 11 } };
             using (KhivaArray arr = new KhivaArray(tss))
             {
-                var (realArr, imagArr, absoluteArr, angleArr) = Features.FftCoefficient(arr, 0);
+                Tuple<KhivaArray, KhivaArray, KhivaArray, KhivaArray> tuple = Features.FftCoefficient(arr, 0);
+                var realArr = tuple.Item1;
+                var imagArr = tuple.Item2;
+                var absoluteArr = tuple.Item3;
+                var angleArr = tuple.Item4;
                 using (realArr)
                 using (imagArr)
                 using (absoluteArr)
@@ -511,7 +520,12 @@ namespace khiva.features.tests
                               { 2, 4, 1, 2, 5, 3 } };
             using(KhivaArray arr = new KhivaArray(tss))
             {
-                var (pvalueArr, rvalueArr, interceptArr, slopeArr, stderrArr) = Features.LinearTrend(arr);
+                Tuple<KhivaArray, KhivaArray, KhivaArray, KhivaArray, KhivaArray> tuple = Features.LinearTrend(arr);
+                var pvalueArr = tuple.Item1;
+                var rvalueArr = tuple.Item2;
+                var interceptArr = tuple.Item3;
+                var slopeArr = tuple.Item4;
+                var stderrArr = tuple.Item5;
                 using (pvalueArr)
                 using (rvalueArr)
                 using (interceptArr)

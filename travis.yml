@@ -11,6 +11,12 @@ matrix:
 	include:
 		- dotnet: 4.7
 		  mono: none
+		cache:
+          directories:
+            - ${TRAVIS_BUILD_DIR}/installers
+            - ${HOME}/.m2
+            - ${HOME}/.conan
+            - ${TRAVIS_BUILD_DIR}/cmake
 		- mono: latest
 		cache:
           directories:

@@ -31,7 +31,9 @@ namespace khiva.matrix.tests
                              { 11, 10, 10, 11, 10, 11, 11, 10, 11, 11, 10, 10, 11, 10 } };
             using (KhivaArray arr = new KhivaArray(tss))
             {
-                var (p, i) = Matrix.StompSelfJoin(arr, 3);
+                Tuple<KhivaArray, KhivaArray> tuple = Matrix.StompSelfJoin(arr, 3);
+                var p = tuple.Item1;
+                var i = tuple.Item2;
                 using (p)
                 using (i)
                 {
@@ -56,7 +58,9 @@ namespace khiva.matrix.tests
                                { 10, 11, 10, 11, 10, 11, 10, 11 } };
             using(KhivaArray arr = new KhivaArray(tss), arr2 = new KhivaArray(tss2))
             {
-                var (pArr, iArr) = Matrix.Stomp(arr, arr2, 3);
+                Tuple<KhivaArray, KhivaArray> tuple = Matrix.Stomp(arr, arr2, 3);
+                var pArr = tuple.Item1;
+                var iArr = tuple.Item2;
                 using (pArr)
                 using (iArr)
                 {
@@ -86,11 +90,16 @@ namespace khiva.matrix.tests
             double[] tss2 = { 9, 10.1, 10.2, 10.1, 10.2, 10.1, 10.2, 10.1, 10.2, 10.1, 10.2, 10.1, 9 };
             using (KhivaArray arr = new KhivaArray(tss), arr2 = new KhivaArray(tss2))
             {
-                var (pArr, iArr) = Matrix.Stomp(arr, arr2, 3);
+                Tuple<KhivaArray, KhivaArray> tuple = Matrix.Stomp(arr, arr2, 3);
+                var pArr = tuple.Item1;
+                var iArr = tuple.Item2;
                 using (pArr)
                 using (iArr)
                 {
-                    var (distancesArr, indicesArr, subsequenceArr) = Matrix.FindbestNDiscords(pArr, iArr, 3, 2);
+                    Tuple<KhivaArray, KhivaArray, KhivaArray> tuple2 = Matrix.FindbestNDiscords(pArr, iArr, 3, 2);
+                    var distancesArr = tuple2.Item1;
+                    var indicesArr = tuple2.Item2;
+                    var subsequenceArr = tuple2.Item3;
                     using (distancesArr)
                     using (indicesArr)
                     using (subsequenceArr)
@@ -119,11 +128,16 @@ namespace khiva.matrix.tests
                               { 9, 10.1, 10.2, 10.1, 10.2, 10.1, 10.2, 10.1, 10.2, 10.1, 10.2, 10.1, 9 }};
             using (KhivaArray arr = new KhivaArray(tss), arr2 = new KhivaArray(tss2))
             {
-                var (pArr, iArr) = Matrix.Stomp(arr, arr2, 3);
+                Tuple<KhivaArray, KhivaArray> tuple = Matrix.Stomp(arr, arr2, 3);
+                var pArr = tuple.Item1;
+                var iArr = tuple.Item2;
                 using (pArr)
                 using (iArr)
                 {
-                    var (distancesArr, indicesArr, subsequenceArr) = Matrix.FindbestNDiscords(pArr, iArr, 3, 2);
+                    Tuple<KhivaArray, KhivaArray, KhivaArray> tuple2 = Matrix.FindbestNDiscords(pArr, iArr, 3, 2);
+                    var distancesArr = tuple2.Item1;
+                    var indicesArr = tuple2.Item2;
+                    var subsequenceArr = tuple2.Item3;
                     using (distancesArr)
                     using (indicesArr)
                     using (subsequenceArr)
@@ -149,11 +163,16 @@ namespace khiva.matrix.tests
             float[] tss = { 10, 11, 10, 10, 11, 10 };
             using (KhivaArray arr = new KhivaArray(tss))
             {
-                var (pArr, iArr) = Matrix.StompSelfJoin(arr, 3);
+                Tuple<KhivaArray, KhivaArray> tuple = Matrix.StompSelfJoin(arr, 3);
+                var pArr = tuple.Item1;
+                var iArr = tuple.Item2;
                 using (pArr)
                 using (iArr)
                 {
-                    var (distancesArr, indicesArr, subsequenceArr) = Matrix.FindbestNDiscords(pArr, iArr, 3, 1, true);
+                    Tuple<KhivaArray, KhivaArray, KhivaArray> tuple2 = Matrix.FindbestNDiscords(pArr, iArr, 3, 1, true);
+                    var distancesArr = tuple2.Item1;
+                    var indicesArr = tuple2.Item2;
+                    var subsequenceArr = tuple2.Item3;
                     using (distancesArr)
                     using (indicesArr)
                     using (subsequenceArr)
@@ -176,11 +195,16 @@ namespace khiva.matrix.tests
             float[] tss = { 10, 11, 10, 11, 10, 11, 10, 11, 10, 11, 10, 11, 10, 9.999F, 9.998F };
             using (KhivaArray arr = new KhivaArray(tss))
             {
-                var (pArr, iArr) = Matrix.StompSelfJoin(arr, 3);
+                Tuple<KhivaArray, KhivaArray> tuple = Matrix.StompSelfJoin(arr, 3);
+                var pArr = tuple.Item1;
+                var iArr = tuple.Item2;
                 using (pArr)
                 using (iArr)
                 {
-                    var (distancesArr, indicesArr, subsequenceArr) = Matrix.FindbestNDiscords(pArr, iArr, 3, 2, true);
+                    Tuple<KhivaArray, KhivaArray, KhivaArray> tuple2 = Matrix.FindbestNDiscords(pArr, iArr, 3, 2, true);
+                    var distancesArr = tuple2.Item1;
+                    var indicesArr = tuple2.Item2;
+                    var subsequenceArr = tuple2.Item3;
                     using (distancesArr)
                     using (indicesArr)
                     using (subsequenceArr)
@@ -208,11 +232,16 @@ namespace khiva.matrix.tests
             float[] tss2 = { 10, 11, 10, 9 };
             using (KhivaArray arr = new KhivaArray(tss), arr2 = new KhivaArray(tss2))
             {
-                var (pArr, iArr) = Matrix.Stomp(arr, arr2, 3);
+                Tuple<KhivaArray, KhivaArray> tuple = Matrix.Stomp(arr, arr2, 3);
+                var pArr = tuple.Item1;
+                var iArr = tuple.Item2;
                 using (pArr)
                 using (iArr)
                 {
-                    var (distancesArr, indicesArr, subsequenceArr) = Matrix.FindbestNMotifs(pArr, iArr, 3, 1);
+                    Tuple<KhivaArray, KhivaArray, KhivaArray> tuple2 = Matrix.FindbestNMotifs(pArr, iArr, 3, 1);
+                    var distancesArr = tuple2.Item1;
+                    var indicesArr = tuple2.Item2;
+                    var subsequenceArr = tuple2.Item3;
                     using (distancesArr)
                     using (indicesArr)
                     using (subsequenceArr)
@@ -237,11 +266,16 @@ namespace khiva.matrix.tests
             float[,] tss2 = { { 10, 11, 10, 9 }, { 10, 11, 10, 9 } };
             using (KhivaArray arr = new KhivaArray(tss), arr2 = new KhivaArray(tss2))
             {
-                var (pArr, iArr) = Matrix.Stomp(arr, arr2, 3);
+                Tuple<KhivaArray, KhivaArray> tuple = Matrix.Stomp(arr, arr2, 3);
+                var pArr = tuple.Item1;
+                var iArr = tuple.Item2;
                 using (pArr)
                 using (iArr)
                 {
-                    var (distancesArr, indicesArr, subsequenceArr) = Matrix.FindbestNMotifs(pArr, iArr, 3, 1);
+                    Tuple<KhivaArray, KhivaArray, KhivaArray> tuple2 = Matrix.FindbestNMotifs(pArr, iArr, 3, 1);
+                    var distancesArr = tuple2.Item1;
+                    var indicesArr = tuple2.Item2;
+                    var subsequenceArr = tuple2.Item3;
                     using (distancesArr)
                     using (indicesArr)
                     using (subsequenceArr)
@@ -261,11 +295,16 @@ namespace khiva.matrix.tests
             float[] tss = { 10.1F, 11, 10.2F, 10.15F, 10.775F, 10.1F, 11, 10.2F };
             using (KhivaArray arr = new KhivaArray(tss))
             {
-                var (pArr, iArr) = Matrix.StompSelfJoin(arr, 3);
+                Tuple<KhivaArray, KhivaArray> tuple = Matrix.StompSelfJoin(arr, 3);
+                var pArr = tuple.Item1;
+                var iArr = tuple.Item2;
                 using (pArr)
                 using (iArr)
                 {
-                    var (distancesArr, indicesArr, subsequenceArr) = Matrix.FindbestNMotifs(pArr, iArr, 3, 2, true);
+                    Tuple<KhivaArray, KhivaArray, KhivaArray> tuple2 = Matrix.FindbestNMotifs(pArr, iArr, 3, 2, true);
+                    var distancesArr = tuple2.Item1;
+                    var indicesArr = tuple2.Item2;
+                    var subsequenceArr = tuple2.Item3;
                     using (distancesArr)
                     using (indicesArr)
                     using (subsequenceArr)
@@ -285,11 +324,16 @@ namespace khiva.matrix.tests
             float[] tss = { 10.1F, 11, 10.1F, 10.15F, 10.075F, 10.1F, 11, 10.1F, 10.15F };
             using (KhivaArray arr = new KhivaArray(tss))
             {
-                var (pArr, iArr) = Matrix.StompSelfJoin(arr, 3);
+                Tuple<KhivaArray, KhivaArray> tuple = Matrix.StompSelfJoin(arr, 3);
+                var pArr = tuple.Item1;
+                var iArr = tuple.Item2;
                 using (pArr)
                 using (iArr)
                 {
-                    var (distancesArr, indicesArr, subsequenceArr) = Matrix.FindbestNMotifs(pArr, iArr, 3, 2);
+                    Tuple<KhivaArray, KhivaArray, KhivaArray> tuple2 = Matrix.FindbestNMotifs(pArr, iArr, 3, 2);
+                    var distancesArr = tuple2.Item1;
+                    var indicesArr = tuple2.Item2;
+                    var subsequenceArr = tuple2.Item3;
                     using (distancesArr)
                     using (indicesArr)
                     using (subsequenceArr)

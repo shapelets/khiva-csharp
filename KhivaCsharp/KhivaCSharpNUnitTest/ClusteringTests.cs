@@ -40,7 +40,9 @@ namespace khiva.clustering.tests
                                             };
             using (KhivaArray arr = new KhivaArray(tss))
             {
-                var (centroidsArr, labelsArr) = clustering.Clustering.KMeans(arr, 3);
+                Tuple<KhivaArray, KhivaArray> tuple = clustering.Clustering.KMeans(arr, 3);
+                var centroidsArr = tuple.Item1;
+                var labelsArr = tuple.Item2;
                 using (centroidsArr)
                 {
                     using (labelsArr)
@@ -75,7 +77,9 @@ namespace khiva.clustering.tests
             uint[] expected_l = new uint[] { 0, 1, 2, 0, 0 };
             using (KhivaArray arr = new KhivaArray(tss))
             {
-                var (centroidsArr, labelsArr) = clustering.Clustering.KShape(arr, 3);
+                Tuple<KhivaArray, KhivaArray> tuple = clustering.Clustering.KShape(arr, 3);
+                var centroidsArr = tuple.Item1;
+                var labelsArr = tuple.Item2;
                 using (centroidsArr)
                 using (labelsArr)
                 {

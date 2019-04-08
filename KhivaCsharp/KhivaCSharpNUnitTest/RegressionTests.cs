@@ -34,7 +34,12 @@ namespace khiva.regression.tests
                               0.51146167, 0.06880307, 0.39414268, 0.98172767, 0.30490851 };
             using(KhivaArray arr = new KhivaArray(tss), arr2 = new KhivaArray(tss2))
             {
-                var (slopeArr, interceptArr, rvalueArr, pvalueArr, stderrestArr) = Regression.Linear(arr, arr2);
+                Tuple<KhivaArray, KhivaArray, KhivaArray, KhivaArray, KhivaArray> tuple = Regression.Linear(arr, arr2);
+                var slopeArr = tuple.Item1;
+                var interceptArr = tuple.Item2;
+                var rvalueArr = tuple.Item3;
+                var pvalueArr = tuple.Item4;
+                var stderrestArr = tuple.Item5;
                 using (slopeArr)
                 using (interceptArr)
                 using (rvalueArr)
@@ -72,7 +77,12 @@ namespace khiva.regression.tests
                               0.51146167, 0.06880307, 0.39414268, 0.98172767, 0.30490851 }};
             using (KhivaArray arr = new KhivaArray(tss), arr2 = new KhivaArray(tss2))
             {
-                var (slopeArr, interceptArr, rvalueArr, pvalueArr, stderrestArr) = Regression.Linear(arr, arr2);
+                Tuple<KhivaArray, KhivaArray, KhivaArray, KhivaArray, KhivaArray> tuple = Regression.Linear(arr, arr2);
+                var slopeArr = tuple.Item1;
+                var interceptArr = tuple.Item2;
+                var rvalueArr = tuple.Item3;
+                var pvalueArr = tuple.Item4;
+                var stderrestArr = tuple.Item5;
                 using (slopeArr)
                 using (interceptArr)
                 using (rvalueArr)
