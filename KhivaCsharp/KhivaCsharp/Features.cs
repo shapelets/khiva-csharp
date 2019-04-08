@@ -103,7 +103,7 @@ namespace khiva.features
         /// the correlation coefficient,
         /// the two-sided p-value for a hypothesis test whose null hypothesis is that the slope is zero, using Wald Test with t-distribution of the test statistic and
         /// the standard error of the estimated gradient.</returns>
-        public static ValueTuple<KhivaArray, KhivaArray, KhivaArray, KhivaArray, KhivaArray> AggregatedLinearTrend(KhivaArray array, long chunkSize, int aggregationFunction)
+        public static Tuple<KhivaArray, KhivaArray, KhivaArray, KhivaArray, KhivaArray> AggregatedLinearTrend(KhivaArray array, long chunkSize, int aggregationFunction)
         {
             IntPtr reference = array.Reference;
             IntPtr slope; IntPtr intercept; IntPtr rvalue; IntPtr pvalue; IntPtr stderrest;
@@ -112,11 +112,11 @@ namespace khiva.features
                                                         ref aggregationFunction,
                                                         out slope, out intercept, out rvalue, out pvalue, out stderrest);
             array.Reference = reference;
-            var tuple = (slopeArr: new KhivaArray(slope),
-                    interceptArr: new KhivaArray(intercept),
-                    rvalueArr: new KhivaArray(rvalue),
-                    pvalueArr: new KhivaArray(pvalue),
-                    stderrestArr: new KhivaArray(stderrest));
+            var tuple = Tuple.Create(new KhivaArray(slope),
+                                    new KhivaArray(intercept),
+                                    new KhivaArray(rvalue),
+                                    new KhivaArray(pvalue),
+                                    new KhivaArray(stderrest));
             return tuple;
         }
 
@@ -371,17 +371,17 @@ namespace khiva.features
         /// the imaginary part of the cofficient,
         /// the absolute value of the coefficient and
         /// the angle of the coefficient.</returns>
-        public static ValueTuple<KhivaArray, KhivaArray, KhivaArray, KhivaArray> FftCoefficient(KhivaArray array, long coefficient)
+        public static Tuple<KhivaArray, KhivaArray, KhivaArray, KhivaArray> FftCoefficient(KhivaArray array, long coefficient)
         {
             IntPtr reference = array.Reference;
             IntPtr real; IntPtr imag; IntPtr absolute; IntPtr angle;
             interop.DLLFeatures.fft_coefficient(ref reference, ref coefficient,
                                                 out real, out imag, out absolute, out angle);
             array.Reference = reference;
-            var tuple = (realArr: new KhivaArray(real),
-                        imagArr: new KhivaArray(imag),
-                        absoluteArr: new KhivaArray(absolute),
-                        angleArr: new KhivaArray(angle));
+            var tuple = Tuple.Create(new KhivaArray(real),
+                                    new KhivaArray(imag),
+                                    new KhivaArray(absolute),
+                                    new KhivaArray(angle));
             return tuple;
         }
 
@@ -587,18 +587,18 @@ namespace khiva.features
         /// the intercept values for all time series, 
         /// the slope for all time series and
         /// the stderr values for all time series.</returns>
-        public static ValueTuple<KhivaArray, KhivaArray, KhivaArray, KhivaArray, KhivaArray> LinearTrend(KhivaArray array)
+        public static Tuple<KhivaArray, KhivaArray, KhivaArray, KhivaArray, KhivaArray> LinearTrend(KhivaArray array)
         {
             IntPtr reference = array.Reference;
             IntPtr pvalue; IntPtr rvalue; IntPtr intercept; IntPtr slope; IntPtr stdrr;
             interop.DLLFeatures.linear_trend(ref reference,
                                         out pvalue, out rvalue, out intercept, out slope, out stdrr);
             array.Reference = reference;
-            var tuple = (pvalueArr: new KhivaArray(pvalue),
-                        rvalueArr: new KhivaArray(rvalue),
-                        interceptArr: new KhivaArray(intercept),
-                        slopeArr: new KhivaArray(slope),
-                        stdrrArr: new KhivaArray(stdrr));
+            var tuple = Tuple.Create(new KhivaArray(pvalue),
+                                    new KhivaArray(rvalue),
+                                    new KhivaArray(intercept),
+                                    new KhivaArray(slope),
+                                    new KhivaArray(stdrr));
             return tuple;
         }
 

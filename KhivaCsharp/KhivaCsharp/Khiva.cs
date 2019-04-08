@@ -67,7 +67,8 @@ namespace khiva
         {
             get
             {
-                interop.DLLLibrary.get_backends(out int backends);
+                int backends;
+                interop.DLLLibrary.get_backends(out backends);
                 return (Backend)backends;
             }
         }

@@ -35,7 +35,7 @@ namespace khiva
             /// the two-sided p-value for a hypothesis test whose null hypothesis is that the slope is zero, using Wald
             /// Test with t-distribution of the test statistic and 
             /// the standard error of the estimated gradient.</returns>
-            public static ValueTuple<KhivaArray, KhivaArray, KhivaArray, KhivaArray, KhivaArray> Linear(KhivaArray xss, KhivaArray yss)
+            public static Tuple<KhivaArray, KhivaArray, KhivaArray, KhivaArray, KhivaArray> Linear(KhivaArray xss, KhivaArray yss)
             {
                 IntPtr xReference = xss.Reference;
                 IntPtr yReference = yss.Reference;
@@ -44,11 +44,11 @@ namespace khiva
                                             out slope, out intercept, out rvalue, out pvalue, out stderrest);
                 xss.Reference = xReference;
                 yss.Reference = yReference;
-                var tuple = (slope: new KhivaArray(slope),
-                            intercept: new KhivaArray(intercept),
-                            rvalue: new KhivaArray(rvalue),
-                            pvalue: new KhivaArray(pvalue),
-                            stderrest: new KhivaArray(stderrest));
+                var tuple = Tuple.Create(new KhivaArray(slope),
+                                        new KhivaArray(intercept),
+                                        new KhivaArray(rvalue),
+                                        new KhivaArray(pvalue),
+                                        new KhivaArray(stderrest));
                 return tuple;
             }
         }
