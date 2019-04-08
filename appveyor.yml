@@ -6,7 +6,6 @@
 
 version: 1.0.{build}
 configuration: Debug
-language: csharp
 
 environment:
   BOOST_PATH: C:\Libraries\boost_1_67_0
