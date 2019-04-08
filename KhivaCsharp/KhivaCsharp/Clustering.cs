@@ -39,7 +39,8 @@ namespace khiva
             public static Tuple<KhivaArray, KhivaArray> KMeans(KhivaArray arr, int k, float tolerance = 1e-10F, int max_iterations = 100)
             {
                 IntPtr reference = arr.Reference;
-                interop.DLLClustering.k_means(ref reference, ref k, out IntPtr centroids, out IntPtr labels, ref tolerance, ref max_iterations);
+                IntPtr centroids; IntPtr labels;
+                interop.DLLClustering.k_means(ref reference, ref k, out centroids, out labels, ref tolerance, ref max_iterations);
                 arr.Reference = reference;
                 var tuple = Tuple.Create(new KhivaArray(centroids), new KhivaArray(labels));
                 return tuple;
@@ -63,7 +64,8 @@ namespace khiva
             public static Tuple<KhivaArray, KhivaArray> KShape(KhivaArray arr, int k, float tolerance = 1e-10F, int max_iterations = 100)
             {
                 IntPtr reference = arr.Reference;
-                interop.DLLClustering.k_shape(ref reference, ref k, out IntPtr centroids, out IntPtr labels, ref tolerance, ref max_iterations);
+                IntPtr centroids; IntPtr labels;
+                interop.DLLClustering.k_shape(ref reference, ref k, out centroids, out labels, ref tolerance, ref max_iterations);
                 arr.Reference = reference;
                 var tuple = Tuple.Create(new KhivaArray(centroids), new KhivaArray(labels));
                 return tuple;
