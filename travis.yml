@@ -9,7 +9,7 @@ solution: KhivaCsharp\KhivaCsharp.sln
 
 matrix:
 	include:
-		- dotnet: 4.7
+		- dotnet: 2.2
 		  mono: none
 		cache:
           directories:
