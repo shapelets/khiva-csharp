@@ -17,7 +17,6 @@ namespace khiva.matrix.tests
     [TestFixture, Category("Matrix")]
     public class MatrixTests
     {
-        double DELTA = 1e-6;
 
         [SetUp]
         public void Init()
