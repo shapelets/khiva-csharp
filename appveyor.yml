@@ -7,10 +7,6 @@
 version: 1.0.{build}
 configuration: Debug
 
-image: 
-- Visual Studio 2017
-- Visual Studio 2015
-
 environment:
   BOOST_PATH: C:\Libraries\boost_1_67_0
   AF_PATH: C:\Program Files\ArrayFire\v3
