@@ -84,7 +84,7 @@ namespace khiva
             {
                 IntPtr profileReference = profile.Reference;
                 IntPtr indexReference = index.Reference;
-                IntPtr motif_distances; IntPtr motif_indices; IntPtr subsequence_indices
+                IntPtr motif_distances; IntPtr motif_indices; IntPtr subsequence_indices;
                 interop.DLLMatrix.find_best_n_motifs(ref profileReference, ref indexReference, ref m, ref n,
                                                         out motif_distances, out motif_indices, out subsequence_indices,
                                                         ref self_join);
