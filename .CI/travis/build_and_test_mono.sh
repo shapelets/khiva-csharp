@@ -7,5 +7,5 @@
 
 nuget restore KhivaCsharp/KhivaCsharp.sln
 msbuild /p:Configuration=Debug KhivaCsharp/KhivaCsharp.sln
-ls ./testrunner/NUnit.ConsoleRunner.3.2.0/tools
+ls ./
 mono ./testrunner/NUnit.ConsoleRunner.3.2.0/tools/nunit3-console.exe ./KhivaCsharp/KhivaCSharpNUnitTest/bin/Debug/KhivaCSharpNUnitTest.dll -output:"coverage.xml"
