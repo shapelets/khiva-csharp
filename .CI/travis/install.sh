@@ -5,7 +5,7 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-pip install --upgrade pip
+sudo pip install --upgrade pip
 PATH=/usr/local/bin:$PATH
 mono --runtime=v4.0 nuget.exe restore KhivaCsharp/KhivaCsharp.sln
-pip install codecov
+sudo pip install codecov
