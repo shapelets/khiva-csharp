@@ -21,6 +21,7 @@ matrix:
           - ${TRAVIS_BUILD_DIR}/cmake
       after_success:
         - codecov -f coverage.xml
+    - os: linux
       mono: latest
       cache:
         directories:
@@ -41,6 +42,7 @@ matrix:
           - ${TRAVIS_BUILD_DIR}/cmake
       after_success:
         - codecov -f coverage.xml
+    - os: osx
       mono: latest
       cache:
         directories:
