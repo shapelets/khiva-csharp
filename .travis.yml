@@ -18,6 +18,8 @@ matrix:
           - ${HOME}/.m2
           - ${HOME}/.conan
           - ${TRAVIS_BUILD_DIR}/cmake
+	  script:
+        - source .CI/travis/build_and_test_mono.sh
       after_success:
         - codecov -f coverage.xml
     - os: linux
@@ -28,6 +30,8 @@ matrix:
           - ${HOME}/.m2
           - ${HOME}/.conan
           - ${TRAVIS_BUILD_DIR}/cmake
+	  script:
+        - source .CI/travis/build_and_test_mono.sh
       after_success:
         - codecov -f coverage.xml
     - os: osx
@@ -39,6 +43,8 @@ matrix:
           - ${HOME}/.m2
           - ${HOME}/.conan
           - ${TRAVIS_BUILD_DIR}/cmake
+	  script:
+        - source .CI/travis/build_and_test_dotnet.sh
       after_success:
         - codecov -f coverage.xml
     - os: osx
@@ -49,6 +55,8 @@ matrix:
           - ${HOME}/.m2
           - ${HOME}/.conan
           - ${TRAVIS_BUILD_DIR}/cmake
+	  script:
+        - source .CI/travis/build_and_test_mono.sh
       after_success:
         - codecov -f coverage.xml
     - os: osx
@@ -59,6 +67,8 @@ matrix:
           - ${HOME}/.m2
           - ${HOME}/.conan
           - ${TRAVIS_BUILD_DIR}/cmake
+	  script:
+        - source .CI/travis/build_and_test_mono.sh
       after_success:
         - codecov -f coverage.xml
 
@@ -66,6 +76,3 @@ install:
   - source .CI/travis/install.sh
   - source .CI/travis/install-arrayfire.sh
   - source .CI/travis/install-khiva.sh
-
-script:
-  - source .CI/travis/build_and_test.sh
