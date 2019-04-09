@@ -11,8 +11,7 @@ matrix:
   fast_finish: true
   include:
     - os: linux
-      dotnet: 2.2.100
-      mono: none
+      mono: 5.16.0
       cache:
         directories:
           - ${TRAVIS_BUILD_DIR}/installers
@@ -44,6 +43,16 @@ matrix:
         - codecov -f coverage.xml
     - os: osx
       mono: latest
+      cache:
+        directories:
+          - ${TRAVIS_BUILD_DIR}/installers
+          - ${HOME}/.m2
+          - ${HOME}/.conan
+          - ${TRAVIS_BUILD_DIR}/cmake
+      after_success:
+        - codecov -f coverage.xml
+    - os: osx
+      mono: 5.16.0
       cache:
         directories:
           - ${TRAVIS_BUILD_DIR}/installers
