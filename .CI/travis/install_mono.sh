@@ -10,4 +10,5 @@ LD_LIBRARY_PATH=/usr/local/lib:/usr/local/include:$LD_LIBRARY_PATH
 DYLD_FALLBACK_LIBRARY_PATH=/usr/local/include:$DYLD_FALLBACK_LIBRARY_PATH
 wget --no-check-certificate https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
 nuget restore KhivaCsharp/KhivaCsharp.sln
+nuget install NUnit.Console -Version 3.9.0 -OutputDirectory testrunner
 mono ./nuget.exe install NUnit.Runners -Version 3.0.1
