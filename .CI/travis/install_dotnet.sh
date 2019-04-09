@@ -6,4 +6,3 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 PATH=/usr/local/bin:$PATH
 dotnet restore KhivaCsharp/KhivaCsharp.sln
-dotnet install NUnit.Runners -Version 3.0.1
