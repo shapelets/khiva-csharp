@@ -108,6 +108,9 @@ namespace khiva.interop
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void create_array([In] ushort[,,,] arr, [In] ref uint ndims, [In] long[] dims,[Out] out IntPtr result, [In] ref int type);
 
+        [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
+        public extern static void create_array([In] ref IntPtr arr, [In] ref uint ndims, [In] long[] dims, [Out] out IntPtr result, [In] ref int type);
+
         /// <summary>
         /// Retrieves the data from the device to the host.
         /// </summary>
