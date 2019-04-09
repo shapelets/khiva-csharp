@@ -6,5 +6,5 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 wget --no-check-certificate https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
 PATH=/usr/local/bin:$PATH
-nuget restore KhivaCsharp/KhivaCsharp.sln
+nuget.exe restore KhivaCsharp/KhivaCsharp.sln
 mono ./nuget.exe install NUnit.Runners -Version 3.0.1
