@@ -5,7 +5,7 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-sudo pip install --upgrade pip
 PATH=/usr/local/bin:$PATH
 nuget restore KhivaCsharp/KhivaCsharp.sln
-sudo pip install codecov
+curl -sSLO https://github.com/codecov/enterprise/releases/download/v4.1.3.zip
+unzip v4.1.3.zip && rm v4.1.3.zip && mv ./linux/codecov ./
