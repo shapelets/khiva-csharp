@@ -83,6 +83,5 @@ matrix:
         - codecov -f coverage.xml
 
 install:
-  - source .CI/travis/install.sh
   - source .CI/travis/install-arrayfire.sh
   - source .CI/travis/install-khiva.sh
