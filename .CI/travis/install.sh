@@ -7,5 +7,5 @@
 
 sudo pip install --upgrade pip
 PATH=/usr/local/bin:$PATH
-dotnet restore KhivaCsharp/KhivaCsharp.sln
+nuget restore KhivaCsharp/KhivaCsharp.sln
 sudo pip install codecov
