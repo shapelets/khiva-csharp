@@ -35,7 +35,7 @@ matrix:
       after_success:
         - codecov -f coverage.xml
     - os: osx
-      dotnet: 2.2.100
+      dotnet: 2.2.202
       mono: none
       cache:
         directories:
