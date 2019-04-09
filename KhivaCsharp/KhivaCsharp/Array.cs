@@ -153,6 +153,7 @@ namespace khiva
                     GCHandle gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
                     IntPtr dataPtr = gchArr.AddrOfPinnedObject();
                     interop.DLLArray.get_data(ref reference, dataPtr);
+                    Reference = reference;
                 }
                 finally
                 {

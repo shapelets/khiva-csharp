@@ -66,19 +66,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Array.cs" />
-    <Compile Include="CodeFile1.cs" />
-    <Compile Include="Polynomial.cs" />
     <Compile Include="Interop\DLLMatrix.cs" />
     <Compile Include="Interop\DLLNormalization.cs" />
     <Compile Include="Interop\DLLPolynomial.cs" />
     <Compile Include="Interop\DLLRegression.cs" />
     <Compile Include="Interop\DLLRegularization.cs" />
     <Compile Include="Interop\DLLStatistics.cs" />
-    <Compile Include="Linalg.cs" />
-    <Compile Include="Dimensionality.cs" />
-    <Compile Include="Clustering.cs" />
-    <Compile Include="Distances.cs" />
-    <Compile Include="Features.cs" />
     <Compile Include="Interop\DLLDimensionality.cs" />
     <Compile Include="Interop\DLLClustering.cs" />
     <Compile Include="Interop\DLLArray.cs" />
@@ -86,13 +79,8 @@
     <Compile Include="Interop\DLLFeatures.cs" />
     <Compile Include="Interop\DLLLibrary.cs" />
     <Compile Include="Interop\DLLLinalg.cs" />
-    <Compile Include="Khiva.cs" />
-    <Compile Include="Matrix.cs" />
-    <Compile Include="Normalization.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Regression.cs" />
-    <Compile Include="Regularization.cs" />
-    <Compile Include="Statistics.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="OSVersion">

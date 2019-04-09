@@ -15,15 +15,15 @@ using System.Runtime.InteropServices;
 using System.Numerics;
 
 namespace khiva
-{
+{ 
     class Program
     {
         static void Main(String[] args)
         {
-            Complex[] data = { new Complex(1,2), new Complex(3,4)};
+            Complex[] data = { new Complex(1, 2), new Complex(3, 4) };
             array.MyArray2 arr = array.MyArray2.Create<Complex>(data);
             Complex[] dataArr = arr.GetData1D<Complex>();
-            for (int i = 0; i<dataArr.Length; i++)
+            for (int i = 0; i < dataArr.Length; i++)
             {
                 Console.WriteLine(dataArr[i]);
             }
@@ -90,16 +90,12 @@ namespace khiva
             standardOutput.AutoFlush = true;
             Console.SetOut(standardOutput);
             Console.WriteLine(info_splitted[0]);
-
             Console.WriteLine((int)khiva.Khiva.SupportedBackends & (int)khiva.Khiva.Backend.KHIVA_BACKEND_OPENCL);
-
             Console.WriteLine("Backend: " + khiva.Khiva.ActualBackend);
             Console.WriteLine(khiva.Khiva.Version);
-
             String version = "";
             String filePath;
             String Os = System.Environment.OSVersion.Platform.ToString().ToLower();
-
             if (Os.Contains("win"))
             {
                 filePath = "C:\\Program Files\\Khiva\\v0\\include\\khiva\\version.h";
@@ -108,9 +104,7 @@ namespace khiva
             {
                 filePath = "/usr/local/include/khiva/version.h";
             }
-
             String data = "";
-
             try
             {
                 data = File.ReadAllText(filePath);
@@ -119,9 +113,7 @@ namespace khiva
             {
                 Console.WriteLine(e.ToString());
             }
-
             MatchCollection matches = Regex.Matches(data, "([0-9]+\\.[0-9]+\\.[0-9]+)");
-
             if (matches.Count != 0)
             {
                 version = matches[0].Groups[1].Value;
@@ -132,10 +124,8 @@ namespace khiva
             Console.WriteLine(data);
             Console.WriteLine("Version:");
             Console.WriteLine(version);
-
             Console.ReadKey();
         }
-
         private static void Flatten3D<T>(ref T[] flattenArr, T[,,] arr)
         {
             Console.WriteLine("Flatten");
