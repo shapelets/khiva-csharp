@@ -6,6 +6,6 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 PATH=/usr/local/bin:$PATH
-mono --runtime=v4.0 /usr/local/bin/NuGet.exe restore KhivaCsharp/KhivaCsharp.sln
+mono --runtime=v4.0 nuget.exe restore KhivaCsharp/KhivaCsharp.sln
 pip install --upgrade pip
 pip install codecov
