@@ -20,6 +20,8 @@ matrix:
           - ${TRAVIS_BUILD_DIR}/cmake
       install:
         - source .CI/travis/install_mono.sh
+        - source .CI/travis/install-arrayfire.sh
+        - source .CI/travis/install-khiva.sh
       script:
         - source .CI/travis/build_and_test_mono.sh
       after_success:
@@ -34,6 +36,8 @@ matrix:
           - ${TRAVIS_BUILD_DIR}/cmake
       install:
         - source .CI/travis/install_mono.sh
+        - source .CI/travis/install-arrayfire.sh
+        - source .CI/travis/install-khiva.sh
       script:
         - source .CI/travis/build_and_test_mono.sh
       after_success:
@@ -49,6 +53,8 @@ matrix:
           - ${TRAVIS_BUILD_DIR}/cmake
       install:
         - source .CI/travis/install_dotnet.sh
+        - source .CI/travis/install-arrayfire.sh
+        - source .CI/travis/install-khiva.sh
       script:
         - source .CI/travis/build_and_test_dotnet.sh
       after_success:
@@ -63,6 +69,8 @@ matrix:
           - ${TRAVIS_BUILD_DIR}/cmake
       install:
         - source .CI/travis/install_mono.sh
+        - source .CI/travis/install-arrayfire.sh
+        - source .CI/travis/install-khiva.sh
       script:
         - source .CI/travis/build_and_test_mono.sh
       after_success:
@@ -77,11 +85,9 @@ matrix:
           - ${TRAVIS_BUILD_DIR}/cmake
       install:
         - source .CI/travis/install_mono.sh
+        - source .CI/travis/install-arrayfire.sh
+        - source .CI/travis/install-khiva.sh
       script:
         - source .CI/travis/build_and_test_mono.sh
       after_success:
         - codecov -f coverage.xml
-
-install:
-  - source .CI/travis/install-arrayfire.sh
-  - source .CI/travis/install-khiva.sh
