@@ -7,4 +7,5 @@
 
 PATH=/usr/local/bin:$PATH
 mono --runtime=v4.0 /usr/local/bin/NuGet.exe restore KhivaCsharp/KhivaCsharp.sln
+pip install --upgrade pip
 pip install codecov
