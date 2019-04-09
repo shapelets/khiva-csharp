@@ -10,46 +10,47 @@ solution: KhivaCsharp/KhivaCsharp.sln
 matrix:
   fast_finish: true
   include:
-  - os: linux
-	dotnet: 2.2
-    mono: none
-  cache:
-    directories:
-      - ${TRAVIS_BUILD_DIR}/installers
-      - ${HOME}/.m2
-      - ${HOME}/.conan
-      - ${TRAVIS_BUILD_DIR}/cmake
-  after_success:
-  - codecov -f coverage.xml
-  - mono: latest
-  cache:
-    directories:
-      - ${TRAVIS_BUILD_DIR}/installers
-      - ${HOME}/.m2
-      - ${HOME}/.conan
-      - ${TRAVIS_BUILD_DIR}/cmake
-  after_success:
-    - codecov -f coverage.xml
-  - os: osx
-    dotnet: 2.2
-    mono: none
-  cache:
-    directories:
-      - ${TRAVIS_BUILD_DIR}/installers
-      - ${HOME}/.m2
-      - ${HOME}/.conan
-      - ${TRAVIS_BUILD_DIR}/cmake
-  after_success:
-  - codecov -f coverage.xml
-  - mono: latest
-  cache:
-    directories:
-      - ${TRAVIS_BUILD_DIR}/installers
-      - ${HOME}/.m2
-      - ${HOME}/.conan
-      - ${TRAVIS_BUILD_DIR}/cmake
-  after_success:
-    - codecov -f coverage.xml
+    - os: linux
+      dotnet: 2.2
+      mono: none
+      cache:
+        directories:
+          - ${TRAVIS_BUILD_DIR}/installers
+          - ${HOME}/.m2
+          - ${HOME}/.conan
+          - ${TRAVIS_BUILD_DIR}/cmake
+      after_success:
+        - codecov -f coverage.xml
+      mono: latest
+      cache:
+        directories:
+          - ${TRAVIS_BUILD_DIR}/installers
+          - ${HOME}/.m2
+          - ${HOME}/.conan
+          - ${TRAVIS_BUILD_DIR}/cmake
+      after_success:
+        - codecov -f coverage.xml
+    - os: osx
+      dotnet: 2.2
+      mono: none
+      cache:
+        directories:
+          - ${TRAVIS_BUILD_DIR}/installers
+          - ${HOME}/.m2
+          - ${HOME}/.conan
+          - ${TRAVIS_BUILD_DIR}/cmake
+      after_success:
+        - codecov -f coverage.xml
+      mono: latest
+      cache:
+        directories:
+          - ${TRAVIS_BUILD_DIR}/installers
+          - ${HOME}/.m2
+          - ${HOME}/.conan
+          - ${TRAVIS_BUILD_DIR}/cmake
+      after_success:
+        - codecov -f coverage.xml
+
 install:
   - source .CI/travis/install.sh
   - source .CI/travis/install-arrayfire.sh
