@@ -6,4 +6,4 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 nuget restore KhivaCsharp/KhivaCsharp.sln
 msbuild /p:Configuration=Debug KhivaCsharp/KhivaCsharp.sln
-mono ./KhivaCsharp/packages/NUnit.ConsoleRunner.3.9.0/tools/nunit3-console.exe ./KhivaCsharp/KhivaCSharpNUnitTest/bin/x64/Debug/KhivaCSharpNUnitTest.dll -output:"coverage.xml"
+mono ./KhivaCsharp/packages/NUnit.ConsoleRunner.3.9.0/tools/nunit3-console.exe ./KhivaCsharp/KhivaCSharpNUnitTest/bin/Debug/KhivaCSharpNUnitTest.dll -output:"coverage.xml"
