@@ -18,7 +18,7 @@ matrix:
           - ${HOME}/.m2
           - ${HOME}/.conan
           - ${TRAVIS_BUILD_DIR}/cmake
-	  script:
+      script:
         - source .CI/travis/build_and_test_mono.sh
       after_success:
         - codecov -f coverage.xml
@@ -30,7 +30,7 @@ matrix:
           - ${HOME}/.m2
           - ${HOME}/.conan
           - ${TRAVIS_BUILD_DIR}/cmake
-	  script:
+      script:
         - source .CI/travis/build_and_test_mono.sh
       after_success:
         - codecov -f coverage.xml
@@ -43,7 +43,7 @@ matrix:
           - ${HOME}/.m2
           - ${HOME}/.conan
           - ${TRAVIS_BUILD_DIR}/cmake
-	  script:
+      script:
         - source .CI/travis/build_and_test_dotnet.sh
       after_success:
         - codecov -f coverage.xml
@@ -55,7 +55,7 @@ matrix:
           - ${HOME}/.m2
           - ${HOME}/.conan
           - ${TRAVIS_BUILD_DIR}/cmake
-	  script:
+      script:
         - source .CI/travis/build_and_test_mono.sh
       after_success:
         - codecov -f coverage.xml
@@ -67,7 +67,7 @@ matrix:
           - ${HOME}/.m2
           - ${HOME}/.conan
           - ${TRAVIS_BUILD_DIR}/cmake
-	  script:
+      script:
         - source .CI/travis/build_and_test_mono.sh
       after_success:
         - codecov -f coverage.xml
