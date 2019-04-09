@@ -13,72 +13,66 @@ using System.Threading.Tasks;
 
 namespace khiva.interop
 {
+    /// <summary>
+    /// Class to change internal properties of the Khiva library.
+    /// </summary>
     public static class DLLLibrary
     {
-#if (_WINDOWS)
-        public const String khivaPath = "C:\\Program Files\\Khiva\\v0\\lib\\khiva_c.dll";
-#else
-            public const String khivaPath = "libkhiva_c";
-#endif
-        /**
-         * @brief Gets information from the active backend.
-         */
+        /// <summary>
+        /// Khiva DLL path.
+        /// </summary>
+        public const String khivaPath = "khiva_c";
+        
+         /// <summary> Gets information from the active backend.</summary>
         [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void backend_info([In, Out] ref StringBuilder backendInfo);
 
-        /**
-         * @brief Sets the backend.
-         *
-         * @param backend The desired backend.
-         */
+        
+         /// <summary> Sets the backend.
+         ///</summary>
+         /// <param name="backend">The desired backend.</param>
         [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void set_backend([In, Out] ref int backend);
 
-        /**
-         * @brief Gets the active backend.
-         *
-         * @param backend The active backend.
-         */
+        
+         /// <summary> Gets the active backend.
+         ///</summary>
+         /// <param name="backend">The active backend.</param>
+        [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
+        public extern static void get_backend([Out] out int backend);
+        
+         /// <summary> Gets the available backends.
+         ///</summary>
+         /// <param name="backends">The available backends.</param>
+        [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
+        public extern static void get_backends([Out] out int backends);
+
+        
+         /// <summary> Sets the device.
+         ///</summary>
+         /// <param name="device">The desired device.</param>
         [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void set_device([In, Out] ref int device);
 
-        /**
-         * @brief Gets the available backends.
-         *
-         * @param backends The available backends.
-         */
-        [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void get_backends([Out] out int backend);
 
-        /**
-         * @brief Sets the device.
-         *
-         * @param device The desired device.
-         */
+        
+         /// <summary> Gets the active device.
+         ///</summary>
+         /// <param name="device_id">The active device.</param>
         [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void get_device_id([Out] out int device_id);
 
-        /**
-         * @brief Gets the active device.
-         *
-         * @param device The active device.
-         */
-        [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void get_backend([Out] out int backend);
-
-        /**
-         * @brief Gets the devices count.
-         *
-         * @param device_count The devices count.
-         */
+        
+         /// <summary> Gets the devices count.
+         ///</summary>
+         /// <param name="device_count">The devices count.</param>
         [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void get_device_count([Out] out int device_count);
 
-        /**
-         * @brief Returns a string with the current version of the library.
-         *
-         * @param v A previously malloced character array where to copy the version.
-         */
+
+        /// <summary> Returns a string with the current version of the library.
+        ///</summary>
+        /// <param name="version">A previously malloced character array where to copy the version.</param>
         [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public static extern void version([In, Out] ref StringBuilder version);
     }

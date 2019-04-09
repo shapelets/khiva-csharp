@@ -1,0 +1,78 @@
+# Copyright (c) 2019 Shapelets.io
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+language: csharp
+solution: KhivaCsharp/KhivaCsharp.sln
+
+matrix:
+  fast_finish: true
+  include:
+    - os: linux
+      mono: 5.16.0
+      cache:
+        directories:
+          - ${TRAVIS_BUILD_DIR}/installers
+          - ${HOME}/.m2
+          - ${HOME}/.conan
+          - ${TRAVIS_BUILD_DIR}/cmake
+      script:
+        - source .CI/travis/build_and_test_mono.sh
+      after_success:
+        - codecov -f coverage.xml
+    - os: linux
+      mono: latest
+      cache:
+        directories:
+          - ${TRAVIS_BUILD_DIR}/installers
+          - ${HOME}/.m2
+          - ${HOME}/.conan
+          - ${TRAVIS_BUILD_DIR}/cmake
+      script:
+        - source .CI/travis/build_and_test_mono.sh
+      after_success:
+        - codecov -f coverage.xml
+    - os: osx
+      dotnet: 2.2.100
+      mono: none
+      cache:
+        directories:
+          - ${TRAVIS_BUILD_DIR}/installers
+          - ${HOME}/.m2
+          - ${HOME}/.conan
+          - ${TRAVIS_BUILD_DIR}/cmake
+      script:
+        - source .CI/travis/build_and_test_dotnet.sh
+      after_success:
+        - codecov -f coverage.xml
+    - os: osx
+      mono: latest
+      cache:
+        directories:
+          - ${TRAVIS_BUILD_DIR}/installers
+          - ${HOME}/.m2
+          - ${HOME}/.conan
+          - ${TRAVIS_BUILD_DIR}/cmake
+      script:
+        - source .CI/travis/build_and_test_mono.sh
+      after_success:
+        - codecov -f coverage.xml
+    - os: osx
+      mono: 5.16.0
+      cache:
+        directories:
+          - ${TRAVIS_BUILD_DIR}/installers
+          - ${HOME}/.m2
+          - ${HOME}/.conan
+          - ${TRAVIS_BUILD_DIR}/cmake
+      script:
+        - source .CI/travis/build_and_test_mono.sh
+      after_success:
+        - codecov -f coverage.xml
+
+install:
+  - source .CI/travis/install.sh
+  - source .CI/travis/install-arrayfire.sh
+  - source .CI/travis/install-khiva.sh

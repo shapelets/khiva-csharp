@@ -6,7 +6,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{7D2A744A-2406-4E13-AF75-D2CF8DC955C2}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>KhivaCsharp</RootNamespace>
     <AssemblyName>KhivaCsharp</AssemblyName>
@@ -41,16 +41,14 @@
     <PlatformTarget>x64</PlatformTarget>
     <OutputPath>bin\x64\Debug\</OutputPath>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <LangVersion>7.3</LangVersion>
+    <LangVersion>default</LangVersion>
+    <DocumentationFile>bin\x64\Debug\KhivaCsharp.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <PlatformTarget>x64</PlatformTarget>
     <OutputPath>bin\x64\Release\</OutputPath>
     <DefineConstants>TRACE;DEBUG</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(OS)' == 'Windows_NT' ">
-    <DefineConstants>_WINDOWS</DefineConstants>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
@@ -68,6 +66,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Array.cs" />
+    <Compile Include="Polynomial.cs" />
+    <Compile Include="Interop\DLLMatrix.cs" />
+    <Compile Include="Interop\DLLNormalization.cs" />
+    <Compile Include="Interop\DLLPolynomial.cs" />
+    <Compile Include="Interop\DLLRegression.cs" />
+    <Compile Include="Interop\DLLRegularization.cs" />
+    <Compile Include="Interop\DLLStatistics.cs" />
+    <Compile Include="Linalg.cs" />
     <Compile Include="Dimensionality.cs" />
     <Compile Include="Clustering.cs" />
     <Compile Include="Distances.cs" />
@@ -78,9 +84,14 @@
     <Compile Include="Interop\DLLDistances.cs" />
     <Compile Include="Interop\DLLFeatures.cs" />
     <Compile Include="Interop\DLLLibrary.cs" />
+    <Compile Include="Interop\DLLLinalg.cs" />
     <Compile Include="Khiva.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Matrix.cs" />
+    <Compile Include="Normalization.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Regression.cs" />
+    <Compile Include="Regularization.cs" />
+    <Compile Include="Statistics.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="OSVersion">

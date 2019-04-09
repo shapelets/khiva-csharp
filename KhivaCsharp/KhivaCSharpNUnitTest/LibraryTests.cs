@@ -15,7 +15,7 @@ using System.Text.RegularExpressions;
 
 namespace khiva.tests
 {
-    [TestFixture]
+    [TestFixture, Category("Library")]
     public class LibraryTests
     {
 

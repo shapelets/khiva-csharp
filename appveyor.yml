@@ -1,0 +1,71 @@
+# Copyright (c) 2019 Shapelets.io
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+version: 1.0.{build}
+configuration: Debug
+
+environment:
+  BOOST_PATH: C:\Libraries\boost_1_67_0
+  AF_PATH: C:\Program Files\ArrayFire\v3
+  KHIVA_PATH: C:\Program Files\Khiva\v0
+  PATH: $(AF_PATH)\lib;$(KHIVA_PATH)\lib;C:\Python36-x64;C:\Python36-x64\Scripts;$(PATH)
+  matrix:
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+      GENERATOR: "Visual Studio 15 2017 Win64"
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+      GENERATOR: "Visual Studio 14 2015 Win64"
+
+matrix:
+  fast_finish: true
+
+cache:
+  - C:\tools\vcpkg\installed
+  - C:\Program Files\ArrayFire
+  - C:\Program Files\Khiva
+  - C:\ProgramData\chocolatey\bin
+  - C:\ProgramData\chocolatey\lib
+
+clone_folder: c:\projects\khiva-csharp
+
+platform:
+  - x64
+
+before_build:
+  - ps: if(!(Test-Path -Path "C:\Program Files\ArrayFire" )){ appveyor DownloadFile "https://www.dropbox.com/s/13wnbd1qynjmw0i/ArrayFire-v3.6.2.zip?dl=1" -FileName ArrayFire-v3.6.2.zip }
+  - ps: if(!(Test-Path -Path "C:\Program Files\ArrayFire" )){ 7z x ArrayFire-v3.6.2.zip -o"C:\Program Files" }
+  - reg add HKCU\Software\Kitware\CMake\Packages\ArrayFire /v ArrayFire_CMake_DIR /d "C:\Program Files\ArrayFire\v3\cmake" /f
+  - vcpkg install --triplet x64-windows gtest eigen3
+  - ps: if ($env:INSTALL_KHIVA_METHOD -eq "installer"){
+            if(!(Test-Path -Path "C:\Program Files\Khiva" )){ appveyor DownloadFile "https://github.com/shapelets/khiva/releases/download/v0.2.2/khiva-v0.2.2-unattended.exe" -FileName khiva-v0.2.2-unattended.exe };
+            if(!(Test-Path -Path "C:\Program Files\Khiva" )){ .\khiva-v0.2.2-unattended.exe /S };
+          }else{
+            git clone -q https://github.com/shapelets/khiva.git C:\khiva-library ;
+            cd C:\khiva-library;
+            mkdir build;
+            cd build;
+            cmake .. -DCMAKE_TOOLCHAIN_FILE=c:/tools/vcpkg/scripts/buildsystems/vcpkg.cmake -DBOOST_ROOT="$($env:BOOST_PATH)" -DKHIVA_USE_CONAN=OFF -DKHIVA_BUILD_DOCUMENTATION=OFF -DKHIVA_BUILD_BENCHMARKS=OFF -DKHIVA_ONLY_CPU_BACKEND=ON -G"$env:GENERATOR";
+            cmake --build . --config Debug --target INSTALL -- /m;
+          }
+  - cd c:\projects\khiva-csharp
+  - choco install codecov
+  - nuget restore KhivaCsharp/KhivaCsharp.sln
+
+build:
+  parallel: true
+  project: KhivaCsharp\KhivaCsharp.sln
+  verbosity: minimal
+
+test_script:
+  - .\KhivaCsharp\packages\OpenCover.4.6.519\tools\OpenCover.Console -register:user -target:".\KhivaCsharp\packages\NUnit.ConsoleRunner.3.9.0\tools\nunit3-console.exe" -targetargs:"KhivaCsharp\KhivaCSharpNUnitTest\bin\x64\Debug\KhivaCSharpNUnitTest.dll" -output:"coverage.xml" -filter:"+[*]khiva.*"
+after_test:
+  - codecov -f coverage.xml
+
+on_finish:
+  - ps: |
+      $files = Get-ChildItem -Path . -File -Filter *.xml
+      foreach ($file in $files) {
+        (New-Object System.Net.WebClient).UploadFile("https://ci.appveyor.com/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)", $file.FullName)
+      }
