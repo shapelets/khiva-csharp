@@ -11,7 +11,7 @@ matrix:
   fast_finish: true
   include:
     - os: linux
-      dotnet: 2.2
+      dotnet: 2.2.202
       mono: none
       cache:
         directories:
@@ -32,7 +32,7 @@ matrix:
       after_success:
         - codecov -f coverage.xml
     - os: osx
-      dotnet: 2.2
+      dotnet: 2.2.202
       mono: none
       cache:
         directories:
