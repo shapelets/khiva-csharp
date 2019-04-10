@@ -130,13 +130,14 @@ namespace khiva
                 {
                     for (int i = 0; i < totalLength; i++)
                     {
-                        Marshal.StructureToPtr<T>(*values, data, true);
-                        data += sizeof(T);
+                        Marshal.StructureToPtr<T>(*values, IntPtr.Add(data, i * sizeof(T)), true);
                         values++;
+                        
                     }
                     var type = (int)GetDtypeFromT<T>(doublePrecision);
                     interop.DLLArray.create_array(ref data, ref ndims, dims, out arr.reference, ref type);
                     arr.Reference = arr.reference;
+                    Console.Write(Marshal.PtrToStructure<T>(data) + " ");
                 }
                 finally
                 {
