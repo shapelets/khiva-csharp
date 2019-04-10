@@ -9,4 +9,4 @@ PATH=/usr/local/bin:/usr/lib:$PATH
 LD_LIBRARY_PATH=/usr/local/lib:/usr/local/include:$LD_LIBRARY_PATH
 DYLD_FALLBACK_LIBRARY_PATH=/usr/local/include:$DYLD_FALLBACK_LIBRARY_PATH
 nuget restore KhivaCsharp/KhivaCsharp.sln
-sudo apt-get install nunit-console
+nuget install NUnit.ConsoleRunner -Version 3.9.0 -OutputDirectory ./testrunner
