@@ -6,4 +6,4 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 dotnet restore
 dotnet msbuild /p:Configuration=Debug KhivaCsharp/KhivaCsharp.sln
-dotnet test ./KhivaCsharp/KhivaCSharpNUnitTest/KhivaCSharpNUnitTest.csproj -output:"coverage.xml"
+dotnet test ./KhivaCsharp/KhivaCSharpNUnitTest/KhivaCSharpNUnitTest.csproj --output "coverage.xml" --filter "+[*]khiva.*"
