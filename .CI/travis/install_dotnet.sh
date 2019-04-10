@@ -8,7 +8,4 @@
 PATH=/usr/local/bin:/usr/lib:$PATH
 LD_LIBRARY_PATH=/usr/local/lib:/usr/local/include:$LD_LIBRARY_PATH
 DYLD_FALLBACK_LIBRARY_PATH=/usr/local/include:$DYLD_FALLBACK_LIBRARY_PATH
-sudo apt-get install apt-transport-https
-sudo apt-get update
-sudo apt-get install dotnet-sdk-2.2
 dotnet restore KhivaCsharp/KhivaCsharp.sln
