@@ -8,4 +8,4 @@
 nuget restore KhivaCsharp/KhivaCsharp.sln
 msbuild /p:Configuration=Debug KhivaCsharp/KhivaCsharp.sln
 ls ./KhivaCsharp/packages
-mono ./testrunner/NUnit.ConsoleRunner.3.9.0/tools/nunit3-console.exe ./KhivaCsharp/KhivaCSharpNUnitTest/bin/Debug/KhivaCSharpNUnitTest.dll -output:"coverage.xml"
+./KhivaCsharp/packages/OpenCover.4.6.519/tools/OpenCover.Console -register:user -target:"./KhivaCsharp/packages/NUnit.ConsoleRunner.3.9.0/tools/nunit3-console.exe" -targetargs:"KhivaCsharp/KhivaCSharpNUnitTest/bin/x64/Debug/KhivaCSharpNUnitTest.dll" -output:"coverage.xml" -filter:"+[*]khiva.*"
