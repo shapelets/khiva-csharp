@@ -128,11 +128,12 @@ namespace khiva
                 }
                 try
                 {
+                    Console.WriteLine("Values: ");
                     for (int i = 0; i < totalLength; i++)
                     {
-                        Marshal.StructureToPtr<T>(*values, IntPtr.Add(data, i * sizeof(T)), true);
+                        Marshal.StructureToPtr<T>(*values, IntPtr.Add(data, i * Marshal.SizeOf<T>()), true);
                         values++;
-                        
+                        Console.Write(*values + " ");
                     }
                     var type = (int)GetDtypeFromT<T>(doublePrecision);
                     interop.DLLArray.create_array(ref data, ref ndims, dims, out arr.reference, ref type);
