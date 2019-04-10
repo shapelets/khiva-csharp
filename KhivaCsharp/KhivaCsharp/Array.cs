@@ -124,21 +124,19 @@ namespace khiva
                 long totalLength = (long)(dims[0] * dims[1] * dims[2] * dims[3]);
                 unsafe
                 {
-                    data = Marshal.AllocHGlobal((int)(sizeof(T)));
+                    data = Marshal.AllocHGlobal((int)(sizeof(T) * totalLength));
                 }
                 try
                 {
-                    Console.WriteLine("Values: ");
                     for (int i = 0; i < totalLength; i++)
                     {
-                        Marshal.StructureToPtr<T>(*values, IntPtr.Add(data, i * Marshal.SizeOf<T>()), true);
+                        Marshal.StructureToPtr<T>(*values, IntPtr.Add(data, i * Marshal.SizeOf(*values)), true);
                         values++;
-                        Console.Write(*values + " ");
                     }
+                    void* dataPtr = data.ToPointer();
                     var type = (int)GetDtypeFromT<T>(doublePrecision);
-                    interop.DLLArray.create_array(ref data, ref ndims, dims, out arr.reference, ref type);
+                    interop.DLLArray.create_array(ref dataPtr, ref ndims, dims, out arr.reference, ref type);
                     arr.Reference = arr.reference;
-                    Console.Write(Marshal.PtrToStructure<T>(data) + " ");
                 }
                 finally
                 {
