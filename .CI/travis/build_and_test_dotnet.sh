@@ -6,4 +6,4 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 dotnet restore
 dotnet build /p:Configuration=Debug KhivaCsharp/KhivaCsharp.sln /p:TargetFrameworkVersion="v4.5.1"
-dotnet test ./KhivaCsharp/KhivaCSharpNUnitTest/bin/Debug/KhivaCSharpNUnitTest.dll
+dotnet test ./KhivaCsharp/KhivaCSharpNUnitTest/KhivaCSharpNUnitTest.csproj
