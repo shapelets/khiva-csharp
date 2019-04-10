@@ -11,7 +11,7 @@ matrix:
   fast_finish: true
   include:
     - os: linux
-	  dist: xenial
+      dist: xenial
       sudo: required
       mono: 5.16.0
       cache:
