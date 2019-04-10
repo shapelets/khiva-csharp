@@ -5,5 +5,5 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 dotnet restore
-msbuild /p:Configuration=Debug KhivaCsharp/KhivaCsharp.sln
+dotnet msbuild /p:Configuration=Debug KhivaCsharp/KhivaCsharp.sln
 dotnet test ./KhivaCsharp/KhivaCSharpNUnitTest/KhivaCSharpNUnitTest.csproj
