@@ -27,7 +27,8 @@ matrix:
       script:
         - source .CI/travis/build_and_test_mono.sh
       after_success:
-        - codecov -f coverage.xml
+        - make coverage
+        - bash <(curl -s https://codecov.io/bash)
     - os: linux
       dist: xenial
       sudo: required
@@ -45,7 +46,8 @@ matrix:
       script:
         - source .CI/travis/build_and_test_mono.sh
       after_success:
-        - codecov -f coverage.xml
+        - make coverage
+        - bash <(curl -s https://codecov.io/bash)
     - os: osx
       osx_image: xcode9.3
       dotnet: 2.2.101
@@ -63,7 +65,8 @@ matrix:
       script:
         - source .CI/travis/build_and_test_dotnet.sh
       after_success:
-        - codecov -f coverage.xml
+        - make coverage
+        - bash <(curl -s https://codecov.io/bash)
     - os: osx
       osx_image: xcode9.3
       mono: latest
@@ -80,7 +83,8 @@ matrix:
       script:
         - source .CI/travis/build_and_test_mono.sh
       after_success:
-        - codecov -f coverage.xml
+        - make coverage
+        - bash <(curl -s https://codecov.io/bash)
     - os: osx
       osx_image: xcode9.3
       mono: 5.16.0
@@ -97,4 +101,5 @@ matrix:
       script:
         - source .CI/travis/build_and_test_mono.sh
       after_success:
-        - codecov -f coverage.xml
+        - make coverage
+        - bash <(curl -s https://codecov.io/bash)
