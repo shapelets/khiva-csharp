@@ -117,7 +117,7 @@ namespace khiva
                     return Create<T>(4, new long[] { values.GetLength(1), values.GetLength(0), values.GetLength(2), values.GetLength(3) }, doublePrecision, data);
             }
 
-            public unsafe static MyArray2 Create<T>(uint ndims, long[] dims, bool doublePrecision, T* values) where T : unmanaged
+            /*public unsafe static MyArray2 Create<T>(uint ndims, long[] dims, bool doublePrecision, T* values) where T : unmanaged
             {
                 MyArray2 arr = new MyArray2();
                 IntPtr data;
@@ -142,6 +142,23 @@ namespace khiva
                 {
                     Marshal.FreeHGlobal(data);
                 }                
+                return arr;
+            }*/
+
+                public unsafe static MyArray2 Create<T>(uint ndims, long[] dims, bool doublePrecision, T* values) where T : unmanaged
+            {
+                MyArray2 arr = new MyArray2();
+                long totalLength = (long)(dims[0] * dims[1] * dims[2] * dims[3]);
+                IntPtr[] data = new IntPtr[totalLength];
+                for (int i = 0; i < totalLength; i++)
+                {
+                    data[i] = new IntPtr(sizeof(T));
+                    data[i] = (IntPtr)values;
+                    values++;
+                }
+                var type = (int)GetDtypeFromT<T>(doublePrecision);
+                interop.DLLArray.create_array(data, ref ndims, dims, out arr.reference, ref type);
+                arr.Reference = arr.reference;        
                 return arr;
             }
 
