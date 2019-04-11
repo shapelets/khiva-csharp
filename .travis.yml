@@ -20,7 +20,7 @@ matrix:
   include:
     - os: linux
       dist: xenial
-      sudo: true
+      sudo: required
       mono: 5.16.0
       cache:
         directories:
