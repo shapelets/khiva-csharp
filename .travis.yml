@@ -47,7 +47,7 @@ matrix:
           - ${HOME}/.conan
           - ${TRAVIS_BUILD_DIR}/cmake
       install:
-        - pip install --upgrade pip
+        - sudo pip install --upgrade pip
         - source .CI/travis/install_mono.sh
         - source .CI/travis/install-arrayfire.sh
         - source .CI/travis/install-khiva.sh
