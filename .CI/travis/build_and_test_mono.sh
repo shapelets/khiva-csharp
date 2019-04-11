@@ -7,4 +7,4 @@
 
 ls Library/Frameworks/Mono.framework
 msbuild /p:Configuration=Debug KhivaCsharp/KhivaCsharp.sln
-mono ./testrunner/NUnit.ConsoleRunner.3.9.0/tools/nunit3-console.exe ./KhivaCsharp/KhivaCSharpNUnitTest/bin/Debug/KhivaCSharpNUnitTest.dll
+mono ./KhivaCsharp/packages/NUnit.ConsoleRunner.3.9.0/tools/nunit3-console.exe ./KhivaCsharp/KhivaCSharpNUnitTest/bin/Debug/KhivaCSharpNUnitTest.dll
