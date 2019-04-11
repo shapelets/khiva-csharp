@@ -13,7 +13,7 @@ env:
   BOOST_PATH: Libraries/boost_1_67_0:$BOOST_PATH
   AF_PATH: /opt/arrayfire-3:$AF_PATH
   KHIVA_PATH: ./khiva-library:$KHIVA_PATH
-  PATH: /usr/bin/:/bin/:/usr/local/bin:/usr/lib:$AF_PATH/lib:$KHIVA_PATH/lib:$PATH
+  PATH: /usr/bin/:/bin/:/usr/local/bin:/usr/local/lib:/usr/lib:$AF_PATH/lib:$KHIVA_PATH/lib:$PATH
 
 matrix:
   fast_finish: true
