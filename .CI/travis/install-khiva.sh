@@ -36,7 +36,7 @@ else
 
      #Installing conan and dependencies
      if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
-        pip install conan --upgrade
+        pip install conan --user --upgrade
      else
         pip${PYTHON_VERSION} install conan==1.6.1
      fi
