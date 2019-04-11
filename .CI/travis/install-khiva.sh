@@ -38,7 +38,7 @@ else
      if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
         sudo pip install conan -I
      else
-        pip${PYTHON_VERSION} install conan==1.6.1
+        sudo pip${PYTHON_VERSION} install conan -I
      fi
 
      conan remote add conan-mpusz https://api.bintray.com/conan/mpusz/conan-mpusz

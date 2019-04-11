@@ -106,15 +106,7 @@ namespace khiva.matrix.tests
                     {
                         uint[] subsequence = subsequenceArr.GetData1D<uint>();
                         Assert.AreEqual(0, subsequence[0]);
-                        string travis = Environment.GetEnvironmentVariable("TRAVIS");
-                        if (travis != null)
-                        {
-                            Assert.AreEqual(2, subsequence[1]);
-                        }
-                        else
-                        {
-                            Assert.AreEqual(10, subsequence[1]);
-                        }
+                        Assert.AreEqual(10, subsequence[1]);
                     }
                 }
             }
@@ -143,15 +135,7 @@ namespace khiva.matrix.tests
                     using (subsequenceArr)
                     {
                         uint[,,] subsequence = subsequenceArr.GetData3D<uint>();
-                        string travis = Environment.GetEnvironmentVariable("TRAVIS");
-                        if (travis != null)
-                        {
-                            Assert.AreEqual(new uint[,,] { { { 0, 2 }, { 0, 2 } }, { { 0, 2 }, { 0, 2 } } }, subsequence);
-                        }
-                        else
-                        {
-                            Assert.AreEqual(new uint[,,] { { { 0, 10 }, { 0, 10 } }, { { 0, 10 }, { 0, 10 } } }, subsequence);
-                        }
+                        Assert.AreEqual(new uint[,,] { { { 0, 10 }, { 0, 10 } }, { { 0, 10 }, { 0, 10 } } }, subsequence);
                     }
                 }
             }
