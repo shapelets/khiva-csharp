@@ -36,7 +36,7 @@ else
 
      #Installing conan and dependencies
      if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
-        sudo pip install conan
+        pip install conan --upgrade
      else
         pip${PYTHON_VERSION} install conan==1.6.1
      fi
@@ -60,7 +60,7 @@ else
         sudo make install -j8
         sudo ldconfig
     fi
-    # Switching back to the khiva-python folder
+    # Switching back to the khiva-csharp folder
     cd ..
     cd ..
 fi
