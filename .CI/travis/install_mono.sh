@@ -6,4 +6,3 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 nuget restore KhivaCsharp/KhivaCsharp.sln
-nuget install NUnit.ConsoleRunner -Version 3.9.0 -OutputDirectory ./testrunner
