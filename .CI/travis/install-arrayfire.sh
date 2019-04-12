@@ -13,7 +13,7 @@ if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
 
     # Installs arrayfire
     sudo installer -pkg ./installers/arrayfire-no-gl.pkg -target /
-    ls /
+    ls /opt
     echo 'export PATH=$PATH' >> ~/.bash_profile
     echo "PATH:"
     echo $PATH
