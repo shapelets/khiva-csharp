@@ -32,4 +32,6 @@ else
     sudo ln -s /opt/arrayfire-3/lib64 /opt/arrayfire-3/lib
     echo "/opt/arrayfire-3/lib" | sudo tee /etc/ld.so.conf.d/arrayfire.conf
     sudo ldconfig
+    echo "PATH: "
+    echo $PATH
 fi
