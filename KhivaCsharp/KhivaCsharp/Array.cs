@@ -96,7 +96,7 @@ namespace khiva
             public unsafe static MyArray2 Create<T>(T[] values, bool doublePrecision = false) where T:unmanaged
             {
                 fixed(T* data = &values[0])
-                    return Create<T>(1, new long[] { values.Length, 1, 1, 1 }, doublePrecision, data);
+                    return Create<T>(1, new long[] { values.Length, 1, 1, 1 }, doublePrecision, values);
             }
 
             public unsafe static MyArray2 Create<T>(T[,] values, bool doublePrecision = false) where T : unmanaged
@@ -160,6 +160,16 @@ namespace khiva
                 IntPtr data = (IntPtr)values;
                 interop.DLLArray.create_array(ref data, ref ndims, dims, out arr.reference, ref type);
                 arr.Reference = arr.reference;        
+                return arr;
+            }
+
+            public unsafe static MyArray2 Create<T>(uint ndims, long[] dims, bool doublePrecision, T[] values) where T : unmanaged
+            {
+                MyArray2 arr = new MyArray2();
+                long totalLength = (long)(dims[0] * dims[1] * dims[2] * dims[3]);
+                var type = (int)GetDtypeFromT<T>(doublePrecision);
+                interop.DLLArray.create_array(values, ref ndims, dims, out arr.reference, ref type);
+                arr.Reference = arr.reference;
                 return arr;
             }
 
