@@ -16,7 +16,7 @@ env:
   LDFLAGS: -L/usr/local/opt/openssl/lib
   CPPFLAGS: -I/usr/local/opt/openssl/include
   PKG_CONFIG_PATH: /usr/local/opt/openssl/lib/pkgconfig
-  PATH: /usr/local/opt/openssl/bin:/usr/bin/:/bin/:/usr/local/bin:/usr/local/lib:/usr/lib:$AF_PATH/lib:$KHIVA_PATH/lib:$PATH
+  PATH: /usr/local/opt/openssl/bin:/usr/bin/:/bin/:/usr/local/bin:/usr/local/lib:/usr/local/share:/usr/local/include:/usr/lib:$AF_PATH/lib:$KHIVA_PATH/lib:$PATH
 
 matrix:
   fast_finish: true

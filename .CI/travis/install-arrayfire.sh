@@ -13,6 +13,11 @@ if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
 
     # Installs arrayfire
     sudo installer -pkg ./installers/arrayfire-no-gl.pkg -target /
+
+    sudo mv /opt/arrayfire/include/* /usr/local/include
+    sudo mv /opt/arrayfire/lib/* /usr/local/lib
+    sudo mv /opt/arrayfire/share/* /usr/local/share
+    sudo rm -rf /opt/arrayfire
 else
     sudo apt-get update && \
     sudo apt-get install -y libboost-all-dev \
