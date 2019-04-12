@@ -96,7 +96,7 @@ namespace khiva
             public unsafe static MyArray2 Create<T>(T[] values, bool doublePrecision = false) where T:unmanaged
             {
                 fixed(T* data = &values[0])
-                    return Create<T>(1, new long[] { values.Length, 1, 1, 1 }, doublePrecision, values);
+                    return Create<T>(1, new long[] { values.Length, 1, 1, 1 }, doublePrecision, data);
             }
 
             public unsafe static MyArray2 Create<T>(T[,] values, bool doublePrecision = false) where T : unmanaged
@@ -149,16 +149,30 @@ namespace khiva
             {
                 MyArray2 arr = new MyArray2();
                 long totalLength = (long)(dims[0] * dims[1] * dims[2] * dims[3]);
-                /*IntPtr[] data = new IntPtr[totalLength];
-                for (int i = 0; i < totalLength; i++)
-                {
-                    data[i] = new IntPtr(sizeof(T));
-                    data[i] = (IntPtr)values;
-                    values++;
-                }*/
                 var type = (int)GetDtypeFromT<T>(doublePrecision);
-                IntPtr data = (IntPtr)values;
-                interop.DLLArray.create_array(ref data, ref ndims, dims, out arr.reference, ref type);
+                if (typeof(T) == typeof(Complex))
+                {
+                    fixed(float* data = new float[totalLength * 2])
+                    {
+                        for (int i = 0; i < totalLength; i++)
+                        {
+                            Complex value = (Complex)Convert.ChangeType(*values, typeof(Complex));
+                            data[i * 2] = (float)value.Real;
+                            data[i * 2 + 1] = (float)value.Imaginary;
+                            values++;
+                            Console.WriteLine("Value: " + value);
+                            Console.WriteLine("data[" + (i*2) + "]: " + data[i * 2]);
+                            Console.WriteLine("data[" + (i * 2 + 1) + "]: " + data[i * 2 + 1]);
+                        }
+                        
+                        interop.DLLArray.create_array(data, ref ndims, dims, out arr.reference, ref type);
+                    }
+                }
+                else
+                {
+                    interop.DLLArray.create_array(values, ref ndims, dims, out arr.reference, ref type);
+                }
+                
                 arr.Reference = arr.reference;        
                 return arr;
             }
@@ -181,6 +195,7 @@ namespace khiva
                     GCHandle gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
                     IntPtr dataPtr = gchArr.AddrOfPinnedObject();
                     interop.DLLArray.get_data(ref reference, dataPtr);
+                    // Transformar data a Complex
                     Reference = reference;
                 }
                 finally

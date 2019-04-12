@@ -113,7 +113,7 @@ namespace khiva.interop
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void create_array([In] IntPtr[] arr, [In] ref uint ndims, [In] long[] dims, [Out] out IntPtr result, [In] ref int type);
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static unsafe void create_array([In] ref void* arr, [In] ref uint ndims, [In] long[] dims, [Out] out IntPtr result, [In] ref int type);
+        public extern static unsafe void create_array([In] void* arr, [In] ref uint ndims, [In] long[] dims, [Out] out IntPtr result, [In] ref int type);
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void create_array([In] ref IntPtr arr, [In] ref uint ndims, [In] long[] dims, [Out] out IntPtr result, [In] ref int type);
         /// <summary>

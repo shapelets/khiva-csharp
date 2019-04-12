@@ -20,9 +20,9 @@ namespace khiva
     {
         static void Main(String[] args)
         {
-            int[] data = { 1, 2, 3, 4 };
-            array.MyArray2 arr = array.MyArray2.Create<int>(data);
-            int[] dataArr = arr.GetData1D<int>();
+            Complex[] data = { new Complex(1,2), new Complex(3,4) };
+            array.MyArray2 arr = array.MyArray2.Create<Complex>(data);
+            Complex[] dataArr = arr.GetData1D<Complex>();
             for (int i = 0; i < dataArr.Length; i++)
             {
                 Console.WriteLine(dataArr[i]);
