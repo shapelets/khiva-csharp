@@ -173,8 +173,8 @@ namespace khiva
                     GCHandle gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
                     IntPtr dataPtr = gchArr.AddrOfPinnedObject();
                     interop.DLLArray.get_data(ref reference, dataPtr);
-                    // Transformar data a Complex
                     Reference = reference;
+                    Console.WriteLine(data.GetType());
                 }
                 finally
                 {
@@ -183,7 +183,7 @@ namespace khiva
                 return data;
             }
 
-            private static Dtype GetDtypeFromT<T>(bool doublePrecision = false)
+            private static Dtype GetDtypeFromT<T>(bool doublePrecision)
             {
                 var type = typeof(T);
                 if (type == typeof(double))
