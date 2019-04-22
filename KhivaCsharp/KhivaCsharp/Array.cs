@@ -170,11 +170,35 @@ namespace khiva
                 T[] data = new T[10];
                 try
                 {
+                    if (Type == Dtype.c32)
+                    {
+                       var values = GetDataAux<float>(20);
+                        for(int i = 0; i < 10; i++)
+                        {
+                            data[i] = (T)Convert.ChangeType(new Complex(values[2*i], values[2*i + 1]), typeof(T));
+                        }
+                    }
+                    else
+                    {
+                        data = GetDataAux<T>(10);
+                    }
+                }
+                finally
+                {
+                    GCHandle.Alloc(data, GCHandleType.Weak);
+                }
+                return data;
+            }
+
+            private T[] GetDataAux<T>(long size)
+            {
+                T[] data = new T[size];
+                try
+                {
                     GCHandle gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
                     IntPtr dataPtr = gchArr.AddrOfPinnedObject();
                     interop.DLLArray.get_data(ref reference, dataPtr);
                     Reference = reference;
-                    Console.WriteLine(data.GetType());
                 }
                 finally
                 {
