@@ -6,7 +6,7 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-    msbuild /p:Configuration=Release KhivaCsharp/KhivaCsharp.sln
+    msbuild KhivaCsharp/KhivaCsharp.sln
     nunit-console KhivaCsharp/KhivaCSharpNUnitTest/bin/x64/Release/KhivaCSharpNUnitTest.dll
 else
     msbuild /p:Configuration=Debug KhivaCsharp/KhivaCsharp.sln
