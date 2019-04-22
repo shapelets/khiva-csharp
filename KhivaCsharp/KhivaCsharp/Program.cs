@@ -20,20 +20,12 @@ namespace khiva
     {
         static void Main(String[] args)
         {
-            Complex[,,,] data = { { { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(5, 6), new Complex(7, 8) } }, { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(5, 6), new Complex(7, 8) } } },
-                { { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(5, 6), new Complex(7, 8) } }, { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(5, 6), new Complex(7, 8) } } } };
-            array.KhivaArray<Complex> arr = new array.KhivaArray<Complex>(data, false);
-            Complex[,,,] dataArr = arr.GetData4D<Complex>();
-            for (int i = 0; i < dataArr.GetLength(0); i++)
-            {
-                for(int j = 0; j < dataArr.GetLength(1); j++)
-                {
-                    for (int k = 0; k < dataArr.GetLength(2); k++)
-                    for (int z = 0; z < dataArr.GetLength(3); z++)
-                        Console.WriteLine(dataArr[i, j, k, z]);
-                }
-            }
+            Complex[,,] data = { { { new Complex(1, 2)}, { new Complex(5, 6)} }, { { new Complex(3, 4) }, { new Complex(7, 8) } } };
+            array.KhivaArray<Complex> arr = array.KhivaArray<Complex>.Create<Complex>(data, false);
+            Complex[,,] dataArr = arr.GetData3D<Complex>();
+            arr.Display();
             Console.ReadKey();
+            arr.Dispose();
             /*float[] tss = new float[] { 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5 };
             array.Array arr = new array.Array(tss);
             array.Array aggregatedLinearTrendResult = features.Features.AggregatedLinearTrend(arr, 3, 0).Item1;
