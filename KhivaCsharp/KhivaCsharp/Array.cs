@@ -116,68 +116,8 @@ namespace khiva
                 fixed (T* data = &values[0,0,0,0])
                     return Create<T>(4, new long[] { values.GetLength(1), values.GetLength(0), values.GetLength(2), values.GetLength(3) }, doublePrecision, data);
             }
-
-            /*public unsafe static MyArray2 Create<T>(uint ndims, long[] dims, bool doublePrecision, T* values) where T : unmanaged
-            {
-                MyArray2 arr = new MyArray2();
-                IntPtr data;
-                long totalLength = (long)(dims[0] * dims[1] * dims[2] * dims[3]);
-                unsafe
-                {
-                    data = Marshal.AllocHGlobal((int)(sizeof(T) * totalLength));
-                }
-                try
-                {
-                    for (int i = 0; i < totalLength; i++)
-                    {
-                        Marshal.StructureToPtr<T>(*values, IntPtr.Add(data, i * Marshal.SizeOf(*values)), true);
-                        values++;
-                    }
-                    void* dataPtr = data.ToPointer();
-                    var type = (int)GetDtypeFromT<T>(doublePrecision);
-                    interop.DLLArray.create_array(ref dataPtr, ref ndims, dims, out arr.reference, ref type);
-                    arr.Reference = arr.reference;
-                }
-                finally
-                {
-                    Marshal.FreeHGlobal(data);
-                }                
-                return arr;
-            }*/
-
-                public unsafe static MyArray2 Create<T>(uint ndims, long[] dims, bool doublePrecision, T* values) where T : unmanaged
-            {
-                MyArray2 arr = new MyArray2();
-                long totalLength = (long)(dims[0] * dims[1] * dims[2] * dims[3]);
-                var type = (int)GetDtypeFromT<T>(doublePrecision);
-                if (typeof(T) == typeof(Complex))
-                {
-                    fixed(float* data = new float[totalLength * 2])
-                    {
-                        for (int i = 0; i < totalLength; i++)
-                        {
-                            Complex value = (Complex)Convert.ChangeType(*values, typeof(Complex));
-                            data[i * 2] = (float)value.Real;
-                            data[i * 2 + 1] = (float)value.Imaginary;
-                            values++;
-                            Console.WriteLine("Value: " + value);
-                            Console.WriteLine("data[" + (i*2) + "]: " + data[i * 2]);
-                            Console.WriteLine("data[" + (i * 2 + 1) + "]: " + data[i * 2 + 1]);
-                        }
-                        
-                        interop.DLLArray.create_array(data, ref ndims, dims, out arr.reference, ref type);
-                    }
-                }
-                else
-                {
-                    interop.DLLArray.create_array(values, ref ndims, dims, out arr.reference, ref type);
-                }
-                
-                arr.Reference = arr.reference;        
-                return arr;
-            }
-
-            public unsafe static MyArray2 Create<T>(uint ndims, long[] dims, bool doublePrecision, T[] values) where T : unmanaged
+            
+            private unsafe static MyArray2 Create<T>(uint ndims, long[] dims, bool doublePrecision, T[] values) where T : unmanaged
             {
                 MyArray2 arr = new MyArray2();
                 long totalLength = (long)(dims[0] * dims[1] * dims[2] * dims[3]);
