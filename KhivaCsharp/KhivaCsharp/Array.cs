@@ -116,15 +116,53 @@ namespace khiva
                 fixed (T* data = &values[0,0,0,0])
                     return Create<T>(4, new long[] { values.GetLength(1), values.GetLength(0), values.GetLength(2), values.GetLength(3) }, doublePrecision, data);
             }
-            
-            private unsafe static MyArray2 Create<T>(uint ndims, long[] dims, bool doublePrecision, T[] values) where T : unmanaged
+
+            private unsafe static MyArray2 Create<T>(uint ndims, long[] dims, bool doublePrecision, T* values) where T : unmanaged
             {
                 MyArray2 arr = new MyArray2();
                 long totalLength = (long)(dims[0] * dims[1] * dims[2] * dims[3]);
                 var type = (int)GetDtypeFromT<T>(doublePrecision);
-                interop.DLLArray.create_array(values, ref ndims, dims, out arr.reference, ref type);
+                if(typeof(T) == typeof(Complex))
+                {
+                    fixed (Complex* data = new Complex[totalLength])
+                    {
+                        for (int i = 0; i < totalLength; i++)
+                        {
+                            data[i] = (Complex)Convert.ChangeType(values[i], typeof(Complex));
+                        }
+                        if (type == (int)Dtype.c32)
+                        {  
+                            float* flatten = FlatComplex<float>(data, totalLength);
+                            interop.DLLArray.create_array(flatten, ref ndims, dims, out arr.reference, ref type);
+                        }
+
+                        else if (type == (int)Dtype.c64)
+                        {
+                            double* flatten = FlatComplex<double>(data, totalLength);
+                            interop.DLLArray.create_array(flatten, ref ndims, dims, out arr.reference, ref type);
+                        }
+                    }   
+                }
+                else
+                {
+                    interop.DLLArray.create_array(values, ref ndims, dims, out arr.reference, ref type);
+                }
+
                 arr.Reference = arr.reference;
                 return arr;
+            }
+
+            private unsafe static T* FlatComplex<T>(Complex* data, long totalLength) where T : unmanaged
+            {
+                fixed(T* flatten = new T[totalLength * 2])
+                {
+                    for (int i = 0; i<totalLength; i++)
+                    {
+                        flatten[2 * i] = (T)Convert.ChangeType(data[i].Real, typeof(T));
+                        flatten[(2 * i) + 1] = (T)Convert.ChangeType(data[i].Imaginary, typeof(T));
+                    }
+                    return flatten;
+                }
             }
 
             public T[] GetData1D<T>()
