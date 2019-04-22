@@ -7,10 +7,23 @@
 language: csharp
 solution: KhivaCsharp/KhivaCsharp.sln
 
+env:
+  LD_LIBRARY_PATH: /usr/local/lib:/usr/local/include:$LD_LIBRARY_PATH
+  DYLD_FALLBACK_LIBRARY_PATH: /usr/local/include:$DYLD_FALLBACK_LIBRARY_PATH
+  BOOST_PATH: Libraries/boost_1_67_0:$BOOST_PATH
+  AF_PATH: /opt/arrayfire-3:$AF_PATH
+  KHIVA_PATH: ./khiva-library:$KHIVA_PATH
+  LDFLAGS: -L/usr/local/opt/openssl/lib
+  CPPFLAGS: -I/usr/local/opt/openssl/include
+  PKG_CONFIG_PATH: /usr/local/opt/openssl/lib/pkgconfig
+  PATH: /usr/local/opt/openssl/bin:/usr/bin/:/bin/:/usr/local/bin:/usr/local/lib:/usr/local/share:/usr/local/include:/usr/lib:$AF_PATH/lib:$KHIVA_PATH/lib:$PATH
+
 matrix:
   fast_finish: true
   include:
     - os: linux
+      dist: xenial
+      sudo: required
       mono: 5.16.0
       cache:
         directories:
@@ -18,11 +31,9 @@ matrix:
           - ${HOME}/.m2
           - ${HOME}/.conan
           - ${TRAVIS_BUILD_DIR}/cmake
-      script:
-        - source .CI/travis/build_and_test_mono.sh
-      after_success:
-        - codecov -f coverage.xml
     - os: linux
+      dist: xenial
+      sudo: required
       mono: latest
       cache:
         directories:
@@ -30,24 +41,8 @@ matrix:
           - ${HOME}/.m2
           - ${HOME}/.conan
           - ${TRAVIS_BUILD_DIR}/cmake
-      script:
-        - source .CI/travis/build_and_test_mono.sh
-      after_success:
-        - codecov -f coverage.xml
     - os: osx
-      dotnet: 2.2.100
-      mono: none
-      cache:
-        directories:
-          - ${TRAVIS_BUILD_DIR}/installers
-          - ${HOME}/.m2
-          - ${HOME}/.conan
-          - ${TRAVIS_BUILD_DIR}/cmake
-      script:
-        - source .CI/travis/build_and_test_dotnet.sh
-      after_success:
-        - codecov -f coverage.xml
-    - os: osx
+      osx_image: xcode9.3
       mono: latest
       cache:
         directories:
@@ -55,11 +50,10 @@ matrix:
           - ${HOME}/.m2
           - ${HOME}/.conan
           - ${TRAVIS_BUILD_DIR}/cmake
-      script:
-        - source .CI/travis/build_and_test_mono.sh
-      after_success:
-        - codecov -f coverage.xml
+          - ${HOME}/Library/Caches/Homebrew
+          - ${HOME}/.pyenv
     - os: osx
+      osx_image: xcode9.3
       mono: 5.16.0
       cache:
         directories:
@@ -67,12 +61,14 @@ matrix:
           - ${HOME}/.m2
           - ${HOME}/.conan
           - ${TRAVIS_BUILD_DIR}/cmake
-      script:
-        - source .CI/travis/build_and_test_mono.sh
-      after_success:
-        - codecov -f coverage.xml
+          - ${HOME}/Library/Caches/Homebrew
+          - ${HOME}/.pyenv
 
 install:
-  - source .CI/travis/install.sh
+  - source .CI/travis/install_mono.sh
   - source .CI/travis/install-arrayfire.sh
   - source .CI/travis/install-khiva.sh
+script:
+  - source .CI/travis/build_and_test_mono.sh
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
