@@ -57,24 +57,6 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DimensionalityTests.cs" />
-    <Compile Include="ClusteringTests.cs" />
-    <Compile Include="DistancesTests.cs" />
-    <Compile Include="FeaturesTests.cs" />
-    <Compile Include="LibraryTests.cs" />
-    <Compile Include="ArrayTests.cs" />
-    <Compile Include="LinalgTests.cs" />
-    <Compile Include="MatrixTests.cs" />
-    <Compile Include="NormalizationTests.cs" />
-    <Compile Include="PolynomialTests.cs" />
-    <Compile Include="RegressionTests.cs" />
-    <Compile Include="RegularizationTests.cs" />
-    <Compile Include="StatisticsTests.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\KhivaCsharp\KhivaCsharp.csproj">
       <Project>{7d2a744a-2406-4e13-af75-d2cf8dc955c2}</Project>
       <Name>KhivaCsharp</Name>

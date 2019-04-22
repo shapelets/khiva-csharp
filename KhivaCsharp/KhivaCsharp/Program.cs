@@ -20,12 +20,15 @@ namespace khiva
     {
         static void Main(String[] args)
         {
-            Complex[] data = { new Complex(1,2), new Complex(3,4) };
-            array.MyArray2 arr = array.MyArray2.Create<Complex>(data, false);
-            Complex[] dataArr = arr.GetData1D<Complex>();
-            for (int i = 0; i < dataArr.Length; i++)
+            Complex[,] data = { { new Complex(1, 2), new Complex(3, 4) }, { new Complex(5, 6), new Complex(7, 8) } };
+            array.KhivaArray<Complex> arr = new array.KhivaArray<Complex>(data, false);
+            Complex[,] dataArr = arr.GetData2D<Complex>();
+            for (int i = 0; i < dataArr.GetLength(0); i++)
             {
-                Console.WriteLine(dataArr[i]);
+                for(int j = 0; j < dataArr.GetLength(1); j++)
+                {
+                    Console.WriteLine(dataArr[i,j]);
+                }
             }
             Console.ReadKey();
             /*float[] tss = new float[] { 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5 };

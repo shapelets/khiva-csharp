@@ -79,8 +79,8 @@
     <Compile Include="Interop\DLLFeatures.cs" />
     <Compile Include="Interop\DLLLibrary.cs" />
     <Compile Include="Interop\DLLLinalg.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Program.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="OSVersion">
