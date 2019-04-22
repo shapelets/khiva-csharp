@@ -104,6 +104,7 @@ namespace khiva
 
             public KhivaArray()
             {
+                Reference = IntPtr.Zero;
             }
 
             public KhivaArray(R[] tss, bool doublePrecision = false)
@@ -302,18 +303,19 @@ namespace khiva
                 }
                 return data;
             }
-            /*
+
             public T[,,] GetData3D<T>()
             {
-                T[,,] data = new T[Dims[0], Dims[1], Dims[2]];
+                T[,,] data = new T[Dims[1], Dims[0], Dims[2]];
                 try
                 {
                     if (Type == Dtype.c32)
                     {
                         var values = GetData3DAux<float>(Dims[2] * 2);
-                        for (int i = 0; i < Dims[0]; i++)
-                        {
-                            data[i] = (T)Convert.ChangeType(new Complex(values[2 * i], values[2 * i + 1]), typeof(T));
+                        for (int i = 0; i < data.GetLength(0); i++)
+                        for (int j = 0; j < data.GetLength(1); j++)
+                        for (int k = 0; k < data.GetLength(2); k++) { 
+                            data[i,j,k] = (T)Convert.ChangeType(new Complex(values[i,j,2*k], values[i,j,2 * k + 1]), typeof(T));
                         }
                     }
                     else
@@ -330,7 +332,7 @@ namespace khiva
 
             private T[,,] GetData3DAux<T>(long lastDim)
             {
-                T[,,] data = new T[Dims[0], Dims[1], lastDim];
+                T[,,] data = new T[Dims[1], Dims[0], lastDim];
                 try
                 {
                     GCHandle gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
@@ -345,7 +347,7 @@ namespace khiva
                 return data;
             }
 
-            public T[] GetData4D<T>()
+            public T[,,,] GetData4D<T>()
             {
                 T[,,,] data = new T[Dims[1], Dims[0], Dims[2], Dims[3]];
                 try
@@ -353,9 +355,11 @@ namespace khiva
                     if (Type == Dtype.c32)
                     {
                         var values = GetData4DAux<float>(Dims[3] * 2);
-                        for (int i = 0; i < 10; i++)
-                        {
-                            data[i] = (T)Convert.ChangeType(new Complex(values[2 * i], values[2 * i + 1]), typeof(T));
+                        for (int i = 0; i < data.GetLength(0); i++)
+                        for (int j = 0; j < data.GetLength(1); j++)
+                        for (int k = 0; k < data.GetLength(2); k++)
+                        for (int z = 0; z < data.GetLength(3); z++) { 
+                            data[i,j,k,z] = (T)Convert.ChangeType(new Complex(values[i,j,k,2 * z], values[i,j,k,2 * z + 1]), typeof(T));
                         }
                     }
                     else
@@ -372,7 +376,7 @@ namespace khiva
 
             private T[,,,] GetData4DAux<T>(long lastDim)
             {
-                T[,,,] data = new T[Dims[1], Dims[0], Dims[2], Dims[3]];
+                T[,,,] data = new T[Dims[1], Dims[0], Dims[2], lastDim];
                 try
                 {
                     GCHandle gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
@@ -386,7 +390,7 @@ namespace khiva
                 }
                 return data;
             }
-            */
+
             private static Dtype GetDtypeFromT<T>(bool doublePrecision)
             {
                 var type = typeof(T);
