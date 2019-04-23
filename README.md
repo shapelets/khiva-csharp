@@ -33,10 +33,10 @@ Install the prerequisites listed in the "Installation" section of the [Khiva lib
 
 Install the Khiva C# binding compatible with the Khiva library installed previously. 
 
-## Executing the tests:
+## Executing the tests
 All tests can be executed separately, please find them in <project-root-dir>/KhivaCsharp/KhivaCsharpNUnitTest.
 
-## Running tests on MacOS
+### Running tests on MacOS
 Run the following command from the project root folder:
 ```bash
 nunit-console KhivaCsharp/KhivaCSharpNUnitTest/bin/x64/Release/KhivaCSharpNUnitTest.dll
