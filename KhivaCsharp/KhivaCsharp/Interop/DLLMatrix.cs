@@ -26,7 +26,6 @@ namespace khiva.interop
          /// subsequence</param>
          /// <param name="index">The matrix profile index containing the index of the most similar
          /// subsequence</param>
-         /// <param name="length_profile">Length of the matrix profile</param>
          /// <param name="m">Subsequence length value used to calculate the input matrix profile.</param>
          /// <param name="n">Number of discords to extract</param>
          /// <param name="discord_distances">The distance of the best N discords</param>
@@ -46,7 +45,6 @@ namespace khiva.interop
          /// <param name="profile">The matrix profile containing the minimum distance of each
          /// subsequence.</param>
          /// <param name="index">The matrix profile index containing where each minimum occurs.</param>
-         /// <param name="length_profile">Length of the matrix profile.</param>
          /// <param name="m">Subsequence length value used to calculate the input matrix profile.</param>
          /// <param name="n">Number of motifs to extract.</param>
          /// <param name="motif_distances">The distance of the best N motifs.</param>

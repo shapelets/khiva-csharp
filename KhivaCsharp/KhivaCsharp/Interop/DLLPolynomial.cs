@@ -36,7 +36,7 @@ namespace khiva.interop
          ///      p[0] /// x^n + p[1] /// x^{n-1} + ... + p[n-1] /// x + p[n]
          /// \f]
          ///</summary>
-         /// <param name="pp">KhivaArray of polynomial coefficients.</param>
+         /// <param name="p">KhivaArray of polynomial coefficients.</param>
          /// <param name="result">KhivaArray containing the roots of the polynomial.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void roots([In] ref IntPtr p, [Out] out IntPtr result);

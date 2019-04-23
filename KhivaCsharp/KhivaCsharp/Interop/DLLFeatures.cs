@@ -45,9 +45,9 @@ namespace khiva.interop
          /// <summary> Calculates the value of an aggregation function f_agg (e.g. var or mean) of the autocorrelation
          /// (Compare to http://en.wikipedia.org/wiki/Autocorrelation#Estimation), taken over different all possible
          /// lags (1 to length of x).
-         ///
+         /// </summary>
          /// <param name="array">Expects an input array whose dimension zero is the length of the time
-         /// series (all the same) and dimension one indicates the number of time series.
+         /// series (all the same) and dimension one indicates the number of time series.</param>
          /// <param name="aggregation_function">Function to be used in the aggregation. It receives an integer which indicates the
          /// function to be applied:
          ///          {
@@ -60,13 +60,14 @@ namespace khiva.interop
          ///              default : mean
          ///          }</param>
          /// <param name="result">An array whose values contains the aggregated correaltion for each time series.</param>
+         /// </summary>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void aggregated_autocorrelation([In] ref IntPtr array,[In] ref int aggregation_function,[Out] out IntPtr result);
 
         
          /// <summary> Calculates a linear least-squares regression for values of the time series that were aggregated
          /// over chunks versus the sequence from 0 up to the number of chunks minus one.
-         ///
+         /// </summary>
          /// <param name="array">The time series to calculate the features of</param>
          /// <param name="chunkSize">The chunk size used to aggregate the data.</param>
          /// <param name="aggregation_function">Function to be used in the aggregation. It receives an integer which indicates the
@@ -192,7 +193,7 @@ namespace khiva.interop
          /// <param name="array">Expects an input array whose dimension zero is the length of the
          /// time series (all the same) and dimension one indicates the number of time
          /// series.</param>
-         /// @param zNormalize Controls whether the time series should be z-normalized or not.
+         /// <param name="zNormalize">Controls whether the time series should be z-normalized or not.</param>
          /// <param name="result">The complexity value for the given time series.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void cid_ce([In] ref IntPtr array, [In] ref bool zNormalize, [Out] out IntPtr result);

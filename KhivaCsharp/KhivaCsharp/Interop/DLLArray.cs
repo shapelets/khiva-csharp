@@ -67,7 +67,7 @@ namespace khiva.interop
         /// <param name="array">The array to obtain the type information from.</param>
         /// <param name="type">Value of the Dtype enumeration.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void get_type([In] ref IntPtr array, [Out] out int t);
+        public extern static void get_type([In] ref IntPtr array, [Out] out int type);
 
         
         /// <summary> Adds two arrays.</summary>
