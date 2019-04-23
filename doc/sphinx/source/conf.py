@@ -41,7 +41,7 @@ author = u'Shapelets'
 version = ''
 # The full version, including alpha/beta/rc tags
 release = subprocess.check_output(
-    ["git", "describe"]).strip().decode("utf-8").split('-')[0]
+    ["git", "describe", "--tag", "--always"]).strip().decode("utf-8").split('-')[0]
 
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
