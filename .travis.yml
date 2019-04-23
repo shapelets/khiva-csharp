@@ -24,16 +24,6 @@ matrix:
     - os: linux
       dist: xenial
       sudo: required
-      mono: 5.18.0
-      cache:
-        directories:
-          - ${TRAVIS_BUILD_DIR}/installers
-          - ${HOME}/.m2
-          - ${HOME}/.conan
-          - ${TRAVIS_BUILD_DIR}/cmake
-    - os: linux
-      dist: xenial
-      sudo: required
       mono: latest
       cache:
         directories:
@@ -43,16 +33,6 @@ matrix:
           - ${TRAVIS_BUILD_DIR}/cmake
     - os: osx
       mono: latest
-      cache:
-        directories:
-          - ${TRAVIS_BUILD_DIR}/installers
-          - ${HOME}/.m2
-          - ${HOME}/.conan
-          - ${TRAVIS_BUILD_DIR}/cmake
-          - ${HOME}/Library/Caches/Homebrew
-          - ${HOME}/.pyenv
-    - os: osx
-      mono: 5.18.0
       cache:
         directories:
           - ${TRAVIS_BUILD_DIR}/installers
