@@ -43,6 +43,55 @@ namespace khiva.array.tests
         }
 
         [Test]
+        public void TestZeroDimensionsMismatch()
+        {
+            try
+            {
+                using (KhivaArray.CreateZeros<int>(new long[]{ 1, 2, 3, 4 }, 0)) { }
+            }
+            catch (Exception e)
+            {
+                Assert.AreEqual("Number of dimensions must be between 1 and 4", e.Message);
+            }
+        }
+
+        [Test]
+        public void TestZero1D()
+        {
+            using (KhivaArray arr = KhivaArray.CreateZeros<int>(new long[] { 1, 2, 3, 2 }, 1))
+            {
+                Assert.AreEqual(new int[] { 0 }, arr.GetData1D<int>());
+            }
+        }
+
+        [Test]
+        public void TestZero2D()
+        {
+            using (KhivaArray arr = KhivaArray.CreateZeros<int>(new long[] { 1, 2, 3, 2 }, 2))
+            {
+                Assert.AreEqual(new int[,] { { 0, 0 } }, arr.GetData2D<int>());
+            }
+        }
+
+        [Test]
+        public void TestZero3D()
+        {
+            using (KhivaArray arr = KhivaArray.CreateZeros<int>(new long[] { 1, 2, 3, 2 }, 3))
+            {
+                Assert.AreEqual(new int[,,] { { { 0, 0, 0 }, { 0, 0, 0 } } }, arr.GetData3D<int>());
+            }
+        }
+
+        [Test]
+        public void TestZero4D()
+        {
+            using (KhivaArray arr = KhivaArray.CreateZeros<int>(new long[] { 1, 2, 3, 2 }, 4))
+            {
+                Assert.AreEqual(new int[,,,] { { { { 0, 0 }, { 0, 0 }, { 0, 0 } }, { { 0, 0 }, { 0, 0 }, { 0, 0 } } } }, arr.GetData4D<int>());
+            }
+        }
+
+        [Test]
         public void TestDoubleNull()
         {
             double[] tss = null;
@@ -221,7 +270,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
+                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method but have 2", e.Message);
                 }
         }
 
@@ -236,7 +285,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
+                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method but have 2", e.Message);
                 }
         }
 
@@ -251,7 +300,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
+                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method but have 2", e.Message);
                 }
         }
 
@@ -266,7 +315,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
+                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method but have 2", e.Message);
                 }
 }
 
@@ -281,7 +330,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
+                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method but have 2", e.Message);
                 }
         }
 
@@ -296,7 +345,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
+                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method but have 2", e.Message);
                 }
         }
 
@@ -311,7 +360,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
+                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method but have 2", e.Message);
                 }
         }
 
@@ -326,7 +375,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
+                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method but have 2", e.Message);
                 }
         }
 
@@ -341,7 +390,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
+                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method but have 2", e.Message);
                 }
         }
 
@@ -356,7 +405,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
+                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method but have 2", e.Message);
                 }
         }
 
@@ -371,7 +420,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
+                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method but have 2", e.Message);
                 }
         }
 
@@ -386,7 +435,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method and have 2", e.Message);
+                    Assert.AreEqual("The array must be have at most 1 dimensions for using this method but have 2", e.Message);
                 }
         }
 
@@ -401,7 +450,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
+                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method but have 3", e.Message);
                 }
         }
 
@@ -416,7 +465,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
+                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method but have 3", e.Message);
                 }
         }
 
@@ -431,7 +480,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
+                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method but have 3", e.Message);
                 }
         }
 
@@ -446,7 +495,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
+                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method but have 3", e.Message);
                 }
         }
 
@@ -461,7 +510,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
+                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method but have 3", e.Message);
                 }
         }
 
@@ -476,7 +525,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
+                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method but have 3", e.Message);
                 }
         }
 
@@ -491,7 +540,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
+                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method but have 3", e.Message);
                 }
         }
 
@@ -506,7 +555,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
+                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method but have 3", e.Message);
                 }
         }
 
@@ -521,7 +570,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
+                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method but have 3", e.Message);
                 }
         }
 
@@ -536,7 +585,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
+                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method but have 3", e.Message);
                 }
         }
 
@@ -551,7 +600,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
+                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method but have 3", e.Message);
                 }
         }
 
@@ -566,7 +615,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method and have 3", e.Message);
+                    Assert.AreEqual("The array must be have at most 2 dimensions for using this method but have 3", e.Message);
                 }
         }
 
@@ -581,7 +630,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
+                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method but have 4", e.Message);
                 }
         }
 
@@ -596,7 +645,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
+                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method but have 4", e.Message);
                 }
         }
 
@@ -611,7 +660,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
+                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method but have 4", e.Message);
                 }
         }
 
@@ -626,7 +675,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
+                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method but have 4", e.Message);
                 }
         }
 
@@ -641,7 +690,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
+                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method but have 4", e.Message);
                 }
         }
 
@@ -656,7 +705,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
+                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method but have 4", e.Message);
                 }
         }
 
@@ -671,7 +720,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
+                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method but have 4", e.Message);
                 }
         }
 
@@ -686,7 +735,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
+                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method but have 4", e.Message);
                 }
         }
 
@@ -701,7 +750,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
+                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method but have 4", e.Message);
                 }
         }
 
@@ -716,7 +765,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
+                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method but have 4", e.Message);
                 }
         }
 
@@ -731,7 +780,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
+                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method but have 4", e.Message);
                 }
         }
 
@@ -746,7 +795,7 @@ namespace khiva.array.tests
                 }
                 catch (Exception e)
                 {
-                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method and have 4", e.Message);
+                    Assert.AreEqual("The array must be have at most 3 dimensions for using this method but have 4", e.Message);
                 }
         }
 

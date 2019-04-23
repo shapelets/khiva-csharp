@@ -146,7 +146,7 @@ namespace khiva
                 }
                 else
                 {
-                    throw new Exception("Dimensions must be between 1 and 4");
+                    throw new Exception("Number of dimensions must be between 1 and 4");
                 }
             }
 
@@ -624,7 +624,7 @@ namespace khiva
                 {
                     if (dims[i] > 1)
                     {
-                        throw new Exception("The array must be have at most " + maxNdims + " dimensions for using this method and have " + (i + 1));
+                        throw new Exception("The array must be have at most " + maxNdims + " dimensions for using this method but have " + (i + 1));
                     }
                     i--;
                 }
