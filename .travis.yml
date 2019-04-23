@@ -24,7 +24,7 @@ matrix:
     - os: linux
       dist: xenial
       sudo: required
-      mono: 5.16.0
+      mono: 5.18.0
       cache:
         directories:
           - ${TRAVIS_BUILD_DIR}/installers
@@ -52,7 +52,7 @@ matrix:
           - ${HOME}/Library/Caches/Homebrew
           - ${HOME}/.pyenv
     - os: osx
-      mono: 5.16.0
+      mono: 5.18.0
       cache:
         directories:
           - ${TRAVIS_BUILD_DIR}/installers
