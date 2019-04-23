@@ -47,6 +47,7 @@ on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
 if on_rtd:
     subprocess.call("pip install breathe", shell=True)
+    subprocess.call("pip install sphinx-csharp", shell=True)
 
 with open(doxygen_source_dir + "/Doxyfile.in") as f:
     newText = f.read().replace('@VERSION_SHORT@', release).replace(
