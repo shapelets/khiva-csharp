@@ -35,7 +35,7 @@ namespace khiva
 			    IntPtr result;
                 interop.DLLNormalization.decimal_scaling_norm(ref reference, out result);
                 tss.Reference = reference;
-                return (new KhivaArray(result));
+                return (KhivaArray.Create(result));
             }
 
             /// <summary>
@@ -67,7 +67,7 @@ namespace khiva
 			    IntPtr result;
                 interop.DLLNormalization.max_min_norm(ref reference, ref high, ref low, ref epsilon, out result);
                 tss.Reference = reference;
-                return (new KhivaArray(result));
+                return (KhivaArray.Create(result));
             }
 
             /// <summary>
@@ -104,7 +104,7 @@ namespace khiva
 			    IntPtr result;
                 interop.DLLNormalization.mean_norm(ref reference, out result);
                 tss.Reference = reference;
-                return (new KhivaArray(result));
+                return (KhivaArray.Create(result));
             }
 
             /// <summary>
@@ -137,7 +137,7 @@ namespace khiva
 			    IntPtr result;
                 interop.DLLNormalization.znorm(ref reference, ref epsilon, out result);
                 tss.Reference = reference;
-                return (new KhivaArray(result));
+                return (KhivaArray.Create(result));
             }
 
             /// <summary>

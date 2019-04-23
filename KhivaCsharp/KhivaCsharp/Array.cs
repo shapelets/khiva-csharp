@@ -12,21 +12,18 @@ using System.Threading.Tasks;
 using System.Numerics;
 using System.Runtime.InteropServices;
 
-
-
-
-
 namespace khiva
 {
     namespace array
     {
-
         /// <summary>
         /// Khiva KhivaArray Class.
         /// </summary>
         public class KhivaArray : IDisposable
         {
+
             private IntPtr reference;
+
             /// <summary>
             /// KHIVA array available types.
             /// </summary>
@@ -81,6 +78,7 @@ namespace khiva
                 /// </summary>
                 u16
             }
+
             /// <summary>
             /// Dispose the KhivaArray
             /// </summary>
@@ -94,8 +92,11 @@ namespace khiva
             /// </summary>
             private void CleanUp()
             {
-                this.DeleteArray();
-                this.Reference = IntPtr.Zero;
+                if (Reference != IntPtr.Zero)
+                {
+                    this.DeleteArray();
+                    this.Reference = IntPtr.Zero;
+                }
             }
             /// <summary>
             /// Destroy KhivaArray
@@ -106,747 +107,471 @@ namespace khiva
             }
 
             /// <summary>
-            /// Creates an KhivaArray object of 1 dimension of type float
+            /// Creates empty KhivaArray
             /// </summary>
-            /// <param name="arr">Data used in order to create the array.</param>
-            public KhivaArray(float[] arr)
+            protected KhivaArray()
             {
-                if (arr == null)
-                {
-                    throw new Exception("Null elems object provided");
-                }
-                int type = (int)Dtype.f32;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.Length, 1, 1, 1 };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
+                Reference = IntPtr.Zero;
             }
 
             /// <summary>
-            /// Creates an KhivaArray object of 2 dimensions of type float
+            /// Creates KhivaArray of zeros
             /// </summary>
-            /// <param name="arr">Data used in order to create the array.</param>
-            public KhivaArray(float[,] arr)
+            /// <typeparam name="T">Type of the elements of the array</typeparam>
+            /// <param name="dims">Cardinality of dimensions of the data.</param>
+            /// <param name="ndims">Number of dimensions of the data.</param>
+            /// <param name="doublePrecision">If Complex array has double precision. Default to false</param>
+            /// <returns>KhivaArray created</returns>
+            public static KhivaArray CreateZeros<T>(long[] dims, uint ndims, bool doublePrecision = false) where T:unmanaged
             {
-                if (arr == null)
+                if(ndims == 1)
                 {
-                    throw new Exception("Null elems object provided");
+                    T[] values = new T[dims[0]];
+                    return Create(values, doublePrecision);
                 }
-                int type = (int)Dtype.f32;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
-            }
-
-            /// <summary>
-            /// Creates an KhivaArray object of 3 dimensions of type float
-            /// </summary>
-            /// <param name="arr">Data used in order to create the array.</param>
-            public KhivaArray(float[,,] arr)
-            {
-                if (arr == null)
+                else if (ndims == 2)
                 {
-                    throw new Exception("Null elems object provided");
+                    T[,] values = new T[dims[0], dims[1]];
+                    return Create(values, doublePrecision);
                 }
-                int type = (int)Dtype.f32;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
-            }
-
-            /// <summary>
-            /// Creates an KhivaArray object of 4 dimensions of type float
-            /// </summary>
-            /// <param name="arr">Data used in order to create the array.</param>
-            public KhivaArray(float[,,,] arr)
-            {
-                if (arr == null)
+                else if (ndims == 3)
                 {
-                    throw new Exception("Null elems object provided");
+                    T[,,] values = new T[dims[0], dims[1], dims[2]];
+                    return Create(values, doublePrecision);
                 }
-                int type = (int)Dtype.f32;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
-            }
-
-            /// <summary>
-            /// Creates an KhivaArray object of 1 dimension of type double
-            /// </summary>
-            /// <param name="arr">Data used in order to create the array.</param>
-            public KhivaArray(double[] arr)
-            {
-                if (arr == null)
+                else if (ndims == 4)
                 {
-                    throw new Exception("Null elems object provided");
-                }
-                int type = (int)Dtype.f64;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.Length, 1, 1, 1 };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
-            }
-
-            /// <summary>
-            /// Creates an KhivaArray object of 2 dimensions of type double
-            /// </summary>
-            /// <param name="arr">Data used in order to create the array.</param>
-            public KhivaArray(double[,] arr)
-            {
-                if (arr == null)
-                {
-                    throw new Exception("Null elems object provided");
-                }
-                int type = (int)Dtype.f64;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
-            }
-
-            /// <summary>
-            /// Creates an KhivaArray object of 3 dimensions of type double
-            /// </summary>
-            /// <param name="arr">Data used in order to create the array.</param>
-            public KhivaArray(double[,,] arr)
-            {
-                if (arr == null)
-                {
-                    throw new Exception("Null elems object provided");
-                }
-                int type = (int)Dtype.f64;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
-            }
-
-            /// <summary>
-            /// Creates an KhivaArray object of 4 dimensions of type double
-            /// </summary>
-            /// <param name="arr">Data used in order to create the array.</param>
-            public KhivaArray(double[,,,] arr)
-            {
-                if (arr == null)
-                {
-                    throw new Exception("Null elems object provided");
-                }
-                int type = (int)Dtype.f64;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
-            }
-
-            public KhivaArray(Complex[] arr, bool doublePrecision)
-            {
-                if (arr == null)
-                {
-                    throw new Exception("Null elems object provided");
-                }
-                int type;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.Length, 1, 1, 1 };
-                double[] complexArrDouble = null;
-                float[] complexArrFloat = null;
-                if (!doublePrecision)
-                {
-                    type = (int)Dtype.c32;
-                    complexArrFloat = new float[arr.Length * 2];
-                    Flatten1D<float>(complexArrFloat, arr);
-                    interop.DLLArray.create_array(complexArrFloat, ref ndims, dims, out reference, ref type);
+                    T[,,,] values = new T[dims[0], dims[1], dims[2], dims[3]];
+                    return Create(values, doublePrecision);
                 }
                 else
                 {
-                    type = (int)Dtype.c64;
-                    complexArrDouble = new double[arr.Length * 2];
-                    Flatten1D<double>(complexArrDouble, arr);
-                    interop.DLLArray.create_array(complexArrDouble, ref ndims, dims, out reference, ref type);
+                    throw new Exception("Dimensions must be between 1 and 4");
                 }
             }
 
-            private void Flatten1D<T>(T[] complexArr, Complex[] arr)
+            /// <summary>
+            /// Creates a khiva array object from reference
+            /// </summary>
+            /// <param name="reference">Reference from which create the array</param>
+            /// <returns>KhivaArray created</returns>
+            public static KhivaArray Create(IntPtr reference)
             {
-                for (int i = 0; i < arr.Length; i++)
-                {
-                    complexArr[2 * i] = (T)Convert.ChangeType(arr[i].Real, typeof(T));
-                    complexArr[2 * i + 1] = (T)Convert.ChangeType(arr[i].Imaginary, typeof(T));
-                }
-            }
-
-            public KhivaArray(Complex[,] arr, bool doublePrecision)
-            {
-                if (arr == null)
+                if (reference == null)
                 {
                     throw new Exception("Null elems object provided");
                 }
-                int type;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
-                double[] complexArrDouble = null;
-                float[] complexArrFloat = null;
-                if (!doublePrecision)
-                {
-                    type = (int)Dtype.c32;
-                    complexArrFloat = new float[arr.Length * 2];
-                    Flatten2D<float>(complexArrFloat, arr);
-                    interop.DLLArray.create_array(complexArrFloat, ref ndims, dims, out reference, ref type);
-                }
-                else
-                {
-                    type = (int)Dtype.c64;
-                    complexArrDouble = new double[arr.Length * 2];
-                    Flatten2D<double>(complexArrDouble, arr);
-                    interop.DLLArray.create_array(complexArrDouble, ref ndims, dims, out reference, ref type);
-                }
+                var arr = new KhivaArray();
+                arr.Reference = reference;
+                return arr;
             }
 
-            private void Flatten2D<T>(T[] complexArr, Complex[,] arr)
+            /// <summary>
+            /// Creates a khiva array object from copy
+            /// </summary>
+            /// <param name="other">KhivaArray to copy</param>
+            /// <returns>KhivaArray created</returns>
+            public static KhivaArray Create(KhivaArray other)
             {
-                for (int i = 0; i < arr.GetLength(0); i++)
+                if (other.Reference == null)
                 {
-                    for (int j = 0; j < arr.GetLength(1); j++)
+                    throw new Exception("Null elems object provided");
+                }
+                return other.Copy();
+            }
+
+            /// <summary>
+            /// Creates a khiva array object
+            /// </summary>
+            /// <typeparam name="T">Type of the elements of the array</typeparam>
+            /// <param name="values">1 dimensional array with the data</param>
+            /// <param name="doublePrecision">If Complex array has double precision. Default to false</param>
+            /// <returns>KhivaArray created</returns>
+            public unsafe static KhivaArray Create<T>(T[] values, bool doublePrecision = false) where T:unmanaged
+            {
+                if (values == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
+                fixed (T* data = &values[0])
+                    return Create<T>(1, new long[] { values.Length, 1, 1, 1 }, data, doublePrecision);
+            }
+
+            /// <summary>
+            /// Creates a khiva array object
+            /// </summary>
+            /// <typeparam name="T">Type of the elements of the array</typeparam>
+            /// <param name="values">2 dimensional array with the data</param>
+            /// <param name="doublePrecision">If Complex array has double precision. Default to false</param>
+            /// <returns>KhivaArray created</returns>
+            public unsafe static KhivaArray Create<T>(T[,] values, bool doublePrecision = false) where T : unmanaged
+            {
+                if (values == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
+                fixed (T* data = &values[0,0])
+                    return Create<T>(2, new long[] { values.GetLength(1), values.GetLength(0), 1, 1 }, data, doublePrecision);
+            }
+
+            /// <summary>
+            /// Creates a khiva array object
+            /// </summary>
+            /// <typeparam name="T">Type of the elements of the array</typeparam>
+            /// <param name="values">3 dimensional array with the data</param>
+            /// <param name="doublePrecision">If Complex array has double precision. Default to false</param>
+            /// <returns>KhivaArray created</returns>
+            public unsafe static KhivaArray Create<T>(T[,,] values, bool doublePrecision = false) where T : unmanaged
+            {
+                if (values == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
+                fixed (T* data = &values[0,0,0])
+                    return Create<T>(3, new long[] { values.GetLength(1), values.GetLength(0), values.GetLength(2), 1 }, data, doublePrecision);
+            }
+
+            /// <summary>
+            /// Creates a khiva array object
+            /// </summary>
+            /// <typeparam name="T">Type of the elements of the array</typeparam>
+            /// <param name="values">4 dimensional array with the data</param>
+            /// <param name="doublePrecision">If Complex array has double precision. Default to false</param>
+            /// <returns>KhivaArray created</returns>
+            public unsafe static KhivaArray Create<T>(T[,,,] values, bool doublePrecision = false) where T : unmanaged
+            {
+                if (values == null)
+                {
+                    throw new Exception("Null elems object provided");
+                }
+                fixed (T* data = &values[0,0,0,0])
+                    return Create<T>(4, new long[] { values.GetLength(1), values.GetLength(0), values.GetLength(2), values.GetLength(3) }, data, doublePrecision);
+            }
+
+            private unsafe static KhivaArray Create<T>(uint ndims, long[] dims, T* values, bool doublePrecision = false) where T : unmanaged
+            {
+                KhivaArray arr = new KhivaArray();
+                long totalLength = (long)(dims[0] * dims[1] * dims[2] * dims[3]);
+                var type = (int)GetDtypeFromT<T>(doublePrecision);
+                if(typeof(T) == typeof(Complex))
+                {
+                    fixed (Complex* data = new Complex[totalLength])
                     {
-                        complexArr[2 * i * arr.GetLength(1) + 2 * j] = (T)Convert.ChangeType(arr[i, j].Real, typeof(T));
-                        complexArr[2 * i * arr.GetLength(1) + 2 * j + 1] = (T)Convert.ChangeType(arr[i, j].Imaginary, typeof(T));
-                    }
-                }
-            }
-
-            public KhivaArray(Complex[,,] arr, bool doublePrecision)
-            {
-                if (arr == null)
-                {
-                    throw new Exception("Null elems object provided");
-                }
-                int type;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
-                double[] complexArrDouble = null;
-                float[] complexArrFloat = null;
-                if (!doublePrecision)
-                {
-                    type = (int)Dtype.c32;
-                    complexArrFloat = new float[arr.Length * 2];
-                    Flatten3D<float>(complexArrFloat, arr);
-                    interop.DLLArray.create_array(complexArrFloat, ref ndims, dims, out reference, ref type);
-                }
-                else
-                {
-                    type = (int)Dtype.c64;
-                    complexArrDouble = new double[arr.Length * 2];
-                    Flatten3D<double>(complexArrDouble, arr);
-                    interop.DLLArray.create_array(complexArrDouble, ref ndims, dims, out reference, ref type);
-                }
-            }
-
-            private void Flatten3D<T>(T[] complexArr, Complex[,,] arr)
-            {
-                for (int i = 0; i < arr.GetLength(0); i++)
-                {
-                    for (int j = 0; j < arr.GetLength(1); j++)
-                    {
-                        for (int k = 0; k < arr.GetLength(2); k++)
+                        for (int i = 0; i < totalLength; i++)
                         {
-                            complexArr[2 * i * (arr.GetLength(1) * arr.GetLength(2)) + 2 * j * arr.GetLength(2) + 2 * k] = (T)Convert.ChangeType(arr[i, j, k].Real, typeof(T));
-                            complexArr[2 * i * (arr.GetLength(1) * arr.GetLength(2)) + 2 * j * arr.GetLength(2) + 2 * k + 1] = (T)Convert.ChangeType(arr[i, j, k].Imaginary, typeof(T));
+                            data[i] = (Complex)Convert.ChangeType(values[i], typeof(Complex));
+                        }
+                        if (type == (int)Dtype.c32)
+                        {  
+                            float* flatten = FlatComplex<float>(data, totalLength);
+                            interop.DLLArray.create_array(flatten, ref ndims, dims, out arr.reference, ref type);
+                        }
+
+                        else if (type == (int)Dtype.c64)
+                        {
+                            double* flatten = FlatComplex<double>(data, totalLength);
+                            interop.DLLArray.create_array(flatten, ref ndims, dims, out arr.reference, ref type);
+                        }
+                    }   
+                }
+                else
+                {
+                    interop.DLLArray.create_array(values, ref ndims, dims, out arr.reference, ref type);
+                }
+
+                arr.Reference = arr.reference;
+                return arr;
+            }
+
+            private unsafe static T* FlatComplex<T>(Complex* data, long totalLength) where T : unmanaged
+            {
+                fixed(T* flatten = new T[totalLength * 2])
+                {
+                    for (int i = 0; i<totalLength; i++)
+                    {
+                        flatten[2 * i] = (T)Convert.ChangeType(data[i].Real, typeof(T));
+                        flatten[(2 * i) + 1] = (T)Convert.ChangeType(data[i].Imaginary, typeof(T));
+                    }
+                    return flatten;
+                }
+            }
+
+            /// <summary>
+            /// Get the data of a 4 dimensional khiva array
+            /// </summary>
+            /// <typeparam name="T">The type of the elements of the array</typeparam>
+            /// <returns>1 dimensional array containing the data of the khiva array</returns>
+            public T[] GetData1D<T>()
+            {
+                if (!CheckType(typeof(T)))
+                {
+                    throw new Exception("ArrayType does mismatch");
+                }
+                CheckNdims(Dims, 2);
+                T[] data = new T[Dims[0]];
+                try
+                {
+                    if (ArrayType == Dtype.c32)
+                    {
+                       var values = GetData1DAux<float>(Dims[0]*2);
+                        for(int i = 0; i < Dims[0]; i++)
+                        {
+                            data[i] = (T)Convert.ChangeType(new Complex(values[2*i], values[2*i + 1]), typeof(T));
                         }
                     }
-                }
-            }
-
-            public KhivaArray(Complex[,,,] arr, bool doublePrecision)
-            {
-                if (arr == null)
-                {
-                    throw new Exception("Null elems object provided");
-                }
-                int type;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
-                double[] complexArrDouble = null;
-                float[] complexArrFloat = null;
-                if (!doublePrecision)
-                {
-                    type = (int)Dtype.c32;
-                    complexArrFloat = new float[arr.Length * 2];
-                    Flatten4D<float>(complexArrFloat, arr);
-                    interop.DLLArray.create_array(complexArrFloat, ref ndims, dims, out reference, ref type);
-                }
-                else
-                {
-                    type = (int)Dtype.c64;
-                    complexArrDouble = new double[arr.Length * 2];
-                    Flatten4D<double>(complexArrDouble, arr);
-                    interop.DLLArray.create_array(complexArrDouble, ref ndims, dims, out reference, ref type);
-                }
-            }
-
-            private void Flatten4D<T>(T[] complexArr, Complex[,,,] arr)
-            {
-                for (int i = 0; i < arr.GetLength(0); i++)
-                {
-                    for (int j = 0; j < arr.GetLength(1); j++)
+                    else
                     {
-                        for (int k = 0; k < arr.GetLength(2); k++)
+                        data = GetData1DAux<T>(Dims[0]);
+                    }
+                }
+                finally
+                {
+                    GCHandle.Alloc(data, GCHandleType.Weak);
+                }
+                return data;
+            }
+
+            private T[] GetData1DAux<T>(long lastDim)
+            {
+                T[] data = new T[lastDim];
+                try
+                {
+                    GCHandle gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
+                    IntPtr dataPtr = gchArr.AddrOfPinnedObject();
+                    interop.DLLArray.get_data(ref reference, dataPtr);
+                    Reference = reference;
+                }
+                finally
+                {
+                    GCHandle.Alloc(data, GCHandleType.Weak);
+                }
+                return data;
+            }
+
+            /// <summary>
+            /// Get the data of a 2 dimensional khiva array
+            /// </summary>
+            /// <typeparam name="T">The type of the elements of the array</typeparam>
+            /// <returns>2 dimensional array containing the data of the khiva array</returns>
+            public T[,] GetData2D<T>()
+            {
+                if (!CheckType(typeof(T)))
+                {
+                    throw new Exception("ArrayType does mismatch");
+                }
+                CheckNdims(Dims, 2);
+                T[,] data = new T[Dims[1], Dims[0]];
+                try
+                {
+                    if (ArrayType == Dtype.c32)
+                    {
+                        var values = GetData2DAux<float>(Dims[0] * 2);
+                        for (int i = 0; i < data.GetLength(0); i++)
                         {
-                            for (int z = 0; z < arr.GetLength(3); z++)
+                            for (int j = 0; j < data.GetLength(1); j++)
                             {
-                                complexArr[2 * i * (arr.GetLength(1) * arr.GetLength(2) * arr.GetLength(3)) + 2 * j * (arr.GetLength(2) * arr.GetLength(3)) + 2 * k * arr.GetLength(3) + 2 * z] = (T)Convert.ChangeType(arr[i, j, k, z].Real, typeof(T));
-                                complexArr[2 * i * (arr.GetLength(1) * arr.GetLength(2) * arr.GetLength(3)) + 2 * j * (arr.GetLength(2) * arr.GetLength(3)) + 2 * k * arr.GetLength(3) + 2 * z + 1] = (T)Convert.ChangeType(arr[i, j, k, z].Imaginary, typeof(T));
+                                data[i,j] = (T)Convert.ChangeType(new Complex(values[i, 2*j], values[i, 2*j + 1]), typeof(T));
                             }
                         }
                     }
-                }
-            }
-
-            public KhivaArray(bool[] arr)
-            {
-                if (arr == null)
-                {
-                    throw new Exception("Null elems object provided");
-                }
-                int type = (int)Dtype.b8;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.Length, 1, 1, 1 };
-                byte[] byteArr = new byte[arr.GetLength(0)];
-                BoolToByte1D(byteArr, arr);
-                interop.DLLArray.create_array(byteArr, ref ndims, dims, out reference, ref type);
-            }
-
-            private void BoolToByte1D(byte[] byteArr, bool[] arr)
-            {
-                for (int i = 0; i < arr.Length; i++)
-                {
-                    byteArr[i] = Convert.ToByte(arr[i]);
-                }
-            }
-
-            public KhivaArray(bool[,] arr)
-            {
-                if (arr == null)
-                {
-                    throw new Exception("Null elems object provided");
-                }
-                int type = (int)Dtype.b8;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
-                byte[,] byteArr = new byte[arr.GetLength(0), arr.GetLength(1)];
-                BoolToByte2D(byteArr, arr);
-                interop.DLLArray.create_array(byteArr, ref ndims, dims, out reference, ref type);
-            }
-
-            private void BoolToByte2D(byte[,] byteArr, bool[,] arr)
-            {
-                for (int i = 0; i < arr.GetLength(0); i++)
-                {
-                    for (int j = 0; j < arr.GetLength(1); j++)
+                    else
                     {
-                        byteArr[i, j] = Convert.ToByte(arr[i, j]);
+                        data = GetData2DAux<T>(Dims[0]);
                     }
                 }
-            }
-
-            public KhivaArray(bool[,,] arr)
-            {
-                if (arr == null)
+                finally
                 {
-                    throw new Exception("Null elems object provided");
+                    GCHandle.Alloc(data, GCHandleType.Weak);
                 }
-                int type = (int)Dtype.b8;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
-                byte[,,] byteArr = new byte[arr.GetLength(0), arr.GetLength(1), arr.GetLength(2)];
-                BoolToByte3D(byteArr, arr);
-                interop.DLLArray.create_array(byteArr, ref ndims, dims, out reference, ref type);
+                return data;
             }
 
-            private void BoolToByte3D(byte[,,] byteArr, bool[,,] arr)
+            private T[,] GetData2DAux<T>(long lastDim)
             {
-                for (int i = 0; i < arr.GetLength(0); i++)
+                T[,] data = new T[Dims[1], lastDim];
+                try
                 {
-                    for (int j = 0; j < arr.GetLength(1); j++)
+                    GCHandle gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
+                    IntPtr dataPtr = gchArr.AddrOfPinnedObject();
+                    interop.DLLArray.get_data(ref reference, dataPtr);
+                    Reference = reference;
+                }
+                finally
+                {
+                    GCHandle.Alloc(data, GCHandleType.Weak);
+                }
+                return data;
+            }
+
+            /// <summary>
+            /// Get the data of a 3 dimensional khiva array
+            /// </summary>
+            /// <typeparam name="T">The type of the elements of the array</typeparam>
+            /// <returns>3 dimensional array containing the data of the khiva array</returns>
+            public T[,,] GetData3D<T>()
+            {
+                if (!CheckType(typeof(T)))
+                {
+                    throw new Exception("ArrayType does mismatch");
+                }
+                CheckNdims(Dims, 3);
+                T[,,] data = new T[Dims[1], Dims[0], Dims[2]];
+                try
+                {
+                    if (ArrayType == Dtype.c32)
                     {
-                        for (int k = 0; k < arr.GetLength(2); k++)
-                        {
-                            byteArr[i, j, k] = Convert.ToByte(arr[i, j, k]);
+                        var values = GetData3DAux<float>(Dims[2] * 2);
+                        for (int i = 0; i < data.GetLength(0); i++)
+                        for (int j = 0; j < data.GetLength(1); j++)
+                        for (int k = 0; k < data.GetLength(2); k++) { 
+                            data[i,j,k] = (T)Convert.ChangeType(new Complex(values[i,j,2*k], values[i,j,2 * k + 1]), typeof(T));
                         }
                     }
-                }
-            }
-
-            public KhivaArray(bool[,,,] arr)
-            {
-                if (arr == null)
-                {
-                    throw new Exception("Null elems object provided");
-                }
-                int type = (int)Dtype.b8;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
-                byte[,,,] byteArr = new byte[arr.GetLength(0), arr.GetLength(1), arr.GetLength(2), arr.GetLength(3)];
-                BoolToByte4D(byteArr, arr);
-                interop.DLLArray.create_array(byteArr, ref ndims, dims, out reference, ref type);
-            }
-
-            private void BoolToByte4D(byte[,,,] byteArr, bool[,,,] arr)
-            {
-                for (int i = 0; i < arr.GetLength(0); i++)
-                {
-                    for (int j = 0; j < arr.GetLength(1); j++)
+                    else
                     {
-                        for (int k = 0; k < arr.GetLength(2); k++)
-                        {
-                            for (int z = 0; z < arr.GetLength(3); z++)
-                            {
-                                byteArr[i, j, k, z] = Convert.ToByte(arr[i, j, k, z]);
-                            }
-                        }
+                        data = GetData3DAux<T>(Dims[2]);
                     }
                 }
-            }
-
-            public KhivaArray(int[] arr)
-            {
-                if (arr == null)
+                finally
                 {
-                    throw new Exception("Null elems object provided");
+                    GCHandle.Alloc(data, GCHandleType.Weak);
                 }
-                int type = (int)Dtype.s32;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.Length, 1, 1, 1 };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
+                return data;
             }
 
-            public KhivaArray(int[,] arr)
+            private T[,,] GetData3DAux<T>(long lastDim)
             {
-                if (arr == null)
+                T[,,] data = new T[Dims[1], Dims[0], lastDim];
+                try
                 {
-                    throw new Exception("Null elems object provided");
+                    GCHandle gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
+                    IntPtr dataPtr = gchArr.AddrOfPinnedObject();
+                    interop.DLLArray.get_data(ref reference, dataPtr);
+                    Reference = reference;
                 }
-                int type = (int)Dtype.s32;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
-            }
-
-            public KhivaArray(int[,,] arr)
-            {
-                if (arr == null)
+                finally
                 {
-                    throw new Exception("Null elems object provided");
+                    GCHandle.Alloc(data, GCHandleType.Weak);
                 }
-                int type = (int)Dtype.s32;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
+                return data;
             }
 
-            public KhivaArray(int[,,,] arr)
+            /// <summary>
+            /// Get the data of a 4 dimensional khiva array
+            /// </summary>
+            /// <typeparam name="T">The type of the elements of the array</typeparam>
+            /// <returns>4 dimensional array containing the data of the khiva array</returns>
+            public T[,,,] GetData4D<T>()
             {
-                if (arr == null)
+                if (!CheckType(typeof(T)))
                 {
-                    throw new Exception("Null elems object provided");
+                    throw new Exception("ArrayType does mismatch");
                 }
-                int type = (int)Dtype.s32;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
-            }
-
-            public KhivaArray(uint[] arr)
-            {
-                if (arr == null)
+                T[,,,] data = new T[Dims[1], Dims[0], Dims[2], Dims[3]];
+                try
                 {
-                    throw new Exception("Null elems object provided");
+                    if (ArrayType == Dtype.c32)
+                    {
+                        var values = GetData4DAux<float>(Dims[3] * 2);
+                        for (int i = 0; i < data.GetLength(0); i++)
+                        for (int j = 0; j < data.GetLength(1); j++)
+                        for (int k = 0; k < data.GetLength(2); k++)
+                        for (int z = 0; z < data.GetLength(3); z++) { 
+                            data[i,j,k,z] = (T)Convert.ChangeType(new Complex(values[i,j,k,2 * z], values[i,j,k,2 * z + 1]), typeof(T));
+                        }
+                    }
+                    else
+                    {
+                        data = GetData4DAux<T>(Dims[3]);
+                    }
                 }
-                int type = (int)Dtype.u32;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.Length, 1, 1, 1 };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
-            }
-
-            public KhivaArray(uint[,] arr)
-            {
-                if (arr == null)
+                finally
                 {
-                    throw new Exception("Null elems object provided");
+                    GCHandle.Alloc(data, GCHandleType.Weak);
                 }
-                int type = (int)Dtype.u32;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
+                return data;
             }
 
-            public KhivaArray(uint[,,] arr)
+            private T[,,,] GetData4DAux<T>(long lastDim)
             {
-                if (arr == null)
+                T[,,,] data = new T[Dims[1], Dims[0], Dims[2], lastDim];
+                try
                 {
-                    throw new Exception("Null elems object provided");
+                    GCHandle gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
+                    IntPtr dataPtr = gchArr.AddrOfPinnedObject();
+                    interop.DLLArray.get_data(ref reference, dataPtr);
+                    Reference = reference;
                 }
-                int type = (int)Dtype.u32;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
-            }
-
-            public KhivaArray(uint[,,,] arr)
-            {
-                if (arr == null)
+                finally
                 {
-                    throw new Exception("Null elems object provided");
+                    GCHandle.Alloc(data, GCHandleType.Weak);
                 }
-                int type = (int)Dtype.u32;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
+                return data;
             }
 
-            public KhivaArray(byte[] arr)
+            private static Dtype GetDtypeFromT<T>(bool doublePrecision)
             {
-                if (arr == null)
+                var type = typeof(T);
+                if (type == typeof(double))
                 {
-                    throw new Exception("Null elems object provided");
+                    return Dtype.f64;
                 }
-                int type = (int)Dtype.u8;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.Length, 1, 1, 1 };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
-            }
-
-            public KhivaArray(byte[,] arr)
-            {
-                if (arr == null)
+                else if (type == typeof(float))
                 {
-                    throw new Exception("Null elems object provided");
+                    return Dtype.f32;
                 }
-                int type = (int)Dtype.u8;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
-            }
-
-            public KhivaArray(byte[,,] arr)
-            {
-                if (arr == null)
+                else if (type == typeof(int))
                 {
-                    throw new Exception("Null elems object provided");
+                    return Dtype.s32;
                 }
-                int type = (int)Dtype.u8;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
-            }
-
-            public KhivaArray(byte[,,,] arr)
-            {
-                if (arr == null)
+                else if (type == typeof(uint))
                 {
-                    throw new Exception("Null elems object provided");
+                    return Dtype.u32;
                 }
-                int type = (int)Dtype.u8;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
-            }
-
-            public KhivaArray(long[] arr)
-            {
-                if (arr == null)
+                else if (type == typeof(bool))
                 {
-                    throw new Exception("Null elems object provided");
+                    return Dtype.b8;
                 }
-                int type = (int)Dtype.s64;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.Length, 1, 1, 1 };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
-            }
-
-            public KhivaArray(long[,] arr)
-            {
-                if (arr == null)
+                else if (type == typeof(long))
                 {
-                    throw new Exception("Null elems object provided");
+                    return Dtype.s64;
                 }
-                int type = (int)Dtype.s64;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
-            }
-
-            public KhivaArray(long[,,] arr)
-            {
-                if (arr == null)
+                else if (type == typeof(ulong))
                 {
-                    throw new Exception("Null elems object provided");
+                    return Dtype.u64;
                 }
-                int type = (int)Dtype.s64;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
-            }
-
-            public KhivaArray(long[,,,] arr)
-            {
-                if (arr == null)
+                else if (type == typeof(short))
                 {
-                    throw new Exception("Null elems object provided");
+                    return Dtype.s16;
                 }
-                int type = (int)Dtype.s64;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
-            }
-
-            public KhivaArray(ulong[] arr)
-            {
-                if (arr == null)
+                else if (type == typeof(ushort))
                 {
-                    throw new Exception("Null elems object provided");
+                    return Dtype.u16;
                 }
-                int type = (int)Dtype.u64;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.Length, 1, 1, 1 };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
-            }
-
-            public KhivaArray(ulong[,] arr)
-            {
-                if (arr == null)
+                else if (type == typeof(byte))
                 {
-                    throw new Exception("Null elems object provided");
+                    return Dtype.u8;
                 }
-                int type = (int)Dtype.u64;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
-            }
-
-            public KhivaArray(ulong[,,] arr)
-            {
-                if (arr == null)
+                else if (type == typeof(Complex))
                 {
-                    throw new Exception("Null elems object provided");
+                    if (doublePrecision)
+                    {
+                        return Dtype.c64;
+                    }
+                    else
+                    {
+                        return Dtype.c32;
+                    }
                 }
-                int type = (int)Dtype.u64;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
-            }
-
-            public KhivaArray(ulong[,,,] arr)
-            {
-                if (arr == null)
+                else
                 {
-                    throw new Exception("Null elems object provided");
+                    throw new Exception("Type not supported");
                 }
-                int type = (int)Dtype.u64;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
             }
 
-            public KhivaArray(short[] arr)
-            {
-                if (arr == null)
-                {
-                    throw new Exception("Null elems object provided");
-                }
-                int type = (int)Dtype.s16;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.Length, 1, 1, 1 };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
-            }
-
-            public KhivaArray(short[,] arr)
-            {
-                if (arr == null)
-                {
-                    throw new Exception("Null elems object provided");
-                }
-                int type = (int)Dtype.s16;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
-            }
-
-            public KhivaArray(short[,,] arr)
-            {
-                if (arr == null)
-                {
-                    throw new Exception("Null elems object provided");
-                }
-                int type = (int)Dtype.s16;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
-            }
-
-            public KhivaArray(short[,,,] arr)
-            {
-                if (arr == null)
-                {
-                    throw new Exception("Null elems object provided");
-                }
-                int type = (int)Dtype.s16;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
-            }
-
-            public KhivaArray(ushort[] arr)
-            {
-                if (arr == null)
-                {
-                    throw new Exception("Null elems object provided");
-                }
-                int type = (int)Dtype.u16;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.Length, 1, 1, 1 };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
-            }
-
-            public KhivaArray(ushort[,] arr)
-            {
-                if (arr == null)
-                {
-                    throw new Exception("Null elems object provided");
-                }
-                int type = (int)Dtype.u16;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), 1, 1 };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
-            }
-
-            public KhivaArray(ushort[,,] arr)
-            {
-                if (arr == null)
-                {
-                    throw new Exception("Null elems object provided");
-                }
-                int type = (int)Dtype.u16;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), 1 };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
-            }
-
-            public KhivaArray(ushort[,,,] arr)
-            {
-                if (arr == null)
-                {
-                    throw new Exception("Null elems object provided");
-                }
-                int type = (int)Dtype.u16;
-                uint ndims = (uint)arr.Rank;
-                long[] dims = { arr.GetLength(1), arr.GetLength(0), arr.GetLength(2), arr.GetLength(3) };
-                interop.DLLArray.create_array(arr, ref ndims, dims, out reference, ref type);
-            }
-
-            public KhivaArray(IntPtr reference)
-            {
-                this.reference = reference;
-            }
-
-            public KhivaArray(KhivaArray other)
-            {
-                this.reference = other.Reference;
-            }
-
+            /// <summary>
+            /// Getters and setters of the Reference parameter
+            /// </summary>
             public IntPtr Reference
             {
                 get
@@ -859,357 +584,10 @@ namespace khiva
                 }
             }
 
-            /// <summary>
-            /// Gets the data stored in a 1D array.
-            /// </summary>
-            /// <typeparam name="T">The data type to be returned.</typeparam>
-            /// <returns>The data to an array of its type.</returns>
-            public T[] GetData1D<T>()
-            {
-                if (!CheckType(typeof(T)))
-                {
-                    throw new Exception("Type does mismatch");
-                }
-                long[] dims = Dims;
-                CheckNdims(dims, 1);
-                T[] data = new T[dims[0]];
-                GCHandle gchArr = new GCHandle();
-                try
-                {
-                    if (typeof(T) == typeof(bool))
-                    {
-                        byte[] byteData = new byte[dims[0]];
-                        gchArr = GCHandle.Alloc(byteData, GCHandleType.Pinned);
-                        IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                        interop.DLLArray.get_data(ref reference, dataPtr);
-                        this.Reference = reference;
-                        ByteToGeneric1D<T>(data, byteData);
-                    }
-                    else if (typeof(T) == typeof(Complex))
-                    {
-                        if (ArrayType == Dtype.c64)
-                        {
-                            double[] complexData = new double[dims[0] * 2];
-                            gchArr = GCHandle.Alloc(complexData, GCHandleType.Pinned);
-                            IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                            interop.DLLArray.get_data(ref reference, dataPtr);
-                            this.Reference = reference;
-                            ToGenericComplex1D<T, double>(data, complexData);
-                        }
-                        else
-                        {
-                            float[] complexData = new float[dims[0] * 2];
-                            gchArr = GCHandle.Alloc(complexData, GCHandleType.Pinned);
-                            IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                            interop.DLLArray.get_data(ref reference, dataPtr);
-                            this.Reference = reference;
-                            ToGenericComplex1D<T, float>(data, complexData);
-                        }
-                    }
-                    else
-                    {
-                        gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
-                        IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                        interop.DLLArray.get_data(ref reference, dataPtr);
-                        this.Reference = reference;
-                    }
-                }
-                finally
-                {
-                    GCHandle.Alloc(gchArr.Target, GCHandleType.Weak);
-                }
-                return data;
-            }
-
-            private void ByteToGeneric1D<T>(T[] genericArr, byte[] arr)
-            {
-                for (int i = 0; i < arr.Length; i++)
-                {
-                    genericArr[i] = (T)Convert.ChangeType(arr[i], typeof(T));
-                }
-            }
-
-            private void ToGenericComplex1D<T, R>(T[] genericArr, R[] arr)
-            {
-                for (int i = 0; i < arr.Length / 2; i++)
-                {
-                    genericArr[i] = (T)Convert.ChangeType(new Complex(Convert.ToDouble(arr[2 * i]), Convert.ToDouble(arr[2 * i + 1])), typeof(T));
-                }
-            }
-
-            /// <summary>
-            /// Gets the data stored in a 2D array.
-            /// </summary>
-            /// <typeparam name="T">The data type to be returned.</typeparam>
-            /// <returns>The data to an array of its type.</returns>
-            public T[,] GetData2D<T>()
-            {
-                if (!CheckType(typeof(T)))
-                {
-                    throw new Exception("Type does mismatch");
-                }
-                long[] dims = Dims;
-                CheckNdims(dims, 2);
-                T[,] data = new T[dims[1], dims[0]];
-                GCHandle gchArr = new GCHandle();
-                try
-                {
-                    if (typeof(T) == typeof(bool))
-                    {
-                        byte[,] byteData = new byte[dims[1], dims[0]];
-                        gchArr = GCHandle.Alloc(byteData, GCHandleType.Pinned);
-                        IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                        interop.DLLArray.get_data(ref reference, dataPtr);
-                        this.Reference = reference;
-                        ByteToGeneric2D<T>(data, byteData);
-                    }
-                    else if (typeof(T) == typeof(Complex))
-                    {
-                        if (ArrayType == Dtype.c64)
-                        {
-                            double[] complexData = new double[dims[0] * dims[1] * 2];
-                            gchArr = GCHandle.Alloc(complexData, GCHandleType.Pinned);
-                            IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                            interop.DLLArray.get_data(ref reference, dataPtr);
-                            this.Reference = reference;
-                            ToGenericComplex2D<T, double>(data, complexData);
-                        }
-                        else
-                        {
-                            float[] complexData = new float[dims[0] * dims[1] * 2];
-                            gchArr = GCHandle.Alloc(complexData, GCHandleType.Pinned);
-                            IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                            interop.DLLArray.get_data(ref reference, dataPtr);
-                            this.Reference = reference;
-                            ToGenericComplex2D<T, float>(data, complexData);
-                        }
-                    }
-                    else
-                    {
-                        gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
-                        IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                        interop.DLLArray.get_data(ref reference, dataPtr);
-                        this.Reference = reference;
-                    }
-                }
-                finally
-                {
-                    GCHandle.Alloc(gchArr.Target, GCHandleType.Weak);
-                }
-                
-                return data;
-            }
-
-            private void ByteToGeneric2D<T>(T[,] genericArr, byte[,] arr)
-            {
-                for (int i = 0; i < arr.GetLength(0); i++)
-                {
-                    for (int j = 0; j < arr.GetLength(1); j++)
-                    {
-                        genericArr[i, j] = (T)Convert.ChangeType(arr[i, j], typeof(T));
-                    }
-                }
-            }
-
-            private void ToGenericComplex2D<T, R>(T[,] genericArr, R[] arr)
-            {
-                for (int i = 0; i < genericArr.GetLength(0); i++)
-                {
-                    for (int j = 0; j < genericArr.GetLength(1); j++)
-                    {
-                        genericArr[i, j] = (T)Convert.ChangeType(new Complex(Convert.ToDouble(arr[2 * i * genericArr.GetLength(1) + 2 * j]), Convert.ToDouble(arr[2 * i * genericArr.GetLength(1) + 2 * j + 1])), typeof(T));
-                    }
-                }
-            }
-
-            /// <summary>
-            /// Gets the data stored in a 3D array.
-            /// </summary>
-            /// <typeparam name="T">The data type to be returned.</typeparam>
-            /// <returns>The data to an array of its type.</returns>
-            public T[,,] GetData3D<T>()
-            {
-                if (!CheckType(typeof(T)))
-                {
-                    throw new Exception("Type does mismatch");
-                }
-                long[] dims = Dims;
-                CheckNdims(dims, 3);
-                T[,,] data = new T[dims[1], dims[0], dims[2]];
-                GCHandle gchArr = new GCHandle();
-                try
-                {
-                    if (typeof(T) == typeof(bool))
-                    {
-                        byte[,,] byteData = new byte[dims[1], dims[0], dims[2]];
-                        gchArr = GCHandle.Alloc(byteData, GCHandleType.Pinned);
-                        IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                        interop.DLLArray.get_data(ref reference, dataPtr);
-                        this.Reference = reference;
-                        ByteToGeneric3D<T>(data, byteData);
-                    }
-                    else if (typeof(T) == typeof(Complex))
-                    {
-                        if (ArrayType == Dtype.c64)
-                        {
-                            double[] complexData = new double[dims[0] * dims[1] * dims[2] * 2];
-                            gchArr = GCHandle.Alloc(complexData, GCHandleType.Pinned);
-                            IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                            interop.DLLArray.get_data(ref reference, dataPtr);
-                            this.Reference = reference;
-                            ToGenericComplex3D<T, double>(data, complexData);
-                        }
-                        else
-                        {
-                            float[] complexData = new float[dims[0] * dims[1] * dims[2] * 2];
-                            gchArr = GCHandle.Alloc(complexData, GCHandleType.Pinned);
-                            IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                            interop.DLLArray.get_data(ref reference, dataPtr);
-                            this.Reference = reference;
-                            ToGenericComplex3D<T, float>(data, complexData);
-                        }
-                    }
-                    else
-                    {
-                        gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
-                        IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                        interop.DLLArray.get_data(ref reference, dataPtr);
-                        this.Reference = reference;
-                    }
-                }
-                finally
-                {
-                    GCHandle.Alloc(gchArr.Target, GCHandleType.Weak);
-                }
-                return data;
-            }
-
-            private void ByteToGeneric3D<T>(T[,,] genericArr, byte[,,] arr)
-            {
-                for (int i = 0; i < arr.GetLength(0); i++)
-                {
-                    for (int j = 0; j < arr.GetLength(1); j++)
-                    {
-                        for (int k = 0; k < arr.GetLength(2); k++)
-                        {
-                            genericArr[i, j, k] = (T)Convert.ChangeType(arr[i, j, k], typeof(T));
-                        }
-                    }
-                }
-            }
-
-            private void ToGenericComplex3D<T, R>(T[,,] genericArr, R[] arr)
-            {
-                for (int i = 0; i < genericArr.GetLength(0); i++)
-                {
-                    for (int j = 0; j < genericArr.GetLength(1); j++)
-                    {
-                        for (int k = 0; k < genericArr.GetLength(2); k++)
-                        {
-                            genericArr[i, j, k] = (T)Convert.ChangeType(new Complex(Convert.ToDouble(arr[2 * i * (genericArr.GetLength(1) + genericArr.GetLength(2)) + 2 * j * genericArr.GetLength(2) + 2 * k]), Convert.ToDouble(arr[2 * i * (genericArr.GetLength(1) + genericArr.GetLength(2)) + 2 * j * genericArr.GetLength(2) + 2 * k + 1])), typeof(T));
-                        }
-                    }
-                }
-            }
-
-            /// <summary>
-            /// Gets the data stored in a 4D array.
-            /// </summary>
-            /// <typeparam name="T">The data type to be returned.</typeparam>
-            /// <returns>The data to an array of its type.</returns>
-            public T[,,,] GetData4D<T>()
-            {
-                if (!CheckType(typeof(T)))
-                {
-                    throw new Exception("Type does mismatch");
-                }
-                long[] dims = Dims;
-                T[,,,] data = new T[dims[1], dims[0], dims[2], dims[3]];
-                GCHandle gchArr = new GCHandle();
-                try
-                {
-                    if (typeof(T) == typeof(bool))
-                    {
-                        byte[,,,] byteData = new byte[dims[1], dims[0], dims[2], dims[3]];
-                        gchArr = GCHandle.Alloc(byteData, GCHandleType.Pinned);
-                        IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                        interop.DLLArray.get_data(ref reference, dataPtr);
-                        this.Reference = reference;
-                        ByteToGeneric4D<T>(data, byteData);
-                    }
-                    else if (typeof(T) == typeof(Complex))
-                    {
-                        if (ArrayType == Dtype.c64)
-                        {
-                            double[] complexData = new double[dims[0] * dims[1] * dims[2] * dims[3] * 2];
-                            gchArr = GCHandle.Alloc(complexData, GCHandleType.Pinned);
-                            IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                            interop.DLLArray.get_data(ref reference, dataPtr);
-                            this.Reference = reference;
-                            ToGenericComplex4D<T, double>(data, complexData);
-                        }
-                        else
-                        {
-                            float[] complexData = new float[dims[0] * dims[1] * dims[2] * dims[3] * 2];
-                            gchArr = GCHandle.Alloc(complexData, GCHandleType.Pinned);
-                            IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                            interop.DLLArray.get_data(ref reference, dataPtr);
-                            this.Reference = reference;
-                            ToGenericComplex4D<T, float>(data, complexData);
-                        }
-                    }
-                    else
-                    {
-                        gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
-                        IntPtr dataPtr = gchArr.AddrOfPinnedObject();
-                        interop.DLLArray.get_data(ref reference, dataPtr);
-                        this.Reference = reference;
-                    }
-                }
-                finally
-                {
-                    GCHandle.Alloc(gchArr.Target, GCHandleType.Weak);
-                }
-                return data;
-            }
-
-            private void ByteToGeneric4D<T>(T[,,,] genericArr, byte[,,,] arr)
-            {
-                for (int i = 0; i < arr.GetLength(0); i++)
-                {
-                    for (int j = 0; j < arr.GetLength(1); j++)
-                    {
-                        for (int k = 0; k < arr.GetLength(2); k++)
-                        {
-                            for (int z = 0; z < arr.GetLength(3); z++)
-                            {
-                                genericArr[i, j, k, z] = (T)Convert.ChangeType(arr[i, j, k, z], typeof(T));
-                            }
-                        }
-                    }
-                }
-            }
-
-            private void ToGenericComplex4D<T, R>(T[,,,] genericArr, R[] arr)
-            {
-                for (int i = 0; i < genericArr.GetLength(0); i++)
-                {
-                    for (int j = 0; j < genericArr.GetLength(1); j++)
-                    {
-                        for (int k = 0; k < genericArr.GetLength(2); k++)
-                        {
-                            for (int z = 0; z < genericArr.GetLength(3); z++)
-                            {
-                                genericArr[i, j, k, z] = (T)Convert.ChangeType(new Complex(Convert.ToDouble(arr[2 * i * (genericArr.GetLength(1) + genericArr.GetLength(2) + genericArr.GetLength(3)) + 2 * j * (genericArr.GetLength(2) + genericArr.GetLength(3)) + 2 * k * genericArr.GetLength(3) + 2 * z]), Convert.ToDouble(arr[2 * i * (genericArr.GetLength(1) + genericArr.GetLength(2) + genericArr.GetLength(3)) + 2 * j * (genericArr.GetLength(2) + genericArr.GetLength(3)) + 2 * k * genericArr.GetLength(3) + 2 * z + 1])), typeof(T));
-                            }
-                        }
-                    }
-                }
-            }
-
             private bool CheckType(Type type)
             {
-                switch (ArrayType) {
+                switch (ArrayType)
+                {
                     case Dtype.b8:
                         return type == typeof(bool);
                     case Dtype.c32:
@@ -1263,7 +641,7 @@ namespace khiva
                     interop.DLLArray.get_dims(ref reference, dims);
                     this.Reference = reference;
                     return dims;
-                }   
+                }
             }
 
             /// <summary>
@@ -1306,11 +684,11 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator +(KhivaArray lhs, KhivaArray rhs)
             {
-			IntPtr result;
+                IntPtr result;
                 interop.DLLArray.khiva_add(ref lhs.reference, ref rhs.reference, out result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
-                return new KhivaArray(result);
+                return (Create(result));
             }
 
             /// <summary>
@@ -1321,11 +699,11 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator *(KhivaArray lhs, KhivaArray rhs)
             {
-			IntPtr result;
+                IntPtr result;
                 interop.DLLArray.khiva_mul(ref lhs.reference, ref rhs.reference, out result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
-                return (new KhivaArray(result));
+                return (Create(result));
             }
 
             /// <summary>
@@ -1336,11 +714,11 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator -(KhivaArray lhs, KhivaArray rhs)
             {
-			IntPtr result;
+                IntPtr result;
                 interop.DLLArray.khiva_sub(ref lhs.reference, ref rhs.reference, out result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
-                return (new KhivaArray(result));
+                return (Create(result));
             }
 
             /// <summary>
@@ -1351,11 +729,11 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator /(KhivaArray lhs, KhivaArray rhs)
             {
-			IntPtr result;
+                IntPtr result;
                 interop.DLLArray.khiva_div(ref lhs.reference, ref rhs.reference, out result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
-                return (new KhivaArray(result));
+                return (Create(result));
             }
 
             /// <summary>
@@ -1366,11 +744,11 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator %(KhivaArray lhs, KhivaArray rhs)
             {
-			IntPtr result;
+                IntPtr result;
                 interop.DLLArray.khiva_mod(ref lhs.reference, ref rhs.reference, out result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
-                return (new KhivaArray(result));
+                return (Create(result));
             }
 
             /// <summary>
@@ -1381,11 +759,11 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray Pow(KhivaArray lhs, KhivaArray rhs)
             {
-			IntPtr result;
+                IntPtr result;
                 interop.DLLArray.khiva_pow(ref lhs.reference, ref rhs.reference, out result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
-                return (new KhivaArray(result));
+                return (Create(result));
             }
 
             /// <summary>
@@ -1396,11 +774,11 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator &(KhivaArray lhs, KhivaArray rhs)
             {
-			IntPtr result;
+                IntPtr result;
                 interop.DLLArray.khiva_bitand(ref lhs.reference, ref rhs.reference, out result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
-                return (new KhivaArray(result));
+                return (Create(result));
             }
 
             /// <summary>
@@ -1411,11 +789,11 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator |(KhivaArray lhs, KhivaArray rhs)
             {
-			IntPtr result;
+                IntPtr result;
                 interop.DLLArray.khiva_bitor(ref lhs.reference, ref rhs.reference, out result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
-                return (new KhivaArray(result));
+                return (Create(result));
             }
 
             /// <summary>
@@ -1426,11 +804,11 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator ^(KhivaArray lhs, KhivaArray rhs)
             {
-			IntPtr result;
+                IntPtr result;
                 interop.DLLArray.khiva_bitxor(ref lhs.reference, ref rhs.reference, out result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
-                return (new KhivaArray(result));
+                return (Create(result));
             }
 
             /// <summary>
@@ -1441,10 +819,10 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator <<(KhivaArray lhs, int shift)
             {
-			IntPtr result;
+                IntPtr result;
                 interop.DLLArray.khiva_bitshiftl(ref lhs.reference, ref shift, out result);
                 lhs.Reference = lhs.reference;
-                return (new KhivaArray(result));
+                return (Create(result));
             }
 
             /// <summary>
@@ -1455,12 +833,12 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator >>(KhivaArray lhs, int shift)
             {
-			IntPtr result;
+                IntPtr result;
                 interop.DLLArray.khiva_bitshiftr(ref lhs.reference, ref shift, out result);
                 lhs.Reference = lhs.reference;
-                return (new KhivaArray(result));
+                return (Create(result));
             }
-
+            
             /// <summary>
             /// Unary minus of one array.
             /// </summary>
@@ -1471,85 +849,26 @@ namespace khiva
                 KhivaArray zeros;
                 long[] dims = rhs.Dims;
                 uint maxDim = GetMaxDim(dims);
-                if (rhs.ArrayType == Dtype.c32 | rhs.ArrayType == Dtype.c64)
+                if (rhs.ArrayType == Dtype.c32)
                 {
-                    if (maxDim == 1)
-                    {
-                        Complex[] tss = new Complex[dims[0]];
-                        if (rhs.ArrayType == Dtype.c32)
-                        {
-                            zeros = new KhivaArray(tss, false);
-                        }
-                        else
-                        {
-                            zeros = new KhivaArray(tss, true);
-                        }
-                    }
-                    else if (maxDim == 2)
-                    {
-                        Complex[,] tss = new Complex[dims[0], dims[1]];
-                        if (rhs.ArrayType == Dtype.c32)
-                        {
-                            zeros = new KhivaArray(tss, false);
-                        }
-                        else
-                        {
-                            zeros = new KhivaArray(tss, true);
-                        }
-                    }
-                    else if (maxDim == 3)
-                    {
-                        Complex[,,] tss = new Complex[dims[0], dims[1], dims[2]];
-                        if (rhs.ArrayType == Dtype.c32)
-                        {
-                            zeros = new KhivaArray(tss, false);
-                        }
-                        else
-                        {
-                            zeros = new KhivaArray(tss, true);
-                        }
-                    }
-                    else
-                    {
-                        Complex[,,,] tss = new Complex[dims[0], dims[1], dims[2], dims[3]];
-                        if (rhs.ArrayType == Dtype.c32)
-                        {
-                            zeros = new KhivaArray(tss, false);
-                        }
-                        else
-                        {
-                            zeros = new KhivaArray(tss, true);
-                        }
-                    }
+                    zeros = CreateZeros<Complex>(dims, maxDim);
+                }
+                else if (rhs.ArrayType == Dtype.c64)
+                {
+                    zeros = CreateZeros<Complex>(dims, maxDim, true);
                 }
                 else
                 {
-                    if (maxDim == 1)
-                    {
-                        int[] tss = new int[dims[0]];
-                        zeros = new KhivaArray(tss);
-                    } else if (maxDim == 2)
-                    {
-                        int[,] tss = new int[dims[0], dims[1]];
-                        zeros = new KhivaArray(tss);
-                    }
-                    else if (maxDim == 3)
-                    {
-                        int[,,] tss = new int[dims[0], dims[1], dims[2]];
-                        zeros = new KhivaArray(tss);
-                    }
-                    else
-                    {
-                        int[,,,] tss = new int[dims[0], dims[1], dims[2], dims[3]];
-                        zeros = new KhivaArray(tss);
-                    }
+                    zeros = CreateZeros<int>(dims, maxDim);
                 }
-			IntPtr result;
-                interop.DLLArray.khiva_sub(ref zeros.reference, ref rhs.reference, out result);
+                IntPtr result;
+                IntPtr zRef = zeros.Reference;
+                interop.DLLArray.khiva_sub(ref zRef, ref rhs.reference, out result);
                 zeros.Reference = zeros.reference;
                 rhs.Reference = rhs.reference;
-                return (new KhivaArray(result));
+                return (Create(result));
             }
+            
 
             private static uint GetMaxDim(long[] dims)
             {
@@ -1572,10 +891,10 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator !(KhivaArray lhs)
             {
-			IntPtr result;
+                IntPtr result;
                 interop.DLLArray.khiva_not(ref lhs.reference, out result);
                 lhs.Reference = lhs.reference;
-                return (new KhivaArray(result));
+                return (Create(result));
             }
 
             /// <summary>
@@ -1586,11 +905,11 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator <(KhivaArray lhs, KhivaArray rhs)
             {
-			IntPtr result;
+                IntPtr result;
                 interop.DLLArray.khiva_lt(ref lhs.reference, ref rhs.reference, out result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
-                return (new KhivaArray(result));
+                return (Create(result));
             }
 
             /// <summary>
@@ -1601,11 +920,11 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator >(KhivaArray lhs, KhivaArray rhs)
             {
-			IntPtr result;
+                IntPtr result;
                 interop.DLLArray.khiva_gt(ref lhs.reference, ref rhs.reference, out result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
-                return (new KhivaArray(result));
+                return (Create(result));
             }
 
             /// <summary>
@@ -1616,11 +935,11 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator <=(KhivaArray lhs, KhivaArray rhs)
             {
-			IntPtr result;
+                IntPtr result;
                 interop.DLLArray.khiva_le(ref lhs.reference, ref rhs.reference, out result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
-                return (new KhivaArray(result));
+                return (Create(result));
             }
 
             /// <summary>
@@ -1631,11 +950,11 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator >=(KhivaArray lhs, KhivaArray rhs)
             {
-			IntPtr result;
+                IntPtr result;
                 interop.DLLArray.khiva_ge(ref lhs.reference, ref rhs.reference, out result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
-                return (new KhivaArray(result));
+                return (Create(result));
             }
 
             /// <summary>
@@ -1646,11 +965,11 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator ==(KhivaArray lhs, KhivaArray rhs)
             {
-			IntPtr result;
+                IntPtr result;
                 interop.DLLArray.khiva_eq(ref lhs.reference, ref rhs.reference, out result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
-                return (new KhivaArray(result));
+                return (Create(result));
             }
 
             /// <summary>
@@ -1661,11 +980,11 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public static KhivaArray operator !=(KhivaArray lhs, KhivaArray rhs)
             {
-			IntPtr result;
+                IntPtr result;
                 interop.DLLArray.khiva_ne(ref lhs.reference, ref rhs.reference, out result);
                 lhs.Reference = lhs.reference;
                 rhs.Reference = rhs.reference;
-                return (new KhivaArray(result));
+                return (Create(result));
             }
 
             /// <summary>
@@ -1675,7 +994,7 @@ namespace khiva
             /// <returns></returns>
             public override bool Equals(object o)
             {
-                if(o.GetType() == typeof(KhivaArray))
+                if (o.GetType() == typeof(KhivaArray))
                 {
                     KhivaArray arr = (KhivaArray)o;
                     return reference.Equals(arr.reference);
@@ -1692,7 +1011,7 @@ namespace khiva
             /// <returns>Hashcode of the KhivaArray</returns>
             public override int GetHashCode()
             {
-                return reference.GetHashCode();   
+                return reference.GetHashCode();
             }
 
             /// <summary>
@@ -1702,10 +1021,10 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public KhivaArray Transpose(bool conjugate = false)
             {
-			IntPtr result;
+                IntPtr result;
                 interop.DLLArray.khiva_transpose(ref reference, ref conjugate, out result);
                 this.Reference = reference;
-                return (new KhivaArray(result));
+                return (Create(result));
             }
 
             /// <summary>
@@ -1715,10 +1034,10 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public KhivaArray Col(int index)
             {
-			IntPtr result;
+                IntPtr result;
                 interop.DLLArray.khiva_col(ref reference, ref index, out result);
                 this.Reference = reference;
-                return (new KhivaArray(result));
+                return (Create(result));
             }
 
             /// <summary>
@@ -1729,10 +1048,10 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public KhivaArray Cols(int first, int last)
             {
-			IntPtr result;
+                IntPtr result;
                 interop.DLLArray.khiva_cols(ref reference, ref first, ref last, out result);
                 this.Reference = reference;
-                return (new KhivaArray(result));
+                return (Create(result));
             }
 
             /// <summary>
@@ -1742,10 +1061,10 @@ namespace khiva
             /// <returns> KHIVA KhivaArray with the result of this operation.</returns>
             public KhivaArray Row(int index)
             {
-			IntPtr result;
+                IntPtr result;
                 interop.DLLArray.khiva_row(ref reference, ref index, out result);
                 this.Reference = reference;
-                return (new KhivaArray(result));
+                return (Create(result));
             }
 
             /// <summary>
@@ -1756,10 +1075,10 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public KhivaArray Rows(int first, int last)
             {
-			IntPtr result;
+                IntPtr result;
                 interop.DLLArray.khiva_rows(ref reference, ref first, ref last, out result);
                 this.Reference = reference;
-                return (new KhivaArray(result));
+                return (Create(result));
             }
 
             /// <summary>
@@ -1769,11 +1088,11 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public KhivaArray Matmul(KhivaArray rhs)
             {
-			IntPtr result;
+                IntPtr result;
                 interop.DLLArray.khiva_matmul(ref reference, ref rhs.reference, out result);
                 this.Reference = reference;
                 rhs.Reference = rhs.reference;
-                return (new KhivaArray(result));
+                return (Create(result));
             }
 
             /// <summary>
@@ -1782,10 +1101,10 @@ namespace khiva
             /// <returns>KHIVA KhivaArray which contains a copy of array.</returns>
             public KhivaArray Copy()
             {
-			IntPtr result;
+                IntPtr result;
                 interop.DLLArray.copy(ref reference, out result);
                 this.Reference = reference;
-                return (new KhivaArray(result));
+                return (Create(result));
             }
 
             /// <summary>
@@ -1795,13 +1114,11 @@ namespace khiva
             /// <returns>KHIVA KhivaArray with the result of this operation.</returns>
             public KhivaArray As(int type)
             {
-			IntPtr result;
+                IntPtr result;
                 interop.DLLArray.khiva_as(ref reference, ref type, out result);
                 this.Reference = reference;
-                return (new KhivaArray(result));
+                return (Create(result));
             }
-
-
         }
     }
 }

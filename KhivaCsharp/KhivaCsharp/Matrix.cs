@@ -60,9 +60,9 @@ namespace khiva
                                                         ref self_join);
                 profile.Reference = profileReference;
                 index.Reference = indexReference;
-                var tuple = Tuple.Create(new KhivaArray(discords_distances),
-                             new KhivaArray(discords_indices),
-                             new KhivaArray(subsequence_indices));
+                var tuple = Tuple.Create(KhivaArray.Create(discords_distances),
+                             KhivaArray.Create(discords_indices),
+                             KhivaArray.Create(subsequence_indices));
                 return tuple;
             }
            
@@ -90,9 +90,9 @@ namespace khiva
                                                         ref self_join);
                 profile.Reference = profileReference;
                 index.Reference = indexReference;
-                var tuple = Tuple.Create(new KhivaArray(motif_distances),
-                                         new KhivaArray(motif_indices),
-                                         new KhivaArray(subsequence_indices));
+                var tuple = Tuple.Create(KhivaArray.Create(motif_distances),
+                                         KhivaArray.Create(motif_indices),
+                                         KhivaArray.Create(subsequence_indices));
                 return tuple;
             }
 
@@ -118,8 +118,8 @@ namespace khiva
                                         out p, out i);
                 tssa.Reference = aReference;
                 tssb.Reference = bReference;
-                var tuple = Tuple.Create(new KhivaArray(p),
-                                        new KhivaArray(i));
+                var tuple = Tuple.Create(KhivaArray.Create(p),
+                                        KhivaArray.Create(i));
                 return tuple;
             }
 
@@ -142,8 +142,8 @@ namespace khiva
                 interop.DLLMatrix.stomp_self_join(ref reference, ref m,
                                         out p, out i);
                 tss.Reference = reference;
-                var tuple = Tuple.Create(new KhivaArray(p),
-                                         new KhivaArray(i));
+                var tuple = Tuple.Create(KhivaArray.Create(p),
+                                         KhivaArray.Create(i));
                 return tuple;
             }
         }

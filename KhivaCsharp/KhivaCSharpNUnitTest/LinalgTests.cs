@@ -30,7 +30,7 @@ namespace khiva.linalg.tests
         {
             float[,] tss = { { 4, 3 }, { -1, -2 } };
             float[] tss2 = { 3, 1 };
-            using (KhivaArray a = new KhivaArray(tss), b = new KhivaArray(tss2), lls = Linalg.Lls(a, b))
+            using (KhivaArray a = KhivaArray.Create(tss), b = KhivaArray.Create(tss2), lls = Linalg.Lls(a, b))
             {
                 float[,] result = lls.GetData2D<float>();
                 Assert.AreEqual(1, result[0, 0], DELTA);

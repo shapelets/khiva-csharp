@@ -34,7 +34,7 @@ namespace khiva
 			    IntPtr result;
                 interop.DLLStatistics.covariance_statistics(ref reference, ref unbiased, out result);
                 tss.Reference = reference;
-                return (new KhivaArray(result));
+                return (KhivaArray.Create(result));
             }
 
             /// <summary>
@@ -49,7 +49,7 @@ namespace khiva
 			    IntPtr result;
                 interop.DLLStatistics.kurtosis_statistics(ref reference, out result);
                 tss.Reference = reference;
-                return (new KhivaArray(result));
+                return (KhivaArray.Create(result));
             }
 
             /// <summary>
@@ -88,7 +88,7 @@ namespace khiva
 			    IntPtr result;
                 interop.DLLStatistics.ljung_box(ref reference, ref lags, out result);
                 tss.Reference = reference;
-                return (new KhivaArray(result));
+                return (KhivaArray.Create(result));
             }
 
             /// <summary>
@@ -104,7 +104,7 @@ namespace khiva
 			    IntPtr result;
                 interop.DLLStatistics.moment_statistics(ref reference, ref k, out result);
                 tss.Reference = reference;
-                return (new KhivaArray(result));
+                return (KhivaArray.Create(result));
             }
 
             /// <summary>
@@ -123,7 +123,7 @@ namespace khiva
                 interop.DLLStatistics.quantile_statistics(ref reference, ref qReference, ref precision, out result);
                 tss.Reference = reference;
                 q.Reference = qReference;
-                return (new KhivaArray(result));
+                return (KhivaArray.Create(result));
             }
 
             /// <summary>
@@ -141,7 +141,7 @@ namespace khiva
 			    IntPtr result;
                 interop.DLLStatistics.quantiles_cut_statistics(ref reference, ref quantiles, ref precision, out result);
                 tss.Reference = reference;
-                return (new KhivaArray(result));
+                return (KhivaArray.Create(result));
             }
             
             /// <summary>
@@ -156,7 +156,7 @@ namespace khiva
 			    IntPtr result;
                 interop.DLLStatistics.sample_stdev_statistics(ref reference, out result);
                 tss.Reference = reference;
-                return (new KhivaArray(result));
+                return (KhivaArray.Create(result));
             }
 
             /// <summary>
@@ -171,7 +171,7 @@ namespace khiva
 			    IntPtr result;
                 interop.DLLStatistics.skewness_statistics(ref reference, out result);
                 tss.Reference = reference;
-                return (new KhivaArray(result));
+                return (KhivaArray.Create(result));
             }
         }
     }

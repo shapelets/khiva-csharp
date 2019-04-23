@@ -32,7 +32,7 @@ namespace khiva.regression.tests
                               0.23830957, 0.38793433, 0.68054104, 0.83934083, 0.76073689 };
             double[] tss2 = { 0.2217416, 0.06344161, 0.77944375, 0.72174137, 0.19413884,
                               0.51146167, 0.06880307, 0.39414268, 0.98172767, 0.30490851 };
-            using(KhivaArray arr = new KhivaArray(tss), arr2 = new KhivaArray(tss2))
+            using(KhivaArray arr = KhivaArray.Create(tss), arr2 = KhivaArray.Create(tss2))
             {
                 Tuple<KhivaArray, KhivaArray, KhivaArray, KhivaArray, KhivaArray> tuple = Regression.Linear(arr, arr2);
                 var slopeArr = tuple.Item1;
@@ -75,7 +75,7 @@ namespace khiva.regression.tests
                               0.51146167, 0.06880307, 0.39414268, 0.98172767, 0.30490851 },
                             { 0.2217416, 0.06344161, 0.77944375, 0.72174137, 0.19413884,
                               0.51146167, 0.06880307, 0.39414268, 0.98172767, 0.30490851 }};
-            using (KhivaArray arr = new KhivaArray(tss), arr2 = new KhivaArray(tss2))
+            using (KhivaArray arr = KhivaArray.Create(tss), arr2 = KhivaArray.Create(tss2))
             {
                 Tuple<KhivaArray, KhivaArray, KhivaArray, KhivaArray, KhivaArray> tuple = Regression.Linear(arr, arr2);
                 var slopeArr = tuple.Item1;

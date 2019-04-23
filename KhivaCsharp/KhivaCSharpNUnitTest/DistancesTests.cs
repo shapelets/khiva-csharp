@@ -28,7 +28,7 @@ namespace khiva.distances.tests
         {
             int[,] tss = { { 1, 1, 1, 1, 1 }, { 2, 2, 2, 2, 2 }, { 3, 3, 3, 3, 3 }, { 4, 4, 4, 4, 4 }, { 5, 5, 5, 5, 5 } };
             int[,] expected = { { 0, 0, 0, 0, 0 }, { 5, 0, 0, 0, 0 }, { 10, 5, 0, 0, 0 }, { 15, 10, 5, 0, 0 }, { 20, 15, 10, 5, 0 } };
-            using (KhivaArray arr = new KhivaArray(tss), DTW = Distances.DTW(arr))
+            using (KhivaArray arr = KhivaArray.Create(tss), DTW = Distances.DTW(arr))
             {
                 int[,] result = DTW.GetData2D<int>();
                 Assert.AreEqual(expected, result);
@@ -40,7 +40,7 @@ namespace khiva.distances.tests
         {
             int[,] tss = { { 0, 1, 2, 3 }, { 4, 5, 6, 7 }, { 8, 9, 10, 11 } };
             float[,] expected = { { 0, 0, 0 }, { 8, 0, 0 }, {16, 8, 0 } };
-            using (KhivaArray arr = new KhivaArray(tss), euclidean = Distances.Euclidean(arr))
+            using (KhivaArray arr = KhivaArray.Create(tss), euclidean = Distances.Euclidean(arr))
             {
                 float[,] result = euclidean.GetData2D<float>();
                 Assert.AreEqual(expected, result);
@@ -52,7 +52,7 @@ namespace khiva.distances.tests
         {
             int[,] tss = { { 1, 1, 1, 1, 1 }, { 2, 2, 2, 2, 2 }, { 3, 3, 3, 3, 3 }, { 4, 4, 4, 4, 4 }, { 5, 5, 5, 5, 5 } };
             int[,] expected = { { 0, 0, 0, 0, 0 }, { 5, 0, 0, 0, 0 }, { 5, 5, 0, 0, 0 }, { 5, 5, 5, 0, 0 }, { 5, 5, 5, 5, 0 } };
-            using (KhivaArray arr = new KhivaArray(tss), Hamming = Distances.Hamming(arr))
+            using (KhivaArray arr = KhivaArray.Create(tss), Hamming = Distances.Hamming(arr))
             {
                 int[,] result = Hamming.GetData2D<int>();
                 Assert.AreEqual(expected, result);
@@ -64,7 +64,7 @@ namespace khiva.distances.tests
         {
             int[,] tss = { { 1, 1, 1, 1, 1 }, { 2, 2, 2, 2, 2 }, { 3, 3, 3, 3, 3 }, { 4, 4, 4, 4, 4 }, { 5, 5, 5, 5, 5 } };
             int[,] expected = { { 0, 0, 0, 0, 0 }, { 5, 0, 0, 0, 0 }, { 10, 5, 0, 0, 0 }, { 15, 10, 5, 0, 0 }, { 20, 15, 10, 5, 0 } };
-            using (KhivaArray arr = new KhivaArray(tss), Manhattan = Distances.Manhattan(arr))
+            using (KhivaArray arr = KhivaArray.Create(tss), Manhattan = Distances.Manhattan(arr))
             {
                 int[,] result = Manhattan.GetData2D<int>();
                 Assert.AreEqual(expected, result);
@@ -76,7 +76,7 @@ namespace khiva.distances.tests
         {
             float[,] tss = { { 1, 2, 3, 4, 5 }, { 1, 1, 0, 1, 1 }, { 10, 12, 0, 0, 1 } };
             float[,] expected = { { 0, 0, 0 }, { 0.505025F, 0, 0 }, { 0.458583F, 0.564093F, 0 } };
-            using (KhivaArray arr = new KhivaArray(tss), SBD = Distances.SBD(arr))
+            using (KhivaArray arr = KhivaArray.Create(tss), SBD = Distances.SBD(arr))
             {
                 float[,] result = SBD.GetData2D<float>();
                 for (int i = 0; i < expected.GetLength(0); i++)
@@ -94,7 +94,7 @@ namespace khiva.distances.tests
         {
             int[,] tss = { { 0, 1, 2, 3 }, { 4, 5, 6, 7 }, { 8, 9, 10, 11 } };
             int[,] expected = { { 0, 0, 0 }, { 64, 0, 0 }, { 256, 64, 0 } };
-            using (KhivaArray arr = new KhivaArray(tss), SquaredEuclidean = Distances.SquaredEuclidean(arr))
+            using (KhivaArray arr = KhivaArray.Create(tss), SquaredEuclidean = Distances.SquaredEuclidean(arr))
             {
                 int[,] result = SquaredEuclidean.GetData2D<int>();
                 Assert.AreEqual(expected, result);

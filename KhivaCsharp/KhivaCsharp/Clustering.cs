@@ -42,7 +42,7 @@ namespace khiva
                 IntPtr centroids; IntPtr labels;
                 interop.DLLClustering.k_means(ref reference, ref k, out centroids, out labels, ref tolerance, ref max_iterations);
                 arr.Reference = reference;
-                var tuple = Tuple.Create(new KhivaArray(centroids), new KhivaArray(labels));
+                var tuple = Tuple.Create(KhivaArray.Create(centroids), KhivaArray.Create(labels));
                 return tuple;
             }
 
@@ -67,7 +67,7 @@ namespace khiva
                 IntPtr centroids; IntPtr labels;
                 interop.DLLClustering.k_shape(ref reference, ref k, out centroids, out labels, ref tolerance, ref max_iterations);
                 arr.Reference = reference;
-                var tuple = Tuple.Create(new KhivaArray(centroids), new KhivaArray(labels));
+                var tuple = Tuple.Create(KhivaArray.Create(centroids), KhivaArray.Create(labels));
                 return tuple;
             }
         }

@@ -49,7 +49,7 @@ namespace khiva
                 interop.DLLRegularization.group_by(ref reference, ref aggregation_function, ref n_columns_key, ref n_columns_value,
                                                     out result);
                 array.Reference = reference;
-                return (new KhivaArray(result));
+                return (KhivaArray.Create(result));
             }
         }
     }

@@ -40,7 +40,7 @@ namespace khiva
 			    IntPtr result;
                 interop.DLLDimensionality.paa(ref reference, ref bins, out result);
                 arr.Reference = reference;
-                return (new KhivaArray(result));
+                return (KhivaArray.Create(result));
             }
 
             /// <summary>
@@ -58,7 +58,7 @@ namespace khiva
 			    IntPtr result;
                 interop.DLLDimensionality.pip(ref reference, ref numberIps, out result);
                 arr.Reference = reference;
-                return (new KhivaArray(result));
+                return (KhivaArray.Create(result));
             }
 
             /// <summary>
@@ -77,7 +77,7 @@ namespace khiva
 			    IntPtr result;
                 interop.DLLDimensionality.pla_bottom_up(ref reference, ref maxError, out result);
                 arr.Reference = reference;
-                return (new KhivaArray(result));
+                return (KhivaArray.Create(result));
             }
 
             /// <summary>
@@ -96,7 +96,7 @@ namespace khiva
 			    IntPtr result;
                 interop.DLLDimensionality.pla_sliding_window(ref reference, ref maxError, out result);
                 arr.Reference = reference;
-                return (new KhivaArray(result));
+                return (KhivaArray.Create(result));
             }
 
             /// <summary>
@@ -120,7 +120,7 @@ namespace khiva
 			    IntPtr result;
                 interop.DLLDimensionality.ramer_douglas_peucker(ref reference, ref epsilon, out result);
                 points.Reference = reference;
-                return (new KhivaArray(result));
+                return (KhivaArray.Create(result));
             }
            
             /// <summary>
@@ -144,7 +144,7 @@ namespace khiva
 			    IntPtr result;
                 interop.DLLDimensionality.sax(ref reference, ref alphabetSize, out result);
                 arr.Reference = reference;
-                return (new KhivaArray(result));
+                return (KhivaArray.Create(result));
             }
 
             /// <summary>
@@ -163,7 +163,7 @@ namespace khiva
 			    IntPtr result;
                 interop.DLLDimensionality.visvalingam(ref reference, ref numPoints, out result);
                 points.Reference = reference;
-                return (new KhivaArray(result));
+                return (KhivaArray.Create(result));
             }
         }
     } 

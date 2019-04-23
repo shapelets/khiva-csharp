@@ -38,7 +38,7 @@ namespace khiva
                 interop.DLLLinalg.lls(ref aReference, ref bReference, out result);
                 a.Reference = aReference;
                 b.Reference = bReference;
-                return (new KhivaArray(result));
+                return (KhivaArray.Create(result));
             }
         }
     }

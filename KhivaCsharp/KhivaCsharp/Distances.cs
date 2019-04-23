@@ -34,7 +34,7 @@ namespace khiva
 			    IntPtr result;
                 interop.DLLDistances.dtw(ref reference, out result);
                 arr.Reference = reference;
-                return (new KhivaArray(result));
+                return (KhivaArray.Create(result));
             }
 
             /**
@@ -61,7 +61,7 @@ namespace khiva
 			    IntPtr result;
                 interop.DLLDistances.euclidean(ref reference, out result);
                 arr.Reference = reference;
-                return (new KhivaArray(result));
+                return (KhivaArray.Create(result));
             }
 
             /// <summary>
@@ -78,7 +78,7 @@ namespace khiva
 			    IntPtr result;
                 interop.DLLDistances.hamming(ref reference, out result);
                 arr.Reference = reference;
-                return (new KhivaArray(result));
+                return (KhivaArray.Create(result));
             }
 
             /// <summary>
@@ -95,7 +95,7 @@ namespace khiva
 			    IntPtr result;
                 interop.DLLDistances.manhattan(ref reference, out result);
                 arr.Reference = reference;
-                return (new KhivaArray(result));
+                return (KhivaArray.Create(result));
             }
 
             /// <summary>
@@ -113,7 +113,7 @@ namespace khiva
 			    IntPtr result;
                 interop.DLLDistances.sbd(ref reference, out result);
                 arr.Reference = reference;
-                return (new KhivaArray(result));
+                return (KhivaArray.Create(result));
             }
 
             /// <summary>
@@ -131,7 +131,7 @@ namespace khiva
 			    IntPtr result;
                 interop.DLLDistances.squared_euclidean(ref reference, out result);
                 arr.Reference = reference;
-                return (new KhivaArray(result));
+                return (KhivaArray.Create(result));
             }
 
         }

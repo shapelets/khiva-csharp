@@ -37,7 +37,7 @@ namespace khiva
                 interop.DLLPolynomial.polyfit(ref xReference, ref yReference, ref deg, out result);
                 x.Reference = xReference;
                 y.Reference = yReference;
-                return (new KhivaArray(result));
+                return (KhivaArray.Create(result));
             }
 
             /// <summary>
@@ -55,7 +55,7 @@ namespace khiva
 			    IntPtr result;
                 interop.DLLPolynomial.roots(ref reference, out result);
                 p.Reference = reference;
-                return (new KhivaArray(result));
+                return (KhivaArray.Create(result));
             }
         }
     }

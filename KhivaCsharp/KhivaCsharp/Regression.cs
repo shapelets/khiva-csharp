@@ -44,11 +44,11 @@ namespace khiva
                                             out slope, out intercept, out rvalue, out pvalue, out stderrest);
                 xss.Reference = xReference;
                 yss.Reference = yReference;
-                var tuple = Tuple.Create(new KhivaArray(slope),
-                                        new KhivaArray(intercept),
-                                        new KhivaArray(rvalue),
-                                        new KhivaArray(pvalue),
-                                        new KhivaArray(stderrest));
+                var tuple = Tuple.Create(KhivaArray.Create(slope),
+                                        KhivaArray.Create(intercept),
+                                        KhivaArray.Create(rvalue),
+                                        KhivaArray.Create(pvalue),
+                                        KhivaArray.Create(stderrest));
                 return tuple;
             }
         }

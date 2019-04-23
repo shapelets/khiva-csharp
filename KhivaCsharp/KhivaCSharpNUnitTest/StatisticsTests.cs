@@ -29,7 +29,7 @@ namespace khiva.statistics.tests
         public void TestCovarianceUnbiased()
         {
             float[,] tss = { { -2.1F, -1, 4.3F }, { 3, 1.1F, 0.12F }, { 3, 1.1F, 0.12F } };
-            using (KhivaArray arr = new KhivaArray(tss), covariance = Statistics.CovarianceStatistics(arr, true))
+            using (KhivaArray arr = KhivaArray.Create(tss), covariance = Statistics.CovarianceStatistics(arr, true))
             {
                 float[,] expected = { { 11.70999999F, -4.286F, -4.286F }, 
                                       { -4.286F, 2.14413333F, 2.14413333F }, 
@@ -49,7 +49,7 @@ namespace khiva.statistics.tests
         public void TestCovarianceBiased()
         {
             float[,] tss = { { -2.1F, -1, 4.3F }, { 3, 1.1F, 0.12F }, { 3, 1.1F, 0.12F } };
-            using (KhivaArray arr = new KhivaArray(tss), covariance = Statistics.CovarianceStatistics(arr, false))
+            using (KhivaArray arr = KhivaArray.Create(tss), covariance = Statistics.CovarianceStatistics(arr, false))
             {
                 float[,] expected = { { 7.80666667F, -2.85733333F, -2.85733333F },
                                       { -2.85733333F, 1.42942222F, 1.42942222F },
@@ -69,7 +69,7 @@ namespace khiva.statistics.tests
         public void TestKurtosis()
         {
             double[,] tss = { { 0, 1, 2, 3, 4, 5 }, { 2, 2, 2, 20, 30, 25 } };
-            using (KhivaArray arr = new KhivaArray(tss), kurtosis = Statistics.KurtosisStatistics(arr))
+            using (KhivaArray arr = KhivaArray.Create(tss), kurtosis = Statistics.KurtosisStatistics(arr))
             {
                 double[] expected = { -1.2, -2.66226722 };
                 double[,] result = kurtosis.GetData2D<double>();
@@ -84,7 +84,7 @@ namespace khiva.statistics.tests
         public void TestLjungBox()
         {
             double[,] tss = { { 0, 1, 2, 3 }, { 4, 5, 6, 7 } };
-            using (KhivaArray arr = new KhivaArray(tss), ljungBox = Statistics.LjungBox(arr, 3))
+            using (KhivaArray arr = KhivaArray.Create(tss), ljungBox = Statistics.LjungBox(arr, 3))
             {
                 double[] expected = { 6.4400, 6.4400 };
                 double[,] result = ljungBox.GetData2D<double>();
@@ -99,7 +99,7 @@ namespace khiva.statistics.tests
         public void TestMoment()
         {
             double[,] tss = { { 0, 1, 2, 3, 4, 5 }, { 0, 1, 2, 3, 4, 5 } };
-            using (KhivaArray arr = new KhivaArray(tss), moment2 = Statistics.MomentStatistics(arr, 2), moment4 = Statistics.MomentStatistics(arr, 4))
+            using (KhivaArray arr = KhivaArray.Create(tss), moment2 = Statistics.MomentStatistics(arr, 2), moment4 = Statistics.MomentStatistics(arr, 4))
             {
                 double[] expected2 = { 9.166666666, 9.166666666 };
                 double[] expected4 = { 163.1666666666, 163.1666666666 };
@@ -118,7 +118,7 @@ namespace khiva.statistics.tests
         {
             double[,] tss = { { 0, 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10, 11 } };
             double[] tss2 = { 0.1, 0.2 };
-            using (KhivaArray arr = new KhivaArray(tss), arr2 = new KhivaArray(tss2), quantile = Statistics.QuantileStatistics(arr, arr2))
+            using (KhivaArray arr = KhivaArray.Create(tss), arr2 = KhivaArray.Create(tss2), quantile = Statistics.QuantileStatistics(arr, arr2))
             {
                 double[,] expected = { { 0.5, 1.0 }, { 6.5, 7.0 } };
                 double[,] result = quantile.GetData2D<double>();
@@ -136,7 +136,7 @@ namespace khiva.statistics.tests
         public void TestQuantileCut2()
         {
             float[,] tss = { { 0, 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10, 11 } };
-            using (KhivaArray arr = new KhivaArray(tss))
+            using (KhivaArray arr = KhivaArray.Create(tss))
             {
                 KhivaArray quantile = Statistics.QuantilesCutStatistics(arr, 2);
                 float[,,] expected = { { { -0.00000001F, 2.5F }, { -0.00000001F, 2.5F } }, { { -0.00000001F, 2.5F }, { 2.5F, 5.0F } },
@@ -155,7 +155,7 @@ namespace khiva.statistics.tests
         public void TestQuantileCut3()
         {
             double[,] tss = { { 0, 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10, 11 } };
-            using (KhivaArray arr = new KhivaArray(tss))
+            using (KhivaArray arr = KhivaArray.Create(tss))
             {
                 KhivaArray quantile = Statistics.QuantilesCutStatistics(arr, 3);
                 double[,,] expected = { { { -0.00000001, 1.66666667 } , {-0.00000001 , 1.6666667 } },{ { 1.6666667, 3.3333333 } ,
@@ -185,7 +185,7 @@ namespace khiva.statistics.tests
         public void TestQuantileCut7()
         {
             double[,] tss = { { 0, 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10, 11 } };
-            using (KhivaArray arr = new KhivaArray(tss))
+            using (KhivaArray arr = KhivaArray.Create(tss))
             {
                 KhivaArray quantile = Statistics.QuantilesCutStatistics(arr, 7);
                 double[,,] expected = { { { 0, 0.7142857 } , {0.7142857, 1.4285715 } },{ { 1.4285715, 2.1428573 } ,
@@ -215,7 +215,7 @@ namespace khiva.statistics.tests
         public void TestStdev()
         {
             double[,] tss = { { 0, 1, 2, 3, 4, 5 }, { 2, 2, 2, 20, 30, 25 } };
-            using (KhivaArray arr = new KhivaArray(tss), stdev = Statistics.SampleStdevStatistics(arr))
+            using (KhivaArray arr = KhivaArray.Create(tss), stdev = Statistics.SampleStdevStatistics(arr))
             {
                 double[] expected = { 1.870828693, 12.988456413 };
                 double[,] result = stdev.GetData2D<double>();
@@ -230,7 +230,7 @@ namespace khiva.statistics.tests
         public void TestSkewness()
         {
             double[,] tss = { { 0, 1, 2, 3, 4, 5 }, { 2, 2, 2, 20, 30, 25 } };
-            using (KhivaArray arr = new KhivaArray(tss), skewness = Statistics.SkewnessStatistics(arr))
+            using (KhivaArray arr = KhivaArray.Create(tss), skewness = Statistics.SkewnessStatistics(arr))
             {
                 double[] expected = { 0.0, 0.236177069879499 };
                 double[,] result = skewness.GetData2D<double>();
