@@ -21,7 +21,7 @@ namespace khiva
         public static class Matrix
         {
             /// <summary>
-            /// 
+            /// Primitive of the findBestNDiscords function.
             /// </summary>
             /// <param name="profile">The matrix profile containing the minimum distance of each subsequence</param>
             /// <param name="index">The matrix profile index containing the index of the most similar subsequence</param>
