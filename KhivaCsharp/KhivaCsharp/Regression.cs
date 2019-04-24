@@ -20,7 +20,6 @@ namespace khiva
         /// </summary>
         public static class Regression
         {
-
             /// <summary>
             /// Calculates a linear least-squares regression for two sets of measurements. Both arrays should have the same
             /// length.

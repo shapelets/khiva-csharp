@@ -20,7 +20,6 @@ namespace khiva
         /// </summary>
         public static class Matrix
         {
-
             /// <summary>
             /// 
             /// </summary>

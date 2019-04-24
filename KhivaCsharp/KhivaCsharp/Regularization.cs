@@ -20,7 +20,6 @@ namespace khiva
         /// </summary>
         public static class Regularization
         {
-
             /// <summary>
             ///  Group by operation in the input array using n_columns_key columns as group keys and n_columns_value columns as
             /// values.The data is expected to be sorted.The aggregation function determines the operation to aggregate the values.
