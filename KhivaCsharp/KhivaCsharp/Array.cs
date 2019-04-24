@@ -87,6 +87,7 @@ namespace khiva
                 CleanUp();
                 GC.SuppressFinalize(this);
             }
+
             /// <summary>
             /// Clean up the array
             /// </summary>
@@ -98,6 +99,7 @@ namespace khiva
                     this.Reference = IntPtr.Zero;
                 }
             }
+
             /// <summary>
             /// Destroy KhivaArray
             /// </summary>
@@ -868,7 +870,6 @@ namespace khiva
                 rhs.Reference = rhs.reference;
                 return (Create(result));
             }
-            
 
             private static uint GetMaxDim(long[] dims)
             {

@@ -247,9 +247,8 @@ namespace khiva.interop
         public extern static void cwt_coefficients([In] ref IntPtr array, [In] ref IntPtr width, [In] ref int coeff, [In] ref int w, [Out] out IntPtr result);
 
         
-         /// <summary> Calculates the sum of squares of chunk i out of N chunks expressed as a ratio.
-         /// with the sum of squares over the whole series. segmentFocus should be lower
-         /// than the number of segments
+         /// <summary> Calculates the sum of squares of chunk i out of N chunks expressed as a ratio  with the sum of squares over the whole series.
+         /// segment_focus should be lower than the number of segments.
          ///</summary>
          /// <param name="array">Expects an input array whose dimension zero is the length of the
          /// time series (all the same) and dimension one indicates the number of time

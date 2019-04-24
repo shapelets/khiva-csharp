@@ -28,7 +28,7 @@ namespace khiva
             /// \bar{x}_{i} = \frac{M}{n} \sum_{j=n/M(i-1)+1}^{(n/M)i} x_{j}.
             /// \f]
             /// Which simply means that in order to reduce the dimensionality from \f$n\f$ to \f$M\f$, we first divide the original
-            /// time series into \f$M\f$ equally sized frames and secondly compute the mean values for each frame.The sequence
+            /// time series into \f$M\f$ equally sized frames and secondly compute the mean values for each frame. The sequence
             /// assembled from the mean values is the PAA approximation (i.e., transform) of the original time series.
             /// </summary>
             /// <param name="arr">Set of points.</param>
@@ -108,7 +108,7 @@ namespace khiva
             /// Image Processing, 1(3), 244–256 (1972) doi:10.1016/S0146-664X(72)80017-0.
             /// 
             /// [2] David Douglas & Thomas Peucker, "Algorithms for the reduction of the number of points required to represent a
-            /// digitized line or its caricature", The Canadian Cartographer 10(2), 112–122 (1973)
+            /// digitized line or its caricature", The Canadian Cartographer 10(2), 112–122 (1973).
             /// doi:10.3138/FM57-6770-U75U-7727
             /// </summary>
             /// <param name="points">KhivaArray with the x-coordinates and y-coordinates of the input points (x in column 0 and y in column 1).</param>
