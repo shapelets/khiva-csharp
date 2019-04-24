@@ -36,7 +36,8 @@ namespace khiva
             /// the resulting means or centroids and
             /// the resulting labels of each time series which is the closest centroid.
             /// </returns>
-            public static Tuple<KhivaArray, KhivaArray> KMeans(KhivaArray arr, int k, float tolerance = 1e-10F, int max_iterations = 100)
+            public static Tuple<KhivaArray, KhivaArray> KMeans(KhivaArray arr,
+                int k, float tolerance = 1e-10F, int max_iterations = 100)
             {
                 IntPtr reference = arr.Reference;
                 IntPtr centroids; IntPtr labels;
