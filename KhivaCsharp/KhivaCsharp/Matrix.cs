@@ -20,23 +20,7 @@ namespace khiva
         /// </summary>
         public static class Matrix
         {
-            /**
-            * @brief Primitive of the findBestNDiscords function.
-            *
-            * @param profile The matrix profile containing the minimum distance of each
-            * subsequence
-            * @param The matrix profile index containing the index of the most similar
-            * subsequence
-            * @param length_profile Length of the matrix profile
-            * @param m Subsequence length value used to calculate the input matrix profile.
-            * @param n Number of discords to extract
-            * @return discord_distances The distance of the best N discords
-            * @return discord_indices The indices of the best N discords
-            * @return subsequence_indices The indices of the query sequences that produced
-            * the "N" bigger discords.
-            * @param self_join Indicates whether the input profile comes from a self join operation or not. It determines
-            * whether the mirror similar region is included in the output or not.
-            */
+
             /// <summary>
             /// 
             /// </summary>

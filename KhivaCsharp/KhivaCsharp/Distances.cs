@@ -37,16 +37,6 @@ namespace khiva
                 return (KhivaArray.Create(result));
             }
 
-            /**
-             * @brief Calculates euclidean distances between time series.
-             *
-             * @param arr Expects an input array whose dimension zero is the length of the time series (all the same) and
-             * dimension one indicates the number of time series.
-             *
-             * @param result An upper triangular matrix where each position corresponds to the distance between two
-             * time series. Diagonal elements will be zero. For example: Position row 0 column 1 records the distance
-             * between time series 0 and time series 1.
-             */
             /// <summary>
             /// Calculates euclidean distances between time series.
             /// </summary>
