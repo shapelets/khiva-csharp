@@ -109,8 +109,7 @@ namespace khiva.interop
          /// inplace (without allocating further memory).
          ///</summary>
          /// <param name="tss">Expects an input array whose dimension zero is the length of the time
-         /// series (all the same) and dimension one indicates the number of
-         /// time series.</param>
+         /// series (all the same) and dimension one indicates the number of time series.</param>
          /// <param name="epsilon">Minimum standard deviation to consider. It acts as a gatekeeper for
          /// those time series that may be constant or near constant.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]

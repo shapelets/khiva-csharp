@@ -82,7 +82,6 @@ namespace khiva.matrix.tests
             }
         }
 
-
         [Test]
         public void TestFindbestNDiscords()
         {

@@ -240,7 +240,5 @@ namespace khiva.statistics.tests
                 }
             }
         }
-
-
     }
 }

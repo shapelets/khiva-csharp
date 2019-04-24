@@ -30,9 +30,7 @@ namespace khiva
             /// <param name="n">Number of discords to extract</param>
             /// <param name="self_join">Indicates whether the input profile comes from a self join operation or not. It determines
             /// whether the mirror similar region is included in the output or not.</param>
-            /// <returns>Tuple with 
-            /// the distance of the best N discords, 
-            /// the indices of the best N discords and 
+            /// <returns>Tuple with the distance of the best N discords, the indices of the best N discords and 
             /// the indices of the query sequences that produced the "N" bigger discords.</returns>
             public static Tuple<KhivaArray, KhivaArray, KhivaArray> FindbestNDiscords(KhivaArray profile, KhivaArray index, long m, long n, bool self_join = false)
             {
@@ -59,11 +57,8 @@ namespace khiva
             /// <param name="n">Number of motifs to extract.</param>
             /// <param name="self_join">Indicates whether the input profile comes from a self join operation or not. It determines
             /// whether the mirror similar region is included in the output or not.</param>
-            /// <returns>Tuple with 
-            /// the distance of the best N motifs, 
-            /// the indices of the best N motifs, 
-            /// the indices of the query sequences that produced
-            /// the minimum reported in the motifs.</returns>
+            /// <returns>Tuple with the distance of the best N motifs, the indices of the best N motifs,
+            /// the indices of the query sequences that produced the minimum reported in the motifs.</returns>
             public static Tuple<KhivaArray, KhivaArray, KhivaArray> FindbestNMotifs(KhivaArray profile, KhivaArray index, long m, long n, bool self_join=false)
             {
                 IntPtr profileReference = profile.Reference;
@@ -87,8 +82,8 @@ namespace khiva
             /// Philip Brisk and Eamonn Keogh (2016). Matrix Profile II: Exploiting a Novel Algorithm and GPUs to break the one
             /// Hundred Million Barrier for Time Series Motifs and Joins. IEEE ICDM 2016.
             /// </summary>
-            /// <param name="tssa">Query time series</param>
-            /// <param name="tssb">Reference time series</param>
+            /// <param name="tssa">Query time series.</param>
+            /// <param name="tssb">Reference time series.</param>
             /// <param name="m">Pointer to a long with the length of the subsequence.</param>
             /// <returns>Tuple with 
             /// the matrix profile, whichlects the distance to the closer element of the subsequence from 'tssa' in 'tssb' and 
@@ -114,11 +109,11 @@ namespace khiva
             /// Philip Brisk and Eamonn Keogh (2016). Matrix Profile II: Exploiting a Novel Algorithm and GPUs to break the one
             /// Hundred Million Barrier for Time Series Motifs and Joins. IEEE ICDM 2016.
             /// </summary>
-            /// <param name="tss">Query anderence time series</param>
+            /// <param name="tss">Query and reference time series.</param>
             /// <param name="m">Pointer to a long with the length of the subsequence.</param>
             /// <returns>Tuple with 
             /// the matrix profile, whichlects the distance to the closer element of the subsequence from 'tss' in a different location of itself and
-            /// the matrix profile index, which points to where the aforementioned minimum is located</returns>
+            /// the matrix profile index, which points to where the aforementioned minimum is located.</returns>
             public static Tuple<KhivaArray, KhivaArray> StompSelfJoin(KhivaArray tss, long m)
             {
                 IntPtr reference = tss.Reference;

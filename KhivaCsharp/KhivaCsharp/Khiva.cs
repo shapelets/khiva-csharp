@@ -18,7 +18,6 @@ namespace khiva
     /// </summary>
     public static class Khiva
     {
-
         /// <summary>
         /// Khiva Backend.
         /// </summary>
@@ -74,7 +73,7 @@ namespace khiva
         }
 
         /// <summary>
-        /// Prints information from the current backend.
+        /// Prints information of the current backend.
         /// </summary>
         public static void PrintBackendInfo()
         {
@@ -84,7 +83,7 @@ namespace khiva
         }
 
         /// <summary>
-        /// Getter for the information from the current backend.
+        /// Information getter for the current backend.
         /// </summary>
         public static String BackendInfo
         {
@@ -95,8 +94,6 @@ namespace khiva
                 return backendInfo.ToString();
             }
         }
-
-
         
         /// <summary>
         /// Getter and setter for the Khiva device

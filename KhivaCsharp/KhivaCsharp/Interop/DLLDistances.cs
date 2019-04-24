@@ -18,7 +18,6 @@ namespace khiva.interop
     /// </summary>
     public static class DLLDistances
     {
-        
         /// <summary> Calculates the Dynamic Time Warping Distance.
         ///</summary>
         /// <param name="tss">Expects an input array whose dimension zero is the length of the time series (all the same) and
@@ -29,42 +28,38 @@ namespace khiva.interop
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void dtw([In] ref IntPtr tss, [Out] out IntPtr result);
         
-        
-         /// <summary> Calculates euclidean distances between time series.
-         ///</summary>
-         /// <param name="tss">Expects an input array whose dimension zero is the length of the time series (all the same) and
-         /// dimension one indicates the number of time series.
-         ///</param>
-         /// <param name="result">An upper triangular matrix where each position corresponds to the distance between two
-         /// time series. Diagonal elements will be zero. For example: Position row 0 column 1 records the distance
-         /// between time series 0 and time series 1.</param>
+        /// <summary> Calculates euclidean distances between time series.
+        ///</summary>
+        /// <param name="tss">Expects an input array whose dimension zero is the length of the time series (all the same) and
+        /// dimension one indicates the number of time series.
+        ///</param>
+        /// <param name="result">An upper triangular matrix where each position corresponds to the distance between two
+        /// time series. Diagonal elements will be zero. For example: Position row 0 column 1 records the distance
+        /// between time series 0 and time series 1.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void euclidean([In] ref IntPtr tss, [Out] out IntPtr result);
 
-        
-         /// <summary> Calculates Hamming distances between time series.
-         ///</summary>
-         /// <param name="tss">Expects an input array whose dimension zero is the length of the time series (all the same) and
-         /// dimension one indicates the number of time series.</param>
-         /// <param name="result">An upper triangular matrix where each position corresponds to the distance between two
-         /// time series. Diagonal elements will be zero. For example: Position row 0 column 1 records the distance
-         /// between time series 0 and time series 1.</param>
+        /// <summary> Calculates Hamming distances between time series.
+        ///</summary>
+        /// <param name="tss">Expects an input array whose dimension zero is the length of the time series (all the same) and
+        /// dimension one indicates the number of time series.</param>
+        /// <param name="result">An upper triangular matrix where each position corresponds to the distance between two
+        /// time series. Diagonal elements will be zero. For example: Position row 0 column 1 records the distance
+        /// between time series 0 and time series 1.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void hamming([In] ref IntPtr tss, [Out] out IntPtr result);
 
-        
-         /// <summary> Calculates Manhattan distances between time series.
-         ///</summary>
-         /// <param name="tss">Expects an input array whose dimension zero is the length of the time series (all the same) and
-         /// dimension one indicates the number of time series.
-         ///</param>
-         /// <param name="result">An upper triangular matrix where each position corresponds to the distance between two
-         /// time series. Diagonal elements will be zero. For example: Position row 0 column 1 records the distance
-         /// between time series 0 and time series 1.</param>
+        /// <summary> Calculates Manhattan distances between time series.
+        ///</summary>
+        /// <param name="tss">Expects an input array whose dimension zero is the length of the time series (all the same) and
+        /// dimension one indicates the number of time series.
+        ///</param>
+        /// <param name="result">An upper triangular matrix where each position corresponds to the distance between two
+        /// time series. Diagonal elements will be zero. For example: Position row 0 column 1 records the distance
+        /// between time series 0 and time series 1.</param>
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void manhattan([In] ref IntPtr tss, [Out] out IntPtr result);
 
-        
         /// <summary> Calculates the Shape-Based distance (SBD). It computes the normalized cross-correlation and it returns 1.0
         /// minus the value that maximizes the correlation value between each pair of time series.
         ///</summary>
@@ -77,7 +72,6 @@ namespace khiva.interop
         [DllImport(DLLLibrary.khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void sbd([In] ref IntPtr tss, [Out] out IntPtr result);
 
-        
         /// <summary> Calculates the Shape-Based distance (SBD). It computes the normalized cross-correlation and it returns 1.0
         /// minus the value that maximizes the correlation value between each pair of time series.
         ///</summary>

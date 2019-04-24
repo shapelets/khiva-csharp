@@ -36,7 +36,6 @@ namespace khiva.linalg.tests
                 Assert.AreEqual(1, result[0, 0], DELTA);
                 Assert.AreEqual(1, result[0, 1], DELTA);
             }
-
         }
     }
 }

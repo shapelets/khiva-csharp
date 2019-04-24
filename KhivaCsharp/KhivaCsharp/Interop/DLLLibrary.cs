@@ -23,52 +23,45 @@ namespace khiva.interop
         /// </summary>
         public const String khivaPath = "khiva_c";
         
-         /// <summary> Gets information from the active backend.</summary>
+        /// <summary> Gets information from the active backend.</summary>
         [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void backend_info([In, Out] ref StringBuilder backendInfo);
 
-        
-         /// <summary> Sets the backend.
-         ///</summary>
-         /// <param name="backend">The desired backend.</param>
+        /// <summary> Sets the backend.
+        ///</summary>
+        /// <param name="backend">The desired backend.</param>
         [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void set_backend([In, Out] ref int backend);
 
-        
-         /// <summary> Gets the active backend.
-         ///</summary>
-         /// <param name="backend">The active backend.</param>
+        /// <summary> Gets the active backend.
+        ///</summary>
+        /// <param name="backend">The active backend.</param>
         [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void get_backend([Out] out int backend);
         
-         /// <summary> Gets the available backends.
-         ///</summary>
-         /// <param name="backends">The available backends.</param>
+        /// <summary> Gets the available backends.
+        ///</summary>
+        /// <param name="backends">The available backends.</param>
         [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void get_backends([Out] out int backends);
 
-        
-         /// <summary> Sets the device.
-         ///</summary>
-         /// <param name="device">The desired device.</param>
+        /// <summary> Sets the device.
+        ///</summary>
+        /// <param name="device">The desired device.</param>
         [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void set_device([In, Out] ref int device);
 
-
-        
-         /// <summary> Gets the active device.
-         ///</summary>
-         /// <param name="device_id">The active device.</param>
+        /// <summary> Gets the active device.
+        ///</summary>
+        /// <param name="device_id">The active device.</param>
         [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void get_device_id([Out] out int device_id);
 
-        
-         /// <summary> Gets the devices count.
-         ///</summary>
-         /// <param name="device_count">The devices count.</param>
+        /// <summary> Gets the devices count.
+        ///</summary>
+        /// <param name="device_count">The devices count.</param>
         [DllImport(khivaPath, CallingConvention = CallingConvention.Cdecl)]
         public extern static void get_device_count([Out] out int device_count);
-
 
         /// <summary> Returns a string with the current version of the library.
         ///</summary>

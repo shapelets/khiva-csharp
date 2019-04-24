@@ -109,6 +109,5 @@ namespace khiva.regression.tests
                 }
             }
         }
-
     }
 }

@@ -79,8 +79,6 @@ namespace khiva.tests
             }
         }
 
-
-
         [Test]
         public void GetDeviceIDTest()
         {
@@ -160,7 +158,6 @@ namespace khiva.tests
             }
 
             return version;
-
         }
     }
 }

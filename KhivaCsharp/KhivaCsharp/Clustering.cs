@@ -20,7 +20,6 @@ namespace khiva
         /// </summary>
         public static class Clustering
         {
-
             /// <summary>
             /// Calculates the k-means algorithm.
             ///
@@ -32,12 +31,9 @@ namespace khiva
             /// <param name="k">The number of means to be computed.</param>
             /// <param name="tolerance">The error tolerance to stop the computation of the centroids.</param>
             /// <param name="max_iterations">The maximum number of iterations allowed.</param>
-            /// <returns> Tuple with
-            /// the resulting means or centroids and
-            /// the resulting labels of each time series which is the closest centroid.
+            /// <returns> Tuple with the resulting means or centroids and the resulting labels of each time series which is the closest centroid.
             /// </returns>
-            public static Tuple<KhivaArray, KhivaArray> KMeans(KhivaArray arr,
-                int k, float tolerance = 1e-10F, int max_iterations = 100)
+            public static Tuple<KhivaArray, KhivaArray> KMeans(KhivaArray arr, int k, float tolerance = 1e-10F, int max_iterations = 100)
             {
                 IntPtr reference = arr.Reference;
                 IntPtr centroids; IntPtr labels;
@@ -58,9 +54,7 @@ namespace khiva
             /// <param name="k">The number of means to be computed.</param>
             /// <param name="tolerance">The error tolerance to stop the computation of the centroids.</param>
             /// <param name="max_iterations">The maximum number of iterations allowed.</param>
-            /// <returns> Tuple with
-            /// the resulting means or centroids and
-            /// the resulting labels of each time series which is the closest centroid.
+            /// <returns> Tuple with the resulting means or centroids and the resulting labels of each time series which is the closest centroid.
             /// </returns>
             public static Tuple<KhivaArray, KhivaArray> KShape(KhivaArray arr, int k, float tolerance = 1e-10F, int max_iterations = 100)
             {
