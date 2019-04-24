@@ -100,6 +100,5 @@ namespace khiva.distances.tests
                 Assert.AreEqual(expected, result);
             }
         }
-
     }
 }

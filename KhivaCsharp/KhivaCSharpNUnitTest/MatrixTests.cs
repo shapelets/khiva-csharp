@@ -329,6 +329,5 @@ namespace khiva.matrix.tests
                 }
             }
         }
-
     }
 }

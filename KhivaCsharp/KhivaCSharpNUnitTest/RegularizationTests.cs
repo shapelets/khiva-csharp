@@ -70,6 +70,5 @@ namespace khiva.regularization.tests
                 Assert.AreEqual(expected, result);
             }
         }
-
     }
 }
