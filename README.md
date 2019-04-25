@@ -33,7 +33,7 @@ Install the prerequisites listed in the "Installation" section of the [Khiva lib
 
 Install the Khiva C# binding compatible with the Khiva library installed previously. 
 
-## compile code
+## Compiling code
 Run the following command from the project root folder:
 ```bash
 msbuild /p:Configuration=Debug KhivaCsharp/KhivaCsharp.sln
