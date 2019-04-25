@@ -49,7 +49,7 @@ before_build:
           }
   - cd c:\projects\khiva-csharp
   - choco install codecov
-  - nuget restore KhivaCsharp/KhivaCsharp.sln
+  - nuget restore Khiva.sln
 
 build:
   parallel: true
