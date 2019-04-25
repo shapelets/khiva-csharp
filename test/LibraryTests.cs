@@ -23,13 +23,13 @@ namespace Khiva.Tests
         [Test]
         public void PrintBackendInfoTest()
         {
-            string[] infoSplitted;
+            string[] infoSplit;
             using (var writer = new StringWriter())
             {
                 Console.SetOut(writer);
                 Library.PrintBackendInfo();
                 var info = writer.ToString();
-                infoSplitted = info.Split(' ');
+                infoSplit = info.Split(' ');
             }
 
             var standardOutput = new StreamWriter(Console.OpenStandardOutput())
@@ -37,7 +37,7 @@ namespace Khiva.Tests
                 AutoFlush = true
             };
             Console.SetOut(standardOutput);
-            Assert.AreEqual("ArrayFire", infoSplitted[0]);
+            Assert.AreEqual("ArrayFire", infoSplit[0]);
         }
 
         [Test]

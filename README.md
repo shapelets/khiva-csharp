@@ -49,11 +49,11 @@ mono ./KhivaCsharp/packages/NUnit.ConsoleRunner.3.9.0/tools/nunit3-console.exe K
 ```
 
 ## Documentation
-This Khiva C# binding follows the standard way of writing documentation of C# by using Sphinx.
+This Khiva C# binding uses Sphinx to generate the documentation.
 
-In order to generate the documentation (in html format), run the following command under the <project-root-dir>/doc folder:
+In order to generate the documentation (in html format), run the following command under the <project-root-dir> folder:
 ```bash
-make html
+sphinx-build.exe -b html doc/sphinx/source/ build/doc/html/
 ```
 
 ## Contributing
