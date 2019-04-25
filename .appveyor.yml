@@ -57,14 +57,11 @@ build:
   verbosity: minimal
 
 test_script:
-  - .\packages\NUnit.ConsoleRunner.3.9.0\tools\nunit3-console.exe test/bin/x64/Debug/Khiva.Tests.dll --inprocess 
   - .\packages\OpenCover.4.6.519\tools\OpenCover.Console -register:user -target:".\packages\NUnit.ConsoleRunner.3.9.0\tools\nunit3-console.exe" -targetargs:"test/bin/x64/Debug/Khiva.Tests.dll --inprocess" -output:"coverage.xml" -filter:"+[Khiva*]* -[Khiva.Tests]*"
 after_test:
   - codecov -f coverage.xml
 
 on_finish:
   - ps: |
-      $files = Get-ChildItem -Path . -File -Filter *TestResult.xml
-      foreach ($file in $files) {
-        (New-Object System.Net.WebClient).UploadFile("https://ci.appveyor.com/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)", $file.FullName)
-      }
+      $file = Get-Item '.\TestResult.xml'
+      (New-Object System.Net.WebClient).UploadFile("https://ci.appveyor.com/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)", $file.FullName)
