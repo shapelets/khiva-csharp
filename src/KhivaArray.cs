@@ -6,6 +6,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using System.Runtime.InteropServices;
 
@@ -15,6 +16,7 @@ namespace Khiva
     /// <summary>
     /// Khiva KhivaArray Class.
     /// </summary>
+    [SuppressMessage("ReSharper", "RedundantTypeArgumentsOfMethod")]
     public class KhivaArray : IDisposable
     {
         private IntPtr _reference;
@@ -203,7 +205,7 @@ namespace Khiva
             }
 
             fixed (T* data = &values[0])
-                return Create(1, new long[] {values.Length, 1, 1, 1}, data, doublePrecision);
+                return Create<T>(1, new long[] {values.Length, 1, 1, 1}, data, doublePrecision);
         }
 
         /// <summary>
@@ -221,7 +223,7 @@ namespace Khiva
             }
 
             fixed (T* data = &values[0, 0])
-                return Create(2, new long[] {values.GetLength(1), values.GetLength(0), 1, 1}, data, doublePrecision);
+                return Create<T>(2, new long[] {values.GetLength(1), values.GetLength(0), 1, 1}, data, doublePrecision);
         }
 
         /// <summary>
@@ -239,7 +241,7 @@ namespace Khiva
             }
 
             fixed (T* data = &values[0, 0, 0])
-                return Create(3, new long[] {values.GetLength(1), values.GetLength(0), values.GetLength(2), 1}, data,
+                return Create<T>(3, new long[] {values.GetLength(1), values.GetLength(0), values.GetLength(2), 1}, data,
                     doublePrecision);
         }
 
@@ -258,7 +260,7 @@ namespace Khiva
             }
 
             fixed (T* data = &values[0, 0, 0, 0])
-                return Create(4,
+                return Create<T>(4,
                     new long[] {values.GetLength(1), values.GetLength(0), values.GetLength(2), values.GetLength(3)},
                     data, doublePrecision);
         }
