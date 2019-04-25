@@ -56,6 +56,7 @@ namespace Khiva.Tests
             var tss = new[] {1, 2, 3, 4};
             using (KhivaArray arr = KhivaArray.Create(tss), arr2 = KhivaArray.Create(arr))
             {
+                arr.Display();
                 Assert.AreEqual(arr.GetData1D<int>(), arr2.GetData1D<int>());
             }
         }

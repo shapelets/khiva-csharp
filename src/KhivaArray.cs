@@ -688,7 +688,6 @@ namespace Khiva
         /// <summary>
         /// Displays an KhivaArray.
         /// </summary>
-        // ReSharper disable once UnusedMember.Global
         public void Display()
         {
             Interop.DLLKhivaArray.display(ref _reference);
