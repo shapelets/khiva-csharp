@@ -3,7 +3,7 @@
 Namespace Regularization
 ========================
 .. default-domain:: csharp
-.. doxygennamespace:: khiva::regularization
+.. doxygenclass:: Khiva::Regularization
     :project: Khiva
     :members:
     :protected-members:

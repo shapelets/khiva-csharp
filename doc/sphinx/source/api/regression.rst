@@ -3,7 +3,7 @@
 Namespace Regression
 ====================
 .. default-domain:: csharp
-.. doxygennamespace:: khiva::regression
+.. doxygenclass:: Khiva::Regression
     :project: Khiva
     :members:
     :protected-members:

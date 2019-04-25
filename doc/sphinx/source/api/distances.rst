@@ -3,7 +3,7 @@
 Namespace Distances
 ===================
 .. default-domain:: csharp
-.. doxygennamespace:: khiva::distances
+.. doxygenclass:: Khiva::Distances
     :project: Khiva
     :members:
     :protected-members:

@@ -3,7 +3,7 @@
 Namespace Statistics
 ====================
 .. default-domain:: csharp
-.. doxygennamespace:: khiva::statistics
+.. doxygenclass:: Khiva::Statistics
     :project: Khiva
     :members:
     :protected-members:

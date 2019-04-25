@@ -1,9 +1,9 @@
-.. _namespace-features-label:
+.. _namespace-library-label:
 
-Namespace Features
-==================
+Namespace Khiva
+=================
 .. default-domain:: csharp
-.. doxygenclass:: Khiva::Features
+.. doxygenclass:: Khiva::Library
     :project: Khiva
     :members:
     :protected-members:

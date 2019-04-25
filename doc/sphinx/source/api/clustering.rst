@@ -3,7 +3,7 @@
 Namespace Clustering
 ====================
 .. default-domain:: csharp
-.. doxygennamespace:: khiva::clustering
+.. doxygenclass:: Khiva::Clustering
     :project: Khiva
     :members:
     :protected-members:

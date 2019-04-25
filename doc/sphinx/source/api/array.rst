@@ -3,7 +3,7 @@
 Namespace Array
 ===============
 .. default-domain:: csharp
-.. doxygennamespace:: khiva::array
+.. doxygenclass:: Khiva::KhivaArray
     :project: Khiva
     :members:
     :protected-members:

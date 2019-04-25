@@ -14,7 +14,7 @@ This is the list of namespaces that comprise the Khiva library.
     Namespace Dimensionality <dimensionality>
     Namespace Distances <distances>
     Namespace Features <features>
-    Namespace Khiva <khiva>
+    Namespace Library <library>
     Namespace LinAlg <linalg>
     Namespace Matrix <matrix>
     Namespace Normalization <normalization>
