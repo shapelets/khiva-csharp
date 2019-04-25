@@ -33,6 +33,12 @@ Install the prerequisites listed in the "Installation" section of the [Khiva lib
 
 Install the Khiva C# binding compatible with the Khiva library installed previously. 
 
+## compile code
+Run the following command from the project root folder:
+```bash
+msbuild /p:Configuration=Debug KhivaCsharp/KhivaCsharp.sln
+```
+
 ## Executing the tests
 All tests can be executed separately, please find them in <project-root-dir>/KhivaCsharp/KhivaCsharpNUnitTest.
 
