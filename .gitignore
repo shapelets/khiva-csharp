@@ -6,6 +6,7 @@
 *.user
 *.userosscache
 *.sln.docstates
+*.sln.DotSettings.user
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -36,6 +37,7 @@ build/
 # NUNIT
 *.VisualState.xml
 TestResult.xml
+coverage.xml
 
 # Build Results of an ATL Project
 [Dd]ebugPS/
