@@ -24,8 +24,7 @@ namespace Khiva
         /// one indicates the number of time series.</param>
         /// <returns>Tuple with the slope of the regression line, the correlation coefficient, 
         /// the two-sided p-value for a hypothesis test whose null hypothesis is that the slope is zero, using Wald
-        /// Test with t-distribution of the test statistic and 
-        /// the standard error of the estimated gradient.</returns>
+        /// Test with t-distribution of the test statistic and the standard error of the estimated gradient.</returns>
         public static Tuple<KhivaArray, KhivaArray, KhivaArray, KhivaArray, KhivaArray> Linear(KhivaArray xss,
             KhivaArray yss)
         {

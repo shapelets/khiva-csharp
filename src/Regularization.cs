@@ -32,7 +32,7 @@ namespace Khiva
         ///             }
         ///</param>
         /// <param name="nColumnsKey">Number of columns conforming the key.</param>
-        /// <param name="nColumnsValue">Number of columns conforming the value (they are expected to be consecutive to the column</param>
+        /// <param name="nColumnsValue">Number of columns conforming the value (they are expected to be consecutive to the column.</param>
         /// <returns>An array with the values of the group keys aggregated using the aggregation_function.</returns>
         public static KhivaArray GroupBy(KhivaArray array, int aggregationFunction, int nColumnsKey = 1,
             int nColumnsValue = 1)

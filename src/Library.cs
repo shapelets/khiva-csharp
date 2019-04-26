@@ -22,7 +22,7 @@ namespace Khiva
         public enum Backend
         {
             /// <summary>
-            /// DEFAULT Backend
+            /// DEFAULT Backend.
             /// </summary>
             // ReSharper disable once UnusedMember.Global
             KhivaBackendDefault = 0,
@@ -44,7 +44,7 @@ namespace Khiva
         }
 
         /// <summary>
-        /// Getters and setters for the Khiva backend
+        /// Getters and setters for the Khiva backend.
         /// </summary>
         public static Backend CurrentBackend
         {
@@ -61,7 +61,7 @@ namespace Khiva
         }
 
         /// <summary>
-        /// Supported Khiva backends 
+        /// Supported Khiva backends. 
         /// </summary>
         public static Backend SupportedBackends
         {
@@ -96,7 +96,7 @@ namespace Khiva
         }
 
         /// <summary>
-        /// Getter and setter for the Khiva device
+        /// Getter and setter for the Khiva device.
         /// </summary>
         public static int Device
         {
@@ -109,7 +109,7 @@ namespace Khiva
         }
 
         /// <summary>
-        /// Getter for the device count
+        /// Getter for the device count.
         /// </summary>
         public static int DeviceCount
         {
@@ -121,7 +121,7 @@ namespace Khiva
         }
 
         /// <summary>
-        /// Getter for the Khiva version
+        /// Getter for the Khiva version.
         /// </summary>
         public static string Version
         {

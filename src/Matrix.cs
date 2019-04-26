@@ -17,10 +17,10 @@ namespace Khiva
         /// <summary>
         /// Primitive of the findBestNDiscords function.
         /// </summary>
-        /// <param name="profile">The matrix profile containing the minimum distance of each subsequence</param>
-        /// <param name="index">The matrix profile index containing the index of the most similar subsequence</param>
-        /// <param name="m">Length of the matrix profile</param>
-        /// <param name="n">Number of discords to extract</param>
+        /// <param name="profile">The matrix profile containing the minimum distance of each subsequence.</param>
+        /// <param name="index">The matrix profile index containing the index of the most similar subsequence.</param>
+        /// <param name="m">Length of the matrix profile.</param>
+        /// <param name="n">Number of discords to extract.</param>
         /// <param name="selfJoin">Indicates whether the input profile comes from a self join operation or not. It determines
         /// whether the mirror similar region is included in the output or not.</param>
         /// <returns>Tuple with the distance of the best N discords, the indices of the best N discords and 
@@ -78,9 +78,8 @@ namespace Khiva
         /// <param name="tssa">Query time series.</param>
         /// <param name="tssb">Reference time series.</param>
         /// <param name="m">Pointer to a long with the length of the subsequence.</param>
-        /// <returns>Tuple with 
-        /// the matrix profile, which has the distance to the closer element of the subsequence from 'tssa' in 'tssb' and 
-        /// the matrix profile index, which points to where the aforementioned minimum is located.</returns>
+        /// <returns>Tuple with the matrix profile, which has the distance to the closer element of the subsequence from
+        /// 'tssa' in 'tssb' and the matrix profile index, which points to where the aforementioned minimum is located.</returns>
         public static Tuple<KhivaArray, KhivaArray> Stomp(KhivaArray tssa, KhivaArray tssb, long m)
         {
             var aReference = tssa.Reference;
@@ -103,9 +102,9 @@ namespace Khiva
         /// </summary>
         /// <param name="tss">Query and reference time series.</param>
         /// <param name="m">Pointer to a long with the length of the subsequence.</param>
-        /// <returns>Tuple with 
-        /// the matrix profile, which has the distance to the closer element of the subsequence from 'tss' in a different location of itself and
-        /// the matrix profile index, which points to where the aforementioned minimum is located.</returns>
+        /// <returns>Tuple with the matrix profile, which has the distance to the closer element of the subsequence from
+        /// 'tss' in a different location of itself and the matrix profile index, which points to where the aforementioned
+        ///  minimum is located.</returns>
         public static Tuple<KhivaArray, KhivaArray> StompSelfJoin(KhivaArray tss, long m)
         {
             var reference = tss.Reference;
