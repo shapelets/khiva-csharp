@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Khiva", "src\Khiva.csproj", "{7D2A744A-2406-4E13-AF75-D2CF8DC955C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Khiva.Tests", "test\Khiva.Tests.csproj", "{9695B39F-F670-479C-B615-A9E6E6BEE9D8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{446CB44C-FD43-4591-BAB3-94E00C0C0B6D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{466D733E-8BF6-4350-8877-99B11D181C03}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D2A744A-2406-4E13-AF75-D2CF8DC955C2}.Debug|x64.ActiveCfg = Debug|x64
+		{7D2A744A-2406-4E13-AF75-D2CF8DC955C2}.Debug|x64.Build.0 = Debug|x64
+		{9695B39F-F670-479C-B615-A9E6E6BEE9D8}.Debug|x64.ActiveCfg = Debug|x64
+		{9695B39F-F670-479C-B615-A9E6E6BEE9D8}.Debug|x64.Build.0 = Debug|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7D2A744A-2406-4E13-AF75-D2CF8DC955C2} = {446CB44C-FD43-4591-BAB3-94E00C0C0B6D}
+		{9695B39F-F670-479C-B615-A9E6E6BEE9D8} = {466D733E-8BF6-4350-8877-99B11D181C03}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0692EC02-7651-4F65-A992-6580D546C35F}
+	EndGlobalSection
+EndGlobal
