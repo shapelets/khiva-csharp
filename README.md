@@ -26,7 +26,7 @@ In order to use this binding, you need to install Khiva library.
 ### Install latest version
 Install latest stable version of Khiva library. Follow the steps in the "Installation" section of the [Khiva repository](https://github.com/shapelets/khiva)
 
-To install the Khiva C# binding, we just need to include the dll in our project.
+To install the Khiva C# binding, we just need to include the dll in our project or use the Nuget package [Khiva](https://www.nuget.org/packages/Khiva).
 
 ### Install any release
 Install the prerequisites listed in the "Installation" section of the [Khiva library repository](https://github.com/shapelets/khiva). Download and install your selected Khiva release from [Khiva repository](https://github.com/shapelets/khiva/releases).
