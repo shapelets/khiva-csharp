@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Khiva</id>
+    <version>0.2.2</version>
+    <authors>otorreno</authors>
+    <owners>otorreno</owners>
+    <licenseUrl>https://raw.githubusercontent.com/shapelets/khiva-csharp/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/shapelets/khiva-csharp</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/shapelets/khiva/master/assets/Khiva.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>C# binding for Khiva library</description>
+    <releaseNotes>First version of the binding</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>khiva gpu data-series multicore csharp time-series opencl cuda timeseries matrix-profile shapelets snippets motifs discords distances clustering kshape</tags>
+  </metadata>
+</package>
