@@ -8,4 +8,3 @@ Namespace Matrix
     :members:
     :protected-members:
     :private-members:
-    

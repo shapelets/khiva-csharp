@@ -8,4 +8,3 @@ Namespace Khiva
     :members:
     :protected-members:
     :private-members:
-    

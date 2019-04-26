@@ -8,4 +8,3 @@ Namespace Regression
     :members:
     :protected-members:
     :private-members:
-    

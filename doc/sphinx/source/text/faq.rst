@@ -1,7 +1,6 @@
 FAQ
 ===
 
-
     1. **What are the Khiva Array restrictions?**
 
        Khiva Arrays can have up to 4 dimensions, each one needs to have the same length and the same type.

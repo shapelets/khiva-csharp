@@ -8,4 +8,3 @@ Namespace Statistics
     :members:
     :protected-members:
     :private-members:
-    

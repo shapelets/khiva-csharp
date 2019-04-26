@@ -8,4 +8,3 @@ Namespace Regularization
     :members:
     :protected-members:
     :private-members:
-    

@@ -10,7 +10,6 @@ your help is appreciated.
 
 If you want to help, just create a pull request on our github page.
 
-
 Guidelines
 ''''''''''
 Branching model

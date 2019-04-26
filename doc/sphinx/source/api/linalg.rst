@@ -8,4 +8,3 @@ Namespace LinAlg
     :members:
     :protected-members:
     :private-members:
-    

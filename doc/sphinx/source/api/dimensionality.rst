@@ -8,4 +8,3 @@ Namespace Dimensionality
     :members:
     :protected-members:
     :private-members:
-    

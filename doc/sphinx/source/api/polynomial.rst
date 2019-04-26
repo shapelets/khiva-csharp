@@ -8,4 +8,3 @@ Namespace Polynomial
     :members:
     :protected-members:
     :private-members:
-    
