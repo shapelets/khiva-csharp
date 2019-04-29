@@ -45,7 +45,7 @@ All tests can be executed separately, please find them in <project-root-dir>/tes
 ### Running tests on MacOS
 Run the following command from the project root folder:
 ```bash
-mono ./packages/NUnit.ConsoleRunner.3.9.0/tools/nunit3-console.exe test/bin/x64/Release/KhivaCSharpNUnitTest.dll
+mono ./packages/NUnit.ConsoleRunner.3.9.0/tools/nunit3-console.exe test/bin/x64/Release/Khiva.Tests.dll
 ```
 
 ## Documentation
