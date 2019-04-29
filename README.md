@@ -36,16 +36,16 @@ Install the Khiva C# binding compatible with the Khiva library installed previou
 ## Compiling code
 Run the following command from the project root folder:
 ```bash
-msbuild /p:Configuration=Release /p:platform=x64 KhivaCsharp/KhivaCsharp.sln
+msbuild /p:Configuration=Release /p:platform=x64 Khiva.sln
 ```
 
 ## Executing the tests
-All tests can be executed separately, please find them in <project-root-dir>/KhivaCsharp/KhivaCsharpNUnitTest.
+All tests can be executed separately, please find them in <project-root-dir>/test.
 
 ### Running tests on MacOS
 Run the following command from the project root folder:
 ```bash
-mono ./KhivaCsharp/packages/NUnit.ConsoleRunner.3.9.0/tools/nunit3-console.exe KhivaCsharp/KhivaCSharpNUnitTest/bin/x64/Release/KhivaCSharpNUnitTest.dll
+mono ./packages/NUnit.ConsoleRunner.3.9.0/tools/nunit3-console.exe test/bin/x64/Release/Khiva.Tests.dll
 ```
 
 ## Documentation
