@@ -13,6 +13,24 @@ namespace Khiva.Tests
     {
         private const double Delta = 1e-6;
 
+        private void Check3DArray(float[,,] expected, float[,,] values)
+        {
+            Assert.AreEqual(expected.GetLength(0), values.GetLength(0));
+            Assert.AreEqual(expected.GetLength(1), values.GetLength(1));
+            Assert.AreEqual(expected.GetLength(2), values.GetLength(2));
+            for (var i = 0; i < values.GetLength(0); i++)
+            {
+                for (var j = 0; j < values.GetLength(1); j++)
+                {
+                    for (var k = 0; k < values.GetLength(2); k++)
+                    {
+                        Assert.AreEqual((double)expected[i, j, k], (double)values[i, j, k], 1e-4F);
+                    }
+                }
+            }
+
+        }
+
         [SetUp]
         public void Init()
         {
@@ -145,15 +163,19 @@ namespace Khiva.Tests
                 var quantile = Statistics.QuantilesCutStatistics(arr, 2);
                 float[,,] expected =
                 {
-                    {{-0.00000001F, 2.5F}, {-0.00000001F, 2.5F}}, {{-0.00000001F, 2.5F}, {2.5F, 5.0F}},
-                    {{2.5F, 5.0F}, {2.5F, 5.0F}}, {{6.0F, 8.5F}, {6.0F, 8.5F}}, {{6.0F, 8.5F}, {8.5F, 11.0F}},
-                    {{8.5F, 11.0F}, {8.5F, 11.0F}}
+                    {
+                    {-0.0000F, -0.0000F, -0.0000F, 2.5000F, 2.5000F, 2.5000F}, 
+                    { 2.5000F, 2.5000F, 2.5000F, 5.0000F, 5.0000F, 5.0000F}
+                    }, 
+                    {
+                    {6.0000F, 6.0000F, 6.0000F, 8.5000F, 8.5000F, 8.5000F}, 
+                    {8.5000F, 8.5000F, 8.5000F, 11.0000F, 11.0000F, 11.0000F}
+                    } 
                 };
-                quantile = quantile.Transpose();
                 using (quantile)
                 {
                     var result = quantile.GetData3D<float>();
-                    Assert.AreEqual(expected, result);
+                    Check3DArray(expected, result);
                 }
             }
         }
@@ -161,39 +183,26 @@ namespace Khiva.Tests
         [Test]
         public void TestQuantileCut3()
         {
-            double[,] tss = {{0, 1, 2, 3, 4, 5}, {6, 7, 8, 9, 10, 11}};
+            float[,] tss = {{0, 1, 2, 3, 4, 5}, {6, 7, 8, 9, 10, 11}};
             using (var arr = KhivaArray.Create(tss))
             {
                 var quantile = Statistics.QuantilesCutStatistics(arr, 3);
-                double[,,] expected =
+                float[,,] expected =
                 {
-                    {{-0.00000001, 1.66666667}, {-0.00000001, 1.6666667}},
                     {
-                        {1.6666667, 3.3333333},
-                        {1.6666667, 3.3333333}
-                    },
-                    {{3.3333333, 5.0}, {3.3333333, 5.0}},
-                    {{5.9999999, 7.66666667}, {5.9999999, 7.6666667}},
+                    {-0.0000F, -0.0000F, 1.6667F, 1.6667F, 3.3333F, 3.3333F}, 
+                    {1.6667F, 1.6667F, 3.3333F, 3.3333F, 5.0000F, 5.0000F}
+                    }, 
                     {
-                        {7.6666667, 9.3333333},
-                        {7.6666667, 9.3333333}
-                    },
-                    {{9.3333333, 11.0}, {9.3333333, 11.0}}
+                    {6.0000F, 6.0000F, 7.6667F, 7.6667F, 9.3333F, 9.3333F}, 
+                    {7.6667F, 7.6667F, 9.3333F, 9.3333F, 11.0000F, 11.0000F}
+                    } 
                 };
-                quantile = quantile.Transpose();
+
                 using (quantile)
                 {
-                    var result = quantile.GetData3D<double>();
-                    for (var i = 0; i < result.GetLength(0); i++)
-                    {
-                        for (var j = 0; j < result.GetLength(1); j++)
-                        {
-                            for (var k = 0; k < result.GetLength(2); k++)
-                            {
-                                Assert.AreEqual(expected[i, j, k], result[i, j, k], Delta);
-                            }
-                        }
-                    }
+                    var result = quantile.GetData3D<float>();
+                    Check3DArray(expected, result);
                 }
             }
         }
@@ -201,39 +210,26 @@ namespace Khiva.Tests
         [Test]
         public void TestQuantileCut7()
         {
-            double[,] tss = {{0, 1, 2, 3, 4, 5}, {6, 7, 8, 9, 10, 11}};
+            float[,] tss = {{0, 1, 2, 3, 4, 5}, {6, 7, 8, 9, 10, 11}};
             using (var arr = KhivaArray.Create(tss))
             {
                 var quantile = Statistics.QuantilesCutStatistics(arr, 7);
-                double[,,] expected =
+                float[,,] expected =
                 {
-                    {{0, 0.7142857}, {0.7142857, 1.4285715}},
                     {
-                        {1.4285715, 2.1428573},
-                        {2.8571429, 3.5714288}
-                    },
-                    {{3.5714288, 4.2857146}, {4.2857146, 5}},
-                    {{5.9999999, 6.7142857}, {6.7142857, 7.4285715}},
+                    {-0.0000F, 0.7143F, 1.4286F, 2.8571F, 3.5714F, 4.2857F}, 
+                    {0.7143F, 1.4286F, 2.1429F, 3.5714F, 4.2857F, 5.0000F}
+                    }, 
                     {
-                        {7.4285715, 8.1428573},
-                        {8.8571429, 9.5714288}
-                    },
-                    {{9.5714288, 10.2857146}, {10.2857146, 11}}
+                    {6.0000F, 6.7143F, 7.4286F, 8.8571F, 9.5714F, 10.2857F},
+                    {6.7143F, 7.4286F, 8.1429F, 9.5714F, 10.2857F, 11.0000F}
+                    } 
                 };
-                quantile = quantile.Transpose();
+
                 using (quantile)
                 {
-                    var result = quantile.GetData3D<double>();
-                    for (var i = 0; i < result.GetLength(0); i++)
-                    {
-                        for (var j = 0; j < result.GetLength(1); j++)
-                        {
-                            for (var k = 0; k < result.GetLength(2); k++)
-                            {
-                                Assert.AreEqual(expected[i, j, k], result[i, j, k], Delta);
-                            }
-                        }
-                    }
+                    var result = quantile.GetData3D<float>();
+                    Check3DArray(expected, result);
                 }
             }
         }

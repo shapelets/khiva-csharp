@@ -241,7 +241,7 @@ namespace Khiva
             }
 
             fixed (T* data = &values[0, 0, 0])
-                return Create<T>(3, new long[] {values.GetLength(1), values.GetLength(0), values.GetLength(2), 1}, data,
+                return Create<T>(3, new long[] {values.GetLength(2), values.GetLength(1), values.GetLength(0), 1}, data,
                     doublePrecision);
         }
 
@@ -261,7 +261,7 @@ namespace Khiva
 
             fixed (T* data = &values[0, 0, 0, 0])
                 return Create<T>(4,
-                    new long[] {values.GetLength(1), values.GetLength(0), values.GetLength(2), values.GetLength(3)},
+                    new long[] {values.GetLength(3), values.GetLength(2), values.GetLength(1), values.GetLength(0)},
                     data, doublePrecision);
         }
 
@@ -339,7 +339,7 @@ namespace Khiva
             {
                 if (ArrayType == DType.C32)
                 {
-                    var values = GetData1DAux<float>(Dims[0] * 2);
+                    var values = GetData1DAuxComplex<float>();
                     for (var i = 0; i < Dims[0]; i++)
                     {
                         data[i] = (T) Convert.ChangeType(new Complex(values[2 * i], values[2 * i + 1]), typeof(T));
@@ -347,7 +347,7 @@ namespace Khiva
                 }
                 else
                 {
-                    data = GetData1DAux<T>(Dims[0]);
+                    data = GetData1DAux<T>();
                 }
             }
             finally
@@ -358,9 +358,8 @@ namespace Khiva
             return data;
         }
 
-        private T[] GetData1DAux<T>(long lastDim)
+        void fixData<T>(T[] data)
         {
-            var data = new T[lastDim];
             try
             {
                 var gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
@@ -371,8 +370,20 @@ namespace Khiva
             finally
             {
                 GCHandle.Alloc(data, GCHandleType.Weak);
-            }
+            } 
+        }
 
+        private T[] GetData1DAux<T>()
+        {
+            var data = new T[Dims[0]];
+            fixData<T>(data); 
+            return data;
+        }
+
+        private T[] GetData1DAuxComplex<T>()
+        {
+            var data = new T[Dims[0] * 2];
+            fixData<T>(data); 
             return data;
         }
 
@@ -394,7 +405,7 @@ namespace Khiva
             {
                 if (ArrayType == DType.C32)
                 {
-                    var values = GetData2DAux<float>(Dims[0] * 2);
+                    var values = GetData2DAuxComplex<float>();
                     for (var i = 0; i < data.GetLength(0); i++)
                     {
                         for (var j = 0; j < data.GetLength(1); j++)
@@ -406,7 +417,7 @@ namespace Khiva
                 }
                 else
                 {
-                    data = GetData2DAux<T>(Dims[0]);
+                    data = GetData2DAux<T>();
                 }
             }
             finally
@@ -417,9 +428,8 @@ namespace Khiva
             return data;
         }
 
-        private T[,] GetData2DAux<T>(long lastDim)
+        private void fixData<T>(T[,] data)
         {
-            var data = new T[Dims[1], lastDim];
             try
             {
                 var gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
@@ -430,11 +440,23 @@ namespace Khiva
             finally
             {
                 GCHandle.Alloc(data, GCHandleType.Weak);
-            }
+            } 
+        }
 
+        private T[,] GetData2DAux<T>()
+        {
+            var data = new T[Dims[1], Dims[0]];
+            fixData<T>(data); 
             return data;
         }
 
+        private T[,] GetData2DAuxComplex<T>()
+        {
+            var data = new T[Dims[1], Dims[0] * 2];
+            fixData<T>(data); 
+            return data;
+        }
+        
         /// <summary>
         /// Get the data of a 3 dimensional khiva array.
         /// </summary>
@@ -448,12 +470,12 @@ namespace Khiva
             }
 
             CheckNDims(Dims, 3);
-            var data = new T[Dims[1], Dims[0], Dims[2]];
+            var data = new T[Dims[2], Dims[1], Dims[0]];
             try
             {
                 if (ArrayType == DType.C32)
                 {
-                    var values = GetData3DAux<float>(Dims[2] * 2);
+                    var values = GetData3DAuxComplex<float>();
                     for (var i = 0; i < data.GetLength(0); i++)
                     for (var j = 0; j < data.GetLength(1); j++)
                     for (var k = 0; k < data.GetLength(2); k++)
@@ -465,7 +487,7 @@ namespace Khiva
                 }
                 else
                 {
-                    data = GetData3DAux<T>(Dims[2]);
+                    data = GetData3DAux<T>();
                 }
             }
             finally
@@ -476,9 +498,8 @@ namespace Khiva
             return data;
         }
 
-        private T[,,] GetData3DAux<T>(long lastDim)
+        private void fixData<T>(T[,,] data)
         {
-            var data = new T[Dims[1], Dims[0], lastDim];
             try
             {
                 var gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
@@ -489,8 +510,20 @@ namespace Khiva
             finally
             {
                 GCHandle.Alloc(data, GCHandleType.Weak);
-            }
+            } 
+        }
 
+        private T[,,] GetData3DAuxComplex<T>()
+        {
+            var data = new T[Dims[2], Dims[1], Dims[0] * 2];
+            fixData<T>(data); 
+            return data;
+        }
+
+        private T[,,] GetData3DAux<T>()
+        {
+            var data = new T[Dims[2], Dims[1], Dims[0]];
+            fixData<T>(data); 
             return data;
         }
 
@@ -506,12 +539,12 @@ namespace Khiva
                 throw new Exception("ArrayType does mismatch");
             }
 
-            var data = new T[Dims[1], Dims[0], Dims[2], Dims[3]];
+            var data = new T[Dims[3], Dims[2], Dims[1], Dims[0]];
             try
             {
                 if (ArrayType == DType.C32)
                 {
-                    var values = GetData4DAux<float>(Dims[3] * 2);
+                    var values = GetData4DAuxComplex<float>();
                     for (var i = 0; i < data.GetLength(0); i++)
                     for (var j = 0; j < data.GetLength(1); j++)
                     for (var k = 0; k < data.GetLength(2); k++)
@@ -524,7 +557,7 @@ namespace Khiva
                 }
                 else
                 {
-                    data = GetData4DAux<T>(Dims[3]);
+                    data = GetData4DAux<T>();
                 }
             }
             finally
@@ -535,9 +568,8 @@ namespace Khiva
             return data;
         }
 
-        private T[,,,] GetData4DAux<T>(long lastDim)
+        private void fixData<T>(T[,,,] data)
         {
-            var data = new T[Dims[1], Dims[0], Dims[2], lastDim];
             try
             {
                 var gchArr = GCHandle.Alloc(data, GCHandleType.Pinned);
@@ -548,10 +580,22 @@ namespace Khiva
             finally
             {
                 GCHandle.Alloc(data, GCHandleType.Weak);
-            }
-
-            return data;
+            } 
         }
+
+        private T[,,,] GetData4DAux<T>()
+        {
+            var data = new T[Dims[3], Dims[2], Dims[1], Dims[0]];
+            fixData<T>(data); 
+            return data;
+        } 
+
+        private T[,,,] GetData4DAuxComplex<T>()
+        {
+            var data = new T[Dims[3], Dims[2], Dims[1], Dims[0] * 2];
+            fixData<T>(data); 
+            return data;
+        } 
 
         private static DType GetDTypeFromT<T>(bool doublePrecision)
         {

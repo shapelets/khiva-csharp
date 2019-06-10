@@ -1008,7 +1008,7 @@ namespace Khiva.Tests
         [Test]
         public void TestDoubleD3OkDims()
         {
-            double[,,] tss = {{{1, 2}, {3, 4}}, {{1, 2}, {3, 4}}};
+            double[,,] tss = {{{1, 2, 12}, {3, 4, 34}, {32, 42, 342}}, {{11, 22, 112}, {33, 444, 334}, {933, 9444, 9334}}};
             using (var arr = KhivaArray.Create(tss))
             {
                 var data = arr.GetData3D<double>();
@@ -1044,11 +1044,15 @@ namespace Khiva.Tests
 
         [Test]
         public void TestComplexFloatD3OkDims()
-        {
+        { 
             Complex[,,] tss =
             {
-                {{new Complex(1, 2), new Complex(3, 4)}, {new Complex(1, 2), new Complex(3, 4)}},
-                {{new Complex(1, 2), new Complex(3, 4)}, {new Complex(1, 2), new Complex(3, 4)}}
+                {
+                    {new Complex(11, 22), new Complex(33, 44), new Complex(55, 66)}
+                },
+                {
+                    {new Complex(81, 82), new Complex(83, 84), new Complex(85, 86)}
+                }
             };
             using (var arr = KhivaArray.Create(tss))
             {
