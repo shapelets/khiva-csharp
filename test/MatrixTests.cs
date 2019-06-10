@@ -68,9 +68,16 @@ namespace Khiva.Tests
                     var index = iArr.GetData3D<uint>();
                     uint[,,] expectedIndex =
                     {
-                        {{0, 1}, {0, 1}, {0, 1}, {0, 1}, {0, 1}, {0, 1}},
-                        {{0, 1}, {0, 1}, {0, 1}, {0, 1}, {0, 1}, {0, 1}}
+                        {
+                        {0, 1, 0, 1, 0, 1},
+                        {0, 1, 0, 1, 0, 1}
+                        },
+                        {
+                        {0, 1, 0, 1, 0, 1},
+                        {0, 1, 0, 1, 0, 1}
+                        }
                     };
+
                     for (var i = 0; i < p.GetLength(0); i++)
                     {
                         for (var j = 0; j < p.GetLength(1); j++)
@@ -249,8 +256,8 @@ namespace Khiva.Tests
                     {
                         var indices = indicesArr.GetData3D<uint>();
                         var subsequence = subsequenceArr.GetData3D<uint>();
-                        Assert.AreEqual(new uint[,,] {{{12, 12}}, {{12, 12}}}, indices);
-                        Assert.AreEqual(new uint[,,] {{{1, 1}}, {{1, 1}}}, subsequence);
+                        Assert.AreEqual(new uint[,,] {{{12}, {12}}, {{12}, {12}}}, indices);
+                        Assert.AreEqual(new uint[,,] {{{1}, {1}}, {{1}, {1}}}, subsequence);
                     }
                 }
             }
