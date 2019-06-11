@@ -267,4 +267,3 @@ __pycache__/
 # Nuget elements
 lib
 *.nupkg
-*.nuspec
