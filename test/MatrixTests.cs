@@ -309,6 +309,94 @@ namespace Khiva.Tests
                     }
                 }
             }
-        } 
+        }
+
+        [Test]
+        public void TestMass()
+        {
+            float[] q = {4.0F, 3.0F, 8.0F};
+            float[] tss = {10.0F, 10.0F, 10.0F, 11.0F, 12.0F, 11.0F, 10.0F, 10.0F, 11.0F, 12.0F, 11.0F, 14.0F, 10.0F, 10.0F};
+            using (KhivaArray qArr = KhivaArray.Create(q), tssArr = KhivaArray.Create(tss))
+            {
+                var distancesArr = Matrix.Mass(qArr, tssArr);
+                using (distancesArr)
+                {
+                    float[] expectedDistances = {1.732051F, 0.328954F, 1.210135F, 3.150851F, 3.245858F, 2.822044F,
+                                       0.328954F, 1.210135F, 3.150851F, 0.248097F, 3.30187F, 2.82205F};
+
+                    var distances = distancesArr.GetData3D<float>();
+
+                    for (var index = 0; index < 12; index++)
+                    {
+                        Assert.AreEqual(expectedDistances[index], distances[0, 0, index], 1e-4);
+                    }
+                }
+            }
+        }
+
+        [Test]
+        public void TestMassMultiple()
+        {
+            float[,] q = { { 10, 10, 11, 11 }, { 10, 11, 10, 10 } };
+            float[,] tss = { { 10, 10, 10, 11, 12, 11, 10 }, { 10, 11, 12, 11, 14, 10, 10 } };
+            using (KhivaArray qArr = KhivaArray.Create(q), tssArr = KhivaArray.Create(tss))
+            {
+                var distancesArr = Matrix.Mass(qArr, tssArr);
+                using (distancesArr)
+                {
+                    Assert.AreEqual(4, distancesArr.Dims[0]);
+                    Assert.AreEqual(2, distancesArr.Dims[1]);
+                    Assert.AreEqual(2, distancesArr.Dims[2]);
+                    Assert.AreEqual(1, distancesArr.Dims[3]);
+
+                    var distances = distancesArr.GetData3D<float>();
+
+                    Assert.AreEqual(2.57832384, distances[1, 0, 2], 1e-4);
+                    Assert.AreEqual(0.50202721, distances[1, 1, 3], 1e-4); 
+                }
+            }
+        }
+
+        [Test]
+        public void TestFindBestNOccurrences()
+        {
+            float[] q = {10, 11, 12};
+            float[,] tss = { {10, 10, 11, 11, 12, 11, 10, 10, 11, 12, 11, 10, 10, 11},
+                {10, 10, 11, 11, 12, 11, 10, 10, 11, 12, 11, 10, 10, 11} };
+            using (KhivaArray qArr = KhivaArray.Create(q), tssArr = KhivaArray.Create(tss))
+            {
+                var (distancesArr, indexesArr) = Matrix.FindBestNOccurrences(qArr, tssArr, 1);
+                using (distancesArr)
+                using (indexesArr)
+                {
+                    var distances = distancesArr.GetData3D<float>();
+                    var indexes = indexesArr.GetData3D<uint>();
+
+                    Assert.AreEqual(0.00, distances[0, 0, 0], 1e-2);
+                    Assert.AreEqual(7, indexes[0, 0, 0]); 
+                }
+            }
+        }
+
+        [Test]
+        public void TestFindBestNOccurrencesMultiple()
+        {
+            float[,] q = { { 11, 11, 10, 11 }, { 10, 11, 11, 12 } };
+            float[,] tss = { {10, 10, 11, 11, 10, 11, 10, 10, 11, 11, 10, 11, 10, 10},
+                {11, 10, 10, 11, 10, 11, 11, 10, 11, 11, 14, 10, 11, 10} };
+            using (KhivaArray qArr = KhivaArray.Create(q), tssArr = KhivaArray.Create(tss))
+            {
+                var (distancesArr, indexesArr) = Matrix.FindBestNOccurrences(qArr, tssArr, 4);
+                using (distancesArr)
+                using (indexesArr)
+                {
+                    var distances = distancesArr.GetData3D<float>();
+                    var indexes = indexesArr.GetData3D<uint>();
+
+                    Assert.AreEqual(1.83880329, distances[1, 0, 2], 1e-2);
+                    Assert.AreEqual(2, indexes[0, 1, 3]); 
+                }
+            }
+        }
     }
 }
